@@ -9,26 +9,77 @@
 
 <title>Torbjørns Reprap blog</title>
 </head>
+
 <body>
 <div id="SiteName">
 Reprap blog
 </div>
 
 <div id="MainContent">
-<!--
-<p>
-  As for now, I am crazy enough after 3d-printer to love a model with a frame like
-  this:
-</p>
-  <figure>
-  <a href="./bilder/gomle_ram.JPG"><img 
-    src="./bilder/gomle_ram_liten.JPG" 
-    alt="Reprappro Mendel frame"></a>
-  <figcaption>The frame of a Reprappro Mendel.</figcaption>  
-  </figure>
--->
 
-<h1 id="small_printing">
+<h1 id="Slideprinter_Update">
+  The Slideprinter
+</h1>
+<div class="date">6-3-2015</div>
+<p>
+  There have been some progress on the Hangprinter project this winter.
+  Well, the progress is as small as the number of hours that have been put into it,
+  but if we put the optimistic glasses on, we can say gone from 1d to non-trivial 2d movement.
+</p>
+<figure>
+  <a href="./bilder/square_three_circles.JPG"><img 
+      src="./bilder/square_three_circles_liten.JPG" 
+      alt="Slideprinters first circles"></a>
+  <figcaption>The Slideprinter (a 2d-Hangprinter), and the first three attempts at drawing
+  a circle from gcode. The first attempt at drawing a square also shown.
+  The reason why two of the "circles" are only lines is confusion whether the firware was
+  expecting absolute or relative coordinates.
+  The main reason that the triangular "circle"'s triangularity is a too high number of steps/mm.</figcaption>  
+</figure>
+<p>
+  The firmware that Slideprinter is currently running is a very slightly modified version of Marlin
+  with the following lines of code added to the function <code>calculate_delta</code>:
+</p>
+<pre>
+  delta[X_AXIS] = sqrt(sq(delta_tower1_x - cartesian[X_AXIS])
+                     + sq(delta_tower1_y - cartesian[Y_AXIS])
+                     - sq(AZ - cartesian[Z_AXIS]))-DELTA_RADIUS;
+  delta[Y_AXIS] = sqrt(sq(delta_tower2_x - cartesian[X_AXIS])
+                     + sq(delta_tower2_y - cartesian[Y_AXIS])
+                     - sq(AZ - cartesian[Z_AXIS]))-DELTA_RADIUS;
+  delta[Z_AXIS] = sqrt(sq(delta_tower3_x - cartesian[X_AXIS])
+                     + sq(delta_tower3_y - cartesian[Y_AXIS])
+                     - sq(AZ - cartesian[Z_AXIS]))-DELTA_RADIUS;
+</pre>
+<p>
+  Note that this code will only handle relative moves correctly.
+  This code affects the max speed of the printer since Marlin (Delta conf) chops straight lines into
+  a hard-coded number of line-segments per second.
+  Since Slideprinter doesn't have enough accuracy or precision for this to matter, I've put
+  number of line segments to 20 (which is small).
+</p>
+<figure>
+  <a href="./bilder/circle_5.JPG"><img 
+      src="./bilder/circle_5_liten.JPG" 
+      alt="Slideprinters fifth circle"></a>
+  <figcaption>Comparison between Slideprinters fifth circle and a circle drawn with a pair of compasses.
+  The outermost line is that from the compasses, most of the time.</figcaption>  
+</figure>
+<p>
+  I also filmed Slideprinter as it moved. Sorry for the darkness.
+  <a href="https://vimeo.com/121490693">Vimeo</a>.
+</p>
+<p>
+  EDIT 8-3-2015:<br />
+  Made a new video: 
+  <a href="https://vimeo.com/121604956">Vimeo</a>.
+</p>
+<p>
+  - tobben
+</p>
+<br /><br /><br />
+
+<h1 id="Small_Printing">
   Printing small details
 </h1>
 <div class="date">13-11-2014</div>
@@ -37,12 +88,12 @@ Reprap blog
   a batch of buttons for some seafarers.
   He gave me this sketch, that the sefarers had given him:
 </p>
-  <figure>
+<figure>
   <a href="./bilder/knappetegning.png"><img 
       src="./bilder/knappetegning_liten.png" 
       alt="button sketch"></a>
   <figcaption>The sketch.</figcaption>  
-  </figure>
+</figure>
 <p>
   In addition, I got instructions to put a rope ring around the button
   to protect from the pointy arrows.
@@ -101,10 +152,9 @@ Reprap blog
 <p>
   - tobben
 </p>
-<br><br><br>
+<br /><br /><br />
 
-
-<h1 id="Postbox_sign">
+<h1 id="Postbox_Sign">
   A Cumbersome Beautiful Way of Creating Signs in OpenScad
 </h1>
 <div class="date">6-10-2014</div>
@@ -239,9 +289,9 @@ module tbear(){
 <p>
   - tobben
 </p>
-<br><br><br>
+<br /><br /><br />
 
-<h1 id="Removing_internal_faces_with_Meshlab">
+<h1 id="Removing_Internal_Faces_With_Meshlab">
   Combining STLs and removing internal faces with Meshlab
 </h1>
 <div class="date">12-9-2014</div>
@@ -270,13 +320,13 @@ module tbear(){
 </p>
 <p>
   The sequence of Meshlab commands was
-  <br>
+  <br />
     <code>Filters -> Mesh Layer -> Flatten Visible Layers</code>
-  <br>
+  <br />
     <code>Filters -> Color Creation and Processing -> Ambient Occlusion - Per Face</code>
-  <br>
+  <br />
     <code>Filters -> Selection -> Select Faces by Face Quality.</code>
-  <br>
+  <br />
   </p>
   With min=0 and max=0.05 I got this selection:
 </p>
@@ -302,8 +352,7 @@ module tbear(){
 <p>
   - tobben
 </p>
-<br><br><br>
-
+<br /><br /><br />
 
 <h1 id="Explanation_Video">
   Explanation of basic RepRap mechanics (Swedish)
@@ -321,9 +370,7 @@ I crawled the web after an image of me and a 3d-printer today, to use in an arti
   - tobben
 </p>
 
-<br><br><br>
-
-
+<br /><br /><br />
 
 <h1 id="Martineaasen_Project">
   The Martineåsen Project
@@ -455,10 +502,7 @@ I crawled the web after an image of me and a 3d-printer today, to use in an arti
   - tobben
 </p>
 
-<br><br><br>
-
-
-
+<br /><br /><br />
 
 <h1 id="Hangprinter">
   A Hanging RepRap
@@ -558,15 +602,9 @@ Please check out the <a href="http://forums.reprap.org/read.php?178,344022,34515
   - tobben
 </p>
 
-<br><br><br>
+<br /><br /><br />
 
-
-
-
-
-
-
-<h1>
+<h1 id="Second_Attempt_Grue">
   Second Attempt at Printing the Grue
 </h1>
 <div class="date">22-4-2014</div>
@@ -642,11 +680,9 @@ Please check out the <a href="http://forums.reprap.org/read.php?178,344022,34515
   - tobben
 </p>
 
-<br><br><br>
+<br /><br /><br />
 
-
-
-<h1 id="pisf">
+<h1 id="PISF">
   What Print Issue Solution Filter Is and What It Does
 </h1>
 <div class="date">19-4-2014</div>
@@ -783,10 +819,9 @@ It looks like this:
   - tobben
 </p>
 
-<br><br><br>
+<br /><br /><br />
 
-
-<h1>
+<h1 id="PISF_Online_Sort_Of">
   We're online! Sort of...
 </h1>
 <div class="date">14-4-2014</div>
@@ -862,10 +897,9 @@ It looks like this:
   - tobben
 </p>
 
-<br><br><br>
+<br /><br /><br />
 
-
-<h1>
+<h1 id="Presenting_PISF_Again">
   Presenting the Print Issue Solution Filter. Again
 </h1>
 <div class="date">4-4-2014</div>
@@ -891,9 +925,9 @@ It looks like this:
   - tobben
 </p>
 
-<br><br><br>
+<br /><br /><br />
 
-<h1>
+<h1 id="Soldering_Small_Stuff">
   Small soldering with cheap equipment
 </h1>
 <div class="date">29-3-2014</div>
@@ -978,12 +1012,9 @@ them firmly to the PCB. The result looked like this
   - tobben
 </p>
 
-<br><br><br>
+<br /><br /><br />
 
-
-
-
-<h1>
+<h1 id="Rope_Ring">
   Making a Ring with a Rope
 </h1>
 <div class="date">20-3-2014</div>
@@ -1077,12 +1108,9 @@ them firmly to the PCB. The result looked like this
 <p>
   - tobben
 </p>
-<br><br><br>
+<br /><br /><br />
 
-
-
-
-<h1>
+<h1 id="Reliable_Stick">
   Making PLA prints stick reliably
 </h1>
 <div class="date">14-3-2014</div>
@@ -1125,11 +1153,9 @@ them firmly to the PCB. The result looked like this
 <p>
   - tobben
 </p>
-<br><br><br>
+<br /><br /><br />
 
-
-
-<h1>
+<h1 id="Workflow">
   A Very Short Introduction to Basic RepRap Workflow
 </h1>
 <div class="date">6-3-2014</div>
@@ -1310,13 +1336,9 @@ them firmly to the PCB. The result looked like this
 <p>
   PS! The manual for OpenSCAD is found <a href="https://en.wikibooks.org/wiki/OpenSCAD_User_Manual">here</a>.
 </p>
-<br><br><br>
+<br /><br /><br />
 
-
-
-
-
-<h1>
+<h1 id="Litophanes">
   Printing litophanes
 </h1>
 <div class="date">28-2-2014</div>
@@ -1410,8 +1432,7 @@ them firmly to the PCB. The result looked like this
 <p>
   - tobben
 </p>
-<br><br><br>
-
+<br /><br /><br />
 
 <h1 id="grue_take1">
   Printing a complicated figure with PLA
@@ -1491,9 +1512,9 @@ them firmly to the PCB. The result looked like this
 <p>
   - tobben
 </p>
-<br><br><br>
+<br /><br /><br />
 
-<h1>
+<h1 id="Introducing_PISF">
   Introducing the Print Issue Solution Filter web app
 </h1>
 <div class="date">15-2-2014</div>
@@ -1577,12 +1598,9 @@ them firmly to the PCB. The result looked like this
 </p>
 
 
-<br><br><br>
+<br /><br /><br />
 
-
-
-
-<h1>
+<h1 id="Architrave_Profiles">
   Making custom architrave profiles
 </h1>
 <div class="date">7-2-2014</div>
@@ -1628,17 +1646,31 @@ them firmly to the PCB. The result looked like this
 </p>
 
 
-<br><br><br>
+<br /><br /><br />
 
-
-
-
-
-<h1>VRR firmware and a different way of communicating with 3d-printers</h1>
+<h1 id="VRR">
+  VRR firmware and a different way of communicating with 3d-printers
+</h1>
 <div class="date">01-02-2014</div>
-<p>I've started working on a, as far as I know, new type of firmware. The main idea behind it is to minimize the need of processing power on the actual printer by reducing it to a slave that only relays low-level commands from the computer. Of course it will have to take care of some timing and buffering but that's about it. Since this type of protocol is not compatible with the current G-Code based one I'm also working on a driver that will emulate some generic G-Code receiving printer to make it work as a drop-in replacement.</p>
-<p>The upsides I see with the master-slave vs client-printer model are many, first of all unless you plan on equipping you printer with a &gt;100&#36; cpu your computer will always be better at doing pretty much all the calculations needed for a print - thats why we do the slicing on it! Another key reason why I found the idea worth exploring is the much improved debugging capabilities, many G-Codes instructs the printer to perform several actions (e.g. G28 - home all) if any of these fail no further information than that the complete instruction failed is given. Now, using a printer that exports information about what pins it has and what they do and then simply receives ctrl-msgs pertaining those pins, i.e. a semi-transparent hardware abstraction protocol (kinda directly controlling the pins on the board using ctrl-msgs) or StAHP, each action can be performed with minute control giving the user the ability to pinpoint exactly when and where the printer fails. Having this type of control over the printer also means pausing, aborting, adding or subtracting parts (to/from) a running print-job will be much easier.</p>
-<p>A basic printer-computer handshake would look something like this (M - master/computer, S - slave/printer)
+<p>
+  I've started working on a, as far as I know, new type of firmware.
+  The main idea behind it is to minimize the need of processing power on the actual printer by reducing it to a slave that only relays low-level commands from the computer.
+  Of course it will have to take care of some timing and buffering but that's about it.
+  Since this type of protocol is not compatible with the current G-Code based one I'm also working on a driver that will emulate some generic G-Code receiving printer to make it work as a drop-in replacement.
+</p>
+<p>
+  The upsides I see with the master-slave vs client-printer model are many,
+  first of all unless you plan on equipping you printer with a &gt;100&#36; cpu your computer will always be better at doing pretty much all the calculations needed for a print -
+  thats why we do the slicing on it!
+  Another key reason why I found the idea worth exploring is the much improved debugging capabilities,
+  many G-Codes instructs the printer to perform several actions (e.g. G28 - home all) if any of these fail no further information than that the complete instruction failed is given.
+  Now, using a printer that exports information about what pins it has and what they do and then simply receives ctrl-msgs pertaining those pins,
+  i.e. a semi-transparent hardware abstraction protocol (kinda directly controlling the pins on the board using ctrl-msgs)
+  or StAHP, each action can be performed with minute control giving the user the ability to pinpoint exactly when and where the printer fails.
+  Having this type of control over the printer also means pausing, aborting, adding or subtracting parts (to/from) a running print-job will be much easier.
+</p>
+<p>
+  A basic printer-computer handshake would look something like this (M - master/computer, S - slave/printer)
 <pre>format: seqno, sender: &lt;msg&gt;
 00, S: &lt;init printer&gt;				// handshake init
 00, M: &lt;printer confirm&gt;
@@ -1668,14 +1700,21 @@ R1, M: &lt;bufsz confirm&gt;
 R2, S: &lt;awaiting action&gt;
 R2, M: &lt;awaiting action confirm&gt;
 ... // M can now start controlling the printer</pre>
-As seen the handshake time can be reduced quite much if the master has a cache of the printers ctrls. As such a cache (config) file could be easily produced when writing/porting the firmware to different boards hopefully the start-up time of printers using this type of firmware can be reduced to almost zero.</p>
-<p>This project is still in its infancy and the driver will probably not be ported to windows until the first stable version. I'm using a left over Melzi Ardentissimo v.1 board from <a href="http://www.geeetech.com/" title="geeetech.com">geeetech.com</a> to develop it so that type of board will probably be the first one to have a usable beta.<br />
+  As seen the handshake time can be reduced quite much if the master has a cache of the printers ctrls.
+  As such a cache (config) file could be easily produced when writing/porting the firmware to different boards hopefully the start-up time of printers using this type of firmware
+  can be reduced to almost zero.
+</p>
+<p>
+  This project is still in its infancy and the driver will probably not be ported to windows until the first stable version.
+  I'm using a left over Melzi Ardentissimo v.1 board from <a href="http://www.geeetech.com/" title="geeetech.com">geeetech.com</a>
+  to develop it so that type of board will probably be the first one to have a usable beta.<br />
 <img src="bilder/140201-melzi_front.jpg" title="Melzi Ardentissimo v.1">
-<br /><br />
-// sluggo
-<br /><br /><br /><br /><br /><br />
+<p>
+  // sluggo
+</p>
+<br /><br /><br />
 
-<h1>
+<h1 id="Twisted_Vases">
   Making simple twisted vases
 </h1>
 <div class="date">31-1-2014</div>
@@ -1794,10 +1833,9 @@ As seen the handshake time can be reduced quite much if the master has a cache o
   - tobben
 </p>
 
-<br><br><br>
+<br /><br /><br />
 
-
-<h1>
+<h1 id="Hello, World">
   Hello, World!
 </h1>
 <div class="date">27-1-2014</div>
@@ -1825,7 +1863,7 @@ As seen the handshake time can be reduced quite much if the master has a cache o
 
 
 </div>
-<br><br><br><br><br><br><br><br>
+<br /><br /><br /><br /><br /><br /><br /><br />
 </body>
 
 </html>
