@@ -22,6 +22,19 @@ Reprap blog
   Update and Clerck Build Instructions
 </h1>
 <div class="date">8-2-2016</div>
+<!-- TODO:
+* läs igenom med perspektivet:
+  För er som är nya: kolla den här källan
+   - på forum
+   - på Github
+   - elektronik
+   - 3dskrivarteknik generellt
+   - sourcing
+  För er andra: fortsätt
+* TBF'ar
+* Verktygslista?
+* Lock ring/spacer consistent naming
+-->
 <p>
   I've been working on Open Source Ecology 3D printer workshops (see my <a href="http://opensourceecology.org/wiki/Tobben_Log">work log</a> for exactly what I've been up to)
   the past month, and will continue to work on that until mid summer.
@@ -29,18 +42,20 @@ Reprap blog
 <p>
   Clerck would love to be developed further by anyone even if I'm on another project right now.
   The following instructions should not be considered "the ultimate way", it's simply how I did it on my first try with the prototype.
-  The best absolute source of Clerck information is the OpenSCAD files in the <a href="https://github.com/tobbelobb/hangprinter">Github repo</a>.
+  The best absolute source of Clerck information is the OpenSCAD files in the Github repo.
   A special branch was created for this build manual, called
-  <a href="https://github.com/tobbelobb/hangprinter">build_maunal_0</a>.
+  <a href="https://github.com/tobbelobb/hangprinter/tree/build_maunal_0">build_maunal_0</a>.
   <code>Hangprinter.scad</code> is the most high-level entry point.
 </p>
 <p>
   This build manual will be short and terse.
-  Don't be afraid to ask questions on forums and elsewhere to fill in knowledge and information gaps.
+  Ask questions
+  <a href="forums.reprap.org/read.php?178,344022">the forum thread</a>
+  to fill in knowledge and information gaps.
 </p>
 
 <h2 id="Clerck_assembly_manual">
-  Clerck Assembly Manual v0
+  Clerck Assembly Manual v0.1
 </h2>
 <figure>
   <a href="./bilder/hangprinter_assembly.png"><img
@@ -55,16 +70,16 @@ Reprap blog
 
 <h3>Step 0: Sourcing</h3>
 <p>
-  For vitamins BOM, see
+  For vitamins bill of materials, see
   <a href="http://www.appropedia.org/Clerck,_a_RepRap_3D_printer_hanging_from_the_ceiling#Costs">the Appropedia article</a>.
   Some info on hardware specifics is found in
   <a href="https://github.com/tobbelobb/hangprinter/tree/build_maunal_0/used_hardware">used_hardware</a> directory in repo.
-  For printed parts BOM, search
+  For printed parts bill of materials, search
   <a href="https://github.com/tobbelobb/hangprinter/tree/build_maunal_0/stl">stl directory</a> of build_maunal_0 branch
   in Github repo for the shown STL files.
   You'll also need the Hangprinter-Marlin firmware.
   It's in the firmware folder of the
-  <a href="https://github.com/tobbelobb/hangprinter/tree/build_maunal_0/firmware">repo</a>.
+  <a href="https://github.com/tobbelobb/hangprinter/tree/build_maunal_0/firmware/Marlin">repo</a>.
 </p>
 
 <h3>Step 1: Cut Lines to Length and Tie to Spools</h3>
@@ -75,6 +90,18 @@ Reprap blog
   I use twice the origin/wall-distance plus ca 1.5 meters along all axes.
   As there are 4 movement axes on this printer, there will be 4 lengths.
   We call them the A-length, B-length, C-length and D-length.
+<p>
+<figure>
+  <a href="./bilder/ABCD.png"><img
+    src="./bilder/ABCD_liten.png"
+    alt=""></a>
+   <figcaption>
+     Illustration associating each of the letters "A", "B", "C" and "D" with a corresponding anchor point.
+     The bottom plate (largest printed part) has A, B, and C inscriptions on it,
+       indicating which side should face which wall-mounted anchor point.
+  </figcaption>
+</figure>
+</p>
   After this step you should have:
 </p>
 <ul>
@@ -86,7 +113,6 @@ Reprap blog
 <p>
   Tie the A-length lines onto one spool, then the B-length lines onto another spool etc.
 </p>
-
 <figure>
   <a href="./bilder/tie_in_here.png"><img
     src="./bilder/tie_in_here_liten.png"
@@ -150,7 +176,10 @@ Ensure that geared spools rotate freely by rotating and wiggling them by hand.
     alt=""></a>
    <figcaption>
      The stopper screw and nut that can be used to lock the D-spool manually.
-     Notice the lock-nut trapped in the box.
+     Notice the nut trapped in the box.
+     The stop screw works by pushing against the D-spool gear, preventing it from rotating.
+     Use a nyloc nut in the box or remove the stop screw during printing, to avoid that the stop screw
+     vibrates into a stopping position mid-print.
   </figcaption>
 </figure>
 
@@ -169,7 +198,7 @@ Ensure that geared spools rotate freely by rotating and wiggling them by hand.
     src="./bilder/tble_assembly_step_1_liten.png"
     alt=""></a>
    <figcaption>
-     Note the white PTFE tube guiding filament into hot end.
+     Note the white PTFE (teflon) tube guiding filament into hot end.
      The blue 623 bearing needs support along the direction of the screw it's mounted on.
      I used ca 10 washers for this.
   </figcaption>
@@ -188,14 +217,14 @@ Ensure that geared spools rotate freely by rotating and wiggling them by hand.
    <figcaption>
      The hex head screw is pushed through a sandwich of
        large extruder gear, printed part, 623 bearing, hobbed insert, 623 bearing, printed part and finally M3 nut.
-     Some washers and lots of fiddling will be needed to assure feeding hobbs, support bearing and PTFE tube align.
+     Some washers and lots of fiddling will be needed to assure feeding hobbs, support bearing and PTFE tube align with each other.
   </figcaption>
 </figure>
 
 <h3>Step 6: Mount Extruder Motor</h3>
 <p>
-  The small small extruder gear is push-fit onto the extruder motor shaft, which should have one flat side.
-  Remove two bottom screws from the bottom of the motor before mounting.
+  The small extruder gear is push-fit onto the extruder motor shaft, which should have one flat side.
+  Remove two neighbouring bottom screws from the bottom of the motor before mounting.
 </p>
 <figure>
   <a href="./bilder/mounted_extruder_motor.png"><img
@@ -207,6 +236,14 @@ Ensure that geared spools rotate freely by rotating and wiggling them by hand.
        so the two leftmost screws in this figure need to be rather long.
   </figcaption>
 </figure>
+<p>
+  Note that this step is very dependent on motor size (maybe unnecessarily so).
+  If you have another motor than 17HS4401N,
+    then double check that your motor fits (see lines 2, 3 and 4 in <code>measured_numbers.scad</code>).
+  The extruder motor hole is created on
+  <a href="https://github.com/tobbelobb/hangprinter/blob/build_maunal_0/parts.scad#L262">line 262 in <code>parts.scad</code></a>,
+  if you rather want to change the CAD file than change the motor.
+</p>
 
 <h3>Step 7: Mount Tble-extruder</h3>
 
@@ -232,16 +269,20 @@ Ensure that geared spools rotate freely by rotating and wiggling them by hand.
     Motor gears are push-fit onto motor shafts. The motor shafts must have one flat side.
   </figcaption>
 </figure>
-
+<p>
+  Match motor gear height and placement with corresponding spool.
+</p>
 <figure>
   <a href="./bilder/mounted_motors_from_above.png"><img
     src="./bilder/mounted_motors_from_above_liten.png"
     alt=""></a>
    <figcaption>
      Bottom plate from above with correctly mounted motors and highlighted letters viewed from above.
-     Letter on motor gear corresponds to direction of movement.
   </figcaption>
 </figure>
+<p>
+  Look at your printer from above to confirm you can read "CBCADAB" from left to right before preceding.
+</p>
 
 <figure>
   <a href="./bilder/mounted_motors_from_side.png"><img
@@ -264,8 +305,23 @@ Ensure that geared spools rotate freely by rotating and wiggling them by hand.
   </figcaption>
 </figure>
 <p>
-  I placed a wooden platform between the ceiling and the printed ceiling part to avoid having to drill screw holes in the ceiling.
+  I hung a wooden platform in a lamp hook avoid having to drill screw holes in the ceiling (see
+  <a href="./bilder/takfeste.JPG">picture</a>).
 </p>
+<figure>
+  <a href="./bilder/wrapping_line.png"><img
+    src="./bilder/wrapping_line_liten.png"
+    alt=""></a>
+   <figcaption>
+     The wall plates have roller bearings attached to adjustment screws.
+     Tread lines through loop holding roller bearing.
+  </figcaption>
+</figure>
+<p>
+  The end of the A, B and C lines are attached to the M3 screw holding the corresponding fish line ring.
+  More details on that in <a href="#ABC_frame_adjustment">a previous post</a>.
+</p>
+
 
 <h3>Step 10: Mount Wall and Ceiling Parts</h3>
 <p>
@@ -285,6 +341,9 @@ Ensure that geared spools rotate freely by rotating and wiggling them by hand.
 </figure>
 
 <h3>Step 11: Thread D-lines</h3>
+<p>
+  I rested motors on two towers of books while doing this.
+</p>
 
 <figure>
   <a href="./bilder/thread_lines.png"><img
@@ -300,6 +359,7 @@ Ensure that geared spools rotate freely by rotating and wiggling them by hand.
 <p>
   Secure locking screw on D-spool-gear and flip the printer upside down.
   Mount Arduino Mega+RAMPS on an isolating plastic sheet, and mount that sheet using bottom-screws of stepper motors.
+  I used a piece of ice cream packaging as isolation sheet.
 </p>
 <figure>
   <a href="./bilder/flipped_render.png"><img
@@ -313,7 +373,7 @@ Ensure that geared spools rotate freely by rotating and wiggling them by hand.
 <h3>Step 13: Upload Firmware</h3>
 <p>
   Plug in the USB cable and upload the Marlin firmware found in <code>firmware/Marlin/Marlin</code>.
-  If you haven't uploaded firmware through Arduino IDE before, it looks like shown in
+  If you haven't uploaded firmware through the Arduino IDE before, it looks like shown in
   <a href="https://youtu.be/YM3z9IdLzAk?t=1m">this video</a>.
   Try to communicate with your RAMPS board through USB cable and
   <a href="https://github.com/kliment/Printrun#using-pronterface">Pronterface</a> (no power supply is needed for this).
@@ -322,14 +382,12 @@ Ensure that geared spools rotate freely by rotating and wiggling them by hand.
 </p>
 
 <h3>Step 14: Wire up electronics</h3>
-<h4>Warnings</h4>
 <p>
-  Use anti-static waistband while working with electronics.
-  Don't wire in motors until Stepsticks' reference voltage is properly adjusted.
-  Don't ever unplug motors while RAMPS is powered.
-  Actively look for shorts with a multimeter.
-  Unplug mains power at once if you smell burnt electronics.
-  Etc etc.
+  For those who are new to electronics, take some time to read about general electronics safety. For examle
+  <a href="http://www.dummies.com/how-to/content/electronics-safety-rules.html">Electronics Safety Rules for Dummies</a> and
+  <a href="http://www.howtogeek.com/169994/how-to-protect-your-pcs-hardware-from-static-electricity-when-working-on-it/">howtogeek article on static electricity protection</a>.
+  Insulate the hot end. The Clerck design has a high risk of melting its own cables, which will
+  cause fire (see <a href="http://forums.reprap.org/read.php?392,294850">forum thread</a>).
 </p>
 <p>
   Mount stepper driver chips and adjust Stepstick trimpots to get the right reference voltage
@@ -396,20 +454,6 @@ Ensure that geared spools rotate freely by rotating and wiggling them by hand.
 
 <h3>Step 17: Thread A, B and C Lines</h3>
 <figure>
-  <a href="./bilder/wrapping_line.png"><img
-    src="./bilder/wrapping_line_liten.png"
-    alt=""></a>
-   <figcaption>
-     The wall plates have roller bearings attached to adjustment screws.
-     Tread lines through loop holding roller bearing.
-  </figcaption>
-</figure>
-<p>
-  The end of the A, B and C lines are attached to the M3 screw holding the corresponding fish line ring.
-  More details on that in <a href="#ABC_frame_adjustment">a previous post</a>.
-</p>
-
-<figure>
   <a href="./bilder/sweet_victory2.png"><img
     src="./bilder/sweet_victory2_liten.png"
     alt=""></a>
@@ -417,6 +461,21 @@ Ensure that geared spools rotate freely by rotating and wiggling them by hand.
      Your Clerck should now look roughly like this.
   </figcaption>
 </figure>
+
+<h3>Step 18: Additions to Ceiling Plate</h3>
+<h4>Counterweights</h4>
+<p>
+  I use ca 250 grams of counterweight attached in each corner, with lines running along the outermost D-lines and running through
+  the same vgroove bearings in the ceiling part.
+</p>
+<h4>Manual Homing with Aiming Plumb</h4>
+<p>
+  I'm simply homing the printer using gcodes <code>G3</code> (move without recording it) after powering on.
+  The gcodes <a href="http://reprap.org/wiki/Gcode#G92:_Set_Position">G92</a> and
+  <a href="http://reprap.org/wiki/Gcode#M114:_Get_Current_Position">M114</a>.
+  To help the manual homing process, I've attached an aiming plumb to the center of the ceiling part, see
+  <a href="./bilder/center_lod.JPG">picture</a> and <a href="#hangprinter_project_18">previous post</a>.
+</p>
 
 <p>
   End of assembly manual.
