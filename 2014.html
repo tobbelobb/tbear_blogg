@@ -1,0 +1,2386 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="author" content="Torbjorn" >
+<meta name="keywords" content="Reprap, blog, development">
+<meta name="description" content="Torbjørn Ludvigsen's Reprap blog.">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link href="http://vitana.se/opr3d/tbear/feed.xml" rel="alternate" type="application/rss+xml" title="Torbjørn's Reprap blog's RSS feed" />
+
+<title>Torbjørns Reprap blog 2014</title>
+</head>
+
+<body>
+<div id="SiteName">
+Reprap blog 2014
+</div>
+
+<div id="MainContent">
+
+
+<h1 id="Small_Printing">
+  Printing small details
+</h1>
+<div class="date">13-11-2014</div>
+<p>
+  I was contacted by a silversmith recently, that was in the process of making
+  a batch of buttons for some seafarers.
+  He gave me this sketch, that the sefarers had given him:
+</p>
+<figure>
+  <a href="./bilder/knappetegning.png">
+    <img
+      src="./bilder/knappetegning_liten.png"
+      alt="button sketch">
+  </a>
+  <figcaption>The sketch.</figcaption>
+</figure>
+<p>
+  In addition, I got instructions to put a rope ring around the button
+  to protect from the pointy arrows.
+</p>
+
+<p>
+  The special challenge for me in this was the scale.
+  The button was to be produced with two different diameters: 15 and 20 mm.
+  Height: 1 to 3 mm.
+  In other words, the details need to be less than 0.33 mm high, and sometimes
+  ca 0.3 mm wide.
+</p>
+<p>
+  First thing I did was to order a 0.3 mm nozzle from Emakershop.
+  Second was to make a Git repo which can be found
+  <a href="https://github.com/tobbelobb/silver-button/">here</a>.
+  Wish I had more time to describe the process, but a picture of todays prints
+  have to do for now.
+</p>
+  <figure>
+  <a href="./bilder/Knapp_V1.png"><img
+      src="./bilder/Knapp_V1_liten.png"
+      alt="3d-printed buttons"></a>
+  <figcaption>Initial shot at cadding the button. Revised twice today.</figcaption>
+  </figure>
+  <figure>
+  <a href="./bilder/Knapp_V4.png"><img
+      src="./bilder/Knapp_V4_liten.png"
+      alt="3d-printed buttons"></a>
+  <figcaption>A version of the button with thicker middle part and somewhat
+  more pronounced details, since the first print turned out too thin and
+  with too low resolution.</figcaption>
+  </figure>
+  <figure>
+  <a href="./bilder/Knapp_V6.png"><img
+      src="./bilder/Knapp_V6_liten.png"
+      alt="3d-printed buttons"></a>
+  <figcaption>A version of the button with more pronounced details, since the second
+  print turned out to have too blurry details.</figcaption>
+  </figure>
+  <figure>
+  <a href="./bilder/tre_knapper.JPG"><img
+      src="./bilder/tre_knapper_liten.JPG"
+      alt="3d-printed buttons"></a>
+  <figcaption>First three (finished) tries at printing the 20 mm version of the buttons.</figcaption>
+  </figure>
+  <figure>
+  <a href="./bilder/tre_knapper2.JPG"><img
+      src="./bilder/tre_knapper2_liten.JPG"
+      alt="3d-printed buttons"></a>
+  <figcaption>Another pic of the same three buttons.</figcaption>
+  </figure>
+<p>
+</p>
+
+<p>
+  - tobben
+</p>
+<br /><br /><br />
+
+<h1 id="Postbox_Sign">
+  A Cumbersome Beautiful Way of Creating Signs in OpenScad
+</h1>
+<div class="date">6-10-2014</div>
+<p>
+  I needed a new sign on our mailbox outside our house recently, so I thought I
+  might as well make a two colored plastic sign this time, since the paper ones
+  only seems to last for one year or so. If the plastic sign can be used for more
+  than 10 years, this project might even be a net time saver.
+</p>
+
+<p>
+  I have made models with letters in them several times, and every time I have ended
+  up doing it differently. This time, I found a little
+<a href="https://github.com/mtu-most/most-scad-libraries/blob/master/scadfont/font2openscad">Python script</a>,
+  called font2openscad, that converted True Type Fonts into OpenScad-importable dxf-files.
+  I wanted to use the letters one at a time, so I wrote a little module:
+</p>
+
+<p>
+<pre>
+  <code>
+module letter(path, trx=0, height = 3){
+  translate([trx,0,0])
+    linear_extrude(height=height, convexity=10, slices=2) import(path);
+}
+  </code>
+</pre>
+</p>
+
+<p>
+  And then imported just the letters I needed one by one, like this:
+</p>
+<p>
+<pre>
+  <code>
+T = 11.83;
+o = 13.77;
+r = 11.73;
+b = 10.09;
+j =  6.73;
+oe= 14.94;
+module tbear(){
+  letter("font/T.dxf",0);
+  letter("font/o.dxf",T);
+  letter("font/r.dxf",T+o);
+  letter("font/b.dxf",T+o+r);
+  letter("font/j.dxf",T+o+r+b);
+  letter("font/oslash.dxf",T+o+r+b+j);
+  letter("font/r.dxf",T+o+r+b+j+oe);
+  letter("font/n.dxf",T+o+r+b+j+oe+r);
+}
+  </code>
+</pre>
+</p>
+<p>
+  To find reasonable letter-widths (the T+o+...-part) I used what I found in the
+  font.scad file created by the font2openscad script.
+  Using the letters one by one gave me two advantages
+  <ul>
+    <li>
+    The opportunity to make the sign more beautiful by translating each letter manually. (Extremely time consuming of course.)
+  </li>
+  <li>
+    Avoiding OpenScad messing up Scandinavian letters.
+  </li>
+  </ul>
+  I only exploited the first point only a couple of times as it was too fiddly to be fun.
+  The second point, however was a huge win. Every letter in the ttf-file imported gracefully
+  without OpenScad ever getting the chance to mess up while encoding/decoding them.
+</p>
+
+<p>
+  I am aware that OpenScad has added support for Unicode and that they are adding
+  native support for extruding text (look
+  <a href="https://en.wikibooks.org/wiki/OpenSCAD_User_Manual/Using_the_2D_Subsystem#Text">here</a>),
+  so the method I'm describing in this blog post is mostly relevant for old OpenScad builds
+  like my own.
+</p>
+
+<p>
+  The complete script for creating my little mailbox sign can be
+  found
+  <a href="https://github.com/tobbelobb/mailbox-sign">here</a>.
+  A render of it looks like this:
+</p>
+  <figure>
+  <a href="./bilder/mailbox-render.png"><img
+    src="./bilder/mailbox-render_liten.png"
+    alt="mailsign render"></a>
+  <figcaption>The sign on my mailbox, built and rendered in OpenScad, one letter at a time.</figcaption>
+  </figure>
+  <h4> Getting a Two Color Print With One Bowden-fed Print Head And Monochrome Filament</h4>
+<p>
+  To get the sign out in two colors, I wanted to pause the print exactly when the last
+  rectangular layer was done, before starting on the letters. I wanted this pause, so
+  I could change filament manually because I use a rather long Bowden tube.
+  I knew I used 0.2 mm z-lift, 0.3 mm layer height and that the rectangular base
+  was exactly 1.5 mm thick, so to find the critical moment in the gcode was just a matter of
+  searching for <code>G1 Z1.8000</code>. I then inserted directly into the gcode
+  commands to
+  <ul>
+    <li>Retract 1 cm filament (G1 F3420.000 E...)</li>
+    <li>Make a 2 cm z-lift (G1 Z... F10200.00)</li>
+    <li>Pause SD-print (M25)</li>
+    <li>Set extruder coordinate to whatever it should be when the manual filament-switch is done and print is resumed (G92 E...).</li>
+  </ul>
+  (Replace ... with values relative to context in gcode.)
+  Throwing in an SD-pause directly into the gcode like this was rather naïve, as
+  Marlin does some buffer magic so that the pause aren't guaranteed to happen
+  at that exact line. In my case, the printer ran two more lines of code before
+  pausing. This was no problem however, since I could rewind the print, that is
+  reset the file pointer manually with M26 (set SD position).
+</p>
+<p>
+  Anyway, here's how the end result looked like:
+</p>
+  <figure>
+  <a href="./bilder/skylt1.JPG"><img
+    src="./bilder/skylt1_liten.JPG"
+    alt="mailsign 3d-print"></a>
+  <figcaption>The sign on my mailbox, printed and ready.</figcaption>
+  </figure>
+  <figure>
+  <a href="./bilder/skylt2.JPG"><img
+    src="./bilder/skylt2_liten.JPG"
+    alt="mailsign 3d-print"></a>
+  <figcaption>Close up showing print quality, or lack thereof.</figcaption>
+  </figure>
+<p>
+  It's surprising how fun a simple sign can be when I really should be studying ;)
+</p>
+<p>
+  - tobben
+</p>
+<br /><br /><br />
+
+<h1 id="Removing_Internal_Faces_With_Meshlab">
+  Combining STLs and removing internal faces with Meshlab
+</h1>
+<div class="date">12-9-2014</div>
+<p>
+  I needed to glue together some stls recently, that fit together like the pieces in a puzzle. Like this:
+</p>
+  <figure>
+  <a href="./bilder/ExplodedC12.PNG"><img
+    src="./bilder/ExplodedC12_liten.PNG"
+    alt="exploded stl"></a>
+  <figcaption>The four .stl files I needed to merge into a single one.</figcaption>
+  </figure>
+<p>
+  In short, I wanted to snap the right walls together and remove the resulting double internal faces.
+  The screendump is from Netfabb Basic,
+  but it won't let me "merge selected parts" because I don't have a "pro-licence".
+  So I found a tip here
+    <a href="http://meshlabstuff.blogspot.se/2009/04/how-to-remove-internal-faces-with.html">here</a>
+  that I used with some modifications.
+</p>
+<p>
+  First, I imported all the meshes into Meshlab and flattened the visible layers. This
+  gives me all the parts in a single mesh. I then gave all faces "quality numbers"
+  based on how visible they were. This made it possible to select the internal faces
+  only and delete them.
+</p>
+<p>
+  The sequence of Meshlab commands was
+  <br />
+    <code>Filters -> Mesh Layer -> Flatten Visible Layers</code>
+  <br />
+    <code>Filters -> Color Creation and Processing -> Ambient Occlusion - Per Face</code>
+  <br />
+    <code>Filters -> Selection -> Select Faces by Face Quality.</code>
+  <br />
+  </p>
+  With min=0 and max=0.05 I got this selection:
+</p>
+  <figure>
+  <a href="./bilder/select_faces_by_face_quality.PNG"><img
+    src="./bilder/select_faces_by_face_quality_liten.PNG"
+    alt="Meshlab selection"></a>
+  <figcaption>The selection I got in Meshlab when searching for the least visible faces.</figcaption>
+  </figure>
+<p>
+  If you look closely, you see that some internal faces in my buildings are also selected.
+  Those are also unwanted, so getting them selected is like an extra bonus =)
+</p>
+  <figure>
+  <a href="./bilder/delete_faces.PNG"><img
+    src="./bilder/delete_faces_liten.PNG"
+    alt="Meshlab delete faces"></a>
+  <figcaption>Button in Meshlab to delete selected faces.</figcaption>
+  </figure>
+<p>
+  That did the trick for me. Hope it does for you to ;)
+</p>
+<p>
+  - tobben
+</p>
+<br /><br /><br />
+
+<h1 id="Explanation_Video">
+  Explanation of basic RepRap mechanics (Swedish)
+</h1>
+<div class="date">12-8-2014</div>
+
+<p>
+I crawled the web after an image of me and a 3d-printer today, to use in an article about the Martineåsen Project in the local newspaper. Surprisingly I stubled upon an old video of myself, from another newspaper. You need a paid membership to see it, so i put it here.
+</p>
+<iframe src="http://ljsp.lwcdn.com/api/video/embed.jsp?id=2cc5f470-bff9-4d03-8ff4-a50cda347dab&pi=f49d49d5-85a3-4674-82e3-a471e17b0322" title="0;" byline="0;" portrait="0;" width="624" height="380" frameborder="0"></iframe>
+
+<p>
+  - tobben
+</p>
+
+<br /><br /><br />
+
+<h1 id="Martineaasen_Project">
+  The Martineåsen Project
+</h1>
+<div class="date">8-8-2014</div>
+
+<h3>The start of it</h3>
+<p>
+  I received a call recently, from the Geo-data department of the municipality.
+  They were developing some new housing in Martineåsen, and wondered if I could
+  print it for them, scale 1:2000. It turned out my dad had tipped them about my
+  RepRapping. I printed them a test piece and dad talked me into promising them
+  fifteen pieces of landscape prints,
+  each of them maximizing the print area of <a href="http://vitana.se/opr3d/doku.php?id=skrivare:gomle">Gomle</a>
+  (19 x 19 cm). I thought the project was total madness right from the beginning.
+  This would be an order of magnitude bigger than my most complicated print
+  thus far, and it was to be done with the most unstable printer I've ever built,
+  having access to two old laptops as my only computing power.
+</p>
+
+<h3>Creating a 3D model from contour lines</h3>
+<p>
+  I didn't have access to any licenced 3D software what so ever, so I tried various
+  free alternatives and started to have some limited success with Google SketchUp.
+  I won't go into details here, but it turned out that creating the surface was
+  really trivial (although computationally intensive). Looking around in the menus
+  I found <i>Draw->Sandbox->From Contours</i> which transformed my contour data
+  into a surface. Perfect.
+</p>
+
+  <figure>
+  <a href="./bilder/Martineaasen_surface.PNG"><img
+    src="./bilder/Martineaasen_surface_liten.PNG"
+    alt="DXF surfaced render"></a>
+  <figcaption>Surface created from the dxf file I got from the customer.</figcaption>
+  </figure>
+
+<p>
+  However, to create an stl, you need a watertight model, not just one surface,
+  so I needed to build walls and floor myself. Easy peasy was my first thought.
+  It took me five working days (well, most of the time I were just waiting for my
+  dads poor laptop to finish processing/rendering). I won't go into detail here,
+  but the solution involved <i>Simplify contours plugin, Projections plugin,
+    Selection toys</i> and <i>Intersecting surfaces</i>.
+  My recommendation is: don't ever try to process large map data files with
+  SketchUp and an old laptop. It doesn't work well.
+</p>
+
+  <figure>
+  <a href="./bilder/Intersecting_faces_Martineaasen.PNG"><img
+    src="./bilder/Intersecting_faces_Martineaasen_liten.PNG"
+    alt="Intersecting faces in SketchUp"></a>
+  <figcaption>Making walls and floor for my stl model of Martineåsen.</figcaption>
+  </figure>
+
+<h3>Everything crashes</h3>
+<p>
+  I managed to get out two pieces, looking roughly the same as the demo print.
+</p>
+
+  <figure>
+  <a href="./bilder/demo_print.JPG"><img
+    src="./bilder/demo_print_liten.JPG"
+    alt="demo print"></a>
+  <figcaption>The demo print that convinced the Geo-data department I could print
+  Martineåsen.</figcaption>
+  </figure>
+
+<p>
+  Then lightning struck and destroyed my FTDI-chip! Luckily, I had a new Melzi
+  circuit board lying around. I carefully moved all wires from the old Melzi to
+  the new Melzi, uploaded firmware to the new board and everything seemed jolly
+  good again. Then I suddenly lost contact. I unplugged and replugged the USB, and
+  guess what? My laptop processor was suddenly toast! My new circuit board transformed
+  my beloved laptop into a sad piece of molten plastic! Some of the following
+  debugging is described <a href="http://forums.reprap.org/read.php?13,386069">here</a>.
+  The mistake was my own. I had not attached the minus side of the 12 V power chord
+  tight enough.
+</p>
+
+<h3>Everything just works</h3>
+<p>
+  When the hiccups of my new board was ironed out, the following 13 pieces printed
+  more or less smoothly. Each peace took ca 12 hours to print, so my dad took the
+  time to learn how to make time-lapse videos while waiting. This is the next last
+  piece printing:
+</p>
+
+  <!--
+  <a href="https://www.youtube.com/watch?v=kFUj9GaLH48">Video: Del14</a>
+  -->
+  <iframe width="560" height="315" src="http://www.youtube.com/embed/kFUj9GaLH48?rel=0" frameborder="0" allowfullscreen></iframe>
+
+<p>
+  We also made a time-lapse of the mounting process:
+</p>
+
+  <!--
+  <a href="https://www.youtube.com/watch?v=pZAF2geRqx4">Video: byggeprosess</a>
+  -->
+  <iframe width="560" height="315" src="http://www.youtube.com/embed/pZAF2geRqx4?rel=0" frameborder="0" allowfullscreen></iframe>
+
+  <figure>
+  <a href="./bilder/Ludvigsen_3D-Printing.PNG"><img
+    src="./bilder/Ludvigsen_3D-Printing_liten.PNG"
+    alt="sign"></a>
+  <figcaption>The improvised logo we put on top of the lake (Farris) in the model.
+  Thanks to <a href="https://github.com/brad/text2surface">text2surface</a>
+  by polymaker for help with the text.</figcaption>
+  </figure>
+
+  <figure>
+  <a href="./bilder/model2.JPG"><img
+    src="./bilder/model2_liten.JPG"
+    alt="model"></a>
+  <figcaption>A view of the model from above.</figcaption>
+  </figure>
+
+  <figure>
+  <a href="./bilder/model.jpg"><img
+    src="./bilder/model_liten.jpg"
+    alt="model"></a>
+  <figcaption>A view of the model with the improvised logo in front.</figcaption>
+  </figure>
+
+  <figure>
+  <a href="./bilder/Meeting_customer.jpg"><img
+    src="./bilder/Meeting_customer_liten.jpg"
+    alt="Meeting customer"></a>
+  <figcaption>Delivering the model to the customer.</figcaption>
+  </figure>
+
+
+<p>
+  - tobben
+</p>
+
+<br /><br /><br />
+
+<h1 id="Hangprinter">
+  A Hanging RepRap
+</h1>
+<div class="date">15-5-2014</div>
+  <figure>
+  <a href="./bilder/absolute_first_sketch.png"><img
+    src="./bilder/absolute_first_sketch_liten.png"
+    alt="A hanging hotend"></a>
+  <figcaption>Sketch showing the basic layout of the hanging RepRap.</figcaption>
+  </figure>
+
+<p>
+  I've dreamt of a RepRap that uses ceiling and walls its frame for some time now.
+  It would use lines and spools instead of smooth rods, belts and linear bearings.
+  This blog sort some of my thoughts around it.
+</p>
+
+<h3>The idea</h3>
+<p>
+  The printer I dream of would be all in one hanging unit, interfacing with the
+  outside world only through filament (direct extrusion), hot end, power chord
+  and four lines. Microcontroller, stepper motors and extruder would all sit on the
+  hanging unit, so the room in which it operates wouldn't need to add any other
+  details than four anchor points.
+</p>
+
+<h3>Benefits</h3>
+<p>
+  <ul>
+    <li>No time spent building frame, except four anchor points.</li>
+    <li>Large print volumes.</li>
+    <li>Would require no desktop when idle, if it could retract itself up close to the
+    ceiling.</li>
+    <li>Cheap.</li>
+    <li>Few parts.</li>
+  </ul>
+</p>
+
+<h3>Difficulties</h3>
+
+<p>
+  <ul>
+    <li>Make firmware compensate for the unusual geometry.</li>
+    <li>Avoiding rotations.</li>
+    <li>Making anchor points.</li>
+  </ul>
+</p>
+
+<p>
+  The unusual geometry isn't actually that tricky to compensate for. We have four
+  lines, so every point in the print volume will have a corresponding tuple of
+  four line lengths. Converting from Cartesian xyz-coordinates to these tuples
+  of four line lengths is just a matter of using Pythagoras' theorem.
+</p>
+
+  <figure>
+  <a href="./bilder/geometry_2d.gif"><img
+    src="./bilder/geometry_2d_liten.gif"
+    alt="Geometry"></a>
+  <figcaption>Calculating the distance from anchor point 1 to the point (x',y')
+  with Pythagoras' theorem.</figcaption>
+  </figure>
+
+<p>
+  The issue of avoiding rotations is the one I fear the most. Maybe it is necessary
+  to hang the printer in 3 lines from the ceiling, and use 2 parallel lines to each
+  of the remaining anchor points, to make the printing unit stable enough. That
+  configuration is the one used by brandonheller's
+  <a href="http://designmakeshare.wordpress.com/2013/09/16/introducing-skydelta/">SkyDelta</a>.
+  The SkyDelta is by the way proof that a hot end can be given stable movement,
+  only by using lines.
+</p>
+
+<p>
+  Making anchor points is maybe the biggest no-selling argument for this type
+  of printer that I can see. While anchor points saves the desktop space, and
+  makes it possible for people in small apartments to have a dangling printer,
+  I suspect that many don't want to/can't screw that many holes in walls and
+  ceiling.
+</p>
+
+  <figure>
+  <a href="./bilder/early_proto.JPG"><img
+    src="./bilder/early_proto_liten.JPG"
+    alt="2d non-hanging printer"></a>
+  <figcaption>The first prototype of the hangprinter. Meant to only be able to print
+  in 2d. This is to be able to test if the geometry/firmware problem is as small as
+  I suspect while not having to worry about rotations.</figcaption>
+  </figure>
+
+<p>
+Please check out the <a href="http://forums.reprap.org/read.php?178,344022,345158#msg-345158">development thread</a> for comments on this :)
+</p>
+
+<p>
+  - tobben
+</p>
+
+<br /><br /><br />
+
+<h1 id="Second_Attempt_Grue">
+  Second Attempt at Printing the Grue
+</h1>
+<div class="date">22-4-2014</div>
+<p>
+  Made a second attempt at printing the Grue figure from the (really cool)
+  <a href="http://teslagrad.com/">Teslagrad game</a>. My last attempt was documented
+  <a href="#grue_take1">here</a>.
+</p>
+
+<p>
+  This time around, I decided to go for splitting the figure in several
+  planes parallel to the xy-plane and the yz-plane, and keep the auto-generated
+  support material setting in Slic3r.
+</p>
+
+<p>
+  To do the splitting, I used Netfabb Basic's really nice splitting interface. I prefer
+  simple, light and open software, so I tried splitting with OpenSCAD and Slic3r first,
+  but the file were simply too messy and I didn't manage to repair it. I have to say
+  Netfabb is pretty good at handling stls with intersections, holes, flipped normals and
+  that kind of stuff. Anyways, here's how the model was split:
+</p>
+
+  <figure>
+  <a href="./bilder/pride_grue.PNG"><img
+    src="./bilder/pride_grue_liten.PNG"
+    alt="A proud Grue"></a>
+  <figcaption>The different pieces of the print in different colors.</figcaption>
+  </figure>
+
+<p>
+  The print took ca 10 hours, glueing it together took ca 30 minutes and removing
+  support material never actually finished. Unfortunately, much of the support material was impossible to
+  remove, and some of the removed material took with it pieces of the actual figure.
+</p>
+
+  <figure>
+  <a href="./bilder/printed_pride_grue.JPG"><img
+    src="./bilder/printed_pride_grue_liten.JPG"
+    alt="A proud Grue"></a>
+  <figcaption>The finished Grue, most of the support structures removed and pieces
+  glued together.</figcaption>
+  </figure>
+<p>
+  There are two aesthetic issues with it that really bothers me. First, the
+  clued contact surfaces did not fit each other perfectly. The clearly
+  visible lines you see in the picture was as good as it could get. I suspect this
+  mismatch to be due to a slack in the y-belt. The printer I used was
+  <a href="http://vitana.se/opr3d/doku.php?id=skrivare:gomle">the Mendel</a>
+  I built for my Mum and Dad last summer, and it hasn't
+  really received the love it deserves. The second issue is all the dots of
+  support structure that has tainted the figure like warts.
+  PLA support structures for PLA figures really sucks. I hope this is the last
+  time I try that.
+</p>
+
+  <figure>
+  <a href="./bilder/printed_grue.JPG"><img
+    src="./bilder/printed_grue_liten.JPG"
+    alt="A gruesom Grue"></a>
+  <figcaption>The Grue lives in the Dark. It eats small children.
+  It can smell them through any wall. It eats them in a single bite. The child is dead
+  within a fraction of a second. Fortunately the kid has infinitely many lives. Hope you
+  remembered to save game.</figcaption>
+  </figure>
+
+<p>
+  I will probably try to print this again, since I can't stop bothering about those
+  little issues...
+</p>
+
+<p>
+  - tobben
+</p>
+
+<br /><br /><br />
+
+<h1 id="PISF">
+  What Print Issue Solution Filter Is and What It Does
+</h1>
+<div class="date">19-4-2014</div>
+<p>
+  Hi there, Internet! The past week, I've gotten some feedback that people (even
+  really technically talented ones) don't understand what
+  <a href="http://tobbelobb.webfactional.com/print-issue-solution-filter">the web app</a>
+  is and what
+  it does, so I thought I might try to give an explanation.
+</p>
+
+<p>
+  I'm considering renaming it to something like <i>Mini Article Structuring and Searching App</i>
+  or something, because there's nothing in the Lisp code that's specific to RepRap.
+  The users decide what kind of knowledge is structured with it, but anyway let's use
+  RepRap knowledge as our driving example.
+</p>
+
+<h3>Defining the Mini Article</h3>
+
+<p>
+  The first thing PISF does to structure knowledge, is defining a short but strict template,
+  called a Mini Article, that has seven things:
+  <ul>
+    <li> A title </li>
+    <li> A written description of a problem </li>
+    <li> A picture explaining the problem </li>
+    <li> A caption to that picture </li>
+    <li> A written description of a solution to the problem </li>
+    <li> A picture describing the solution further </li>
+    <li> A caption to that picture</li>
+  </ul>
+</p>
+
+  <figure>
+  <a href="./bilder/ma_template.png"><img
+    src="./bilder/ma_template_liten.png"
+    alt="A short mini article"></a>
+  <figcaption>A short but complete mini article.</figcaption>
+  </figure>
+
+<p>
+  By reading a lot of RepRap blogs, I have observed that many of us perform small
+  pieces of pretty well structured research. Often the aim of our little experiments
+  is optimizing a small detail of our 3d printing setup. My thought was that the
+  Mini Article template could serve a similar role as report templates does in the
+  academical world.
+</p>
+
+<h3>Sorting Mini Articles</h3>
+
+<p>
+  PISF stores these Mini Articles as seven nodes in a graph database. The layout
+  looks like:
+</p>
+
+  <figure>
+  <a href="./bilder/ma_flower.png"><img
+    src="./bilder/ma_flower.png"
+    alt="A mini article in a graph database"></a>
+  <figcaption>The layout of the Mini Article in the graph database. The purple node carries the Mini Article itself, the yellow nodes represent paragraphs and the blue ones represent pictures/figures.</figcaption>
+  </figure>
+
+<p>
+  The paragraph nodes and the picture nodes may have relations that point into
+  another set of nodes, called the "Category Bush". It looks like:
+</p>
+
+  <figure>
+  <a href="./bilder/category_bush.png"><img
+    src="./bilder/category_bush_liten.png"
+    alt="A category bush in a graph database"></a>
+  <figcaption>The layout of the category bush, that works like a tag hierarchy. It's not
+  a tree because it may contain loops. The only thing not allowed is IS-relations
+  going both ways between two nodes.</figcaption>
+  </figure>
+
+<h3>Searching Mini Articles</h3>
+
+Arriving on the <a href="http://tobbelobb.webfactional.com/print-issue-solution-filter">PISF homepage</a>,
+the user is presented with a set of checkboxes.
+The names of these are loaded directly out of the Category Bush by starting in the
+Reprap node (the green one in the figure above) and traversing one step outwards
+via IS-relations. When the user checks a box and presses <i>filter</i>,
+checkbox-structure is rebuilt, with the node corresponding to the checked boxes
+treated like the Reprap node was before, in its own hierarchy of sub-checkboxes.
+It looks like this:
+
+  <figure>
+  <a href="./bilder/checkbox_structure.png"><img
+    src="./bilder/checkbox_structure_liten.png"
+    alt="Checkbox structure"></a>
+  <figcaption>The hierarchical checkbox structure is drawn based on user input and
+  the category bush. This user is interested in Mini Articles about the model Huxley.</figcaption>
+  </figure>
+
+<p>
+  Back in the graph database, PISF will find the paths of the following pattern:
+</p>
+
+  <figure>
+  <a href="./bilder/hux_search.png"><img
+    src="./bilder/hux_search_liten.png"
+    alt="Searching for Hux in PISF"></a>
+  <figcaption>Any Mini articles with the following pattern of relations will be found
+  by PISF when searching for Model-related or Huxley-related articles. If the Huxley node had any
+  subcategory nodes, the Mini Articles with relations to them would also be counted
+  as relevant, so a Mini Article with relations more specific categories will
+  more often be found relevant by PISF.</figcaption>
+  </figure>
+
+<p>
+  The user that just pressed <i>filter</i> will be presented with an updated list
+  of Mini Articles. They are first sorted by relevance and then by number of votes. Relevance is found by
+  counting the number of paths from the chosen categories to the respective Mini Article.
+  That count is including the paths that go via sub-categories, but excluding the paths containing a
+  loop in the category bush. It looks like this:
+</p>
+
+  <figure>
+  <a href="./bilder/mathclist.png"><img
+    src="./bilder/matchlist_liten.png"
+    alt="List of Mini Article matches"></a>
+  <figcaption>List of found Mini Articles about <i>Hardware</i> found by PISF and
+  presented to user.</figcaption>
+  </figure>
+
+<p>
+  That's it for today. I'll come back to this pisf-thing when I've tried to actually use it ;)
+</p>
+
+
+<p>
+  - tobben
+</p>
+
+<br /><br /><br />
+
+<h1 id="PISF_Online_Sort_Of">
+  We're online! Sort of...
+</h1>
+<div class="date">14-4-2014</div>
+<p>
+  I just got my little web app, PISF, up and running on a server. Go check it out
+  <a href="http://tobbelobb.webfactional.com/print-issue-solution-filter">here</a>!
+  As you will see, it only has three articles as for now. Making it available
+  to everyone was the last point on my prove-the-concept list. From here on I will
+  seek input, inspiration, ideas from you guys. If people like it, maybe we can develop
+  it further together.
+</p>
+
+<p>
+  Web programming with common lisp has mostly been pure amusement. The few daunting moments
+  I've had has mostly been caused by bugs in
+  <a href="http://www.vim.org/scripts/script.php?script_id=2531">Slimv</a>
+  (once it actually refused to compile my code because of a parenthesis inside a comment!
+  I feel like a bad person for not bug reporting that properly. Sorry), and other
+  external programs.
+</p>
+
+<p>
+  If you enjoy reading lisp source-code, here are a list of my favourite parts
+  (see the <a href="https://github.com/tobbelobb/pisf">github repo</a> for the code):
+  <ul>
+    <li>The macro <code>bind-cypher-returns-and-loop</code> found around line 50 in
+      <code>pisf-backend/pisf-backend.lisp</code>.</li>
+    <li>The package-wise logging system defined in the three <code>logging.lisp</code> files.
+      (Thanks to a git-repo I stumbled upon and stole this idea from. I honestly can't find it again.)</li>
+    <li>The macro <code>name-conventionize</code> found around line 30 in
+      <code>pisf-backend/pisf-backend.lisp</code></li>
+    <li>Discovering that a triangular pattern in a graph-database lets me
+      reuse nodes while avoiding confusion. Look at pictures in <code>pisf-backend/screenshots</code>
+      to see how the mini articles are laid out in the graph database.
+      The Cypher (database) queries needed to maintain this structure turned
+      out to be monsters, but that's another story.</li>
+    <li>Discovering that I did not have to worry about loops in the tag/category
+      hierarchy, because Neo4j will stop matching if it finds the same relationship twice
+      in a single path during a single search.</li>
+    <li>Discovering that I could sort based on relevance and based on votes, just by
+      adding <code>ORDER BY relevance DESC, votes DESC</code> in line 187 in
+      <code>pisf.lisp</code>.</li>
+    <li>Discovering that I could build a Cypher query in a loop quite easily.
+      This is used around line 510 in <code>pisf.lisp</code>, merely as a way of getting
+      around having to pass node-id's from one page to another, but amusing nonetheless.</li>
+    <li>A lot of <a href="http://weitz.de">Edi Weitz</a>' work, that I've taken huge advantage of,
+      is beautiful. <code>cl-ppcre:do-matches</code> made the job of writing
+      <code>escape-except-links</code> (line 370 in <code>pisf.lisp</code>) so easy,
+      I felt like I was cheating.</li>
+  </ul>
+  Obviously there are plenty of flaws in the code too, but I don't want to start
+  listing those in this blog post. Those are the worries of tomorrow.
+</p>
+
+<p>
+  Getting Hunchentoot to actually serve outside my local network was a lot more
+  tedious than I'd expected. In the end, I found a wonderful
+  <a href="https://thephoeron.wordpress.com/2012/11/22/tutorial-running-hunchentoot-on-webfaction/">tutorial</a>
+  that led me to <a href="https://www.webfaction.com/">webfaction</a>'s hosting service.
+  My experience with them so far has been as awesome as they promise in their ads.
+  Through ssh'ing my hired server, I've been able to
+  <ul>
+    <li>Compile Clisp from source with already installed <code>make</code></li>
+    <li>Compile SBCL from source with newly compiled Clisp</li>
+    <li>Download and install Quicklisp</li>
+    <li>Download Oracle JDK 8 and Neo4j and run them</li>
+  </ul>
+  In addition, opening a port for Hunchentoot to serve through was a breeze using
+  the webfaction web interface, after a quick look at the documentation.
+</p>
+
+<p>
+  - tobben
+</p>
+
+<br /><br /><br />
+
+<h1 id="Presenting_PISF_Again">
+  Presenting the Print Issue Solution Filter. Again
+</h1>
+<div class="date">4-4-2014</div>
+<p>
+  I've been working a this idea of a web app that filters small articles with RepRap know-how for a few weeks now.
+  The idea is to let people find specialized information fast, without typing.
+</p>
+
+  <figure>
+  <a href="./bilder/pisf_front_filter.png"><img
+    src="./bilder/pisf_front_filter_liten.png"
+    alt="Print Issue Solution Filter"></a>
+  <figcaption>A screenshot from the Print Issue Solution Filter frontpage. Check the boxes with things you think are relevant to your problem and hit filter.</figcaption>
+  </figure>
+
+<p>
+  Take a look at this <a href="https://www.youtube.com/watch?v=h9GbKjH0NSg">youtube clip</a>.
+  to see it in action. It also have got a <a href="https://github.com/tobbelobb/pisf">github repo</a>.
+  Hope you like it. I'll write more about it later.
+</p>
+
+<p>
+  - tobben
+</p>
+
+<br /><br /><br />
+
+<h1 id="Soldering_Small_Stuff">
+  Small soldering with cheap equipment
+</h1>
+<div class="date">29-3-2014</div>
+<p>
+  I recently had the choice between doing a kamikaze soldering or buying another new
+  Melzi board, after one of the small people in the family happened to rip the
+  USB connector loose. Of course I chose the kamikaze soldering. I thought it
+  should be possible because the data transferring connectors had all broke in the
+  soldered points, so only solder was left on the PCB and all the data transferring
+  legs were intact. I only had to apply heat and pressure. The preparation was
+  in three steps:
+</p>
+<ul>
+  <li>Make the soldering irons tip completely flat with a file</li>
+  <li>Look really closely at the points to be soldered</li>
+  <li>Do it several times with a cold soldering iron to rehearse</li>
+</ul>
+<p>
+I heated all the connectors simultaneously with the flat tip, for maybe one half
+second, and it was done. Three of the four non-transferring legs (the corners)
+had taken all the
+solder with them when they broke, so I used two component epoxy glue to attach
+them firmly to the PCB. The result looked like this
+</p>
+  <figure>
+  <a href="./bilder/usb_front.JPG"><img
+    src="./bilder/usb_front_liten.JPG"
+    alt="usb front Melzi"></a>
+  <figcaption>A view of the repaired USB port of my Melzi board from the front.</figcaption>
+  </figure>
+
+  <figure>
+  <a href="./bilder/usb_top.JPG"><img
+    src="./bilder/usb_top_liten.JPG"
+    alt="usb top Melzi"></a>
+  <figcaption>A view of the repaired USB port of my Melzi board from the top.</figcaption>
+  </figure>
+  To save myself from having to do this too often, I now always zip tie my USB cables:
+
+  <figure>
+  <a href="./bilder/usb_zip.JPG"><img
+    src="./bilder/usb_zip_liten.JPG"
+    alt="zip tied usb Melzi"></a>
+  <figcaption>My USB cable zip tied to my Mendel.</figcaption>
+  </figure>
+<p>
+  When building this same Mendel this summer, I had an even worse soldering problem.
+  Merlin mystically reported the z-home switch to always be open.
+  Investigations with a multimeter and with the help of the
+  <a href="http://reprap.org/wiki/Melzi">datasheet</a>
+  showed that the problem was a bad solder on
+  one of the processors legs! Luckily, this was one of the corner legs, so it
+  was one of the most accessible ones. My friend <a href="http://www.dm9.se/">sluggo</a>
+  taught me to file the soldering iron to a sharp point, like this
+</p>
+  <figure>
+  <a href="./bilder/spiss_loddepenn.JPG"><img
+    src="./bilder/spiss_loddepenn_liten.JPG"
+    alt="zip tied usb Melzi"></a>
+  <figcaption>Soldering iron with sharp tip.</figcaption>
+  </figure>
+<p>
+ To avoid having to bend the processor leg, I wetted the tip with a minimal amount
+ of solder that I scraped onto the processor leg, not waiting for the solder
+ on the PCB to actually melt. This was the result
+ </p>
+  <figure id="kamikaze">
+  <a href="./bilder/kamikazeloedning.jpg"><img
+    src="./bilder/kamikazeloedning_liten.jpg"
+    alt="Soldered ATmega1284P"></a>
+  <figcaption>An attempt to photo the soldered leg of the ATmega1284P. Looking closely
+  at the large version (click the picture), you can see that the reflections from
+  the solder on the bottom leftmost leg is a little distorted.</figcaption>
+  </figure>
+<p>
+  It worked perfectly ever after. In general my open hardware stuff
+  break more often than my other electronic hardware, but when it does it's more
+  often possible to repair because datasheets, code, explanations etcetera are
+  available. Occasionally I even learn something, and that has value too =)
+</p>
+<p>
+  - tobben
+</p>
+
+<br /><br /><br />
+
+<h1 id="Rope_Ring">
+  Making a Ring with a Rope
+</h1>
+<div class="date">20-3-2014</div>
+<p>
+  My girlfriend and I are getting married this summer, and we thought it would be
+  nice to have the ring custom made, so I made a little sketch of our idea in OpenSCAD.
+  The sea is important to us, so we wanted to
+  symbolize that with a rope that runs in a track in the middle of an otherwise
+  plain wedding ring.
+</p>
+<p>
+  The plain ring with the track was really easy to get into OpenSCAD, because
+  of the <a href="http://en.wikibooks.org/wiki/OpenSCAD_User_Manual/2D_to_3D_Extrusion#Rotate_Extrude"><code>rotate_extrude</code></a> function.
+</p>
+  <figure>
+  <a href="./bilder/todimensjonal.PNG"><img
+    src="./bilder/todimensjonal_liten.PNG"
+    alt="2d drwawing"></a>
+  <figcaption>The 2d outline of the plain ring with a track, that got rotated
+  into a ring by <code>rotate_extrude</code>. Thanks to jokern for suggestions
+  on how to model this.</figcaption>
+  </figure>
+<p>
+  Cadding the rope was a bit trickier, because <code>rotate_extrude</code>
+  doesn't take any twist-parameter or anything like that. This turned out to be
+  a frustrating limitation, so I decided to try out
+  <a href="http://openjscad.org/">OpenJSCAD</a> instead. To my delight, I found
+  that it had a method called <code>solidFromSlices</code> that seemed to
+  suit my needs.
+<p>
+  <figure>
+  <a href="./bilder/openjscad.PNG"><img
+    src="./bilder/openjscad_liten.PNG"
+    alt="Rope ring CAD"></a>
+  <figcaption>A rope-ring cadded with OpenJSCAD and the method
+  <code>solidFromSlices</code>.</figcaption>
+  </figure>
+<p>
+  Unfortunately, <code>solidFromSlices</code> doesn't automatically detect that
+  it has created a loop (OpenJSCAD maybe has other functions for that, I didn't
+  get the complete overview), so the generated stl gets its "start-wall"
+  (start of the rotation) and "end wall" intersecting inside.
+</p>
+  <figure>
+  <a href="./bilder/netfabb_detect.PNG"><img
+    src="./bilder/netfabb_detect_liten.PNG"
+    alt="Rope ring CAD"></a>
+  <figcaption>Detecting self intersections with Netfabb Basic.</figcaption>
+  </figure>
+<p>
+  These self-intersecting surfaces made OpenSCAD refuse to <code>import</code>
+  the rope-ring from OpenJSCAD. Oh no! :-O Fortunately, the intersecting
+  surfaces had one special attribute that made them easily removable: They
+  were all lying flat in the xy-plane. I made an ASCII-version of the stl,
+  opened it with Gvim, and found several surfaces with normals exactly along
+  the z-axis
+</p>
+  <figure>
+  <a href="./bilder/facets_to_remove3.PNG"><img
+    src="./bilder/facets_to_remove3_liten.PNG"
+    alt="Facets of stl to remove"></a>
+  <figcaption>Looking inside the stl of the rope ring, I found several
+  facets with normal along the z-axis. Some of them had a
+  <code>facet normal 0 0 1</code> and some of them deviated from that with
+  a number of order -16. The last line in the picture shows how to search for
+  these facets with Gvim.</figcaption>
+  </figure>
+<p>
+  With all the intersecting facets removed, importing worked like a charm again.
+</p>
+  <figure>
+  <a href="./bilder/Ring_v1.3.PNG"><img
+    src="./bilder/Ring_v1.3_liten.PNG"
+    alt="Ring with rope"></a>
+  <figcaption>A render of the first ring that got printed. Lot of details
+  will probably be changed before the wedding though.</figcaption>
+  </figure>
+
+  <figure>
+  <a href="./bilder/during_print.JPG"><img
+    src="./bilder/during_print_liten.JPG"
+    alt="Ring with rope"></a>
+  <figcaption>The first printed version of the ring, scaled up 300%, during
+  print.</figcaption>
+  </figure>
+<p>
+  The files I used for this project (included the OpenJSCAD code) can he found
+  <a href="https://github.com/tobbelobb/ropeRing">here</a>. Hope you guys enjoyed.
+</p>
+
+<p>
+  - tobben
+</p>
+<br /><br /><br />
+
+<h1 id="Reliable_Stick">
+  Making PLA prints stick reliably
+</h1>
+<div class="date">14-3-2014</div>
+<p>
+  I recently tried out a trick I learned from
+  <a href="http://numbersixreprap.blogspot.se/2012/07/pva-coated-print-bed-experiment.html">NumberSix's 3D printing blog</a> and <a href="http://richrap.blogspot.se/2012/06/more-scrap-art-gearboxes-and-panelmax.html">Richrap's blog</a>
+  about applying a layer of diluted PVA a based glue to the kapton tape heat bed, to make PLA stick
+  better. One part glue and nine parts water was the first I tried, and it did the
+  trick perfectly for me. After having had problems with getting my glossy orange PLA to stick
+  at all, big prints like this is now reliable like a walk in the forest
+</p>
+  <figure>
+  <a href="./bilder/stor_print.JPG"><img
+    src="./bilder/stor_print_liten.JPG"
+    alt="Large print surface"></a>
+  <figcaption>Big first layer of PLA on an PVA-prepped heat bed. Notice how
+  the kapton tape is slightly matte/white because of the thin glue layer. The
+  underside of the print gets a similar matte surface.</figcaption>
+  </figure>
+<p>
+  As well as keeping large prints from not warping, it lets even the tiniest
+  dots in a first layer stay in place. I tried two different glues that both worked fine.
+  Here is one of them:
+</p>
+  <figure>
+  <a href="./bilder/trelim.JPG"><img
+    src="./bilder/trelim_liten.JPG"
+    alt="PVC based glue"></a>
+  <figcaption>A bottle of one of the PVC glues I tried to prepp my
+  print surface.</figcaption>
+  </figure>
+<p>
+  This method may make your prints stick too hard to
+  your printbed. Start with small amounts. Also,  first layer adhesion
+  depends on a lot of things, and is being eagerly discussed on the
+  <a href="http://forums.reprap.org/read.php?1,146446,146868">reprap forums</a>, so
+  not everything will work for everyone, but this is my go to solution for now =)
+</p>
+
+<p>
+  - tobben
+</p>
+<br /><br /><br />
+
+<h1 id="Workflow">
+  A Very Short Introduction to Basic RepRap Workflow
+</h1>
+<div class="date">6-3-2014</div>
+<p>
+  This is for you who somehow have gotten you a ready-to-use RepRap, but don't
+  have any previous experience with either RepRap, 3d-printing or CAD software.
+  We're going to print a calibration cube, and I'm just going to assume that
+  everything goes smooth. Billions of things that can go wrong, but I will avoid
+  mentioning too much about them.
+  The programs chosen are just the ones I use. They're not good, nor bad. They
+  just are what they are.
+</p>
+<p>
+  Start with downloading and installing <a href="http://www.openscad.org/">OpenSCAD</a>.
+  When installed and executed, it should present to you a window like this:
+</p>
+  <figure>
+  <a href="./bilder/openscad.png"><img
+    src="./bilder/openscad_liten.png"
+    alt="OpenSCAD start screen"></a>
+  <figcaption>A screenshot from OpenSCAD taken directly after it was started.</figcaption>
+  </figure>
+<p>
+  We want our calibration cube to be 20 mm wide, 20 mm deep and 10 mm high, so we
+  enter <code>cube([20,20,10]);</code> into the text editor in OpenSCAD, and
+  compile and render it. The "Compile and Render" is done either by pressing F6,
+  or by finding <em>Design > Compile and Render (CGAL)</em> in the menus.
+  Your OpenSCAD should now look like this:
+</p>
+  <figure>
+  <a href="./bilder/openscad2.png"><img
+    src="./bilder/openscad2_liten.png"
+    alt="OpenSCAD start screen"></a>
+  <figcaption>A screenshot from OpenSCAD with a compiled and rendered calibration cube.</figcaption>
+  </figure>
+<p>
+  We now want
+  to export our model to a format that the next program in our tool chain can use.
+  We choose the most widely used format, which is called .stl. You export it from
+  OpenSCAD by finding <em>Design > Export as STL...</em> in the menus:
+</p>
+  <figure>
+  <a href="./bilder/openscad3.png"><img
+    src="./bilder/openscad3_liten.png"
+    alt="OpenSCAD start screen"></a>
+  <figcaption>The menu in OpenSCAD that lets you export to the stl-format.</figcaption>
+  </figure>
+<p>
+  The modelling is now finished, and we start to prepare the model for the printer.
+  Download and install <a href="http://slic3r.org/">Slic3r</a>.
+  When installed and executed, it should present to you a window like this:
+</p>
+  <figure>
+  <a href="./bilder/slic3r.png"><img
+    src="./bilder/slic3r_liten.png"
+    alt="Slic3r start screen"></a>
+  <figcaption>A screenshot from Slic3r taken directly after it was started.</figcaption>
+  </figure>
+<p>
+  To import the calibration cube, press <strong>Add...</strong> button.
+  When the cube is imported, it looks like this:
+</p>
+  <figure>
+  <a href="./bilder/slic3r2.png"><img
+    src="./bilder/slic3r2_liten.png"
+    alt="Slic3r imported stl"></a>
+  <figcaption>A screenshot from Slic3r taken after a cube was imported.</figcaption>
+  </figure>
+<p>
+  Slic3r is a program with many options. We're just going to look at ca five of them.
+  First, we want to assure that the cube is printed as a solid cube. Click
+  the tab called <em>Print Settings</em> and in the menu on the left click
+  <em>Infill</em>. We want to set the <em>Fill density</em> to 1:
+</p>
+  <figure>
+  <a href="./bilder/slic3r3.png"><img
+    src="./bilder/slic3r3_liten.png"
+    alt="Slic3r infill options"></a>
+  <figcaption>The first option we want to change in Slic3r is the fill density.
+  To prepare printing a solid figure, set it to 1.</figcaption>
+  </figure>
+<p>
+  Click "Save" (the little blue icon) and note the name of your Printer Settings config
+  (To the left of the blue icon). The next
+  option we're going to change is in the <em>Filament Settings</em> tab.
+  The default value for <em>Diameter</em> is 3. Measure the diameter of your
+  filament with a caliper, and put the measured value into the <em>Diameter</em> field.
+</p>
+  <figure>
+  <a href="./bilder/slic3r4.png"><img
+    src="./bilder/slic3r4_liten.png"
+    alt="Slic3r filament"></a>
+  <figcaption>Telling Slic3r that the filament I'm going to print with
+  has a 1.75 mm diameter.</figcaption>
+  </figure>
+<p>
+  Again, click "Save" and note the name of your Filament Settings config. Note that
+  the default extruder temperature of 200 degrees Celsius works well if your
+  filament is made out of PLA. If you're not sure what kind of filament you have,
+  check it up first.
+</p>
+<p>
+  Also, if you don't have a heatbed, put
+  the bed temperature of 0 degrees Celsius, like shown in the figure. If you have
+  a heatbed, and will be printing with PLA, anywhere between 40 and 60 degrees Celsius
+  is a good starting point for experimentation.
+</p>
+<p>
+  Next, we're going to look at <em>Printer Settings</em>. Measure the bed size of
+  your printer. Feed the measured values it into the <em>Bed Size</em> fields,
+  and put the values divided by 2 into the <em>Print Center</em> fields.
+</p>
+<p>
+  The last value to check/update is in <em>Printer Settings, Extruder 1, Nozzle Diameter</em>.
+  If you don't know your nozzle diameter, check it up and feed in the correct value.
+</p>
+  <figure>
+  <a href="./bilder/slic3r5.png"><img
+    src="./bilder/slic3r5_liten.png"
+    alt="Slic3r Printer Settings"></a>
+  <figcaption>Telling Slic3r that my RepRap's nozzle has a 0.5 mm diameter.</figcaption>
+  </figure>
+<p>
+  Save your printer settings and return to the <em>Plater</em> tab.
+  Assure that the names of the
+  Print Settings config, Filament config and Printer Config
+  are the same ones as the ones you saved to earlier.
+  Next, press the <strong>Export G-code...</strong> button and save the .gcode file
+  somewhere you will find it later on. You have now created the actual data that
+  will be sent to your RepRap! The next step is learning how to send it.
+</p>
+<p>
+  Download and install <a href="https://github.com/kliment/Printrun">Printrun/Pronterface</a>.
+  If you're on Windows, maybe <a href="http://www.nextdayreprap.co.uk/pronterface-installation-reprap-prusa-mendel-computer-setup/">this link</a>
+  can be of help.
+  When installed and executed, it should present to you a window similar to this:
+</p>
+  <figure>
+  <a href="./bilder/pronterface.png"><img
+    src="./bilder/pronterface_liten.png"
+    alt="Pronterface"></a>
+  <figcaption>The interface given to you by the Pronterface program.</figcaption>
+  </figure>
+<p>
+  Click the <strong>connect</strong> button. Hopefully the printer will respond
+  with "Printer is now online." or something similar. On Windows machines, it will
+  probably not. At least on W7 and older, you will need to install drivers
+  to communicate with the printer.
+</p>
+<p>
+  When the printer is connected, we want to load our gcode. Press
+  <strong>Load file</strong> and select your file. Pronterface should now look
+  something like this:
+</p>
+  <figure>
+  <a href="./bilder/pronterface2.png"><img
+    src="./bilder/pronterface2_liten.png"
+    alt="Pronterface"></a>
+  <figcaption>Pronterface with calibration cube loaded.</figcaption>
+  </figure>
+<p>
+  If you've come all the way here, you're now ready to press <strong>print</strong>.
+  Your printer should respond by starting to heat up its hot end and start to
+  print the first layer within a few minutes. The print will probably have an awful
+  lot of problems, depending on how "ready-to-use" your printer really was.
+</p>
+<p>
+  I would estimate a less than 1 % chance that the info in this post makes a total
+  newbie able to print him/her-self a cube. You will probably need some more
+  specialized info to get all the details right, but I hope this post has enabled you to ask the right
+  questions and/or trump your way through some of the loops without noticing
+  the potential pitfalls.
+</p>
+
+<p>
+  - tobben
+</p>
+<p>
+  PS! The manual for OpenSCAD is found <a href="https://en.wikibooks.org/wiki/OpenSCAD_User_Manual">here</a>.
+</p>
+<br /><br /><br />
+
+<h1 id="Litophanes">
+  Printing litophanes
+</h1>
+<div class="date">28-2-2014</div>
+<p>
+  I read Peter Blacker's excellent
+  <a href="http://www.reprappro.com/creating-lithophanes-guest-blog/">blog post</a>
+  about making lithophanes with RepRap recently,
+  and was inspired to print a couple for my parents.
+  I first found a nice picture of my Mom, and scaled it down to 300x200 pixels
+  to make it easier to handle. I then used <a href="http://processing.org/">processing</a>,
+  the
+  <a href="http://workshop.evolutionzone.com/2011/04/06/code-modelbuilder-library-public-release/">Model builder library</a>
+  created by Marius Watz and a
+  <a href="https://github.com/amandaghassaei/Lithograph3DPrint">sketch</a> created
+  by Amanda Ghassaei. Her <a href="http://www.instructables.com/id/3D-Printed-Photograph/">instructable</a>
+  contains details about installing the library and using the script.
+</p>
+<p>
+  I put the file <code>Mom.JPG</code> in the same folder as the sketch and opened the sketch in
+  Processing. I followed Peter Blacker's advice and set <code>zDim</code> to 2, so I got
+  20 steps from white to black when printing at 0.1 mm layer height.
+</p>
+  <figure>
+  <a href="./bilder/processing.png">
+    <img
+    src="./bilder/processing.png"
+    alt="Screenshot of Processing">
+  </a>
+  <figcaption>The settings I fiddled with in Amanda Ghassaei's sketch. widthDim is
+  interpreted as millimeters by Slic3r (he stl format don't carry information about units).</figcaption>
+  </figure>
+<p>
+  I also gave the tip about cropping pictures and putting <code>thickness</code> to 0
+  a go. The result was, as expected a very slim background, showing up as
+  "snow" in Meshlab, like on an old TV without a signal
+</p>
+  <figure>
+  <a href="./bilder/mamma_pappa_flimsy.png">
+    <img
+    src="./bilder/mamma_pappa_flimsy_liten.png"
+    alt="Screenshot of Processing">
+  </a>
+  <figcaption>An stl of my parents with a very thin background.</figcaption>
+  </figure>
+<p>
+  The results looked like this
+</p>
+  <figure>
+  <a href="./bilder/mamma_pappa_lith.JPG">
+    <img
+    src="./bilder/mamma_pappa_lith_liten.JPG"
+    alt="Reprapped litophanes">
+  </a>
+  <figcaption>Two pink litophanes of my parents. If you click it and look closely
+  you see that dad's shirt was so light it resulted in a hole near his tie.
+  The "noise" around Mum on the left picture is supposed to depict real snow.</figcaption>
+  </figure>
+<p>
+  Notice that the left litophane looks slightly more detailed than the right one?
+  The right one was actually made with more pixels per mm (500 pixels wide), and
+  had the same number of layers from white to black (20 x 0.1 mm).
+  I think the reason for the difference in detail if that when I sliced
+  the right one I was using "wipe on retraction", whereas when slicing the
+  left one, I did not. Z-lift was used on both.
+</p>
+<p>
+  Before slicing litophanes of pictures with some more important parts (like human faces),
+  it can increase slicing speed to use the
+  <a href="#reduce_faces_tip">reduce faces tip</a> on the unimportant parts.
+  Mark the unimportant vertices before making the reduction.
+</p>
+  <figure>
+  <a href="./bilder/maja_simpl.png">
+    <img
+    src="./bilder/maja_simpl_liten.png"
+    alt="Screenshot from Meshlab">
+  </a>
+  <figcaption>A simplified stl of a face. Notice how the "ropes" hanging down on the
+  right has much less detail than the face.</figcaption>
+  </figure>
+<p>
+  This one came out pretty nice, but shows signs of drooling
+</p>
+  <figure>
+  <a href="./bilder/maja_lith.JPG">
+    <img
+    src="./bilder/maja_lith_liten.JPG"
+    alt="Reprapped litophane">
+  </a>
+  <figcaption>Litophane from selectively simplified stl. Some signs of drooling
+  near right corner of mouth, on left cheek and on right side of forehead.</figcaption>
+  </figure>
+<p>
+  Too bad that this process was so technically demanding. It would like to teach
+  my parents how to do it on their Reprap. Anyone has ideas about making it more
+  seamlessly? Installing Processing and having to install libraries
+  is a bit over their heads I think, but getting out too complicated stls causing
+  Slic3r to hang is probably what will make them give up.
+</p>
+
+<p>
+  - tobben
+</p>
+<br /><br /><br />
+
+<h1 id="grue_take1">
+  Printing a complicated figure with PLA
+</h1>
+<div class="date">21-2-2014</div>
+<p>
+  My brother and his indie game company recently released the awesomely awesome
+  game <a href="http://teslagrad.com/">Teslagrad</a>. To celebrate,
+  I wanted to print him a monster from the game. An artist at the company,
+  Aslak, sent me this impressive monster, called a Grue, in a CAD model:
+</p>
+  <figure>
+  <a href="./bilder/grue_meshlab.png">
+    <img
+    src="./bilder/grue_meshlab_liten.png"
+    alt="Screenshot of grue in Meshlab">
+  </a>
+    <figcaption>The stl-model of the Grue in Meshlab. It has 1871776 faces and 935678 vertices! </figcaption>
+  </figure>
+<p>
+  Even though I had a pretty snappy computer to work with, and the latest (1.0.0RC2)
+  version of Slic3r, slicing
+  hung time and time again. To make the slice possible at all, I did four things:
+</p>
+  <ul>
+    <li>Reduced the number of faces</li>
+    <li>Used the resolution option</li>
+    <li>Set "number of threads" to 1</li>
+    <li>Set support material pattern to "rectilinear grid" instead of default "honeycomb"</li>
+  </ul>
+<p id="reduce_faces_tip">
+  Thanks to <a href="http://slic3r.org/blog">the Slic3r blog</a> for the first three these tips!
+  Reducing the number of faces was mainly a matter of finding the option
+  <em>Filters > Remeshing, simplification and construction > Quadratic Edge Collapse Detection</em>
+  in Meshlab. More details about this is available
+  <a href="http://www.shapeways.com/tutorials/polygon_reduction_with_meshlab">here</a>,
+  but I found the number of faces to be the only important option.
+  I simplified down to 300k faces without any noticeable artifacts, except when
+  zooming in really close:
+</p>
+  <figure>
+  <a href="./bilder/grue_head_300.png">
+    <img
+    src="./bilder/grue_head_300_liten.png"
+    alt="Screenshot with 300k faces">
+  </a>
+  <figcaption>A zoomed in picture of the Grue's head, after the number of total
+  faces has been reduced to 300000. The resolution is still higher than
+  that of my 3d printers.</figcaption>
+  </figure>
+<p>
+  To clean it up, I ran it through a Netfabb repair (locally of course, don't want
+  to give away Aslak's work to the cloud service).
+  The resolution option was set to the length travelled my one microstep on
+  my x- and y-motors on my printer, and number of threads was set to 1, as mentioned
+  earlier. The figure still wasn't sliceable on my machine though.
+</p>
+<p>
+  The big
+  breakthrough, and also the big mistake I did then was to change the
+  support material pattern. Slicing went smooth as a baby's bottom, and I started
+  to print, but I had forgot to change the pattern spacing! It was left at the
+  default 2.5 mm spacing, which is ok for a honeycomb pattern, but far too little for
+  a rectilinear grid. The result was a nearly impermeable clump of
+  PLA. After about three hours of fighting away support material, this is was what came
+  out:
+</p>
+  <figure id="disaster">
+  <a href="./bilder/Grue.JPG">
+    <img
+    src="./bilder/Grue_liten.JPG"
+    alt="Screenshot with 300k faces">
+  </a>
+  <figcaption>The Grue, printed in white PLA and way too much support structures.</figcaption>
+  </figure>
+<p>
+  The conclusions after making this print were
+</p>
+  <ul>
+    <li>Use greater pattern spacing than 2.5 mm, when printing rectilinear grid support material.</li>
+    <li>Don't ever use lots of PLA as support material for a PLA print.</li>
+  </ul>
+<p>
+  - tobben
+</p>
+<br /><br /><br />
+
+<h1 id="Introducing_PISF">
+  Introducing the Print Issue Solution Filter web app
+</h1>
+<div class="date">15-2-2014</div>
+<p>
+  I got an idea the other day, when I was reading a
+  <a href="http://forums.reprap.org/read.php?262,178054">forum thread</a>.
+  The RepRap community definitely needs a more effective way to troubleshoot,
+  than asking random strangers on forums. There should exist a quick troubleshooting
+  tool for common RepRap problems on the internet.
+  After a short discussion with sluggo, we agreed that web apps that
+  apply filtering of a database, with live updating, is a very effective
+  user interface. In particular, we love the interface of shopping sites
+  like <a href="http://pricespy.co.uk/category.php?k=353">price spy</a>
+</p>
+  <figure>
+  <a href="./bilder/pricespy.png">
+    <img
+    src="./bilder/pricespy_liten.png"
+    alt="Screenshot from price spy">
+  </a>
+  <figcaption>A screenshot from a shopping sites interface (in Swedish...), letting the
+  user control a filter on a database of articles. </figcaption>
+  </figure>
+  <figure>
+  <a href="./bilder/pricespy2.png">
+    <img
+    src="./bilder/pricespy2_liten.png"
+    alt="Screenshot from price spy">
+  </a>
+  <figcaption>The list of articles, as they are presented to the user.
+  This list is updated every time the user changes the filtering criteria.</figcaption>
+  </figure>
+<p>
+  What I mean should be sorted and filtered is a list of mini-articles, like the
+  green rectangles on
+  <a href="http://www.reprap.org/wiki/Print_Troubleshooting_Pictorial_Guide">this wiki page</a>.
+  The wiki-page contains great information that the community should strive to make
+  even more accessible.
+</p>
+  <figure>
+  <a href="./bilder/ptpg.png">
+    <img
+    src="./bilder/ptpg_liten.png"
+    alt="Screenshot from print troubleshooting pictorial guide">
+  </a>
+  <figcaption>A wiki-page with a list of mini articles on specific print
+  issues and their solutions. Very visual, very informative.</figcaption>
+  </figure>
+<p>
+  I asked in the forum thread if someone knew how to implement a minimalist version
+  of such a web app, but didn't get any response, so I decided I had to set out to learn it
+  myself. I really love working with the three structure of Lips-code, so I decided
+  to take Adam Tornhill's great book
+  <a href="http://www.adampetersen.se/articles/lispweb.htm">Lisp for the Web</a>
+  as a starting point. This is where I am today, will be working further tomorrow:
+</p>
+  <figure>
+  <a href="./bilder/pisf1.png">
+    <img
+    src="./bilder/pisf1_liten.png"
+    alt="Screenshot from print issue solution filter front page">
+  </a>
+  <figcaption>The current state of the Print Issue Solution Filter
+  front page, (15-02-2013).</figcaption>
+  </figure>
+
+  <figure>
+  <a href="./bilder/pisf2.png">
+    <img
+    src="./bilder/pisf2_liten.png"
+    alt="Screenshot from print issue solution filter mini article">
+  </a>
+  <figcaption>The current state of the Print Issue Solution Filter
+  mini article layout, (15-02-2013).</figcaption>
+  </figure>
+
+  <figure>
+  <a href="./bilder/pisf3.png">
+    <img
+    src="./bilder/pisf3_liten.png"
+    alt="Screenshot from print issue solution filter mini article creation">
+  </a>
+  <figcaption>Users should be able to create mini articles, and vote up the good
+  ones. This screenshot shows the interface to create a mini article. (15-02-2013).</figcaption>
+  </figure>
+<p>
+  The code is currently 500 lines of messy lisp, but I plan putting it in a
+  shareable state as soon as possible.
+</p>
+
+<p>
+  - tobben
+</p>
+
+
+<br /><br /><br />
+
+<h1 id="Architrave_Profiles">
+  Making custom architrave profiles
+</h1>
+<div class="date">7-2-2014</div>
+<p>
+  My Mum got a stereo with a docking station that didn't fit her tablet for Christmas.
+  She still wanted somewhere to put the tablet close to the stereo, so my brother and I made this profile
+</p>
+  <figure>
+  <a href="./bilder/stereolist.JPG">
+    <img
+    src="./bilder/stereolist_liten.JPG"
+    alt="Custom architrave profile">
+  </a>
+    <figcaption>A custom made architrave profile. A little too wide in the bottom,
+    but it sits securely. </figcaption>
+  </figure>
+<p>
+  It was made by first taking a photo from the side of the ipod dock, and loading it into Inkscape.
+  Using the "draw straight lines"-tool (Shift+F6), a profile similar to this
+  (I didn't save the original) was drawn:
+</p>
+  <figure>
+  <a href="./bilder/Inkscapeprofile.png">
+    <img
+    src="./bilder/Inkscapeprofile_liten.png"
+    alt="Drawing profile">
+  </a>
+    <figcaption>Drawing the profile in Inkscape. </figcaption>
+  </figure>
+<p>
+  The background picture was deleted after this, and a OpenSCAD dxf
+  (thanks again to the <a href="http://www.thingiverse.com/thing:14221">plugin</a>) was exported.
+  The dxf was then <code>linear_extrude</code>d, and four cubes and one cylinder was cut out of it to
+  produce the following shape
+</p>
+  <figure>
+  <a href="./bilder/stereo_architrave.png">
+    <img
+    src="./bilder/stereo_architrave_liten.png"
+    alt="Model of architrave">
+  </a>
+    <figcaption>The model of the architrave, made and rendered in OpenSCAD. </figcaption>
+  </figure>
+<p>
+  The source code can be found <a href="https://github.com/tobbelobb/Custom-architrave">here</a>.
+</p>
+<p>
+  - tobben
+</p>
+<br /><br /><br />
+
+<h1 id="CADing_support">
+  CAD'ing support structures when PLA printing
+</h1>
+<div class="date">5-2-2014</div>
+<p>
+  I recently had to print out some small overhangs with PLA. After a previous
+  <a href="#disaster">PLA support material experiment</a>, I decided to try
+  to model the support structures myself (I was inspired by one of nophead
+  wonderful blog <a href="http://hydraraptor.blogspot.se/2012/08/peel-able-support.html">Peel-able support?</a>.
+  In OpenSCAD, it looked like this:
+</p>
+  <figure>
+  <a href="./bilder/y-end-back.png">
+    <img
+    src="./bilder/y-end-back_liten.png"
+    alt="Supported model in OpenSCAD">
+  </a>
+  <figcaption>A version of y_end_back.stl from Smartfriendz' excellent
+  <a href="https://github.com/smartfriendz/smartrap">Smartrap repo</a> with
+  my added supporting blocks in red and green.</figcaption>
+  </figure>
+<p>
+  I found that ca 0.15 mm vertical gap gave the best results with my current
+  plastic and slic3r settings. This will of course vary wildly depending
+  on plastic type, geometry, layer height, extrusion width and so on.
+  I found the results satisfying:
+</p>
+  <figure>
+  <a href="./bilder/removed_support_1.JPG">
+    <img
+    src="./bilder/removed_support_1_liten.JPG"
+    alt="CAD-supported model scars">
+  </a>
+  <figcaption>Scars after removing CAD'ed support material.</figcaption>
+  </figure>
+
+  <figure>
+  <a href="./bilder/removed_support_2.JPG">
+    <img
+    src="./bilder/removed_support_2_liten.JPG"
+    alt="CAD-supported model scars">
+  </a>
+  <figcaption>Scars after removing CAD'ed support material.</figcaption>
+  </figure>
+<p>
+  I will definitely CAD my own support material again, when only PLA is
+  available as print material.
+</p>
+
+<p>
+  - tobben
+</p>
+<br><br><br>
+
+<h1 id="Minor_Mendel_tweaks">
+  Minor Reprappro Mendel tweaks
+</h1>
+<div class="date">4-2-2014</div>
+<p>
+  I was recently preparing some large prints with my parent's Reprappro Mendel,
+  and decided to do a bunch of minor tweaks. First, I went to Reprappro's own
+  documentation to search for inspiration, and they had prepared
+  <a href="http://www.reprappro.com/documentation/RepRapPro_Tricolour_improvements">this</a>
+  =D. I decided to to both the "Fan mount":
+</p>
+  <figure>
+  <a href="./bilder/fan.JPG">
+    <img
+    src="./bilder/fan_liten.JPG"
+    alt="Fan mounted on Reprappro Mendel">
+  </a>
+  <figcaption>A 40 mm fan mounted on a Reprappro Mendel.</figcaption>
+  </figure>
+<p>
+  and the "Alternative positions for extruders":
+</p>
+  <figure>
+  <a href="./bilder/extruder_pos.JPG">
+    <img
+    src="./bilder/extruder_pos_liten.JPG"
+    alt="Alternative extruder pos Reprappro Mendel">
+  </a>
+  <figcaption>The alternative extruder position of choice on my parent's Reprappro Mendel.
+  This gave ca 2 cm extra print height and was done in 15 minutes. No software settings
+  needed to be changed, no wires needed to be disconnected. Using only two
+  mounting points is definitely rigid enough.</figcaption>
+  </figure>
+<p>
+  I haven't found any elegant way to tension the y-belt on this design easily.
+  At least I found a way that doesn't consume a lot of time or concentration,
+  the <a href="http://www.thingiverse.com/thing:38970">belt tensioner</a>
+  by Reuben on Thingiverse. This is how it looked
+</p>
+  <figure>
+  <a href="./bilder/belt_tensioners.JPG">
+    <img
+    src="./bilder/belt_tensioners_liten.JPG"
+    alt="Belt tensioners">
+  </a>
+  <figcaption>Not elegant, but pragmatic belt tensioners in action.</figcaption>
+  </figure>
+
+<p>
+  - tobben
+</p>
+<br><br><br>
+
+
+
+<h1 id="Sourcing_Mendel_7">
+  Sourcing a Reprappro Mendel in Larvik. The rest
+</h1>
+<div class="date">3-2-2014</div>
+<p>
+  To actually make the finishing touch to make the Mendel operative was much
+  more difficult than expected. Troubles with electronics took most of the extra
+  time. The
+  <a href="http://vitana.se/opr3d/doku.php?id=komponenter:kretskort:melzi_ardentissimo">Melzi</a>
+  I had found cheap on ebay had the wrong sort of connectors
+  (not screw connectors), and an Atmega 644p instead of an Atmega 1284p.
+  The standard Melzi stepper drivers, A4988, also requires active cooling for currents
+  greater than 1 A.
+</p>
+<p>
+  For reasons I still don't understand, we could only control
+  the motors to turn if we
+  sat velocities really low. Maybe Marlin and Pronterface disagreed on whether to
+  use absolute or relative coordinates, causing the movements sent from pronterface
+  to be interpreted as impossibly fast (due to voltage rise times etc) by Marlin?
+  In the end, one of the A4988's and the heat bed transistor burned because of
+  too high motor current a frayed untinned HB connection respectively).
+  I decided to buy a completely new
+  Melzi from a new source (reprap.me), to tin all connectors and to only use motor
+  currents less than 1 A.
+</p>
+  <figure>
+  <a href="./bilder/saaSvaartOchSaaFel.JPG">
+    <img
+    src="./bilder/saaSvaartOchSaaFel_liten.JPG"
+    alt="Cheap Melzi">
+  </a>
+  <figcaption>The cheap Melzi, before it burned.</figcaption>
+  </figure>
+<p>
+  The new Melzi board had two problems though:
+</p>
+  <ul>
+    <li>Z-homing didn't work</li>
+    <li>Extruder motor just stuttered</li>
+  </ul>
+<p>
+  The z-homing problem looked like
+  <a href="http://youtu.be/eveQZXUCM1Q">this</a> (youtube video).
+  Issuing M119 (Get Endstop Status) showed that Marlin thought the z-switch was
+  always open. It was solved with a kamikaze soldering directly on the Atmega's one
+  leg. It is described in an
+  <a href="#kamikaze">earlier post</a> and in this
+  <a href="http://forums.reprap.org/read.php?4,238556">forum thread</a>.
+  The extruder motor was luckily a problem i software. The solution is described
+  in this
+  <a href="http://forums.reprap.org/read.php?1,232675">forum thread</a>.
+  <br><br>
+  These troubles ceirtanly slowed the project down, and only one day was left
+  of my summer holydays to teach my parents how to use the machine. The first
+  print was a handle to a dipstick. It printed
+  nicely like <a href="http://youtu.be/y6LerqXlAQg">this</a> (youtube video). And
+  we soon went on to print a Julia vase (desperate attempt to convince Mum this
+  machine is of any value:
+</p>
+  <figure>
+  <a href="./bilder/Julia.JPG">
+    <img
+    src="./bilder/Julia_liten.JPG"
+    alt="Reprapped Julia vase">
+  </a>
+  <figcaption>The self sourced Mendels' second print.</figcaption>
+  </figure>
+<p>
+  After a couple of weeks into the semester, Dad mentioned on the phone
+  wanted to try it out to print a smartphone case. I went on Thingiverse and
+  found the
+  <a href="http://www.thingiverse.com/thing:131532">Monogrammed iPhone case</a>
+  made by TheNewHobbyist. I modified it, sliced it, emailed the gcode
+  and got this picture from Dad a couple of days later:
+</p>
+  <figure>
+  <a href="./bilder/case.jpg">
+    <img
+    src="./bilder/case_liten.jpg"
+    alt="Reprapped smartphone case">
+  </a>
+  <figcaption>The first print my Dad did with his Reprappro Mendel. I'm as
+  proud as he is.</figcaption>
+  </figure>
+<p>
+  Success! I'm very excited to see how my parents relationship to the
+  Reprap develops. Thanks for listening.
+</p>
+
+<p>
+  - tobben
+</p>
+<br><br><br>
+
+
+<h1 id="Sourcing_Mendel_6">
+  Sourcing a Reprappro Mendel in Larvik. Weekend 1 and 2
+</h1>
+<div class="date">2-2-2014</div>
+<p>
+  At this point, my summer job in Oslo had started, so I could only work
+  during weekends. Pace naturally slowed down. This gave the postal service time
+  to catch up. I received endstop switches, glass bed, 623-bearings, hot-end,
+  XLR-plug, stepper motors, the Melzi board and filament. Unfortunately, the filament I received had the wrong
+  diameter, so the order must be placed again... Ordering is hard and depends on
+  a lot of unknown factors.
+</p>
+  <figure>
+  <a href="./bilder/stimmung.JPG">
+    <img
+    src="./bilder/stimmung_liten.JPG"
+    alt="Coffee table used as workbench">
+  </a>
+  <figcaption>Coffee table used as workbench with hot end, filament, Melzi board and
+  various other things.</figcaption>
+  </figure>
+<p>
+  Since I used a M6 rod for the z-axis, and the motor shaft had 5 mm shafts, I
+  couldn't use a uniform tube as linkage. The solution I found was to drill
+  out a couple of glue gun patrons. I described them in an
+  <a href="#ggp">earlier post</a>.
+</p>
+
+<p>
+  - tobben
+</p>
+<br><br><br>
+
+<h1 id="Sourcing_Mendel_5">
+  Sourcing a Reprappro Mendel in Larvik. Day 6 and 7
+</h1>
+<div class="date">1-2-2014</div>
+<p>
+  Not much could be done day 6. Managed to make an insulating sheet with a handsaw
+  and a drill from the dxf on Reprappro's Mendel repo on Github:
+</p>
+  <figure>
+  <a href="./bilder/insulator.JPG">
+    <img
+    src="./bilder/insulator_liten.JPG"
+    alt="Inslulating sheet for Reprappro Mendel">
+  </a>
+  <figcaption>Almost finished insulating sheet.</figcaption>
+  </figure>
+<p>
+  At day 7 dad came home from work with an old aluminum traffic sign! I cut it out to
+  a heat spreader (except the corner holes).
+</p>
+  <figure>
+  <a href="./bilder/skilt.JPG">
+    <img
+    src="./bilder/skilt_liten.JPG"
+    alt="A used old traffic sign">
+  </a>
+  <figcaption>A used old traffic sign, exactly the right thickness and
+  flatness to serve as a heat spreader.</figcaption>
+  </figure>
+<p>
+  Drawing the outline from the dxf supplied by Reprappro and cutting it with
+  a grinder was fairly straight forward.
+</p>
+  <figure>
+  <a href="./bilder/heat_spreader.JPG">
+    <img
+    src="./bilder/heat_spreader_liten.JPG"
+    alt="Heat spreader for Reprappro Mendel">
+  </a>
+  <figcaption>The back side of the almost finished heat spreader cut out of
+  a traffic sign.</figcaption>
+  </figure>
+<p>
+  I was lucky to do this project in a house with lots of hardware stuff lying
+  around. For example, I could stretch out a old unused springs I found, and
+  use them to hold up the insulator + heat spreader:
+</p>
+  <figure>
+  <a href="./bilder/spring.JPG">
+    <img
+    src="./bilder/spring_liten.JPG"
+    alt="Stretched out spring">
+  </a>
+  <figcaption>A spring I made use of.</figcaption>
+  </figure>
+
+  <figure>
+  <a href="./bilder/springed.JPG">
+    <img
+    src="./bilder/springed_liten.JPG"
+    alt="y-carriage of Reprappro Mendel">
+  </a>
+  <figcaption>Springs on the y-carriage.</figcaption>
+  </figure>
+
+<p>
+  - tobben
+</p>
+<br><br><br>
+
+
+<h1 id="VRR">
+  VRR firmware and a different way of communicating with 3d-printers
+</h1>
+<div class="date">01-02-2014</div>
+<p>
+  I've started working on a, as far as I know, new type of firmware.
+  The main idea behind it is to minimize the need of processing power on the actual printer by reducing it to a slave that only relays low-level commands from the computer.
+  Of course it will have to take care of some timing and buffering but that's about it.
+  Since this type of protocol is not compatible with the current G-Code based one I'm also working on a driver that will emulate some generic G-Code receiving printer to make it work as a drop-in replacement.
+</p>
+<p>
+  The upsides I see with the master-slave vs client-printer model are many,
+  first of all unless you plan on equipping you printer with a &gt;100&#36; cpu your computer will always be better at doing pretty much all the calculations needed for a print -
+  thats why we do the slicing on it!
+  Another key reason why I found the idea worth exploring is the much improved debugging capabilities,
+  many G-Codes instructs the printer to perform several actions (e.g. G28 - home all) if any of these fail no further information than that the complete instruction failed is given.
+  Now, using a printer that exports information about what pins it has and what they do and then simply receives ctrl-msgs pertaining those pins,
+  i.e. a semi-transparent hardware abstraction protocol (kinda directly controlling the pins on the board using ctrl-msgs)
+  or StAHP, each action can be performed with minute control giving the user the ability to pinpoint exactly when and where the printer fails.
+  Having this type of control over the printer also means pausing, aborting, adding or subtracting parts (to/from) a running print-job will be much easier.
+</p>
+<p>
+  A basic printer-computer handshake would look something like this (M - master/computer, S - slave/printer)
+<pre>format: seqno, sender: &lt;msg&gt;
+00, S: &lt;init printer&gt;				// handshake init
+00, M: &lt;printer confirm&gt;
+01, S: &lt;printer id&gt;
+01, M: &lt;printer id confirm&gt;
+// M checks if it has Ss ctrls cached, if not:
+02, S: &lt;N controls installed&gt;			// # controls on printer (N)
+02, M: &lt;ctrls confirmed&gt;
+03, S: &lt;ctrl 1: type&gt;				// type of ctrl 1 (stepper motor, fan ctrl, etc)
+03, M: &lt;ctrl 1 type confirm&gt;
+04, S: &lt;ctrl 1: func&gt;				// function of ctrl 1 (e.g. type = motor, func could be x/y/z-axis)
+04, M: &lt;ctrl 1 func confirm&gt;
+// further info about func exchanged
+05, S: &lt;ctrl 1: M pins&gt;				// # pins for ctrl 1 (M)
+05, M: &lt;ctrl 1 pins confirm&gt;
+06, S: &lt;ctrl 1, pin 0: func&gt;			// function of pin 0 on ctrl 1
+06, M: &lt;ctrl 1, pin 0, func confirm&gt;
+07, S: &lt;ctrl 1, pin 0: min&gt;			// min value of pin 0
+07, M: &lt;ctrl 1, pin 0 min confirm&gt;
+08, S: &lt;ctrl 1, pin 0: max&gt;			// max value0
+08, M: &lt;ctrl 1, pin 0, max confirm&gt;
+... // this continues for all pins on all ctrls
+R0, S: &lt;ctrl N, pin K-1: max&gt;			// where K is the number of pins on ctrl N
+R0, M: &lt;ctrl N, pin K-1, max confirm&gt;
+R1, S: &lt;max bufsz: L&gt;				// # ctrl-msgs that fit in the printers buffer
+R1, M: &lt;bufsz confirm&gt;
+R2, S: &lt;awaiting action&gt;
+R2, M: &lt;awaiting action confirm&gt;
+... // M can now start controlling the printer</pre>
+  As seen the handshake time can be reduced quite much if the master has a cache of the printers ctrls.
+  As such a cache (config) file could be easily produced when writing/porting the firmware to different boards hopefully the start-up time of printers using this type of firmware
+  can be reduced to almost zero.
+</p>
+<p>
+  This project is still in its infancy and the driver will probably not be ported to windows until the first stable version.
+  I'm using a left over Melzi Ardentissimo v.1 board from <a href="http://www.geeetech.com/" title="geeetech.com">geeetech.com</a>
+  to develop it so that type of board will probably be the first one to have a usable beta.<br />
+<img src="bilder/140201-melzi_front.jpg" title="Melzi Ardentissimo v.1">
+<p>
+  // sluggo
+</p>
+<br /><br /><br />
+
+
+
+
+<h1 id="Twisted_Vases">
+  Making simple twisted vases
+</h1>
+<div class="date">31-1-2014</div>
+<p>
+  I recently printed some twisted vases.
+  They were drawn by using an
+  <a href="https://commons.wikimedia.org/wiki/File:Five_petal_flower_icon.svg"
+    class="link">svg flower icon</a>,
+  LibreCAD, Inkscape (with polymaker's
+  <a href="http://www.thingiverse.com/thing:14221"
+    class="link"> plugin</a>)
+  and LibreCAD.
+</p>
+<p>
+  I first opened the svg in Inkscape and saved it as "OpenSCAD DXF Output" (thanks to the plugin).
+  I then removed unwanted edges, scaled it and centered it in LibreCAD.
+</p>
+  <figure>
+  <a href="./bilder/blomsterScreenshot.png">
+    <img
+    src="./bilder/blomsterScreenshot_liten.png"
+    alt="Screenshot from LibreCAD">
+  </a>
+    <figcaption>Screenshot from LibreCAD, only outline of the original svg remaining.</figcaption>
+  </figure>
+<p>
+  In OpenSCAD, the line of code to extrude the vase was
+</p>
+  <pre><code>linear_extrude(height = 123,
+          convexity = 6,
+          twist=130,
+          slices=30)
+      import("blomst3.dxf",layer="Layer_1");</code>
+  </pre>
+<p>
+  giving the following model
+</p>
+  <figure>
+  <a href="./bilder/openscadblomst.png">
+    <img
+    src="./bilder/openscadblomst_liten.png"
+    alt="Screenshot from OpenSCAD">
+  </a>
+    <figcaption>Screenshot from OpenSCAD, ready to export the stl-file.</figcaption>
+  </figure>
+<p>
+  I then exported as stl and imported it into Slic3r. To slice it a spiral vase, you need to tick a box
+  and choose number of bottom layers. The only other relevant setting is extrusion width.
+</p>
+  <figure>
+  <a href="./bilder/Slic3r_spiral_vase.png">
+    <img
+    src="./bilder/Slic3r_spiral_vase_liten.png"
+    alt="Screenshot from Slic3r">
+  </a>
+    <figcaption>Screenshot from Slic3r, with relevant settings highlighted.</figcaption>
+  </figure>
+<p>
+  I used an extrusion width of 0.83 mm for this large vase, to make it sturdy. Use lots of plastic
+  (a fairly large extrusion multiplier or a similar setting) if you want the bottom to be water tight.
+  Here is the result
+</p>
+  <figure>
+  <a href="./bilder/ferdigvase.JPG">
+    <img
+    src="./bilder/ferdigvase_liten.JPG"
+    alt="The finished vase">
+  </a>
+    <figcaption>The finished vase!</figcaption>
+  </figure>
+<p>
+  The files I used are available <a href="https://github.com/tobbelobb/Flower-vase">here</a>.
+</p>
+<p>
+  I also experimented with rendering and slicing it on my 7 year old laptop.
+  To make the laptop handle it, I had to remove 75 % of the line segments in the dxf. I did this by opening
+  it in Gvim, and removing every second coordinate-pair with a little macro, twice.
+  The coordinates are preceded by a line saying <code>AcDbPolyline</code>. Every x-coordinate is preceded
+  with a line saying <code>10</code>, and every y-coordinate is preceded by a line saying <code>20</code>.
+  To be able to do the CGAL compile and render in OpenSCAD, I also reduced the number of linear-extrude-slices.
+  I also found I had to use a SD-card directly in the Melzi to get fast enough
+  data transmission of the gcode.
+  The result is
+  the leftmost and biggest (I also scaled it up a bit) vase on this picture
+</p>
+  <figure>
+  <a href="./bilder/vase_fam.JPG">
+    <img
+    src="./bilder/vase_fam_liten.JPG"
+    alt="The little vase family">
+  </a>
+    <figcaption>A little vase family.</figcaption>
+  </figure>
+<p>
+  When printing the rightmost one, my glue gun patron z-coupling solution failed.
+</p>
+  <figure id="ggp">
+  <a href="./bilder/gluegunpatron.jpg">
+    <img
+    src="./bilder/gluegunpatron_liten.jpg"
+    alt="Gluegun z-coupling">
+  </a>
+    <figcaption>An improvised z-coupling made out of a drilled out glue gun patron.
+    It has the advantage that one can drill out the desired diameter in either end, so threaded
+    z-rods thicker or thinner than the shaft can be used.</figcaption>
+  </figure>
+<p>
+  It turned out that the friction between the tube and the motor shaft was too low.
+  The fix was just to change the upper zip tie with a hose clamp.
+</p>
+<p>
+  The leftmost vase on the picture above has a little excessive edge on the bottom.
+  This is due to a failed attempt to make it water tight, by welding a new
+  bottom layer to it. To make this weld successful, I think you need to press
+  it against surface hotter than the one I used, for a very short time (~ 1 sec). Aluminum
+  foil in a hot frying pan might do the trick, I will try that next time. Here's
+  how it looks from below
+</p>
+  <figure>
+  <a href="./bilder/sveisebunn.JPG">
+    <img
+    src="./bilder/sveisebunn_liten.JPG"
+    alt="Welded bottom">
+  </a>
+  <figcaption>A failed attempt to make a vase water tight by welding
+  a new first layer onto it. Was pressed against a hot glass fireplace door
+  covered with aluminum foil for about 10 seconds.</figcaption>
+  </figure>
+<p>
+  - tobben
+</p>
+
+<br /><br /><br />
+
+
+
+<h1 id="Sourcing_Mendel_4">
+  Sourcing a Reprappro Mendel in Larvik. Day 5
+</h1>
+<div class="date">31-1-2014</div>
+<p>
+  For the z-axis, I had chosen M6 instead of M5, because I had a pair of M6 lying
+  around. Making them, and their nuts fit into the printed x-motor-bracket and
+  x-idler-bracket was a PITA, involving lots of difficult sanding. Even getting
+  the M3 nuts down into the nut traps was really difficult and time consuming
+  because of the small holes and overall low quality of my printed parts.
+</p>
+  <figure>
+  <a href="./bilder/x-idler.JPG">
+    <img
+    src="./bilder/x-idler_liten.JPG"
+    alt="x-idler-bracket for Reprappro Mendel">
+  </a>
+  <figcaption>How my x-idler-bracket looked when I finally had the M3 nuts fit
+  tightly in the nut traps. Just calibrating
+  <a href="http://vitana.se/opr3d/doku.php?id=skrivare:sigrid">sigrid</a>
+  properly before printing them would have saved so much time.</figcaption>
+  </figure>
+<p>
+  Eventually, I had x-brackets with nuts fit super-tight which is nice.
+</p>
+  <figure>
+  <a href="./bilder/x-brackets.JPG">
+    <img
+    src="./bilder/x-brackets_liten.JPG"
+    alt="x-brackets for Reprappro Mendel">
+  </a>
+  <figcaption>My finished x-idlerbrackets with M6 threaded rods instead of M5 ones.</figcaption>
+  </figure>
+<p>
+  Finally, I got 623 bearings (1.7 NOK each!) from Ebay, and Igus clip bearings
+  and a hobbed bolt for the Mini extruder from eMakershop. I'm quite surprised that
+  Igus clip bearings are used. They are pretty hard to find, even on the internet,
+  and they seem easy to replace with a home made alternative. I would definitely
+  replace them with printed nylon bushings in my own design.
+</p>
+
+<p>
+  - tobben
+</p>
+<br><br><br>
+
+
+<h1 id="Sourcing_Mendel_3">
+  Sourcing a Reprappro Mendel in Larvik. Day 4
+</h1>
+<div class="date">30-1-2014</div>
+<p>
+  Today was a better shopping day. A local hardware store cut me the smooth rods
+  I needed for 25 NOK. "And that gives us huge margins", was the owners comment
+  on the price, so I guess smooth rods are really cheap when you buy in large
+  quantities. If I had a garage, I would try to do that.
+</p>
+  <figure>
+  <a href="./bilder/StenslandsVerksted.png">
+    <img
+    src="./bilder/StenslandsVerksted_liten.png"
+    alt="Stenslands workshop in Larvik, Norway">
+  </a>
+  <figcaption>Thanks to Stensland's Workshop for supplying and cutting smooth rods!</figcaption>
+  </figure>
+<p>
+  Since Larvik couldn't deliver all the small stuff I needed, I turned to good
+  old Ebay for belts, linear bearings, M2.5 screws, XLR-contacts and stepper motors:
+</p>
+  <figure>
+  <a href="./bilder/steppers.png">
+    <img
+    src="./bilder/steppers_liten.png"
+    alt="Stepper motors on ebay">
+  </a>
+  <figcaption>The stepper motors I bought on Ebay. They had the model name
+  17HS8401 and a holding torque of 52 Ncm at a current of 1.8A. They were chosen
+  because the reprap.org wiki recommended at least 40 Ncm holding torque.</figcaption>
+  </figure>
+<p>
+  Sluggo helped by making a little
+  <a href="http://vitana.se/opr3d/doku.php?id=komponenter:stegmotorer:17hs8401">wiki</a>
+  to store all the important specs (in Swedish).
+</p>
+<p>
+  - tobben
+</p>
+
+<br><br><br>
+
+
+<h1 id="Sourcing_Mendel_2">
+  Sourcing a Reprappro Mendel in Larvik. Day 2 and 3
+</h1>
+<div class="date">29-1-2014</div>
+<p>
+  Bought a bunch of screws and searched the whole town for seven 623-bearings.
+  I only found three of them, and they were excessively expensive (nearly 100 NOK each!).
+  Screws of size M2.5 weren't available either.
+  Nobody in the hardware and electronics shops knew what an XLR-socket was, so I
+  ended up buying on of a wrong type. Linear bearings of the type LM8UU were also
+  impossible to find. One shop could order really expensive ones if I gave them
+  the exact measures, but I declined. Couldn't find smooth 8 mm rods either.
+  Conclusion:
+  The parts needed to build a Reprappro Mendel are not readily available nor
+  cheap in the city of Larvik.
+</p>
+ <figure>
+  <a href="./bilder/gomle_tri.JPG">
+    <img
+    src="./bilder/gomle_tri_liten.JPG"
+    alt="End triangles for Reprappro Mendel">
+  </a>
+  <figcaption>The first hardware actually mounted together, the end triangles
+  of the frame.</figcaption>
+  </figure>
+<p>
+  Four of the printed parts split in half because of a weak layer
+  (had some problems with the extruder when I was printing them).
+  They were easily glued together with two-component epoxy though.
+  Enough hardship for today.
+  One thing actually went really well. I managed to involve Dad when mounting
+  together the skeleton:
+</p>
+ <figure>
+  <a href="./bilder/gomle_ram.JPG">
+    <img
+    src="./bilder/gomle_ram_liten.JPG"
+    alt="Frame for Reprappro Mendel">
+  </a>
+  <figcaption>The skeleton of what is going to be a Reprappro Mendel.</figcaption>
+  </figure>
+<p>
+  I think involving him in the build greatly increases the chances of him wanting
+  to test it when it's operational.
+</p>
+<p>
+  I also had a failed attempt to buy a Prusa Nozzle, which I would really like
+  to try out. They were sold out. It's nice to see business going well for
+  Reprap open hardware producers. There's lots of interesting hot ends out there,
+  but to save time and effort I decided to go for a standard Reprappro
+  hot end kit from Emakershop this time.
+</p>
+
+<p>
+  - tobben
+</p>
+<br><br><br>
+
+
+<h1 id="Sourcing_Mendel_1">
+  Sourcing a Reprappro Mendel in Larvik. Day 1
+</h1>
+<div class="date">28-1-2014</div>
+<p>
+  Last summer holidays, I decided I wanted to build a Reprap to my parents to see how useful
+  it could be to them as non-computer-wizards with little experience of the idea of
+  3d-printing. To make it a little more interesting, I decided to use printed
+  parts from my Printrbot+, <a href="http://vitana.se/opr3d/doku.php?id=skrivare:sigrid">sigrid</a>,
+  and to buy the vitamins one at a time, preferably in Larvik.
+  It would be a nice test of how available these Reprap parts really are (or of
+  how good Larvik is as a hardware shopping city...).
+  For BOM and all other information, I used
+  the build-instructions from reprappro.com.
+  I got to work immediately and ordered
+  a heatbed:
+</p>
+  <figure>
+  <a href="./bilder/hb_best.png">
+    <img
+    src="./bilder/hb_best_liten.png"
+    alt="Ordering heatbed on ebay">
+  </a>
+  <figcaption>Ordering a very cheap heatbed on ebay.</figcaption>
+  </figure>
+<p>
+  I also ordered a borosilicate (heat resistant glass) plate:
+</p>
+  <figure>
+  <a href="./bilder/borosilicate.png">
+    <img
+    src="./bilder/borosilicate_liten.png"
+    alt="Ordering borosilicate plate">
+  </a>
+  <figcaption>Ordering a borosilicate plate from 3d-printer.no.</figcaption>
+  </figure>
+<p>
+  All the M8 threaded rods + nuts were bought in the local hardware store Biltema
+  for 913 NOK. We could have saved 360 NOK by choosing galvanized steel instead
+  of stainless, but dad thinks stainless looks better. Cutting the right lengths
+  were done with dads grinder.
+</p>
+  <figure>
+  <a href="./bilder/vinkelslip.JPG">
+    <img
+    src="./bilder/vinkelslip_liten.JPG"
+    alt="Grinding threaded rods">
+    </a>
+  <figcaption>Cutting threaded M8 rods with a grinder. The rods are clamped with
+  wood-blocks not to damage the threads.</figcaption>
+  </figure>
+
+<p>
+  - tobben
+</p>
+<br><br><br>
+
+
+<h1 id="Hello">
+  Hello, World!
+</h1>
+<div class="date">27-1-2014</div>
+<p>
+  Welcome, RepRappers!
+  I've spent a lot of time RepRapping over the past year, so I thought it was time
+  to make a blog about it. I'm planning to post at least once a week for at
+  least 10 weeks forward. The posts will mostly be condensed everyday tinkering,
+  but I have a hope that over time, I can use my knowledge from engineering physics studies
+  to make some actually useful contributions to the RepRap community.
+</p>
+<p>
+  Added 1-2-2014:<br />
+  Great news! My friend sluggo will also be posting here from time to time.
+  I would say it radically improves
+  the chances of posts with actually useful contributions to the community appearing on this blog.
+  Welcome, sluggo!
+</p>
+<p>
+  Enjoy!
+</p>
+<p>
+  - tobben
+</p>
+
+<br /><br /><br /><br /><br /><br /><br /><br />
+Everything on this homepage, except the videos, is licenced under the <a href="https://www.gnu.org/licenses/fdl">Gnu Free Documentation Licence</a>.
+The videos are licenced via Vimeo.
+</div>
+<br /><br /><br /><br /><br /><br /><br /><br />
+</body>
+
+</html>
+
