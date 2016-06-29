@@ -18,6 +18,149 @@ Reprap blog
 
 <div id="MainContent">
 
+<h1 id="masters_1">
+  Optimize Chaotic Production
+</h1>
+<div class="date">29-6-2016</div>
+<p>
+  I presented my Master's recently, with a story line that was very RepRap centric.
+  I'd like to re-present and develop my thoughts with some colors here.
+  Be warned that this is a post about <i>why</i> I RepRap, not <i>how</i> I RepRap.
+</p>
+<p>
+  I live in the EU and have a lot of contact with the US.
+  I'm among the lucky ones by all metrics, but I also see a lot of frustration.
+</p>
+<figure>
+  <a href="./bilder/Civil_unrest_web.png"><img
+    src="./bilder/Civil_unrest_web_liten.png"
+    alt=""></a>
+   <figcaption>
+     Figure 1: Number of riots and anti government demonstrations in USA and EU+UK since 1970.
+     People started to hit the streets on both sides of the Atlantic in 2010.
+     Data source: Banks, Arthur S., Wilson, Kenneth A. 2016. Cross-National Time-Series Data Archive. Databanks International. Jerusalem, Israel; see <a href="http://www.databanksinternational.com">databanksinternational.com</a>.
+  </figcaption>
+</figure>
+<figure>
+  <a href="./bilder/Labour_productivity_web.png"><img
+    src="./bilder/Labour_productivity_web_liten.png"
+    alt=""></a>
+   <figcaption>
+     Figure 2: Productivity and income since 1970. This plot shows data from USA but the trends are similar in all western countries.
+     Output per work hour increased drastically between 1995 and 2010.
+     Only the most positive economists see rising incomes after ca 1998.
+     The productivity increase is largely attributed to better usage of computers, robots, and the Internet within organizations.
+     Data sources: <a href="http://dx.doi.org/10.1787/data-00686-en">OECD</a>, <a href="https://research.stlouisfed.org/fred2/series/LABSHPUSA156NRUG">University of Groningen</a>, <a href="https://research.stlouisfed.org/fred2/series/MEPAINUSA672N">US. Bureau of the Census</a> and 2015 Economic Report of the President by Council of Economic Advisors, table B-15.
+  </figcaption>
+  <!--
+  cat Labour_productivity_plot_web.gp | gnuplot
+  mv Labour_productivity_web.png ~/blogg/bilder/
+  -->
+</figure>
+<p>
+  The plots above tell so many stories I, could stare at them for hours.
+  I see how the computer age takes off, and robots starts to produce stuff crazy fast while people go furious.
+  It's like a very odd movie plot, it makes me scratch my head.
+  I've experienced the frustrations of modern western life
+    but I'm surprised by the glaring and obvious stagnation and frustration in the above stats.
+</p>
+<p>
+  Computers are machines for thought work, they should lift our burden of thought and give us peace of mind.
+  Well, at least in theory (my dreams)...
+  It would be so nice to just reboot the computer revolution and make it better.
+  Computers could make people independent, resilient, and proud if used right.
+  Like cars do.
+</p>
+<figure>
+  <a href="./bilder/1919_Ford_Model_T_Highboy_Coupe.jpg"><img
+    src="./bilder/1919_Ford_Model_T_Highboy_Coupe_liten.jpg"
+    alt=""></a>
+  <figcaption>
+    Figure 3: The Ford Model T, released in 1908, made people love cars.
+    Its central production was efficient and it used standard interchangeable parts.
+    It was known for being easy to repair and modify.
+    Kits that let people rebuild it into a
+      <a href="https://en.wikipedia.org/wiki/Ford_Model_T#/media/File:Pullford_auto-to-tractor_conversion_advert_1918.png">tractors</a>,
+      <a href="http://www.mtfca.com/discus/messages/331880/396676.html?1382724168">motor boats</a>, and other things were available.
+    Almost 15 million copies were produced.
+    <a href="https://en.wikipedia.org/wiki/Ford_Model_T#/media/File:1919_Ford_Model_T_Highboy_Coupe.jpg">Image</a>
+      by Sfoskett is CC BY-SA licenced.
+  </figcaption>
+</figure>
+<p>
+  Many are still inspired by T-Ford's successful production style.
+  Bringing a machine to the masses has meant setting up a central production line for at least 100 years,
+    including the years of the recent computer revolution.
+  Only around 2007 was central production first rivaled, by copyability through self-manufacture.
+  The RepRap 3D printers then got so easy to copy, partly thanks to self-manufacturing,
+    that the number of producers grew exponentially.
+</p>
+<figure>
+  <a href="./bilder/RepRap_v2_Mendel_middlecropped.jpg"><img
+    src="./bilder/RepRap_v2_Mendel_middlecropped_liten.jpg"
+    alt=""></a>
+  <figcaption>
+    Figure 4: RepRap Mendel, released in 2009, made people love 3D printers.
+    Its production was inefficient but easy to copy, and it used standard and self-manufactured parts.
+    The self-manufacturing made it very easy to repair and modify, even without kits or other external help.
+    Less than 1 million copies are produced so far.
+    <a href="http://reprap.org/wiki/File:Mendel.jpg">Image</a>
+      by adrianbowyer is GFDL licenced.
+  </figcaption>
+</figure>
+<p>
+  When rebooting the computer revolution we should try the new RepRap-style of production.
+  In the thesis I show that RepRaps are very popular and numerous.
+  I also show that they are actually produced and forwarded virally.
+  To formalize this observation, I present some data collected by Spanish RepRappers (see Figure 5)
+    and import a structural virality measure used by researchers on other viral phenomena.
+</p>
+<p>
+  In the presentation I point out that chaotic production requires low <i>unique parts count</i>,
+    good <i>documentation</i> and low <i>price</i>, just like assembly line production.
+  I suggest that <i>software freedom</i> and <i>self-manufacture</i> are additional efficiency requirements not found
+    in assembly line production.
+</p>
+<figure>
+  <a href="./bilder/clonewars.png"><img
+    src="./bilder/clonewars_liten.png"
+    alt=""></a>
+  <figcaption>
+    Figure 5: A graph displaying part of the data set from the <a href="http://maytheclonebewithyou.com/">Clone Wars project</a>.
+    Every node is a person and every edge represents a transfer of RepRap 3D printed parts.
+    Similar graphs describing RepRap designs are found
+      <a href="http://reprap.org/wiki/RepRap_Family_Tree">here</a> and
+      <a href="http://makezine.com/2015/12/02/a-reprap-family-tree-tracking-the-printers-that-started-it-all/">here</a>,
+      and a graph for RepRap machines is found <a href="http://maytheclonebewithyou.com/">here</a>.
+    As far as I know, the person-centric graph in this figure is unique.
+  </figcaption>
+</figure>
+<p>
+  I set out to optimize the chaotic and distributed RepRap production
+    and discover that I can do so by optimizing RepRap Assembly Workshops,
+    and particularly the software that they use.
+  I collect all the data I can find about RepRap Assembly Workshop arrangements on the Internet.
+  See my data <a href="./bilder/Table_c1.pdf">in good looking pdf here</a> or in
+  <a href="http://opensourceecology.org/wiki/File:Assembly_workshops_data_collection_through_web_search.ods">practical spreadsheet here</a>.
+</p>
+<p>
+  I end up packaging Marlin, Arduino IDE, Slic3r, Printrun and OpenSCAD in a live OS.
+  Open Source Ecology tested the live OS for me, and they liked it quite well.
+  I've also used it myself in a four-day 3D printing course for kids this summer,
+    and I found it handy.
+  Technical details of the live OS is another post, but files are hosted
+  <a href="https://github.com/tobbelobb/D3D-Porteus">here</a>.
+</p>
+<p>
+  That was my little story line, hope you liked it and look forward to some more technical stuff in the coming months.
+  Download <a href="http://opensourceecology.org/wiki/File:Thesis.pdf">thesis here</a>,
+  and <a href="http://opensourceecology.org/wiki/File:Thesis_presentation_tobben.pdf">presentation slides here</a>.
+</p>
+<p>
+  - tobben
+</p>
+<br><br><br>
+
 <h1 id="hangprinter_project_19">
   Update and Clerck Build Instructions
 </h1>
