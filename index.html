@@ -18,6 +18,143 @@ Reprap blog
 
 <div id="MainContent">
 
+<h1 id="hangprinter_project_21">
+  Hangprinter Calibration Manual v0.1
+</h1>
+<div class="date">3-11-2016</div>
+<p>
+  This post will make it easier to calibrate Clerck by avoiding the need for measurements like this:
+</p>
+<figure>
+  <a href="./bilder/Hard_calibration_measurement.png"><img
+    src="./bilder/Hard_calibration_measurement_liten.png"
+    alt=""></a>
+  <figcaption>
+    Figure 0: Perpendicular distances like these are hard to measure accurately in practice.
+    When measuring <code>C_Z</code>, the dangling Hangprinter is hard to fixate, and the point where
+    <code>ANCHOR_C_Y</code> and <code>ANCHOR_C_X</code> meet is hard to determine.
+    (Se <a href=#step16>Step 16</a> in <a href=#Clerck_assembly_manual>Clerck Assembly manual v0.1</a> for another figure.)
+  </figcaption>
+</figure>
+<h3>Step 0: Mount Wall Frame Parts</h3>
+<p>
+  Mount all the lower frame parts at roughly equal heights above your floor.
+  While not theoretically necessary, this makes calculations and measurement procedures easier.
+  We assume your floor is perpendicular to gravity.
+</p>
+<figure>
+  <a href="./bilder/In_a_plane.png"><img
+    src="./bilder/In_a_plane_liten.png"
+    alt=""></a>
+   <figcaption>
+     Figure 1: All lower frame parts mounted in a plane perpendicular to gravity (on the same floor or table).
+  </figcaption>
+</figure>
+<p>
+  Keep the flat sides of lower frame parts as parallel to the ceiling frame part's sides as you can.
+<figure>
+  <a href="./bilder/topview.png"><img
+    src="./bilder/topview_liten.png"
+    alt=""></a>
+   <figcaption>
+     Figure 2: Configuration of side plates and top plate as seen from above, through a transparent ceiling...
+     Note how the sides of the ceiling frame part are parallel to the wall frame parts.
+  </figcaption>
+</figure>
+</p>
+<h3>Step 1: Mark out Origo in XY-Plane</h3>
+<p>
+  Use tape or ink to mark out a point directly below your ceiling frame part.
+  This point will be used for measurement and homing reference, so keep it fixed and visible.
+</p>
+<figure>
+  <a href="./bilder/Finding_origo2.png"><img
+    src="./bilder/Finding_origo2_liten.png"
+    alt=""></a>
+  <figcaption>
+    Figure 3: A yellow aiming plumb points at origo, which is marked with a tiny red dot.
+    The grey surface is your floor or print surface.
+  </figcaption>
+</figure>
+<h3>Step 2: Measure Six distances</h3>
+<figure>
+  <a href="./bilder/Six_measurements.png"><img
+    src="./bilder/Six_measurements_liten.png"
+    alt=""></a>
+  <figcaption>
+    Figure 4: measurement points are marked with red dots.
+    Note that <code>d</code> is equal to the length of the aiming plumb in Figure 3.
+  </figcaption>
+</figure>
+<h3>Step 3: Translate to Cartesian Distances</h3>
+<p>
+  Now that we use our six measurements to determine six unknowns.
+  Denoting the x-position of anchor point <code>B</code> like <code>B_x</code>, we can list the unknowns:
+</p>
+<ul>
+  <li><code>A_y</code></li>
+  <li><code>B_y</code></li>
+  <li><code>B_x</code></li>
+  <li><code>C_y</code></li>
+  <li><code>C_x</code></li>
+  <li><code>D_z</code></li>
+</ul>
+<p>
+  We orient our Cartesian coordinate system such that <code>A_x = 0</code>.
+  Also, we set <code>A_z = B_z = C_z = 0</code> from the restrictions in step 0 above.
+  Now the <a href="https://en.wikipedia.org/wiki/Law_of_cosines">Law of cosines</a>
+    and good old Pythagoras solves the rest for us.
+</p>
+<ul>
+  <li><code>A_y = -a</code></li>
+  <li><code>B_y = (s^2 - b^2 - a^2)/(2*a)</code></li>
+  <li><code>B_x =  sqrt(s^2 - (a + B_y)^2)</code></li>
+  <li><code>C_y = (f^2 - c^2 - a^2)/(2*a)</code></li>
+  <li><code>C_x = -sqrt(f^2 - (a + C_y)^2)</code></li>
+  <li><code>D_z = d</code></li>
+</ul>
+<h3>Step 4: Take Action Point Offsets Into Account</h3>
+<p>
+  Since lines are not tied to the center of hangprinter we need to subtract the offsets.
+  These numbers are more or less hard-coded into the
+  <a href="https://github.com/tobbelobb/hangprinter/tree/calibration_manual_0">OpenSCAD files</a>.
+  I made a branch called <code>calibration_manual_0</code>
+  that corresponds to the renderings in this post.
+  I'm also listing the values for ya right here. Yeah, right here:
+</p>
+<ul>
+  <li><code>ANCHOR_A_X = 0</code></li>
+  <li><code>ANCHOR_A_Y = -(a - 59.8)</code></li>
+  <li><code>ANCHOR_A_Z = -146.4</code></li>
+  <li><code>ANCHOR_B_X = B_x - 59.8*sqrt(3)/2</code></li>
+  <li><code>ANCHOR_B_Y = B_y - 59.8/2</code></li>
+  <li><code>ANCHOR_B_Z = -136.6</code></li>
+  <li><code>ANCHOR_C_X = C_x + 59.8*sqrt(3)/2</code></li>
+  <li><code>ANCHOR_C_Y = C_y - 59.8/2</code></li>
+  <li><code>ANCHOR_C_Z = -126.8</code></li>
+  <li><code>ANCHOR_D_X = 0</code></li>
+  <li><code>ANCHOR_D_Y = 0</code></li>
+  <li><code>ANCHOR_D_Z = d - 117.0</code></li>
+</ul>
+<p>
+  These values correspond exactly to what you're supposed to feed into <code>Configuration.h</code>
+    to calibrate your Hangprinter.
+</p>
+<h3>In Theory...</h3>
+<p>
+  We could add three more measurements and be able to calculate <code>A_z</code>, <code>B_z</code> and <code>C_z</code>.
+  This would get rid of the requirement to mount the lower anchor points in a plane perpendicular to gravity.
+  I find these three measurements a bit difficult to carry out in practice.
+  Practical difficulty is of course subjective, but the six-measurement procedure is the one I use.
+</p>
+<p>
+  I hope this has been useful, best of luck!
+</p>
+<p>
+  - tobben
+</p>
+<br><br><br>
+
 <h1 id="oslo_skaperfestival_2016">
   Oslo Skaperfestival 2016
 </h1>
@@ -864,7 +1001,7 @@ Ensure that geared spools rotate freely by rotating and wiggling them by hand.
   Clerck doesn't have automatic homing yet.
 </p>
 
-<h3>Step 16: Measure Lengths to Origin</h3>
+<h3 id="step16">Step 16: Measure Lengths to Origin</h3>
 <figure>
   <a href="./bilder/ANCHOR_A_Y.png"><img
     src="./bilder/ANCHOR_A_Y_liten.png"
@@ -882,7 +1019,7 @@ Ensure that geared spools rotate freely by rotating and wiggling them by hand.
   <code>M665 Q&lt;Ax&gt; W&lt;Ay&gt; E&lt;Az&gt; R&lt;Bx&gt; T&lt;By&gt; Y&lt;Bz&gt; U&lt;Cx&gt; I&lt;Cy&gt; O&lt;Cz&gt; P&lt;Dz&gt;</code>.
 </p>
 
-<h3>Step 17: Thread A, B and C Lines</h3>
+<h3 id="step17">Step 17: Thread A, B and C Lines</h3>
 <figure>
   <a href="./bilder/sweet_victory2.png"><img
     src="./bilder/sweet_victory2_liten.png"
