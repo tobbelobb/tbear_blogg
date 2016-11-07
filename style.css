@@ -1,4 +1,3 @@
-
 body {
 	background-color:#ffffff;
 }
@@ -15,12 +14,25 @@ body {
 	position:absolute;
 	margin-left:15%;
 	top:50px;
-	width:369px;
+	width:555px;
 	height:45px;
 	z-index:2;
 	font-size:35px;
-	overflow:hidden;
 	color:#777d8f;
+	overflow:hidden;
+}
+.right {
+	width:255px;
+	font-size:11px;
+  text-align:right;
+  vertical-align:bottom;
+  position:absolute;
+  top:0;
+  right:0;
+}
+.left {
+	overflow:hidden;
+	height:45px;
 }
 h1 {
 	color:#000000;
@@ -41,7 +53,7 @@ h1 {
 	z-index:6;
 	margin-left:15%;
 	font-size:14px;
-	line-height:150%; 
+	line-height:150%;
 	color:#30424c;
 }
 .bottom-three {
