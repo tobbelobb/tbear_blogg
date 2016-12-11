@@ -23,6 +23,113 @@
 
 <div id="MainContent">
 
+<h1 id="hangprinter_project_26">
+   Compensating Line Buildup on Spools
+</h1>
+<div class="date">11-12-2016</div>
+<p>
+  I've added to Hangprinter-Marlins some code that
+  compensates for line buildup on the spools.
+  Without it, I found that error in steps/mm grew to several percent
+  as print dimensions greq close to 1 m.
+  The problem was particularly noticable on the D-axis since it has three doubled lines,
+  so moving 1 mm in the D-direction puts 6 mm of line on the D-spool.
+</p>
+<p>
+  The equation for calculating new spool radii looks like this:
+</p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mfrac>
+      <mrow>
+        <mi>γ</mi><mo>⋅</mo><mi>g</mi> <!-- Above fraction line -->
+      </mrow>
+      <msqrt><mrow>
+        <mi>β</mi>  <mo stretchy="false">(</mo>       <!-- beta( -->
+          <msub><mi>l</mi><mn>0</mn></msub><mo>+</mo> <!-- l_0 + -->
+          <mi>ω</mi><mo stretchy="false">(</mo>     <!-- omega( -->
+            <msub><mi>D</mi><mn>0</mn></msub><mo>-</mo><mi>D</mi><mo stretchy="false">) <!-- D_0 - D) -->
+          </mo><mo stretchy="false">)</mo> <!-- ) -->
+        <mo>+</mo><msup><mi>R</mi><mn>2</mn></msup> <!-- R^2 -->
+      </mrow></msqrt>
+    </mfrac>
+    <annotation encoding="TeX">\frac{\gamma\cdotg}{\sqrt{\beta(l_0 + \omega(D - D_0)) + R^2}}</annotation>
+  </semantics>
+</math>&nbsp;&nbsp;&nbsp;,
+<p>
+where
+<ul>
+  <li><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>γ</mi></math>
+    is the number of motor steps required to rotate the spool 1 radian,</li>
+  <li><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>g</mi></math>
+    is mechanical advantage (2 for doubled lines),</li>
+  <li><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>β</mi></math>
+    is the volume taken up by 1 unit of line divided by pi and the spool's height,
+  <li><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>l</mi><mn>0</mn></msub></math>
+    is the length of the line on the spool when printer is home (in origo),</li>
+  <li><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>ω</mi></math>
+    is the total number of lines along a direction (3 doubled lines <math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">⇔</mo></math> 6 lines),</li>
+  <li><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>D</mi><mn>0</mn></msub></math>
+    is the distance from an anchor point to an action point when at home,</li>
+  <li><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>D</mi></math>
+    is the current distance from anchor point to anchor point and</li>
+  <li><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>R</mi></math>
+    is the spool's radius when there is no line on it.</li>
+</ul>
+</p>
+<p>
+  Setting these variables will require some measuring and messing around in <code>Configuration.h</code>.
+  The comments in <code>Configuration.h</code> are honestly trying to be helpful.
+</p>
+<p>
+  The above equation recuires quite a bit of computation,
+  Hangprinter-Marlin can't do it too often.
+  As a first try I'm computing new steps/mm on every received G1 or G92 command.
+</p>
+<p>
+  For G1 commands, we get a funny problem.
+  We will only get correct steps/mm at exactly one point along the G1-move.
+  It is tempting to place this point at one of the ends since that would be computationally cheap.
+  However, it would make a simple sequence like the following would fail
+  <pre><code>
+  G92 X0
+  G1 X100
+  G1 X0
+  </pre></code>
+  The printer would move <math xmlns="http://www.w3.org/1998/Math/MathML"><mn>100</mn><mo>⋅</mo>steps_per_mm</math> in the x direction
+  and then move <math xmlns="http://www.w3.org/1998/Math/MathML"><mn>100</mn><mo>⋅</mo>new_steps_per_mm</math>
+  back. It would not end up where it started.
+</p>
+<p>
+  To fix the above trivial example, Hangprinter-Marling computes steps/mm to be correct at the middle of every G1 move.
+  This gives us <math xmlns="http://www.w3.org/1998/Math/MathML">steps_per_mm<mo>=</mo>new_steps_per_mm</math>
+  in the above example.
+</p>
+<p>
+  The next theoretical step will be to find an equation describing the error we accumulate from not
+  continously computing new values for steps/mm.
+  If you want to improve the approach to dynamic steps/mm I've described above,
+  I recommend you to start looking into <code>Marlin_main.cpp</code> lines 1757 to 1763:
+  <pre><code>
+    <font color="green">float</font> <font color="blue">halfway_delta</font><font color="grey">[</font>4<font color="grey">];</font>
+    <font color="green">float</font> <font color="blue">halfway</font><font color="grey">[</font>3<font color="grey">];</font>
+    <font color="green">for</font><font color="grey">(</font><font color="green">int8_t</font> <font color="blue">i</font> = 0<font color="grey">;</font> <font color="blue">i</font> < 3<font color="grey">;</font> <font color="blue">i</font>++<font color="grey">)</font><font color="grey">{</font>
+      <font color="blue">halfway</font><font color="grey">[</font><font color="blue">i</font><font color="grey">]</font> = <font color="blue">current_position</font><font color="grey">[</font><font color="blue">i</font><font color="grey">]</font> + 0.5*<font color="blue">difference</font><font color="grey">[</font><font color="blue">i</font><font color="grey">];</font>
+    <font color="grey">}</font>
+    <font color="purple">calculate_delta</font><font color="grey">(</font><font color="blue">halfway</font>, <font color="blue">halfway_delta</font><font color="grey">);</font>
+    <font color="purple">update_axis_steps_per_unit</font><font color="grey">(</font><font color="blue">delta</font>, <font color="blue">halfway_delta</font><font color="grey">);</font>
+  </pre></code>
+</p>
+<p>
+  I've taken the liberty to color variables blue and functions purple.
+  See <a href="https://github.com/tobbelobb/hangprinter">master branch in the repo</a> to fetch the code.
+</p>
+<p>
+  - tobben
+</p>
+<br><br><br>
+
 <h1 id="hangprinter_project_25">
    The Worm Drive Works
 </h1>
