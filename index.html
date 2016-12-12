@@ -92,14 +92,16 @@ where
 
   If an Atmega2560 running Hangprinter-Marlin were to perform it more frequently than ~10 times per second,
   it would risk computing new movements slower than it performed them, leading to unwanted print pauses and jerky movements.
+</p>
+</p>
   To limit the computational load Hangprint-Marlin is currently only computing new steps/mm once per received G1 or G92 commands.
   A gcode file with 300 G1 movements would cause Hangprinter-Marlin to compute new steps/mm 300 times.
 </p>
 <p>
   Computing steps/mm only once per movement is of course an approximation.
-  We will only get correct steps/mm at exactly one point along the G1-move.
+  We will only get steps/mm right at exactly one point along the G1-move.
   It is tempting to place this point at one of the ends since that would be computationally cheap.
-  However, it would make a simple sequence like the following would fail
+  However, it would kill precision, even for simple movements like the following
   <pre><code>
   G92 X0
   G1 X100
@@ -111,10 +113,10 @@ where
 <p>
   Instead of correctness at endpoints, Hangprinter-Marlin computes steps/mm to be correct at the middle of every G1 move.
   This solves the trivial example of back-and-forth movement described above, but it is still an approximation.
-</p>
-<p>
   The next theoretical step will be to find an equation describing the error we accumulate from not
   continuously computing new values for steps/mm.
+</p>
+<p>
   If you want to improve the approach to dynamic steps/mm I've described above,
   I recommend you to start looking into <code>Marlin_main.cpp</code> lines 1757 to 1763:
   <pre><code>
