@@ -41,8 +41,23 @@
   The problem was particularly noticeable on the D-axis since it has three doubled lines,
   so moving 1 mm in the D-direction puts 6 mm of line on the D-spool.
 </p>
+<figure>
+  <a href="./bilder/Line_buildup_on_spool.JPG"><img
+    src="./bilder/Line_buildup_on_spool_liten.JPG"
+    alt=""></a>
+  <figcaption>
+    The D-spool in this figure has ca 15 m of 0.39 mm thick line wound around it.
+    This gives the D-axis a movement range of 15/6 = 2.5 m.
+    Without compensation, and if the line was winded in a perfectly compact manner, this would give a 5.5 % error in steps/mm in the depicted position.
+    As we see in the picture, windings are rather unevenly distributed along the spool's height.
+    The error is therefore somewhat higher than 5.5 %.
+    Hangprinter-Marlin currently approximates the cross-section of the line to be rectangular rather than circular.
+    It therefore approximates the error to be 7 % instead of 5.5 %.
+    My preliminary tests suggest that the experienced error is closer to 10 %.
+  </figcaption>
+</figure>
 <p>
-  The equation for calculating new spool radii looks like this:
+  The approximation of new spool radii that I've used looks like this:
 </p>
 \[
 \frac{\gamma\cdot g}{\sqrt{\beta(l_0 + \omega(D - D_0)) + R^2}},
@@ -55,7 +70,7 @@ where
   <li>\(g\)
     is mechanical advantage (2 for doubled lines),</li>
   <li>\(\beta\)
-    is the volume taken up by 1 unit of line divided by pi and the spool's height,
+    is the volume taken up by 1 length unit of line divided by \(\pi\) and the spool's height,
   <li>\(l_0\)
     is the length of the line on the spool when printer is home (in origo),</li>
   <li>\(\omega\)
@@ -73,12 +88,15 @@ where
   The comments in <code>Configuration.h</code> are honestly trying to be helpful.
 </p>
 <p>
-  The above equation requires quite a bit of computation,
-  Hangprinter-Marlin can't do it too often.
-  As a first try I'm computing new steps/mm on every received G1 or G92 command.
+  The above equation requires quite a bit of computation.
+
+  If an Atmega2560 running Hangprinter-Marlin were to perform it more frequently than ~10 times per second,
+  it would risk computing new movements slower than it performed them, leading to unwanted print pauses and jerky movements.
+  To limit the computational load Hangprint-Marlin is currently only computing new steps/mm once per received G1 or G92 commands.
+  A gcode file with 300 G1 movements would cause Hangprinter-Marlin to compute new steps/mm 300 times.
 </p>
 <p>
-  For G1 commands, we get a funny problem.
+  Computing steps/mm only once per movement is of course an approximation.
   We will only get correct steps/mm at exactly one point along the G1-move.
   It is tempting to place this point at one of the ends since that would be computationally cheap.
   However, it would make a simple sequence like the following would fail
@@ -91,7 +109,8 @@ where
   It would not end up where it started.
 </p>
 <p>
-  To fix the above trivial example, Hangprinter-Marling computes steps/mm to be correct at the middle of every G1 move.
+  Instead of correctness at endpoints, Hangprinter-Marlin computes steps/mm to be correct at the middle of every G1 move.
+  This solves the trivial example of back-and-forth movement described above, but it is still an approximation.
 </p>
 <p>
   The next theoretical step will be to find an equation describing the error we accumulate from not
