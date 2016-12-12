@@ -8,6 +8,12 @@
 <link rel="stylesheet" href="style.css" type="text/css">
 <link href="http://vitana.se/opr3d/tbear/feed.xml" rel="alternate" type="application/rss+xml" title="Torbjørn's Reprap blog's RSS feed" />
 
+<!-- TODO: This Mathjax is pretty slow... -->
+<script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+</head>
+
 <title>Torbjørns Reprap blog</title>
 </head>
 
@@ -31,50 +37,34 @@
   I've added to Hangprinter-Marlins some code that
   compensates for line buildup on the spools.
   Without it, I found that error in steps/mm grew to several percent
-  as print dimensions greq close to 1 m.
-  The problem was particularly noticable on the D-axis since it has three doubled lines,
+  as print dimensions grew close to 1 m.
+  The problem was particularly noticeable on the D-axis since it has three doubled lines,
   so moving 1 mm in the D-direction puts 6 mm of line on the D-spool.
 </p>
 <p>
   The equation for calculating new spool radii looks like this:
 </p>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <semantics>
-    <mfrac>
-      <mrow>
-        <mi>γ</mi><mo>⋅</mo><mi>g</mi> <!-- Above fraction line -->
-      </mrow>
-      <msqrt><mrow>
-        <mi>β</mi>  <mo stretchy="false">(</mo>       <!-- beta( -->
-          <msub><mi>l</mi><mn>0</mn></msub><mo>+</mo> <!-- l_0 + -->
-          <mi>ω</mi><mo stretchy="false">(</mo>     <!-- omega( -->
-            <msub><mi>D</mi><mn>0</mn></msub><mo>-</mo><mi>D</mi><mo stretchy="false">) <!-- D_0 - D) -->
-          </mo><mo stretchy="false">)</mo> <!-- ) -->
-        <mo>+</mo><msup><mi>R</mi><mn>2</mn></msup> <!-- R^2 -->
-      </mrow></msqrt>
-    </mfrac>
-    <annotation encoding="TeX">\frac{\gamma\cdotg}{\sqrt{\beta(l_0 + \omega(D - D_0)) + R^2}}</annotation>
-  </semantics>
-</math>&nbsp;&nbsp;&nbsp;,
+\[
+\frac{\gamma\cdot g}{\sqrt{\beta(l_0 + \omega(D - D_0)) + R^2}},
+\]
 <p>
 where
 <ul>
-  <li><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>γ</mi></math>
+  <li>\(\gamma\)
     is the number of motor steps required to rotate the spool 1 radian,</li>
-  <li><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>g</mi></math>
+  <li>\(g\)
     is mechanical advantage (2 for doubled lines),</li>
-  <li><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>β</mi></math>
+  <li>\(\beta\)
     is the volume taken up by 1 unit of line divided by pi and the spool's height,
-  <li><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>l</mi><mn>0</mn></msub></math>
+  <li>\(l_0\)
     is the length of the line on the spool when printer is home (in origo),</li>
-  <li><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>ω</mi></math>
-    is the total number of lines along a direction (3 doubled lines <math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">⇔</mo></math> 6 lines),</li>
-  <li><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>D</mi><mn>0</mn></msub></math>
+  <li>\(\omega\)
+    is the total number of lines along a direction (3 doubled lines \(\Leftrightarrow\) 6 lines),</li>
+  <li>\(D_0\)
     is the distance from an anchor point to an action point when at home,</li>
-  <li><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>D</mi></math>
+  <li>\(D\)
     is the current distance from anchor point to anchor point and</li>
-  <li><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>R</mi></math>
+  <li>\(R\)
     is the spool's radius when there is no line on it.</li>
 </ul>
 </p>
@@ -83,7 +73,7 @@ where
   The comments in <code>Configuration.h</code> are honestly trying to be helpful.
 </p>
 <p>
-  The above equation recuires quite a bit of computation,
+  The above equation requires quite a bit of computation,
   Hangprinter-Marlin can't do it too often.
   As a first try I'm computing new steps/mm on every received G1 or G92 command.
 </p>
@@ -97,18 +87,15 @@ where
   G1 X100
   G1 X0
   </pre></code>
-  The printer would move <math xmlns="http://www.w3.org/1998/Math/MathML"><mn>100</mn><mo>⋅</mo>steps_per_mm</math> in the x direction
-  and then move <math xmlns="http://www.w3.org/1998/Math/MathML"><mn>100</mn><mo>⋅</mo>new_steps_per_mm</math>
-  back. It would not end up where it started.
+  The printer would use different steps/mm settings for the two different G1-moves.
+  It would not end up where it started.
 </p>
 <p>
   To fix the above trivial example, Hangprinter-Marling computes steps/mm to be correct at the middle of every G1 move.
-  This gives us <math xmlns="http://www.w3.org/1998/Math/MathML">steps_per_mm<mo>=</mo>new_steps_per_mm</math>
-  in the above example.
 </p>
 <p>
   The next theoretical step will be to find an equation describing the error we accumulate from not
-  continously computing new values for steps/mm.
+  continuously computing new values for steps/mm.
   If you want to improve the approach to dynamic steps/mm I've described above,
   I recommend you to start looking into <code>Marlin_main.cpp</code> lines 1757 to 1763:
   <pre><code>
@@ -122,7 +109,7 @@ where
   </pre></code>
 </p>
 <p>
-  I've taken the liberty to color variables blue and functions purple.
+  I've taken the liberty to highlight variables and functions with the colors blue and purple.
   See <a href="https://github.com/tobbelobb/hangprinter">master branch in the repo</a> to fetch the code.
 </p>
 <p>
@@ -1413,5 +1400,7 @@ The videos are licenced via Vimeo or Youtube.
 </div>
 <br /><br /><br /><br /><br /><br /><br /><br />
 </body>
-
+<script type="text/javascript">
+  MathJax.Hub.Configured()
+</script>
 </html>
