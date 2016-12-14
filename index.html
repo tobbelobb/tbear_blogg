@@ -67,9 +67,6 @@ where version 1 surely would have over-tightened lines and skipped steps.
 </p>
 <br><br><br>
 
-
-
-
 <h1 id="hangprinter_project_26">
    Compensating Line Buildup on Spools
 </h1>
@@ -81,6 +78,7 @@ where version 1 surely would have over-tightened lines and skipped steps.
   as print dimensions grew close to 1 m.
   The problem was particularly noticeable on the D-axis since it has three doubled lines,
   so moving 1 mm in the D-direction puts 6 mm of line on the D-spool.
+  Photo: Maja.
 </p>
 <figure>
   <a href="./bilder/Line_buildup_on_spool.JPG"><img
@@ -95,6 +93,7 @@ where version 1 surely would have over-tightened lines and skipped steps.
     Hangprinter-Marlin currently approximates the cross-section of the line to be rectangular rather than circular.
     It therefore approximates the error to be 7 % instead of 5.5 %.
     My preliminary tests suggest that the experienced error is closer to 10 %.
+    Photo: Maja.
   </figcaption>
 </figure>
 <p>
@@ -134,7 +133,7 @@ where
   If an Atmega2560 running Hangprinter-Marlin were to perform it more frequently than ~10 times per second,
   it would risk computing new movements slower than it performed them, leading to unwanted print pauses and jerky movements.
 </p>
-</p>
+<p>
   To limit the computational load Hangprint-Marlin is currently only computing new steps/mm once per received G1 or G92 commands.
   A gcode file with 300 G1 movements would cause Hangprinter-Marlin to compute new steps/mm 300 times.
 </p>
@@ -168,7 +167,7 @@ where
     <font color="grey">}</font>
     <font color="purple">calculate_delta</font><font color="grey">(</font><font color="blue">halfway</font>, <font color="blue">halfway_delta</font><font color="grey">);</font>
     <font color="purple">update_axis_steps_per_unit</font><font color="grey">(</font><font color="blue">delta</font>, <font color="blue">halfway_delta</font><font color="grey">);</font>
-  </pre></code>
+  </code></pre>
 </p>
 <p>
   I've taken the liberty to highlight variables and functions with the colors blue and purple.
