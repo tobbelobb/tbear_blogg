@@ -12,7 +12,6 @@
 <script type="text/javascript"
     src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
 </script>
-</head>
 
 <title>Torbjørns Reprap blog</title>
 </head>
@@ -28,6 +27,48 @@
 </div>
 
 <div id="MainContent">
+
+
+
+<h1 id="hangprinter_project_27">
+   Compensation May Allow Bigger Prints
+</h1>
+<div class="date">14-12-2016</div>
+The line compensation code may increase print volume noticeably.
+During testing, it has allowed Hangprinter version 2 to go places
+where version 1 surely would have over-tightened lines and skipped steps.
+<figure>
+  <a href="./bilder/Overview_rot.JPG">
+  <img src="./bilder/Overview_rot_liten.JPG" alt="">
+  </a>
+  <figcaption>
+  Hangprinter version 2 at X=0, Y=-600 mm, Z=600 mm.
+  Securing anchor points with tape and weights works only as long as no lines over tighten.
+  During force testing, the motors easily ripped loose the weighed- and taped down anchor points without missing steps.
+  Forces on the lower left anchor point due to gravity in this picture is ca 15 N along the direction of the lines.
+  Vertical force from the weights is also about 15 N, so the tape (under the weights) is necessary to keep the anchor point in place.
+  The kitchen bench is always this clean.
+  </figcaption>
+</figure>
+
+<figure>
+  <a href="./bilder/Sideview_rot.JPG">
+  <img src="./bilder/Sideview_rot_liten.JPG" alt="">
+  </a>
+  <figcaption>
+  Since the worm driven D-axis is so strong,
+  line buildup compensation reduces the risk of over tightening,
+  we can work with more extreme angles than before.
+  </figcaption>
+</figure>
+
+<p>
+  - tobben
+</p>
+<br><br><br>
+
+
+
 
 <h1 id="hangprinter_project_26">
    Compensating Line Buildup on Spools
