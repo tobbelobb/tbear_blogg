@@ -28,6 +28,199 @@
 
 <div id="MainContent">
 
+<h1 id="hangprinter_project_29">
+   The Experimental Line Buildup Compensation Feature
+</h1>
+<div class="date">27-1-2017</div>
+<p>
+  I've conducted a few experiments recently, and I think I've arrived at a usable implementation of the line buildup compensation that I described in
+  <a href="#hangprinter_project_26">an earlier blog post</a>.
+  In this post, I'll try to go a bit more in detail.
+</p>
+<h3>The Problem: Account for Increased Spool Radii Caused By Wound Line</h3>
+<p>
+  Most RepRaps have simple linear relationships between motor position and hot end position.
+  If their hot end the position 100 mm along an axis, their corresponding motor is at step number
+</p>
+\begin{equation}
+m = 100\cdot \text{s},
+\tag{1}
+\label{1}
+\end{equation}
+<p>
+  where \(\text{s}\) is a constant and \(m\) is the motor's step count. <!--In Marlin such constants are stored in the array <code>axis_steps_per_unit</code>.-->
+</p>
+<p>
+  Hangprinter can not use this simple linear relationship because it winds line around spools.
+  When there is more line on the spool, the motor winds up more line per step because of the increased radius resulting from line buildup.
+</p>
+<figure>
+  <a href="./bilder/spool_radii.png">
+  <img src="./bilder/spool_radii_liten.png" alt="">
+  </a>
+  <figcaption>
+    Figure 1: Yellow line builup on a Hangprinter spool causing a radius increase of \(R - r\).
+  </figcaption>
+</figure>
+<p>
+  We need to change the linear relationship \(m = x\cdot\text{s}\)
+    with a more complicated relationship \(m = f(x)\).
+</p>
+
+<h3>Step 1: Find Conversion Factor for Infinitesimal Movement: \(\text{s}'\)</h3>
+<p>
+  Say we want to move an axis from \(x_0\) to \(x_0 + \text{d}x\).
+  A simple linear relationship, like in Equation \eqref{1}, will be valid
+  if \(\text{d}x\) is small enough.
+  We still have to find the correct conversion factor \(\text{s}'\), but this is easy as long as we can assume \(R\) to be constant.
+</p>
+<p>
+  Let \(\alpha\) be the number of radians that the spool rotates when the motor makes 1 full revolution.
+  On Hangprinter version 2 the motors's gears have 9 teeth and the spool's gears have 43 teeth, so we get \(\alpha = 1.32\).
+  Looking at Figure 1, and assuming \(R\) constant, we would move \(R\alpha\) by doing 1 full motor revolution.
+  Now say that the motor makes \(t\) steps per revolution, and we have our steps per mm:
+</p>
+\begin{equation}
+  s' = \frac{t}{R\alpha}.
+\tag{2}
+\label{2}
+\end{equation}
+
+<h3>Step 2: Make Radius Depend on Position: \(R(x)\)</h3>
+<p>
+  In Figure 1 we approximate the buildup as a rectangular torus shape, and \(R\) depends on the volume of that torus.
+</p>
+<figure>
+  <a href="./bilder/rectangular_torus.png">
+  <img src="./bilder/rectangular_torus_liten.png" alt="">
+  </a>
+  <figcaption>
+    Figure 2: A rectangular torus.
+  </figcaption>
+</figure>
+<p>
+  The volume of the torus depends on the amount of line on the spool like so
+</p>
+\begin{equation}
+  \text{Volume} = h\pi(R^2 - r^2) = vx,
+\tag{3}
+\label{3}
+\end{equation}
+<p>
+  where \(h\) is the height of the spool, \(v\) is the volume per unit line, and \(x\) is the position along the line that corresponds to \(R\).
+  Note that we need to give \(v\) a negative sign if we define the positive \(x\)-direction to be the direction we move when we unwind line.
+  Rearranging Equation \eqref{3} gives us
+</p>
+\begin{equation}
+R(x) = \sqrt{\frac{vx}{h\pi} + r^2},
+\tag{4}
+\label{4}
+\end{equation}
+<h3>Step 3: Make Conversion Factor Depend on Position: \(s'(x)\)</h3>
+<p>
+  Combining Equation \eqref{4} back into Equation \eqref{2}, we get
+</p>
+\begin{equation}
+s'(x) = \frac{t}{\alpha\sqrt{\frac{vx}{h\pi} + r^2}},
+\tag{5}
+\label{5}
+\end{equation}
+<p>
+  Just for reference: apart from missing a factor to account for mechanical advantage,
+  the above equation corresponds exactly to the equation I presented in a previous blog post, see \eqref{*}.
+  In that equation, both \(x\) is split up into the parts to account for mechanical advantage and calibration procedures.
+  In this theoretical review, we rather want to simplify our notation, like this:
+</p>
+\begin{equation}
+s'(x) = \frac{a}{\sqrt{c_0 + c_1x}},
+\tag{6}
+\label{6}
+\end{equation}
+<p>
+  where \(a = \tfrac{t}{\alpha}\), \(c_1\) is the factor that multiplies with \(D\) in Equation \eqref{*} and \(c_0\) is the rest of the constants below the root sign in Equation \eqref{*}.
+</p>
+
+<h3>Step 4: Testing...</h3>
+<p>
+  I mention in the beginning that I've conducted some experiments.
+  It turned out that just continuously re-applying Equation \eqref{6} as often as you can doesn't produce nice results.
+</p>
+<figure>
+  <a href="./bilder/Un-nice_compensation_results.JPG">
+  <img src="./bilder/Un-nice_compensation_results_liten.JPG" alt="">
+  </a>
+  <figcaption>
+  Figure 3: During the left print, Equation \eqref{6} was applied on every G1 move.
+  The used used \(x\) was exactly between the move's start point and end point, like suggested in <a href="#hangprinter_project_26">the previous blog post</a>.
+  The right print was printed without line buildup compensation.
+  It has some skipped steps along the vertical axis because the lines pulling downwards get tighter and tighter when line buildup is not accounted for.
+  </figcaption>
+</figure>
+<p>
+  Similarly miserable results were achieved by applying Equation \eqref{6} at a constant frequency:
+</p>
+<figure>
+  <a href="./bilder/similarly_miserable.JPG">
+  <img src="./bilder/similarly_miserable_liten.JPG" alt="">
+  </a>
+  <figcaption>
+  Figure 4: Applying Equation \eqref{6} 40 times per second and hoping that \(\text{d}x\) would be small enough resulted in random distortions up to ca 3 mm in size.
+  </figcaption>
+</figure>
+<h3>Step 5: Make \(\text{d}x\) Small Enough Using Theory</h3>
+<p>
+  A problem with the above approaches was error accumulation.
+  Say the Hangprinter reached point \(x\) with \(m_0\) on its step counter.
+  A few minutes later, Hangprinter reaches \(x\) again, but truncation errors have put the step counter to \(m_0 + 1\).
+  Steps per mm is calculated solely based on \(x\), so it is totally random whether the next truncation error
+  gets us back to the correct \(m\), or if the error will be increased to \(m + 2\).
+  This randomness gives the typical random walk pattern along the vertical edges in Figures 3 and 4.
+</p>
+<figure>
+  <a href="https://en.wikipedia.org/wiki/Random_walk#/media/File:Random_Walk_example.svg">
+  <img src="./bilder/Random_Walk_example_liten.gif" alt="">
+  </a>
+  <figcaption>
+  Figure 5: Example random walk patterns by Wikipedia user Morn.
+  </figcaption>
+</figure>
+<p>
+  To get back on track with finding \(m\) in Equation \eqref{1}, we integrate \(s'(x)\) from zero to \(x\).
+  This integral gives us a one-to-one mapping from \(x\) to \(m\).
+</p>
+\begin{equation}
+m(x) = \int_0^{x}{s'(x')\text{d}x'} = \frac{2a}{c_1}\big(\sqrt{c_0 + c_1x} - \sqrt{c_0}\big).
+\tag{7}
+\label{7}
+\end{equation}
+<p>
+  I was quite surprised that all this theory and volume calculations got me from a straight line relationship to an almost equally simple square root relationship.
+  I feared that line buildup compensation would be computationally intensive, so I'm quite pleased it's only one addition, one subtraction, one multiplication and one square root extra, compared to no compensation.
+  Even an my old Atmega2560 can handle that.
+  In the actual firmware, I've changed notation again, so it looks like this:
+</p>
+<pre><code><font color="blue">target</font><font color="grey">[</font>A_AXIS<font color="grey">]</font> = <font color="purple">lround</font><font color="grey">(</font><font color="blue">k0a</font>*<font color="grey">(</font><font color="purple">sqrt</font><font color="grey">(</font><font color="blue">k1a</font> + <font color="blue">k2a</font>*<font color="blue">delta</font><font color="grey">[</font>A_AXIS<font color="grey">])</font> - <font color="blue">sqrtk1a</font><font color="grey">))</font>;
+</code></pre>
+<p>
+  And finally the first test print to prove it all kinda works:
+</p>
+<figure>
+  <a href="./bilder/less_miserable.JPG">
+  <img src="./bilder/less_miserable_liten.JPG" alt="">
+  </a>
+  <figcaption>
+  Figure 6: Applying Equation \eqref{7} made vertical lines more straight, or at least less random.
+  </figcaption>
+</figure>
+<p>
+  It's nice to see the printer moving more than 1 m upwards without over-tightening any lines, and then back again to the same millimeter!
+  It almost looks functional.
+</p>
+<p>
+  - tobben
+</p>
+<br><br><br>
+
 <h1 id="hangprinter_project_28">
    Hangprinter Presentation Video and Campaign
 </h1>
@@ -144,9 +337,11 @@ where version 1 surely would have over-tightened lines and skipped steps.
 <p>
   The approximation of new spool radii that I've used looks like this:
 </p>
-\[
-\frac{\gamma\cdot g}{\sqrt{\beta(l_0 + \omega(D - D_0)) + R^2}},
-\]
+\begin{equation}
+\frac{\gamma\cdot g}{\sqrt{\beta(l_0 + \omega(D_0 - D)) + r^2}},
+\tag{*}
+\label{*}
+\end{equation}
 <p>
 where
 <ul>
@@ -164,7 +359,7 @@ where
     is the distance from an anchor point to an action point when at home,</li>
   <li>\(D\)
     is the current distance from anchor point to anchor point and</li>
-  <li>\(R\)
+  <li>\(r\)
     is the spool's radius when there is no line on it.</li>
 </ul>
 </p>
