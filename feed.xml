@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-  <atom:link href="http://vitana.se/opr3d/tbear/feed.xml" rel="self" type="application/rss+xml" />
+  <atom:link href="https://vitana.se/opr3d/tbear/feed.xml" rel="self" type="application/rss+xml" />
     <title>Torbjørn's Reprap blog</title>
     <description>Thoughts, progress, images and videos of a Reprapper.</description>
     <link>http://vitana.se/opr3d/tbear/index.html</link>
