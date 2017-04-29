@@ -77,7 +77,7 @@
 </figure>
 <p>
   The Hangprinter GT turned into a quite bulky installation, so the design won't be continued.
-  It did shed some light on a few general pros and cons with dual unit Hangprinters in general.
+  It did shed some light on a few pros and cons with dual unit Hangprinters in general.
   <ul>
     <li>Pro: Easy to snap together. Few parts that need to fit each other.</li>
     <li>Pro: No absolute requirement of wireless communication.</li>
@@ -105,7 +105,7 @@
   The Benefit of Large Spools
 </h3>
 <p>
-  The spool radii are doubled as compared to the version 2 spools to limit spool buildup.
+  The spool radii are doubled as compared to the standard Hangprinter spools, in order to decrease line buildup.
   A doubled spool radius reduces spool buildup to ca 1/4.
   Let's step through the maths to kill some time:
 </p>
@@ -113,7 +113,7 @@
   To wind in \(2r\) of line onto an empty spool with radius \(r\), we would need to rotate the spool by 2 radians.
   A spool with \(x\) meters of line already wound onto it would have \(\epsilon(x)\) of buildup added onto its radius \(r\).
   It would wind in \(2(r + \epsilon(x))\) of line if it were rotated by 2 radians.
-  Without buildup compensation the error caused by buildup would be
+  Without buildup compensation the resulting error would be
 </p>
 \begin{equation}
 \text{err}_r = 2\epsilon(x).
@@ -191,7 +191,7 @@
   </figcaption>
 </figure>
 <p>
-  When the version 3 is running, I will focus my dev time on adding
+  When the version 3 is up and running, I will focus my dev time on adding
   closed loop control,
   auto calibration and DC motors, in that order.
   Well, at least that's the plan right now.
