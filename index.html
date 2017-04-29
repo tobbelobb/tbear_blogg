@@ -28,6 +28,181 @@
 
 <div id="MainContent">
 
+<h1 id="hangprinter_project_42">
+  Experimental Dual Unit Designs
+</h1>
+<div class="date">30-4-2017</div>
+<p>
+  The Hangprinter Hackathon at Bitraf produced some technical progress.
+</p>
+
+<figure>
+  <video width="500" controls>
+    <source src="./bilder/Freds_gopro.mp4" type="video/mp4">
+  </video>
+  <figcaption>
+    Fred's video mashup from the hackathon.
+    Most pictures show an experimental design dubbed "Hangprinter GT".
+    Big thanks to Bondtech for sponsoring the extruder you see mounted during print.
+  </figcaption>
+</figure>
+
+<p>
+  Besides dividing the Hangprinter into two units,
+  the GT design also tried out the concept of spanning up linear actuators between winch and ABC anchor points:
+</p>
+<figure>
+  <a href="./bilder/Loop_linear_actuator.png">
+  <img src="./bilder/Loop_linear_actuator_liten.png" alt="">
+  </a>
+  <figcaption>
+    The yellow loop runs around the motor shaft and an idler.
+    The grey line is tied onto the yellow loop.
+  </figcaption>
+</figure>
+<p>
+  This concept works wonderfully in theory, and you can even use belt
+  for the yellow loop to make it easy to build.
+  In practice you need to keep the loops very tight, or the belts will skip.
+  We did a quick and dirty patch to solve this.
+  The dangling bottle of water in the picture above is what keeps our D-line tight.
+</p>
+<figure>
+  <a href="./bilder/Five_men_and_a_prototype2.jpg">
+  <img src="./bilder/Five_men_and_a_prototype2_liten.jpg" alt="">
+  </a>
+  <figcaption>
+    Hangprinter GT, its creators (Alexander, Nils, Fred and Mikael) and me, holding the bottle of Tøyen-Cola.
+  </figcaption>
+</figure>
+<p>
+  The Hangprinter GT turned into a quite bulky installation, so the design won't be continued.
+  It did shed some light on a few general pros and cons with dual unit Hangprinters in general.
+  <ul>
+    <li>Pro: Easy to snap together. Few parts that need to fit each other.</li>
+    <li>Pro: No absolute requirement of wireless communication.</li>
+    <li>Pro: Lighter moving unit allows quicker accelerations.</li>
+    <li>Pro: Increased modularity. ABCD actuators, electronics department and moving unit can be swapped out independently.</li>
+    <li>Con: Stepper- and hot end cables must be extended manually.</li>
+    <li>Con: Max stepper cable length (a few meters) limits mounting options.</li>
+  </ul>
+</p>
+
+<h3>Back to Spool</h3>
+<figure>
+  <a href="./bilder/Plate_of_gear_spool_sandwiches.jpg">
+  <img src="./bilder/Plate_of_gear_spool_sandwiches_liten.jpg" alt="">
+  </a>
+  <figcaption>
+    Stationary part of a spool-based dual unit Hangprinter design.
+    The placement of the spools are quite arbitrary so the mounting plate can easily be made with hand tools and no technical drawing.
+    Source code for the spools above are found in the
+    <a href="https://github.com/tobbelobb/hangprinter/tree/version_3">version_3 branch of the repo</a>.
+  </figcaption>
+</figure>
+
+<h3>
+  The Benefit of Large Spools
+</h3>
+<p>
+  The spool radii are doubled as compared to the version 2 spools to limit spool buildup.
+  A doubled spool radius reduces spool buildup to ca 1/4.
+  Let's step through the maths to kill some time:
+</p>
+<p>
+  To wind in \(2r\) of line onto an empty spool with radius \(r\), we would need to rotate the spool by 2 radians.
+  A spool with \(x\) meters of line already wound onto it would have \(\epsilon(x)\) of buildup added onto its radius \(r\).
+  It would wind in \(2(r + \epsilon(x))\) of line if it were rotated by 2 radians.
+  Without buildup compensation the error caused by buildup would be
+</p>
+\begin{equation}
+\text{err}_r = 2\epsilon(x).
+\end{equation}
+<p>
+  To wind in \(2r\) of line on an empty spool with radius \(R=2r\), we would need to rotate the spool by 1 radian.
+  A buildup of \(\delta(x)\) would cause an error of
+</p>
+\begin{equation}
+\text{err}_R = \delta(x).
+\end{equation}
+<p>
+  The circumference of the spool with radius \(R=2r\) is twice as long as the circumference of the spool with radius \(r\).
+  The buildup caused by \(x\) m of line should therefore be ca halved on the big spool,
+  which gives us the approximate total benefit of doubling spool radius:
+</p>
+\begin{equation}
+  \text{err}_R = \delta(x) \approx \epsilon(x)/2 = \text{err}_r/4.
+\end{equation}
+<p>
+  But wait, there's more. The spools depicted above are also 2 times higher than standard Hangprinter spools.
+  This should cut buildup in half once again.
+</p>
+<p>
+  If that isn't enough then there's also the possibility to tie in lines mid-air, and run a single line around each spool.
+  This wall of text has already gotten the line buildup down to 1/8 of what we had before anyways,
+  so let's wait and see if this is really necessary.
+</p>
+<p>
+  The buildup problems of Hangprinter version 2 were mostly on the D-axis, which had doubled lines (mechanical advantage 2).
+  We can drop that on version 3 since it has a light moving unit.
+  To summarize, we cut D-axis buildup to 1/16 and leave ABC buildup at 1/8.
+</p>
+<figure>
+  <a href="./bilder/compensation_plot2.svg">
+  <img src="./bilder/compensation_plot2.svg" alt="">
+  </a>
+  <figcaption>
+    Figure 1: Accumulated required buildup compensation at different positions when applying tricks described above.
+    Compare to <a href=#compensation_plot>previous compensation plot</a> for reference.
+    Note the factor 10 difference on the y-axis.
+    The code to generate this plot can be found <a href="https://github.com/tobbelobb/tbear_blogg/blob/master/compensation_plot2.gp">here</a>.
+  </figcaption>
+</figure>
+<p>
+  After all this theory let's rest our eyes on some Hangprinter version 2 parts designed and printed by Alexander Osika:
+</p>
+<figure>
+  <a href="./bilder/Aero_Titan_Mover.jpg">
+  <img src="./bilder/Aero_Titan_Mover_liten.jpg" alt="">
+  </a>
+  <figcaption>
+    Prototype of a moving unit for a dual unit Hangprinter.
+    This one flexes a bit too easily, but you get the basic idea.
+    Thanks to E3d for sponsoring the Aero in this picture!
+  </figcaption>
+</figure>
+<figure>
+  <a href="./bilder/Mover_and_Ceiling_Plate.jpg">
+  <img src="./bilder/Mover_and_Ceiling_Plate_liten.jpg" alt="">
+  </a>
+  <figcaption>
+    With a modular dual unit approach, you're free to mount only a little triangle in the ceiling if you want.
+  </figcaption>
+</figure>
+
+<figure>
+  <a href="./bilder/Osikas_Anchor_points.jpg">
+  <img src="./bilder/Osikas_Anchor_points_liten.jpg" alt="">
+  </a>
+  <figcaption>
+    Alexander Osika made some floor anchors that are easy to build and easy to weigh down.
+    They have mouse mat rubber glued on underneath and rod rings along the center line
+    in case you want to tie in lines mid-air to reduce spool buildup, as described above.
+  </figcaption>
+</figure>
+<p>
+  When the version 3 is running, I will focus my dev time on adding
+  closed loop control,
+  auto calibration and DC motors, in that order.
+  Well, at least that's the plan right now.
+  I'll prioritize improvements that apply to both single- and dual unit Hangprinters, and keep both branches alive.
+</p>
+<p>
+  - tobben
+</p>
+<br><br><br>
+
+
 <h1 id="hangprinter_project_41">
   Other People's Hangprinter Builds
 </h1>
@@ -132,31 +307,6 @@
 </p>
 <br><br><br>
 
-<!--h1 id="hangprinter_project_40">
-  Doubling Spool Radius
-</h1>
-<div class="date">13-4-2017</div>
-<p>
-  If we double the spool radius we double the circumference and so the extra radius due to line buildup halves.
-  There's also another positive effect of increasing radius.
-</p>
-<p>
-  To wind in 2r line on an empty spool with radius r, we would need to rotate the spool by 2 radians.
-  If the real radius was (r + \eps), where \eps is added due to line buildup, then we've wound in 2r + 2\eps of line.
-  The error is 2\eps.
-</p>
-<p>
-  To wind in 2r line on an empty spool with radius 2r, we would need to rotate the spool by 1 radian.
-  If the real radius was (2r + \delta), where \delta is added due to line buildup, then we've wound in 2r + \delta of line.
-  The error is \delta.
-  We know that \delta = \eps/2, so the error on the double sized spool is 1/4 the error on the single sized spool.
-</p>
-<p>
-</p>
-<p>
-  - tobben
-</p>
-<br><br><br-->
 
 <h1 id="hangprinter_project_39">
   First Pull Request Merged
@@ -776,7 +926,7 @@ m(x) = \int_0^{x}{s'(x')\text{d}x'} = \frac{2a}{c_1}\big(\sqrt{c_0 + c_1x} - \sq
 </code></pre>
 With the calibration constants I'm using on my own Hangprinter,
   the compensation makes the following theoretical difference in actual movement lengths:
-<figure>
+<figure id=compensation_plot>
   <a href="./bilder/compensation_plot.svg">
   <img src="./bilder/compensation_plot.svg" alt="">
   </a>
