@@ -28,6 +28,145 @@
 
 <div id="MainContent">
 
+<h1 id="hangprinter_project_43">
+  Walking the Line
+</h1>
+<div class="date">4-6-2017</div>
+<p>
+  Following up on what I planned 35 days ago:
+</p>
+<p>
+  "When the version 3 is up and running, I will focus my dev time on adding
+  closed loop control,
+  auto calibration
+  and DC motors, in that order.
+  Well, at least that's the plan right now.
+  I'll prioritize improvements that apply to both single- and dual unit Hangprinters, and keep both branches alive."
+</p>
+<!--p>
+  Luckily I've worked in a team since then.
+  Here's a little status report of our team's work:
+</p-->
+<h3>
+  Getting Version 3 Up And Running
+</h3>
+<p>
+  The version 3 referred to a dual unit design with large spools like shown <a href=#Back_to_spool>in the previous post</a>.
+  This was supposed to reduce weight and reduce spool buildup.
+  The version 3 since got thinner FireLines (0.18 mm, down from 0.39 mm in version 2),
+  which further decreased buildup by a factor of 4.5:
+</p>
+<figure>
+  <a href="./bilder/Version_3_on_4_Jun_2017.JPG">
+  <img src="./bilder/Version_3_on_4_Jun_2017_liten.JPG" alt="">
+  </a>
+  <figcaption>
+    Hangprinter version 3 mounted in my basement.
+    The winch (stationary unit) is the one from <a href=#Back_to_spool>the previous post</a>.
+  </figcaption>
+</figure>
+<figure>
+  <a href="./bilder/Simple_Anchor.JPG">
+  <img src="./bilder/Simple_Anchor_liten.JPG" alt="">
+  </a>
+  <figcaption>
+    An anchor of the Hangprinter version 3.
+    Distance between anchor points is 27 cm.
+    One end of each line goes to the winch, and the other end of each line goes to the mover.
+    Black tape on the floor makes the left corner look like it floats in mid air.
+  </figcaption>
+</figure>
+<p>
+  The version 3 is up and hanging, but is not yet up and running.
+</p>
+
+<h4>Small Side Note on Movers</h4>
+<p>
+  The mover depicted above (moving unit with extruder) is a triangle of Open Beams with a E3D Aero mounted at its center.
+  It's a scaled up design revision of Osika's <a href=#Aero_Titan_Mover>small Aero Titan mover</a>.
+  He has started constructing movers in the following material agnostic manner:
+</p>
+<figure>
+  <a href="./bilder/Osikas_mover_30_maj.jpg">
+  <img src="./bilder/Osikas_mover_30_maj_liten.jpg" alt="">
+  </a>
+  <figcaption>
+    A small Osika-mover using pine wood instead of Open Beams.
+  </figcaption>
+</figure>
+
+<h3>
+  Adding Closed Loop Control
+</h3>
+<p>
+  The <a href="http://tropical-labs.com/index.php/mechaduino">Mechaduino Project</a>
+  has given us a plug-and-play loop closer.
+</p>
+<figure>
+  <video width="500" controls>
+    <source src="./bilder/Mechaduino_working.MP4" type="video/mp4">
+  </video>
+  <figcaption>
+  </figcaption>
+</figure>
+<p>
+  This means that Hangprinter version 3 users can count on prints actually finishing. A great relief.
+  The plug-and-play Mechaduino setup, as well as the possibility to construct custom stepper-servos based on the Mechaduino Project has made us really excited.
+  We've added Mechaduinos to version 3's A, B, and C axes at a total cost $150.
+</p>
+
+<h3>
+  Adding Auto-Calibration
+</h3>
+<p>
+  Vilse has done some impressive work on simulation and data collection.
+  Matlab simulation is available <a href="https://github.com/tobbelobb/hangprinter/tree/vilse/matlab">here</a>.
+  To auto-calibrate without user interaction, we need to
+</p>
+<ul>
+  <li>Sample relative line lengths \(\theta\) with tight lines at unknown positions \(x_i\) starting from  an unknown start position \(x_0\).</li>
+  <li>Solve a large non-linear system of equations numerically to find the best fitting set of anchors positions \(a\) and positions \(x_i\).</li>
+</ul>
+<p>
+  Luckily, very skilled researchers have solved this problem before us and published their results.
+  Studying
+  <a href="http://ieeexplore.ieee.org/document/6309525/authors?reload=true">this paper</a>
+  has helped my own understanding a lot.
+</p>
+<p>
+  To be able to quickly make sample \(\theta\), Vilse created "button mode".
+  Obviously.
+  It is useful whenever you want to push your Hangprinter around, which is quite often:
+</p>
+<figure>
+  <video width="500" controls>
+    <source src="./bilder/Knappmode_0.MP4" type="video/mp4">
+  </video>
+  <figcaption>
+    Hangprinter version 2 with added buttons running in button mode.
+  </figcaption>
+</figure>
+<p>
+  The button mode related modifications to the Hangprinter-Marlin firmware are available <a href="https://github.com/tobbelobb/hangprinter/commit/b9c8a8a67925942cbd26c78083c1c796530c6637">here</a>.
+</p>
+<p>
+  We haven't tried seriously to add DC motors yet, but we stay by the plan to do so further down the road.
+</p>
+<!--p>
+  Good and cheap servos makes possible to design a spool+servo actuator that is reusable in single unit, dual unit and multi unit (motor at each anchor) Hangprinters alike.
+  Software is often the achilles heel of OSHW communities, so it makes sense to facilitate software collaboration by using similar actuators.
+  Steppers have so far saved the RepRap community from the need to code and re-code servos.
+  It will require a polished and documented DC servo project to topple most reprapperers preference for steppers.
+
+  Without a good DC servo, we'll see a period with single units running on DC while dual- and multi-units run with stepper servos.
+  We will loose code reuse during that period.
+</p-->
+<p>
+  - tobben
+</p>
+<br><br><br>
+
+
 <h1 id="hangprinter_project_42">
   Experimental Dual Unit Designs
 </h1>
@@ -88,7 +227,7 @@
   </ul>
 </p>
 
-<h3>Back to Spool</h3>
+<h3 id="Back_to_spool">Back to Spool</h3>
 <figure>
   <a href="./bilder/Plate_of_gear_spool_sandwiches.jpg">
   <img src="./bilder/Plate_of_gear_spool_sandwiches_liten.jpg" alt="">
@@ -154,7 +293,7 @@
   <figcaption>
     Figure 1: Accumulated required buildup compensation at different positions when applying tricks described above.
     Compare to <a href=#compensation_plot>previous compensation plot</a> for reference.
-    Note the factor 10 difference on the y-axis.
+    Note the factor 10 difference on the D-axis.
     The code to generate this plot can be found <a href="https://github.com/tobbelobb/tbear_blogg/blob/master/compensation_plot2.gp">here</a>.
   </figcaption>
 </figure>
@@ -163,7 +302,7 @@
 </p>
 <figure>
   <a href="./bilder/Aero_Titan_Mover.jpg">
-  <img src="./bilder/Aero_Titan_Mover_liten.jpg" alt="">
+  <img src="./bilder/Aero_Titan_Mover_liten.jpg" alt="" id="Aero_Titan_Mover">
   </a>
   <figcaption>
     Prototype of a moving unit for a dual unit Hangprinter.
