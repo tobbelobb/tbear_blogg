@@ -28,6 +28,81 @@
 
 <div id="MainContent">
 
+
+<h1 id="hangprinter_project_44">
+  Working on Auto Calibration and Reliability
+</h1>
+<div class="date">3-7-2017</div>
+<p>
+  I put together a closed loop single unit Hangprinter with pancake steppers recently.
+  The following video shows that it can run upwards along the D-line at 26.6 mm/s.
+  It is driven by a 17HS08-1004S, rated for 1A but running at 0.56A.
+  Axis speed is limited by motor stalling/driver resonance.
+</p>
+<figure>
+  <iframe src="https://player.vimeo.com/video/223990725" width="500" height="375" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  <figcaption>
+  </figcaption>
+</figure>
+<p>
+  This single unit machine will help me learn to collect data for the auto-calibration procedure.
+  Collecting data from single units will be hard because of their large mass.
+  The auto-calibration algorithm requires less than 2 mm errors in relative line lengths compared to what a massless point would observe.
+  With a random error of 1 mm convergence now looks like this:
+</p>
+
+<figure>
+  <a href="./bilder/Convergence_w_1mm_random_error.gif">
+  <img src="./bilder/Convergence_w_1mm_random_error_liten.gif" alt="">
+  </a>
+  <figcaption>
+  Figure 1: The output of an
+  <a href="https://github.com/tobbelobb/auto-calibration-simulation-for-hangprinter">auto calibration simulation</a>
+  using a random measurement error of 1 mm and plotting on every fifth Newton iteration.
+  The first plot shows how the algorithm is searching for the anchor points.
+  The second plot shows the searches for the positions where relative line length measurements were made.
+  The algorithm missed the six sought anchor coordinates by -28.7, -38.4, -26.3, 16.4, -36.9, and 8.0 mm.
+  </figcaption>
+</figure>
+<p>
+  I'm considering the auto-calibration coding as done for now.
+  In the end it was the excellent paper
+  <a href="https://hal.archives-ouvertes.fr/file/index/docid/668921/filename/RR-7879.pdf">"Calibration of a fully-constrained parallel cable-driven robot"</a>
+  that made me understand that Newton's method was way to go, and that the analytical Jacobian wasn't worthwhile putting into code.
+</p>
+
+<p>
+  I'm rounding this post off with thoughts around a funny pic:
+</p>
+<figure>
+  <a href="./bilder/Electronics_ironics.JPG">
+  <img src="./bilder/Electronics_ironics_liten.JPG" alt="">
+  </a>
+  <figcaption>
+  Figure 2: Three Mechaduinos and an Arduino Mega with RAMPS.
+  The latter is orders of magnitude cheaper and weaker, but is still acting like a master,
+  giving step/dir orders through yellow/green cables.
+  </figcaption>
+</figure>
+<p>
+  Mechaduinos kind of go against design principles of the Hangprinter Project.
+  They cost $50/piece + shipping, they have wasteful amounts of 32-bit processor cycles, they're hard to self-replicate,
+  they're quite complex to just mount, program and calibrate and easily double the assembly time of an average Hangprinter.
+  On the other hand, they're OSHW and they can make the Hangprinter work without a babysitter, now.
+</p>
+<p>
+  The Babel Tower print made me concerned about Hangprinter reliability,
+  so the Mechaduinos are there to teach me about closed loop control.
+  In the future
+  <a href="https://www.youtube.com/watch?v=Prw7wNa20Gk">load angle data from back emf</a>
+  might provide the reliability we need.
+  Thanks to Elijah Craig for showing me the TMC2130 drivers! They can output such data =)
+</p>
+<p>
+  - tobben
+</p>
+<br><br><br>
+
 <h1 id="hangprinter_project_43">
   Walking the Line
 </h1>
