@@ -105,6 +105,7 @@ where version 1 surely would have over-tightened lines and skipped steps.
 \end{equation}
 <p>
 where
+</p>
 <ul>
   <li>\(\gamma\)
     is the number of motor steps required to rotate the spool 1 radian,</li>
@@ -123,7 +124,6 @@ where
   <li>\(r\)
     is the spool's radius when there is no line on it.</li>
 </ul>
-</p>
 <p>
   Setting these variables will require some measuring and messing around in <code>Configuration.h</code>.
   The comments in <code>Configuration.h</code> are honestly trying to be helpful.
@@ -143,11 +143,13 @@ where
   We will only get steps/mm right at exactly one point along the G1-move.
   It is tempting to place this point at one of the ends since that would be computationally cheap.
   However, it would kill precision, even for simple movements like the following
+</p>
   <pre><code>
   G92 X0
   G1 X100
   G1 X0
-  </pre></code>
+  </code></pre>
+<p>
   The printer would use different steps/mm settings for the two different G1-moves.
   It would not end up where it started.
 </p>
@@ -160,6 +162,7 @@ where
 <p>
   If you want to improve the approach to dynamic steps/mm I've described above,
   then you will most probably want to improve lines 1757 to 1763 in <code>Marlin_main.cpp</code>:
+</p>
   <pre><code>
     <font color="green">float</font> <font color="blue">halfway_delta</font><font color="grey">[</font>4<font color="grey">];</font>
     <font color="green">float</font> <font color="blue">halfway</font><font color="grey">[</font>3<font color="grey">];</font>
@@ -169,7 +172,6 @@ where
     <font color="purple">calculate_delta</font><font color="grey">(</font><font color="blue">halfway</font>, <font color="blue">halfway_delta</font><font color="grey">);</font>
     <font color="purple">update_axis_steps_per_unit</font><font color="grey">(</font><font color="blue">delta</font>, <font color="blue">halfway_delta</font><font color="grey">);</font>
   </code></pre>
-</p>
 <p>
   I've taken the liberty to highlight variables and functions with the colors blue and purple.
   See <a href="https://github.com/tobbelobb/hangprinter">master branch in the repo</a> to fetch the code.
@@ -356,6 +358,7 @@ where
 </figure>
 <p>
   Keep the flat sides of lower frame parts as parallel to the ceiling frame part's sides as you can.
+</p>
 <figure>
   <a href="./bilder/topview.png"><img
     src="./bilder/topview_liten.png"
@@ -365,7 +368,6 @@ where
      Note how the sides of the ceiling frame part are parallel to the wall frame parts.
   </figcaption>
 </figure>
-</p>
 <h3>Step 1: Mark out Origo in XY-Plane</h3>
 <p>
   Use tape or ink to mark out a point directly below your ceiling frame part.
@@ -632,8 +634,8 @@ Left at the library were only a few makers,
     <a href="http://opensourceecology.org/wiki/File:Thesis.pdf">my Master's thesis</a>
   on productivity numbers doesn't resonate with them.
   This tickled me to think about and formulate why I do what I do, hence this post.
-<p>
 </p>
+<p>
   In the thesis, I really wanted to say that we can afford producing in humane, joyful ways, and that D3D-Porteus can help.
   Also, in this title and previous posts, I have used the word "chaotic" loosely.
   With <i>chaotic</i> I mean "distributed between people with their own budgets for time and money".
@@ -718,8 +720,8 @@ Left at the library were only a few makers,
   Now that my Master's is finished I'll try to make a living out of it.
   I'll continue to post report-like documentation here and list day-to-day activities
   over at <a href="http://opensourceecology.org/wiki/Tobben_Log">my log on the OSE wiki</a>.
-<p>
 </p>
+<p>
   As a start, I've co-founded a limited company that is offering RepRap Assembly Workshops and other course activity
   to schools and youth clubs around Norway and Sweden. See home page in Norwegian <a href="http://ludvigsen3dprinting.com/">here</a>.
   I tried to make a logo in Blender. It's my first one, and it ended up looking like something you would expect to see on a tube of tooth paste,
@@ -976,7 +978,7 @@ Left at the library were only a few makers,
   I use twice the origin/wall-distance plus ca 1.5 meters along all axes.
   As there are 4 movement axes on this printer, there will be 4 lengths.
   We call them the A-length, B-length, C-length and D-length.
-<p>
+</p>
 <figure>
   <a href="./bilder/ABCD.png"><img
     src="./bilder/ABCD_liten.png"
@@ -987,7 +989,7 @@ Left at the library were only a few makers,
        indicating which side should face which wall-mounted anchor point.
   </figcaption>
 </figure>
-</p>
+<p>
   After this step you should have:
 </p>
 <ul>
@@ -1499,8 +1501,8 @@ The videos are licenced via Vimeo or Youtube.
 
 </div>
 <br /><br /><br /><br /><br /><br /><br /><br />
-</body>
 <script type="text/javascript">
   MathJax.Hub.Configured()
 </script>
+</body>
 </html>
