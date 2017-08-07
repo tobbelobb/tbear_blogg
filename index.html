@@ -28,6 +28,197 @@
 
 <div id="MainContent">
 
+<h1 id="hangprinter_project_46">
+  Version 3.2 Overview
+</h1>
+<div class="date">7-8-2017</div>
+<p>
+  The Hangprinter v3 has developed very quickly recently.
+  We've been developing so intensely, we almost forgot to print a Benchy with the current prototype, called v3.2.
+  Being a first print, it of course failed with a thermal runaway error, but accuracy and precision looks promising:
+</p>
+<figure>
+  <a href="./bilder/Side_of_failed_benchy.JPG">
+  <img src="./bilder/Side_of_failed_benchy_liten.JPG" alt="">
+  </a>
+  <figcaption>
+    Side of a failed (300% scaled) Benchy print. Picture edited to show layer lines more clearly.
+    Click to zoom.
+  </figcaption>
+</figure>
+
+<p>
+  The v3.2, like the other v3 prototypes, is a dual unit design.
+  It has a stationary part, called the Winch, where the microcontroller, the motors and all the spools are mounted,
+  and it has a moving part, called the Mover, where the tool head (currently extruder and hot end), is mounted.
+  Its source files are found in the <a href="https://github.com/tobbelobb/hangprinter/tree/Gbg_version_3">Gbg_version_3 branch</a> in the repo.
+  All CAD files supplied by Osika.
+</p>
+
+<h3>The v3.2 Winch</h3>
+<figure>
+  <a href="./bilder/Winch_v3.2.JPG">
+  <img src="./bilder/Winch_v3.2_liten.JPG" alt="">
+  </a>
+  <figcaption>
+    The v3.2 winch with only the microcontroller and a bit of wiring missing.
+    Particularly the Mechaduinos (red PCBs) introduce a lot of new wiring.
+    Should be reduced in later versions. Should.
+  </figcaption>
+</figure>
+<p>
+  The new winch has a few features worth mentioning:
+</p>
+<ul>
+  <li>Structural integrity is provided by a slab of MDF.</li>
+  <li>In addition to being a winch, it also serves as a D-anchor.
+      Hence the hooks in the corners.</li>
+  <li>Spool size is decreased and line diameter has increased.
+      Spool buildup compensation has been found to work well (less than 2 mm errors along 1 m moves),
+      enabling us to boost ease of use and ease of assembly in this way.</li>
+  <li>Rolling fairleads with U-bearings and PTFE guiding have been added for the A, B, and C axes, both on the winch and at the anchors.
+      We found that hysteresis was introduced by friction between the new, thicker 0.5 mm Fireline and the lamp hooks.
+      The D-anchors will also be replaced with rolling fairleads, files are already in the repo.</li>
+  <li>Few dependencies among different parts.
+      We didn't even plan the motors- and spool placements in detail, we (Osika) just assembled it.</li>
+</ul>
+
+<h3>The Mover</h3>
+<p>
+The v3.2 mover also feels simple, it's hard to find very much to explain about it.
+</p>
+<figure>
+  <iframe src="https://player.vimeo.com/video/227891846" width="500" height="375" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  <figcaption>
+  </figcaption>
+</figure>
+<p>
+  It has a few features worth mentioning though.
+</p>
+<ul>
+  <li>It's very light, allowing quick acceleration and decelerations.</li>
+  <li>All action points are at the same height, making z-calibration (relative localization of anchor points along z-axis) easier.</li>
+  <li>Action points are 42 cm apart, longer than on any other mover we've made, giving it a large print volume.</li>
+  <li>Both A-lines are attached to the same screw, that can slide back and forth along the side of the triangle. This allows mover z-rotation angle to be adjusted very easily.</li>
+  <li>It has space for potentially much larger tool heads than the one currently used.</li>
+  <li>Corners fit movers of any beam length and material, see <a href="./bilder/Osikas_mover_30_maj.jpg">pic from previous post</a>.</li>
+</ul>
+
+<h3>Constant Force Mode</h3>
+<p>
+  In the video above, Osika is pushing the mover around by hand, without issuing commands or thinking about gcode.
+  This mode of operation on the v3.2 is enabled by the Mechaduinos running in "torque mode", sending constant amounts of current through each stepper motor.
+  It allows us to quickly place the mover at working height or in origo, and it generally just feels nice to control the machine with our muscles.
+  This mode is the successor of Vilse's "button mode" presented in an <a href="#hangprinter_project_43">earlier post</a>.
+</p>
+
+<h3>Automatic Localization of Anchor Points</h3>
+<p>
+  The constant force mode, along with the Mechaduinos' encoders and a few new gcodes has finally enabled us to do some real testing of the auto calibration algorithm presented earlier.
+  The new gcodes are G95, G96 and G97.
+</p>
+<ul>
+  <li><b>G95 A[torque] B[torque] C[torque] D[torque]</b> - sets motor(s) in torque mode, applying specified torque between -255 and +255. Negative torque winds line, positive torque unwinds line. Zero torque fixates axis and sets it back into position mode.</li>
+  <li><b>G96 A B C D</b> - Sets the reference point for specified motor's encoder.</li>
+  <li><b>G97 A B C D</b> - Read specified motor's relative encoder value and calculate how many millimeters of line that has been wound/unwound since the previous G96-command was issued for that axis. Only accounts correctly for line buildup if G96 was issued in origo with lines tight.</li>
+</ul>
+<h4>The Ugly Part</h4>
+<p>
+  All of the above commands require the Mechaduinos to communicate with Hangprinter-Marlin, which in itself is a bit of an ugly duckling of the project.
+  It may be the oldest fork of rotten spaghetti Github ever hosted.
+  Not Italian and with no tomato sauce.
+  But it works.
+</p>
+<p>
+  Anyways, to enable required communication, I've hooked all Mechadionos onto the RAMPS' i2c bus.
+</p>
+<figure>
+  <a href="./bilder/i2c_1.JPG">
+  <img src="./bilder/i2c_1_liten.JPG" alt="">
+  </a>
+  <figcaption>
+    The Mechaduino wiring required to run Hangprinter v3.2 firmware: Blue connector receives 12 V, red wire carries 5 V from RAMPS, D0 and D1 receives dir/step signals, SDA and SCL are hooked to RAMPS' i2c bus.
+  </figcaption>
+</figure>
+<figure>
+  <a href="./bilder/i2c_2.JPG">
+  <img src="./bilder/i2c_2_liten.JPG" alt="">
+  </a>
+  <figcaption>
+    The Mechaduinos' logic level is at 3V3, while RAMPS' i2c bus runs at 5V, with a 10kOhm internal pull-up. These two 4k7 resistors connect SDA and SCL to 3V3, making the i2c bus run at ca 3.85 V.
+    Works ok, even if it's not pretty.
+  </figcaption>
+</figure>
+<p>
+  The ongoing discussions about how to replace the RAMPS+Mechaduino-solution is very pleasant since anything is better than the above.
+  But all those ugly parts enables testing of automatic anchor localization =D Hoooray!
+</p>
+
+<p>
+  Some basic usage of G96, and G97 is shown in the following video. Also note the already scrapped v3.1 winch and forest of green/yellow dupont cables connecting i2c bus near end of video.
+</p>
+<figure>
+  <iframe src="https://player.vimeo.com/video/227893849" width="500" height="375" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  <figcaption>
+  </figcaption>
+</figure>
+<h4>The Theoretical Part</h4>
+<p>
+  Slightly more advanced usage of G95, G96, and G97 are detailed in the following auto-calibration gcode macro: <a href="https://github.com/tobbelobb/hangprinter/blob/b739f732622b39edf0f6ebeff3fdf60abc50b043/firmware/auto_calibration_macro.gcode">link</a>.
+  That macro also makes heavy usage of the new G8 gcode, which lets you control line lengths like Cartesian RepRaps control XYZ-positions with G1, while compensating spool buildup.
+  For example <code>G8 A10 F100</code>, would make line A 10 mm longer than it is in origo, moving at a speed of 100 mm/min.
+</p>
+<p>
+  The basic idea of the linked gcode is to use the C-motor as a sensor.
+  It moves the A, B, and D motors by known amounts while the C-motor unwinds line.
+  Once A, B, and D arrives at the known positions, motor C will tighten its line with 20% of its max force, read its encoder, and release its line again.
+  This repeats 27 times in the macro.
+  The linked gcode didn't work perfectly, but I managed to collect 18 consecutive data points, which is enough to auto-calibrate, at least in theory.
+</p>
+<p>
+  In practice, the algorithm wanted far more and/or far better data. With my 18 data points it was only able to locate the anchors within +- 37 cm along each axis.
+  The reason for this is of course imprecise measurements.
+  The Mechaduinos' torque mode doesn't actually provide a constant tension in the C line, since gear teeth don't transfer torque perfectly smoothly.
+  We'll be testing if a force sensing resistor along the sensor axis' line can give us better data.
+  Until then, very wide herringbone gears will also give us better data.
+</p>
+<figure>
+  <a href="./bilder/Expected_C_minus_measured_C_linreg.png">
+  <img src="./bilder/Expected_C_minus_measured_C_linreg_liten.png" alt="">
+  </a>
+  <figcaption>
+  The error in the 18 collected data points and a linear regression of the error.
+  The C-line was made shorter for every measurements.
+  </figcaption>
+</figure>
+<p>
+  The error's mean value was -1.9. A positive value was expected since the C-motor will wind up extra line for all flex that exists in the system.
+  We could clearly have tightened the line harder, particularly during the last 8 measurements when the C-line was shorter.
+  This makes sense, since the A- and B-lines worked at a better angle, and probably flexed less towards the C-anchor when the C-line was shorter.
+</p>
+<p>
+  The error's standard deviation was 7.95. This is high. The auto-calibration algorithm needs a standard deviation below ca 2 to produce better calibration values than I can measure by hand.
+</p>
+<p>
+  Expected values were known because we measured the anchor positions by hand.
+  Those measurements induce systematic errors that would largely be compensated by subtracting the red line from the data.
+  However, the algorithm's output did in fact get slightly worse after subtracting the linear error.
+</p>
+<p>
+  A more complete and accurate description of the auto-calibration results are hidden in the
+  <a href="https://github.com/tobbelobb/auto-calibration-simulation-for-hangprinter/blob/46c94bfe172846e23c6466e486bafff3843e2a82/simulation.py#L243">script i used</a>,
+  as well as in other files in the <a href="https://github.com/tobbelobb/auto-calibration-simulation-for-hangprinter/tree/data3">data3 branch</a> in the auto-calibration repo.
+</p>
+<p>
+  On the positive side, it was discovered that the auto-calibration algorithm improved its convergence rate drastically when we forced the first measurement to be in origo.
+  I'm quite pleased to have a concrete sense of how much I need to improve measurements before I can actually auto-calibrate.
+</p>
+
+<p>
+  - tobben
+</p>
+<br><br><br>
+
 
 <h1 id="hangprinter_project_45">
   Closed Loop Doing its Job and Sstruder v2 Pic
