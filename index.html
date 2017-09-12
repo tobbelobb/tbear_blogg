@@ -28,6 +28,65 @@
 
 <div id="MainContent">
 
+<h1 id="hangprinter_project_47">
+  Benchy, Videos and Some New Code
+</h1>
+<div class="date">12-9-2017</div>
+<p>
+  First Hangprinted Benchy:
+</p>
+<figure>
+  <a href="./bilder/Benchy_300percent.jpg">
+  <img src="./bilder/Benchy_300percent_liten.jpg" alt="">
+  </a>
+  <figcaption>
+    The 300 % sized Benchy is quite under extruded, but the Hangprinter v3.2 seem to have performed well mechanically.
+    A bit of overheating on near the top was expected since we don't have active cooling.
+  </figcaption>
+</figure>
+<figure>
+  <a href="./bilder/Benchy_300percent_2.jpg">
+  <img src="./bilder/Benchy_300percent_2_liten.jpg" alt="">
+  </a>
+  <figcaption>
+    Wavy lines on the front side stem from under extrusion.
+  </figcaption>
+</figure>
+<p>
+  We're planning to try changing the Mechaduinos for FSR-driven tightness sensors.
+  Code for this is written and posted on <a href="https://github.com/tobbelobb/hangprinter/tree/v3_fsr">v3_fsr branch</a> in the repo.
+</p>
+<p>
+  We did a few more tries at collecting data for auto locating anchor points.
+  One of them looked like this:
+</p>
+<figure>
+  <iframe src="https://player.vimeo.com/video/232374666" width="500" height="375" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  <figcaption>
+  </figcaption>
+</figure>
+<p>
+  After that try we updated the macro to use constant torque mode on all motors before doing the actual measurement, with only marginally better results.
+  Updated gcode macro is <a href="https://github.com/tobbelobb/hangprinter/blob/594c5bdad645bce52d6cb1f27ae984f3cce4ef2f/firmware/auto_calibration_macro.gcode">here</a>.
+  We also noticed we needed to send data through stderr for Pronterface to show them during "print"/macro execution.
+  All the code we run on the v3.2 is published on the <a href="https://github.com/tobbelobb/hangprinter/tree/Gbg_version_3">Gbg_version_3 branch</a> in the repo.
+</p>
+<p>
+  The last thing that happened this month was a Hangprinter demonstration at <a href="https://2017.theconference.se/">The Conference</a> in Malmö.
+</p>
+<figure>
+  <iframe src="https://player.vimeo.com/video/232376392" width="500" height="375" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  <figcaption>
+  </figcaption>
+</figure>
+<p>
+  Thanks to Jaime Reyes who helped me out for two intensive days in Malmö!
+</p>
+<p>
+  - tobben
+</p>
+<br><br><br>
+
 <h1 id="hangprinter_project_46">
   Version 3.2 Overview
 </h1>
@@ -52,7 +111,7 @@
   It has a stationary part, called the Winch, where the microcontroller, the motors and all the spools are mounted,
   and it has a moving part, called the Mover, where the tool head (currently extruder and hot end), is mounted.
   Its source files are found in the <a href="https://github.com/tobbelobb/hangprinter/tree/Gbg_version_3">Gbg_version_3 branch</a> in the repo.
-  All CAD files supplied by Osika.
+  All CAD files created by Osika.
 </p>
 
 <h3>The v3.2 Winch</h3>
