@@ -1,0 +1,2189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="author" content="Torbjorn" >
+<meta name="keywords" content="Reprap, blog, development">
+<meta name="description" content="Torbjørn Ludvigsen's Reprap blog.">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link href="http://vitana.se/opr3d/tbear/feed.xml" rel="alternate" type="application/rss+xml" title="Torbjørn's Reprap blog's RSS feed" />
+
+<!-- TODO: This Mathjax is pretty slow... -->
+<script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML">
+</script>
+
+<title>Torbjørns Reprap blog</title>
+</head>
+
+<body>
+<div id="SiteName">
+  <div class="right">
+    <a href=#Links>Contact, archive, etc</a>
+  </div>
+  <div class="left">
+    Reprap blog
+  </div>
+</div>
+
+<div id="MainContent">
+<p>
+  NOTE: This file (index.html) is only to preserve old links.
+  New posts after 15-11-2017 will not be published here.
+  They will be published in <a href="2017.html">2017.html</a> (up until 1-1-2018, when I will start publishing in <a href="2018.html">2018.html</a> etc).
+</p>
+
+<h1 id="hangprinter_project_49">
+  Time for Clones
+</h1>
+<div class="date">15-11-2017</div>
+<p>
+  It's been a busy month and the next one will be busy too.
+  I've helped fredrudolf build a v3.3 (aka HP3).
+  We're preparing a live demo at Maker Faire Rome (Dec 1-3).
+  After that, I will help <a href="https://toms3d.org/">Tom</a> create a video series on Hangprinter.
+  As the bootstrap dev, I'm deeply satisfied with this outlook.
+  So satisfied that my mind is wandering on to the v4 and other RepRap related projects whenever my various inboxes are empty.
+</p>
+<p>
+  Ok, but first things first.
+  The HP3 works very well:
+</p>
+
+<figure>
+  <a href="./bilder/bilder/First_HP3_Benchy.jpg">
+  <img src="./bilder/First_HP3_Benchy_liten.jpg" alt="">
+  </a>
+  <figcaption>
+    The first Benchy fredrudolf printed with his HP3 using a 0.8 mm nozzle.
+  </figcaption>
+</figure>
+
+<p>
+  For now I point all builders to <a href="http://forums.reprap.org/read.php?1,792937">the Hangprinter version 3 forum thread</a> and
+  <a href="https://github.com/tobbelobb/hangprinter/tree/Openscad_version_3">the BOM and source files</a>.
+</p>
+
+<p>
+  Then second things; my own HP3 winch looks like this:
+</p>
+<figure>
+  <a href="./bilder/bilder/HP3_mover_electronics_mounted.JPG">
+  <img src="./bilder/HP3_mover_electronics_mounted_liten.JPG" alt="">
+  </a>
+  <figcaption>
+    A HP3 winch using TMC2130 drivers.
+    This is planned to be used both in Rome and in Tom's video.
+    The small 120W power supply is experimental.
+    I've noted down spool radius and line length on each spool.
+    These numbers now go straight into Configuration.h.
+    Note that the Pi on there is optional.
+  </figcaption>
+</figure>
+<p>
+  The winch above is finished hardware-wise. I just need to configure the TMC2130s and mount the thing.
+</p>
+
+<h3>Clone Things and Future Things</h3>
+<p>
+  "But at all Cost, a <s>Thing</s> <em>RepRap Design</em> must live: with a transfusion of one's own worse Life if one can’t retain the Original's better. Better a live Sparrow than a stuffed Eagle."<br />
+  <blockquote> </blockquote>- Modified version of Edward FitzGerald's letter to E. B. Cowell, 9/3/1858
+</p>
+
+<p>
+  I think the HP3 design might just become powerful enough to spread without my long-term help,
+    especially with Tom planning to make instructions for it.
+  I think the makers and the clones will come to Hangprinter and transfuse their own Life into it soon.
+  That will free up a lot of my time, and I'm thinking about what to do with it.
+</p>
+
+<figure>
+  <a href="./bilder/hot_end_close_up.jpg">
+  <img src="./bilder/hot_end_close_up_liten.jpg" alt="">
+  </a>
+  <figcaption>
+    Tilted hot end.
+    Photo by Jimmy Svanberg.
+  </figcaption>
+</figure>
+
+<p>
+  I've tried living the RepRap slogan "Make one for a friend",
+   but my friends fear for their pets' and children's lives whenever I offer them a Hangprinter.
+  I'm considering trying out "Make one for a dev/supporter/potential friend" instead.
+  Since they're so cheap, I can bring physical HP3's out in the world.
+  Drop me an email if you're a dev, supporter or potential friend, and let's see if we can come up with some arrangement.
+</p>
+
+<p>
+  I'm also considering building an extreme high-performance version of Hangprinter, using BLDC motors and oDrive controller boards.
+  Madcowswe, lead dev behind the powerful <a href="https://odriverobotics.com/#odrive">oDrive</a>, has shown interest in helping out, and it's very exciting.
+</p>
+
+<p>
+  A third idea is to capture the pop-culture I've seen grow around RepRap, and give it a proper, distributed social network to grow in.
+  It would emphasize on the social part of 3d-printing and collect everything RepRap in one place.
+  Dev blog, micro blog, campaign, code, chat groups, Youtube stars, and a marketplace.
+  Its goal would be to make peer-production so easy, fun and profitable that people can't resist joining in.
+  Similar web-things are being pioneered in the wonderful Precious Plastics community, see <a href="https://www.youtube.com/watch?v=_zpGnThAM80">this video</a>.
+</p>
+
+<p>
+  We're in for an exciting time.
+  Follow me on <a href="https://twitter.com/tobbelobb">Twitter</a> for the small updates.
+</p>
+
+<figure>
+  <iframe src="https://www.youtube.com/embed/ShMbP9yxr5k" width="500" height="375" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  <figcaption>
+    Fredrudolf's HP3.
+    Music by Ehrling: <a href="https://soundcloud.com/ehrling">soundcloud.com/ehrling</a>
+  </figcaption>
+</figure>
+
+<p>
+  Best regards,
+</p>
+
+<p>
+  - tobben
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_48">
+  Version 3.3 In The Making
+</h1>
+<div class="date">14-10-2017</div>
+<p>
+  It's been a month of very technical development.
+  I feel like I'm searching for the version 3.3 among a forest of new ideas and insights.
+  The goal of closed loop control, automatic calibration and BLDC driven axes are still out in the blue,
+    but pushing towards them has taught me lots of things, and made the v3.3 a much better printer.
+  Anyways.
+</p>
+<h3>Going Back to Openscad</h3>
+<p>
+  I've taken Osika's Fusion 360 CAD files for the version 3 and converted them into Openscad code.
+  This is mainly because Fusion 360 is proprietary software, but also because I enjoy coding full parametrization,
+  and because I have a problem with pain in my mouse arm.
+</p>
+<p>
+  Osika's Fusion 360 models had really nice rounded corners that I loved.
+  This was inconvenient to replicate in Openscad.
+  I've experimented a little with <a href="http://www.implicitcad.org/">ImplicitCAD</a>.
+  It makes rounded corners in scripted CAD files very easy.
+  The Hangprinter repo will switch to it as soon as ImplicitCAD as gets easy to install.
+</p>
+<p>
+  The Openscad files are in this branch: <a href="https://github.com/tobbelobb/hangprinter/tree/Openscad_version_3">Openscad_version_3</a>.
+  These files are now the main version that I'm working on.
+</p>
+<p>
+  Here's a couple of snapshots from yesterday's Openscad development.
+</p>
+<figure>
+  <a href="./bilder/bilder/winch3.3.png">
+  <img src="./bilder/winch3.3_liten.png" alt="">
+  </a>
+  <figcaption>
+    A square winch layout that gives space for mounting power supply and electronics, and avoids crossing lines.
+  </figcaption>
+</figure>
+
+<figure>
+  <a href="./bilder/bilder/motor_bracket3.3.png">
+  <img src="./bilder/motor_bracket3.3_liten.png" alt="">
+  </a>
+  <figcaption>
+    A twisted motor bracket design with two little windows for fiddling with set screws and such.
+  </figcaption>
+</figure>
+
+<h3>Test Builds</h3>
+<p>
+  Driving the design work has been little test prints and a goal of making parts less interdependent.
+  I think the v3.3 is already an easier build and a more workable machine than the single unit version 2 was.
+<p>
+
+<figure>
+  <a href="./bilder/Version3.3_prints.JPG">
+  <img src="./bilder/Version3.3_prints_liten.JPG" alt="">
+  </a>
+  <figcaption>
+    Some of the test prints I've made this month.
+  </figcaption>
+</figure>
+
+<figure>
+  <a href="./bilder/ABC_anchor_footprint.JPG">
+  <img src="./bilder/ABC_anchor_footprint_liten.JPG" alt="">
+  </a>
+  <figcaption>
+    Little detail that minimizes the footprint of ABC anchors.
+    It would be a bit more stable to use three screws in a triangular pattern,
+    but the sliding concept in itself works well.
+  </figcaption>
+</figure>
+
+<p>
+  I've decided not to include an official Hangprinter extruder in the version 3 repos, at least not for 3 mm or 1.75 mm plastic filaments.
+  Others have made extremely good filament extruders already.
+</p>
+
+<figure>
+  <a href="./bilder/Extruder_holder3.3.JPG">
+  <img src="./bilder/Extruder_holder3.3_liten.JPG" alt="">
+  </a>
+  <figcaption>
+    The version 3.3 has an easily detachable Nema17 extruder mount.
+    (This one actually encloses around the beam with the cable. That bug is fixed now.)
+  </figcaption>
+</figure>
+
+<p>
+  The easily detachable extruder mount takes us nicely towards this month's biggest topic:
+</p>
+
+<h3>Automatic Anchor Localization Work</h3>
+
+<p>
+  First off, being able to detach the extruder finally lets us use the mover as an aiming plumb, to get our home position directly below the winch (D-anchor):
+</p>
+
+<figure>
+  <a href="./bilder/Calibrating_D.JPG">
+  <img src="./bilder/Calibrating_D_liten.JPG" alt="">
+  </a>
+  <figcaption>
+    Both Hangprinter firmware and the auto-calibration algorithm depends on home position being vertically below the D-anchor.
+  </figcaption>
+</figure>
+
+<figure>
+  <a href="./bilder/Draw_triangle.JPG">
+  <img src="./bilder/Draw_triangle_liten.JPG" alt="">
+  </a>
+  <figcaption>
+    Drawing a triangle around the on the build plate gives us a more visible home position than before
+  </figcaption>
+</figure>
+
+<figure>
+  <a href="./bilder/Insert_ABC_lines.JPG">
+  <img src="./bilder/Insert_ABC_lines_liten.JPG" alt="">
+  </a>
+  <figcaption>
+    Attaching ABC-lines and tightening allows us to set their inclination to 0 with a water level measuring tool instead of having to measure the A, B, and D anchors' Z-positions.
+  </figcaption>
+</figure>
+
+<p>
+  The above mentioned tricks helped greatly with the experiments I've been working on this week,
+  trying to locate anchors using only data from force sensing resistors (FSRs).
+  It'd be lovely if it worked, since FSRs are only a few USD each, and they plug right into the thermistor input ports of any 3d printer microcontroller board.
+  They're like thermistors, but sensing compression instead of temperature.
+</p>
+<p>
+  The hope was to maintain a constant, adjustable, and measurable tension on all the lines.
+  This would let us move to known ABCD-positions without knowing the anchors' locations.
+  Data (line lengths) from 9 valid ABCD-positions makes it possible in theory to calculate anchors' (and mover's) XYZ-position through a non-linear optimization routine.
+</p>
+<p>
+  Technical note: If the data points had also included magnitude of each force, we would get better calibration, possibly with fewer data points. See <a href="https://link.springer.com/chapter/10.1007%2F978-94-007-4620-6_34">[1]</a> for lots of details. Our data points however, included only line length diffs.
+</p>
+
+<figure>
+  <a href="./bilder/FSR_pusher.JPG">
+  <img src="./bilder/FSR_pusher_liten.JPG" alt="">
+  </a>
+  <figcaption>
+    Sensing element along each line looked like this.
+    They replace an idler bearing on the winch and therefore adds only 2 bearings along each line path.
+    Because the FSR requires compression and compression requires movement, the sensing element introduces flex in the movement system.
+  </figcaption>
+</figure>
+
+<figure>
+  <iframe src="https://player.vimeo.com/video/236803375" width="500" height="375" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  <figcaption>
+    "Constant tension mode" looked like this.
+  </figcaption>
+</figure>
+
+<p>
+  As you see in the video above, the constant tension mode was quite slow.
+  This was due to analog reads on alternating channels is very slow on the Arduino Mega board.
+  A little capacitor has to charge up every time you read from a new analog pin, so there's no way to get completely around this with software.
+  The Arduino Mega, with its 16 MHz and 8-bit processor, is also very slow in itself.
+</p>
+
+<p>
+  Over a period of three days, I collected a few hundred data points (line length differences compared to those in origo).
+  They were of quite bad quality, +- ca 1 cm.
+  The error grew to +-15 cm in the output of the optimization algorithm.
+</p>
+
+<figure>
+  <a href="./bilder/Best_autocal_on_Oct_11_15cm.png">
+  <img src="./bilder/Best_autocal_on_Oct_11_15cm_liten.png" alt="">
+  </a>
+  <figcaption>
+    The best "automatic anchor localization" I was able to achieve this time.
+    Blue dots are actual anchor locations, orange dots are the output of the algorithm.
+    Units of millimeters on all axes.
+  </figcaption>
+</figure>
+
+<p>
+  A few error sources combined up to the +- 1 cm measurement error.
+  First out, it's actually very hard to measure force with FSRs.
+  They drift with both time and temperature, and they have a significant hysteresis.
+  <a href="https://pdfs.semanticscholar.org/d6a3/8535098c2a08479e67d068798474994c426c.pdf">This paper</a> shows a few graphs, explaining a little more.
+  This contributed with at least ca 10% of the error.
+</p>
+
+<figure>
+  <a href="./bilder/Errors_at_alternating_positions_tight430_let_c_trigger_smoothly.png">
+  <img src="./bilder/Errors_at_alternating_positions_tight430_let_c_trigger_smoothly_liten.png" alt="">
+  </a>
+  <figcaption>
+    Data collected  at two alternating positions 5mm apart over a period of ca 1h 30m.
+    Each measurement made by loosening the C-line, then tightening it until the FSR reaches a threshold value.
+    The y-axis has units of millimeters, and we see that the threshold of tightness moved by ca 0.8 mm at position 1 and 0.3 mm at position 2.
+  </figcaption>
+</figure>
+
+<p>
+  The greatest error source however, was inconsistency in spool buildup.
+  I tuned all axes as accurately as I could, but I just couldn't get consistent repeatability.
+  Each spool had ca 10 m of idle line (two 5 m lines) on it, which I think a Hangprinter should be able to handle.
+  (Who would want to run out of line on their 45'th day on a 5m tall print?)
+  Winding and unwinding even a single axis' two lines often ended up making one of the lines ~2 mm shorter than the other.
+  This is the same effect as caused the <a href="#hangprinter_project_34">tilt problem</a> during the Babel tower print in February this year.
+</p>
+
+<p>
+  In version 3.2, we had reduced spool radius and did a few quick experiments to confirm that line buildup compensation could handle it.
+  It turns out now that we were wrong and must increase spool radius if we want to avoid having to deal with encoders.
+</p>
+
+<p>
+  Other error sources:
+</p>
+<ul>
+  <li>Flex introduced by sensing element (probably ~1 mm). </li>
+  <li>We don't know if we managed to start measurements exactly at home position. A quick repeatability test suggested a +-1.5 mm difference from data collection to data collection.</li>
+  <li>Parallelograms between anchor points and action points not exactly parallel. </li>
+</ul>
+
+<p>
+  To sum up the FSR work: I couldn't collect accurate data because axes didn't move accurately.
+  FSRs were convenient and easy to set up but slow and complicated to use.
+  If you want a good printer, use Mechaduinos instead. It's 10 times as expensive, and 10 times as hard to set up, but more than 100 times better.
+</p>
+
+<p>
+  If you are from the future, and have got a faster processor and bigger spools, and you want to re-check if FSRs could be way to go for auto-calibration,
+  then I salute you. You are probably right! Have my files: <a href="https://github.com/tobbelobb/hangprinter/tree/v3_fsr">firmware and gcodes</a>, and <a href="https://github.com/tobbelobb/auto-calibration-simulation-for-hangprinter/blob/fsr/simulation.py">optimization algorithm with data</a>.
+</p>
+
+<h3>Chris's Basement</h3>
+
+<p>
+To end on a high note, I must point out Chris Riley (aka brotherchris)'s Hangprinter videos:
+</p>
+<ul>
+  <li><a href="https://www.youtube.com/watch?v=wswTYW6ukiM">Hang Printer - 3D printer Build Part 1</a></li>
+  <li><a href="https://www.youtube.com/watch?v=ntvwfBjJ6Z4">Add Bluetooth to your 3D printer</a></li>
+  <li><a href="https://www.youtube.com/watch?v=it_HeTX8LK8">Hang Printer - 3D Printer Build UPDATE</a></li>
+  <li><a href="https://www.youtube.com/watch?v=in7GH1errl4">Hang Printer - 3D Printer Build Part 2 Calibrate & First Print</a></li>
+  <li><a href="https://www.youtube.com/watch?v=UZ5K7kqQyhw">Hang Printer 300mm Benchy print - Time Lapse</a></li>
+</ul>
+
+<p>
+If you're building a version 2 yourself, I highly recommend you to follow his ongoing dev work on the <a href="http://forums.reprap.org/read.php?1,738858,page=8">forum thread</a>.
+You rock, Chris!
+</p>
+
+<p>
+  - tobben
+</p>
+<br><br><br>
+
+
+<h1 id="hangprinter_project_47">
+  Benchy, Videos and Some New Code
+</h1>
+<div class="date">12-9-2017</div>
+<p>
+  First Hangprinted Benchy:
+</p>
+<figure>
+  <a href="./bilder/Benchy_300percent.jpg">
+  <img src="./bilder/Benchy_300percent_liten.jpg" alt="">
+  </a>
+  <figcaption>
+    The 300 % sized Benchy is quite under extruded, but the Hangprinter v3.2 seem to have performed well mechanically.
+    A bit of overheating near the top was expected since we don't have active cooling.
+  </figcaption>
+</figure>
+<figure>
+  <a href="./bilder/Benchy_300percent_2.jpg">
+  <img src="./bilder/Benchy_300percent_2_liten.jpg" alt="">
+  </a>
+  <figcaption>
+    Wavy lines on the front side stem from under extrusion.
+  </figcaption>
+</figure>
+<p>
+  We're planning to try changing the Mechaduinos for FSR-driven tightness sensors.
+  Code for this is written and posted on <a href="https://github.com/tobbelobb/hangprinter/tree/v3_fsr">v3_fsr branch</a> in the repo.
+</p>
+<p>
+  We did a few more tries at collecting data for auto locating anchor points.
+  One of them looked like this:
+</p>
+<figure>
+  <iframe src="https://player.vimeo.com/video/232374666" width="500" height="375" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  <figcaption>
+  </figcaption>
+</figure>
+<p>
+  After that try we updated the macro to use constant torque mode on all motors before doing the actual measurement, with only marginally better results.
+  Updated gcode macro is <a href="https://github.com/tobbelobb/hangprinter/blob/594c5bdad645bce52d6cb1f27ae984f3cce4ef2f/firmware/auto_calibration_macro.gcode">here</a>.
+  We also noticed we needed to send data through stderr for Pronterface to show them during "print"/macro execution.
+  All the code we run on the v3.2 is published on the <a href="https://github.com/tobbelobb/hangprinter/tree/Gbg_version_3">Gbg_version_3 branch</a> in the repo.
+</p>
+<p>
+  The last thing that happened this month was a Hangprinter demonstration at <a href="https://2017.theconference.se/">The Conference</a> in Malmö.
+</p>
+<figure>
+  <iframe src="https://player.vimeo.com/video/232376392" width="500" height="375" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  <figcaption>
+  </figcaption>
+</figure>
+<p>
+  Thanks to Jaime Reyes who helped me out for two intensive days in Malmö!
+</p>
+<p>
+  - tobben
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_46">
+  Version 3.2 Overview
+</h1>
+<div class="date">7-8-2017</div>
+<p>
+  The Hangprinter v3 has developed very quickly recently.
+  We've been developing so intensely, we almost forgot to print a Benchy with the current prototype, called v3.2.
+  Being a first print, it of course failed with a thermal runaway error, but accuracy and precision looks promising:
+</p>
+<figure>
+  <a href="./bilder/Side_of_failed_benchy.JPG">
+  <img src="./bilder/Side_of_failed_benchy_liten.JPG" alt="">
+  </a>
+  <figcaption>
+    Side of a failed (300% scaled) Benchy print. Picture edited to show layer lines more clearly.
+    Click to zoom.
+  </figcaption>
+</figure>
+
+<p>
+  The v3.2, like the other v3 prototypes, is a dual unit design.
+  It has a stationary part, called the Winch, where the microcontroller, the motors and all the spools are mounted,
+  and it has a moving part, called the Mover, where the tool head (currently extruder and hot end), is mounted.
+  Its source files are found in the <a href="https://github.com/tobbelobb/hangprinter/tree/Gbg_version_3">Gbg_version_3 branch</a> in the repo.
+  All CAD files created by Osika.
+</p>
+
+<h3>The v3.2 Winch</h3>
+<figure>
+  <a href="./bilder/Winch_v3.2.JPG">
+  <img src="./bilder/Winch_v3.2_liten.JPG" alt="">
+  </a>
+  <figcaption>
+    The v3.2 winch with only the microcontroller and a bit of wiring missing.
+    Particularly the Mechaduinos (red PCBs) introduce a lot of new wiring.
+    Should be reduced in later versions. Should.
+  </figcaption>
+</figure>
+<p>
+  The new winch has a few features worth mentioning:
+</p>
+<ul>
+  <li>Structural integrity is provided by a slab of MDF.</li>
+  <li>In addition to being a winch, it also serves as a D-anchor.
+      Hence the hooks in the corners.</li>
+  <li>Spool size is decreased and line diameter has increased.
+      Spool buildup compensation has been found to work well (less than 2 mm errors along 1 m moves),
+      enabling us to boost ease of use and ease of assembly in this way.</li>
+  <li>Rolling fairleads with U-bearings and PTFE guiding have been added for the A, B, and C axes, both on the winch and at the anchors.
+      We found that hysteresis was introduced by friction between the new, thicker 0.5 mm Fireline and the lamp hooks.
+      The D-anchors will also be replaced with rolling fairleads, files are already in the repo.</li>
+  <li>Few dependencies among different parts.
+      We didn't even plan the motors- and spool placements in detail, we (Osika) just assembled it.</li>
+</ul>
+
+<h3>The Mover</h3>
+<p>
+The v3.2 mover also feels simple, it's hard to find very much to explain about it.
+</p>
+<figure>
+  <iframe src="https://player.vimeo.com/video/227891846" width="500" height="375" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  <figcaption>
+  </figcaption>
+</figure>
+<p>
+  It has a few features worth mentioning though.
+</p>
+<ul>
+  <li>It's very light, allowing quick acceleration and decelerations.</li>
+  <li>All action points are at the same height, making z-calibration (relative localization of anchor points along z-axis) easier.</li>
+  <li>Action points are 42 cm apart, longer than on any other mover we've made, giving it a large print volume.</li>
+  <li>Both A-lines are attached to the same screw, that can slide back and forth along the side of the triangle. This allows mover z-rotation angle to be adjusted very easily.</li>
+  <li>It has space for potentially much larger tool heads than the one currently used.</li>
+  <li>Corners fit movers of any beam length and material, see <a href="./bilder/Osikas_mover_30_maj.jpg">pic from previous post</a>.</li>
+</ul>
+
+<h3>Constant Force Mode</h3>
+<p>
+  In the video above, Osika is pushing the mover around by hand, without issuing commands or thinking about gcode.
+  This mode of operation on the v3.2 is enabled by the Mechaduinos running in "torque mode", sending constant amounts of current through each stepper motor.
+  It allows us to quickly place the mover at working height or in origo, and it generally just feels nice to control the machine with our muscles.
+  This mode is the successor of Vilse's "button mode" presented in an <a href="#hangprinter_project_43">earlier post</a>.
+</p>
+
+<h3>Automatic Localization of Anchor Points</h3>
+<p>
+  The constant force mode, along with the Mechaduinos' encoders and a few new gcodes has finally enabled us to do some real testing of the auto calibration algorithm presented earlier.
+  The new gcodes are G95, G96 and G97.
+</p>
+<ul>
+  <li><b>G95 A[torque] B[torque] C[torque] D[torque]</b> - sets motor(s) in torque mode, applying specified torque between -255 and +255. Negative torque winds line, positive torque unwinds line. Zero torque fixates axis and sets it back into position mode.</li>
+  <li><b>G96 A B C D</b> - Sets the reference point for specified motor's encoder.</li>
+  <li><b>G97 A B C D</b> - Read specified motor's relative encoder value and calculate how many millimeters of line that has been wound/unwound since the previous G96-command was issued for that axis. Only accounts correctly for line buildup if G96 was issued in origo with lines tight.</li>
+</ul>
+<h4>The Ugly Part</h4>
+<p>
+  All of the above commands require the Mechaduinos to communicate with Hangprinter-Marlin, which in itself is a bit of an ugly duckling of the project.
+  It may be the oldest fork of rotten spaghetti Github ever hosted.
+  Not Italian and with no tomato sauce.
+  But it works.
+</p>
+<p>
+  Anyways, to enable required communication, I've hooked all Mechadionos onto the RAMPS' i2c bus.
+</p>
+<figure>
+  <a href="./bilder/i2c_1.JPG">
+  <img src="./bilder/i2c_1_liten.JPG" alt="">
+  </a>
+  <figcaption>
+    The Mechaduino wiring required to run Hangprinter v3.2 firmware: Blue connector receives 12 V, red wire carries 5 V from RAMPS, D0 and D1 receives dir/step signals, SDA and SCL are hooked to RAMPS' i2c bus.
+  </figcaption>
+</figure>
+<figure>
+  <a href="./bilder/i2c_2.JPG">
+  <img src="./bilder/i2c_2_liten.JPG" alt="">
+  </a>
+  <figcaption>
+    The Mechaduinos' logic level is at 3V3, while RAMPS' i2c bus runs at 5V, with a 10kOhm internal pull-up. These two 4k7 resistors connect SDA and SCL to 3V3, making the i2c bus run at ca 3.85 V.
+    Works ok, even if it's not pretty.
+  </figcaption>
+</figure>
+<p>
+  The ongoing discussions about how to replace the RAMPS+Mechaduino-solution is very pleasant since anything is better than the above.
+  But all those ugly parts enables testing of automatic anchor localization =D Hoooray!
+</p>
+
+<p>
+  Some basic usage of G96, and G97 is shown in the following video. Also note the already scrapped v3.1 winch and forest of green/yellow dupont cables connecting i2c bus near end of video.
+</p>
+<figure>
+  <iframe src="https://player.vimeo.com/video/227893849" width="500" height="375" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  <figcaption>
+  </figcaption>
+</figure>
+<h4>The Theoretical Part</h4>
+<p>
+  Slightly more advanced usage of G95, G96, and G97 are detailed in the following auto-calibration gcode macro: <a href="https://github.com/tobbelobb/hangprinter/blob/b739f732622b39edf0f6ebeff3fdf60abc50b043/firmware/auto_calibration_macro.gcode">link</a>.
+  That macro also makes heavy usage of the new G8 gcode, which lets you control line lengths like Cartesian RepRaps control XYZ-positions with G1, while compensating spool buildup.
+  For example <code>G8 A10 F100</code>, would make line A 10 mm longer than it is in origo, moving at a speed of 100 mm/min.
+</p>
+<p>
+  The basic idea of the linked gcode is to use the C-motor as a sensor.
+  It moves the A, B, and D motors by known amounts while the C-motor unwinds line.
+  Once A, B, and D arrives at the known positions, motor C will tighten its line with 20% of its max force, read its encoder, and release its line again.
+  This repeats 27 times in the macro.
+  The linked gcode didn't work perfectly, but I managed to collect 18 consecutive data points, which is enough to auto-calibrate, at least in theory.
+</p>
+<p>
+  In practice, the algorithm wanted far more and/or far better data. With my 18 data points it was only able to locate the anchors within +- 37 cm along each axis.
+  The reason for this is of course imprecise measurements.
+  The Mechaduinos' torque mode doesn't actually provide a constant tension in the C line, since gear teeth don't transfer torque perfectly smoothly.
+  We'll be testing if a force sensing resistor along the sensor axis' line can give us better data.
+  Until then, very wide herringbone gears will also give us better data.
+</p>
+<figure>
+  <a href="./bilder/Expected_C_minus_measured_C_linreg.png">
+  <img src="./bilder/Expected_C_minus_measured_C_linreg_liten.png" alt="">
+  </a>
+  <figcaption>
+  The error in the 18 collected data points and a linear regression of the error.
+  The C-line was made shorter for every measurements.
+  </figcaption>
+</figure>
+<p>
+  The error's mean value was -1.9. A positive value was expected since the C-motor will wind up extra line for all flex that exists in the system.
+  We could clearly have tightened the line harder, particularly during the last 8 measurements when the C-line was shorter.
+  This makes sense, since the A- and B-lines worked at a better angle, and probably flexed less towards the C-anchor when the C-line was shorter.
+</p>
+<p>
+  The error's standard deviation was 7.95. This is high. The auto-calibration algorithm needs a standard deviation below ca 2 to produce better calibration values than I can measure by hand.
+</p>
+<p>
+  Expected values were known because we measured the anchor positions by hand.
+  Those measurements induce systematic errors that would largely be compensated by subtracting the red line from the data.
+  However, the algorithm's output did in fact get slightly worse after subtracting the linear error.
+</p>
+<p>
+  A more complete and accurate description of the auto-calibration results are hidden in the
+  <a href="https://github.com/tobbelobb/auto-calibration-simulation-for-hangprinter/blob/46c94bfe172846e23c6466e486bafff3843e2a82/simulation.py#L243">script i used</a>,
+  as well as in other files in the <a href="https://github.com/tobbelobb/auto-calibration-simulation-for-hangprinter/tree/data3">data3 branch</a> in the auto-calibration repo.
+</p>
+<p>
+  On the positive side, it was discovered that the auto-calibration algorithm improved its convergence rate drastically when we forced the first measurement to be in origo.
+  I'm quite pleased to have a concrete sense of how much I need to improve measurements before I can actually auto-calibrate.
+</p>
+
+<p>
+  - tobben
+</p>
+<br><br><br>
+
+
+<h1 id="hangprinter_project_45">
+  Closed Loop Doing its Job and Sstruder v2 Pic
+</h1>
+<div class="date">6-7-2017</div>
+
+<figure>
+  <iframe src="https://player.vimeo.com/video/224390884" width="500" height="375" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  <figcaption>
+  This video shows how the closed loop ABC axes act like springs when hot end meets an obstacle.
+  Pictures of this print can be found
+  <a href="https://twitter.com/tobbelobb/status/882718451630047233">here</a>
+  and
+  <a href="https://twitter.com/tobbelobb/status/882714406236418050">here</a>.
+  </figcaption>
+</figure>
+<p>
+  The Sstruder v2 files are published in the repo without any assembly instructions.
+  Here is how I currently use it:
+</p>
+<figure>
+  <a href="./bilder/Sstruder_v2_pic_crop.JPG">
+  <img src="./bilder/Sstruder_v2_pic_crop_liten.JPG" alt="">
+  </a>
+  <figcaption>
+  </figcaption>
+</figure>
+<p>
+  Notice the bowden tube guiding the filament both above and below the hobb.
+  Also note that the idler (middle 623 bearing) is placed along the filament path, and secured in place with M3 nuts.
+  The idler shaft is an M3 screw with objects stacked/screwed in the following order: Screw head -> 623 bearing -> nyloc nut -> nut -> nut -> 623 bearing -> nut -> 623 bearing.
+</p>
+<p>
+  - tobben
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_44">
+  Working on Auto Calibration and Reliability
+</h1>
+<div class="date">3-7-2017</div>
+<p>
+  I put together a closed loop single unit Hangprinter with pancake steppers recently.
+  The following video shows that it can run upwards along the D-line at 26.6 mm/s.
+  It is driven by a 17HS08-1004S, rated for 1A but running at 0.56A.
+  Axis speed is limited by motor stalling/driver resonance.
+</p>
+<figure>
+  <iframe src="https://player.vimeo.com/video/223990725" width="500" height="375" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  <figcaption>
+  </figcaption>
+</figure>
+<p>
+  This single unit machine will help me learn to collect data for the auto-calibration procedure.
+  Collecting data from single units will be hard because of their large mass.
+  The auto-calibration algorithm requires less than 2 mm errors in relative line lengths compared to what a massless point would observe.
+  With a random error of 1 mm convergence now looks like this:
+</p>
+
+<figure>
+  <a href="./bilder/Convergence_w_1mm_random_error.gif">
+  <img src="./bilder/Convergence_w_1mm_random_error_liten.gif" alt="">
+  </a>
+  <figcaption>
+  Figure 1: The output of an
+  <a href="https://github.com/tobbelobb/auto-calibration-simulation-for-hangprinter">auto calibration simulation</a>
+  using a random measurement error of 1 mm and plotting on every fifth Newton iteration.
+  The first plot shows how the algorithm is searching for the anchor points.
+  The second plot shows the searches for the positions where relative line length measurements were made.
+  The algorithm missed the six sought anchor coordinates by -28.7, -38.4, -26.3, 16.4, -36.9, and 8.0 mm.
+  </figcaption>
+</figure>
+<p>
+  I'm considering the auto-calibration coding as done for now.
+  In the end it was the excellent paper
+  <a href="https://hal.archives-ouvertes.fr/file/index/docid/668921/filename/RR-7879.pdf">"Calibration of a fully-constrained parallel cable-driven robot"</a>
+  that made me understand that Newton's method was way to go, and that the analytical Jacobian wasn't worthwhile putting into code.
+</p>
+
+<p>
+  I'm rounding this post off with thoughts around a funny pic:
+</p>
+<figure>
+  <a href="./bilder/Electronics_ironics.JPG">
+  <img src="./bilder/Electronics_ironics_liten.JPG" alt="">
+  </a>
+  <figcaption>
+  Figure 2: Three Mechaduinos and an Arduino Mega with RAMPS.
+  The latter is orders of magnitude cheaper and weaker, but is still acting like a master,
+  giving step/dir orders through yellow/green cables.
+  </figcaption>
+</figure>
+<p>
+  Mechaduinos kind of go against design principles of the Hangprinter Project.
+  They cost $50/piece + shipping, they have wasteful amounts of 32-bit processor cycles, they're hard to self-replicate,
+  they're quite complex to just mount, program and calibrate and easily double the assembly time of an average Hangprinter.
+  On the other hand, they're OSHW and they can make the Hangprinter work without a babysitter, now.
+</p>
+<p>
+  The Babel Tower print made me concerned about Hangprinter reliability,
+  so the Mechaduinos are there to teach me about closed loop control.
+  In the future
+  <a href="https://www.youtube.com/watch?v=Prw7wNa20Gk">load angle data from back emf</a>
+  might provide the reliability we need.
+  Thanks to Elijah Craig for showing me the TMC2130 drivers! They can output such data =)
+</p>
+<p>
+  - tobben
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_43">
+  Walking the Line
+</h1>
+<div class="date">4-6-2017</div>
+<p>
+  Following up on what I planned 35 days ago:
+</p>
+<p>
+  "When the version 3 is up and running, I will focus my dev time on adding
+  closed loop control,
+  auto calibration
+  and DC motors, in that order.
+  Well, at least that's the plan right now.
+  I'll prioritize improvements that apply to both single- and dual unit Hangprinters, and keep both branches alive."
+</p>
+<!--p>
+  Luckily I've worked in a team since then.
+  Here's a little status report of our team's work:
+</p-->
+<h3>
+  Getting Version 3 Up And Running
+</h3>
+<p>
+  The version 3 referred to a dual unit design with large spools like shown <a href=#Back_to_spool>in the previous post</a>.
+  This was supposed to reduce weight and reduce spool buildup.
+  The version 3 since got thinner FireLines (0.18 mm, down from 0.39 mm in version 2),
+  which further decreased buildup by a factor of 4.5:
+</p>
+<figure>
+  <a href="./bilder/Version_3_on_4_Jun_2017.JPG">
+  <img src="./bilder/Version_3_on_4_Jun_2017_liten.JPG" alt="">
+  </a>
+  <figcaption>
+    Hangprinter version 3 mounted in my basement.
+    The winch (stationary unit) is the one from <a href=#Back_to_spool>the previous post</a>.
+  </figcaption>
+</figure>
+<figure>
+  <a href="./bilder/Simple_Anchor.JPG">
+  <img src="./bilder/Simple_Anchor_liten.JPG" alt="">
+  </a>
+  <figcaption>
+    An anchor of the Hangprinter version 3.
+    Distance between anchor points is 27 cm.
+    One end of each line goes to the winch, and the other end of each line goes to the mover.
+    Black tape on the floor makes the left corner look like it floats in mid air.
+  </figcaption>
+</figure>
+<p>
+  The version 3 is up and hanging, but is not yet up and running.
+</p>
+
+<h4>Small Side Note on Movers</h4>
+<p>
+  The mover depicted above (moving unit with extruder) is a triangle of Open Beams with a E3D Aero mounted at its center.
+  It's a scaled up design revision of Osika's <a href=#Aero_Titan_Mover>small Aero Titan mover</a>.
+  He has started constructing movers in the following material agnostic manner:
+</p>
+<figure>
+  <a href="./bilder/Osikas_mover_30_maj.jpg">
+  <img src="./bilder/Osikas_mover_30_maj_liten.jpg" alt="">
+  </a>
+  <figcaption>
+    A small Osika-mover using pine wood instead of Open Beams.
+  </figcaption>
+</figure>
+
+<h3>
+  Adding Closed Loop Control
+</h3>
+<p>
+  The <a href="http://tropical-labs.com/index.php/mechaduino">Mechaduino Project</a>
+  has given us a plug-and-play loop closer.
+</p>
+<figure>
+  <video width="500" controls>
+    <source src="./bilder/Mechaduino_working.MP4" type="video/mp4">
+  </video>
+  <figcaption>
+  </figcaption>
+</figure>
+<p>
+  This means that Hangprinter version 3 users can count on prints actually finishing. A great relief.
+  The plug-and-play Mechaduino setup, as well as the possibility to construct custom stepper-servos based on the Mechaduino Project has made us really excited.
+  We've added Mechaduinos to version 3's A, B, and C axes at a total cost $150.
+</p>
+
+<h3>
+  Adding Auto-Calibration
+</h3>
+<p>
+  Vilse has done some impressive work on simulation and data collection.
+  Matlab simulation is available <a href="https://github.com/tobbelobb/hangprinter/tree/vilse/matlab">here</a>.
+  To auto-calibrate without user interaction, we need to
+</p>
+<ul>
+  <li>Sample relative line lengths \(\theta\) with tight lines at unknown positions \(x_i\) starting from  an unknown start position \(x_0\).</li>
+  <li>Solve a large non-linear system of equations numerically to find the best fitting set of anchors positions \(a\) and positions \(x_i\).</li>
+</ul>
+<p>
+  Luckily, very skilled researchers have solved this problem before us and published their results.
+  Studying
+  <a href="http://ieeexplore.ieee.org/document/6309525/authors?reload=true">this paper</a>
+  has helped my own understanding a lot.
+</p>
+<p>
+  To be able to quickly make sample \(\theta\), Vilse created "button mode".
+  Obviously.
+  It is useful whenever you want to push your Hangprinter around, which is quite often:
+</p>
+<figure>
+  <video width="500" controls>
+    <source src="./bilder/Knappmode_0.MP4" type="video/mp4">
+  </video>
+  <figcaption>
+    Hangprinter version 2 with added buttons running in button mode.
+  </figcaption>
+</figure>
+<p>
+  The button mode related modifications to the Hangprinter-Marlin firmware are available <a href="https://github.com/tobbelobb/hangprinter/commit/b9c8a8a67925942cbd26c78083c1c796530c6637">here</a>.
+</p>
+<p>
+  We haven't tried seriously to add DC motors yet, but we stay by the plan to do so further down the road.
+</p>
+<!--p>
+  Good and cheap servos makes possible to design a spool+servo actuator that is reusable in single unit, dual unit and multi unit (motor at each anchor) Hangprinters alike.
+  Software is often the achilles heel of OSHW communities, so it makes sense to facilitate software collaboration by using similar actuators.
+  Steppers have so far saved the RepRap community from the need to code and re-code servos.
+  It will require a polished and documented DC servo project to topple most reprapperers preference for steppers.
+
+  Without a good DC servo, we'll see a period with single units running on DC while dual- and multi-units run with stepper servos.
+  We will loose code reuse during that period.
+</p-->
+<p>
+  - tobben
+</p>
+<br><br><br>
+
+
+<h1 id="hangprinter_project_42">
+  Experimental Dual Unit Designs
+</h1>
+<div class="date">30-4-2017</div>
+<p>
+  The Hangprinter Hackathon at Bitraf produced some technical progress.
+</p>
+
+<figure>
+  <video width="500" controls>
+    <source src="./bilder/Freds_gopro.mp4" type="video/mp4">
+  </video>
+  <figcaption>
+    Fred's video mashup from the hackathon.
+    Most pictures show an experimental design dubbed "Hangprinter GT".
+    Big thanks to Bondtech for sponsoring the extruder you see mounted during print.
+  </figcaption>
+</figure>
+
+<p>
+  Besides dividing the Hangprinter into two units,
+  the GT design also tried out the concept of spanning up linear actuators between winch and ABC anchor points:
+</p>
+<figure>
+  <a href="./bilder/Loop_linear_actuator.png">
+  <img src="./bilder/Loop_linear_actuator_liten.png" alt="">
+  </a>
+  <figcaption>
+    The yellow loop runs around the motor shaft and an idler.
+    The grey line is tied onto the yellow loop.
+  </figcaption>
+</figure>
+<p>
+  This concept works wonderfully in theory, and you can even use belt
+  for the yellow loop to make it easy to build.
+  In practice you need to keep the loops very tight, or the belts will skip.
+  We did a quick and dirty patch to solve this.
+  The dangling bottle of water in the picture above is what keeps our D-line tight.
+</p>
+<figure>
+  <a href="./bilder/Five_men_and_a_prototype2.jpg">
+  <img src="./bilder/Five_men_and_a_prototype2_liten.jpg" alt="">
+  </a>
+  <figcaption>
+    Hangprinter GT, its creators (Alexander, Nils, Fred and Mikael) and me, holding the bottle of Tøyen-Cola.
+  </figcaption>
+</figure>
+<p>
+  The Hangprinter GT turned into a quite bulky installation, so the design won't be continued.
+  It did shed some light on a few pros and cons with dual unit Hangprinters in general.
+</p>
+<ul>
+  <li>Pro: Easy to snap together. Few parts that need to fit each other.</li>
+  <li>Pro: No absolute requirement of wireless communication.</li>
+  <li>Pro: Lighter moving unit allows quicker accelerations.</li>
+  <li>Pro: Increased modularity. ABCD actuators, electronics department and moving unit can be swapped out independently.</li>
+  <li>Con: Stepper- and hot end cables must be extended manually.</li>
+  <li>Con: Max stepper cable length (a few meters) limits mounting options.</li>
+</ul>
+
+<h3 id="Back_to_spool">Back to Spool</h3>
+<figure>
+  <a href="./bilder/Plate_of_gear_spool_sandwiches.jpg">
+  <img src="./bilder/Plate_of_gear_spool_sandwiches_liten.jpg" alt="">
+  </a>
+  <figcaption>
+    Stationary part of a spool-based dual unit Hangprinter design.
+    The placement of the spools are quite arbitrary so the mounting plate can easily be made with hand tools and no technical drawing.
+    Source code for the spools above are found in the
+    <a href="https://github.com/tobbelobb/hangprinter/tree/version_3">version_3 branch of the repo</a>.
+  </figcaption>
+</figure>
+
+<h3>
+  The Benefit of Large Spools
+</h3>
+<p>
+  The spool radii are doubled as compared to the standard Hangprinter spools, in order to decrease line buildup.
+  A doubled spool radius reduces spool buildup to ca 1/4.
+  Let's step through the maths to kill some time:
+</p>
+<p>
+  To wind in \(2r\) of line onto an empty spool with radius \(r\), we would need to rotate the spool by 2 radians.
+  A spool with \(x\) meters of line already wound onto it would have \(\epsilon(x)\) of buildup added onto its radius \(r\).
+  It would wind in \(2(r + \epsilon(x))\) of line if it were rotated by 2 radians.
+  Without buildup compensation the resulting error would be
+</p>
+\begin{equation}
+\text{err}_r = 2\epsilon(x).
+\end{equation}
+<p>
+  To wind in \(2r\) of line on an empty spool with radius \(R=2r\), we would need to rotate the spool by 1 radian.
+  A buildup of \(\delta(x)\) would cause an error of
+</p>
+\begin{equation}
+\text{err}_R = \delta(x).
+\end{equation}
+<p>
+  The circumference of the spool with radius \(R=2r\) is twice as long as the circumference of the spool with radius \(r\).
+  The buildup caused by \(x\) m of line should therefore be ca halved on the big spool,
+  which gives us the approximate total benefit of doubling spool radius:
+</p>
+\begin{equation}
+  \text{err}_R = \delta(x) \approx \epsilon(x)/2 = \text{err}_r/4.
+\end{equation}
+<p>
+  But wait, there's more. The spools depicted above are also 2 times higher than standard Hangprinter spools.
+  This should cut buildup in half once again.
+</p>
+<p>
+  If that isn't enough then there's also the possibility to tie in lines mid-air, and run a single line around each spool.
+  This wall of text has already gotten the line buildup down to 1/8 of what we had before anyways,
+  so let's wait and see if this is really necessary.
+</p>
+<p>
+  The buildup problems of Hangprinter version 2 were mostly on the D-axis, which had doubled lines (mechanical advantage 2).
+  We can drop that on version 3 since it has a light moving unit.
+  To summarize, we cut D-axis buildup to 1/16 and leave ABC buildup at 1/8.
+</p>
+<figure>
+  <a href="./bilder/compensation_plot2.svg">
+  <img src="./bilder/compensation_plot2.svg" alt="">
+  </a>
+  <figcaption>
+    Figure 1: Accumulated required buildup compensation at different positions when applying tricks described above.
+    Compare to <a href=#compensation_plot>previous compensation plot</a> for reference.
+    Note the factor 10 difference on the D-axis.
+    The code to generate this plot can be found <a href="https://github.com/tobbelobb/tbear_blogg/blob/master/compensation_plot2.gp">here</a>.
+  </figcaption>
+</figure>
+<p>
+  After all this theory let's rest our eyes on some Hangprinter version 2 parts designed and printed by Alexander Osika:
+</p>
+<figure>
+  <a href="./bilder/Aero_Titan_Mover.jpg">
+  <img src="./bilder/Aero_Titan_Mover_liten.jpg" alt="" id="Aero_Titan_Mover">
+  </a>
+  <figcaption>
+    Prototype of a moving unit for a dual unit Hangprinter.
+    This one flexes a bit too easily, but you get the basic idea.
+    Thanks to E3d for sponsoring the Aero in this picture!
+  </figcaption>
+</figure>
+<figure>
+  <a href="./bilder/Mover_and_Ceiling_Plate.jpg">
+  <img src="./bilder/Mover_and_Ceiling_Plate_liten.jpg" alt="">
+  </a>
+  <figcaption>
+    With a modular dual unit approach, you're free to mount only a little triangle in the ceiling if you want.
+  </figcaption>
+</figure>
+
+<figure>
+  <a href="./bilder/Osikas_Anchor_points.jpg">
+  <img src="./bilder/Osikas_Anchor_points_liten.jpg" alt="">
+  </a>
+  <figcaption>
+    Alexander Osika made some floor anchors that are easy to build and easy to weigh down.
+    They have mouse mat rubber glued on underneath and rod rings along the center line
+    in case you want to tie in lines mid-air to reduce spool buildup, as described above.
+  </figcaption>
+</figure>
+<p>
+  When the version 3 is up and running, I will focus my dev time on adding
+  closed loop control,
+  auto calibration and DC motors, in that order.
+  Well, at least that's the plan right now.
+  I'll prioritize improvements that apply to both single- and dual unit Hangprinters, and keep both branches alive.
+</p>
+<p>
+  - tobben
+</p>
+<br><br><br>
+
+
+<h1 id="hangprinter_project_41">
+  Other People's Hangprinter Builds
+</h1>
+<div class="date">25-4-2017</div>
+
+<figure>
+  <a href="./bilder/Mario_Lucas_Weltronic.jpg">
+  <img src="./bilder/Mario_Lucas_Weltronic_liten.jpg" alt="">
+  </a>
+  <figcaption>
+  This beauty was posted by Mario Lucas <a href="https://twitter.com/l_k3/status/848151053526806529">here</a>.
+  </figcaption>
+</figure>
+
+<figure>
+  <a href="./bilder/Jonathan_Bahrs_bottom_plate.jpg">
+  <img src="./bilder/Jonathan_Bahrs_bottom_plate_liten.jpg" alt="">
+  </a>
+  <figcaption>
+  This impressive bottom plate was posted by
+  Jonathan Bahrs
+  <a href="https://www.facebook.com/photo.php?fbid=10154512094258325&set=g.176856636157837&type=1&theater">here</a>.
+  </figcaption>
+</figure>
+
+<figure>
+  <a href="./bilder/Hangprinter_Russia.jpg">
+  <img src="./bilder/Hangprinter_Russia_liten.jpg" alt="">
+  </a>
+  <figcaption>
+  These Hangprinter parts are also very well printed. They were printed by Олег Вартанов and reached me via email.
+  </figcaption>
+</figure>
+
+<figure>
+  <a href="./bilder/Ethan_Weikel_to_Jemeiah_McConneaughey.jpg">
+  <img src="./bilder/Ethan_Weikel_to_Jemeiah_McConneaughey_liten.jpg" alt="">
+  </a>
+  <figcaption>
+  I love this picture because it shows how one community member has printed and marked parts very neatly for another community member.
+  It was posted by Ethan Weikel
+  <a href="https://www.facebook.com/photo.php?fbid=10211080419260490&set=p.10211080419260490&type=3&theater">here</a>.
+  </figcaption>
+</figure>
+
+<figure>
+  <a href="./bilder/Two_versions_of_bottom_plate_Jakob_Hacke.JPG">
+  <img src="./bilder/Two_versions_of_bottom_plate_Jakob_Hacke_liten.JPG" alt="">
+  </a>
+  <figcaption>
+  This picture shows JakobJakob's bottom plates for version 1 and version 2 Hangprinters.
+  First posted <a href="https://www.facebook.com/photo.php?fbid=10208858136120418&set=p.10208858136120418&type=3&theater">here</a>.
+  </figcaption>
+</figure>
+
+<figure>
+  <a href="./bilder/rclemence_pic1_cropped.JPG">
+  <img src="./bilder/rclemence_pic1_cropped_liten.JPG" alt="">
+  </a>
+  <figcaption>
+  This nice one with a printed stand and a few other mods was posted on RepRap forums
+  by rclemence <a href="http://forums.reprap.org/read.php?1,738858,763395#msg-763395">here</a>.
+  </figcaption>
+</figure>
+
+<figure>
+  <video width="500" controls>
+    <source src="./bilder/David_Majors_build_moving_its_gears.mp4" type="video/mp4">
+  </video>
+  <figcaption>
+  I'm very happy to even see some printers rock their gears a little. This one was posted by
+  David Majors <a href="https://www.facebook.com/david.major.3979/videos/g.176856636157837/10154440054067765/?type=2&theater">here</a>.
+  </figcaption>
+</figure>
+
+<p>
+  - tobben
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_40">
+  Babel Tower Time Lapse
+</h1>
+<div class="date">15-4-2017</div>
+<p>
+  To recharge before the <a href="https://www.meetup.com/bitraf/events/239151727/">Hangprinter Hackathon</a> in Oslo next weekend,
+  I threw together a Babel Tower time lapse.
+</p>
+<figure>
+  <video width="500" controls>
+    <source src="./bilder/Babel_tower_lapse.mp4" type="video/mp4">
+  </video>
+  <figcaption>
+    Music: <a href="http://freemusicarchive.org/music/Simon_Stlenhag/FM_FUNK_MADDNESS/13_Ripple_Boogie">Ripple Boogie by Simon Stålenhag</a> (<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/us/">CC-BY-NC-SA</a>).
+  </figcaption>
+</figure>
+<p>
+  Enjoy!
+</p>
+<p>
+  - tobben
+</p>
+<br><br><br>
+
+
+<h1 id="hangprinter_project_39">
+  First Pull Request Merged
+</h1>
+<div class="date">4-4-2017</div>
+<p>
+  The Hangprinter repo on has had its first merged pull request!
+  Committer was awigen.
+  See commmit <a href="https://github.com/tobbelobb/hangprinter/commit/b21065b3b9fd3ac003fceca4aa953ff9dff6aaa2">here</a>.
+  The code is about adding an axle to the worm.
+  I've been wanting one for a long time, so I was very happy about the pull request.
+  After some further refinements, the worm now looks like this:
+</p>
+<figure>
+  <a href="./bilder/Worm_w_axle.png">
+  <img src="./bilder/Worm_w_axle_liten.png" alt="">
+  </a>
+  <figcaption>
+  </figcaption>
+</figure>
+<p>
+  Finally I'm not alone in the repo anymore =)
+</p>
+<p>
+  - tobben
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_38">
+  Hangprinter.org
+</h1>
+<div class="date">2-4-2017</div>
+<p>
+  Check it out: <a href="http://hangprinter.org/">hangprinter.org</a>!
+  Big thanks to <a href="https://www.linkedin.com/in/piyush-dharnidharka-87083546/">Piyush Dharnidharka</a> for taking the initiative and building the page.
+</p>
+<figure>
+  <a href="http://hangprinter.org">
+  <img src="./bilder/hangprinter-dot-org2_liten.png" alt="">
+  </a>
+  <figcaption>
+     Front page of the newly launched hangprinter.org website. Leave it running and it will print you a virtual Babel Tower.
+  </figcaption>
+</figure>
+<p>
+  It has a practical <a href="http://hangprinter.org/calculate.html">Hangprinter Calibration Calculator</a> page that implements the equations from the <a href="#hangprinter_project_21">calibration manual</a>.
+</p>
+<figure>
+  <a href="http://hangprinter.org/calculate.html">
+  <img src="./bilder/calibration_calculator_liten.png" alt="">
+  </a>
+  <figcaption>
+     Front page of the newly launched hangprinter.org website. Leave it running and it will print you a virtual Babel Tower.
+  </figcaption>
+</figure>
+<p>
+  There's also an <a href="http://hangprinter.org/about.html">about page</a> featuring some links and a text.
+</p>
+<p>
+  - tobben
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_37">
+  Push Fit Sandwich
+</h1>
+<div class="date">27-3-2017</div>
+<p>
+  In <a href="http://forums.reprap.org/read.php?1,738858,758625#msg-758625">this</a> forum post,
+  NOVAprint confirmed what I had suspected was a weakness in the sandwich design.
+  A gap might open between the snelle and the sandwich gear, so that line wraps around the center cylinder.
+  I never really liked the super-short screws in the sandwich either, so I've designed a push fit solution:
+</p>
+<figure>
+  <a href="./bilder/Push_fit_sandwich.png">
+  <img src="./bilder/Push_fit_sandwich_liten.png" alt="">
+  </a>
+  <figcaption>
+     The red part of snelle is added and the blue walls of sandwich gear is where material has been taken away to create the push fit.
+  </figcaption>
+</figure>
+<p>
+  The <a href="https://github.com/tobbelobb/hangprinter">master branch of the repo</a> has been updated both with scad-file and new stl files.
+  Be warned that I haven't tested these files. If you want the old files, they're back in the <a href="https://github.com/tobbelobb/hangprinter/tree/version_2">version 2 branch of the repo</a>.
+</p>
+<p>
+  I've been alone in the repo for so long, it has turned me into that guy.
+</p>
+<figure style="display: block;
+               margin-left: 100px;
+               margin-right: 100px;">
+  <img src="./bilder/It_Compiles_Ship_It.png" alt="">
+</figure>
+<p>
+  - tobben
+</p>
+<br><br><br>
+
+
+<h1 id="hangprinter_project_36">
+  Sstruder v2 and Helsingborg
+</h1>
+<div class="date">27-3-2017</div>
+<p>
+  I got the chance to test the improved extruder design recently. It worked better than the previous Sstruder, so stls were pushed to the repo today.
+</p>
+<figure>
+  <a href="./bilder/Sstruder_v2_render.png">
+  <img src="./bilder/Sstruder_v2_render_liten.png" alt="">
+  </a>
+  <figcaption>
+     CAD render of the Sstruder v2.
+  </figcaption>
+</figure>
+<p>
+  I also tidied up the <a href="https://github.com/tobbelobb/hangprinter/tree/master/stl">stl directory in the repo</a> and experimented with high travel moves.
+  The Hangprinter moved at 360 mm/s without loosing steps or accumulating errors.
+  It didn't move in straight lines, but it reached its planned end point.
+</p>
+<p>
+  I spent the weekend Hangprinting at <a href="http://3dmeetup.se/">3D Meetup</a> in Helsingborg.
+  Thanks to the organizers, you did an amazing job!
+  Based on the feedback from Helsingborg,
+  I think the whole Hangprinter community thing is starting to get legs:
+  [<a href="https://twitter.com/toms3dp/status/846095459114532869">twitter.com</a>], [<a href="https://twitter.com/fntsmn/status/845604362793750529">twitter.com</a>]
+</p>
+<p>
+  - tobben
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_35">
+  Tweets
+</h1>
+<div class="date">7-3-2017</div>
+<p>
+  I posted a few Tweets recently. Reposting them here now.
+</p>
+<figure>
+  <a href="./bilder/capt0114.jpg">
+  <img src="./bilder/capt0114_liten.jpg" alt="">
+  </a>
+  <figcaption>
+     Bracing it up again at 3668 mm. (12:45 PM - 7 Mar 2017)
+  </figcaption>
+</figure>
+<figure>
+  <a href="./bilder/3490mm_cropped.JPG">
+  <img src="./bilder/3490mm_cropped_liten.JPG" alt="">
+  </a>
+  <figcaption>
+    3490 mm. Three days left. (3:48 PM - 6 Mar 2017)
+  </figcaption>
+</figure>
+<figure>
+  <video width="500" controls>
+    <source src="./bilder/VK_reportage.mp4" type="video/mp4">
+  </video>
+  <figcaption>
+    The local newspaper Västerbottens-Kuriren visited the print site today. Print is now 3375 mm tall. (1:01 PM - 6 Mar 2017)
+  </figcaption>
+</figure>
+<figure>
+  <a href="./bilder/above_3000.jpg">
+  <img src="./bilder/above_3000_liten.jpg" alt="">
+  </a>
+  <figcaption>
+    Just crossed 3000 mm. Thanks to DechAmim for becoming a supporter! (9:03 PM - 4 Mar 2017)
+  </figcaption>
+</figure>
+<figure>
+  <a href="./bilder/Somewhere_over_the_Tower.JPG">
+  <img src="./bilder/Somewhere_over_the_Tower_liten.JPG" alt="">
+  </a>
+  <figcaption>
+     The balk in the top of this picture is at 7.5 m. Print is now 2623 mm tall. Still extruding... (10:29 AM - 3 Mar 2017)
+  </figcaption>
+</figure>
+<figure>
+  <a href="./bilder/Risking_the_equipment.JPG">
+  <img src="./bilder/Risking_the_equipment_liten.JPG" alt="">
+  </a>
+  <figcaption>
+    Worst feng shui of the day. 2455 mm. (7:59 AM - 3 Mar 2017)
+  </figcaption>
+</figure>
+<figure>
+  <a href="./bilder/March_2.jpg">
+  <img src="./bilder/March_2_liten.jpg" alt="">
+  </a>
+  <figcaption>
+    2475 mm. Top is vibrating too much. Adding supporting lines tomorrow. (8:32 PM - 1 Mar 2017)
+  </figcaption>
+</figure>
+<figure>
+  <a href="./bilder/Ready_for_2_to_5_meter.jpg">
+  <img src="./bilder/Ready_for_2_to_5_meter_liten.jpg" alt="">
+  </a>
+  <figcaption>
+    The climb from 2 to 5 meters has begun. Everything looks ok. (7:33 AM - 1 Mar 2017)
+  </figcaption>
+</figure>
+<figure>
+  <a href="./bilder/Its_a_very_large_print.JPG">
+  <img src="./bilder/Its_a_very_large_print_liten.JPG" alt="">
+  </a>
+  <figcaption>
+    It's a very large print, it's total madness. (3:12 PM - 27 Feb 2017)
+  </figcaption>
+</figure>
+<figure>
+  <a href="./bilder/From_Jeff_Parry.JPG">
+  <img src="./bilder/From_Jeff_Parry_liten.JPG" alt="">
+  </a>
+  <figcaption>
+    Some intense babysitting of a Hangprint in a staircase. (11:44 AM - 24 Feb 2017)
+  </figcaption>
+</figure>
+<p>
+  - tobben
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_34">
+  The Tilt Problem
+</h1>
+<div class="date">26-2-2017</div>
+<p>
+  Hello Reprappers and Hangprinterers!
+  The Babel print gives a lot of lessons, so there's a lot of posts this week.
+  Ca 1.5 m above ground and with 20 m of line on the D-spool, I've noticed a previously undocumented problem.
+</p>
+<figure>
+  <a href="./bilder/Babylon5.JPG">
+  <img src="./bilder/Babylon5_liten.JPG" alt="">
+  </a>
+  <figcaption>
+    My parked Hangprinter.
+    At print start, the printer was horizontal, but this picture shows a quite significant tilt.
+    The tilt gets worse with print height and has caused a ca 1 cm drift in the XY-plane when this picture is taken.
+  </figcaption>
+</figure>
+<p>
+  The D-line from the corner where the B- and C-sides meet consistently sees a larger spool diameter than the other two corners.
+  I suspect that subtle differences between the D-fish rings may cause this effect,
+    or that it is simply the weight of the D-motor causing this.
+  It is interesting that one corner travels faster while the other two corners stay perfectly horizontal relative to each other.
+</p>
+<p>
+  Anyways, structured debugging is a job for future tobben.
+  Present tobben just wants to show you another full figure picture of the print:
+</p>
+<figure>
+  <a href="./bilder/Babylon6.jpg">
+  <img src="./bilder/Babylon6_liten.jpg" alt="">
+  </a>
+  <figcaption>
+    1.5 m Babel Tower. Did I mention it is kind of skeuomorph?
+  </figcaption>
+</figure>
+<p>
+  My next post will probably drop the SI unit system.
+</p>
+<p>
+  Instead it will leverage on big data and impact the value added Internet things,
+    featuring intelligent solutions for new normals as required by next generation info capitalism in the cloud (with diamonds).
+</p>
+<p>
+  Disruption will make language hyperlocal like a mashup of microservices in a web of buzz.
+  Later it will drop-swap written words for virtual broadcasted brandcasting on a blockchain.
+  (It's just a bit more deep and viral, you know.)
+</p>
+<p>
+  Diversity and non-scalable divergence will immerse the paradigm through the re-realization of a withholding economy,
+    and possible grand scale peer-to-peer destruction facilitated by social analytics
+    and the evolution of physical cookies pushing us towards mobile nanomodularity and some seriously driven development.
+</p>
+<p>
+  ;)
+</p>
+<p>
+  - tobben
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_33">
+  Changed Anchor Points Mid Print
+</h1>
+<div class="date">24-2-2017</div>
+<p>
+  I managed to sneak up the anchor points yesterday.
+  The secret trick is to pause and move one anchor point at a time.
+  Then run a few rounds very slowly after each change, adjusting calibration errors manually with small G6-moves.
+</p>
+<figure>
+  <a href="./bilder/Babylon2.JPG">
+  <img src="./bilder/Babylon2_liten.JPG" alt="">
+  </a>
+  <figcaption>
+    Anchor point C elevated by 900 millimeter, anchors A and B still at floor level.
+  </figcaption>
+</figure>
+<p>
+  I my case, each anchor movement still produces visible artifacts on the print:
+</p>
+<figure>
+  <a href="./bilder/Babylon3.JPG">
+  <img src="./bilder/Babylon3_liten.JPG" alt="">
+  </a>
+  <figcaption>
+    This picture was taken directly after moving the third anchor point.
+    On the right hand side of this picture, you see the translation of layers of each anchor change.
+  </figcaption>
+</figure>
+<p>
+  If you plan on making anchor point movements mid print, I recommend moving them only along the Z-axis and making the movements in increments of ca half the distance between anchor point and origo.
+</p>
+<p>
+  Ok, enough about the errors, time for a full figure picture:
+</p>
+<figure>
+  <a href="./bilder/Babylon4.JPG">
+  <img src="./bilder/Babylon4_liten.JPG" alt="">
+  </a>
+  <figcaption>
+    All three anchor points successfully elevated. Time to print the next meter.
+  </figcaption>
+</figure>
+<p>
+  The project of Hangprinting a Babel Tower happens in Sliperiet, Umeå, Sweden.
+  It is part of the +Project (Swedish link <a href="http://plus.umu.se/">here</a>).
+  More about Sliperiet is found <a href="http://www.sliperiet.umu.se/en/happening-here/installations-and-showcases/">here</a>.
+</p>
+<p>
+  - tobben
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_32">
+  Slowly but Surely
+</h1>
+<div class="date">23-2-2017</div>
+<figure>
+  <a href="./bilder/Babylon1.JPG">
+  <img src="./bilder/Babylon1_liten.JPG" alt="">
+  </a>
+  <figcaption>
+    920 first millemeters of a Babel Tower in a staircase.
+  </figcaption>
+</figure>
+<p>
+  The tower is modelled with OpenSCAD. Repo <a href="https://github.com/tobbelobb/babylon-sketches">here</a>.
+</p>
+<p>
+  I'm trying to move the anchor points upwards mid print, but I haven't really nailed the re-calibration yet...
+</p>
+<p>
+  - tobben
+</p>
+<br><br><br>
+
+
+<h1 id="hangprinter_project_31">
+  Community at Embryo Stage
+</h1>
+<div class="date">20-2-2017</div>
+<p>
+  It seems like some collaboration and maybe even a little community is gathering around the Hangprinter Project.
+  Right now, there are 5-6 builders out there wrapping their heads around the source files, assembly process and calibration.
+</p>
+<p>
+  No one has sent any pictures though, and I'm a bit worried that builders will lose motivation when they
+    bump into challenges (bugs that I wrote).
+</p>
+<p>
+  Hang in there! The ceiling is the limit!
+</p>
+<figure>
+  <a href="./bilder/Babylon0.jpg">
+  <img src="./bilder/Babylon0_liten.jpg" alt="">
+  </a>
+  <figcaption>
+    More pics of this ongoing print coming soon...
+  </figcaption>
+</figure>
+<p>
+  - tobben
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_30">
+  D-Wobble Debugged
+</h1>
+<div class="date">2-2-2017</div>
+<p>
+  Those who have zoomed in on my Hangprints after I added the worm drive will have noticed a periodic error.
+  The following pictured Hangprint shows the problem quite clearly:
+</p>
+<figure>
+  <a href="./bilder/D_wobble.JPG">
+  <img src="./bilder/D_wobble_liten.JPG" alt="">
+  </a>
+  <figcaption>
+  </figcaption>
+</figure>
+<p>
+  This error arose because my Hangprinter's worm has not been mounted straight along the motor shaft.
+</p>
+<figure>
+  <img src="./bilder/D_Wobble.gif" alt="">
+  <figcaption>
+  </figcaption>
+</figure>
+<p>
+  The above animated wobble is a bit exaggerated. You can see and hear the actual wobble in the following old video:
+</p>
+<figure>
+  <iframe src="https://player.vimeo.com/video/194813962" width="500" height="375" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  <figcaption>
+  </figcaption>
+</figure>
+<p>
+  The root of all this wobbliness is a non-straight flat part on the shaft itself.
+</p>
+<figure>
+  <a href="./bilder/not_straight_shaft_flattening2.JPG">
+  <img src="./bilder/not_straight_shaft_flattening2_liten.JPG" alt="">
+  </a>
+  <figcaption>
+  </figcaption>
+</figure>
+<p>
+  The motor is covered in tape because I'm about to start grinding the flat area into straightness.
+  Debugging is so delightful when the cause gets obvious within 10 minutes and the solution involves grinding!
+</p>
+<p>
+  Until next time.
+</p>
+<p>
+  - tobben
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_29">
+   Experimental Line Buildup Compensation Feature
+</h1>
+<div class="date">27-1-2017</div>
+<p>
+  I've conducted a few experiments recently,
+    and I think I've arrived at a usable implementation of the line buildup compensation that I described in
+  <a href="2016.html#hangprinter_project_26">an earlier blog post</a>.
+  In this post, I'll try to go a bit more in detail.
+</p>
+<h3>The Problem: Account for Changing Spool Radius</h3>
+<p>
+  Most RepRaps have simple linear relationships between motor position and hot end position.
+  If their hot end is at the position 100 mm along an axis, their corresponding motor is at step number
+</p>
+\begin{equation}
+m = 100\cdot \text{s},
+\tag{1}
+\label{1}
+\end{equation}
+<p>
+  where \(\text{s}\) is a constant and \(m\) is the motor's step count. <!--In Marlin such constants are stored in the array <code>axis_steps_per_unit</code>.-->
+</p>
+<p>
+  Hangprinter can not use this simple linear relationship because it winds line around spools.
+  When there is more line on the spool, the motor winds up more line per step because of the increased radius resulting from line buildup.
+</p>
+<figure>
+  <a href="./bilder/spool_radii.png">
+  <img src="./bilder/spool_radii_liten.png" alt="">
+  </a>
+  <figcaption>
+    Figure 1: Yellow line builup on a Hangprinter spool causing a radius increase of \(R - r\).
+  </figcaption>
+</figure>
+<p>
+  We need to change the linear relationship \(m = x\cdot\text{s}\)
+    with a more complicated relationship \(m = f(x)\).
+</p>
+
+<h3>Step 1: Find Conversion Factor for Infinitesimal Movement: \(\text{s}'\)</h3>
+<p>
+  Say we want to move an axis from \(x_0\) to \(x_0 + \text{d}x\).
+  A simple linear relationship, like in Equation \eqref{1}, will be valid
+  if \(\text{d}x\) is small enough.
+  We still have to find the correct conversion factor \(\text{s}'\), but this is easy as long as we can assume \(R\) to be constant.
+</p>
+<p>
+  Let \(\alpha\) be the number of radians that the spool rotates when the motor makes 1 full revolution.
+  On Hangprinter version 2 the motors's gears have 9 teeth and the spool's gears have 43 teeth, so we get \(\alpha = 1.32\).
+  Looking at Figure 1, and assuming \(R\) constant, we would move \(R\alpha\) by doing 1 full motor revolution.
+  Now say that the motor makes \(t\) steps per revolution, and we have our steps per mm:
+</p>
+\begin{equation}
+  s' = \frac{t}{R\alpha}.
+\tag{2}
+\label{2}
+\end{equation}
+
+<h3>Step 2: Make Radius Depend on Position: \(R(x)\)</h3>
+<p>
+  In Figure 1 we approximate the buildup as a rectangular torus shape, and \(R\) depends on the volume of that torus.
+</p>
+<figure>
+  <a href="./bilder/rectangular_torus.png">
+  <img src="./bilder/rectangular_torus_liten.png" alt="">
+  </a>
+  <figcaption>
+    Figure 2: A rectangular torus.
+  </figcaption>
+</figure>
+<p>
+  The volume of the torus depends on the amount of line on the spool like so
+</p>
+\begin{equation}
+  \text{Volume} = h\pi(R^2 - r^2) = vx,
+\tag{3}
+\label{3}
+\end{equation}
+<p>
+  where \(h\) is the height of the spool, \(v\) is the volume per unit line, and \(x\) is the position along the line that corresponds to \(R\).
+  Note that we need to give \(v\) a negative sign if we define the positive \(x\)-direction to be the direction we move when we unwind line.
+  Rearranging Equation \eqref{3} gives us
+</p>
+\begin{equation}
+R(x) = \sqrt{\frac{vx}{h\pi} + r^2},
+\tag{4}
+\label{4}
+\end{equation}
+<h3>Step 3: Make Conversion Factor Depend on Position: \(s'(x)\)</h3>
+<p>
+  Combining Equation \eqref{4} back into Equation \eqref{2}, we get
+</p>
+\begin{equation}
+s'(x) = \frac{t}{\alpha\sqrt{\frac{vx}{h\pi} + r^2}},
+\tag{5}
+\label{5}
+\end{equation}
+<p>
+  Just for reference: apart from missing a factor to account for mechanical advantage,
+  the above equation corresponds exactly to the equation I presented in a <a href="2016.html#hangprinter_project_26">previous blog post</a>, see Equation <a href="2016.html#eqn0">*</a>.
+  In that equation, \(x\) is split up into the parts to account for mechanical advantage and calibration procedures.
+  In this theoretical review, we rather want to simplify our notation, like this:
+</p>
+\begin{equation}
+s'(x) = \frac{a}{\sqrt{c_0 + c_1x}},
+\tag{6}
+\label{6}
+\end{equation}
+<p>
+  where \(a = \tfrac{t}{\alpha}\), \(c_1\) is the factor that multiplies with \(D\) in Equation <a href="2016.html#eqn0">*</a> and \(c_0\) is the rest of the constants below the root sign in Equation <a href="2016.html#eqn0">*</a>.
+</p>
+
+<h3>Step 4: Testing...</h3>
+<p>
+  I mentioned in the beginning of this post that I've conducted some experiments.
+  I found that continuously re-applying Equation \eqref{6}, and using the computed values like \(m = x s'\) doesn't produce nice results.
+</p>
+<figure>
+  <a href="./bilder/Un-nice_compensation_results.JPG">
+  <img src="./bilder/Un-nice_compensation_results_liten.JPG" alt="">
+  </a>
+  <figcaption>
+  Figure 3: During the left print, Equation \eqref{6} was applied on every G1 move.
+  The used used \(x\) was exactly between the move's start point and end point, like suggested in <a href="2016.html#hangprinter_project_26">the previous blog post</a>.
+  The right print was printed without line buildup compensation.
+  It has some skipped steps along the vertical axis because the lines pulling downwards get tighter and tighter when line buildup is not accounted for.
+  </figcaption>
+</figure>
+<p>
+  Similarly miserable results were achieved by applying Equation \eqref{6} at a constant frequency:
+</p>
+<figure>
+  <a href="./bilder/similarly_miserable.JPG">
+  <img src="./bilder/similarly_miserable_liten.JPG" alt="">
+  </a>
+  <figcaption>
+  Figure 4: Applying Equation \eqref{6} 40 times per second and hoping that \(\text{d}x\) would be small enough resulted in random distortions up to ca 3 mm in size.
+  </figcaption>
+</figure>
+<h3>Step 5: Make \(\text{d}x\) Small Enough Using Theory</h3>
+<p>
+  A problem with the above approaches was error accumulation.
+  Say the Hangprinter reached point \(x\) with \(m_0\) on its step counter.
+  A few minutes later, Hangprinter reaches \(x\) again, but truncation errors have put the step counter to \(m_0 + 1\).
+  Steps per mm is calculated solely based on \(x\), so it is totally random whether the next truncation error
+  gets us back to the correct \(m\), or if the error will be increased to \(m + 2\).
+  This randomness gives the typical random walk pattern along the vertical edges in Figures 3 and 4.
+</p>
+<figure>
+  <a href="https://en.wikipedia.org/wiki/Random_walk#/media/File:Random_Walk_example.svg">
+  <img src="./bilder/Random_Walk_example_liten.gif" alt="">
+  </a>
+  <figcaption>
+  Figure 5: Example random walk patterns by Wikipedia user Morn.
+  </figcaption>
+</figure>
+<p>
+  To get back on track with finding \(m\) in Equation \eqref{1}, we integrate \(s'(x)\) from zero to \(x\).
+  This integral gives us a one-to-one mapping from \(x\) to \(m\).
+</p>
+\begin{equation}
+m(x) = \int_0^{x}{s'(x')\text{d}x'} = \frac{2a}{c_1}\big(\sqrt{c_0 + c_1x} - \sqrt{c_0}\big).
+\tag{7}
+\label{7}
+\end{equation}
+<p>
+  I was quite surprised that all this theory and volume calculations got me from a straight line relationship to an almost equally simple square root relationship.
+  I feared that line buildup compensation would be computationally intensive, so I'm quite pleased it's only one addition, one subtraction, one multiplication and one square root extra, compared to no compensation.
+  Even an my old Atmega2560 can handle that.
+  In the actual firmware, I've changed notation again, so it looks like this:
+</p>
+<pre><code><font color="blue">target</font><font color="grey">[</font>A_AXIS<font color="grey">]</font> = <font color="purple">lround</font><font color="grey">(</font><font color="blue">k0a</font>*<font color="grey">(</font><font color="purple">sqrt</font><font color="grey">(</font><font color="blue">k1a</font> + <font color="blue">k2a</font>*<font color="blue">delta</font><font color="grey">[</font>A_AXIS<font color="grey">])</font> - <font color="blue">sqrtk1a</font><font color="grey">))</font>;
+</code></pre>
+With the calibration constants I'm using on my own Hangprinter,
+  the compensation makes the following theoretical difference in actual movement lengths:
+<figure id=compensation_plot>
+  <a href="./bilder/compensation_plot.svg">
+  <img src="./bilder/compensation_plot.svg" alt="">
+  </a>
+  <figcaption>
+    Figure 7: Accumulated compensation at different positions.
+    The comparison constant s was calculated assuming a constant radius,
+      including line buildup experienced in origo.
+    The difference is biggest along the D-axis, since there are 6 instead of 2 lines along this axis.
+    The plot's x-axis ends at 5000 mm because the D-spool can only hold ca 30 m of line.
+    I tried it once, and the experienced error was actually larger than the expected 300 mm.
+  </figcaption>
+</figure>
+<p>
+  And finally the first test print to prove it all kind of works:
+</p>
+<figure>
+  <a href="./bilder/less_miserable.JPG">
+  <img src="./bilder/less_miserable_liten.JPG" alt="">
+  </a>
+  <figcaption>
+  Figure 7: Applying Equation \eqref{7} made vertical lines more straight, or at least less random.
+  </figcaption>
+</figure>
+<p>
+  It's nice to see the printer moving more than 1 m upwards without over-tightening any lines, and then back again to the same millimeter!
+  It almost looks functional.
+</p>
+<p>
+  - tobben
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_28">
+   Hangprinter Presentation Video and Campaign
+</h1>
+<div class="date">15-1-2017</div>
+<p>
+  I've been helped by some friends to make a <a href="https://salt.bountysource.com/teams/hangprinter">campaign</a>.
+  It has a presentation video and a logo and a picture of me and everything!
+  Get to it by clicking the logo below.
+  Please share, comment and make the Hanprinter Project your own.
+</p>
+<figure>
+  <a href="https://salt.bountysource.com/teams/hangprinter">
+  <img src="./bilder/logo_hangprinter_liten.png" alt="">
+  </a>
+  <figcaption>
+  </figcaption>
+</figure>
+<p>
+  The goal of the campaign is to allow Hangprinter to grow faster and more user friendly.
+  Hangprinter needs a dev team.
+  It's made to be useful, so it also needs to spread.
+  To spread more, it needs more of this:
+</p>
+<figure>
+  <a href="./bilder/Hangprinterbuilders.jpg">
+  <img src="./bilder/Hangprinterbuilders_liten.jpg" alt="">
+  </a>
+  <figcaption>
+    People who are not me assembling a Hangprinter behind my back!
+  </figcaption>
+</figure>
+<p>
+  <!--
+  Finally, here's the video:
+</p>
+<figure>
+  <iframe src="https://player.vimeo.com/video/198570915" width="500" height="375" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  <figcaption>
+  If you like it, please show your love by supporting the <a href="https://salt.bountysource.com/teams/hangprinter">campaign</a>.
+  </figcaption>
+</figure>
+  -->
+<p>
+  - tobben
+</p>
+<br><br><br>
+
+<hr>
+<br><br><br>
+
+<h1 id="hangprinter_project_27">
+   Compensation May Allow Bigger Prints
+</h1>
+<div class="date">14-12-2016</div>
+<p>
+  The line compensation code may increase print volume noticeably.
+  During testing, it has allowed Hangprinter version 2 to go places
+  where version 1 surely would have over-tightened lines and skipped steps.
+  <a href="2016.html#hangprinter_project_27">Read more...</a>
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_26">
+   Compensating Line Buildup on Spools
+</h1>
+<div class="date">11-12-2016</div>
+<p>
+  I've added to Hangprinter-Marlins some code that
+  compensates for line buildup on the spools.
+  Without it, I found that error in steps/mm grew to several percent
+  as print dimensions grew close to 1 m.
+  The problem was particularly noticeable on the D-axis since it has three doubled lines,
+  so moving 1 mm in the D-direction puts 6 mm of line on the D-spool.
+  <a href="2016.html#hangprinter_project_26">Read more...</a>
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_25">
+   The Worm Drive Works
+</h1>
+<div class="date">8-12-2016</div>
+<p>
+  Just tested the worm drive.
+  I was so happy to see it work that I made a little video.
+  <a href="2016.html#hangprinter_project_25">Read more...</a>
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_24">
+   Adjustable D Line Lengths and New Look
+</h1>
+<div class="date">26-11-2016</div>
+<p>
+  Just made the D-line lengths easier to adjust independently.
+  This is useful to get Hangprinter's corners in level with bed.
+  Newest changes are at a
+  <a href="https://github.com/tobbelobb/hangprinter/tree/adjustable_d_lines_and_new_look">new branch in the repo</a>.
+  <a href="2016.html#hangprinter_project_24">Read more...</a>
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_23">
+   Worm Drive on D-axis
+</h1>
+<div class="date">18-11-2016</div>
+<p>
+  The best part is that the worm is pure parametrized OpenSCAD and renders nicely.
+  <a href="2016.html#hangprinter_project_23">Read more...</a>
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_22">
+  Another Stop Motion Video
+</h1>
+<div class="date">5-11-2016</div>
+<p>
+  Hangprinting 0.9 m high twisted P at Teknisk Museum's 3D-printerfestival.
+  Note: this text was edited on 7-11-2016.
+  <a href="2016.html#hangprinter_project_22">Read more...</a>
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_21">
+  Hangprinter Calibration Manual v0.1
+</h1>
+<div class="date">3-11-2016</div>
+<p>
+  This post will make it easier to calibrate Clerck by avoiding the need for measurements like this:
+  <a href="2016.html#hangprinter_project_21">Read more...</a>
+</p>
+<br><br><br>
+
+<h1 id="oslo_skaperfestival_2016">
+  Oslo Skaperfestival 2016
+</h1>
+<div class="date">25-10-2016</div>
+<p>
+  Clerck was demonstrated in public for the first time this weekend!
+  <a href="2016.html#oslo_skaperfestival_2016">Read more...</a>
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_20">
+  Homing the Hangprinter Without Adding Hardware
+</h1>
+<div class="date">23-9-2016</div>
+<p>
+  I've thought some more about Hangprinter recently, since I'm going to demonstrate it on the
+  <a href="https://www.facebook.com/events/1052788231502429/">3d printer festival</a>
+  arranged by the Norwegian Museum of Science and Technology in Oslo.
+  I've only ever mounted and calibrated Hangprinter once before,
+    so getting the manual homing to work fast enough worries me a bit.
+  I don't have the time to implement the proposed
+  <a href="http://www.appropedia.org/Clerck,_a_RepRap_3D_printer_hanging_from_the_ceiling#Home_position">accelerometer dependent homing procedure</a>
+  before the festival.
+  <a href="2016.html#hangprinter_project_20">Read more...</a>
+</p>
+<br><br><br>
+
+<h1 id="VSE_1">
+  Yet Another Very Simple Extruder Design
+</h1>
+<div class="date">21-9-2016</div>
+<p>
+  I've thought about a second generation Hangprinter lately, including the extruder.
+  My current favourite re-design uses two motors running synchronously.
+  <a href="2016.html#VSE_1">Read more...</a>
+</p>
+<br><br><br>
+
+<h1 id="masters_2">
+  Why Optimize Chaotic Production?
+</h1>
+<div class="date">10-9-2016</div>
+<p>
+  RepRappers have noticed me that basing the story line of my
+    <a href="http://opensourceecology.org/wiki/File:Thesis.pdf">my Master's thesis</a>
+  on productivity numbers doesn't resonate with them.
+  This tickled me to think about and formulate why I do what I do, hence this post.
+  <a href="2016.html#masters_2">Read more...</a>
+</p>
+<br><br><br>
+
+<h1 id="portable_gcode_1">
+  Portable Gcode and Short Status
+</h1>
+<div class="date">5-9-2016</div>
+<p>
+  Today I asked a <a href="http://forums.reprap.org/read.php?1,705311">question on reprap forums</a> that has puzzled me for a long time.
+  Why don't we share gcode instead of 3d models?
+  The technical obstacles are small and it would be an obvious optimization of chaotic production.
+  See <a href="http://forums.reprap.org/read.php?1,705311">the forum post</a> for details.
+  Hoping for an interesting discussion there.
+  <a href="2016.html#portable_gcode_1">Read more...</a>
+</p>
+<br><br><br>
+
+<h1 id="masters_1">
+  Optimize Chaotic Production
+</h1>
+<div class="date">29-6-2016</div>
+<p>
+  I presented my Master's recently, with a story line that was very RepRap centric.
+  I'd like to re-present and develop my thoughts with some colors here.
+  Be warned that this is a post about <i>why</i> I RepRap, not <i>how</i> I RepRap.
+  <a href="2016.html#masters_1">Read more...</a>
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_19">
+  Update and Clerck Build Instructions
+</h1>
+<div class="date">8-2-2016</div>
+<p>
+  I've been working on Open Source Ecology 3D printer workshops (see my <a href="http://opensourceecology.org/wiki/Tobben_Log">work log</a> for exactly what I've been up to)
+  the past month, and will continue to work on that until mid summer.
+  <a href="2016.html#hangprinter_project_19">Read more...</a>
+</p>
+<br><br><br>
+
+<br /><br /><br /><br /><br /><br /><br /><br />
+<h1 id="Links">
+  Links
+</h1>
+<p>
+  Hangprinter Campaign: <a href="https://salt.bountysource.com/teams/hangprinter">Bountysource Salt</a>
+</p>
+<p>
+  Hangprinter Project: <a  href="2014.html#Hangprinter">[1]</a>,
+                       <a  href="2015.html#Slideprinter_Update">[2]</a>,
+                       <a  href="2015.html#hangprinter_project_2">[3]</a>,
+                       <a  href="2015.html#hangprinter_project_3">[4]</a>,
+                       <a  href="2015.html#hangprinter_project_4">[5]</a>,
+                       <a  href="2015.html#hangprinter_project_5">[6]</a>,
+                       <a  href="2015.html#hangprinter_project_6">[7]</a>,
+                       <a  href="2015.html#hangprinter_project_7">[8]</a>,
+                       <a  href="2015.html#hangprinter_project_8">[9]</a>,
+                       <a  href="2015.html#hangprinter_project_9">[10]</a>,
+                       <a  href="2015.html#hangprinter_project_10">[11]</a>,
+                       <a  href="2015.html#hangprinter_project_11">[12]</a>,
+                       <a  href="2015.html#hangprinter_project_12">[13]</a>,
+                       <a  href="2015.html#hangprinter_project_13">[14]</a>,
+                       <a  href="2015.html#hangprinter_project_14">[15]</a>,
+                       <a  href="2015.html#hangprinter_project_15">[16]</a>,
+                       <a  href="2015.html#hangprinter_project_16">[17]</a>,
+                       <a  href="2015.html#hangprinter_project_17">[18]</a>,
+                       <a  href="2015.html#hangprinter_project_18">[19]</a>,
+                       <a  href="2016.html#hangprinter_project_19">[20]</a>,
+                       <a  href="2016.html#hangprinter_project_20">[21]</a>,
+                       <a  href="2016.html#hangprinter_project_21">[22]</a>,
+                       <a  href="2016.html#hangprinter_project_22">[23]</a>,
+                       <a  href="2016.html#hangprinter_project_23">[24]</a>,
+                       <a  href="2016.html#hangprinter_project_24">[25]</a>,
+                       <a  href="2016.html#hangprinter_project_25">[26]</a>,
+                       <a  href="2016.html#hangprinter_project_26">[27]</a>,
+                       <a  href="2016.html#hangprinter_project_27">[28]</a>,
+                       <a  href="2017.html#hangprinter_project_28">[29]</a>,
+                       <a  href="2017.html#hangprinter_project_29">[30]</a>,
+                       <a  href="2017.html#hangprinter_project_30">[31]</a>,
+                       <a  href="2017.html#hangprinter_project_31">[32]</a>,
+                       <a  href="2017.html#hangprinter_project_32">[33]</a>,
+                       <a  href="2017.html#hangprinter_project_33">[34]</a>,
+                       <a  href="2017.html#hangprinter_project_34">[35]</a>,
+                       <a  href="2017.html#hangprinter_project_35">[36]</a>,
+                       <a  href="2017.html#hangprinter_project_36">[37]</a>,
+                       <a  href="2017.html#hangprinter_project_37">[38]</a>,
+                       <a  href="2017.html#hangprinter_project_38">[39]</a>,
+                       <a  href="2017.html#hangprinter_project_39">[40]</a>,
+                       <a  href="2017.html#hangprinter_project_40">[41]</a>,
+                       <a  href="2017.html#hangprinter_project_41">[42]</a>,
+                       <a  href="2017.html#hangprinter_project_42">[43]</a>,
+                       <a  href="2017.html#hangprinter_project_43">[44]</a>,
+                       <a  href="2017.html#hangprinter_project_44">[45]</a>,
+                       <a  href="2017.html#hangprinter_project_45">[46]</a>,
+                       <a  href="2017.html#hangprinter_project_46">[47]</a>,
+                       <a  href="2017.html#hangprinter_project_46">[48]</a>,
+                       <a  href="2017.html#hangprinter_project_46">[49]</a>
+</p>
+<p>
+  Print Issue Solution Filter Project: <a href="2014.html#Introducing_PISF">[1]</a>,
+                                       <a href="2014.html#Presenting_PISF_Again">[2]</a>,
+                                       <a href="2014.html#PISF_Online_Sort_Of">[3]</a>,
+                                       <a href="2014.html#PISF">[4]</a>
+</p>
+<p>
+  Sourcing RepRappro Mendel in Larvik: <a href="2014.html#Sourcing_Mendel_1">[1]</a>,
+                                       <a href="2014.html#Sourcing_Mendel_2">[2]</a>,
+                                       <a href="2014.html#Sourcing_Mendel_3">[3]</a>,
+                                       <a href="2014.html#Sourcing_Mendel_4">[4]</a>,
+                                       <a href="2014.html#Sourcing_Mendel_5">[5]</a>,
+                                       <a href="2014.html#Sourcing_Mendel_6">[6]</a>,
+                                       <a href="2014.html#Sourcing_Mendel_7">[7]</a>
+</p>
+<p>
+Archive: <a href="2014.html">2014</a>, <a href="2015.html">2015</a>, <a href="2016.html">2016</a>, , <a href="2017.html">2017</a>
+</p>
+<p>
+Github Profile: <a href="https://github.com/tobbelobb/">link</a><br />
+</p>
+<p>
+Vimeo User: <a href="https://vimeo.com/user23166500">link</a><br />
+</p>
+<p>
+Twitter User: <a href="https://twitter.com/tobbelobb">link</a><br />
+</p>
+<p>
+Work Microblog: <a href="http://opensourceecology.org/wiki/Tobben_Log">link</a><br />
+</p>
+<p>
+Master's Thesis: <a href="http://opensourceecology.org/wiki/File:Thesis.pdf">link</a><br />
+</p>
+<p>
+Linkedin Profile: <a href="https://se.linkedin.com/in/torbjorn-ludvigsen">link</a><br />
+</p>
+<p>
+Appropedia User: <a href="http://www.appropedia.org/User:Tobben">link</a><br />
+</p>
+<p>
+Company website (in Norwegian): <a href="http://ludvigsen3dprinting.com/">link</a>
+</p>
+<p>
+Email: <a href="mailto:post@ludvigsen3dprinting.com">post@ludvigsen3dprinting.com</a>
+</p>
+<p>
+RepRap Forums User: <a href="http://forums.reprap.org/profile.php?1,22385">link</a>
+</p>
+<p>
+Forums threads: <a href="http://forums.reprap.org/read.php?178,344022">Hangprinter version 1</a>,
+                <a href="http://forums.reprap.org/read.php?1,738858">Hangprinter version 2</a>,
+                <a href="http://forums.reprap.org/read.php?1,792937">Hangprinter version 3</a>
+</p>
+<p>
+  Source for this blog: <a href="https://github.com/tobbelobb/tbear_blogg">Github repo</a>
+</p>
+<p>
+Everything on this homepage, except the videos, is licenced under the <a href="https://www.gnu.org/licenses/fdl">Gnu Free Documentation Licence</a>.
+The videos are licenced via Vimeo or Youtube.
+</p>
+</div>
+<br /><br /><br /><br /><br /><br /><br /><br />
+<script type="text/javascript">
+  MathJax.Hub.Configured()
+</script>
+</body>
+</html>
