@@ -1,2 +1,669 @@
-Ziptie_wood_mover_1.JPG
-Ziptie_wood_mover_2.JPG
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="author" content="Torbjorn" >
+<meta name="keywords" content="Reprap, blog, development">
+<meta name="description" content="Torbjørn Ludvigsen's Reprap blog.">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link href="http://vitana.se/opr3d/tbear/feed.xml" rel="alternate" type="application/rss+xml" title="Torbjørn's Reprap blog's RSS feed" />
+
+<!-- TODO: This Mathjax is pretty slow... -->
+<script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML">
+</script>
+
+<title>Torbjørns Reprap blog</title>
+</head>
+
+<body>
+<div id="SiteName">
+  <div class="right">
+    <a href=#Links>Contact, archive, etc</a>
+  </div>
+  <div class="left">
+    Reprap blog
+  </div>
+</div>
+
+<div id="MainContent">
+
+<h1 id="hangprinter_project_51">
+  Ziptie Mover
+</h1>
+<div class="date">3-1-2018</div>
+<p>
+  I've implemented Tom's suggestion to use zipties on the mover corners.
+</p>
+
+<figure>
+  <a href="./bilder/Ziptie_wood_mover_3.JPG">
+  <img src="./bilder/Ziptie_wood_mover_3_liten.JPG" alt="">
+  </a>
+  <figcaption>
+    Ziptied mover.
+  </figcaption>
+</figure>
+<p>
+  Using zipties in stead of screws has some advantages.
+</p>
+<ul>
+  <li>Works with beams of different widths (currently 12.5 to 17.5 mm). </li>
+  <li>Does not rely on flexing fragile printed parts. </li>
+  <li>Saves some weight.</li>
+</ul>
+<p>I also find it easier to assemble since there are no fiddling with small screws and nuts. </p>
+<figure>
+  <a href="./bilder/Ziptie_mover_corner_1.JPG">
+  <img src="./bilder/Ziptie_mover_corner_1_liten.JPG" alt="">
+  </a>
+  <figcaption>
+    Ziptied mover corner.
+    The zipties' heads wrap around the sharp corner of the wooden beam.
+  </figcaption>
+</figure>
+<figure>
+  <a href="./bilder/Ziptie_mover_corner_2.JPG">
+  <img src="./bilder/Ziptie_mover_corner_2_liten.JPG" alt="">
+  </a>
+  <figcaption>
+  Zipties of width 4 mm gives the most sturdy mover, but I've found sizes down to 2.4 mm (like in this picture) to work well.
+  </figcaption>
+</figure>
+<p>
+  For wooden movers, I've also thrown away the old beam_clamp.
+  It's both more sturdy and lighter to just clamp the crossbeam with a little M3 screw and nut.
+</p>
+<figure>
+  <a href="./bilder/Beam_clamping.JPG">
+  <img src="./bilder/Beam_clamping_liten.JPG" alt="">
+  </a>
+  <figcaption>
+    Note that I pre-drilled 3.2 mm holes before inserting the M3 screw.
+    I use washers on both sides of the hole because the pine wood is so soft.
+  </figcaption>
+</figure>
+<p>
+  These two improvements combined save ca 60 g of weight compared to the previous mover.
+</p>
+<p>
+  I've also added a little nutlock to beam_slider, to make it easier to tighten/untighten with one hand.
+</p>
+<figure>
+  <a href="./bilder/Beam_slider_nutlock.png">
+  <img src="./bilder/Beam_slider_nutlock_liten.png" alt="">
+  </a>
+  <figcaption>
+  </figcaption>
+</figure>
+<p>
+  More improvements inspired by what I learned in Hamburg is in the pipeline.
+  Happy new year!
+</p>
+<p>
+  - tobben
+</p>
+<br><br><br>
+
+<hr>
+<h3>2017</h3>
+<hr>
+<br><br><br>
+
+<h1 id="hangprinter_project_50">
+  The Why Again
+</h1>
+<div class="date">7-12-2017</div>
+<p>
+  This is the 50'th Hangprinter blog post, and I think it's a good opportunity to elaborate on why I develop Hangprinters.
+  <a href="2017.html#hangprinter_project_50">Read more...</a>
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_49">
+  Time for Clones
+</h1>
+<div class="date">15-11-2017</div>
+<p>
+  It's been a busy month and the next one will be busy too.
+  I've helped fredrudolf build a v3.3 (aka HP3).
+  We're preparing a live demo at Maker Faire Rome (Dec 1-3).
+  After that, I will help <a href="https://toms3d.org/">Tom</a> create a video series on Hangprinter.
+  <a href="2017.html#hangprinter_project_49">Read more...</a>
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_48">
+  Version 3.3 In The Making
+</h1>
+<div class="date">14-10-2017</div>
+<p>
+  It's been a month of very technical development.
+  I feel like I'm searching for the version 3.3 among a forest of new ideas and insights.
+  <a href="2017.html#hangprinter_project_48">Read more...</a>
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_47">
+  Benchy, Videos and Some New Code
+</h1>
+<div class="date">12-9-2017</div>
+<p>
+  First Hangprinted Benchy:
+  <a href="2017.html#hangprinter_project_47">Read more...</a>
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_46">
+  Version 3.2 Overview
+</h1>
+<div class="date">7-8-2017</div>
+<p>
+  The Hangprinter v3 has developed very quickly recently.
+  We've been developing so intensely, we almost forgot to print a Benchy with the current prototype, called v3.2.
+  <a href="2017.html#hangprinter_project_46">Read more...</a>
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_45">
+  Closed Loop Doing its Job and Sstruder v2 Pic
+</h1>
+<div class="date">6-7-2017</div>
+<p>
+  This video shows how the closed loop ABC axes act like springs when hot end meets an obstacle.
+  <a href="2017.html#hangprinter_project_45">Read more...</a>
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_44">
+  Working on Auto Calibration and Reliability
+</h1>
+<div class="date">3-7-2017</div>
+<p>
+  I put together a closed loop single unit Hangprinter with pancake steppers recently.
+  The following video shows that it can run upwards along the D-line at 26.6 mm/s.
+  <a href="2017.html#hangprinter_project_44">Read more...</a>
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_43">
+  Walking the Line
+</h1>
+<div class="date">4-6-2017</div>
+<p>
+  Following up on what I planned 35 days ago:
+  "When the version 3 is up and running, I will focus my dev time on adding
+  closed loop control,
+  auto calibration
+  and DC motors, in that order.
+  <a href="2017.html#hangprinter_project_43">Read more...</a>
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_42">
+  Experimental Dual Unit Designs
+</h1>
+<div class="date">30-4-2017</div>
+<p>
+  The Hangprinter Hackathon at Bitraf produced some technical progress.
+  <a href="2017.html#hangprinter_project_42">Read more...</a>
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_41">
+  Other People's Hangprinter Builds
+</h1>
+<div class="date">25-4-2017</div>
+<p>
+  This beauty was posted by Mario Lucas <a href="https://twitter.com/l_k3/status/848151053526806529">here</a>.
+  This impressive bottom plate was posted by
+  Jonathan Bahrs
+  <a href="https://www.facebook.com/photo.php?fbid=10154512094258325&set=g.176856636157837&type=1&theater">here</a>.
+  <a href="2017.html#hangprinter_project_41">Read more...</a>
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_40">
+  Babel Tower Time Lapse
+</h1>
+<div class="date">15-4-2017</div>
+<p>
+  To recharge before the <a href="https://www.meetup.com/bitraf/events/239151727/">Hangprinter Hackathon</a> in Oslo next weekend,
+  I threw together a Babel Tower time lapse.
+  <a href="2017.html#hangprinter_project_40">Read more...</a>
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_39">
+  First Pull Request Merged
+</h1>
+<div class="date">4-4-2017</div>
+<p>
+  The Hangprinter repo on has had its first merged pull request!
+  Committer was awigen.
+  <a href="2017.html#hangprinter_project_39">Read more...</a>
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_38">
+  Hangprinter.org
+</h1>
+<div class="date">2-4-2017</div>
+<p>
+  Check it out: <a href="http://hangprinter.org/">hangprinter.org</a>!
+  Big thanks to <a href="https://www.linkedin.com/in/piyush-dharnidharka-87083546/">Piyush Dharnidharka</a> for taking the initiative and building the page.
+  <a href="2017.html#hangprinter_project_38">Read more...</a>
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_37">
+  Push Fit Sandwich
+</h1>
+<div class="date">27-3-2017</div>
+<p>
+  In <a href="http://forums.reprap.org/read.php?1,738858,758625#msg-758625">this</a> forum post,
+  NOVAprint confirmed what I had suspected was a weakness in the sandwich design.
+  A gap might open between the snelle and the sandwich gear, so that line wraps around the center cylinder.
+  I never really liked the super-short screws in the sandwich either, so I've designed a push fit solution:
+  <a href="2017.html#hangprinter_project_37">Read more...</a>
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_36">
+  Sstruder v2 and Helsingborg
+</h1>
+<div class="date">27-3-2017</div>
+<p>
+  I got the chance to test the improved extruder design recently. It worked better than the previous Sstruder, so stls were pushed to the repo today.
+  <a href="2017.html#hangprinter_project_36">Read more...</a>
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_35">
+  Tweets
+</h1>
+<div class="date">7-3-2017</div>
+<p>
+  I posted a few Tweets recently. Reposting them here now.
+  <a href="2017.html#hangprinter_project_35">Read more...</a>
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_34">
+  The Tilt Problem
+</h1>
+<div class="date">26-2-2017</div>
+<p>
+  Hello Reprappers and Hangprinterers!
+  The Babel print gives a lot of lessons, so there's a lot of posts this week.
+  Ca 1.5 m above ground and with 20 m of line on the D-spool, I've noticed a previously undocumented problem.
+  <a href="2017.html#hangprinter_project_34">Read more...</a>
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_33">
+  Changed Anchor Points Mid Print
+</h1>
+<div class="date">24-2-2017</div>
+<p>
+  I managed to sneak up the anchor points yesterday.
+  The secret trick is to pause and move one anchor point at a time.
+  <a href="2017.html#hangprinter_project_33">Read more...</a>
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_32">
+  Slowly but Surely
+</h1>
+<div class="date">23-2-2017</div>
+<p>
+  920 first millemeters of a Babel Tower in a staircase.
+  <a href="2017.html#hangprinter_project_32">Read more...</a>
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_31">
+  Community at Embryo Stage
+</h1>
+<div class="date">20-2-2017</div>
+<p>
+  It seems like some collaboration and maybe even a little community is gathering around the Hangprinter Project.
+  Right now, there are 5-6 builders out there wrapping their heads around the source files, assembly process and calibration.
+  <a href="2017.html#hangprinter_project_31">Read more...</a>
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_30">
+  D-Wobble Debugged
+</h1>
+<div class="date">2-2-2017</div>
+<p>
+  Those who have zoomed in on my Hangprints after I added the worm drive will have noticed a periodic error.
+  <a href="2017.html#hangprinter_project_30">Read more...</a>
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_29">
+   Experimental Line Buildup Compensation Feature
+</h1>
+<div class="date">27-1-2017</div>
+<p>
+  I've conducted a few experiments recently,
+    and I think I've arrived at a usable implementation of the line buildup compensation that I described in
+  <a href="2016.html#hangprinter_project_26">an earlier blog post</a>.
+  In this post, I'll try to go a bit more in detail.
+  <a href="2017.html#hangprinter_project_29">Read more...</a>
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_28">
+   Hangprinter Presentation Video and Campaign
+</h1>
+<div class="date">15-1-2017</div>
+<p>
+  I've been helped by some friends to make a <a href="https://salt.bountysource.com/teams/hangprinter">campaign</a>.
+  It has a presentation video and a logo and a picture of me and everything!
+  <a href="2017.html#hangprinter_project_28">Read more...</a>
+</p>
+<br><br><br>
+
+<hr>
+<h3>2016</h3>
+<hr>
+<br><br><br>
+
+<h1 id="hangprinter_project_27">
+   Compensation May Allow Bigger Prints
+</h1>
+<div class="date">14-12-2016</div>
+<p>
+  The line compensation code may increase print volume noticeably.
+  During testing, it has allowed Hangprinter version 2 to go places
+  where version 1 surely would have over-tightened lines and skipped steps.
+  <a href="2016.html#hangprinter_project_27">Read more...</a>
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_26">
+   Compensating Line Buildup on Spools
+</h1>
+<div class="date">11-12-2016</div>
+<p>
+  I've added to Hangprinter-Marlins some code that
+  compensates for line buildup on the spools.
+  Without it, I found that error in steps/mm grew to several percent
+  as print dimensions grew close to 1 m.
+  The problem was particularly noticeable on the D-axis since it has three doubled lines,
+  so moving 1 mm in the D-direction puts 6 mm of line on the D-spool.
+  <a href="2016.html#hangprinter_project_26">Read more...</a>
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_25">
+   The Worm Drive Works
+</h1>
+<div class="date">8-12-2016</div>
+<p>
+  Just tested the worm drive.
+  I was so happy to see it work that I made a little video.
+  <a href="2016.html#hangprinter_project_25">Read more...</a>
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_24">
+   Adjustable D Line Lengths and New Look
+</h1>
+<div class="date">26-11-2016</div>
+<p>
+  Just made the D-line lengths easier to adjust independently.
+  This is useful to get Hangprinter's corners in level with bed.
+  Newest changes are at a
+  <a href="https://github.com/tobbelobb/hangprinter/tree/adjustable_d_lines_and_new_look">new branch in the repo</a>.
+  <a href="2016.html#hangprinter_project_24">Read more...</a>
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_23">
+   Worm Drive on D-axis
+</h1>
+<div class="date">18-11-2016</div>
+<p>
+  The best part is that the worm is pure parametrized OpenSCAD and renders nicely.
+  <a href="2016.html#hangprinter_project_23">Read more...</a>
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_22">
+  Another Stop Motion Video
+</h1>
+<div class="date">5-11-2016</div>
+<p>
+  Hangprinting 0.9 m high twisted P at Teknisk Museum's 3D-printerfestival.
+  Note: this text was edited on 7-11-2016.
+  <a href="2016.html#hangprinter_project_22">Read more...</a>
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_21">
+  Hangprinter Calibration Manual v0.1
+</h1>
+<div class="date">3-11-2016</div>
+<p>
+  This post will make it easier to calibrate Clerck by avoiding the need for measurements like this:
+  <a href="2016.html#hangprinter_project_21">Read more...</a>
+</p>
+<br><br><br>
+
+<h1 id="oslo_skaperfestival_2016">
+  Oslo Skaperfestival 2016
+</h1>
+<div class="date">25-10-2016</div>
+<p>
+  Clerck was demonstrated in public for the first time this weekend!
+  <a href="2016.html#oslo_skaperfestival_2016">Read more...</a>
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_20">
+  Homing the Hangprinter Without Adding Hardware
+</h1>
+<div class="date">23-9-2016</div>
+<p>
+  I've thought some more about Hangprinter recently, since I'm going to demonstrate it on the
+  <a href="https://www.facebook.com/events/1052788231502429/">3d printer festival</a>
+  arranged by the Norwegian Museum of Science and Technology in Oslo.
+  I've only ever mounted and calibrated Hangprinter once before,
+    so getting the manual homing to work fast enough worries me a bit.
+  I don't have the time to implement the proposed
+  <a href="http://www.appropedia.org/Clerck,_a_RepRap_3D_printer_hanging_from_the_ceiling#Home_position">accelerometer dependent homing procedure</a>
+  before the festival.
+  <a href="2016.html#hangprinter_project_20">Read more...</a>
+</p>
+<br><br><br>
+
+<h1 id="VSE_1">
+  Yet Another Very Simple Extruder Design
+</h1>
+<div class="date">21-9-2016</div>
+<p>
+  I've thought about a second generation Hangprinter lately, including the extruder.
+  My current favourite re-design uses two motors running synchronously.
+  <a href="2016.html#VSE_1">Read more...</a>
+</p>
+<br><br><br>
+
+<h1 id="masters_2">
+  Why Optimize Chaotic Production?
+</h1>
+<div class="date">10-9-2016</div>
+<p>
+  RepRappers have noticed me that basing the story line of my
+    <a href="http://opensourceecology.org/wiki/File:Thesis.pdf">my Master's thesis</a>
+  on productivity numbers doesn't resonate with them.
+  This tickled me to think about and formulate why I do what I do, hence this post.
+  <a href="2016.html#masters_2">Read more...</a>
+</p>
+<br><br><br>
+
+<h1 id="portable_gcode_1">
+  Portable Gcode and Short Status
+</h1>
+<div class="date">5-9-2016</div>
+<p>
+  Today I asked a <a href="http://forums.reprap.org/read.php?1,705311">question on reprap forums</a> that has puzzled me for a long time.
+  Why don't we share gcode instead of 3d models?
+  The technical obstacles are small and it would be an obvious optimization of chaotic production.
+  See <a href="http://forums.reprap.org/read.php?1,705311">the forum post</a> for details.
+  Hoping for an interesting discussion there.
+  <a href="2016.html#portable_gcode_1">Read more...</a>
+</p>
+<br><br><br>
+
+<h1 id="masters_1">
+  Optimize Chaotic Production
+</h1>
+<div class="date">29-6-2016</div>
+<p>
+  I presented my Master's recently, with a story line that was very RepRap centric.
+  I'd like to re-present and develop my thoughts with some colors here.
+  Be warned that this is a post about <i>why</i> I RepRap, not <i>how</i> I RepRap.
+  <a href="2016.html#masters_1">Read more...</a>
+</p>
+<br><br><br>
+
+<h1 id="hangprinter_project_19">
+  Update and Clerck Build Instructions
+</h1>
+<div class="date">8-2-2016</div>
+<p>
+  I've been working on Open Source Ecology 3D printer workshops (see my <a href="http://opensourceecology.org/wiki/Tobben_Log">work log</a> for exactly what I've been up to)
+  the past month, and will continue to work on that until mid summer.
+  <a href="2016.html#hangprinter_project_19">Read more...</a>
+</p>
+<br><br><br>
+
+<br /><br /><br /><br /><br /><br /><br /><br />
+<h1 id="Links">
+  Links
+</h1>
+<p>
+  Hangprinter Campaign: <a href="https://salt.bountysource.com/teams/hangprinter">Bountysource Salt</a>
+</p>
+<p>
+  Hangprinter Project: <a  href="2014.html#Hangprinter">[1]</a>,
+                       <a  href="2015.html#Slideprinter_Update">[2]</a>,
+                       <a  href="2015.html#hangprinter_project_2">[3]</a>,
+                       <a  href="2015.html#hangprinter_project_3">[4]</a>,
+                       <a  href="2015.html#hangprinter_project_4">[5]</a>,
+                       <a  href="2015.html#hangprinter_project_5">[6]</a>,
+                       <a  href="2015.html#hangprinter_project_6">[7]</a>,
+                       <a  href="2015.html#hangprinter_project_7">[8]</a>,
+                       <a  href="2015.html#hangprinter_project_8">[9]</a>,
+                       <a  href="2015.html#hangprinter_project_9">[10]</a>,
+                       <a  href="2015.html#hangprinter_project_10">[11]</a>,
+                       <a  href="2015.html#hangprinter_project_11">[12]</a>,
+                       <a  href="2015.html#hangprinter_project_12">[13]</a>,
+                       <a  href="2015.html#hangprinter_project_13">[14]</a>,
+                       <a  href="2015.html#hangprinter_project_14">[15]</a>,
+                       <a  href="2015.html#hangprinter_project_15">[16]</a>,
+                       <a  href="2015.html#hangprinter_project_16">[17]</a>,
+                       <a  href="2015.html#hangprinter_project_17">[18]</a>,
+                       <a  href="2015.html#hangprinter_project_18">[19]</a>,
+                       <a  href="2016.html#hangprinter_project_19">[20]</a>,
+                       <a  href="2016.html#hangprinter_project_20">[21]</a>,
+                       <a  href="2016.html#hangprinter_project_21">[22]</a>,
+                       <a  href="2016.html#hangprinter_project_22">[23]</a>,
+                       <a  href="2016.html#hangprinter_project_23">[24]</a>,
+                       <a  href="2016.html#hangprinter_project_24">[25]</a>,
+                       <a  href="2016.html#hangprinter_project_25">[26]</a>,
+                       <a  href="2016.html#hangprinter_project_26">[27]</a>,
+                       <a  href="2016.html#hangprinter_project_27">[28]</a>,
+                       <a  href="2017.html#hangprinter_project_28">[29]</a>,
+                       <a  href="2017.html#hangprinter_project_29">[30]</a>,
+                       <a  href="2017.html#hangprinter_project_30">[31]</a>,
+                       <a  href="2017.html#hangprinter_project_31">[32]</a>,
+                       <a  href="2017.html#hangprinter_project_32">[33]</a>,
+                       <a  href="2017.html#hangprinter_project_33">[34]</a>,
+                       <a  href="2017.html#hangprinter_project_34">[35]</a>,
+                       <a  href="2017.html#hangprinter_project_35">[36]</a>,
+                       <a  href="2017.html#hangprinter_project_36">[37]</a>,
+                       <a  href="2017.html#hangprinter_project_37">[38]</a>,
+                       <a  href="2017.html#hangprinter_project_38">[39]</a>,
+                       <a  href="2017.html#hangprinter_project_39">[40]</a>,
+                       <a  href="2017.html#hangprinter_project_40">[41]</a>,
+                       <a  href="2017.html#hangprinter_project_41">[42]</a>,
+                       <a  href="2017.html#hangprinter_project_42">[43]</a>,
+                       <a  href="2017.html#hangprinter_project_43">[44]</a>,
+                       <a  href="2017.html#hangprinter_project_44">[45]</a>,
+                       <a  href="2017.html#hangprinter_project_45">[46]</a>,
+                       <a  href="2017.html#hangprinter_project_46">[47]</a>,
+                       <a  href="2017.html#hangprinter_project_46">[48]</a>,
+                       <a  href="2017.html#hangprinter_project_46">[49]</a>
+</p>
+<p>
+  Print Issue Solution Filter Project: <a href="2014.html#Introducing_PISF">[1]</a>,
+                                       <a href="2014.html#Presenting_PISF_Again">[2]</a>,
+                                       <a href="2014.html#PISF_Online_Sort_Of">[3]</a>,
+                                       <a href="2014.html#PISF">[4]</a>
+</p>
+<p>
+  Sourcing RepRappro Mendel in Larvik: <a href="2014.html#Sourcing_Mendel_1">[1]</a>,
+                                       <a href="2014.html#Sourcing_Mendel_2">[2]</a>,
+                                       <a href="2014.html#Sourcing_Mendel_3">[3]</a>,
+                                       <a href="2014.html#Sourcing_Mendel_4">[4]</a>,
+                                       <a href="2014.html#Sourcing_Mendel_5">[5]</a>,
+                                       <a href="2014.html#Sourcing_Mendel_6">[6]</a>,
+                                       <a href="2014.html#Sourcing_Mendel_7">[7]</a>
+</p>
+<p>
+Archive: <a href="2014.html">2014</a>, <a href="2015.html">2015</a>, <a href="2016.html">2016</a>, <a href="2017.html">2017</a>, <a href="2018.html">2018</a>
+</p>
+<p>
+Github Profile: <a href="https://github.com/tobbelobb/">link</a><br />
+</p>
+<p>
+Vimeo User: <a href="https://vimeo.com/user23166500">link</a><br />
+</p>
+<p>
+Twitter User: <a href="https://twitter.com/tobbelobb">link</a><br />
+</p>
+<p>
+Work Microblog: <a href="http://opensourceecology.org/wiki/Tobben_Log">link</a><br />
+</p>
+<p>
+Master's Thesis: <a href="http://opensourceecology.org/wiki/File:Thesis.pdf">link</a><br />
+</p>
+<p>
+Linkedin Profile: <a href="https://se.linkedin.com/in/torbjorn-ludvigsen">link</a><br />
+</p>
+<p>
+Appropedia User: <a href="http://www.appropedia.org/User:Tobben">link</a><br />
+</p>
+<p>
+Company website (in Norwegian): <a href="http://ludvigsen3dprinting.com/">link</a>
+</p>
+<p>
+Email: <a href="mailto:post@ludvigsen3dprinting.com">post@ludvigsen3dprinting.com</a>
+</p>
+<p>
+RepRap Forums User: <a href="http://forums.reprap.org/profile.php?1,22385">link</a>
+</p>
+<p>
+Forums threads: <a href="http://forums.reprap.org/read.php?178,344022">Hangprinter version 1</a>,
+                <a href="http://forums.reprap.org/read.php?1,738858">Hangprinter version 2</a>,
+                <a href="http://forums.reprap.org/read.php?1,792937">Hangprinter version 3</a>
+</p>
+<p>
+  Source for this blog: <a href="https://github.com/tobbelobb/tbear_blogg">Github repo</a>
+</p>
+<p>
+Everything on this homepage, except the videos, is licenced under the <a href="https://www.gnu.org/licenses/fdl">Gnu Free Documentation Licence</a>.
+The videos are licenced via Vimeo or Youtube.
+</p>
+</div>
+<br /><br /><br /><br /><br /><br /><br /><br />
+<script type="text/javascript">
+  MathJax.Hub.Configured()
+</script>
+</body>
+</html>
