@@ -28,6 +28,80 @@
 
 <div id="MainContent">
 
+<h1 id="hangprinter_project_53">
+  Consequences of Miscalibrating Anchor Positions
+</h1>
+<div class="date">28-1-2018</div>
+<p>
+  I made a script recently, to get learn how a Hangprinter axis with bad anchor positions behaves.
+  The script itself is <a href="http://vitana.se/opr3d/tbear/scripts/calibration_errors.py">here</a>.
+</p>
+  <h4>The Quick Take-Away:</h4>
+<p>
+  Moving directly from/towards an anchor gives small errors, almost regardless of calibration errors.
+</p>
+  <h4>The Details:</h4>
+<p>
+  Four plots are shown below.
+  Only the XY axes are shown, but the results are similar in three dimensions.
+  Line length errors in different XY-positions are shown with color codes.
+  They are normalized so that the error in the origin is 0 in all plots.
+  In negative areas, the mis-calibrated axis will over-tighten.
+  In positive areas, the mis-calibrated axis will let out too much line.
+  Click the plots to get larger versions.
+</p>
+<figure>
+  <a href="./bilder/anchor_config_at_ccw_angle.png">
+  <img src="./bilder/anchor_config_at_ccw_angle_liten.png" alt="">
+  </a>
+  <figcaption>
+    In this plot, the anchor is located at (-700, 700).
+    The black arrow shows a measurement error of (-97, -97), so the machine has been configured with anchor locations (-797, 603).
+    In the point (-500,0), this mis-calibrated axis will end up with 65 mm too short lines.
+    In (0, 500) however, it ends up with 65 mm too long lines.
+  </figcaption>
+</figure>
+<figure>
+  <a href="./bilder/anchor_config_too_far.png">
+  <img src="./bilder/anchor_config_too_far_liten.png" alt="">
+  </a>
+  <figcaption>
+    Anchor location: (-700, 700)<br />
+    Measurement error: (-99, 99)<br />
+    Configured anchor location: (-799, 799)<br />
+    Error at (-500,0): 15 mm too tight<br />
+    Error at (0,500): 15 mm too tight
+  </figcaption>
+</figure>
+<figure>
+  <a href="./bilder/anchor_config_at_cw_angle.png">
+  <img src="./bilder/anchor_config_at_cw_angle_liten.png" alt="">
+  </a>
+  <figcaption>
+    Anchor location: (-700, 700)<br />
+    Measurement error: (98, 99)<br />
+    Configured anchor location: (-602, 799)<br />
+    Error at (-500,0): 67 mm too long <br />
+    Error at (0,500): 66 mm too tight
+  </figcaption>
+</figure>
+<figure>
+  <a href="./bilder/anchor_config_too_close.png">
+  <img src="./bilder/anchor_config_too_close_liten.png" alt="">
+  </a>
+  <figcaption>
+    Anchor location: (-700, 700)<br />
+    Measurement error: (98, -99)<br />
+    Configured anchor location: (-602, 601)<br />
+    Error at (-500,0): 21 mm too long <br />
+    Error at (0,500): 22 mm too long
+  </figcaption>
+</figure>
+<p>
+  - tobben
+</p>
+<br><br><br>
+
 <h1 id="hangprinter_project_52">
   New Extruder Holder Bracket
 </h1>
