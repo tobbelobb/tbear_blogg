@@ -60,8 +60,8 @@
 <h3>Use The Force</h3>
 <p>
   The scribbles below derive how to synchronize the four forces from the four motors,
-    so that they are lines are tightened or slackened, without moving the mover.
-  A force magnitude can approximately mapped to a line shortening/elongation by using <a href="https://en.wikipedia.org/wiki/Hooke%27s_law">Hooke's law</a>,
+    so that all lines can be tightened or slackened, without moving the mover.
+  A force magnitude can be approximately mapped to a line shortening/elongation by using <a href="https://en.wikipedia.org/wiki/Hooke%27s_law">Hooke's law</a>,
     where a guessed or measured <a href="https://en.wikipedia.org/wiki/Young's_modulus#Calculation">Young's modulus</a> gives the spring constant \(k\).
   Note that the spring "constant" will vary with line length in our case.
 </p>
@@ -81,13 +81,13 @@ l_{acc} = l - F/k(l),
   <img src="./bilder/Flex_P1_rot_liten.JPG" alt="">
   </a>
   <figcaption>
-    The moves is approximated to be a point mass.
+    The mover is approximated to be a point mass.
     The six forces acting on the mover are drawn out in a beautiful hand made 3d visualization.
     It is not true that we <i>must</i> set one of \([ABCD]\) fixed.
     That is just one of many possible ways to constrain the system.
     Setting \(D=|\vec{D}|\) to be constant was just the most useful constraint I could come up with.
     Note that \(m\vec{a}\) will not be zero during a print, since the mover will be moving around.
-    It is however easy to re-introduce into the below calculations, right beside \(m\vec{g}\) and \(\vec{D}\).
+    It is however easy to re-introduce into the calculations below, right beside \(m\vec{g}\) and \(\vec{D}\).
   </figcaption>
 </figure>
 <figure>
@@ -95,8 +95,8 @@ l_{acc} = l - F/k(l),
   <img src="./bilder/Flex_P2_rot_liten.JPG" alt="">
   </a>
   <figcaption>
-    Thanks to my professors for drilling me in manual Gaussian elimination 10 years ago.
-    I never thought I would use it.
+    Thanks to my professors for drilling me in manual Gaussian elimination.
+    I never thought I would get to use it for something actually useful.
     Maybe I shouldn't use it.
     There's always <a href="http://www.sympy.org/en/index.html">sympy</a>.
   </figcaption>
@@ -113,7 +113,7 @@ l_{acc} = l - F/k(l),
   <img src="./bilder/Flex_P4_rot_liten.JPG" alt="">
   </a>
   <figcaption>
-    There are our expressions for the magnitudes of the(\(\vec{a}=\vec{0}\)-case) forces \(A\), \(B\), and \(C\).
+    There are our expressions for the magnitudes of the (zero-acceleration-case) force magnitudes \(A\), \(B\), and \(C\).
   </figcaption>
 </figure>
 <p>
@@ -126,7 +126,7 @@ l_{acc} = l - F/k(l),
 <p>
   "Taylor expand, my good boy.
   Taylor expand for the sake of glory and honor!
-  Taylor expand, and use only the first two terms, because everything ... Yes! <i>everything</i> worth fighting for can be approximated to be perfectly linear!
+  Taylor expand, and use only the first two terms, because everything ... Yes! <i>EVERYTHING</i> worth fighting for can be approximated to be perfectly linear!
   I tell you, boy, if you ever ever feel doubt in your heart, just Taylor expand, and your problems will all be cake."
 </p>
 <p>
