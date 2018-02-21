@@ -8,7 +8,6 @@
 <link rel="stylesheet" href="style.css" type="text/css">
 <link href="http://vitana.se/opr3d/tbear/feed.xml" rel="alternate" type="application/rss+xml" title="Torbjørn's Reprap blog's RSS feed" />
 
-<!-- TODO: This Mathjax is pretty slow... -->
 <script type="text/javascript"
     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML">
 </script>
@@ -27,6 +26,137 @@
 </div>
 
 <div id="MainContent">
+
+<h1 id="hangprinter_project_54">
+  A Little Work on Line Flex
+</h1>
+<div class="date">28-1-2018</div>
+<p>
+  Today's Hangprinter firmwares assumes no flex at all in the movement axes.
+  This is obviously a very rough approximation.
+  In reality, all Hangprinter axes act like springs.
+  Accounting for this can win us several millimeters of accuracy near the limits of our reachable print volume.
+
+<h3>Solutions</h3>
+<p>
+  Some flex comes from line modulus, but adding infinitely stiff lines alone won't solve our problems because ceilings, floors, ceiling unit sheets and plastic parts also flex.
+  Very stiff lines are also thick, building more on the spools and making the imperfection of our buildup compensation more severe.
+</p>
+<p>
+  Another brute force solution would be to closely monitor the mover and constantly compute and execute ad-hoc compensation.
+  This could be made to work well, but it would add to hardware cost and complexity.
+</p>
+<p>
+  A third solution is to include flex in the firmware's internal model of the movement system.
+  This keeps hardware simple.
+  Configuration overhead must be minimized by using standardized parts and providing scripted and straight forward instructions.
+</p>
+<p>
+  It would be possible completely circumvent configuration overhead by collecting flex data with force sensors.
+  This would require extra hardware, which in turn would have to be configured.
+  It is in the spirit of the Hangprinter Project to make hardware additions beyond the bare bones setup optional,
+    and solve as much as possible in software.
+</p>
+<h3>Use The Force</h3>
+<p>
+  The scribbles below derive how to synchronize the four forces from the four motors,
+    so that they are lines are tightened or slackened, without moving the mover.
+  A force magnitude can approximately mapped to a line shortening/elongation by using <a href="https://en.wikipedia.org/wiki/Hooke%27s_law">Hooke's law</a>,
+    where a guessed or measured <a href="https://en.wikipedia.org/wiki/Young's_modulus#Calculation">Young's modulus</a> gives the spring constant \(k\).
+  Note that the spring "constant" will vary with line length in our case.
+</p>
+<p>
+  The no-flex line lengths that current firmwares calculate can be used to calculate a new line length that does (approximately) account for flex:
+</p>
+\begin{equation}
+l_{acc} = l - F/k(l),
+\end{equation}
+<p>
+  where \(l_{acc}\) is the new line length that accounts for flex, \(l\) is the line length calculated and used by current Hangprinter firmwares, \(k(l)\) is the spring constant of the suspended line, and \(F\) is the desired force to be exerted by the line.
+  The four different forces \(F\) are called \(A\), \(B\), \(C\), and \(D\) in the derivation/scribble notes below.
+</p>
+
+<figure>
+  <a href="./bilder/Flex_P1_rot.JPG">
+  <img src="./bilder/Flex_P1_rot_liten.JPG" alt="">
+  </a>
+  <figcaption>
+    The moves is approximated to be a point mass.
+    The six forces acting on the mover are drawn out in a beautiful hand made 3d visualization.
+    It is not true that we <i>must</i> set one of \([ABCD]\) fixed.
+    That is just one of many possible ways to constrain the system.
+    Setting \(D=|\vec{D}|\) to be constant was just the most useful constraint I could come up with.
+    Note that \(m\vec{a}\) will not be zero during a print, since the mover will be moving around.
+    It is however easy to re-introduce into the below calculations, right beside \(m\vec{g}\) and \(\vec{D}\).
+  </figcaption>
+</figure>
+<figure>
+  <a href="./bilder/Flex_P2_rot.JPG">
+  <img src="./bilder/Flex_P2_rot_liten.JPG" alt="">
+  </a>
+  <figcaption>
+    Thanks to my professors for drilling me in manual Gaussian elimination 10 years ago.
+    I never thought I would use it.
+    Maybe I shouldn't use it.
+    There's always <a href="http://www.sympy.org/en/index.html">sympy</a>.
+  </figcaption>
+</figure>
+<figure>
+  <a href="./bilder/Flex_P3_rot.JPG">
+  <img src="./bilder/Flex_P3_rot_liten.JPG" alt="">
+  </a>
+  <figcaption>
+  </figcaption>
+</figure>
+<figure>
+  <a href="./bilder/Flex_P4_rot.JPG">
+  <img src="./bilder/Flex_P4_rot_liten.JPG" alt="">
+  </a>
+  <figcaption>
+    There are our expressions for the magnitudes of the(\(\vec{a}=\vec{0}\)-case) forces \(A\), \(B\), and \(C\).
+  </figcaption>
+</figure>
+<p>
+  Lots of divisions. Probably not simple enough to be done on a Atmel2560.
+  So... What to do?
+</p>
+<p>
+  As my professors always told me:
+</p>
+<p>
+  "Taylor expand, my good boy.
+  Taylor expand for the sake of glory and honor!
+  Taylor expand, and use only the first two terms, because everything ... Yes! <i>everything</i> worth fighting for can be approximated to be perfectly linear!
+  I tell you, boy, if you ever ever feel doubt in your heart, just Taylor expand, and your problems will all be cake."
+</p>
+<p>
+  Ok, they didn't quite say it like that, and maybe we should use three terms, but I'll save you the expansion for another post.
+  If you're so excited right now that you want to Taylor expand yourself: do it around the origin, and remember that
+</p>
+$$
+\begin{align}
+  a_x &= \phantom{\text{ANCHOR_A_X}} - x,\\
+  a_y &= \text{ANCHOR_A_Y} - y,\\
+  a_z &= \text{ANCHOR_A_Z} - z,
+\end{align}
+$$
+<p>
+  where ANCHOR_A_X is non-existent by convention,
+        ANCHOR_A_Y is the y-coordinate of your A-anchor,
+        ANCHOR_A_Z is the z-coordinate of our A-anchor,
+        and \((x, y, z)\) is the position of your mover relative to the origin.
+</p>
+<p>
+  Also remember to handle the cases when denominators are zero in a graceful way.
+  Fancy new 32-bit CPUs can probably compute the full expressions, but they can't handle division by zero.
+</p>
+<p>
+  Best regards,
+</p>
+<p>
+  - tobben
+</p>
+<br><br><br>
 
 <h1 id="hangprinter_project_53">
   Consequences of Miscalibrating Anchor Positions
