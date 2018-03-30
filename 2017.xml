@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
-<posts>
+<posts year="2017">
 <post id="hangprinter_project_50" heading="The Why Again" date="7-12-2017">
 <p>
   This is the 50'th Hangprinter blog post, and I think it's a good opportunity to elaborate on why I develop Hangprinters.

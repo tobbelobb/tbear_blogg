@@ -27,7 +27,7 @@
     <a href="#Links">Contact, archive, etc</a>
   </div>
   <div class="left">
-    Reprap blog
+    Reprap blog <xsl:value-of select="posts/@year" />
   </div>
 </div>
 
@@ -43,7 +43,14 @@
     <div class="date"><xsl:value-of select="./@date" /></div>
     <xsl:copy-of select="./*" />
     <p>
-      - tobben
+      <xsl:choose>
+         <xsl:when test="./@signature">
+           <xsl:value-of select="./@signature" />
+         </xsl:when>
+         <xsl:otherwise>
+           - tobben
+         </xsl:otherwise>
+      </xsl:choose>
     </p>
     <br /><br /><br />
   </xsl:for-each>

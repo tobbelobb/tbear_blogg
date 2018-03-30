@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
-<posts>
+<posts year="2018">
 <post id="hangprinter_project_55" heading="Presenting HAW-Nemesis" date="20-3-2018">
 <p>
   Hangprinter Assembly Workshop Nemesis is an operating system that you put on a USB-drive (size 4GB or more).

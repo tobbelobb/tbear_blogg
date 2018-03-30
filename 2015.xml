@@ -1,51 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="author" content="Torbjorn" >
-<meta name="keywords" content="Reprap, blog, development">
-<meta name="description" content="Torbjørn Ludvigsen's Reprap blog.">
-<meta http-equiv="content-type" content="text/html; charset=utf-8">
-<link rel="stylesheet" href="style.css" type="text/css">
-<link href="http://vitana.se/opr3d/tbear/feed.xml" rel="alternate" type="application/rss+xml" title="Torbjørn's Reprap blog's RSS feed" />
-
-<title>Torbjørns Reprap blog 2015</title>
-</head>
-
-<body>
-<div id="SiteName">
-  <div class="right">
-    <a href=#Links>Contact, archive, etc</a>
-  </div>
-  <div class="left">
-    Reprap blog 2015
-  </div>
-</div>
-
-<div id="MainContent">
-
-
-<h1 id="hangprinter_project_18">
-  Self replicating responsibly, I promise
-</h1>
-<div class="date">5-12-2015</div>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
+<posts year="2015">
+  <post id="hangprinter_project_18" heading="Self replicating responsibly, I promise" date="5-12-2015">
 <p>
   Not only has this thing infested my house, it has convinced me I should help it self replicate on my kitchen floor. How rude! :-O
   Ok, ok, little on the latest work:
 </p>
 <figure>
-  <!--
-  <a href="https://vimeo.com/147953445">Video: Self_replicating_1</a>
-  -->
-  <iframe src="https://player.vimeo.com/video/147953445" width="500" height="375" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  <iframe src="https://player.vimeo.com/video/147953445" width="500" height="375" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>
   <figcaption>
     Clerck printing the latest version of its own bottom plate.
   </figcaption>
 </figure>
 <figure>
-  <!--
-  <a href="https://vimeo.com/147953496">Video: Self_replicating_2</a>
-  -->
-  <iframe src="https://player.vimeo.com/video/147953496" width="500" height="375" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  <iframe src="https://player.vimeo.com/video/147953496" width="500" height="375" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>
   <figcaption>
     Finishing the bottom plate print. Print took 3 hrs.
   </figcaption>
@@ -63,25 +31,25 @@
   To get some more power, I also geared down the ABC motors by a factor of 2.
 </p>
 <figure>
-  <a href="./bilder/center_lod.JPG"><img
-    src="./bilder/center_lod_liten.JPG"
-    alt=""></a>
+  <a href="./bilder/center_lod.JPG">
+    <img src="./bilder/center_lod_liten.JPG" alt="" />
+  </a>
   <figcaption>
     Picture showing the aiming plumb in a central position above Clerck.
   </figcaption>
 </figure>
 <figure>
-  <a href="./bilder/frame_blocks.JPG", name="ABC_frame_adjustment"><img
-    src="./bilder/frame_blocks_liten.JPG"
-    alt=""></a>
+  <a href="./bilder/frame_blocks.JPG" name="ABC_frame_adjustment">
+    <img src="./bilder/frame_blocks_liten.JPG" alt="" />
+  </a>
   <figcaption>
     The ABC frame parts now look like this. They have gotten independent adjustment screws and bearings gearing the motors down by a factor of 2.
   </figcaption>
 </figure>
 <figure>
-  <a href="./bilder/skrueknute.JPG"><img
-    src="./bilder/skrueknute_liten.JPG"
-    alt=""></a>
+  <a href="./bilder/skrueknute.JPG">
+    <img src="./bilder/skrueknute_liten.JPG" alt="" />
+  </a>
   <figcaption>
     The new attachment point for ABC lines on board Clerck.
     (Missed the camera focus somewhat, sorry.)
@@ -90,20 +58,11 @@
 <p>
   As time gets shorter and shorter, as do these posts. So long!
 </p>
-<p>
-  - tobben
-</p>
-<br><br><br>
+</post>
 
-<h1 id="hangprinter_project_17">
-  Second finished print
-</h1>
-<div class="date">30-11-2015</div>
+<post id="hangprinter_project_17" heading="Second finished print" date="30-11-2015">
 <figure>
-  <!--
-  <a href="https://vimeo.com/147278540">Video: Clerck's second finished print</a>
-  -->
-  <iframe src="https://player.vimeo.com/video/147278540" width="500" height="375" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  <iframe src="https://player.vimeo.com/video/147278540" width="500" height="375" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>
   <figcaption>
     After ~ 6 hours of printing, Clerck has reached a height of ca 900 mm. Finished print is 950 mm tall.
   </figcaption>
@@ -136,9 +95,9 @@
   This was due to calibration errors shown in the figure below
 </p>
 <figure>
-  <a href="./bilder/what_Marlin_thought.gif"><img
-    src="./bilder/what_Marlin_thought.gif"
-    alt=""></a>
+  <a href="./bilder/what_Marlin_thought.gif">
+    <img src="./bilder/what_Marlin_thought.gif" alt="" />
+  </a>
   <figcaption>
     Imagine that Clerck hangs along the dashed line and that l<sub>0</sub> is the correct length of an ABC line at home position.
     Blue lines reflects the firmware's view of the world according to its calibration.
@@ -179,17 +138,17 @@
   See figure below.
 </p>
 <figure>
-  <a href="./bilder/length_control_screw.JPG"><img
-    src="./bilder/length_control_screw_liten.JPG"
-    alt=""></a>
+  <a href="./bilder/length_control_screw.JPG">
+    <img src="./bilder/length_control_screw_liten.JPG" alt="" />
+  </a>
   <figcaption>
     Screws to control ABC line lengths manually.
   </figcaption>
 </figure>
 <figure>
-  <a href="./bilder/long_first_layer.JPG"><img
-    src="./bilder/long_first_layer_liten.JPG"
-    alt=""></a>
+  <a href="./bilder/long_first_layer.JPG">
+    <img src="./bilder/long_first_layer_liten.JPG" alt="" />
+  </a>
   <figcaption>
     The first layer stretches across the diagonal of my sacrificed picture frame, and is ca 600 mm long.
     Longer first layers would be no problem if I had a bigger print bed.
@@ -200,18 +159,18 @@
   </figcaption>
 </figure>
 <figure>
-  <a href="./bilder/long_first_layer2.JPG"><img
-    src="./bilder/long_first_layer2_liten.JPG"
-    alt=""></a>
+  <a href="./bilder/long_first_layer2.JPG">
+    <img src="./bilder/long_first_layer2_liten.JPG" alt="" />
+  </a>
   <figcaption>
     Tools were laid down on first layer's ends to keep it from warping.
     It wasn't enough though. After three hours, the print wobbled like a giant toy for dogs, giving mediocre print quality.
   </figcaption>
 </figure>
 <figure>
-  <a href="./bilder/fine_quality_part.JPG"><img
-    src="./bilder/fine_quality_part_liten.JPG"
-    alt=""></a>
+  <a href="./bilder/fine_quality_part.JPG">
+    <img src="./bilder/fine_quality_part_liten.JPG" alt="" />
+  </a>
   <figcaption>
     When the first layer were better clamped down and auto cooling reduced print speed for me, print quality increased drastically.
     It might also have an impact that there was less overhang near the top of the print.
@@ -228,16 +187,9 @@
   and tall, flexible guides to prevent filament and power chords from getting grounded by gears or melted by outside of hot end.
   Until then, bye bye.
 </p>
-<p>
-  - tobben
-</p>
-<br><br><br>
+</post>
 
-<h1 id="hangprinter_project_16">
-  CPUs, sqrt and free design hardware
-</h1>
-<div class="date">28-11-2015</div>
-
+<post id="hangprinter_project_16" heading="CPUs, sqrt and free design hardware" date="28-11-2015">
 <p>
   I've been dreaming some more about a full free design, open source hardware tool chain.
   It might seem like the OSHW movement is a far way from tinkering with free DIY CPUs, but I'm not sure it's actually that far off.
@@ -259,7 +211,7 @@
     <li>Non-Cartesian printers are gaining popularity and speed increases.</li>
     <li>Common firmwares discretizes straight gcode lines tiny line segments.</li>
     <li>These line segments need to be kept very short to avoid visible discretization errors.</li>
-</ul>
+  </ul>
   Users simply want more segments per second than current firmwares for 8-bit processors gives them.
 </p>
 <p>
@@ -288,7 +240,7 @@
                     * r25 = rA3
                     * r26 = rBE */</font>
   <font color="red">__asm__ volatile</font><font color="grey">(</font>
-<font color="grey">"</font><font color="purple">	lsl</font>	<font color="black">r24</font></font><font color="grey">\n\t"</font>
+<font color="grey">"</font><font color="purple">	lsl</font>	<font color="black">r24</font><font color="grey">\n\t"</font>
 <font color="grey">"</font><font color="purple">	rol</font>	<font color="black">r25</font><font color="grey">\n\t"</font> <font color="blue">		// kick sign bit out</font>
 <font color="grey">"</font><font color="purple">	cpi</font>	<font color="black">r25, 0xff</font><font color="grey">\n\t"</font>
 <font color="grey">"</font><font color="purple">	breq	.then</font><font color="grey">\n\t"</font>
@@ -357,17 +309,9 @@
   An AVR simulator would be one way to work on it.
   Repo <a href="https://github.com/tobbelobb/simulate-avr-cpu">here</a>.
 </p>
+</post>
 
-<p>
-  - tobben
-</p>
-<br><br><br>
-
-
-<h1 id="hangprinter_project_15">
-  Making the Hangprinter project easier to follow
-</h1>
-<div class="date">27-11-2015</div>
+<post id="hangprinter_project_15" heading="Making the Hangprinter project easier to follow" date="27-11-2015">
 <h4>Subscriptions</h4>
 <p>
   I've made an <a href="http://vitana.se/opr3d/tbear/feed.xml">RSS feed</a> for this blog.
@@ -440,34 +384,24 @@
   </tr>
   </tbody>
 </table>
+</post>
 
-<p>
-  - tobben
-</p>
-<br><br><br>
-
-<h1 id="hangprinter_project_14">
-  First finished print
-</h1>
-<div class="date">23-11-2015</div>
+<post id="hangprinter_project_14" heading="First finished print" date="23-11-2015">
 <p>
   Hello blog, hello World, hello guys and girls.
   Did another test print today, and this time it finished.
 </p>
 <figure>
-  <!--
-  <a href="https://vimeo.com/146706733">Video: video3_different_angles_slack_line_2h_in</a>
-  -->
-  <iframe src="https://player.vimeo.com/video/146706733" width="500" height="375" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  <iframe src="https://player.vimeo.com/video/146706733" width="500" height="375" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>
   <figcaption>
     After two hours of print, the lines have gotten a ~2 mm slack.
     The observant viewer could spot the unwanted pendulum movements as well as the jumping slack line.
   </figcaption>
 </figure>
 <figure>
-  <a href="./bilder/sinusoidal_error.JPG"><img
-    src="./bilder/sinusoidal_error_liten.JPG"
-    alt=""></a>
+  <a href="./bilder/sinusoidal_error.JPG">
+    <img src="./bilder/sinusoidal_error_liten.JPG" alt="" />
+  </a>
   <figcaption>
     An attempt to depict the linearly growing sinusoidal error.
     My current theory is that it is due to accumulating roundoff errors in the firmware.
@@ -478,9 +412,9 @@
   </figcaption>
 </figure>
 <figure>
-  <a href="./bilder/print_and_frog.JPG"><img
-    src="./bilder/print_and_frog_liten.JPG"
-    alt=""></a>
+  <a href="./bilder/print_and_frog.JPG">
+    <img src="./bilder/print_and_frog_liten.JPG" alt="" />
+  </a>
   <figcaption>
     Don't ask me about the intended use of this shape, I don't know.
     It's edge demonstrates nicely how Clerck doesn't handle sharp turns very well.
@@ -489,9 +423,9 @@
   </figcaption>
 </figure>
 <figure>
-  <a href="./bilder/just_finished_print_2.JPG"><img
-    src="./bilder/just_finished_print_2_liten.JPG"
-    alt=""></a>
+  <a href="./bilder/just_finished_print_2.JPG">
+    <img src="./bilder/just_finished_print_2_liten.JPG" alt="" />
+  </a>
   <figcaption>
     A little portrait at the end, even though we all know what the printer looks like by now.
     Full print time for this was 2 hours and 16 minutes.
@@ -500,55 +434,41 @@
     Print speed was ca 35 mm/s.
   </figcaption>
 </figure>
-
+<p>
 I will compensate the accumulating slackness of the lines by adding manual tightening screws at each anchor point.
 In the longer run I will try to get away from 32 bit floats in firmware anyways, since it limits scalability.
 Having said that, I guess I have to try to implement some kind of custom bignum for 8-bit hangprinter firmwares sometime ;)
-
-<p>
-  - tobben
 </p>
-<br><br><br>
+</post>
 
-<h1 id="hangprinter_project_13">
-  Meet Clerck, the hanging RepRap
-</h1>
-<div class="date">22-11-2015</div>
+<post id="hangprinter_project_13" heading="Meet Clerck, the hanging RepRap" date="22-11-2015">
 <p>
   Did the first test print just now:
 </p>
-
 <figure>
-  <!--
-  <a href="https://vimeo.com/146566086">Video: fourth-hangprint-ever1</a>
-  -->
-  <iframe src="https://player.vimeo.com/video/146566086" width="500" height="375" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  <iframe src="https://player.vimeo.com/video/146566086" width="500" height="375" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>
   <figcaption>
     The hanging RepRap trying to do its very first print for the fourth time.
   </figcaption>
 </figure>
-
 <figure>
-  <!--
-  <a href="https://vimeo.com/146566059">Video: fourth-hangprint-ever4</a>
-  -->
-  <iframe src="https://player.vimeo.com/video/146566059" width="500" height="375" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  <iframe src="https://player.vimeo.com/video/146566059" width="500" height="375" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>
   <figcaption>
     A couple of minutes later, same print as above.
   </figcaption>
 </figure>
 <figure>
-  <a href="./bilder/it_works.JPG"><img
-    src="./bilder/it_works_liten.JPG"
-    alt=""></a>
+  <a href="./bilder/it_works.JPG">
+    <img src="./bilder/it_works_liten.JPG" alt="" />
+  </a>
   <figcaption>
     The printed OSHW logo.
   </figcaption>
 </figure>
 <figure>
-  <a href="./bilder/oshw_logo_Clerks_first_print.JPG"><img
-    src="./bilder/oshw_logo_Clerks_first_print_liten.JPG"
-    alt=""></a>
+  <a href="./bilder/oshw_logo_Clerks_first_print.JPG">
+    <img src="./bilder/oshw_logo_Clerks_first_print_liten.JPG" alt="" />
+  </a>
   <figcaption>
     Closer look at the printed OSHW logo.
     The sparse pattern was not intended and is due to wrong nozzle diameter setting in Slic3r.
@@ -568,20 +488,13 @@ Having said that, I guess I have to try to implement some kind of custom bignum 
   I chose him because he worked with Swedish spiders a long time ago.
   The printer moves kind of like a spider with four spinnerets, and I'm Swedish, so it fits. Kind of.
 </p>
-<p>
-  - tobben
-</p>
-<br><br><br>
+</post>
 
-
-<h1 id="hangprinter_project_12">
-  Meet the Tble-extruder!
-</h1>
-<div class="date">20-11-2015</div>
+<post id="hangprinter_project_12" heading="Meet the Tble-extruder!" date="20-11-2015">
 <figure>
-  <a href="./bilder/mounted_Terriblestruder2.JPG"><img
-    src="./bilder/mounted_Terriblestruder2_liten.JPG"
-    alt=""></a>
+  <a href="./bilder/mounted_Terriblestruder2.JPG">
+    <img src="./bilder/mounted_Terriblestruder2_liten.JPG" alt="" />
+  </a>
   <figcaption>
   The mounted Tble-extruder on the (upside-down) Hangprinter.
   Looks kind of the sketches and mock-up in my previous post, but it's been more work than I expected (hoped for...).
@@ -601,18 +514,18 @@ Having said that, I guess I have to try to implement some kind of custom bignum 
   Anyways, putting it together has had its pleasant moments. Pictures of a couple of them below.
 </p>
 <figure>
-  <a href="./bilder/the_Terriblestruder.JPG"><img
-    src="./bilder/the_Terriblestruder_liten.JPG"
-    alt=""></a>
+  <a href="./bilder/the_Terriblestruder.JPG">
+    <img src="./bilder/the_Terriblestruder_liten.JPG" alt="" />
+  </a>
   <figcaption>
     Still happily unaware that the width is way off when I take this picture.
     It looks nice.
   </figcaption>
 </figure>
 <figure>
-  <a href="./bilder/e3d_volcano_in_terriblestruder.JPG"><img
-    src="./bilder/e3d_volcano_in_terriblestruder_liten.JPG"
-    alt=""></a>
+  <a href="./bilder/e3d_volcano_in_terriblestruder.JPG">
+    <img src="./bilder/e3d_volcano_in_terriblestruder_liten.JPG" alt="" />
+  </a>
   <figcaption>
     The idea of what I was after.
     Notice how the hot end is offset compare to the hobbed bolt.
@@ -621,66 +534,52 @@ Having said that, I guess I have to try to implement some kind of custom bignum 
     This time it went all right, but I really wish I had a RepRap at home now.
   </figcaption>
 </figure>
-<p>
-  - tobben
-</p>
-<br><br><br>
+</post>
 
-<h1 id="hangprinter_project_11">
-  Extruder work
-</h1>
-<div class="date">16-11-2015</div>
+<post id="hangprinter_project_11" heading="Extruder work" date="16-11-2015">
 <p>
   Hi! Just a small update.
   I've done some design work on the combined extruder and hot end mount.
 </p>
 <figure>
-  <a href="./bilder/hang_extruder.png"><img
-    src="./bilder/hang_extruder_liten.png"
-    alt=""></a>
+  <a href="./bilder/hang_extruder.png">
+    <img src="./bilder/hang_extruder_liten.png" alt="" />
+  </a>
   <figcaption>
-  A view from the side of the solution I've chosen.
-  It's Wade's style extruder with one hobbed bolt and 1:3 gearing.
-  I know already that this design will limit the printers speed and reliability.
-  A pair of hobbed bolts working together (rather than one hobbed bolt and one 623 bearing)
-    and a gear ratio closer to 1:2 would be better suited for Hangprinter's needs.
-  The design is like this for now because of limited space between the other motors.
+    A view from the side of the solution I've chosen.
+    It's Wade's style extruder with one hobbed bolt and 1:3 gearing.
+    I know already that this design will limit the printers speed and reliability.
+    A pair of hobbed bolts working together (rather than one hobbed bolt and one 623 bearing)
+      and a gear ratio closer to 1:2 would be better suited for Hangprinter's needs.
+    The design is like this for now because of limited space between the other motors.
   </figcaption>
 </figure>
 <figure>
-  <a href="./bilder/hang_extruder3.png"><img
-    src="./bilder/hang_extruder3_liten.png"
-    alt=""></a>
+  <a href="./bilder/hang_extruder3.png">
+    <img src="./bilder/hang_extruder3_liten.png" alt="" />
+  </a>
   <figcaption>
-  Another viewing angle of the same extruder.
-  You may notice that the large extruder gear appears in a rectangular hole at the top.
-  This is to allow the needed radius of the large gear.
-  When I redesign the extruder later, I will try harder to preserve symmetry...
+    Another viewing angle of the same extruder.
+    You may notice that the large extruder gear appears in a rectangular hole at the top.
+    This is to allow the needed radius of the large gear.
+    When I redesign the extruder later, I will try harder to preserve symmetry...
   </figcaption>
 </figure>
 <figure>
-  <a href="./bilder/nice-fit.JPG"><img
-    src="./bilder/nice-fit_liten.JPG"
-    alt=""></a>
+  <a href="./bilder/nice-fit.JPG">
+    <img src="./bilder/nice-fit_liten.JPG" alt="" />
+  </a>
   <figcaption>
-  The physical extruder and hot end mount with the E3d v6 Volcano mounted.
-  It's really fixed, no wobbling at all.
+    The physical extruder and hot end mount with the E3d v6 Volcano mounted.
+    It's really fixed, no wobbling at all.
   </figcaption>
 </figure>
 <p>
   If we're lucky, test printing can start tomorrow =)
 </p>
+</post>
 
-<p>
-  - tobben
-</p>
-<br><br><br>
-
-
-<h1 id="feasability_study">
-  So what takes me so long?
-</h1>
-<div class="date">28-10-2015</div>
+<post id="feasability_study" heading="So what takes me so long?" date="28-10-2015">
 <p>
   The last 20 days, I've been writing on this report about the resin 3D-printing market.
   As a part of solving my bureaucratic problems I needed to complete a 80 hour
@@ -692,24 +591,15 @@ Having said that, I guess I have to try to implement some kind of custom bignum 
   Be warned that it's probably only interesting for those who read Swedish and
   hold a fair interest in cheap resin 3D printers...
 </p>
-<p>
-  - tobben
-</p>
-<br><br><br>
+</post>
 
-<h1 id="hangprinter_project_10">
-  Hardware upgrades and bureaucratic problems
-</h1>
-<div class="date">6-10-2015</div>
+<post id="hangprinter_project_10" heading="Hardware upgrades and bureaucratic problems" date="6-10-2015">
 <p>
   This post has some practical stuff about my master's thesis, but
   first I want to show you the hardware upgrades in a little video:
 </p>
 <figure>
-  <!--
-  <a href="https://vimeo.com/141524128">Video: testrun_at_52_mm_per_s</a>
-  -->
-  <iframe src="https://player.vimeo.com/video/141524128" width="500" height="375" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  <iframe src="https://player.vimeo.com/video/141524128" width="500" height="375" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>
   <figcaption>
     The Hangprinter dry printing a 270 mm square with sparse infill at 52.5 mm/s.
     Notice how leftmost lines get slack at rightmost positions.
@@ -730,7 +620,7 @@ Having said that, I guess I have to try to implement some kind of custom bignum 
   With the disks lines have consistently stayed put.
 </p>
 <p>
-There are still a long wish list of technical improvements, and I expect it to grow.
+  There are still a long wish list of technical improvements, and I expect it to grow.
   <ul>
     <li>A mounted hot end</li>
     <li>An extruder</li>
@@ -767,54 +657,44 @@ There are still a long wish list of technical improvements, and I expect it to g
   Any suggestions regarding master's supervision? Please email me at tobben(AT)fastmail(DOT)fm or post
   to <a href="http://forums.reprap.org/read.php?178,344022,page=2">the forum</a>.
 </p>
-<p>
-  - tobben
-</p>
-<br><br><br>
+</post>
 
-<h1 id="hangprinter_project_9">
-  Pics from calibration
-</h1>
-<div class="date">21-9-2015</div>
+<post id="hangprinter_project_9" heading="Pics from calibration" date="21-9-2015">
 <p>
   Thought I'd just post some pictures from the calibration run yesterday.
 </p>
-
 <figure>
-  <a href="./bilder/gronaringar1.jpg"><img
-    src="./bilder/gronaringar1_liten.jpg"
-    alt="green circles"></a>
+  <a href="./bilder/gronaringar1.jpg">
+    <img src="./bilder/gronaringar1_liten.jpg" alt="green circles" />
+  </a>
   <figcaption>
     The circles should have been complete, but as we see they are not.
     Since we don't really know how flat the floor is and since the tip of the pen is very short,
     this doesn't tell us very much about Hangprinter's z-error. Photo: Olof
   </figcaption>
 </figure>
-
 <figure>
-  <a href="./bilder/jamforelse.jpg"><img
-    src="./bilder/jamforelse_liten.jpg"
-    alt="green and pink circles"></a>
+  <a href="./bilder/jamforelse.jpg">
+    <img src="./bilder/jamforelse_liten.jpg" alt="green and pink circles" />
+  </a>
   <figcaption>
     This comparison tells us that removing the 5 cm error in calibration really did help. Photo: Olof
   </figcaption>
 </figure>
-
 <figure>
-  <a href="./bilder/ringer-og-tommestokk-2.JPG"><img
-    src="./bilder/ringer-og-tommestokk-2_liten.JPG"
-    alt="green and pink circles"></a>
+  <a href="./bilder/ringer-og-tommestokk-2.JPG">
+    <img src="./bilder/ringer-og-tommestokk-2_liten.JPG" alt="green and pink circles" />
+  </a>
   <figcaption>
     The outermost circle should have had a radius of 125 mm.
     Error in the xy-plane seems to be less than 3 mm.
     (Based on my best efforts with calipers and a pair of compasses, not this measurment stick...)
   </figcaption>
 </figure>
-
 <figure>
-  <a href="./bilder/cool-vinkel.jpg"><img
-    src="./bilder/cool-vinkel_liten.jpg"
-    alt="fixing"></a>
+  <a href="./bilder/cool-vinkel.jpg">
+    <img src="./bilder/cool-vinkel_liten.jpg" alt="fixing" />
+  </a>
   <figcaption>
     A friend came by and gave some help and took some pictures. The guy on the floor is me. Photo: Olof
   </figcaption>
@@ -822,43 +702,27 @@ There are still a long wish list of technical improvements, and I expect it to g
 <p>
   I'm going into hardware upgrades for some days now, so update frequency may slow down.
 </p>
-<p>
-  - tobben
-</p>
-<br><br><br>
+</post>
 
-<h1 id="hangprinter_project_8">
-  More progress
-</h1>
-<div class="date">20-9-2015</div>
+<post id="hangprinter_project_8" heading="More progress" date="20-9-2015">
 <p>
   As it turned out, I had made a 5 cm mistake when measuring positions of anchor points.
   Did one print today with much better precision:
 </p>
 <figure>
-  <!--
-  <a href="https://vimeo.com/139842830">Video: printing_1mm_circles</a>
-  -->
-  <iframe src="https://player.vimeo.com/video/139842830" width="500" height="375" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  <iframe src="https://player.vimeo.com/video/139842830" width="500" height="375" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>
 </figure>
-<p>
-  - tobben
-</p>
-<br><br><br>
+</post>
 
-
-<h1 id="hangprinter_project_7">
-  Some progress..
-</h1>
-<div class="date">18-9-2015</div>
+<post id="hangprinter_project_7" heading="Some progress.." date="18-9-2015">
 <p>
   Today I'm kind of split in two. One part of me is very satisfied with having a moving robot, even though precision
   is ~ 1cm. I want to play around with it, make it go high, low, fast and slow.
 </p>
 <figure>
-  <a href="./bilder/hangprinter1-posing.JPG"><img
-    src="./bilder/hangprinter1-posing_liten.JPG"
-    alt="Calibration circles"></a>
+  <a href="./bilder/hangprinter1-posing.JPG">
+    <img src="./bilder/hangprinter1-posing_liten.JPG" alt="Calibration circles" />
+  </a>
   <figcaption>
     The Hangprinter and its first calibration circles. In the direction along the measurement stick, precision is ~2 mm, while radius in the
     right-left direction in the picture is 5 mm too small.
@@ -873,10 +737,7 @@ There are still a long wish list of technical improvements, and I expect it to g
   when calibrated such that 4 or more abc-lines stay tight, as this video shows:
 </p>
 <figure>
-  <!--
-  <a href="https://vimeo.com/139691092">Video: rigidness-test-lowres</a>
-  -->
-  <iframe src="https://player.vimeo.com/video/139691092" width="500" height="375" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  <iframe src="https://player.vimeo.com/video/139691092" width="500" height="375" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>
 </figure>
 <p>
   On the other hand, some large improvements need to me made before further testing can get up to speed.
@@ -914,35 +775,30 @@ There are still a long wish list of technical improvements, and I expect it to g
   Even if we lower our expectations drastically from 9000 mm/s^2 down to 2000 mm/s^2, the most difficult working angles will steal
   enough force that we don't have 3 - 6 N cm to spare on each motor.
 </p>
-</p>
+<p>
   It seems like 3 beefy abc-steppers working at difficult angles and 4 smaller steppers working at ok angles will give similar results.
   It would be very interesting to build both, compare them and feel the difference...
-<p>
-  - tobben
 </p>
-<br><br><br>
+</post>
 
-<h1 id="hangprinter_project_6">
-  Hangprinter has climbed its first climb
-</h1>
-<div class="date">16-9-2015</div>
+<post id="hangprinter_project_6" heading="Hangprinter has climbed its first climb" date="16-9-2015">
 <p>
   Just now, the Hangprinter was able to climb upwards for the first time.
   To make it a bit easier, I halved the needed force by using small
   v-groove bearings as pulleys in the ceiling frame part.
 </p>
 <figure>
-  <a href="./bilder/ceil_frame_pulley.JPG"><img
-    src="./bilder/ceil_frame_pulley_liten.JPG"
-    alt="Top frame pulley"></a>
+  <a href="./bilder/ceil_frame_pulley.JPG">
+    <img src="./bilder/ceil_frame_pulley_liten.JPG" alt="Top frame pulley" />
+  </a>
   <figcaption>
     The pulley now mounted to the top frame part mounted to the ceiling.
   </figcaption>
 </figure>
 <figure>
-  <a href="./bilder/double_force.JPG"><img
-    src="./bilder/double_force_liten.JPG"
-    alt="Action point force"></a>
+  <a href="./bilder/double_force.JPG">
+    <img src="./bilder/double_force_liten.JPG" alt="Action point force" />
+  </a>
   <figcaption>
     The outermost screw lend itself as a practical attachment point for the loose end.
     I find that having both loose ends attached at the printer side, rather than having one at the ceiling,
@@ -999,7 +855,6 @@ if (counter_d > 0) {
   Each nop instruction takes one processor cycle, so five nops gives a 5/16k = 312.5 ns longer pulse width.
   This gave the shortest working pulse width I found.
 </p>
-
 <h3 name="stutter">Stepper motor stutter, uneven microsteps</h3>
 <p>
   When running the stepper slowly, I noticed the exact same stutter problem that is shown <a href="https://www.youtube.com/watch?v=Ke8T5eQOkXY">here (Youtube-link)</a>.
@@ -1007,9 +862,9 @@ if (counter_d > 0) {
   It was Quentin Harley that put me on the right track with <a href="http://www.morgan3dp.com/stepstuck-revisited-drv8825/">this post</a>.
 </p>
 <figure>
-  <a href="./bilder/drv8825_breakout_mod.JPG"><img
-    src="./bilder/drv8825_breakout_mod_liten.JPG"
-    alt="Modified DRV8825 breakout board"></a>
+  <a href="./bilder/drv8825_breakout_mod.JPG">
+    <img src="./bilder/drv8825_breakout_mod_liten.JPG" alt="Modified DRV8825 breakout board" />
+  </a>
   <figcaption>
     This is how my D-axis stepper driver ended up looking. The extra cable is for enabling fast decay mode.
     The extra long legs are for making space for extra cooling rib. The extra cooling rib is for avoiding thermal shutdowns and total disaster.
@@ -1017,9 +872,9 @@ if (counter_d > 0) {
 </figure>
 <h3>Hangprinter is flippable</h3>
 <figure>
-  <a href="./bilder/flip.JPG"><img
-    src="./bilder/flip_liten.JPG"
-    alt="Flipped Hangprinter"></a>
+  <a href="./bilder/flip.JPG">
+    <img src="./bilder/flip_liten.JPG" alt="Flipped Hangprinter" />
+  </a>
   <figcaption>
     To access the lower side of the Hangprinter, where the electronics are and the extruder+hot end will be, just flip it around.
     Wind the lines an extra time around the corners if needed ;-)
@@ -1028,23 +883,12 @@ if (counter_d > 0) {
 <p>
   Finally, here is a video of the Hangprinter climbing its first climb.
 </p>
-
 <figure>
-  <!--
-  <a href="https://vimeo.com/139438054">Video: Hangprinter_first_d-moves</a>
-  -->
-  <iframe src="https://player.vimeo.com/video/139438054" width="500" height="375" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  <iframe src="https://player.vimeo.com/video/139438054" width="500" height="375" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>
 </figure>
+</post>
 
-<p>
-  - tobben
-</p>
-<br><br><br>
-
-<h1 id="hangprinter_project_5">
-  Hangprinter has hung its first hang
-</h1>
-<div class="date">13-9-2015</div>
+<post id="hangprinter_project_5" heading="Hangprinter has hung its first hang" date="13-9-2015">
 <p>
   Mounted Hangprinter frame in the ceiling today.
   The poor little Nema17 was too weak to climb upwards without some help.
@@ -1057,53 +901,34 @@ if (counter_d > 0) {
   Both gearing down and adding bearings introduces risks of greater errors.
   I save the complicated analysis of them for another day...
 </p>
-
 <figure>
-  <a href="./bilder/takfeste.JPG"><img
-    src="./bilder/takfeste_liten.JPG"
-    alt="Top frame"></a>
+  <a href="./bilder/takfeste.JPG">
+    <img src="./bilder/takfeste_liten.JPG" alt="Top frame" />
+  </a>
   <figcaption>
     The top frame part mounted to the ceiling.
   </figcaption>
 </figure>
 <figure>
-  <a href="./bilder/sveve.JPG"><img
-    src="./bilder/sveve_liten.JPG"
-    alt="Hanging 3d printer"></a>
+  <a href="./bilder/sveve.JPG">
+    <img src="./bilder/sveve_liten.JPG" alt="Hanging 3d printer" />
+  </a>
   <figcaption>
     The Hangprinter hanging its first hang. Sorry for the poor image quality.
   </figcaption>
 </figure>
+</post>
 
-<p>
-  - tobben
-</p>
-<br><br><br>
-
-<h1 id="hangprinter_project_4">
-  Hangprinter had its first dry run
-</h1>
-<div class="date">11-9-2015</div>
+<post id="hangprinter_project_4" heading="Hangprinter had its first dry run" date="11-9-2015">
 <p>
   Hello again! Just thought I'd share progress again. The Hangprinter has gotten its firmware and bluetooth module working =) Video:
 </p>
-
 <figure>
-  <!--
-  <a href="https://vimeo.com/138978064">Video: Hangprinter_first_bluetooth_moves</a>
-  -->
-  <iframe src="https://player.vimeo.com/video/138978064" width="500" height="375" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  <iframe src="https://player.vimeo.com/video/138978064" width="500" height="375" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>
 </figure>
+</post>
 
-<p>
-  - tobben
-</p>
-<br><br><br>
-
-<h1 id="hangprinter_project_3">
-  Summer update on the Hangprinter
-</h1>
-<div class="date">21-6-2015</div>
+<post id="hangprinter_project_3" heading="Summer update on the Hangprinter" date="21-6-2015">
 <p>
   Hello folks! Just wanted to share some progress.
 </p>
@@ -1117,7 +942,6 @@ if (counter_d > 0) {
   When the time comes to compile and upload the firmware, one may (should) make a little script that
   parses design_numbers.scad into design_numbers.h, compiles Marlin and removes design_numbers.h immediately afterwards.
 </p>
-
 <h4>Test Printing</h4>
 <p>
   A complete print of Hangprinter is still not done, but many parts are printed for testing.
@@ -1125,11 +949,10 @@ if (counter_d > 0) {
   the largest gears themselves, the motor gears and the outermost corners of the printer
   (called bottom_plate in the scad-files).
 </p>
-
 <figure>
-  <a href="./bilder/all_parts_21_june.png"><img
-    src="./bilder/all_parts_21_june_liten.png"
-    alt="Hangprinter render"></a>
+  <a href="./bilder/all_parts_21_june.png">
+    <img src="./bilder/all_parts_21_june_liten.png" alt="Hangprinter render" />
+  </a>
   <figcaption>
     Render of the whole printer as it looks right now.
     Many potentially over-simplifying design decisions have been made to avoid
@@ -1141,11 +964,10 @@ if (counter_d > 0) {
     D direction is from the printer up towards the ceiling.
   </figcaption>
 </figure>
-
 <figure>
-  <a href="./bilder/central_tower_2.JPG"><img
-    src="./bilder/central_tower_2_liten.JPG"
-    alt="Central tower Hangprinter"></a>
+  <a href="./bilder/central_tower_2.JPG">
+    <img src="./bilder/central_tower_2_liten.JPG" alt="Central tower Hangprinter" />
+  </a>
   <figcaption>
     Six failed attempts at making the central cylinder flexible but still sturdy enough.
     The cylinder at the left, holding the large gears (in the scad-files called the Sandwich),
@@ -1154,29 +976,26 @@ if (counter_d > 0) {
     One such ring is visible over the bearing on the left.
   </figcaption>
 </figure>
-
 <figure>
-  <a href="./bilder/corner.JPG"><img
-    src="./bilder/corner_liten.JPG"
-    alt="Central tower attempts"></a>
+  <a href="./bilder/corner.JPG">
+    <img src="./bilder/corner_liten.JPG" alt="Central tower attempts" />
+  </a>
   <figcaption>
-      One of the three corners of the Hangprinter bottom plate. This one holds the fairlead (fishing rod ring)
-      in place nicely, but is a bit too thin to hold horizontal screws with 5 mm heads.
-      No horizontal screws are shown in the picture, but they are used to keep the extruder motor in place
-      (see first picture in this post).
+    One of the three corners of the Hangprinter bottom plate. This one holds the fairlead (fishing rod ring)
+    in place nicely, but is a bit too thin to hold horizontal screws with 5 mm heads.
+    No horizontal screws are shown in the picture, but they are used to keep the extruder motor in place
+    (see first picture in this post).
   </figcaption>
 </figure>
-
 <figure>
-  <a href="./bilder/three_corner_test_print.JPG"><img
-    src="./bilder/three_corner_test_print_liten.JPG"
-    alt="Bottom plate corners"></a>
+  <a href="./bilder/three_corner_test_print.JPG">
+    <img src="./bilder/three_corner_test_print_liten.JPG" alt="Bottom plate corners" />
+  </a>
   <figcaption>
     A test print of the three corners of the Hangprinter.
     Size is made to fit a 20 x 20 cm print area when rotated 15 degrees around the z-axis.
   </figcaption>
 </figure>
-
 <h4>E3D Sponsoring</h4>
 <p>
   I watched an enlightening hot end
@@ -1200,29 +1019,20 @@ if (counter_d > 0) {
   <br/>
   <a href="https://www.youtube.com/watch?v=1x_V-OhnO5U">Tom's review of Volcano</a>
 </p>
-
 <p>
   That's all for today!
 </p>
-<p>
-  - tobben
-</p>
-<br><br><br>
+</post>
 
-
-
-<h1 id="hangprinter_project_2">
-  The Hangprinter
-</h1>
-<div class="date">27-5-2015</div>
+<post id="hangprinter_project_2" heading="The Hangprinter" date="27-5-2015">
 <p>
   Hi all! There has been some progress on the Hanprinter project this spring as well.
   The printer is not hanging there, but it soon will. A CAD model has been created:
 </p>
 <figure>
-  <a href="./bilder/hangprinter_render.png"><img
-    src="./bilder/hangprinter_render_liten.png"
-    alt="hangprinter render"></a>
+  <a href="./bilder/hangprinter_render.png">
+    <img src="./bilder/hangprinter_render_liten.png" alt="hangprinter render" />
+  </a>
   <figcaption>
     A render of the Hangprinter from 19th of May.
     Note that the first version will probably avoid the rolling fairleads (purple in this render),
@@ -1233,10 +1043,12 @@ if (counter_d > 0) {
   And some parts have been printed:
 </p>
 <figure>
-  <a href="./bilder/hangprinter_parts.jpg"><img
-    src="./bilder/hangprinter_parts_liten.jpg"
-    alt="hangprinter parts"></a>
-  <figcaption>Some of the printed gears to be used on the first version of the hanging RepRap.</figcaption>
+  <a href="./bilder/hangprinter_parts.jpg">
+    <img src="./bilder/hangprinter_parts_liten.jpg" alt="hangprinter parts" />
+  </a>
+  <figcaption>
+    Some of the printed gears to be used on the first version of the hanging RepRap.
+  </figcaption>
 </figure>
 <h3>Finding a Neighbourhood</h3>
 <p>
@@ -1261,33 +1073,28 @@ if (counter_d > 0) {
   Please visit the <a href="http://forums.reprap.org/read.php?178,344022,page=2">forum thread</a>
   for discussion and the <a href="https://github.com/tobbelobb/hangprinter">repo</a> for source code!
 </p>
-
 <p>
   All the best!
 </p>
-<p>
-  - tobben
-</p>
-<br><br><br>
+</post>
 
-<h1 id="Slideprinter_Update">
-  The Slideprinter
-</h1>
-<div class="date">6-3-2015</div>
+<post id="Slideprinter_Update" heading="The Slideprinter" date="6-3-2015">
 <p>
   There have been some progress on the Hangprinter project this winter.
   Well, the progress is as small as the number of hours that have been put into it,
   but if we put the optimistic glasses on, we can say gone from 1d to non-trivial 2d movement.
 </p>
 <figure>
-  <a href="./bilder/square_three_circles.JPG"><img
-      src="./bilder/square_three_circles_liten.JPG"
-      alt="Slideprinters first circles"></a>
-  <figcaption>The Slideprinter (a 2d-Hangprinter), and the first three attempts at drawing
-  a circle from gcode. The first attempt at drawing a square also shown.
-  The reason why two of the "circles" are only lines is confusion whether the firware was
-  expecting absolute or relative coordinates.
-  The main reason that the triangular "circle"'s triangularity is a too high number of steps/mm.</figcaption>
+  <a href="./bilder/square_three_circles.JPG">
+    <img   src="./bilder/square_three_circles_liten.JPG"   alt="Slideprinters first circles" />
+  </a>
+  <figcaption>
+    The Slideprinter (a 2d-Hangprinter), and the first three attempts at drawing
+    a circle from gcode. The first attempt at drawing a square also shown.
+    The reason why two of the "circles" are only lines is confusion whether the firware was
+    expecting absolute or relative coordinates.
+    The main reason that the triangular "circle"'s triangularity is a too high number of steps/mm.
+  </figcaption>
 </figure>
 <p>
   The firmware that Slideprinter is currently running is a very slightly modified version of Marlin
@@ -1312,11 +1119,13 @@ if (counter_d > 0) {
   number of line segments to 20 (which is small).
 </p>
 <figure>
-  <a href="./bilder/circle_5.JPG"><img
-      src="./bilder/circle_5_liten.JPG"
-      alt="Slideprinters fifth circle"></a>
-  <figcaption>Comparison between Slideprinters fifth circle and a circle drawn with a pair of compasses.
-  The outermost line is that from the compasses, most of the time.</figcaption>
+  <a href="./bilder/circle_5.JPG">
+    <img src="./bilder/circle_5_liten.JPG" alt="Slideprinters fifth circle" />
+  </a>
+  <figcaption>
+    Comparison between Slideprinters fifth circle and a circle drawn with a pair of compasses.
+    The outermost line is that from the compasses, most of the time.
+  </figcaption>
 </figure>
 <p>
   I also filmed Slideprinter as it moved. Sorry for the darkness.
@@ -1327,142 +1136,5 @@ if (counter_d > 0) {
   Made a new video:
   <a href="https://vimeo.com/121604956">Vimeo</a>.
 </p>
-<p>
-  - tobben
-</p>
-<br /><br /><br />
-
-<br /><br /><br /><br /><br /><br /><br /><br />
-<h1 id="Links">
-  Links
-</h1>
-<p>
-  Hangprinter Campaign: <a href="https://salt.bountysource.com/teams/hangprinter">Bountysource Salt</a>
-</p>
-<p>
-  Hangprinter Merchandise USA: <a href="https://shop.spreadshirt.com/hangprinter-merchandise/">Spreadshirt.com</a>
-</p>
-<p>
-  Hangprinter Merchandise Sweden: <a href="https://shop.spreadshirt.se/hangprinter-merchandise/">Spreadshirt.se</a>
-</p>
-<p>
-  Hangprinter assebly workshops: <a href="https://www.eventbrite.com/e/hangprinter-assembly-workshop-1-tickets-44216520804">#1</a>
-</p>
-<p>
-  Hangprinter Project: <a  href="2014.html#Hangprinter">[1]</a>,
-                       <a  href="2015.html#Slideprinter_Update">[2]</a>,
-                       <a  href="2015.html#hangprinter_project_2">[3]</a>,
-                       <a  href="2015.html#hangprinter_project_3">[4]</a>,
-                       <a  href="2015.html#hangprinter_project_4">[5]</a>,
-                       <a  href="2015.html#hangprinter_project_5">[6]</a>,
-                       <a  href="2015.html#hangprinter_project_6">[7]</a>,
-                       <a  href="2015.html#hangprinter_project_7">[8]</a>,
-                       <a  href="2015.html#hangprinter_project_8">[9]</a>,
-                       <a  href="2015.html#hangprinter_project_9">[10]</a>,
-                       <a  href="2015.html#hangprinter_project_10">[11]</a>,
-                       <a  href="2015.html#hangprinter_project_11">[12]</a>,
-                       <a  href="2015.html#hangprinter_project_12">[13]</a>,
-                       <a  href="2015.html#hangprinter_project_13">[14]</a>,
-                       <a  href="2015.html#hangprinter_project_14">[15]</a>,
-                       <a  href="2015.html#hangprinter_project_15">[16]</a>,
-                       <a  href="2015.html#hangprinter_project_16">[17]</a>,
-                       <a  href="2015.html#hangprinter_project_17">[18]</a>,
-                       <a  href="2015.html#hangprinter_project_18">[19]</a>,
-                       <a  href="2016.html#hangprinter_project_19">[20]</a>,
-                       <a  href="2016.html#hangprinter_project_20">[21]</a>,
-                       <a  href="2016.html#hangprinter_project_21">[22]</a>,
-                       <a  href="2016.html#hangprinter_project_22">[23]</a>,
-                       <a  href="2016.html#hangprinter_project_23">[24]</a>,
-                       <a  href="2016.html#hangprinter_project_24">[25]</a>,
-                       <a  href="2016.html#hangprinter_project_25">[26]</a>,
-                       <a  href="2016.html#hangprinter_project_26">[27]</a>,
-                       <a  href="2016.html#hangprinter_project_27">[28]</a>,
-                       <a  href="2017.html#hangprinter_project_28">[29]</a>,
-                       <a  href="2017.html#hangprinter_project_29">[30]</a>,
-                       <a  href="2017.html#hangprinter_project_30">[31]</a>,
-                       <a  href="2017.html#hangprinter_project_31">[32]</a>,
-                       <a  href="2017.html#hangprinter_project_32">[33]</a>,
-                       <a  href="2017.html#hangprinter_project_33">[34]</a>,
-                       <a  href="2017.html#hangprinter_project_34">[35]</a>,
-                       <a  href="2017.html#hangprinter_project_35">[36]</a>,
-                       <a  href="2017.html#hangprinter_project_36">[37]</a>,
-                       <a  href="2017.html#hangprinter_project_37">[38]</a>,
-                       <a  href="2017.html#hangprinter_project_38">[39]</a>,
-                       <a  href="2017.html#hangprinter_project_39">[40]</a>,
-                       <a  href="2017.html#hangprinter_project_40">[41]</a>,
-                       <a  href="2017.html#hangprinter_project_41">[42]</a>,
-                       <a  href="2017.html#hangprinter_project_42">[43]</a>,
-                       <a  href="2017.html#hangprinter_project_43">[44]</a>,
-                       <a  href="2017.html#hangprinter_project_44">[45]</a>,
-                       <a  href="2017.html#hangprinter_project_45">[46]</a>,
-                       <a  href="2017.html#hangprinter_project_46">[47]</a>,
-                       <a  href="2017.html#hangprinter_project_46">[48]</a>,
-                       <a  href="2017.html#hangprinter_project_46">[49]</a>
-</p>
-<p>
-  Hangprinter Project Homepage: <a href="https://hangprinter.org">hangprinter.org</a>
-</p>
-<p>
-  Print Issue Solution Filter Project: <a href="2014.html#Introducing_PISF">[1]</a>,
-                                       <a href="2014.html#Presenting_PISF_Again">[2]</a>,
-                                       <a href="2014.html#PISF_Online_Sort_Of">[3]</a>,
-                                       <a href="2014.html#PISF">[4]</a>
-</p>
-<p>
-  Sourcing RepRappro Mendel in Larvik: <a href="2014.html#Sourcing_Mendel_1">[1]</a>,
-                                       <a href="2014.html#Sourcing_Mendel_2">[2]</a>,
-                                       <a href="2014.html#Sourcing_Mendel_3">[3]</a>,
-                                       <a href="2014.html#Sourcing_Mendel_4">[4]</a>,
-                                       <a href="2014.html#Sourcing_Mendel_5">[5]</a>,
-                                       <a href="2014.html#Sourcing_Mendel_6">[6]</a>,
-                                       <a href="2014.html#Sourcing_Mendel_7">[7]</a>
-</p>
-<p>
-Archive: <a href="2014.html">2014</a>, <a href="2015.html">2015</a>, <a href="2016.html">2016</a>, <a href="2017.html">2017</a>, <a href="2018.html">2018</a>
-</p>
-<p>
-Github Profile: <a href="https://github.com/tobbelobb/">link</a><br />
-</p>
-<p>
-Vimeo User: <a href="https://vimeo.com/user23166500">link</a><br />
-</p>
-<p>
-Twitter User: <a href="https://twitter.com/tobbelobb">link</a><br />
-</p>
-<p>
-Work Microblog: <a href="http://opensourceecology.org/wiki/Tobben_Log">link</a><br />
-</p>
-<p>
-Master's Thesis: <a href="http://opensourceecology.org/wiki/File:Thesis.pdf">link</a><br />
-</p>
-<p>
-Linkedin Profile: <a href="https://se.linkedin.com/in/torbjorn-ludvigsen">link</a><br />
-</p>
-<p>
-Appropedia User: <a href="http://www.appropedia.org/User:Tobben">link</a><br />
-</p>
-<p>
-Company website (in Norwegian): <a href="http://ludvigsen3dprinting.com/">link</a>
-</p>
-<p>
-Email: <a href="mailto:post@ludvigsen3dprinting.com">post@ludvigsen3dprinting.com</a>
-</p>
-<p>
-RepRap Forums User: <a href="http://forums.reprap.org/profile.php?1,22385">link</a>
-</p>
-<p>
-Forums threads: <a href="http://forums.reprap.org/read.php?178,344022">Hangprinter version 1</a>,
-                <a href="http://forums.reprap.org/read.php?1,738858">Hangprinter version 2</a>,
-                <a href="http://forums.reprap.org/read.php?1,792937">Hangprinter version 3</a>
-</p>
-<p>
-  Source for this blog: <a href="https://github.com/tobbelobb/tbear_blogg">Github repo</a>
-</p>
-<p>
-Everything on this homepage, except the videos, is licenced under the <a href="https://www.gnu.org/licenses/fdl">Gnu Free Documentation Licence</a>.
-The videos are licenced via Vimeo or Youtube.
-</p>
-</div>
-<br /><br /><br /><br /><br /><br /><br /><br />
-</body>
-</html>
+</post>
+</posts>
