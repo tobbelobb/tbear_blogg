@@ -1,10 +1,555 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="feedtemplate.xsl"?>
-<collection>
-  <!-- Not actually used -->
-  <doc href="2014.xml"/>
-  <doc href="2015.xml"/>
-  <doc href="2016.xml"/>
-  <doc href="2017.xml"/>
-  <doc href="2018.xml"/>
-</collection>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+   <channel>
+      <atom:link href="https://vitana.se/opr3d/tbear/feed.xml" rel="self" type="application/rss+xml"/>
+      <title>Torbjørn's Reprap blog</title>
+      <description>Thoughts, progress, images and videos of a Reprapper.</description>
+      <link>https://vitana.se/opr3d/tbear</link>
+      <item>
+         <title>Presenting HAW-Nemesis</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2018.html#hangprinter_project_55</link>
+         <guid>https://vitana.se/opr3d/tbear/2018.html#hangprinter_project_55</guid>
+      </item>
+      <item>
+         <title>A Little Work on Line Flex</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2018.html#hangprinter_project_54</link>
+         <guid>https://vitana.se/opr3d/tbear/2018.html#hangprinter_project_54</guid>
+      </item>
+      <item>
+         <title>Consequences of Miscalibrating Anchor Positions</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2018.html#hangprinter_project_53</link>
+         <guid>https://vitana.se/opr3d/tbear/2018.html#hangprinter_project_53</guid>
+      </item>
+      <item>
+         <title>New Extruder Holder Bracket</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2018.html#hangprinter_project_52</link>
+         <guid>https://vitana.se/opr3d/tbear/2018.html#hangprinter_project_52</guid>
+      </item>
+      <item>
+         <title>Ziptie Mover</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2018.html#hangprinter_project_51</link>
+         <guid>https://vitana.se/opr3d/tbear/2018.html#hangprinter_project_51</guid>
+      </item>
+      <item>
+         <title>The Why Again</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2017.html#hangprinter_project_50</link>
+         <guid>https://vitana.se/opr3d/tbear/2017.html#hangprinter_project_50</guid>
+      </item>
+      <item>
+         <title>Time for Clones</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2017.html#hangprinter_project_49</link>
+         <guid>https://vitana.se/opr3d/tbear/2017.html#hangprinter_project_49</guid>
+      </item>
+      <item>
+         <title>Version 3.3 In The Making</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2017.html#hangprinter_project_48</link>
+         <guid>https://vitana.se/opr3d/tbear/2017.html#hangprinter_project_48</guid>
+      </item>
+      <item>
+         <title>Benchy, Videos and Some New Code</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2017.html#hangprinter_project_47</link>
+         <guid>https://vitana.se/opr3d/tbear/2017.html#hangprinter_project_47</guid>
+      </item>
+      <item>
+         <title>Version 3.2 Overview</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2017.html#hangprinter_project_46</link>
+         <guid>https://vitana.se/opr3d/tbear/2017.html#hangprinter_project_46</guid>
+      </item>
+      <item>
+         <title>Closed Loop Doing its Job and Sstruder v2 Pic</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2017.html#hangprinter_project_45</link>
+         <guid>https://vitana.se/opr3d/tbear/2017.html#hangprinter_project_45</guid>
+      </item>
+      <item>
+         <title>Working on Auto Calibration and Reliability</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2017.html#hangprinter_project_44</link>
+         <guid>https://vitana.se/opr3d/tbear/2017.html#hangprinter_project_44</guid>
+      </item>
+      <item>
+         <title>Walking the Line</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2017.html#hangprinter_project_43</link>
+         <guid>https://vitana.se/opr3d/tbear/2017.html#hangprinter_project_43</guid>
+      </item>
+      <item>
+         <title>Experimental Dual Unit Designs</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2017.html#hangprinter_project_42</link>
+         <guid>https://vitana.se/opr3d/tbear/2017.html#hangprinter_project_42</guid>
+      </item>
+      <item>
+         <title>Other People's Hangprinter Builds</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2017.html#hangprinter_project_41</link>
+         <guid>https://vitana.se/opr3d/tbear/2017.html#hangprinter_project_41</guid>
+      </item>
+      <item>
+         <title>Babel Tower Time Lapse</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2017.html#hangprinter_project_40</link>
+         <guid>https://vitana.se/opr3d/tbear/2017.html#hangprinter_project_40</guid>
+      </item>
+      <item>
+         <title>First Pull Request Merged</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2017.html#hangprinter_project_39</link>
+         <guid>https://vitana.se/opr3d/tbear/2017.html#hangprinter_project_39</guid>
+      </item>
+      <item>
+         <title> Hangprinter.org</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2017.html#hangprinter_project_38</link>
+         <guid>https://vitana.se/opr3d/tbear/2017.html#hangprinter_project_38</guid>
+      </item>
+      <item>
+         <title>Push Fit Sandwich</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2017.html#hangprinter_project_37</link>
+         <guid>https://vitana.se/opr3d/tbear/2017.html#hangprinter_project_37</guid>
+      </item>
+      <item>
+         <title>Sstruder v2 and Helsingborg</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2017.html#hangprinter_project_36</link>
+         <guid>https://vitana.se/opr3d/tbear/2017.html#hangprinter_project_36</guid>
+      </item>
+      <item>
+         <title>Tweets</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2017.html#hangprinter_project_35</link>
+         <guid>https://vitana.se/opr3d/tbear/2017.html#hangprinter_project_35</guid>
+      </item>
+      <item>
+         <title>The Tilt Problem</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2017.html#hangprinter_project_34</link>
+         <guid>https://vitana.se/opr3d/tbear/2017.html#hangprinter_project_34</guid>
+      </item>
+      <item>
+         <title>Changed Anchor Points Mid Print</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2017.html#hangprinter_project_33</link>
+         <guid>https://vitana.se/opr3d/tbear/2017.html#hangprinter_project_33</guid>
+      </item>
+      <item>
+         <title>Slowly but Surely</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2017.html#hangprinter_project_32</link>
+         <guid>https://vitana.se/opr3d/tbear/2017.html#hangprinter_project_32</guid>
+      </item>
+      <item>
+         <title>Community at Embryo Stage</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2017.html#hangprinter_project_31</link>
+         <guid>https://vitana.se/opr3d/tbear/2017.html#hangprinter_project_31</guid>
+      </item>
+      <item>
+         <title>D-Wobble Debugged</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2017.html#hangprinter_project_30</link>
+         <guid>https://vitana.se/opr3d/tbear/2017.html#hangprinter_project_30</guid>
+      </item>
+      <item>
+         <title> Experimental Line Buildup Compensation Feature</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2017.html#hangprinter_project_29</link>
+         <guid>https://vitana.se/opr3d/tbear/2017.html#hangprinter_project_29</guid>
+      </item>
+      <item>
+         <title> Hangprinter Presentation Video and Campaign</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2017.html#hangprinter_project_28</link>
+         <guid>https://vitana.se/opr3d/tbear/2017.html#hangprinter_project_28</guid>
+      </item>
+      <item>
+         <title>Compensation May Allow Bigger Prints</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2016.html#hangprinter_project_27</link>
+         <guid>https://vitana.se/opr3d/tbear/2016.html#hangprinter_project_27</guid>
+      </item>
+      <item>
+         <title>Compensating Line Buildup on Spools</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2016.html#hangprinter_project_26</link>
+         <guid>https://vitana.se/opr3d/tbear/2016.html#hangprinter_project_26</guid>
+      </item>
+      <item>
+         <title> The Worm Drive Works</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2016.html#hangprinter_project_25</link>
+         <guid>https://vitana.se/opr3d/tbear/2016.html#hangprinter_project_25</guid>
+      </item>
+      <item>
+         <title>Adjustable D Line Lengths and New Look</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2016.html#hangprinter_project_24</link>
+         <guid>https://vitana.se/opr3d/tbear/2016.html#hangprinter_project_24</guid>
+      </item>
+      <item>
+         <title>Worm Drive on D-axis</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2016.html#hangprinter_project_23</link>
+         <guid>https://vitana.se/opr3d/tbear/2016.html#hangprinter_project_23</guid>
+      </item>
+      <item>
+         <title>Another Stop Motion Video</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2016.html#hangprinter_project_22</link>
+         <guid>https://vitana.se/opr3d/tbear/2016.html#hangprinter_project_22</guid>
+      </item>
+      <item>
+         <title>Hangprinter Calibration Manual v0.1</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2016.html#hangprinter_project_21</link>
+         <guid>https://vitana.se/opr3d/tbear/2016.html#hangprinter_project_21</guid>
+      </item>
+      <item>
+         <title>Oslo Skaperfestival 2016</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2016.html#oslo_skaperfestival_2016</link>
+         <guid>https://vitana.se/opr3d/tbear/2016.html#oslo_skaperfestival_2016</guid>
+      </item>
+      <item>
+         <title>Homing the Hangprinter Without Adding Hardware</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2016.html#hangprinter_project_20</link>
+         <guid>https://vitana.se/opr3d/tbear/2016.html#hangprinter_project_20</guid>
+      </item>
+      <item>
+         <title>Yet Another Very Simple Extruder Design</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2016.html#VSE_1</link>
+         <guid>https://vitana.se/opr3d/tbear/2016.html#VSE_1</guid>
+      </item>
+      <item>
+         <title>Why Optimize Chaotic Production?</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2016.html#masters_2</link>
+         <guid>https://vitana.se/opr3d/tbear/2016.html#masters_2</guid>
+      </item>
+      <item>
+         <title>Portable Gcode and Short Status</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2016.html#portable_gcode_1</link>
+         <guid>https://vitana.se/opr3d/tbear/2016.html#portable_gcode_1</guid>
+      </item>
+      <item>
+         <title>Optimize Chaotic Production</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2016.html#masters_1</link>
+         <guid>https://vitana.se/opr3d/tbear/2016.html#masters_1</guid>
+      </item>
+      <item>
+         <title>Update and Clerck Build Instructions</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2016.html#hangprinter_project_19</link>
+         <guid>https://vitana.se/opr3d/tbear/2016.html#hangprinter_project_19</guid>
+      </item>
+      <item>
+         <title>Self replicating responsibly, I promise</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2015.html#hangprinter_project_18</link>
+         <guid>https://vitana.se/opr3d/tbear/2015.html#hangprinter_project_18</guid>
+      </item>
+      <item>
+         <title>Second finished print</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2015.html#hangprinter_project_17</link>
+         <guid>https://vitana.se/opr3d/tbear/2015.html#hangprinter_project_17</guid>
+      </item>
+      <item>
+         <title>CPUs, sqrt and free design hardware</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2015.html#hangprinter_project_16</link>
+         <guid>https://vitana.se/opr3d/tbear/2015.html#hangprinter_project_16</guid>
+      </item>
+      <item>
+         <title>Making the Hangprinter project easier to follow</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2015.html#hangprinter_project_15</link>
+         <guid>https://vitana.se/opr3d/tbear/2015.html#hangprinter_project_15</guid>
+      </item>
+      <item>
+         <title>First finished print</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2015.html#hangprinter_project_14</link>
+         <guid>https://vitana.se/opr3d/tbear/2015.html#hangprinter_project_14</guid>
+      </item>
+      <item>
+         <title>Meet Clerck, the hanging RepRap</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2015.html#hangprinter_project_13</link>
+         <guid>https://vitana.se/opr3d/tbear/2015.html#hangprinter_project_13</guid>
+      </item>
+      <item>
+         <title>Meet the Tble-extruder!</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2015.html#hangprinter_project_12</link>
+         <guid>https://vitana.se/opr3d/tbear/2015.html#hangprinter_project_12</guid>
+      </item>
+      <item>
+         <title>Extruder work</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2015.html#hangprinter_project_11</link>
+         <guid>https://vitana.se/opr3d/tbear/2015.html#hangprinter_project_11</guid>
+      </item>
+      <item>
+         <title>So what takes me so long?</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2015.html#feasability_study</link>
+         <guid>https://vitana.se/opr3d/tbear/2015.html#feasability_study</guid>
+      </item>
+      <item>
+         <title>Hardware upgrades and bureaucratic problems</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2015.html#hangprinter_project_10</link>
+         <guid>https://vitana.se/opr3d/tbear/2015.html#hangprinter_project_10</guid>
+      </item>
+      <item>
+         <title>Pics from calibration</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2015.html#hangprinter_project_9</link>
+         <guid>https://vitana.se/opr3d/tbear/2015.html#hangprinter_project_9</guid>
+      </item>
+      <item>
+         <title>More progress</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2015.html#hangprinter_project_8</link>
+         <guid>https://vitana.se/opr3d/tbear/2015.html#hangprinter_project_8</guid>
+      </item>
+      <item>
+         <title>Some progress..</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2015.html#hangprinter_project_7</link>
+         <guid>https://vitana.se/opr3d/tbear/2015.html#hangprinter_project_7</guid>
+      </item>
+      <item>
+         <title>Hangprinter has climbed its first climb</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2015.html#hangprinter_project_6</link>
+         <guid>https://vitana.se/opr3d/tbear/2015.html#hangprinter_project_6</guid>
+      </item>
+      <item>
+         <title>Hangprinter has hung its first hang</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2015.html#hangprinter_project_5</link>
+         <guid>https://vitana.se/opr3d/tbear/2015.html#hangprinter_project_5</guid>
+      </item>
+      <item>
+         <title>Hangprinter had its first dry run</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2015.html#hangprinter_project_4</link>
+         <guid>https://vitana.se/opr3d/tbear/2015.html#hangprinter_project_4</guid>
+      </item>
+      <item>
+         <title>Summer update on the Hangprinter</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2015.html#hangprinter_project_3</link>
+         <guid>https://vitana.se/opr3d/tbear/2015.html#hangprinter_project_3</guid>
+      </item>
+      <item>
+         <title>The Hangprinter</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2015.html#hangprinter_project_2</link>
+         <guid>https://vitana.se/opr3d/tbear/2015.html#hangprinter_project_2</guid>
+      </item>
+      <item>
+         <title>The Slideprinter</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2015.html#Slideprinter_Update</link>
+         <guid>https://vitana.se/opr3d/tbear/2015.html#Slideprinter_Update</guid>
+      </item>
+      <item>
+         <title>Printing small details</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2014.html#Small_Printing</link>
+         <guid>https://vitana.se/opr3d/tbear/2014.html#Small_Printing</guid>
+      </item>
+      <item>
+         <title>A Cumbersome Beautiful Way of Creating Signs in OpenScad</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2014.html#Postbox_Sign</link>
+         <guid>https://vitana.se/opr3d/tbear/2014.html#Postbox_Sign</guid>
+      </item>
+      <item>
+         <title>Combining STLs and removing internal faces with Meshlab</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2014.html#Removing_Internal_Faces_With_Meshlab</link>
+         <guid>https://vitana.se/opr3d/tbear/2014.html#Removing_Internal_Faces_With_Meshlab</guid>
+      </item>
+      <item>
+         <title>Explanation of basic RepRap mechanics (Swedish)</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2014.html#Explanation_Video</link>
+         <guid>https://vitana.se/opr3d/tbear/2014.html#Explanation_Video</guid>
+      </item>
+      <item>
+         <title>The Martineåsen Project</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2014.html#Martineaasen_Project</link>
+         <guid>https://vitana.se/opr3d/tbear/2014.html#Martineaasen_Project</guid>
+      </item>
+      <item>
+         <title>A Hanging RepRap</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2014.html#Hangprinter</link>
+         <guid>https://vitana.se/opr3d/tbear/2014.html#Hangprinter</guid>
+      </item>
+      <item>
+         <title>Second Attempt at Printing the Grue</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2014.html#Second_Attempt_Grue</link>
+         <guid>https://vitana.se/opr3d/tbear/2014.html#Second_Attempt_Grue</guid>
+      </item>
+      <item>
+         <title>What Print Issue Solution Filter Is and What It Does</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2014.html#PISF</link>
+         <guid>https://vitana.se/opr3d/tbear/2014.html#PISF</guid>
+      </item>
+      <item>
+         <title>We're online! Sort of...</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2014.html#PISF_Online_Sort_Of</link>
+         <guid>https://vitana.se/opr3d/tbear/2014.html#PISF_Online_Sort_Of</guid>
+      </item>
+      <item>
+         <title>Presenting the Print Issue Solution Filter. Again</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2014.html#Presenting_PISF_Again</link>
+         <guid>https://vitana.se/opr3d/tbear/2014.html#Presenting_PISF_Again</guid>
+      </item>
+      <item>
+         <title>Small soldering with cheap equipment</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2014.html#Soldering_Small_Stuff</link>
+         <guid>https://vitana.se/opr3d/tbear/2014.html#Soldering_Small_Stuff</guid>
+      </item>
+      <item>
+         <title>Making a Ring with a Rope</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2014.html#Rope_Ring</link>
+         <guid>https://vitana.se/opr3d/tbear/2014.html#Rope_Ring</guid>
+      </item>
+      <item>
+         <title>Making PLA prints stick reliably</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2014.html#Reliable_Stick</link>
+         <guid>https://vitana.se/opr3d/tbear/2014.html#Reliable_Stick</guid>
+      </item>
+      <item>
+         <title>A Very Short Introduction to Basic RepRap Workflow</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2014.html#Workflow</link>
+         <guid>https://vitana.se/opr3d/tbear/2014.html#Workflow</guid>
+      </item>
+      <item>
+         <title>Printing litophanes</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2014.html#Litophanes</link>
+         <guid>https://vitana.se/opr3d/tbear/2014.html#Litophanes</guid>
+      </item>
+      <item>
+         <title>Printing a complicated figure with PLA</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2014.html#grue_take1</link>
+         <guid>https://vitana.se/opr3d/tbear/2014.html#grue_take1</guid>
+      </item>
+      <item>
+         <title>Introducing the Print Issue Solution Filter web app</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2014.html#Introducing_PISF</link>
+         <guid>https://vitana.se/opr3d/tbear/2014.html#Introducing_PISF</guid>
+      </item>
+      <item>
+         <title>Making custom architrave profiles</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2014.html#Architrave_Profiles</link>
+         <guid>https://vitana.se/opr3d/tbear/2014.html#Architrave_Profiles</guid>
+      </item>
+      <item>
+         <title>CAD'ing support structures when PLA printing</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2014.html#CADing_support</link>
+         <guid>https://vitana.se/opr3d/tbear/2014.html#CADing_support</guid>
+      </item>
+      <item>
+         <title>Minor Reprappro Mendel tweaks</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2014.html#Minor_Mendel_tweaks</link>
+         <guid>https://vitana.se/opr3d/tbear/2014.html#Minor_Mendel_tweaks</guid>
+      </item>
+      <item>
+         <title>Sourcing a Reprappro Mendel in Larvik. The rest</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2014.html#Sourcing_Mendel_7</link>
+         <guid>https://vitana.se/opr3d/tbear/2014.html#Sourcing_Mendel_7</guid>
+      </item>
+      <item>
+         <title>Sourcing a Reprappro Mendel in Larvik. Weekend 1 and 2</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2014.html#Sourcing_Mendel_6</link>
+         <guid>https://vitana.se/opr3d/tbear/2014.html#Sourcing_Mendel_6</guid>
+      </item>
+      <item>
+         <title>Sourcing a Reprappro Mendel in Larvik. Day 6 and 7</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2014.html#Sourcing_Mendel_5</link>
+         <guid>https://vitana.se/opr3d/tbear/2014.html#Sourcing_Mendel_5</guid>
+      </item>
+      <item>
+         <title>VRR firmware and a different way of communicating with 3d-printers</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2014.html#VRR</link>
+         <guid>https://vitana.se/opr3d/tbear/2014.html#VRR</guid>
+      </item>
+      <item>
+         <title>Making simple twisted vases</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2014.html#Twisted_Vases</link>
+         <guid>https://vitana.se/opr3d/tbear/2014.html#Twisted_Vases</guid>
+      </item>
+      <item>
+         <title>Sourcing a Reprappro Mendel in Larvik. Day 5</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2014.html#Sourcing_Mendel_4</link>
+         <guid>https://vitana.se/opr3d/tbear/2014.html#Sourcing_Mendel_4</guid>
+      </item>
+      <item>
+         <title>Sourcing a Reprappro Mendel in Larvik. Day 4</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2014.html#Sourcing_Mendel_3</link>
+         <guid>https://vitana.se/opr3d/tbear/2014.html#Sourcing_Mendel_3</guid>
+      </item>
+      <item>
+         <title>Sourcing a Reprappro Mendel in Larvik. Day 2 and 3</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2014.html#Sourcing_Mendel_2</link>
+         <guid>https://vitana.se/opr3d/tbear/2014.html#Sourcing_Mendel_2</guid>
+      </item>
+      <item>
+         <title>Sourcing a Reprappro Mendel in Larvik. Day 1</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2014.html#Sourcing_Mendel_1</link>
+         <guid>https://vitana.se/opr3d/tbear/2014.html#Sourcing_Mendel_1</guid>
+      </item>
+      <item>
+         <title>Hello, World!</title>
+         <description/>
+         <link>https://vitana.se/opr3d/tbear/2014.html#Hello</link>
+         <guid>https://vitana.se/opr3d/tbear/2014.html#Hello</guid>
+      </item>
+   </channel>
+</rss>
