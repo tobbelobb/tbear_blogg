@@ -54,6 +54,17 @@
     </p>
     <br /><br /><br />
   </xsl:for-each>
+  <xsl:for-each select="posts/oldpost">
+    <h1>
+      <xsl:attribute name="id" >
+        <xsl:value-of select="./@id" />
+      </xsl:attribute>
+      <xsl:value-of select="./@heading" />
+    </h1>
+    <div class="date"><xsl:value-of select="./@date" /></div>
+    <xsl:copy-of select="./*" />
+  </xsl:for-each>
+
 
 <br /><br /><br /><br /><br /><br /><br /><br />
 <h1 id="Links">

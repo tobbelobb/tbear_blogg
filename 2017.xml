@@ -1780,7 +1780,7 @@ With the calibration constants I'm using on my own Hangprinter,
 <hr />
 <br /><br /><br />
 
-<post id="hangprinter_project_27" heading="Compensation May Allow Bigger Prints" date="14-12-2016">
+<oldpost id="hangprinter_project_27" heading="Compensation May Allow Bigger Prints" date="14-12-2016">
 <p>
   The line compensation code may increase print volume noticeably.
   During testing, it has allowed Hangprinter version 2 to go places
@@ -1788,9 +1788,9 @@ With the calibration constants I'm using on my own Hangprinter,
   <a href="2016.html#hangprinter_project_27">Read more...</a>
 </p>
 <br /><br /><br />
-</post>
+</oldpost>
 
-<post id="hangprinter_project_26" heading="Compensating Line Buildup on Spools" date="11-12-2016">
+<oldpost id="hangprinter_project_26" heading="Compensating Line Buildup on Spools" date="11-12-2016">
 <p>
   I've added to Hangprinter-Marlins some code that
   compensates for line buildup on the spools.
@@ -1801,18 +1801,18 @@ With the calibration constants I'm using on my own Hangprinter,
   <a href="2016.html#hangprinter_project_26">Read more...</a>
 </p>
 <br /><br /><br />
-</post>
+</oldpost>
 
-<post id="hangprinter_project_25" heading="The Worm Drive Works" date="8-12-2016">
+<oldpost id="hangprinter_project_25" heading="The Worm Drive Works" date="8-12-2016">
 <p>
   Just tested the worm drive.
   I was so happy to see it work that I made a little video.
   <a href="2016.html#hangprinter_project_25">Read more...</a>
 </p>
 <br /><br /><br />
-</post>
+</oldpost>
 
-<post id="hangprinter_project_24" heading="Adjustable D Line Lengths and New Look" date="26-11-2016">
+<oldpost id="hangprinter_project_24" heading="Adjustable D Line Lengths and New Look" date="26-11-2016">
 <p>
   Just made the D-line lengths easier to adjust independently.
   This is useful to get Hangprinter's corners in level with bed.
@@ -1821,42 +1821,42 @@ With the calibration constants I'm using on my own Hangprinter,
   <a href="2016.html#hangprinter_project_24">Read more...</a>
 </p>
 <br /><br /><br />
-</post>
+</oldpost>
 
-<post id="hangprinter_project_23" heading=" Worm Drive on D-axis" date="18-11-2016">
+<oldpost id="hangprinter_project_23" heading=" Worm Drive on D-axis" date="18-11-2016">
 <p>
   The best part is that the worm is pure parametrized OpenSCAD and renders nicely.
   <a href="2016.html#hangprinter_project_23">Read more...</a>
 </p>
 <br /><br /><br />
-</post>
+</oldpost>
 
-<post id="hangprinter_project_22" heading="Another Stop Motion Video" date="5-11-2016">
+<oldpost id="hangprinter_project_22" heading="Another Stop Motion Video" date="5-11-2016">
 <p>
   Hangprinting 0.9 m high twisted P at Teknisk Museum's 3D-printerfestival.
   Note: this text was edited on 7-11-2016.
   <a href="2016.html#hangprinter_project_22">Read more...</a>
 </p>
 <br /><br /><br />
-</post>
+</oldpost>
 
-<post id="hangprinter_project_21" heading="Hangprinter Calibration Manual v0.1" date="3-11-2016">
+<oldpost id="hangprinter_project_21" heading="Hangprinter Calibration Manual v0.1" date="3-11-2016">
 <p>
   This post will make it easier to calibrate Clerck by avoiding the need for measurements like this:
   <a href="2016.html#hangprinter_project_21">Read more...</a>
 </p>
 <br /><br /><br />
-</post>
+</oldpost>
 
-<post id="oslo_skaperfestival_2016" heading="Oslo Skaperfestival 2016" date="25-10-2016">
+<oldpost id="oslo_skaperfestival_2016" heading="Oslo Skaperfestival 2016" date="25-10-2016">
 <p>
   Clerck was demonstrated in public for the first time this weekend!
   <a href="2016.html#oslo_skaperfestival_2016">Read more...</a>
 </p>
 <br /><br /><br />
-</post>
+</oldpost>
 
-<post id="hangprinter_project_20" heading="Homing the Hangprinter Without Adding Hardware" date="23-9-2016">
+<oldpost id="hangprinter_project_20" heading="Homing the Hangprinter Without Adding Hardware" date="23-9-2016">
 <p>
   I've thought some more about Hangprinter recently, since I'm going to demonstrate it on the
   <a href="https://www.facebook.com/events/1052788231502429/">3d printer festival</a>
@@ -1869,18 +1869,18 @@ With the calibration constants I'm using on my own Hangprinter,
   <a href="2016.html#hangprinter_project_20">Read more...</a>
 </p>
 <br /><br /><br />
-</post>
+</oldpost>
 
-<post id="VSE_1" heading="Yet Another Very Simple Extruder Design" date="21-9-2016">
+<oldpost id="VSE_1" heading="Yet Another Very Simple Extruder Design" date="21-9-2016">
 <p>
   I've thought about a second generation Hangprinter lately, including the extruder.
   My current favourite re-design uses two motors running synchronously.
   <a href="2016.html#VSE_1">Read more...</a>
 </p>
 <br /><br /><br />
-</post>
+</oldpost>
 
-<post id="masters_2" heading="Why Optimize Chaotic Production?" date="10-9-2016">
+<oldpost id="masters_2" heading="Why Optimize Chaotic Production?" date="10-9-2016">
 <p>
   RepRappers have noticed me that basing the story line of my
     <a href="http://opensourceecology.org/wiki/File:Thesis.pdf">my Master's thesis</a>
@@ -1889,9 +1889,9 @@ With the calibration constants I'm using on my own Hangprinter,
   <a href="2016.html#masters_2">Read more...</a>
 </p>
 <br /><br /><br />
-</post>
+</oldpost>
 
-<post id="portable_gcode_1" heading="Portable Gcode and Short Status" date="5-9-2016">
+<oldpost id="portable_gcode_1" heading="Portable Gcode and Short Status" date="5-9-2016">
 <p>
   Today I asked a <a href="http://forums.reprap.org/read.php?1,705311">question on reprap forums</a> that has puzzled me for a long time.
   Why don't we share gcode instead of 3d models?
@@ -1901,9 +1901,9 @@ With the calibration constants I'm using on my own Hangprinter,
   <a href="2016.html#portable_gcode_1">Read more...</a>
 </p>
 <br /><br /><br />
-</post>
+</oldpost>
 
-<post id="masters_1" heading="Optimize Chaotic Production" date="29-6-2016">
+<oldpost id="masters_1" heading="Optimize Chaotic Production" date="29-6-2016">
 <p>
   I presented my Master's recently, with a story line that was very RepRap centric.
   I'd like to re-present and develop my thoughts with some colors here.
@@ -1911,14 +1911,14 @@ With the calibration constants I'm using on my own Hangprinter,
   <a href="2016.html#masters_1">Read more...</a>
 </p>
 <br /><br /><br />
-</post>
+</oldpost>
 
-<post id="hangprinter_project_19" heading="Update and Clerck Build Instructions" date="8-2-2016">
+<oldpost id="hangprinter_project_19" heading="Update and Clerck Build Instructions" date="8-2-2016">
 <p>
   I've been working on Open Source Ecology 3D printer workshops (see my <a href="http://opensourceecology.org/wiki/Tobben_Log">work log</a> for exactly what I've been up to)
   the past month, and will continue to work on that until mid summer.
   <a href="2016.html#hangprinter_project_19">Read more...</a>
 </p>
 <br /><br /><br />
-</post>
+</oldpost>
 </posts>

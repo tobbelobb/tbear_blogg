@@ -9,45 +9,17 @@
     <title>Torbjørn's Reprap blog</title>
     <description>Thoughts, progress, images and videos of a Reprapper.</description>
     <link>https://vitana.se/opr3d/tbear</link>
-    <xsl:for-each select="document('2018.xml')/posts/post">
-      <item>
-        <title><xsl:value-of select="./@heading" /></title>
-        <description></description>
-        <link>https://vitana.se/opr3d/tbear/2018.html#<xsl:value-of select="./@id" /></link>
-        <guid>https://vitana.se/opr3d/tbear/2018.html#<xsl:value-of select="./@id" /></guid>
-      </item>
+    <xsl:variable name="array" select="document('catalouge.xml')/filelist/file"/>
+    <xsl:for-each select="$array">
+      <xsl:variable name="filename" select="."/>
+      <xsl:for-each select="document($filename)/posts/post">
+        <item>
+          <title><xsl:value-of select="./@heading" /></title>
+          <description></description>
+          <link>https://vitana.se/opr3d/tbear/<xsl:value-of select="$filename" />#<xsl:value-of select="./@id" /></link>
+          <guid>https://vitana.se/opr3d/tbear/<xsl:value-of select="$filename" />#<xsl:value-of select="./@id" /></guid>
+        </item>
     </xsl:for-each>
-    <xsl:for-each select="document('2017.xml')/posts/post">
-      <item>
-        <title><xsl:value-of select="./@heading" /></title>
-        <description></description>
-        <link>https://vitana.se/opr3d/tbear/2017.html#<xsl:value-of select="./@id" /></link>
-        <guid>https://vitana.se/opr3d/tbear/2017.html#<xsl:value-of select="./@id" /></guid>
-      </item>
-    </xsl:for-each>
-    <xsl:for-each select="document('2016.xml')/posts/post">
-      <item>
-        <title><xsl:value-of select="./@heading" /></title>
-        <description></description>
-        <link>https://vitana.se/opr3d/tbear/2016.html#<xsl:value-of select="./@id" /></link>
-        <guid>https://vitana.se/opr3d/tbear/2016.html#<xsl:value-of select="./@id" /></guid>
-      </item>
-    </xsl:for-each>
-    <xsl:for-each select="document('2015.xml')/posts/post">
-      <item>
-        <title><xsl:value-of select="./@heading" /></title>
-        <description></description>
-        <link>https://vitana.se/opr3d/tbear/2015.html#<xsl:value-of select="./@id" /></link>
-        <guid>https://vitana.se/opr3d/tbear/2015.html#<xsl:value-of select="./@id" /></guid>
-      </item>
-    </xsl:for-each>
-    <xsl:for-each select="document('2014.xml')/posts/post">
-      <item>
-        <title><xsl:value-of select="./@heading" /></title>
-        <description></description>
-        <link>https://vitana.se/opr3d/tbear/2014.html#<xsl:value-of select="./@id" /></link>
-        <guid>https://vitana.se/opr3d/tbear/2014.html#<xsl:value-of select="./@id" /></guid>
-      </item>
     </xsl:for-each>
   </channel>
 </rss>
