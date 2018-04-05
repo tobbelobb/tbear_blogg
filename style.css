@@ -1,20 +1,14 @@
 body {
 	background-color:#ffffff;
 }
-#header {
-	position:absolute;
-	background-repeat:no-repeat;
-	width:642px;
-	height:233px;
-	top:0px;
-	left:0px;
-	z-index:1;
-}
 #SiteName {
-	position:absolute;
-	margin-left:15%;
+	position:relative;
+	text-align:left;
+	margin: 0 auto;
 	top:50px;
-	width:555px;
+	width:100%;
+	max-width:606px;
+	padding:0px 10px 0px 10px;
 	height:45px;
 	z-index:2;
 	font-size:35px;
@@ -49,13 +43,12 @@ h1 {
 #MainContent {
 	position:relative;
 	top:110px;
-	width:606px;
+	width:100%;
+	max-width:606px;
+	padding:0px 10px 30px 10px;
 	z-index:6;
-	margin-left:15%;
+	margin: 0 auto;
 	font-size:14px;
 	line-height:150%;
 	color:#30424c;
-}
-.bottom-three {
-  margin-bottom: 3cm;
 }

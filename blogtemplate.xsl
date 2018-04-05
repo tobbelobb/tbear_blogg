@@ -20,7 +20,6 @@
 
   <title>Torbjørns Reprap blog</title>
 </head>
-
 <body>
 <div id="SiteName">
   <div class="right">
@@ -30,9 +29,7 @@
     Reprap blog <xsl:value-of select="posts/@year" />
   </div>
 </div>
-
 <div id="MainContent">
-
   <xsl:for-each select="posts/post">
     <h1>
       <xsl:attribute name="id" >
