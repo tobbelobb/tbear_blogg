@@ -128,7 +128,7 @@ l_{acc} = l - F/k(l),
 
 <figure>
   <a href="./bilder/Flex_P1_rot.JPG">
-    <img src="./bilder/Flex_P1_rot_liten.JPG" alt="" />
+    <img src="./bilder/Flex_P1_rot_liten.JPG" alt="" width="500" height="750"/>
   </a>
   <figcaption>
     The mover is approximated to be a point mass.
@@ -142,7 +142,7 @@ l_{acc} = l - F/k(l),
 </figure>
 <figure>
   <a href="./bilder/Flex_P2_rot.JPG">
-  <img src="./bilder/Flex_P2_rot_liten.JPG" alt="" />
+  <img src="./bilder/Flex_P2_rot_liten.JPG" alt="" width="500" height="750" />
   </a>
   <figcaption>
     Thanks to my professors for drilling me in manual Gaussian elimination.
@@ -153,14 +153,14 @@ l_{acc} = l - F/k(l),
 </figure>
 <figure>
   <a href="./bilder/Flex_P3_rot.JPG">
-  <img src="./bilder/Flex_P3_rot_liten.JPG" alt="" />
+  <img src="./bilder/Flex_P3_rot_liten.JPG" alt="" width="500" height="750" />
   </a>
   <figcaption>
   </figcaption>
 </figure>
 <figure>
   <a href="./bilder/Flex_P4_rot.JPG">
-  <img src="./bilder/Flex_P4_rot_liten.JPG" alt="" />
+  <img src="./bilder/Flex_P4_rot_liten.JPG" alt="" width="500" height="750" />
   </a>
   <figcaption>
     There are our expressions for the magnitudes of the (zero-acceleration-case) force magnitudes \(A\), \(B\), and \(C\).
@@ -226,7 +226,7 @@ $$
 </p>
 <figure>
   <a href="./bilder/anchor_config_at_ccw_angle.png">
-  <img src="./bilder/anchor_config_at_ccw_angle_liten.png" alt="" />
+    <img src="./bilder/anchor_config_at_ccw_angle_liten.png" alt="" width="500" height="266" />
   </a>
   <figcaption>
     In this plot, the anchor is located at (-700, 700).
@@ -237,7 +237,7 @@ $$
 </figure>
 <figure>
   <a href="./bilder/anchor_config_too_far.png">
-  <img src="./bilder/anchor_config_too_far_liten.png" alt="" />
+    <img src="./bilder/anchor_config_too_far_liten.png" alt="" width="500" height="266" />
   </a>
   <figcaption>
     Anchor location: (-700, 700)<br />
@@ -249,7 +249,7 @@ $$
 </figure>
 <figure>
   <a href="./bilder/anchor_config_at_cw_angle.png">
-  <img src="./bilder/anchor_config_at_cw_angle_liten.png" alt="" />
+    <img src="./bilder/anchor_config_at_cw_angle_liten.png" alt="" width="500" height="266" />
   </a>
   <figcaption>
     Anchor location: (-700, 700)<br />
@@ -261,7 +261,7 @@ $$
 </figure>
 <figure>
   <a href="./bilder/anchor_config_too_close.png">
-  <img src="./bilder/anchor_config_too_close_liten.png" alt="" />
+    <img src="./bilder/anchor_config_too_close_liten.png" alt="" width="500" height="266" />
   </a>
   <figcaption>
     Anchor location: (-700, 700)<br />
@@ -279,7 +279,7 @@ $$
 </p>
 <figure>
   <a href="./bilder/extruder_holder_render.png">
-  <img src="./bilder/extruder_holder_render_liten.png" alt="" />
+    <img src="./bilder/extruder_holder_render_liten.png" alt="" width="500" height="269" />
   </a>
   <figcaption>
     Render of the new <code>extruder_holder</code>.
@@ -291,7 +291,7 @@ $$
 </p>
 <figure>
   <a href="./bilder/Four_extruder_holders_on_a_mover.JPG">
-  <img src="./bilder/Four_extruder_holders_on_a_mover_liten.JPG" alt="" />
+    <img src="./bilder/Four_extruder_holders_on_a_mover_liten.JPG" alt="" width="500" height="334" />
   </a>
   <figcaption>
     Four slightly different extruder holders lined up for flex testing.
@@ -304,7 +304,7 @@ $$
 </p>
 <figure>
   <a  href="./bilder/Third_ziptie.JPG">
-  <img src="./bilder/Third_ziptie_liten.JPG" alt="" />
+    <img src="./bilder/Third_ziptie_liten.JPG" alt="" width="500" height="334" />
   </a>
   <figcaption>
   </figcaption>
@@ -315,7 +315,7 @@ $$
 </p>
 <figure>
   <a  href="./bilder/Wedging_ziptie.JPG">
-  <img src="./bilder/Wedging_ziptie_liten.JPG" alt="" />
+    <img src="./bilder/Wedging_ziptie_liten.JPG" alt="" width="500" height="334" />
   </a>
   <figcaption>
   </figcaption>
@@ -325,7 +325,7 @@ $$
 </p>
 <figure>
   <a  href="./bilder/Ziptie_extruder_holder.JPG">
-  <img src="./bilder/Ziptie_extruder_holder_liten.JPG" alt="" />
+    <img src="./bilder/Ziptie_extruder_holder_liten.JPG" alt="" width="500" height="334" />
   </a>
   <figcaption>
   </figcaption>
@@ -342,7 +342,7 @@ $$
 
 <figure>
   <a href="./bilder/Ziptie_wood_mover_3.JPG">
-  <img src="./bilder/Ziptie_wood_mover_3_liten.JPG" alt="" />
+    <img src="./bilder/Ziptie_wood_mover_3_liten.JPG" alt="" width="500" height="334" />
   </a>
   <figcaption>
     Ziptied mover.
@@ -359,7 +359,7 @@ $$
 <p>I also find it easier to assemble since there are no fiddling with small screws and nuts. </p>
 <figure>
   <a href="./bilder/Ziptie_mover_corner_1.JPG">
-  <img src="./bilder/Ziptie_mover_corner_1_liten.JPG" alt="" />
+    <img src="./bilder/Ziptie_mover_corner_1_liten.JPG" alt="" width="500" height="334" />
   </a>
   <figcaption>
     Ziptied mover corner.
@@ -368,7 +368,7 @@ $$
 </figure>
 <figure>
   <a href="./bilder/Ziptie_mover_corner_2.JPG">
-  <img src="./bilder/Ziptie_mover_corner_2_liten.JPG" alt="" />
+    <img src="./bilder/Ziptie_mover_corner_2_liten.JPG" alt="" width="500" height="334" />
   </a>
   <figcaption>
   Zipties of width 4 mm gives the most sturdy mover, but I've found sizes down to 2.4 mm (like in this picture) to work well.
@@ -380,7 +380,7 @@ $$
 </p>
 <figure>
   <a href="./bilder/Beam_clamping.JPG">
-  <img src="./bilder/Beam_clamping_liten.JPG" alt="" />
+    <img src="./bilder/Beam_clamping_liten.JPG" alt="" width="500" height="334" />
   </a>
   <figcaption>
     Note that I pre-drilled 3.2 mm holes before inserting the M3 screw.
@@ -395,7 +395,7 @@ $$
 </p>
 <figure>
   <a href="./bilder/Beam_slider_nutlock.png">
-  <img src="./bilder/Beam_slider_nutlock_liten.png" alt="" />
+    <img src="./bilder/Beam_slider_nutlock_liten.png" alt="" width="500" height="320" />
   </a>
   <figcaption>
   </figcaption>
