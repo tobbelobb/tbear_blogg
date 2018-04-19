@@ -81,7 +81,7 @@
     You and your friends will have your hands full while doing this.
   </figcaption>
 </figure>
-<h4>Step 5: Mount your ceiling plate</h4>
+<h4>Step 5: Mount your D-anchor</h4>
 <figure>
   <a href="./bilder/ladder_and_tetrahedron_frame.JPG">
     <img src="./bilder/ladder_and_tetrahedron_frame_liten.JPG" alt="" width="500" height="333"/>
@@ -89,7 +89,7 @@
   <figcaption>
     This is the most tricky step.
     Have your friend lift one standing leg out of its corner pocket, and bend open the top triangle.
-    Wedge your ceiling plate in there and close by putting the standing leg back into its pocket.
+    Wedge your D-anchor in there and close by putting the standing leg back into its pocket.
   </figcaption>
 </figure>
 <h4>Step 5: Get the orientation right</h4>
@@ -98,7 +98,7 @@
     <img src="./bilder/triangle_in_triangle.png" alt="" width="500" height="500"/>
   </a>
   <figcaption>
-    See if you can rotate your ceiling plate so that your mover will hang roughly 60 degrees rotated compared to your bottom plate.
+    See if you can rotate your D-anchor so that your mover will hang roughly 60 degrees rotated compared to your bottom plate.
     As long as you're within ca 45-75 degrees, your printer will work perfectly, but you will have to rotate your ABC anchors accordingly.
     When your print head is touching the origin you must fulfill these requirements:
       <ul>
