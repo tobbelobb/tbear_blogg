@@ -1,6 +1,133 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
 <posts year="2018">
+<post id="hangprinter_project_56" heading="How to Build a Temporary Hangprinter Frame" date="19-4-2018">
+<p>
+  I demoed Hangprinter v3 at the 3D Meetup Sweden recently.
+  I could not mount it in the ceiling of the venue, so I had to build a temporary frame.
+  Knowing how to whip up a temporary Hangprinter frame is useful, so I'm documenting it here.
+</p>
+<figure>
+  <a href="./bilder/frame_im_talkin_about_rot.JPG">
+    <img src="./bilder/frame_im_talkin_about_rot_liten.JPG" alt="" width="500" height="725"/>
+  </a>
+  <figcaption>
+    This is the temporary frame I'm talking about.
+    The shape is called a tetrahedron.
+  </figcaption>
+</figure>
+<p>
+  Bill of materials:
+  <ul>
+    <li>7 pcs 45x45x3000 mm wooden beams</li>
+    <li>50 pcs ca 4x65mm wood screws</li>
+    <li>1 small (ca 200x200 mm) top plate sheet</li>
+    <li>Your Hangprinter's D-anchor (ceiling plate) and 3 ABC-anchors sheets</li>
+    <li>1 print bed</li>
+  </ul>
+  Required tools:
+  <ul>
+    <li>Hand saw</li>
+    <li>Cordless drill</li>
+    <li>A friend to help you out with the last step</li>
+  </ul>
+</p>
+<h4>Step 1: Make an equilateral triangle out of three beams</h4>
+<figure>
+  <a href="./bilder/bottom_triangle.JPG">
+    <img src="./bilder/bottom_triangle_liten.JPG" alt="" width="500" height="333"/>
+  </a>
+  <figcaption>
+    Fixate its shape by screwing down ABC-anchor sheets in each corner, four screws in each sheet.
+    The rectangular sheet in the middle of this picture is the print bed.
+  </figcaption>
+</figure>
+<h4>Step 2: Prepare your three standing beams</h4>
+<figure>
+  <a href="./bilder/standing_beams.JPG">
+    <img src="./bilder/standing_beams_liten.JPG" alt="" width="500" height="333"/>
+  </a>
+  <figcaption>
+    1 beam has been cut into 3 equal parts.
+    Cuts have an angle of ca 20 degrees.
+    Make sure the cut is facing away from the longer beam before screwing together.
+    See the upwards pointing arrow in the left side of the picture.
+    The beams' overlap is ca 250 mm long.
+    Screw from both sides.
+    To the right in the picture you see the top plate sheet.
+  </figcaption>
+</figure>
+<h4>Step 3: Screw standing beams onto the top plate sheet</h4>
+<figure>
+  <a href="./bilder/onto_top_plate_sheet.JPG">
+    <img src="./bilder/onto_top_plate_sheet_liten.JPG" alt="" width="500" height="333"/>
+  </a>
+  <figcaption>
+    Attach screws through the top of your top plate sheet and down into the angled end of the standing beams.
+    Make the angled ends support each other around a central point.
+    This is what gives the tetrahedron its stiffness.
+    When attaching the third standing beam, you need your friend to hold it in place, so it doesn't break your top plate sheet.
+  </figcaption>
+</figure>
+<h4>Step 4: Temporarily mount your standing triangle</h4>
+<figure>
+  <a href="./bilder/corner_pocket.JPG">
+    <img src="./bilder/corner_pocket_liten.JPG" alt="" width="500" height="333"/>
+  </a>
+  <figcaption>
+    Secure the three legs of your standing triangle into your corner pockets, like this.
+    Don't attach them with screws yet.
+    Sorry that I don't have images of attaching the two other legs and raising the triangle.
+    You and your friends will have your hands full while doing this.
+  </figcaption>
+</figure>
+<h4>Step 5: Mount your ceiling plate</h4>
+<figure>
+  <a href="./bilder/ladder_and_tetrahedron_frame.JPG">
+    <img src="./bilder/ladder_and_tetrahedron_frame_liten.JPG" alt="" width="500" height="333"/>
+  </a>
+  <figcaption>
+    This is the most tricky step.
+    Have your friend lift one standing leg out of its corner pocket, and bend open the top triangle.
+    Wedge your ceiling plate in there and close by putting the standing leg back into its pocket.
+  </figcaption>
+</figure>
+<h4>Step 5: Get the orientation right</h4>
+<figure>
+  <a href="./bilder/triangle_in_triangle.png">
+    <img src="./bilder/triangle_in_triangle.png" alt="" width="500" height="500"/>
+  </a>
+  <figcaption>
+    See if you can rotate your ceiling plate so that your mover will hang roughly 60 degrees rotated compared to your bottom plate.
+    As long as you're within ca 45-75 degrees, your printer will work perfectly, but you will have to rotate your ABC anchors accordingly.
+    When your print head is touching the origin you must fulfill these requirements:
+      <ul>
+        <li>Each pair of ABC-lines must be of equal length. Use measurement tape.</li>
+        <li>The three D-lines must be vertical. Use a laser level or an aiming plumb.</li>
+      </ul>
+  </figcaption>
+</figure>
+<h4>Step 6: Secure and mark everything up</h4>
+<p>
+  Now you're done, you just want to make sure it stays the way it is.
+  <ul>
+    <li>Secure your triangle legs to your corner pockets with screws.</li>
+    <li>Mark up the origin point on the bed surface.</li>
+    <li>Mark the position of your print surface on the floor with tape or similar.</li>
+    <li>Mark the position of your frame's corners on the floor with tape or similar.</li>
+  </ul>
+</p>
+<figure>
+  <a href="./bilder/marked_my_bed_position.JPG">
+    <img src="./bilder/marked_my_bed_position_liten.JPG" alt="" width="500" height="333"/>
+  </a>
+  <figcaption>
+    This image shows how I've marked my bed position on the floor.
+    The bed itself is heavy enough to not drift around, so it's not actually attached to the floor.
+    I do similar markings around the frame's bottom triangle corners.
+  </figcaption>
+</figure>
+</post>
 <post id="hangprinter_project_55" heading="Presenting HAW-Nemesis" date="20-3-2018">
 <p>
   Hangprinter Assembly Workshop Nemesis is an operating system that you put on a USB-drive (size 4GB or more).

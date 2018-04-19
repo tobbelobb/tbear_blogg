@@ -18,11 +18,11 @@ body {
 .right {
 	width:255px;
 	font-size:11px;
-  text-align:right;
-  vertical-align:bottom;
-  position:absolute;
-  top:0;
-  right:0;
+	text-align:right;
+	vertical-align:bottom;
+	position:absolute;
+	top:0;
+	right:0;
 }
 .left {
 	overflow:hidden;
@@ -35,10 +35,10 @@ h1 {
 	margin-bottom: 0px;
 }
 #date {
-  font: bold 50%;
-  color: rgb(110,110,110);
-  line-height: 100%;
-  margin-bottom: 10px;
+	font: bold 50%;
+	color: rgb(110,110,110);
+	line-height: 100%;
+	margin-bottom: 10px;
 }
 #MainContent {
 	position:relative;
