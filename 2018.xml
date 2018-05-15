@@ -1,6 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
 <posts year="2018">
+<post id="hangprinter_project_57" heading="HAWS Replicating and Anchor Template" date="15-5-2018">
+<p>
+  In preparation of the Hangprinter Assembly Workshop (HAW), I tested out the Hangprinter Assembly Workshop System (HAWS) recently.
+  I'm fascinated by self-replication in software as well as in hardware, so I made Ubuntu run HAWS as a virtual machine that copied itself onto a USB stick that could then be mounted.
+  Sort of a parasitic strategy.
+  I recorded the whole thing as documentation:
+</p>
+<figure>
+  <iframe src="https://www.youtube.com/embed/gVIOwNDe3kc" width="500" height="315" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="true"></iframe>
+  <figcaption>
+  </figcaption>
+</figure>
+<p>
+  I also did another video where I create a new Hangprinter part in HAWS.
+</p>
+<figure>
+  <iframe src="https://www.youtube.com/embed/Ocwx6vzX3C8" width="500" height="315" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="true"></iframe>
+  <figcaption>
+  </figcaption>
+</figure>
+<p>
+  The part CADded in the above video has already proved to be handy during anchor assembly.
+</p>
+<figure>
+  <a href="./bilder/anchor_template0.JPG">
+    <img src="./bilder/anchor_template0_liten.JPG" alt="" width="500" height="333"/>
+  </a>
+  <figcaption>
+    Use an assembled mover (effector) to space out a pair of anchor linerollers.
+    Screw your template parts down with three small countersunk screws.
+    Put two of the screws in the very bottom of the tracks, and put the third somewhere along the long track.
+    Tighten all three screws nice and snug before you unscrew all of them by about a quarter of a turn.
+    Your template should now easily slide loose, and your anchor lineroller should easily slide onto the screw heads.
+  </figcaption>
+</figure>
+<p>
+  Now, there is a lot more than templates and OS work going on in the Hangpriter Project.
+  Yesterday, I did my first successful test print with the Super Volcano hot end over at E3D's headquarters in Oxford:
+</p>
+<figure>
+  <iframe src="https://www.youtube.com/embed/mwf0_VpTmc8" width="500" height="315" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="true"></iframe>
+  <figcaption>
+  </figcaption>
+</figure>
+<p>
+  The deposition rate of ~250g/h is very promising.
+  I hope we'll be able to go even faster, as print times currently limits the practical usefulness of the Hangprinter.
+</p>
+<p>
+  For more live updates (and a link to a live stream directly from the ceiling of E3D HQ) do check out my <a href="https://twitter.com/tobbelobb">Twitter</a>.
+</p>
+</post>
 <post id="hangprinter_project_56" heading="How to Build a Temporary Hangprinter Frame" date="19-4-2018">
 <p>
   I demoed Hangprinter v3 at the 3D Meetup Sweden recently.
