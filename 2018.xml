@@ -101,7 +101,12 @@
   With the added mechanical advantage, i got far less ringing.
   Prints done at 70 mm/s came out with much less ringing than the ~30 mm/s printed octupus depicted above, so the improvement was significant.
   Sadly, my camera broke, and I didn't bring my prints with me home from England,
-  so I can't show you pictures :-/
+  so I can't show you pictures yet.
+</p>
+<p>
+  If you're going to try the doubled abc-lines at home, use
+  <a href="https://gitlab.com/tobben/hangprinter/tree/doubled_abc">the doubled_abc dev branch over at Gitlab</a>.
+  And remember to configure your mechanical advantage and correct line lengths in Marlin's <code>Configuration.h</code>.
 </p>
 </post>
 <post id="hangprinter_project_57" heading="HAWS Replicating and Anchor Template" date="15-5-2018">
@@ -110,11 +115,6 @@
   I'm fascinated by self-replication in software as well as in hardware, so I made Ubuntu run HAWS as a virtual machine that copied itself onto a USB stick that could then be mounted.
   Sort of a parasitic strategy.
   I recorded the whole thing as documentation:
-</p>
-<p>
-  If you're going to try this at home, use
-  <a href="https://gitlab.com/tobben/hangprinter/tree/doubled_abc">the doubled_abc dev branch over at Gitlab</a>.
-  And remember to configure your mechanical advantage and correct line lengths in Marlin's <code>Configuration.h</code>.
 </p>
 <figure>
   <iframe src="https://www.youtube.com/embed/gVIOwNDe3kc" width="500" height="315" frameborder="0" allow="encrypted-media" allowfullscreen="true"></iframe>
