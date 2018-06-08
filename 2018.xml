@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
 <posts year="2018">
-<post id="hangprinter_project_58" heading="Doubling Lines, Doubling Speed" date="7-6-2018">
+<post id="hangprinter_project_58" heading="Double Lines, Double Speed" date="8-6-2018">
 <p>
   I got the chance to test out E3D's coming Super Volcano hot end recently.
   The high melt rate let me try to print really fast for the very first time.
@@ -11,10 +11,9 @@
   <iframe src="https://www.youtube.com/embed/RrSPoS3iqcE" width="500" height="315" frameborder="0" allow="encrypted-media" allowfullscreen="true"></iframe>
   <figcaption>
     During the longer travel moves in this video, the lines got very slack/over tight.
+    This is because the computations that translate between linear (cartesian) and non-linear (Hangprinter) coordinates are not going fast enough when running Marlin on an Atmega2650 processor.
     As soon as the effector moves slower, the axes resettle in their correct positions.
-    The translation between linear (cartesian) and non-linear (Hangprinter) coordinates
-    gets too rough at > 100 mm/s.
-    This can either be solved with more efficient code or a more powerful processor.
+    As all delta printer builders already know; to move fast with precision we need more processing power and/or more efficient firmware code.
   </figcaption>
 </figure>
 <figure>
@@ -23,17 +22,19 @@
   </a>
   <figcaption>
     My first try at printing near 100 mm/s.
-    Cooling was not sufficient, so I lowered speed to ca 70 mm/s mid print.
-    Printing infill at 70 - 100 mm/s with only minor hardware changes seems
-      feasible even if print quality suffered badly on this one.
+    The amount of cooling was insufficient, so I lowered print speed for the upper part of the backrest.
+    Even though surfaces are horrible, I think this print shows that printing infill at 70 - 100 mm/s is entirely feasible.
     This chair was sliced with no top layers, so the holes in the seat are intentional.
+    The chair is ca 15 cm tall.
+    (Forgot the banana, sorry.)
   </figcaption>
 </figure>
 <p>
   Encouraged by these initial results,
     I went on to try to to test printing with much stiffer strings,
     expecting better print quality.
-  The first layers looked rather good:
+  The first layers did look rather good.
+  Warning: video is noisy.
 </p>
 <figure>
   <iframe src="https://www.youtube.com/embed/OIXtI-Ro_4M" width="500" height="315" frameborder="0" allow="encrypted-media" allowfullscreen="true"></iframe>
@@ -42,8 +43,8 @@
 </figure>
 <p>
   However, the Hangprinter at E3D has very long lines, with anchors more than 4m from the printer's origin.
-  The long stiff lines started acting like springs, and the ringing was just aw... very significant.
-  The following octopus was printed at a mere ~35 mm/s:
+  The long stiff lines started acting like springs, and the ringing was very significant.
+  The following octopus was printed at a mere ~30 mm/s:
 </p>
 <figure>
   <a href="./bilder/ringing_behind_eye.JPG">
@@ -61,14 +62,47 @@
   I had to constrain xy-rotations by doubling up the A, B, and C-lines.
 </p>
 <figure>
-  <a href="./bilder/ringing_behind_eye.JPG">
-    <img src="./bilder/ringing_behind_eye_liten.JPG" alt="" width="500" height="333"/>
+  <a href="./bilder/inside_lineroller_anchor_double.png">
+    <img src="./bilder/inside_lineroller_anchor_double_liten.png" alt="" width="500" height="255"/>
   </a>
   <figcaption>
-    The tip of the nozzle rocked hard around the eye of the Octupus, even at very low print speeds.
+    The line path inside the new anchor lineroller for ABC.
+    The purple circles mark out vgroove bearings.
+    Upper line goes to the ceiling unit.
   </figcaption>
 </figure>
-
+<figure>
+  <a href="./bilder/line_going_westwards.png">
+    <img src="./bilder/line_going_westwards_liten.png" alt="" width="500" height="255"/>
+  </a>
+  <figcaption>
+    The end of the line that comes back from the effector is not tied to the lineroller.
+    It disappears out of the left edge of this image.
+  </figcaption>
+</figure>
+<figure>
+  <a href="./bilder/tied_in_the_middle.png">
+    <img src="./bilder/tied_in_the_middle_liten.png" alt="" width="500" height="255"/>
+  </a>
+  <figcaption>
+    ... and are tied together. Knot shown in red in this image.
+    Tying the lines together like this lets you rotate your effector around Z by hand to line it up with your anchors.
+  </figcaption>
+</figure>
+<p>
+  Lastly, a little video of the printer running with the doubled mechanical advantage.
+</p>
+<figure>
+  <iframe src="https://www.youtube.com/embed/bkbuvCg6B-I" width="500" height="315" frameborder="0" allow="encrypted-media" allowfullscreen="true"></iframe>
+  <figcaption>
+  </figcaption>
+</figure>
+<p>
+  With the added mechanical advantage, i got far less ringing.
+  Prints done at 70 mm/s came out with much less ringing than the ~30 mm/s printed octupus depicted above, so the improvement was significant.
+  Sadly, my camera broke, and I didn't bring my prints with me home from England,
+  so I can't show you pictures :-/
+</p>
 </post>
 <post id="hangprinter_project_57" heading="HAWS Replicating and Anchor Template" date="15-5-2018">
 <p>
@@ -76,6 +110,11 @@
   I'm fascinated by self-replication in software as well as in hardware, so I made Ubuntu run HAWS as a virtual machine that copied itself onto a USB stick that could then be mounted.
   Sort of a parasitic strategy.
   I recorded the whole thing as documentation:
+</p>
+<p>
+  If you're going to try this at home, use
+  <a href="https://gitlab.com/tobben/hangprinter/tree/doubled_abc">the doubled_abc dev branch over at Gitlab</a>.
+  And remember to configure your mechanical advantage and correct line lengths in Marlin's <code>Configuration.h</code>.
 </p>
 <figure>
   <iframe src="https://www.youtube.com/embed/gVIOwNDe3kc" width="500" height="315" frameborder="0" allow="encrypted-media" allowfullscreen="true"></iframe>
