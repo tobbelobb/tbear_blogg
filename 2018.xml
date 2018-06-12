@@ -11,7 +11,7 @@
   <iframe src="https://www.youtube.com/embed/RrSPoS3iqcE" width="500" height="315" frameborder="0" allow="encrypted-media" allowfullscreen="true"></iframe>
   <figcaption>
     During the longer travel moves in this video, the lines got very slack/over tight.
-    This is because the computations that translate between linear (cartesian) and non-linear (Hangprinter) coordinates are not going fast enough when running Marlin on an Atmega2650 processor.
+    This is because the computations that translate between linear (cartesian) and non-linear (Hangprinter) coordinates are not going fast enough when running Marlin on an Atmega2560 processor.
     As soon as the effector moves slower, the axes resettle in their correct positions.
     As all delta printer builders already know; to move fast with precision we need more processing power and/or more efficient firmware code.
   </figcaption>
@@ -98,7 +98,7 @@
   </figcaption>
 </figure>
 <p>
-  With the added mechanical advantage, i got far less ringing.
+  With the added mechanical advantage, I got far less ringing.
   Prints done at 70 mm/s came out with much less ringing than the ~30 mm/s printed octupus depicted above, so the improvement was significant.
   Sadly, my camera broke, and I didn't bring my prints with me home from England,
   so I can't show you pictures yet.
