@@ -1,6 +1,141 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
 <posts year="2018">
+<post id="hangprinter_project_59" heading="Design Goals and Electronics" date="21-6-2018">
+  <p>
+    For Hangprinter v4, I'm changing out the design goals, and hence also the electronics and the firmware.
+    TL;DR: I'm going for DuetWifi and RepRapFirmware.
+  </p>
+  <p>
+    To talk meaningfully about design goals, I feel like I must first give you some:
+  </p>
+  <h3>Hangprinter Design Goal History</h3>
+  <p>
+    The old single-units, the v1 and v2, were heavily optimized for low price.
+    On the horizon, I imagined blazing fast Hangprinter assembly workshops (HAW), since participants wouldn't need to build a frame.
+    I didn't know at the time that most people can build a rigid frame much faster than they can calibrate a cheap cable driven robot by hand.
+  </p>
+  <p>
+    The young tobben who designed the v1 and v2 had almost no money but copious amounts of time, knowledge and patience to compensate for that.
+    Hence, v1 and v2 both both felt like <a href="https://reprap.org/wiki/Darwin">Darwin</a>: An achievement worth a read and a photograph, but impractical and very very hard to build.
+  </p>
+  <p>
+    The first dual-unit, was uglier and heavier to carry around than the v2,
+      but much easier to build and operate. It also performed better as a printer.
+    In terms of simplicity and build volume per dollar, it felt close to a local design optimum.
+    For extreme low budget builds and low budget workshops, I would still use an open loop dual-unit Hangprinter (Olduhp).
+  </p>
+  <p>
+    But I knew I had to leave Olduhp and its optimum behind because it felt like a <a href="https://reprap.org/wiki/Mendel">Mendel</a>:
+    Only halfway to joyful.
+    Basic and time consuming.
+    It worked, but I was fighting it more often than I was sending my heart emojis to it.
+  </p>
+  <p>
+    I threw in Mechaduinos to solve that,
+     accepting a doubled overall price and some complicated wiring.
+    The wiring part made the single unit closed loop Hangprinter (Clsuhp) <i>incredibly</i> hard to build.
+    So closed loop dual unit was definitely the way to go, and it got to be called v3 or HP3.
+  </p>
+  <p>
+    Mechaduinos made the Hangprinter assembly workshops too expensive for nearly all private persons.
+    But the auto-calibration made weekend long HAW realistic, if not blazing fast.
+    At least if some wiring were prepared beforehand.
+  <p>
+  </p>
+    The Mechaduinos with their powerfull processors and "smartness" also gave a glimpse of a machine I'd <i>really</i> like to own and use.
+    There is a new local design optimum down that road, and I think we will call it HP4.
+    A reliable workhorse that people will enjoy using.
+  </p>
+  <p>
+    Version 4 will not prove a low budget concept anymore.
+    This time, optimization will be towards my new wants as a older, wiser, more time restrained, and less cost restrained person.
+    Hopefully, it will also produce objects that people will want to buy.
+    HP4 assembly workshops will contain less wiring, more automation, and be even more expensive.
+  </p>
+  <h3>Experiments Underway or to Come</h3>
+  <ul>
+    <li>Better main board electronics</li>
+    <li>Belt drive: This will make axes smoother, which will improve the auto-calibration. The belt drive will also be faster to print, easier to build and more quiet in operation</li>
+    <li>Line flex complensation: This will improve accuracy and build volume much in the same ways as buildup compensation did</li>
+    <li>Ceiling Landing Bracket: Both the ability to home by clamping towards it, and the ability to stay up when not unpowered will improve UX a lot</li>
+    <li>Tool changing: What E3D develops right now will be useful and relatively straightforward to implement on Hangprinter.
+         Particularly a super fast coarse infill tool is important for making HP practical and useful</li>
+    <li>Computer vision: Both for auto-calibration, sanity checks, run time compensation, and dimensional guarantees</li>
+    <li>Load Cells Along Lines: This will make the auto-calibration and line flex compensation better, which gives better print quality</li>
+    <li>Multi-unit: Independent winch units communicating wirelessly</li>
+  </ul>
+  <p>
+    Some experiments have already been started by myself and others.
+    Today I want to dive into the first one:
+  </p>
+  <h3>HP4 Electronics</h3>
+  <p>
+    I won't try to give rigorous reasoning, because the parameters are so many.
+    Instead, I will give a vague list of priorities and share my experiences.
+  </p>
+  <h3>Priorities. Ish.</h3>
+  <ol>
+    <li>Open Source Hardware</li>
+    <li>Firmware we can incorporate into HP repo, preferrably GPL</li>
+    <li>More processing power (at least 4x Atmega2650)</li>
+    <li>At least 4 pairs of exposed, driver-less step/dir pins for connecting Mechaduinos</li>
+    <li>A web interface</li>
+    <li>Exposed 3V3 serial pins for connecting Mechaduinos</li>
+    <li>Low price</li>
+    <li>24V input</li>
+    <li>Not Octopi, because of <a href="https://github.com/foosel/OctoPrint/issues/450">stuttering</a></li>
+    <li>Willingness to incorporate Hangprinter software changes upstream</li>
+    <li>Enough processing power to do onboard auto-calibration</li>
+    <li>Likely to support tool changing</li>
+    <li>Lots of motor outputs and GPIO for tool heads</li>
+  </ol>
+  <h3>Candidates</h3>
+  <h4>RAMPS+Marlin+Octopi</h4>
+  <p>
+    Most HPs in operation have this solution.
+    Builders add the optional Octopi for its web interface.
+    The stuttering is annoying on some prints, but mostly bearable.
+    The top speed limitation caused by RAMPS (Atmega2650) being slow is also annoying, but has been bearable in the pre-SuperVolcano era, since melt rates have limited print speeds anyways.
+  <p>
+  </p>
+    The required 5V->3V3 level shifting on the i2c serial pins have been a pain in the neck.
+    Faliure to get the level shifting right on first try has caused me and other builders both burned boards and lots of debugging.
+  </p>
+
+  <h4>Smoothieboard+Smoothieware</h4>
+  <p>
+  </p>
+
+  <h4>BeagleBone Black Wifi+Replicape+Redeem</h4>
+  <p>
+  </p>
+
+  <h4>DuetWifi+RepRapFirmware</h4>
+  <p>
+  </p>
+
+  <h3>The Need for Web Interface</h3>
+  <p>
+  </p>
+
+  <h3>Octopi Stuttering Issue</h3>
+  <p>
+  </p>
+
+
+  <h3>Processing Power Limiting Speed Issue</h3>
+  <p>
+  </p>
+
+  <h3>Simplify</h3>
+
+  <p>
+    Discussions and experiments at E3D last month made me very keen on making a chair of auto-generated support structure.
+    The supported model would be 1-3 people sitting in different positions.
+    The top/"interface" layers should be in TPU or some other softer material.
+  </p>
+</post>
 <post id="hangprinter_project_58" heading="Double Lines, Double Speed" date="8-6-2018">
 <p>
   I got the chance to test out E3D's coming Super Volcano hot end recently.
