@@ -11,17 +11,21 @@
   </p>
   <h3>Hangprinter Design Goal History</h3>
   <p>
-    The old single-units, the v1 and v2, were heavily optimized for low price.
+    The old single-units, the v1 and v2, were heavily optimized for self-replication and low price.
+    In terms of low unique part count and self-replication, it felt close to a local design optimum.
+  </p>
+  <p>
     On the horizon, I imagined blazing fast Hangprinter assembly workshops (HAW), since participants wouldn't need to build a frame.
     I didn't know at the time that most people can build a rigid frame much faster than they can calibrate a cheap cable driven robot by hand.
   </p>
   <p>
     The young tobben who designed the v1 and v2 had almost no money but copious amounts of time, knowledge and patience to compensate for that.
-    Hence, v1 and v2 both both felt like <a href="https://reprap.org/wiki/Darwin">Darwin</a>: An achievement worth a read and a photograph, but impractical and very very hard to build.
+    Hence, v1 and v2 in many ways both felt like <a href="https://reprap.org/wiki/Darwin">Darwin</a>: An achievement worth a read and a photograph, but impractical and very very hard to build.
   </p>
   <p>
     The first dual-unit, was uglier and heavier to carry around than the v2,
-      but much easier to build and operate. It also performed better as a printer.
+    but much easier to build and operate.
+    It also performed way better as a printer.
     In terms of simplicity and build volume per dollar, it felt close to a local design optimum.
     For extreme low budget builds and low budget workshops, I would still use an open loop dual-unit Hangprinter (Olduhp).
   </p>
@@ -52,6 +56,16 @@
     This time, optimization will be towards my new wants as a older, wiser, more time restrained, and less cost restrained person.
     Hopefully, it will also produce objects that people will want to buy.
     HP4 assembly workshops will contain less wiring, more automation, and be even more expensive.
+  </p>
+  <p>
+    In the longer run, the goal is to create a universal manufacturing machine (UMM).
+    This UMM should do the same to manufacturing as the CPU did to computing.
+    It doesn't have to solve all tasks fast, but it should solve a wide set of general tasks,
+      and it should be spread far and wide like infrastructure.
+    Whenever you want a physical object produced,
+      you should be able to tell a universal manufacturing machine to do it.
+    With craftmanship and quirks coded in,
+      designers should be free to solve problems on a higher level of abstraction.
   </p>
   <h3>Experiments Underway or to Come</h3>
   <ul>
@@ -546,9 +560,11 @@
 <p>
   The no-flex line lengths that current firmwares calculate can be used to calculate a new line length that does (approximately) account for flex:
 </p>
+<p>
 \begin{equation}
 l_{acc} = l - F/k(l),
 \end{equation}
+</p>
 <p>
   where \(l_{acc}\) is the new line length that accounts for flex, \(l\) is the line length calculated and used by current Hangprinter firmwares, \(k(l)\) is the spring constant of the suspended line, and \(F\) is the desired force to be exerted by the line.
   The four different forces \(F\) are called \(A\), \(B\), \(C\), and \(D\) in the derivation/scribble notes below.

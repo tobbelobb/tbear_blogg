@@ -974,24 +974,30 @@ The v3.2 mover also feels simple, it's hard to find very much to explain about i
   It would wind in \(2(r + \epsilon(x))\) of line if it were rotated by 2 radians.
   Without buildup compensation the resulting error would be
 </p>
+<p>
 \begin{equation}
 \text{err}_r = 2\epsilon(x).
 \end{equation}
+</p>
 <p>
   To wind in \(2r\) of line on an empty spool with radius \(R=2r\), we would need to rotate the spool by 1 radian.
   A buildup of \(\delta(x)\) would cause an error of
 </p>
+<p>
 \begin{equation}
 \text{err}_R = \delta(x).
 \end{equation}
+</p>
 <p>
   The circumference of the spool with radius \(R=2r\) is twice as long as the circumference of the spool with radius \(r\).
   The buildup caused by \(x\) m of line should therefore be ca halved on the big spool,
   which gives us the approximate total benefit of doubling spool radius:
 </p>
+<p>
 \begin{equation}
   \text{err}_R = \delta(x) \approx \epsilon(x)/2 = \text{err}_r/4.
 \end{equation}
+</p>
 <p>
   But wait, there's more. The spools depicted above are also 2 times higher than standard Hangprinter spools.
   This should cut buildup in half once again.
@@ -1546,11 +1552,13 @@ The v3.2 mover also feels simple, it's hard to find very much to explain about i
   Most RepRaps have simple linear relationships between motor position and hot end position.
   If their hot end is at the position 100 mm along an axis, their corresponding motor is at step number
 </p>
+<p>
 \begin{equation}
 m = 100\cdot \text{s},
 \tag{1}
 \label{1}
 \end{equation}
+</p>
 <p>
   where \(\text{s}\) is a constant and \(m\) is the motor's step count. <!--In Marlin such constants are stored in the array <code>axis_steps_per_unit</code>.-->
 </p>
@@ -1584,11 +1592,13 @@ m = 100\cdot \text{s},
   Looking at Figure 1, and assuming \(R\) constant, we would move \(R\alpha\) by doing 1 full motor revolution.
   Now say that the motor makes \(t\) steps per revolution, and we have our steps per mm:
 </p>
+<p>
 \begin{equation}
   s' = \frac{t}{R\alpha}.
 \tag{2}
 \label{2}
 \end{equation}
+</p>
 
 <h3>Step 2: Make Radius Depend on Position: \(R(x)\)</h3>
 <p>
@@ -1605,41 +1615,49 @@ m = 100\cdot \text{s},
 <p>
   The volume of the torus depends on the amount of line on the spool like so
 </p>
+<p>
 \begin{equation}
   \text{Volume} = h\pi(R^2 - r^2) = vx,
 \tag{3}
 \label{3}
 \end{equation}
+</p>
 <p>
   where \(h\) is the height of the spool, \(v\) is the volume per unit line, and \(x\) is the position along the line that corresponds to \(R\).
   Note that we need to give \(v\) a negative sign if we define the positive \(x\)-direction to be the direction we move when we unwind line.
   Rearranging Equation \eqref{3} gives us
 </p>
+<p>
 \begin{equation}
 R(x) = \sqrt{\frac{vx}{h\pi} + r^2},
 \tag{4}
 \label{4}
 \end{equation}
+</p>
 <h3>Step 3: Make Conversion Factor Depend on Position: \(s'(x)\)</h3>
 <p>
   Combining Equation \eqref{4} back into Equation \eqref{2}, we get
 </p>
+<p>
 \begin{equation}
 s'(x) = \frac{t}{\alpha\sqrt{\frac{vx}{h\pi} + r^2}},
 \tag{5}
 \label{5}
 \end{equation}
+</p>
 <p>
   Just for reference: apart from missing a factor to account for mechanical advantage,
   the above equation corresponds exactly to the equation I presented in a <a href="2016.html#hangprinter_project_26">previous blog post</a>, see Equation <a href="2016.html#eqn0">*</a>.
   In that equation, \(x\) is split up into the parts to account for mechanical advantage and calibration procedures.
   In this theoretical review, we rather want to simplify our notation, like this:
 </p>
+<p>
 \begin{equation}
 s'(x) = \frac{a}{\sqrt{c_0 + c_1x}},
 \tag{6}
 \label{6}
 \end{equation}
+</p>
 <p>
   where \(a = \tfrac{t}{\alpha}\), \(c_1\) is the factor that multiplies with \(D\) in Equation <a href="2016.html#eqn0">*</a> and \(c_0\) is the rest of the constants below the root sign in Equation <a href="2016.html#eqn0">*</a>.
 </p>
@@ -1692,11 +1710,13 @@ s'(x) = \frac{a}{\sqrt{c_0 + c_1x}},
   To get back on track with finding \(m\) in Equation \eqref{1}, we integrate \(s'(x)\) from zero to \(x\).
   This integral gives us a one-to-one mapping from \(x\) to \(m\).
 </p>
+<p>
 \begin{equation}
 m(x) = \int_0^{x}{s'(x')\text{d}x'} = \frac{2a}{c_1}\big(\sqrt{c_0 + c_1x} - \sqrt{c_0}\big).
 \tag{7}
 \label{7}
 \end{equation}
+</p>
 <p>
   I was quite surprised that all this theory and volume calculations got me from a straight line relationship to an almost equally simple square root relationship.
   I feared that line buildup compensation would be computationally intensive, so I'm quite pleased it's only one addition, one subtraction, one multiplication and one square root extra, compared to no compensation.

@@ -61,11 +61,13 @@
 <p id="eqn0">
   The approximation of new spool radii that I've used looks like this:
 </p>
+<p>
 \begin{equation}
 \frac{\gamma\cdot g}{\sqrt{\beta(l_0 + \omega(D_0 - D)) + r^2}},
 \tag{*}
 \label{*}
 \end{equation}
+</p>
 <p>
  where
 </p>
