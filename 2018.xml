@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
 <posts year="2018">
-<post id="hangprinter_project_59" heading="Design Goals and Electronics" date="21-6-2018">
+<post id="hangprinter_project_59" heading="Design Goals and Electronics" date="1-7-2018">
   <p>
     For Hangprinter v4, I'm changing out the design goals, and hence also the electronics and the firmware.
     TL;DR: I'm going for DuetWifi and RepRapFirmware.
@@ -772,6 +772,7 @@ l_{acc} = l - F/k(l),
   Ok, they didn't quite say it like that, and maybe we should use three terms, but I'll save you the expansion for another post.
   If you're so excited right now that you want to Taylor expand yourself: do it around the origin, and remember that
 </p>
+<p>
 $$
 \begin{align}
   a_x &amp;= \phantom{\text{ANCHOR_A_X}} - x,\\
@@ -779,6 +780,7 @@ $$
   a_z &amp;= \text{ANCHOR_A_Z} - z,
 \end{align}
 $$
+</p>
 <p>
   where ANCHOR_A_X is non-existent by convention,
         ANCHOR_A_Y is the y-coordinate of your A-anchor,
