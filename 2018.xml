@@ -67,7 +67,7 @@
 M669 K6 ; Set Hangprinter Kinematics
 M669 A<i>ax</i>:<i>ay</i>:<i>az</i> B<i>bx</i>:<i>by</i>:<i>bz</i> C<i>cx</i>:<i>cy</i>:<i>cz</i> D<i>dz</i> ; Set anchor positions
 M584 A5 B6 C7 D8 P4 ; The step/dir of Mechaduinos connect to exp E2 E3 E4 E5
-M584 E0:1:2:3:4 ; Regard all TMC2660s as stepper motor drivers
+M584 E0:1:2:3:4 ; Regard all TMC2660s as extruder motor drivers
 M569 P5 I0x0a ; The Mechaduino connected to driver 5 (E2_step/dir) ...
 M569 P6 I0x0b ; ...  is connected to i2c and has address 0x0a
 M569 P7 I0x0c ; ditto for BCD.
