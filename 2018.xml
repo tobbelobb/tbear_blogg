@@ -1,6 +1,123 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
 <posts year="2018">
+	<post id="hangprinter_project_60" heading="Crashdummies Wanted" date="9-7-2018">
+	<p>
+		The Hangprinter support in RepRapFirmware is looking for pre-alpha testers!
+		You can be the first person to combine Hangprinter with Duet, RepRapFirmware, and 32-bit controllers.
+		If you get it working, your Hangprinter will be the fastest one on earth.
+		You will be on the bleeding edge, and help Hangprinter development.
+		See <a href="#hangprinter_project_60">the previous blog post</a> and
+		<a href="https://www.duet3d.com/">duet3d.com</a> for more on how Duet and RepRapFirmware will make HP4 better than HP3.
+	</p>
+	<h3>Wiring</h3>
+	<p>
+		I don't have a Duet specific wiring diagram.
+		You will have to compare with two other diagrams:
+		Compared to <a href="https://duet3d.dozuki.com/Guide/2.%29+Wiring+your+Duet/9?lang=en">Duet's default wiring</a>,
+		you will wire the ABCD (Mechaduino) motors differently.
+		You will not connect endstops or bed heater, but you will  connect i2c cables.
+	<p>
+	</p>
+		Compared how the RAMPS is wired in the HP3 manual (click for larger):
+	</p>
+	<figure>
+		<a href="./bilder/Hangprinter_electronics_diagram_Mechaduino_RAMPS1.4_V2.3_liten.jpg">
+			<img src="./bilder/Hangprinter_electronics_diagram_Mechaduino_RAMPS1.4_V2.3_liten.jpg" alt="" width="500" height="354"/>
+		</a>
+		<figcaption>
+			The Duet doesn't need the logic level shifter.
+			The Duet's i2c pins are marked TWD0 and TWC0 on the silkscreen.
+			The Mechaduino A's pin D0 connect to the E2_dir pin on the Duet (see silkcreen).
+			The Mechaduino A's pin D1 connect to the E2_step pin on the Duet.
+			B connect to E3, C connect to E4, D connect to E5.
+			The Duet can handle 24V power, which will make your motors perform better.
+		</figcaption>
+	</figure>
+	<h3>Upload Pre-Alpha Binary</h3>
+	<p>
+		Once your Hangprinter+Duet parts are put together, upload the latest official RepRapFirware release to your Duet.
+		Recommended resources: <a href="https://duet3d.dozuki.com/c/Getting_Started">Duet getting started guide</a>, and
+		<a href="https://github.com/dc42/RepRapFirmware/releases">RepRapFirmware releases page</a>.
+	</p>
+	<p>
+		Then go on to learn about the changes I've made in the pull request,
+		<a href="https://github.com/dc42/RepRapFirmware/pull/186">here</a>.
+		I've built a Duet2_RTOS binary that you can upload directly.
+		It is found
+		<a href="http://hangprinter.org/RepRapFirmware/Duet2_RTOS/Duet2CombinedFirmware.bin">here</a>.
+		If you're experiencing RTOS related bugs, you could try the non-RTOS build.
+		Binary
+		<a href="http://hangprinter.org/RepRapFirmware/Duet2/Duet2CombinedFirmware.bin">here</a>.
+	</p>
+	<h3>RepRapFirmware Configuration</h3>
+	<p>
+		Now, with the Hangprinter compatible binary uploaded and installed, you need to configure it right.
+		There is a slightly outdated
+		<a href="https://duet3d.dozuki.com/Wiki/ConfiguringRepRapFirmwareHangprinter">Hangprinter config guide on the duet3d dozuki</a>.
+	</p>
+	<p>
+		After the dozuki-guide was written, I've added spool buildup compensation, and support for ABCD-parameters to the gcodes
+		<code>M589</code>, <code>M92</code>, <code>M201</code>, <code>M906</code>, <code>M203</code>, <code>M208</code>, <code>M350</code>, and <code>M566</code>.
+		I've also added support for torque mode (<code>G95</code>) and gcodes needed for auto calibration (<code>G96</code> and <code>M114 S1</code>).
+	</p>
+	<p>
+		Here are some gcodes I would use to set up my RepRapFirmware for use with Hangprinter and a DuetWifi:
+		<pre>
+M669 K6 ; Set Hangprinter Kinematics
+M669 A<i>ax</i>:<i>ay</i>:<i>az</i> B<i>bx</i>:<i>by</i>:<i>bz</i> C<i>cx</i>:<i>cy</i>:<i>cz</i> D<i>dz</i> ; Set anchor positions
+M584 A5 B6 C7 D8 P4 ; The step/dir of Mechaduinos connect to exp E2 E3 E4 E5
+M584 E0:1:2:3:4 ; Regard all TMC2660s as stepper motor drivers
+M569 P5 I0x0a ; The Mechaduino connected to driver 5 (E2_step/dir) ...
+M569 P6 I0x0b ; ...  is connected to i2c and has address 0x0a
+M569 P7 I0x0c ; ditto for BCD.
+M569 P8 I0x0d
+		</pre>
+		If you have configured Marlin for a Hangprinter before, you notice that many settings are missing in the above.
+		Right now, the <code>M669</code>, after first getting <code>K6</code> configured, will also accept parameters
+		<code>Q</code>, <code>W</code>, <code>R</code>, <code>U</code>, <code>O</code>, <code>G</code>, <code>H</code>, <code>J</code>.
+		These are, however, likely to change and only used for fine tuning anyways, so I don't want to document them here.
+		Should you need to use these parameters, see
+		<a href="https://github.com/tobbelobb/RepRapFirmware/blob/34c6682206ca9f00cf996723c07238b431f4ac61/src/Movement/Kinematics/HangprinterKinematics.cpp#L179">the lines where they are parsed in the source code</a>.
+		Sending a <code>M669</code> with no arguments will print settings, which will also give you hints.
+	</p>
+	<figure>
+		<a href="./bilder/Duet_pre_alpha.JPG">
+			<img src="./bilder/Duet_pre_alpha_liten.JPG" alt="" width="500" height="333"/>
+		</a>
+		<figcaption>
+			This DuetWifi will get connected to its Hangprinter parts in August.
+			Since this is open source hardware, and I'm going on holidays, I invite you to get ahead of me =)
+		</figcaption>
+	</figure>
+	<h3>Mechaduino Firmware</h3>
+	<p>
+		The Mechaduino firmware found <a href="https://gitlab.com/tobben/mechaduino-code-for-auto-calibration/tree/RepRapFirmware_compatibility">here</a>
+		should make your Mechaduinos respond to RepRapFirmware's <code>G95</code> and <code>G96</code> calls.
+	</p>
+	<h3>Getting Help</h3>
+	<p>
+		This month (July 2018) I will take my first ever holiday from the Hangprinter Project.
+		Me and my wife will seek family roots in the northernmost parts of Norway.
+		This means I won't check the forums as often as usual, if at all.
+	</p>
+	<h4>RepRapFirmware Related Questions</h4>
+	<p>
+		I'm sure the RepRapFirmware maintainer dc42, and the general community of Duet/RepRapFirmware users, will do their best to help if you ask good questions.
+		Reading the <a href="https://duet3d.dozuki.com/">Duet documentation</a> and information in
+		<a href="https://github.com/dc42/RepRapFirmware/pull/186">the pull request itself</a> will help you ask good questions.
+	</p>
+	<p>
+		The dev branch that I'm making the pull request from is found <a href="https://github.com/tobbelobb/RepRapFirmware/tree/v2-dev_hangprinter">here</a>.
+		Remember that no RepRapFirmware users have previous experience with the Hangprinter.
+	</p>
+	<h4>Hangprinter Related Questions</h4>
+	<p>
+		Both <a href="https://reprap.org/forum/read.php?423,792937">the forum thread</a> and <a href="https://www.facebook.com/groups/hangprinter">the Facebook group</a>
+		reach people who are knowledgeable about Hangprinter.
+		They are eager to help and to see you succeed. If you haven't already, give them a chance and ask a question =)
+	</p>
+</post>
 <post id="hangprinter_project_59" heading="Design Goals and Electronics" date="1-7-2018">
   <p>
     For Hangprinter v4, I'm changing out the design goals, and hence also the electronics and the firmware.
