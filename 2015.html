@@ -1,0 +1,1652 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   
+      <meta name="author" content="Torbjorn">
+      <meta name="keywords" content="Reprap, blog, development">
+      <meta name="description" content="Torbj&oslash;rn Ludvigsen's Reprap blog.">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+      <link rel="stylesheet" href="style.css" type="text/css">
+      <link href="http://vitana.se/opr3d/tbear/feed.xml" rel="alternate" type="application/rss+xml" title="Torbj&oslash;rn's Reprap blog's RSS feed"><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script><title>Torbj&oslash;rns Reprap blog</title>
+   </head>
+   <body>
+      <div id="SiteName">
+         <div class="right"><a href="#Links">Contact, archive, etc</a></div>
+         <div class="left">
+            Reprap blog 2015
+         </div>
+      </div>
+      <div id="MainContent">
+         <h1 id="hangprinter_project_18">Self replicating responsibly, I promise</h1>
+         <div class="date">5-12-2015</div>
+         <p>
+            Not only has this thing infested my house, it has convinced me I should help it self replicate on my kitchen floor. How rude!
+            :-O
+            Ok, ok, little on the latest work:
+            
+         </p>
+         <figure>
+              <iframe src="https://player.vimeo.com/video/147953445" width="500" height="375" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>
+              
+            <figcaption>
+                   Clerck printing the latest version of its own bottom plate.
+                 
+            </figcaption>
+            
+         </figure>
+         <figure>
+              <iframe src="https://player.vimeo.com/video/147953496" width="500" height="375" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>
+              
+            <figcaption>
+                   Finishing the bottom plate print. Print took 3 hrs.
+                 
+            </figcaption>
+            
+         </figure>
+         <p>
+              My calibration <i>still</i> isn't top notch, but I'm working on it.
+              To ease calibration I've done three modifications.
+              
+            <ol>
+                   
+               <li>Removed central counter weight and mounted three corner- counter weights. Helps stability, gives less rotation</li>
+                   
+               <li>Mounted free pendulum (aiming plumb) from the center of the ceiling frame part. Is used when I'm tightening the strings with
+                  <code>G3</code></li>
+                   
+               <li>Gave each parallel string <i>independent</i> adjustment screws
+               </li>
+                 
+            </ol>
+            
+         </p>
+         <p>
+              To get some more power, I also geared down the ABC motors by a factor of 2.
+            
+         </p>
+         <figure>
+              <a href="./bilder/center_lod.JPG">
+                   <img src="./bilder/center_lod_liten.JPG" alt="">
+                 </a>
+              
+            <figcaption>
+                   Picture showing the aiming plumb in a central position above Clerck.
+                 
+            </figcaption>
+            
+         </figure>
+         <figure>
+              <a href="./bilder/frame_blocks.JPG" name="ABC_frame_adjustment">
+                   <img src="./bilder/frame_blocks_liten.JPG" alt="">
+                 </a>
+              
+            <figcaption>
+                   The ABC frame parts now look like this. They have gotten independent adjustment screws and bearings gearing the motors
+               down by a factor of 2.
+                 
+            </figcaption>
+            
+         </figure>
+         <figure>
+              <a href="./bilder/skrueknute.JPG">
+                   <img src="./bilder/skrueknute_liten.JPG" alt="">
+                 </a>
+              
+            <figcaption>
+                   The new attachment point for ABC lines on board Clerck.
+                   (Missed the camera focus somewhat, sorry.)
+                 
+            </figcaption>
+            
+         </figure>
+         <p>
+              As time gets shorter and shorter, as do these posts. So long!
+            
+         </p>
+         <p>
+            - tobben
+            
+         </p><br><br><br><h1 id="hangprinter_project_17">Second finished print</h1>
+         <div class="date">30-11-2015</div>
+         <figure>
+              <iframe src="https://player.vimeo.com/video/147278540" width="500" height="375" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>
+              
+            <figcaption>
+                   After ~ 6 hours of printing, Clerck has reached a height of ca 900 mm. Finished print is 950 mm tall.
+                 
+            </figcaption>
+            
+         </figure>
+         <p>
+              The print was a very exciting one, but I'm very tired so I jump right to...
+            
+         </p>
+         <h4>Lessons learned</h4>
+         <p>
+              
+            <ol>
+                   
+               <li>Manual reposition and restart <i>is</i> possible with 10 %  print speed and lots of patience.
+                      A guiding light strip of light showing the tangent line
+                      along which a (possibly paused) Clerck is planning to move next would be very helpful when repositioning half finished
+                  prints or confused Hangprinters
+               </li>
+                   
+               <li>Clerck eats <i>lots</i> of filament. Splicing PLA with candle in the last second is not a recommended approach
+               </li>
+                   
+               <li>Extruder is not accessible enough</li>
+                   
+               <li>Coming close to singularities means skipping steps. Plan for this in Slic3r</li>
+                   
+               <li>The ABC motor closest to its anchor point is always the one (among ABC) with the heaviest load because</li>
+                     
+               <ul>
+                        
+                  <li>It usually works against pendulum movement</li>
+                        
+                  <li>It has the worst working angle (given that all anchor points are at same z-height)</li>
+                        
+               </ul>
+                   
+               <li>When ABC-lines point downwards, more counterweight must be added. D-motor reaches limit when it lifts ca 1.5 kg and has total
+                  ca 6 N downwards drag from ABC motors.
+                      My D-motor won't do z-lifts (at 40 mm/s) when working against 20 N without skipping steps
+               </li>
+                   
+               <li>Too few line segments per second make 180 degree-turning ends of rectilinear infill malformed</li>
+                   
+               <li>Calibration errors' effect grows with distance from origo</li>
+                 
+            </ol>
+            
+         </p>
+         <p>
+              I mentioned after doing the first print that the lines' slack grew with z-height.
+              This was due to calibration errors shown in the figure below
+            
+         </p>
+         <figure>
+              <a href="./bilder/what_Marlin_thought.gif">
+                   <img src="./bilder/what_Marlin_thought.gif" alt="">
+                 </a>
+              
+            <figcaption>
+                   Imagine that Clerck hangs along the dashed line and that l<sub>0</sub> is the correct length of an ABC line at home position.
+                   Blue lines reflects the firmware's view of the world according to its calibration.
+                   Red lines reflect the actual anchor point compared to Clerk.
+                   Notice that initial actual line length is correct.
+                   After homeing the printer, the red and blue lines increase/decrease synchronously (they are both controlled by Marlin).
+                   Z-error (here called d) is constant throughout the print, but the observer ABC line length error grows.
+                   
+            </figcaption>
+            
+         </figure>
+         <p>
+              The sketch above shows the angle between ABC-line and XY-plane.
+              Similar sketches apply to angles between ABC-lines and planes in all directions.
+              This explains why the effect of calibration errors grow with distance from origo (point 8 in the list above).
+            
+         </p>
+         <h4>Tightening the strings</h4>
+         <p>
+              When starting the printer, I've noticed that I often want to control the motors individually without affecting
+              position counters and step counters in the firmware.
+              I would like the other features of Marlin <code>G1</code>, like jerk look-ahead, acceleration, millimeter units etc.
+              So I altered the stepping code in <code>stepper.cpp</code> to look like this:
+              <pre>
+        WRITE(X_STEP_PIN, !INVERT_X_STEP_PIN);
+        counter_a -= current_block-&gt;step_event_count;
+        <font color="red">if(current_block-&gt;count_it){</font>
+          count_position[A_AXIS]+=count_direction[A_AXIS];
+        <font color="red">}</font>
+        // wait for drv8825 here...
+        WRITE(X_STEP_PIN, INVERT_X_STEP_PIN);
+  </pre>
+              Note that the type <code>block_t</code> got a new <code>count_it</code> member compared to original Marlin.
+              I then made Marlin accept a <code>G3</code> command with A, B, C, D and/or E arguments.
+              When I want to tighten the A and B lines 2 millimeters each, I say <code>G3 A-2 B-2</code>.
+            
+         </p>
+         <p>
+              But then there's always the issue with buffering and such during print.
+              A manual way of tightening/loosening comes in handy during long and under-prepared prints like the one in the video above.
+              So I added some length control screws in the ABC frame parts.
+              See figure below.
+            
+         </p>
+         <figure>
+              <a href="./bilder/length_control_screw.JPG">
+                   <img src="./bilder/length_control_screw_liten.JPG" alt="">
+                 </a>
+              
+            <figcaption>
+                   Screws to control ABC line lengths manually.
+                 
+            </figcaption>
+            
+         </figure>
+         <figure>
+              <a href="./bilder/long_first_layer.JPG">
+                   <img src="./bilder/long_first_layer_liten.JPG" alt="">
+                 </a>
+              
+            <figcaption>
+                   The first layer stretches across the diagonal of my sacrificed picture frame, and is ca 600 mm long.
+                   Longer first layers would be no problem if I had a bigger print bed.
+                   The observant reader can spot slightly non-linear infill lines closest to the camera.
+                   This is due to errors in calibration.
+                   The amount of over-extrusion you see leads to skipped steps, but only a few.
+                   They were handled with manual line control screws during print.
+                 
+            </figcaption>
+            
+         </figure>
+         <figure>
+              <a href="./bilder/long_first_layer2.JPG">
+                   <img src="./bilder/long_first_layer2_liten.JPG" alt="">
+                 </a>
+              
+            <figcaption>
+                   Tools were laid down on first layer's ends to keep it from warping.
+                   It wasn't enough though. After three hours, the print wobbled like a giant toy for dogs, giving mediocre print quality.
+                 
+            </figcaption>
+            
+         </figure>
+         <figure>
+              <a href="./bilder/fine_quality_part.JPG">
+                   <img src="./bilder/fine_quality_part_liten.JPG" alt="">
+                 </a>
+              
+            <figcaption>
+                   When the first layer were better clamped down and auto cooling reduced print speed for me, print quality increased drastically.
+                   It might also have an impact that there was less overhang near the top of the print.
+                   The thicker layer near the top in this picture is because the D-motor skipped steps on nozzle lifts (see point 6 in the
+               numbered list above).
+                 
+            </figcaption>
+            
+         </figure>
+         <p>
+              I suspect Clerck's most useful feature is the ability to print long things.
+              Long things get stronger if layers are along the longest direction of the object, so I guess I should be concentrating on
+            first layers.
+              But printing high was a lot of fun.
+            
+         </p>
+         <p>
+              Plans forward include automatic homeing (see <a href="http://www.appropedia.org/Clerck,_a_RepRap_3D_printer_hanging_from_the_ceiling#Home_position">here</a>)
+              and tall, flexible guides to prevent filament and power chords from getting grounded by gears or melted by outside of hot
+            end.
+              Until then, bye bye.
+            
+         </p>
+         <p>
+            - tobben
+            
+         </p><br><br><br><h1 id="hangprinter_project_16">CPUs, sqrt and free design hardware</h1>
+         <div class="date">28-11-2015</div>
+         <p>
+              I've been dreaming some more about a full free design, open source hardware tool chain.
+              It might seem like the OSHW movement is a far way from tinkering with free DIY CPUs, but I'm not sure it's actually that
+            far off.
+            
+         </p>
+         <p>
+              Lack of perceived CPU freedom is partly because of ignorance (well, lack of time), of course.
+              SPARC is open source and that the Intel 4004 schematics are <a href="http://4004.com/mcs4-masks-schematics-sim.html">available</a>.
+              However, I don't see many easy-to-build CPUs around.
+            
+         </p>
+         <p>
+              I'm not a silicon expert, but I suspect that the best place to grow a free CPU project would be within/linked to the excellent
+            AVR and Arduino communities.
+              The first DIY CPU will probably need to resemble currently common (among tinkerers) CPUs, to attract enough contributors.
+              Same logic that made GNU so similar to Unix.
+              Since I hope such an ambitious project will emerge, I'm not a fan of adding complex and expensive 32-bit GHz processors
+            to my RepRap designs.
+            
+         </p>
+         <p>
+              I know others have good reasons for loving 32-bit.
+              
+            <ul>
+                   
+               <li>Non-Cartesian printers are gaining popularity and speed increases.</li>
+                   
+               <li>Common firmwares discretizes straight gcode lines tiny line segments.</li>
+                   
+               <li>These line segments need to be kept very short to avoid visible discretization errors.</li>
+                 
+            </ul>
+              Users simply want more segments per second than current firmwares for 8-bit processors gives them.
+            
+         </p>
+         <p>
+              I'm no master profiler or optimizer, I'm more a kamikaze-hack-guy, but I thought I'd share a code blob with you.
+              The <code>rough_sqrt</code> has an error of ca 0.06 mm for an input of 11520000 mm (that is sum of two squared 2400 mm lines).
+              Error seems to grow like the square root of the input, that is linearly with x and y if used like <code>rough_sqrt(x*x + y*y)</code>.
+              Execution time is somewhere between 80 % and 90 % of the standard (avr-libc) <code>sqrt</code>.
+            
+         </p>
+         <p>
+              Be warned that it's not well tested, it won't work on NaN, Inf or 0,
+              it will treat negative numbers like positive ones.
+              <pre>
+<font color="grey">float rough_sqrt(float x){</font>
+<font color="blue">                   /* r21 is iteration exponent
+                    * r20.r19.r18 is iteration mantissa
+                    * r25 is both input and return exponent
+                    * r24.r23.r22 is input and return mantissa
+                    * Sorry for not using conventions
+                    * r18 = rB0
+                    * r19 = rB1
+                    * r20 = rB2
+                    * r21 = rB3
+                    * r22 = rA0
+                    * r23 = rA1
+                    * r24 = rA2
+                    * r25 = rA3
+                    * r26 = rBE */</font>
+  <font color="red">__asm__ volatile</font><font color="grey">(</font>
+<font color="grey">"</font><font color="purple">	lsl</font>	<font color="black">r24</font><font color="grey">\n\t"</font>
+<font color="grey">"</font><font color="purple">	rol</font>	<font color="black">r25</font><font color="grey">\n\t"</font> <font color="blue">		// kick sign bit out</font>
+<font color="grey">"</font><font color="purple">	cpi</font>	<font color="black">r25, 0xff</font><font color="grey">\n\t"</font>
+<font color="grey">"</font><font color="purple">	breq	.then</font><font color="grey">\n\t"</font>
+<font color="grey">"</font><font color="purple">	ror</font>	<font color="black">r24</font><font color="grey">\n\t"</font>
+<font color="grey">"</font><font color="purple">	rjmp .else</font><font color="grey">\n\t"</font>
+<font color="grey">"</font><font color="purple">then:</font><font color="grey">\n\t"</font>
+<font color="grey">"</font><font color="purple">	lsr</font>	<font color="black">r24</font><font color="grey">\n\t"</font>
+<font color="grey">"</font><font color="purple">else:</font><font color="grey">\n\t"</font> <font color="blue">				// __fp_splitA substitute ends here</font>
+<font color="grey">"</font><font color="purple">	subi</font>	<font color="black">r25, 127</font><font color="grey">\n\t"</font>
+<font color="grey">"</font><font color="purple">	clr</font>	<font color="black">r0</font><font color="grey">\n\t"</font>
+<font color="grey">"</font><font color="purple">	ldi</font>	<font color="black">r26, 0x60</font><font color="grey">\n\t"</font>
+<font color="grey">"</font><font color="purple">	ldi</font>	<font color="black">r20, 0xa0</font><font color="grey">\n\t"</font>
+<font color="grey">"</font><font color="purple">	mov</font>	<font color="black">r19, r1</font><font color="grey">\n\t"</font>
+<font color="grey">"</font><font color="purple">	subi</font>	<font color="black">r24, 0x80</font><font color="grey">\n\t"</font>
+<font color="grey">"</font><font color="purple">	ror</font>	<font color="black">r25</font><font color="grey">\n\t"</font>
+<font color="grey">"</font><font color="purple">	brcc</font>	<font color="black">1f</font><font color="grey">\n\t"</font>
+<font color="grey">"</font><font color="purple">	subi</font>	<font color="black">r24, lo8(-0x40)</font><font color="grey">\n\t"</font>
+<font color="grey">"</font><font color="purple">Loop:</font><font color="grey">\n\t"</font>
+<font color="grey">"</font><font color="purple">	lsl</font>	<font color="black">r23</font><font color="grey">\n\t"</font>
+<font color="grey">"</font><font color="purple">	rol</font>	<font color="black">r24</font><font color="grey">\n\t"</font>
+<font color="grey">"</font><font color="purple">	brcs</font>	<font color="black">2f</font><font color="grey">\n\t"</font>
+<font color="grey">"</font><font color="purple">1:	cp</font>	<font color="black">r19, r23</font><font color="grey">\n\t"</font>
+<font color="grey">"</font><font color="purple">	cpc</font>	<font color="black">r20, r24</font><font color="grey">\n\t"</font>
+<font color="grey">"</font><font color="purple">	brcc</font>	<font color="black">3f</font><font color="grey">\n\t"</font>
+<font color="grey">"</font><font color="purple">2:	sub</font>	<font color="black">r23, r19</font><font color="grey">\n\t"</font>
+<font color="grey">"</font><font color="purple">	sbc</font>	<font color="black">r24, r20</font><font color="grey">\n\t"</font>
+<font color="grey">"</font><font color="purple">	or</font>	<font color="black">r19, r1</font><font color="grey">\n\t"</font>
+<font color="grey">"</font><font color="purple">	or</font>	<font color="black">r20, r26</font><font color="grey">\n\t"</font>
+<font color="grey">"</font><font color="purple">3:	lsr</font>	<font color="black">r26</font><font color="grey">\n\t"</font>
+<font color="grey">"</font><font color="purple">	ror</font>	<font color="black">r1</font><font color="grey">\n\t"</font>
+<font color="grey">"</font><font color="purple">	ror</font>	<font color="black">r0</font><font color="grey">\n\t"</font>
+<font color="grey">"</font><font color="purple">	eor</font>	<font color="black">r19, r1</font><font color="grey">\n\t"</font>
+<font color="grey">"</font><font color="purple">	eor</font>	<font color="black">r20, r26</font><font color="grey">\n\t"</font>
+<font color="grey">"</font><font color="purple">	brcc	.Loop</font><font color="grey">\n\t"</font>
+<font color="grey">"</font><font color="purple">	ldi</font> <font color="black">r22, 170</font><font color="grey">\n\t"</font>
+<font color="grey">"</font><font color="purple">	mov</font>	<font color="black">r23, r19</font><font color="grey">\n\t"</font>
+<font color="grey">"</font><font color="purple">	mov</font>	<font color="black">r24, r20</font><font color="grey">\n\t"</font>
+<font color="grey">"</font><font color="purple">	subi</font>	<font color="black">r25, lo8(-127)</font><font color="grey">\n\t"</font>
+<font color="grey">"</font><font color="purple">	lsl</font>	<font color="black">r24</font><font color="grey">\n\t"</font>
+<font color="grey">"</font><font color="purple">	lsr</font>	<font color="black">r25</font><font color="grey">\n\t"</font>
+<font color="grey">"</font><font color="purple">	ror</font>	<font color="black">r24</font><font color="grey">\n\t"</font>
+<font color="grey">"</font><font color="purple">	ret</font><font color="grey">\n\t"</font>
+                   <font color="grey">);</font>
+<font color="grey">}</font>
+  </pre>
+            </p>
+         <p>
+              I admit I really don't understand everything that's going on in here.
+              I removed most of my comments because I suspect they contain errors that would confuse a more experienced assembly programmer.
+              If you want to understand some of it, look for <code>__fp_split3.S</code> and <code>sqrt.S</code> in the <a href="https://savannah.nongnu.org/projects/avr-libc/">avr-libc repo</a>.
+            
+         </p>
+         <p>
+              This is not a perfect magic solution, its mainly just ignoring bottom byte of mantissa as well as all corner cases.
+              The approach could be further improved by tailoring a <code>rough_square</code> function with less precision, since the
+              precision of <code>x*x + y*y</code> is squashed by <code>rough_sqrt</code> anyways.
+            
+         </p>
+         <p>
+              Is it a drop-in replacement for Marlin's <code>calculate_delta</code> function?
+              It would be nice if someone more experienced than me would give his/her ten cents, I don't know.
+              Put it here just to share my thoughts on why someone would put hours into assembly programming pesky 8-bit CPUs.
+              I should probably approach the Marlin developers with profiling- and code questions.
+            
+         </p>
+         <p>
+              By the way, I've programmed a bit (maybe 5 - 7 %) on an AVR-simulator.
+              Hope some day we can automate AVR assembly generation (the blob above took hours and hours).
+              An AVR simulator would be one way to work on it.
+              Repo <a href="https://github.com/tobbelobb/simulate-avr-cpu">here</a>.
+            
+         </p>
+         <p>
+            - tobben
+            
+         </p><br><br><br><h1 id="hangprinter_project_15">Making the Hangprinter project easier to follow</h1>
+         <div class="date">27-11-2015</div>
+         <h4>Subscriptions</h4>
+         <p>
+              I've made an <a href="http://vitana.se/opr3d/tbear/feed.xml">RSS feed</a> for this blog.
+              How it looks and how subscriptions work depend on your browser and subscriptions manager.
+              Be warned that this blog is all i one HTML document for now, so loading RSS previews and such will load the complete blog.
+              However, the CSS and markup is so simple that reading the blog within any HTML+CSS rendering program will probably work
+            flawlessly.
+            
+         </p>
+         <p>
+              It's also possible to follow my <a href="">Vimeo user</a>.
+            
+         </p>
+         <h4>Table of links</h4>
+         <p>
+              Note that this is a snapshot of links from 27 Nov. 2015.
+              I expect links to start breaking within in a couple of months.
+            
+         </p>
+         <table border="1">
+              
+            <tbody>
+               <tr>
+                      
+                  <td> Source code:  </td>
+                      
+                  <td> <a href="https://github.com/tobbelobb/hangprinter">Github repo</a> 
+                  </td>
+                      
+                  <td> <a href="https://github.com/tobbelobb/hangprinter/tree/master/firmware/Marlin/Marlin">[link]</a> quick-link to firmware
+                       
+                  </td>
+               </tr>
+                 
+               <tr>
+                      
+                  <td> Licences:     </td>
+                      
+                  <td> The repo has GPLv2, the blog uses Gnu Free Documentation Licence, the Vimeo videos are CC-BY licenced </td>
+                      
+                  <td> Follows FSF's recommendations
+                       
+                  </td>
+               </tr>
+                 
+               <tr>
+                      
+                  <td> Blog posts:</td>
+                      
+                  <td> <a href="2014.html#Hangprinter">[1]</a>,
+                              <a href="2015.html#Slideprinter_Update">[2]</a>,
+                              <a href="2015.html#hangprinter_project_2">[3]</a>,
+                              <a href="2015.html#hangprinter_project_3">[4]</a>,
+                              <a href="2015.html#hangprinter_project_4">[5]</a>,
+                              <a href="2015.html#hangprinter_project_5">[6]</a>,
+                              <a href="2015.html#hangprinter_project_6">[7]</a>,
+                              <a href="2015.html#hangprinter_project_7">[8]</a>,
+                              <a href="2015.html#hangprinter_project_8">[9]</a>,
+                              <a href="2015.html#hangprinter_project_9">[10]</a>,
+                              <a href="2015.html#hangprinter_project_10">[11]</a>,
+                              <a href="2015.html#hangprinter_project_11">[12]</a>,
+                              <a href="2015.html#hangprinter_project_12">[13]</a>,
+                              <a href="2015.html#hangprinter_project_13">[14]</a>,
+                              <a href="2015.html#hangprinter_project_14">[15]</a>,
+                              <a href="2015.html#hangprinter_project_15">[16]</a>,
+                              <a href="2015.html#hangprinter_project_16">[17]</a>,
+                              <a href="2015.html#hangprinter_project_17">[18]</a>,
+                              <a href="2015.html#hangprinter_project_18">[19]</a>,
+                              <a href="2016.html#hangprinter_project_19">[20]</a> 
+                  </td>
+                      
+                  <td> Numbered from oldest ([1]) to most recent ([20])
+                       
+                  </td>
+               </tr>
+                 
+               <tr>
+                      
+                  <td> Development thread: </td>
+                      
+                  <td> <a href="http://forums.reprap.org/read.php?178,344022,355803">at forums.reprap.org</a> 
+                  </td>
+                      
+                  <td> Some activity
+                       
+                  </td>
+               </tr>
+                 
+               <tr>
+                      
+                  <td> Wiki page appropedia.org: </td>
+                      
+                  <td> <a href="/Clerck,_a_RepRap_3D_printer_hanging_from_the_ceiling" title="Clerck, a RepRap 3D printer hanging from the ceiling">[link]</a> 
+                  </td>
+                      
+                  <td> Updated
+                       
+                  </td>
+               </tr>
+                 
+               <tr>
+                      
+                  <td> Wiki page reprap.org: </td>
+                      
+                  <td> <a href="http://reprap.org/wiki/Hangprinter">[link]</a> 
+                  </td>
+                      
+                  <td> Outdated
+                       
+                  </td>
+               </tr>
+                 
+               <tr>
+                      
+                  <td> All videos: </td>
+                      
+                  <td> <a href="https://vimeo.com/user23166500/videos/page:1/sort:date">My Vimeo user</a> 
+                  </td>
+                      
+                  <td></td>
+                    
+               </tr>
+                 
+            </tbody>
+            
+         </table>
+         <p>
+            - tobben
+            
+         </p><br><br><br><h1 id="hangprinter_project_14">First finished print</h1>
+         <div class="date">23-11-2015</div>
+         <p>
+              Hello blog, hello World, hello guys and girls.
+              Did another test print today, and this time it finished.
+            
+         </p>
+         <figure>
+              <iframe src="https://player.vimeo.com/video/146706733" width="500" height="375" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>
+              
+            <figcaption>
+                   After two hours of print, the lines have gotten a ~2 mm slack.
+                   The observant viewer could spot the unwanted pendulum movements as well as the jumping slack line.
+                 
+            </figcaption>
+            
+         </figure>
+         <figure>
+              <a href="./bilder/sinusoidal_error.JPG">
+                   <img src="./bilder/sinusoidal_error_liten.JPG" alt="">
+                 </a>
+              
+            <figcaption>
+                   An attempt to depict the linearly growing sinusoidal error.
+                   My current theory is that it is due to accumulating roundoff errors in the firmware.
+                   No direction were notably more slack than any other, no skipped steps were heard.
+                   Skipped steps are very unlikely to be the cause since the error grew even if all lines were slack.
+                   The final height of the figure came out close to perfect as far as I can measure (admittedly not very accurate, but still).
+                   Close to the base of the print, error is surprisingly small, comparable with what I get out of my old Mendel.
+                 
+            </figcaption>
+            
+         </figure>
+         <figure>
+              <a href="./bilder/print_and_frog.JPG">
+                   <img src="./bilder/print_and_frog_liten.JPG" alt="">
+                 </a>
+              
+            <figcaption>
+                   Don't ask me about the intended use of this shape, I don't know.
+                   It's edge demonstrates nicely how Clerck doesn't handle sharp turns very well.
+                   The droplets along the edge comes from sharp 180 degree turns (100 percent rectilinear infill), which gives a tiny rotation
+               around an axis in the xy-plane (lifts one corner of Clerck).
+                   This rotation would be minimized by decreasing the printer's counter weights along the D-axis, so the printer's corner
+               gets heavier/harder to lift.
+                 
+            </figcaption>
+            
+         </figure>
+         <figure>
+              <a href="./bilder/just_finished_print_2.JPG">
+                   <img src="./bilder/just_finished_print_2_liten.JPG" alt="">
+                 </a>
+              
+            <figcaption>
+                   A little portrait at the end, even though we all know what the printer looks like by now.
+                   Full print time for this was 2 hours and 16 minutes.
+                   Weight of the print is 190 grams, so extruder had an average output of 23 milligrams per second.
+                   Both height and width of print is 150 mm.
+                   Print speed was ca 35 mm/s.
+                 
+            </figcaption>
+            
+         </figure>
+         <p>
+            I will compensate the accumulating slackness of the lines by adding manual tightening screws at each anchor point.
+            In the longer run I will try to get away from 32 bit floats in firmware anyways, since it limits scalability.
+            Having said that, I guess I have to try to implement some kind of custom bignum for 8-bit hangprinter firmwares sometime ;)
+            
+         </p>
+         <p>
+            - tobben
+            
+         </p><br><br><br><h1 id="hangprinter_project_13">Meet Clerck, the hanging RepRap</h1>
+         <div class="date">22-11-2015</div>
+         <p>
+              Did the first test print just now:
+            
+         </p>
+         <figure>
+              <iframe src="https://player.vimeo.com/video/146566086" width="500" height="375" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>
+              
+            <figcaption>
+                   The hanging RepRap trying to do its very first print for the fourth time.
+                 
+            </figcaption>
+            
+         </figure>
+         <figure>
+              <iframe src="https://player.vimeo.com/video/146566059" width="500" height="375" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>
+              
+            <figcaption>
+                   A couple of minutes later, same print as above.
+                 
+            </figcaption>
+            
+         </figure>
+         <figure>
+              <a href="./bilder/it_works.JPG">
+                   <img src="./bilder/it_works_liten.JPG" alt="">
+                 </a>
+              
+            <figcaption>
+                   The printed OSHW logo.
+                 
+            </figcaption>
+            
+         </figure>
+         <figure>
+              <a href="./bilder/oshw_logo_Clerks_first_print.JPG">
+                   <img src="./bilder/oshw_logo_Clerks_first_print_liten.JPG" alt="">
+                 </a>
+              
+            <figcaption>
+                   Closer look at the printed OSHW logo.
+                   The sparse pattern was not intended and is due to wrong nozzle diameter setting in Slic3r.
+                   Looks kind of cool though.
+                   With 0.8 mm nozzle, even two 0.6 mm layers of a sparse pattern like this is quite stiff.
+                 
+            </figcaption>
+            
+         </figure>
+         <p>
+              Even though the driver chip for the C-motor broke after ca 12 minutes of printing, I'm very happy with todays test printing.
+              Broken chips are no surprise since they have taken floor-crashes, very high currents with suboptimal cooling, soldering
+            directly on legs and
+              manual motor turning during this development phase.
+              I'll replace it and print some more tomorrow.
+            
+         </p>
+         <p>
+              Now that the printer works, it should get a name.
+              Following RepRap tradition, I'm naming it after a biologist: Carl Alexander Clerck, or just Clerck.
+              I chose him because he worked with Swedish spiders a long time ago.
+              The printer moves kind of like a spider with four spinnerets, and I'm Swedish, so it fits. Kind of.
+            
+         </p>
+         <p>
+            - tobben
+            
+         </p><br><br><br><h1 id="hangprinter_project_12">Meet the Tble-extruder!</h1>
+         <div class="date">20-11-2015</div>
+         <figure>
+              <a href="./bilder/mounted_Terriblestruder2.JPG">
+                   <img src="./bilder/mounted_Terriblestruder2_liten.JPG" alt="">
+                 </a>
+              
+            <figcaption>
+                 The mounted Tble-extruder on the (upside-down) Hangprinter.
+                 Looks kind of the sketches and mock-up in my previous post, but it's been more work than I expected (hoped for...).
+                 
+            </figcaption>
+            
+         </figure>
+         <p>
+              I've called it Tble-extruder here since I think of it as "Terrible extruder" but hope to be able to call it "Table extruder"
+            within a few days.
+              My plan is to print a little table with it when I've got it working.
+            
+         </p>
+         <p>
+              As stated in the previous figure caption, it's been many hours of work so far.
+              The CAD design described in my previous post wasn't really well thought out.
+              Don't follow my footsteps and try to build the extruder described in the previous post.
+              Since it's not very interesting, I've put the list of mistakes in another document (<a href="./mistakes_in_Tble_extruder_design_and_build.html">here</a>).
+            
+         </p>
+         <p>
+              Anyways, putting it together has had its pleasant moments. Pictures of a couple of them below.
+            
+         </p>
+         <figure>
+              <a href="./bilder/the_Terriblestruder.JPG">
+                   <img src="./bilder/the_Terriblestruder_liten.JPG" alt="">
+                 </a>
+              
+            <figcaption>
+                   Still happily unaware that the width is way off when I take this picture.
+                   It looks nice.
+                 
+            </figcaption>
+            
+         </figure>
+         <figure>
+              <a href="./bilder/e3d_volcano_in_terriblestruder.JPG">
+                   <img src="./bilder/e3d_volcano_in_terriblestruder_liten.JPG" alt="">
+                 </a>
+              
+            <figcaption>
+                   The idea of what I was after.
+                   Notice how the hot end is offset compare to the hobbed bolt.
+                   Also notice the sanded gear teeth.
+                   Changing shape gears by hand is either impossible or just very time consuming.
+                   This time it went all right, but I really wish I had a RepRap at home now.
+                 
+            </figcaption>
+            
+         </figure>
+         <p>
+            - tobben
+            
+         </p><br><br><br><h1 id="hangprinter_project_11">Extruder work</h1>
+         <div class="date">16-11-2015</div>
+         <p>
+              Hi! Just a small update.
+              I've done some design work on the combined extruder and hot end mount.
+            
+         </p>
+         <figure>
+              <a href="./bilder/hang_extruder.png">
+                   <img src="./bilder/hang_extruder_liten.png" alt="">
+                 </a>
+              
+            <figcaption>
+                   A view from the side of the solution I've chosen.
+                   It's Wade's style extruder with one hobbed bolt and 1:3 gearing.
+                   I know already that this design will limit the printers speed and reliability.
+                   A pair of hobbed bolts working together (rather than one hobbed bolt and one 623 bearing)
+                     and a gear ratio closer to 1:2 would be better suited for Hangprinter's needs.
+                   The design is like this for now because of limited space between the other motors.
+                 
+            </figcaption>
+            
+         </figure>
+         <figure>
+              <a href="./bilder/hang_extruder3.png">
+                   <img src="./bilder/hang_extruder3_liten.png" alt="">
+                 </a>
+              
+            <figcaption>
+                   Another viewing angle of the same extruder.
+                   You may notice that the large extruder gear appears in a rectangular hole at the top.
+                   This is to allow the needed radius of the large gear.
+                   When I redesign the extruder later, I will try harder to preserve symmetry...
+                 
+            </figcaption>
+            
+         </figure>
+         <figure>
+              <a href="./bilder/nice-fit.JPG">
+                   <img src="./bilder/nice-fit_liten.JPG" alt="">
+                 </a>
+              
+            <figcaption>
+                   The physical extruder and hot end mount with the E3d v6 Volcano mounted.
+                   It's really fixed, no wobbling at all.
+                 
+            </figcaption>
+            
+         </figure>
+         <p>
+              If we're lucky, test printing can start tomorrow =)
+            
+         </p>
+         <p>
+            - tobben
+            
+         </p><br><br><br><h1 id="feasability_study">So what takes me so long?</h1>
+         <div class="date">28-10-2015</div>
+         <p>
+              The last 20 days, I've been writing on this report about the resin 3D-printing market.
+              As a part of solving my bureaucratic problems I needed to complete a 80 hour
+              project aiming to improve the quality of my university programme.
+              I got a request from the head of the programme, and the result is
+              <a href="https://vitana.se/opr3d/tbear/pdf/produktrapport.pdf">this report</a>.
+            
+         </p>
+         <p>
+              Be warned that it's probably only interesting for those who read Swedish and
+              hold a fair interest in cheap resin 3D printers...
+            
+         </p>
+         <p>
+            - tobben
+            
+         </p><br><br><br><h1 id="hangprinter_project_10">Hardware upgrades and bureaucratic problems</h1>
+         <div class="date">6-10-2015</div>
+         <p>
+              This post has some practical stuff about my master's thesis, but
+              first I want to show you the hardware upgrades in a little video:
+            
+         </p>
+         <figure>
+              <iframe src="https://player.vimeo.com/video/141524128" width="500" height="375" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>
+              
+            <figcaption>
+                   The Hangprinter dry printing a 270 mm square with sparse infill at 52.5 mm/s.
+                   Notice how leftmost lines get slack at rightmost positions.
+                 
+            </figcaption>
+            
+         </figure>
+         <p>
+              You'll notice that the motor gears and the middle sandwich of spools and gears are changed since the last video.
+              The motor gears now have one tooth less, and the sandwich gears have one tooth more.
+              The spools have also gotten a smaller radius.
+              This have geared the motors down by 14 percent, increasing torque and hence print volume.
+              Since motors spin at only ca 1 revolution per sec (at most when speed is 52.5 mm/s), dynamical torque
+              drops less than 14 percent due to higher speed.
+              That is, gearing down motors gave a net force gain at 52.5 mm/s.
+            
+         </p>
+         <p>
+              Disks have been added above and below spools to keep the lines in place.
+              Without the disks, I spent more than half my testing time putting lines back in place.
+              With the disks lines have consistently stayed put.
+            
+         </p>
+         <p>
+              There are still a long wish list of technical improvements, and I expect it to grow.
+              
+            <ul>
+                   
+               <li>A mounted hot end</li>
+                   
+               <li>An extruder</li>
+                   
+               <li>Re-mount a modified drv8825 for D-motor (previous one got smashed) and get rid of counter weights.</li>
+                   
+               <li>Feeding the stepper drivers a higher voltage than 12 V would give stepper motors more torque.
+                          Higher voltage will give the stepper driver the possibility of increasing motor current faster.
+                          Experience shows that the drv8825 is able to take advantage of this, resulting in more motor torque.
+               </li>
+                   
+               <li>Faster code for computing <code>sqrt((x-x0)^2 + (y-y0)^2 + (z-z0)^2)</code> would allow
+                          more segments per second/a smaller processor/more closed loop processing.
+               </li>
+                   
+               <li>A cheap accelerometer and gyroscope (like the MPU-6050
+                           <a href="https://dlnmh9ip6v2uc.cloudfront.net/datasheets/Components/General%20IC/PS-MPU-6000A.pdf">datasheet</a>)
+                           would enable both automatic homing (think crashing hot end into build plate style) and some other closed loop feedback.
+                          Excellent free code to build upon is found in the
+                           <a href="http://www.varesano.net/projects/hardware/FreeIMU">FreeIMU project</a>.
+                          Since print times will be long, closed loop feedback is highly desirable.
+               </li>
+                   
+               <li>Using <code>nop</code> for timing the drv8825s wastes up to ca 4000 processor cycles per second (52.5 mm/s ref speed, 1/8 stepping).
+                          This is only 0.025 percent of 16 MHz, but a pure waste. Doubling speed and quadrupling microstepping would give 2
+                  percent waste.
+                          Notice that this waste can not be reduced by increasing processor frequency.
+               </li>
+                 
+            </ul>
+            
+         </p>
+         <p>
+              However useful the improvements above, they probably won't be deployed soon.
+              I'll explain why in the second part of this post.
+            
+         </p>
+         <h3>The second part of this post</h3>
+         <p>
+              My engineering studies contain university courses from two different Swedish universities.
+              Accreditation complications has forced me to move back across the country and study undergraduate math again for six months.
+              Because of this and my former supervisor's schedule, I'm now searching for new external supervisor for my half-finished
+            master's.
+              We have two supervisors involved in a Swedish engineering masters:
+                one from within the university and one from a company or another university (the external one).
+              I'm searching for a new external supervisor for this project.
+              My new external supervisor will get paid for the full master's.
+              Any suggestions regarding master's supervision? Please email me at tobben(AT)fastmail(DOT)fm or post
+              to <a href="http://forums.reprap.org/read.php?178,344022,page=2">the forum</a>.
+            
+         </p>
+         <p>
+            - tobben
+            
+         </p><br><br><br><h1 id="hangprinter_project_9">Pics from calibration</h1>
+         <div class="date">21-9-2015</div>
+         <p>
+              Thought I'd just post some pictures from the calibration run yesterday.
+            
+         </p>
+         <figure>
+              <a href="./bilder/gronaringar1.jpg">
+                   <img src="./bilder/gronaringar1_liten.jpg" alt="green circles">
+                 </a>
+              
+            <figcaption>
+                   The circles should have been complete, but as we see they are not.
+                   Since we don't really know how flat the floor is and since the tip of the pen is very short,
+                   this doesn't tell us very much about Hangprinter's z-error. Photo: Olof
+                 
+            </figcaption>
+            
+         </figure>
+         <figure>
+              <a href="./bilder/jamforelse.jpg">
+                   <img src="./bilder/jamforelse_liten.jpg" alt="green and pink circles">
+                 </a>
+              
+            <figcaption>
+                   This comparison tells us that removing the 5 cm error in calibration really did help. Photo: Olof
+                 
+            </figcaption>
+            
+         </figure>
+         <figure>
+              <a href="./bilder/ringer-og-tommestokk-2.JPG">
+                   <img src="./bilder/ringer-og-tommestokk-2_liten.JPG" alt="green and pink circles">
+                 </a>
+              
+            <figcaption>
+                   The outermost circle should have had a radius of 125 mm.
+                   Error in the xy-plane seems to be less than 3 mm.
+                   (Based on my best efforts with calipers and a pair of compasses, not this measurment stick...)
+                 
+            </figcaption>
+            
+         </figure>
+         <figure>
+              <a href="./bilder/cool-vinkel.jpg">
+                   <img src="./bilder/cool-vinkel_liten.jpg" alt="fixing">
+                 </a>
+              
+            <figcaption>
+                   A friend came by and gave some help and took some pictures. The guy on the floor is me. Photo: Olof
+                 
+            </figcaption>
+            
+         </figure>
+         <p>
+              I'm going into hardware upgrades for some days now, so update frequency may slow down.
+            
+         </p>
+         <p>
+            - tobben
+            
+         </p><br><br><br><h1 id="hangprinter_project_8">More progress</h1>
+         <div class="date">20-9-2015</div>
+         <p>
+              As it turned out, I had made a 5 cm mistake when measuring positions of anchor points.
+              Did one print today with much better precision:
+            
+         </p>
+         <figure>
+              <iframe src="https://player.vimeo.com/video/139842830" width="500" height="375" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>
+            
+         </figure>
+         <p>
+            - tobben
+            
+         </p><br><br><br><h1 id="hangprinter_project_7">Some progress..</h1>
+         <div class="date">18-9-2015</div>
+         <p>
+              Today I'm kind of split in two. One part of me is very satisfied with having a moving robot, even though precision
+              is ~ 1cm. I want to play around with it, make it go high, low, fast and slow.
+            
+         </p>
+         <figure>
+              <a href="./bilder/hangprinter1-posing.JPG">
+                   <img src="./bilder/hangprinter1-posing_liten.JPG" alt="Calibration circles">
+                 </a>
+              
+            <figcaption>
+                   The Hangprinter and its first calibration circles. In the direction along the measurement stick, precision is ~2 mm, while
+               radius in the
+                   right-left direction in the picture is 5 mm too small.
+                   The circles being half indicates a z-error of at least 0.2 mm.
+                   Circles are a good calibration pattern because the d-axis (upwards) is constant during circular movement.
+                   Hence any errors in the abc-directions will affect line thickness, since we will also get a z-error, given that
+                   the floor and the ceiling frame part are parallel.
+                 
+            </figcaption>
+            
+         </figure>
+         <p>
+              I'm also happy because as a first prototype, Hangprinter has shown to be a rigid enough construction for things like 3d-printing,
+              when calibrated such that 4 or more abc-lines stay tight, as this video shows:
+            
+         </p>
+         <figure>
+              <iframe src="https://player.vimeo.com/video/139691092" width="500" height="375" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>
+            
+         </figure>
+         <p>
+              On the other hand, some large improvements need to me made before further testing can get up to speed.
+              Here's a little priority list for myself:
+            
+         </p>
+         <ol>
+              
+            <li>Spools need to keep lines in place.</li>
+              
+            <li>The power supply should be at a higher voltage.</li>
+              
+            <li>Eyelets are too large.</li>
+              
+            <li>The extruder motor should be mounted so that direct feed is possible</li>
+              
+            <li>The printer is too heavy.</li>
+            
+         </ol>
+         <p>
+              Point 1 is the most important one, since stray lines makes testing really slow.
+            
+         </p>
+         <p>
+              Points 2-4 are not super important, but they add upp.
+              A higher voltage power supply would give motors a higher torque, and maybe cure my DRV8825 drivers from the high pitch noises
+            they
+              make in my motors.
+              A higher voltage would also allow us to use thinner power supply cables, which is good.
+              I have ordered four NEMA14 motors. This saves us 360 g and some space, so we can make the printer smaller.
+            
+         </p>
+         <p>
+              I have thought a lot about using suspended weigths instead of the d-motor.
+              The problem with that is holding it down. With anchor points 1 - 2 m away, and only 5 - 15 cm difference
+              between anchor point and action point, the tension in the abc-lines (together) need to be 10 - 20 times the tension in the
+            d-lines (together).
+              We could fine tune the weigths so that we only have 1 N pulling upwards.
+              According to my rough estimations, we would still lose 3 - 6 N cm of dynamic torque.
+            
+         </p>
+         <p>
+              The gears on Hangprinter has an effective radius very close to 1 cm,
+              so we use N and N cm without converting factor.
+              My testing shows we have only 18 N cm dynamic torque in our Nema 17s (I expect the ordered Nema 14s to have only half of
+            that).
+              With an expected mass of ca 2 kg, the Hangprinter will need a force of 18 N to reach an acceleration of 9000 mm/s^2 (default
+            max acceleration in Marlin).
+              Even if we lower our expectations drastically from 9000 mm/s^2 down to 2000 mm/s^2, the most difficult working angles will
+            steal
+              enough force that we don't have 3 - 6 N cm to spare on each motor.
+            
+         </p>
+         <p>
+              It seems like 3 beefy abc-steppers working at difficult angles and 4 smaller steppers working at ok angles will give similar
+            results.
+              It would be very interesting to build both, compare them and feel the difference...
+            
+         </p>
+         <p>
+            - tobben
+            
+         </p><br><br><br><h1 id="hangprinter_project_6">Hangprinter has climbed its first climb</h1>
+         <div class="date">16-9-2015</div>
+         <p>
+              Just now, the Hangprinter was able to climb upwards for the first time.
+              To make it a bit easier, I halved the needed force by using small
+              v-groove bearings as pulleys in the ceiling frame part.
+            
+         </p>
+         <figure>
+              <a href="./bilder/ceil_frame_pulley.JPG">
+                   <img src="./bilder/ceil_frame_pulley_liten.JPG" alt="Top frame pulley">
+                 </a>
+              
+            <figcaption>
+                   The pulley now mounted to the top frame part mounted to the ceiling.
+                 
+            </figcaption>
+            
+         </figure>
+         <figure>
+              <a href="./bilder/double_force.JPG">
+                   <img src="./bilder/double_force_liten.JPG" alt="Action point force">
+                 </a>
+              
+            <figcaption>
+                   The outermost screw lend itself as a practical attachment point for the loose end.
+                   I find that having both loose ends attached at the printer side, rather than having one at the ceiling,
+                   is practical when line lengths need to be adjusted.
+                 
+            </figcaption>
+            
+         </figure>
+         <p>
+              Although I wrote in my last post that I would try to use full step mode, I realized that millimeter precision on the
+              D-axis (towards ceiling frame part) is not really what I want. Layer heights are usually expressed in micrometers, so I
+              decided to go for 16 microstep mode. Together with the pulley-arrangement, this gives Hangprinter ca 90 microsteps per mm,
+              or ca 11 micrometer per microstep.
+            
+         </p>
+         <p>
+              Since microstepping reduces the holding torque of the stepper motors drastically (with 16 microsteps/step, you only have
+            ca 10 % holding torque left),
+              Hangprinter definitely needed some extra power.
+              I mounted a <a href="https://www.pololu.com/product/2133">DRV8825 breakout board</a> and ramped up the current to 1.4 A.
+              Both the motors and the driver are rated for higher currents, but I'm kind of nervous about getting a short thermal shutdown
+            of the DRV8825, as it would crush the printer to the floor.
+              Avoiding such a crash is the sole reason why I go for DRV8825 instead of the quieter and more easily handled a4988.
+              Changing the stepper driver did introduce some extra work, though.
+            
+         </p>
+         <h3>DRV8825 needs longer pulse width than Marlin is used to sending</h3>
+         <p>
+              For solving this, I used five "nop" assembly operations.
+              In stepper.cpp
+            
+         </p><pre>
+<code>
+if (counter_d &gt; 0) {
+  WRITE(E1_STEP_PIN, !INVERT_E1_STEP_PIN);
+  counter_d -= current_block-&gt;step_event_count;
+  count_position[D_AXIS]+=count_direction[D_AXIS];
+  WRITE(E1_STEP_PIN, INVERT_E1_STEP_PIN);
+}
+</code>
+</pre><pre>
+<code>
+if (counter_d &gt; 0) {
+  WRITE(E1_STEP_PIN, !INVERT_E1_STEP_PIN);
+  counter_d -= current_block-&gt;step_event_count;
+  count_position[D_AXIS]+=count_direction[D_AXIS];
+  __asm__ volatile(
+    "nop\n\t"
+    "nop\n\t"
+    "nop\n\t"
+    "nop\n\t"
+    "nop\n\t");
+  WRITE(E1_STEP_PIN, INVERT_E1_STEP_PIN);
+}
+</code>
+</pre><p>
+              Each nop instruction takes one processor cycle, so five nops gives a 5/16k = 312.5 ns longer pulse width.
+              This gave the shortest working pulse width I found.
+            
+         </p>
+         <h3 name="stutter">Stepper motor stutter, uneven microsteps</h3>
+         <p>
+              When running the stepper slowly, I noticed the exact same stutter problem that is shown <a href="https://www.youtube.com/watch?v=Ke8T5eQOkXY">here (Youtube-link)</a>.
+              The problem is that the mixed decay mode of the DRV8825 doesn't work properly with my motors, so setting it to fast decay
+            mode was necessary.
+              It was Quentin Harley that put me on the right track with <a href="http://www.morgan3dp.com/stepstuck-revisited-drv8825/">this post</a>.
+            
+         </p>
+         <figure>
+              <a href="./bilder/drv8825_breakout_mod.JPG">
+                   <img src="./bilder/drv8825_breakout_mod_liten.JPG" alt="Modified DRV8825 breakout board">
+                 </a>
+              
+            <figcaption>
+                   This is how my D-axis stepper driver ended up looking. The extra cable is for enabling fast decay mode.
+                   The extra long legs are for making space for extra cooling rib. The extra cooling rib is for avoiding thermal shutdowns
+               and total disaster.
+                 
+            </figcaption>
+            
+         </figure>
+         <h3>Hangprinter is flippable</h3>
+         <figure>
+              <a href="./bilder/flip.JPG">
+                   <img src="./bilder/flip_liten.JPG" alt="Flipped Hangprinter">
+                 </a>
+              
+            <figcaption>
+                   To access the lower side of the Hangprinter, where the electronics are and the extruder+hot end will be, just flip it
+               around.
+                   Wind the lines an extra time around the corners if needed ;-)
+                 
+            </figcaption>
+            
+         </figure>
+         <p>
+              Finally, here is a video of the Hangprinter climbing its first climb.
+            
+         </p>
+         <figure>
+              <iframe src="https://player.vimeo.com/video/139438054" width="500" height="375" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>
+            
+         </figure>
+         <p>
+            - tobben
+            
+         </p><br><br><br><h1 id="hangprinter_project_5">Hangprinter has hung its first hang</h1>
+         <div class="date">13-9-2015</div>
+         <p>
+              Mounted Hangprinter frame in the ceiling today.
+              The poor little Nema17 was too weak to climb upwards without some help.
+              Will put it in full step mode and give it some more current tomorrow.
+              If that still isn't enough, I will print new gears (gear it down).
+              Having pulleys in the top frame part, effectively gearing down almost half the force needed, is the next option I'll try.
+              Using rolling fairleads on the Hangprinter itself might just be worth it after all.
+            
+         </p>
+         <p>
+              Both gearing down and adding bearings introduces risks of greater errors.
+              I save the complicated analysis of them for another day...
+            
+         </p>
+         <figure>
+              <a href="./bilder/takfeste.JPG">
+                   <img src="./bilder/takfeste_liten.JPG" alt="Top frame">
+                 </a>
+              
+            <figcaption>
+                   The top frame part mounted to the ceiling.
+                 
+            </figcaption>
+            
+         </figure>
+         <figure>
+              <a href="./bilder/sveve.JPG">
+                   <img src="./bilder/sveve_liten.JPG" alt="Hanging 3d printer">
+                 </a>
+              
+            <figcaption>
+                   The Hangprinter hanging its first hang. Sorry for the poor image quality.
+                 
+            </figcaption>
+            
+         </figure>
+         <p>
+            - tobben
+            
+         </p><br><br><br><h1 id="hangprinter_project_4">Hangprinter had its first dry run</h1>
+         <div class="date">11-9-2015</div>
+         <p>
+              Hello again! Just thought I'd share progress again. The Hangprinter has gotten its firmware and bluetooth module working
+            =) Video:
+            
+         </p>
+         <figure>
+              <iframe src="https://player.vimeo.com/video/138978064" width="500" height="375" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>
+            
+         </figure>
+         <p>
+            - tobben
+            
+         </p><br><br><br><h1 id="hangprinter_project_3">Summer update on the Hangprinter</h1>
+         <div class="date">21-6-2015</div>
+         <p>
+              Hello folks! Just wanted to share some progress.
+            
+         </p>
+         <h4>OpenSCAD Work</h4>
+         <p>
+              The scad-files have gone through a big reorganization and refinement.
+              I had the insight while hacking on the firmware that a lot of constants will
+              be shared between the firmware and the scad-files.
+              Therefore, I tried to parametrize the CAD-files with as straightforward parameters I could come up with
+              and put all the parameters in a file called design_numbers.scad.
+              When the time comes to compile and upload the firmware, one may (should) make a little script that
+              parses design_numbers.scad into design_numbers.h, compiles Marlin and removes design_numbers.h immediately afterwards.
+            
+         </p>
+         <h4>Test Printing</h4>
+         <p>
+              A complete print of Hangprinter is still not done, but many parts are printed for testing.
+              The parts that have been test-printed are the cylinder holding the largest gears in place,
+              the largest gears themselves, the motor gears and the outermost corners of the printer
+              (called bottom_plate in the scad-files).
+            
+         </p>
+         <figure>
+              <a href="./bilder/all_parts_21_june.png">
+                   <img src="./bilder/all_parts_21_june_liten.png" alt="Hangprinter render">
+                 </a>
+              
+            <figcaption>
+                   Render of the whole printer as it looks right now.
+                   Many potentially over-simplifying design decisions have been made to avoid
+                   over engineering. I expect precision of this configuration to be pretty bad,
+                   but before implementing complex mitigations, I want to see just how bad the simplest
+                   solution performs.
+                   The motor gears have inscriptions depending on which direction they're driving.
+                   Directions A, B and C are directions towards anchor points near the floor, and the
+                   D direction is from the printer up towards the ceiling.
+                 
+            </figcaption>
+            
+         </figure>
+         <figure>
+              <a href="./bilder/central_tower_2.JPG">
+                   <img src="./bilder/central_tower_2_liten.JPG" alt="Central tower Hangprinter">
+                 </a>
+              
+            <figcaption>
+                   Six failed attempts at making the central cylinder flexible but still sturdy enough.
+                   The cylinder at the left, holding the large gears (in the scad-files called the Sandwich),
+                   is just a plain cylinder. Rings are printed independently and sandwiched between the large gears
+                   to separate them (these rings are called locks in the scad-files).
+                   One such ring is visible over the bearing on the left.
+                 
+            </figcaption>
+            
+         </figure>
+         <figure>
+              <a href="./bilder/corner.JPG">
+                   <img src="./bilder/corner_liten.JPG" alt="Central tower attempts">
+                 </a>
+              
+            <figcaption>
+                   One of the three corners of the Hangprinter bottom plate. This one holds the fairlead (fishing rod ring)
+                   in place nicely, but is a bit too thin to hold horizontal screws with 5 mm heads.
+                   No horizontal screws are shown in the picture, but they are used to keep the extruder motor in place
+                   (see first picture in this post).
+                 
+            </figcaption>
+            
+         </figure>
+         <figure>
+              <a href="./bilder/three_corner_test_print.JPG">
+                   <img src="./bilder/three_corner_test_print_liten.JPG" alt="Bottom plate corners">
+                 </a>
+              
+            <figcaption>
+                   A test print of the three corners of the Hangprinter.
+                   Size is made to fit a 20 x 20 cm print area when rotated 15 degrees around the z-axis.
+                 
+            </figcaption>
+            
+         </figure>
+         <h4>E3D Sponsoring</h4>
+         <p>
+              I watched an enlightening hot end
+              <a href="https://www.youtube.com/watch?v=mk30MPLoYf4">talk</a>
+              recently, that the E3D-guys held at the Midwest RepRap Festival 2015.
+              In the middle of the talk, they say:
+              "If you're doing a thesis or anything, just get in touch, we'll give you free stuff. We want to encourage such."
+              Since they happen to be the only company I know that produces hot ends specialized for very high extrusion rates,
+              and since they get excellent reviews,
+              I decided to break my shyness and ask kindly for a
+              <a href="http://e3d-online.com/MultiPacks/V6-VOLCANO-POWER-PACK-175-UNIVERSAL-12V">Volcano Power Pack</a>.
+              The E3D guys were very positive, and gave me a
+              large diameter hobbed bolt
+              and some extra filament as well =D
+            
+         </p>
+         <p>
+              So I'm designing Hangprinter to fit with a E3D V6 hot end by default.
+              If you're not familiar with it, check out Tom's reviews on Youtube:
+              <br>
+              <a href="https://www.youtube.com/watch?v=iggESG52v1Q">Tom's review of E3D V6</a>
+              <br>
+              <a href="https://www.youtube.com/watch?v=1x_V-OhnO5U">Tom's review of Volcano</a>
+            
+         </p>
+         <p>
+              That's all for today!
+            
+         </p>
+         <p>
+            - tobben
+            
+         </p><br><br><br><h1 id="hangprinter_project_2">The Hangprinter</h1>
+         <div class="date">27-5-2015</div>
+         <p>
+              Hi all! There has been some progress on the Hanprinter project this spring as well.
+              The printer is not hanging there, but it soon will. A CAD model has been created:
+            
+         </p>
+         <figure>
+              <a href="./bilder/hangprinter_render.png">
+                   <img src="./bilder/hangprinter_render_liten.png" alt="hangprinter render">
+                 </a>
+              
+            <figcaption>
+                   A render of the Hangprinter from 19th of May.
+                   Note that the first version will probably avoid the rolling fairleads (purple in this render),
+                   since they introduce build cost in time, money and firmware computations a lot.
+                 
+            </figcaption>
+            
+         </figure>
+         <p>
+              And some parts have been printed:
+            
+         </p>
+         <figure>
+              <a href="./bilder/hangprinter_parts.jpg">
+                   <img src="./bilder/hangprinter_parts_liten.jpg" alt="hangprinter parts">
+                 </a>
+              
+            <figcaption>
+                   Some of the printed gears to be used on the first version of the hanging RepRap.
+                 
+            </figcaption>
+            
+         </figure>
+         <h3>Finding a Neighbourhood</h3>
+         <p>
+              The project will have its home at the <a href="http://chalmersrobotics.se">Chalmers Robotics' lab</a>
+              in Johanneberg, Gothenburg. (Drop by if you're in town and in for a coffee and a chat!)
+              The lab is a very special place with 4 m headroom, thousands of soda-cans stacked up, dozens of computer screens,
+              mystical electrical components
+              from another era lying around everywhere, expensive tools like lathe and bandsaw available at any time
+              and skilled hackers and robot builders hanging around 24/7. And best of all: another parallel cable driven robot
+              is being built there right now, so Hangprinter can grow up with a friend in the close neighbourhood.
+            
+         </p>
+         <h3>Main idea</h3>
+         <p>
+              The printer will try to live up to the RepRap projects original objective of
+              trying to build a robot that is as self replicating as possible.
+              My favourite way of putting this is something like: Every Hangprinter owner should be able to
+              make another Hangprinter.
+            
+         </p>
+         <p>
+              I'll try to make separate posts adressing some mechanics, firmware, project background/motivation
+              and general progress.
+              Please visit the <a href="http://forums.reprap.org/read.php?178,344022,page=2">forum thread</a>
+              for discussion and the <a href="https://github.com/tobbelobb/hangprinter">repo</a> for source code!
+            
+         </p>
+         <p>
+              All the best!
+            
+         </p>
+         <p>
+            - tobben
+            
+         </p><br><br><br><h1 id="Slideprinter_Update">The Slideprinter</h1>
+         <div class="date">6-3-2015</div>
+         <p>
+              There have been some progress on the Hangprinter project this winter.
+              Well, the progress is as small as the number of hours that have been put into it,
+              but if we put the optimistic glasses on, we can say gone from 1d to non-trivial 2d movement.
+            
+         </p>
+         <figure>
+              <a href="./bilder/square_three_circles.JPG">
+                   <img src="./bilder/square_three_circles_liten.JPG" alt="Slideprinters first circles">
+                 </a>
+              
+            <figcaption>
+                   The Slideprinter (a 2d-Hangprinter), and the first three attempts at drawing
+                   a circle from gcode. The first attempt at drawing a square also shown.
+                   The reason why two of the "circles" are only lines is confusion whether the firware was
+                   expecting absolute or relative coordinates.
+                   The main reason that the triangular "circle"'s triangularity is a too high number of steps/mm.
+                 
+            </figcaption>
+            
+         </figure>
+         <p>
+              The firmware that Slideprinter is currently running is a very slightly modified version of Marlin
+              with the following lines of code added to the function <code>calculate_delta</code>:
+            
+         </p><pre>
+  delta[X_AXIS] = sqrt(sq(delta_tower1_x - cartesian[X_AXIS])
+                     + sq(delta_tower1_y - cartesian[Y_AXIS])
+                     - sq(AZ - cartesian[Z_AXIS]))-DELTA_RADIUS;
+  delta[Y_AXIS] = sqrt(sq(delta_tower2_x - cartesian[X_AXIS])
+                     + sq(delta_tower2_y - cartesian[Y_AXIS])
+                     - sq(AZ - cartesian[Z_AXIS]))-DELTA_RADIUS;
+  delta[Z_AXIS] = sqrt(sq(delta_tower3_x - cartesian[X_AXIS])
+                     + sq(delta_tower3_y - cartesian[Y_AXIS])
+                     - sq(AZ - cartesian[Z_AXIS]))-DELTA_RADIUS;
+</pre><p>
+              Note that this code will only handle relative moves correctly.
+              This code affects the max speed of the printer since Marlin (Delta conf) chops straight lines into
+              a hard-coded number of line-segments per second.
+              Since Slideprinter doesn't have enough accuracy or precision for this to matter, I've put
+              number of line segments to 20 (which is small).
+            
+         </p>
+         <figure>
+              <a href="./bilder/circle_5.JPG">
+                   <img src="./bilder/circle_5_liten.JPG" alt="Slideprinters fifth circle">
+                 </a>
+              
+            <figcaption>
+                   Comparison between Slideprinters fifth circle and a circle drawn with a pair of compasses.
+                   The outermost line is that from the compasses, most of the time.
+                 
+            </figcaption>
+            
+         </figure>
+         <p>
+              I also filmed Slideprinter as it moved. Sorry for the darkness.
+              <a href="https://vimeo.com/121490693">Vimeo</a>.
+            
+         </p>
+         <p>
+              EDIT 8-3-2015:<br>
+              Made a new video:
+              <a href="https://vimeo.com/121604956">Vimeo</a>.
+            
+         </p>
+         <p>
+            - tobben
+            
+         </p><br><br><br><br><br><br><br><br><br><br><br><h1 id="Links">
+            Links
+            
+         </h1>
+         <p>
+            Hangprinter Campaign: <a href="https://salt.bountysource.com/teams/hangprinter">Bountysource Salt</a></p>
+         <p>
+            Hangprinter Merchandise USA: <a href="https://shop.spreadshirt.com/hangprinter-merchandise/">Spreadshirt.com</a></p>
+         <p>
+            Hangprinter Merchandise Sweden: <a href="https://shop.spreadshirt.se/hangprinter-merchandise/">Spreadshirt.se</a></p>
+         <p>
+            Hangprinter assebly workshops: <a href="https://www.eventbrite.com/e/hangprinter-assembly-workshop-1-tickets-44216520804">#1</a></p>
+         <p>
+            Hangprinter Project: <a href="2014.html#Hangprinter">[1]</a>,
+            <a href="2015.html#Slideprinter_Update">[2]</a>,
+            <a href="2015.html#hangprinter_project_2">[3]</a>,
+            <a href="2015.html#hangprinter_project_3">[4]</a>,
+            <a href="2015.html#hangprinter_project_4">[5]</a>,
+            <a href="2015.html#hangprinter_project_5">[6]</a>,
+            <a href="2015.html#hangprinter_project_6">[7]</a>,
+            <a href="2015.html#hangprinter_project_7">[8]</a>,
+            <a href="2015.html#hangprinter_project_8">[9]</a>,
+            <a href="2015.html#hangprinter_project_9">[10]</a>,
+            <a href="2015.html#hangprinter_project_10">[11]</a>,
+            <a href="2015.html#hangprinter_project_11">[12]</a>,
+            <a href="2015.html#hangprinter_project_12">[13]</a>,
+            <a href="2015.html#hangprinter_project_13">[14]</a>,
+            <a href="2015.html#hangprinter_project_14">[15]</a>,
+            <a href="2015.html#hangprinter_project_15">[16]</a>,
+            <a href="2015.html#hangprinter_project_16">[17]</a>,
+            <a href="2015.html#hangprinter_project_17">[18]</a>,
+            <a href="2015.html#hangprinter_project_18">[19]</a>,
+            <a href="2016.html#hangprinter_project_19">[20]</a>,
+            <a href="2016.html#hangprinter_project_20">[21]</a>,
+            <a href="2016.html#hangprinter_project_21">[22]</a>,
+            <a href="2016.html#hangprinter_project_22">[23]</a>,
+            <a href="2016.html#hangprinter_project_23">[24]</a>,
+            <a href="2016.html#hangprinter_project_24">[25]</a>,
+            <a href="2016.html#hangprinter_project_25">[26]</a>,
+            <a href="2016.html#hangprinter_project_26">[27]</a>,
+            <a href="2016.html#hangprinter_project_27">[28]</a>,
+            <a href="2017.html#hangprinter_project_28">[29]</a>,
+            <a href="2017.html#hangprinter_project_29">[30]</a>,
+            <a href="2017.html#hangprinter_project_30">[31]</a>,
+            <a href="2017.html#hangprinter_project_31">[32]</a>,
+            <a href="2017.html#hangprinter_project_32">[33]</a>,
+            <a href="2017.html#hangprinter_project_33">[34]</a>,
+            <a href="2017.html#hangprinter_project_34">[35]</a>,
+            <a href="2017.html#hangprinter_project_35">[36]</a>,
+            <a href="2017.html#hangprinter_project_36">[37]</a>,
+            <a href="2017.html#hangprinter_project_37">[38]</a>,
+            <a href="2017.html#hangprinter_project_38">[39]</a>,
+            <a href="2017.html#hangprinter_project_39">[40]</a>,
+            <a href="2017.html#hangprinter_project_40">[41]</a>,
+            <a href="2017.html#hangprinter_project_41">[42]</a>,
+            <a href="2017.html#hangprinter_project_42">[43]</a>,
+            <a href="2017.html#hangprinter_project_43">[44]</a>,
+            <a href="2017.html#hangprinter_project_44">[45]</a>,
+            <a href="2017.html#hangprinter_project_45">[46]</a>,
+            <a href="2017.html#hangprinter_project_46">[47]</a>,
+            <a href="2017.html#hangprinter_project_46">[48]</a>,
+            <a href="2017.html#hangprinter_project_46">[49]</a></p>
+         <p>
+            Hangprinter Project Homepage: <a href="https://hangprinter.org">hangprinter.org</a></p>
+         <p>
+            Print Issue Solution Filter Project: <a href="2014.html#Introducing_PISF">[1]</a>,
+            <a href="2014.html#Presenting_PISF_Again">[2]</a>,
+            <a href="2014.html#PISF_Online_Sort_Of">[3]</a>,
+            <a href="2014.html#PISF">[4]</a></p>
+         <p>
+            Sourcing RepRappro Mendel in Larvik: <a href="2014.html#Sourcing_Mendel_1">[1]</a>,
+            <a href="2014.html#Sourcing_Mendel_2">[2]</a>,
+            <a href="2014.html#Sourcing_Mendel_3">[3]</a>,
+            <a href="2014.html#Sourcing_Mendel_4">[4]</a>,
+            <a href="2014.html#Sourcing_Mendel_5">[5]</a>,
+            <a href="2014.html#Sourcing_Mendel_6">[6]</a>,
+            <a href="2014.html#Sourcing_Mendel_7">[7]</a></p>
+         <p>
+            Archive: <a href="2014.html">2014</a>, <a href="2015.html">2015</a>, <a href="2016.html">2016</a>, <a href="2017.html">2017</a>, <a href="2018.html">2018</a></p>
+         <p>
+            Github Profile: <a href="https://github.com/tobbelobb/">link</a><br></p>
+         <p>
+            Vimeo User: <a href="https://vimeo.com/user23166500">link</a><br></p>
+         <p>
+            Twitter User: <a href="https://twitter.com/tobbelobb">link</a><br></p>
+         <p>
+            Work Microblog: <a href="http://opensourceecology.org/wiki/Tobben_Log">link</a><br></p>
+         <p>
+            Master's Thesis: <a href="http://opensourceecology.org/wiki/File:Thesis.pdf">link</a><br></p>
+         <p>
+            Linkedin Profile: <a href="https://se.linkedin.com/in/torbjorn-ludvigsen">link</a><br></p>
+         <p>
+            Appropedia User: <a href="http://www.appropedia.org/User:Tobben">link</a><br></p>
+         <p>
+            Company website (in Norwegian): <a href="http://ludvigsen3dprinting.com/">link</a></p>
+         <p>
+            Email: <a href="mailto:post@ludvigsen3dprinting.com">post@ludvigsen3dprinting.com</a></p>
+         <p>
+            RepRap Forums User: <a href="http://forums.reprap.org/profile.php?1,22385">link</a></p>
+         <p>
+            Forums threads: <a href="http://forums.reprap.org/read.php?178,344022">Hangprinter version 1</a>,
+            <a href="http://forums.reprap.org/read.php?1,738858">Hangprinter version 2</a>,
+            <a href="http://forums.reprap.org/read.php?1,792937">Hangprinter version 3</a></p>
+         <p>
+            Source for this blog: <a href="https://github.com/tobbelobb/tbear_blogg">Github repo</a></p>
+         <p>
+            Everything on this homepage, except the videos, is licenced under the <a href="https://www.gnu.org/licenses/fdl">Gnu Free Documentation Licence</a>.
+            The videos are licenced via Vimeo or Youtube.
+            
+         </p>
+      </div><br><br><br><br><br><br><br><br><script type="text/javascript">
+  MathJax.Hub.Configured()
+</script></body>
+</html>

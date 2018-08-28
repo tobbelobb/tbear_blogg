@@ -1,5 +1,5 @@
 RewriteEngine On
 RewriteCond %{REQUEST_URI} /*\.html$ [or]
 RewriteCond %{REQUEST_URI} /([^\./]+)$
-RewriteRule ^([^\.]+).*$ $1.xml [NC,L]
-DirectoryIndex 2019.xml 2018.xml 2017.xml 2016.xml 2015.xml 2014.xml
+RewriteRule ^([^\.]+).*$ $1.html [NC,L]
+DirectoryIndex 2019.html 2018.html 2017.html 2016.html 2015.html 2014.html
