@@ -17,8 +17,8 @@
 		Compared to <a href="https://duet3d.dozuki.com/Guide/2.%29+Wiring+your+Duet/9?lang=en">Duet's default wiring</a>,
 		you will wire the ABCD (Mechaduino) motors differently.
 		You will not connect endstops or bed heater, but you will  connect i2c cables.
-	<p>
 	</p>
+	<p>
 		Compared how the RAMPS is wired in the HP3 manual (click for larger):
 	</p>
 	<figure>
