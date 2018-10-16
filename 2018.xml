@@ -1,6 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
 <posts year="2018">
+	<post id="hangprinter_project_61" heading="Days At the Office" date="16-10-2018">
+    <p>
+      I recently got my own dedicated Hangprinter space.
+      It is a room in an old industrial building, in a collective of potters and musicans.
+      Well, it wasn't really a room when I got it. We built a wall, and made it a room.
+      To the right in pic below.
+    </p>
+    <p>
+      Within walking distance from my home, has home made coffee cups in the kitchen, two massive kilns at the entrance, and good live music every single evening.
+      It's a messy, friendly, and beautiful place.
+      I feel free there.
+    </p>
+	  <figure>
+	  	<a href="./bilder/the_office_16_oct_2018.JPG">
+	  		<img src="./bilder/the_office_16_oct_2018_liten.JPG" alt="" width="500" height="334"/>
+	  	</a>
+	  	<figcaption>
+	  	</figcaption>
+	  </figure>
+    <p>
+      If you look closely at the picture you'll notice my my little Mendel and its latest offspring;
+      the latest HP4 prototype.
+      I've been working intenesly on it since I got the space to do so.
+      Here's a quick overview:
+    </p>
+    <h3>The HP4 First Prototype</h3>
+	  <figure>
+	  	<a href="./bilder/HP4_prototype_16_oct_2018.JPG">
+	  		<img src="./bilder/HP4_prototype_16_oct_2018_liten.JPG" alt="" width="500" height="334"/>
+	  	</a>
+	  	<figcaption>
+	  	</figcaption>
+	  </figure>
+    <p>
+      The driving design goal in this prototyping work was explained in <a href="#hangprinter_project_59">an earlier blog post</a>, but I repeat it here as a starting point:
+
+      I've remodelled every single part in the movement system to make them stronger, and made the spools stand upright.
+    </p>
+
+    <h3>What I Haven't Yet Done</h3>
+    <p>
+      The (semi) automatic calibration uses non-linear optimiztion find the anchor coordinates.
+      Put very simply, the program gets some data, \(\theta\), and a question:
+      "What anchor positions would work best if you wanted to re-create the data points \(\theta\)?"
+    </p>
+
+
+
+  </post>
 	<post id="hangprinter_project_60" heading="Crashdummies Wanted" date="9-7-2018">
 	<p>
 		The Hangprinter support in RepRapFirmware is looking for pre-alpha testers!
