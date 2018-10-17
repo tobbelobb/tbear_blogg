@@ -20,7 +20,290 @@
          </div>
       </div>
       <div id="MainContent">
-         <h1 id="hangprinter_project_60">Crashdummies Wanted</h1>
+         <h1 id="hangprinter_project_61">Office And HP4 Prototype One</h1>
+         <div class="date">17-10-2018</div>
+         <p>
+            I recently got my own dedicated Hangprinter space.
+            It is a room in an old industrial building, in a collective of potters and musicians.
+            Well, it wasn't really a room when I first got it. We built a wall, and made it a room.
+            To the right in pic below.
+                
+         </p>
+         <p>
+                  It's within walking distance from my home, has home made coffee cups in the kitchen, two massive kilns at the entrance,
+            and good live music every single evening.
+                  It's a messy, friendly, and beautiful place.
+                  I feel free here.
+                
+         </p>
+         <figure>
+            	  	<a href="./bilder/the_office_16_oct_2018.JPG">
+               	  		<img src="./bilder/the_office_16_oct_2018_liten.JPG" alt="" width="500" height="334">
+               	  	</a>
+            	  	
+            <figcaption>
+               	  	
+            </figcaption>
+            	  
+         </figure>
+         <p>
+                  If you look closely at the picture you'll notice my little Mendel and its latest offspring;
+                  the latest HP4 prototype.
+                  I've been working on it quite intensely since I got my new space.
+                  Check out <a href="https://gitlab.com/tobben/hangprinter/tree/version_4_dev">the version_4_dev branch</a> if you want the source.
+                  Here's a quick overview:
+                
+         </p>
+         <h2>HP4 Prototype One</h2>
+         <figure>
+            	  	<a href="./bilder/HP4_prototype_16_oct_2018.JPG">
+               	  		<img src="./bilder/HP4_prototype_16_oct_2018_liten.JPG" alt="" width="500" height="334">
+               	  	</a>
+            	  	
+            <figcaption>
+               	  	
+            </figcaption>
+            	  
+         </figure>
+         <p>
+                  This hardware prototype is made to allow faster, stronger, smoother, more accurate motion.
+                  The first three goals motivate choices like
+                  
+            <ul>
+                       
+               <li>BLDC motors driven by oDrive PCBs</li>
+                       
+               <li>DuetWifi main PCB</li>
+                       
+               <li>All ABCD axes are geared down with pulleys</li>
+                     
+            </ul>
+                
+         </p>
+         <figure>
+            	  	<a href="./bilder/doubled_lines_ABCD_corner_clamp.JPG">
+               	  		<img src="./bilder/doubled_lines_ABCD_corner_clamp_liten.JPG" alt="" width="500" height="334">
+               	  	</a>
+            	  	
+            <figcaption>
+                       Corner clamps with all axes geared down. Sewing machine wire guide spares used to keep D-lines in place.
+                       Gearing down the D-axis enables us to use high speed BLDC motors, and will allow us to lift heavier tool heads in
+               the future.
+               	  	
+            </figcaption>
+            	  
+         </figure>
+         <p>
+                  To really get more accurate, we need better calibration, which motivates
+                  
+            <ul>
+                       
+               <li>Belt driven spools</li>
+                       
+               <li>Larger spools</li>
+                       
+               <li>More spools (one for each line)</li>
+                     
+            </ul>
+                
+         </p>
+         <p>
+                  Other hardware changes are made just for looks and tidy order:
+                  
+            <ul>
+                       
+               <li>Spools are raised upright</li>
+                       
+               <li>Lines are routed via idler pulleys internally on the ceiling unit</li>
+                     
+            </ul>
+                  All parts along the line paths have been beefed up to make them more sturdy since
+                  powerful motors and small plastic parts must live together in harmony.
+                  This scares me a little.
+                
+         </p>
+         <p>
+                  Previous anchor line rollers could break if you stepped on or kicked them by accident.
+                  The new ones are much more likely to survive such treatment.
+                
+         </p>
+         <figure>
+            	  	<a href="./bilder/new_line_rollers.JPG">
+               	  		<img src="./bilder/new_line_rollers_liten.JPG" alt="" width="500" height="334">
+               	  	</a>
+            	  	
+            <figcaption>
+               	  	
+            </figcaption>
+            	  
+         </figure>
+         <h3>HP4 Prototype One - Not As Finished As It Looks</h3>
+         <p>
+                  (At least better than the first HP3 prototype's slogan: <i>might be awesome if it works</i>.)
+                
+         </p>
+         <p>
+                  Those hardware changes are all fine and dandy, but the more important improvements require better software, which is
+            not yet written.
+                  The more important improvements include
+                  
+            <ul>
+                       
+               <li>Flex compensation</li>
+                       
+               <li>Better calibration</li>
+                       
+               <li>Automatic homing</li>
+                     
+            </ul>
+                
+         </p>
+         <p>
+                  Without them, we can't ave adequate accuracy, except close to the origin.
+                  I mean, you can make 1 m movements (<a href="https://www.youtube.com/watch?v=SEgAz3emRVA">video</a>),
+                  but you can't print a decent Benchy out there.
+                
+         </p>
+         <h3>Flex Compensation</h3>
+         <p>
+                  Flex is an obvious pain point in the HP3 since its firmware assumes nothing flexes, while in reality everything flexes.
+                  In extreme positions, this can give errors at the order of centimeters.
+                
+         </p>
+         <p>
+                  I mentioned earlier that all axes are geared down with pulleys on the HP4 prototype.
+                  This means twice as much line between anchors and effector, and hence only half the flex.
+                  Sturdier plastic parts also helps.
+                
+         </p>
+         <p>
+                  The real fix however, is to measure flex and compensate for it in firmware.
+                  The equations have been worked on in an <a href="#hangprinter_project_54">earlier post</a>,
+                  and the HP4 should definitely use them when planning its every move.
+                
+         </p>
+         <h3>Better Calibration</h3>
+         <p>
+                  There's actually a conceptual error in the current semi-automatic calibration routine
+                  (apart from the <a href="https://gitlab.com/snippets/1752083">truncation error</a> that was found and fixed).
+                  The <code>M114 S1</code> command outputs line lengths.
+                  It gets these line lengths by reading motor shaft position and compensating for line buildup.
+                  But line buildup compensation requires correct anchor calibration in order to work correctly.
+                  So the data is imperfect even if the user does a perfect job while collecting it.
+                
+         </p>
+         <p>
+                  The obvious way to fix this is to have <code>M114 S1</code> output shaft positions,
+                  and do the line <a href="https://gitlab.com/tobben/hangprinter/blob/4dab3c9d9f74f5e38b40755ad38176b981e76d28/firmware/Marlin_subtree/Marlin/Marlin_main.cpp#L6653">buildup compensation</a> within the <a href="https://gitlab.com/tobben/auto-calibration-simulation-for-hangprinter/blob/f61d1384c46fb33475b50715e096f4bbc4f8671b/simulation.py#L157">cost function</a> instead.
+                
+         </p>
+         <p>
+                  And once we've moved buildup compensation into the auto-calibration code, then we have the chance to throw the buildup
+            factor in there too.
+                  The buildup factor is a measure of how much volume a meter of line takes up.
+                  This has been <a href="https://gitlab.com/tobben/hangprinter/blob/4dab3c9d9f74f5e38b40755ad38176b981e76d28/firmware/Marlin_subtree/Marlin/Configuration.h#L560">guesstimated based on line diameter</a> up until now, and it's been known that the guesstimate is imperfect, which makes the whole buildup compensation even more
+                  imperfect than it could be.
+                
+         </p>
+         <p>
+                  Hopefully, the improvements described above would allow us to auto calibrate by moving the nozzle to known positions.
+                  Such calibration would give more accurate result than the current random-position-based method.
+                  We tried it with the HP3, but it failed.
+                  I think it failed because errors from flex, truncation, and imperfect buildup compensation were too big for the optimization
+            algorithms to work with.
+                
+         </p>
+         <h3>Automatic Homing</h3>
+         <p>
+                  Perhaps the most obvious accuracy bottleneck in HP3 stems from the manual homing.
+                  Human hands are great precision tools, but not good enough for 3d printing.
+                  Three things vary between manual homing procedures.
+                  
+            <ol>
+                       
+               <li>The actual home position of the nozzle.</li>
+                       
+               <li>The tightness of the lines in that position.</li>
+                       
+               <li>The flex or loose line that has accidentally gotten wound onto the spools.</li>
+                     
+            </ol>
+                
+         </p>
+         <p>
+                  A good, cheap, and simple homing routine would be to crash (with a repeatable force) the effector into a bracket in
+            the ceiling,
+                  and then tighten ABC-lines to a repeatable tension, before moving down to the origin in a controlled fashion.
+                
+         </p>
+         <p>
+                  We have previously been prevented from doing that long moves in a controlled fashion.
+                  This was due to inaccurate calibration parameters, both for the anchor positions and the buildup compensation.
+                  It's funny how bad accuracy leads to worse accuracy and vice versa.
+                
+         </p>
+         <figure>
+                  <a href="./bilder/bracky_the_donkey_bracket.png">
+                       <img src="./bilder/bracky_the_donkey_bracket_liten.png" alt="" width="500" height="241">
+                     </a>
+            	  	
+            <figcaption>
+                       The brackets I use to mount the <a href="https://hobbyking.com/en_us/hobbyking-donkey-st4010-820kv-brushless-motor.html?___store=en_us">BLDC motor</a>
+                       and the encoders with their oddly offset mounting holes.
+               	  	
+            </figcaption>
+                
+         </figure>
+         <h3>Epilogue</h3>
+         <p>
+                  And, well, that's only the beginning of the prototype's overwhelming unfinishedness.
+                  Will the belts stay on, or will they jump off? Will they wear out quickly? I don't know.
+                
+         </p>
+         <figure>
+            	  	<a href="./bilder/horizontal_line_deflector_iterations.jpg">
+               	  		<img src="./bilder/horizontal_line_deflector_iterations_liten.jpg" alt="" width="500" height="283">
+               	  	</a>
+            	  	
+            <figcaption>
+                       Iterate and iterate again. The line must <i>never</i> fall off that bearing.
+               	  	
+            </figcaption>
+            	  
+         </figure>
+         <p>
+                  I'm still unsure if the extensive use of vgroove bearings is wise, or if the lines will occasionally fall off.
+                  My unstructured testing has convinced me to at least try and trust the 44 line guiding bearings in this prototype.
+                  I've only been able to make lines fall off bearings by pushing hard with needles and the tip of a knife.
+                  But you know, I fear Murphy's law will come and bite me.
+                  Time will show.
+                
+         </p>
+         <p>
+                  I'm also unsure if the BLDCs will give satisfactory stiffness and smoothness at the same time.
+                  I'm planning to use the experimental <a href="https://discourse.odriverobotics.com/t/anti-cogging-feature/293">anti-cogging feature</a>
+                  to make the motors move really smoothly like expensive BLDCs with tilted magnets do.
+                
+         </p>
+         <p>
+                  Last, but not least, will the world make fun of my <code>line_verticalizer</code> because it looks like a fish?
+                  Only the brave gets to learn interesting stuff the hard way.
+                
+         </p>
+         <figure>
+            	  	<a href="./bilder/fishy.jpg">
+               	  		<img src="./bilder/fishy_liten.jpg" alt="" width="500" height="283">
+               	  	</a>
+            	  	
+            <figcaption>
+               	  	
+            </figcaption>
+            	  
+         </figure>
+         <p>
+            - tobben
+            
+         </p><br><br><br><h1 id="hangprinter_project_60">Crashdummies Wanted</h1>
          <div class="date">9-7-2018</div>
          <p>
             		The Hangprinter support in RepRapFirmware is looking for pre-alpha testers!
