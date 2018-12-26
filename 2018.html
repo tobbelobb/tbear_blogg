@@ -20,13 +20,207 @@
          </div>
       </div>
       <div id="MainContent">
-         <h1 id="hangprinter_project_61">Office And HP4 Prototype One</h1>
+         <h1 id="hangprinter_project_62">Hangprinter With DuetWifi and Two ODrives</h1>
+         <div class="date">26-12-2018</div>
+         <p>
+            I recently decided to use three circuit boards in my Hangprinter v4 prototype: One
+                   <a href="https://duet3d.com/DuetWifi">DuetWifi</a>, and two
+                    <a href="http://odriverobotics.com/">ODrives</a>.
+                    It turned out to be a challenge to get wiring and communication to work the way I wanted.
+                
+         </p>
+         <p>
+            I wanted to use stock RepRapFirmware (RRF) on the DuetWifi, and stock ODrive Firmware (OF) on the ODrives.
+            No special "Hangprinter Firmware", only Hangprinter configuration of stock firmware.
+                    I wanted to connect the two types of boards directly with jumper wires.
+                    No special multiplexers, filters, level shifters or anything like that between the boards.
+                
+         </p>
+         <p>
+                    I aimed for something like this:
+                
+         </p>
+         <figure>
+            	  	<a href="./bilder/DuetWifiODrive.png">
+               	  		<img src="./bilder/DuetWifiODrive_liten.png" alt="" width="500" height="354">
+               	  	</a>
+            	  	
+            <figcaption>
+                           Diagram of wires and communication between DuetWifi and ODrive boards on HP4.
+                           <code>G95</code> and <code>M114 S2</code> is the minimal set of gcodes
+                           that must be supported to enable auto calibration.
+                           Both these gcodes require signals (other than step/dir) to flow between the boards.
+               	  	
+            </figcaption>
+            	  
+         </figure>
+         <h3>Why The Non-step/dir Wires?</h3>
+         <p>
+                    Convenience.
+                    Let's call them convenience wires.
+                    The step/dir wires can only be used to communicate a desire for incremental movement.
+                    Through convenience wires we can tell ODrives to more exciting things, like:
+                    
+            <ul>
+                           
+               <li>Live PID tuning</li>
+                           
+               <li>Live tuning of min/max speeds and currents</li>
+                           
+               <li>Live configuration of microstepping</li>
+                           
+               <li>Trajectory planning</li>
+                           
+               <li>Interfacing with yet more circuitry, like cameras and load cells</li>
+                           
+               <li>Anti-cogging</li>
+                           
+               <li>Torque estimations via motor current readings</li>
+                           
+               <li>Motor shaft position readings</li>
+                           
+               <li>Enable/disable position control, current control, or velocity control</li>
+                       
+            </ul>
+                    We want to make ODrives do exciting things by talking gcode to the DuetWifi via wifi,
+                    and have the DuetWifi forward commands to the ODrives via the convenience wires.
+                
+         </p>
+         <p>
+                    The first exciting thing I'll focus on implementing in HP4 is better auto-calibration.
+                    Anchor positions and line buildup parameters should be calibrated during the same routine,
+                    and the user should just have to start this routine and wait for it to finish.
+                
+         </p>
+         <h3>Making Boards to Talk About Exciting Things</h3>
+         <p>
+                    The basic step/dir communication was straightforward to set up.
+                    Both boards and firmwares had good support and documentation already.
+                    So we got to feature parity with HP2 quickly.
+                    Not super exciting, but a really nice start.
+                    With no more than basic setup and a step/dir connection, the ODrives showed promise of
+                    being able to make HP4 run really really fast.
+                
+         </p>
+         <figure>
+                    <iframe src="https://player.vimeo.com/video/297601364" width="500" height="355" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true">
+                       </iframe>
+                  
+            <figcaption>
+                     
+            </figcaption>
+                
+         </figure>
+         <p>
+                    The HP3 got beyond HP2 features by talking i2c protocol through convenience wires (and a level shifter).
+                    Unfortunately, ODrives lack i2c support.
+                    ODrives are only prepared for controller communication via their
+                    universal asynchronous receiver-transmitter (UART).
+                    To be more precise, ODrives have one pair of Tx/Rx pins with 3V3 logic levels,
+                    talking RS-232 with 8-bit words, no parity bit, one stop bit, at a rate of 115200 bits per second.
+                
+         </p>
+         <p>
+                    So, I had to go for UART in the HP4 convenience wires.
+                    There were two small problems to overcome:
+                    
+            <ul>
+                           
+               <li>ODrive Firmware did not support UART and step/dir to be enabled at the same time.</li>
+                           
+               <li>DuetWifi had only one pair of Tx/Rx pins exposed.</li>
+                       
+            </ul>
+                
+         </p>
+         <p>
+                    Madcowswe, ODrive's main dev, helped solve the first problem real quick.
+                    Within a few hours, he added firmware support for step/dir and UART to be enabled simultaneously.
+                    I carried out some basic tests of the step/dir communication.
+                
+         </p>
+         <figure>
+            	  	<a href="./bilder/M1_steps.png">
+               	  		<img src="./bilder/M1_steps_liten.png" alt="" width="500" height="375">
+               	  	</a>
+            	  	
+            <figcaption>
+                           Step control counts after moving the motors really fast back and forth for 24 seconds.
+                           This test was run at a 70 kHz step rate, and shows ca 160 lost steps.
+                           To avoid step loss, I recommend a step rate below 20 kHz.
+                           This puts a (high) cap on speed versus resolution.
+                           If you want a max speed of 2000 mm/s, then each step must result in at least 0.1 mm of movement.
+                           Higher speeds are of course possible if we double check step counts
+                           (or indeed send the movement commands themselves)
+                           through the convenience wires.
+               	  	
+            </figcaption>
+            	  
+         </figure>
+         <p>
+                    Dc42, who is DuetWifi and RRF's main dev, helped me with the second problem.
+                    He told me that one of the DuetWifi's pair of SPI pins were really USART pins,
+                    and could be reconfigured in software to act as UART pins.
+                    It took me a few days to get the pin re-configuration right, and stock RRF currently doesn't support it.
+                    I will of course stay in touch with dc42 and try to get all HP4 functionality merged.
+                
+         </p>
+         <h3>How To Connect And Configure HP4 Convenience Wires</h3>
+         <p>
+                    There are 12 communication wires to be connected between the DuetWifi and the two ODrives:
+                
+         </p>
+         <figure>
+            	  	<a href="./bilder/DuetWifiODriveWiring2.png">
+               	  		<img src="./bilder/DuetWifiODriveWiring2_liten.png" alt="" width="500" height="354">
+               	  	</a>
+            	  	
+            <figcaption>
+                           Diagram made through copy/paste of
+                           <a href="https://duet3d.dozuki.com/Wiki/Duet_Wiring_Diagrams">Think3dPrint3d's Duet Wifi wiring diagram</a> and
+                           the ODrive Community's <a href="https://docs.odriverobotics.com/interfaces">Interfaces documentation</a>.
+                           Click for a larger version. Ctrl+scroll to zoom on the larger version... CC-BY-SA.
+               	  	
+            </figcaption>
+            	  
+         </figure>
+         <p>
+                    All the pre-compiled binaries and configuration files you need are found in the firmware directory of
+                    <a href="https://gitlab.com/tobben/hangprinter/tree/version_4_dev/firmware">the version_4_dev branch</a>.
+                
+         </p>
+         <h4>Config Comments</h4>
+         <p>
+                    To enable the right pins on the ODrive, use <a href="https://docs.odriverobotics.com/odrivetool">ODrive Tool</a> to send
+            		<pre>
+odrv0.config.enable_uart = True
+odrv0.axis0.config.step_gpio_pin = 6
+odrv0.axis0.config.dir_gpio_pin = 5
+        </pre>
+                    ... to both ODrive boards. Save and reboot as always after updating ODrive configuration.
+                </p>
+         <p>
+                    The following gcodes will enable right UART pins on the DuetWifi:
+                    <pre>
+M569 Q0:1:115200  ; Connect ODrive 0 to Serial device 1 at 115200 baud
+M569 Q1:99:115200 ; Connect ODrive 1 to Serial device 99 at 115200 baud
+        </pre>
+                    ... and the following gcodes maps step/dir signals to the right pins on the DuetWifi:
+                    <pre>
+M669 K6                 ; This is a Hangprinter
+M584 A5 B6 C7 D8 P4     ; map ABCD-axes to ext driver pins (four visible)
+        </pre>
+                </p>
+         <p>
+            - tobben
+            
+         </p><br><br><br><h1 id="hangprinter_project_61">Office And HP4 Prototype One</h1>
          <div class="date">17-10-2018</div>
          <p>
-            I recently got my own dedicated Hangprinter space.
-            It is a room in an old industrial building, in a collective of potters and musicians.
-            Well, it wasn't really a room when I first got it. We built a wall, and made it a room.
-            To the right in pic below.
+                  I recently got my own dedicated Hangprinter space.
+                  It is a room in an old industrial building, in a collective of potters and musicians.
+                  Well, it wasn't really a room when I first got it. We built a wall, and made it a room.
+                  To the right in pic below.
                 
          </p>
          <p>
