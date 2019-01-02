@@ -145,6 +145,22 @@ odrv0.axis0.config.step_gpio_pin = 6
 odrv0.axis0.config.dir_gpio_pin = 5
         </pre>
         ... to both ODrive boards. Save and reboot as always after updating ODrive configuration.
+        The pin ordering on the ODrive side might seem a bit funny:
+        <ul>
+            <li>Pin 5: dir axis0</li>
+            <li>Pin 6: step axis0</li>
+            <li>Pin 7: step axis1</li>
+            <li>Pin 8: dir axis1</li>
+        </ul>
+        Explanation axis 1: We simply keep OF default assignments on pins 7 and 8.
+        Explanation axis 0: Pin 5 does not have the low pass filter needed for step signal transmission,
+        only GPIO pins 1, 2, 6, 7, and 8 have such a filter behind them
+        on the ODrive v3.5.
+    </p>
+    <p>
+        I'm still a bit unsure whether dir signal on the non-filtered pin 5 will work well in the long run.
+        An oscilloscope would be needed to really see if the dir signal quality is good enough.
+        The small tests I've conducted by just counting steps with the encoder have shown no dir errors thus far.
     </p>
     <p>
         The following gcodes will enable right UART pins on the DuetWifi:
