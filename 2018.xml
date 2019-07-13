@@ -402,7 +402,7 @@ M584 A5 B6 C7 D8 P4     ; map ABCD-axes to ext driver pins (four visible)
 		Compared how the RAMPS is wired in the HP3 manual (click for larger):
 	</p>
 	<figure>
-		<a href="./bilder/Hangprinter_electronics_diagram_Mechaduino_RAMPS1.4_V2.3_liten.jpg">
+		<a href="./bilder/Hangprinter_electronics_diagram_Mechaduino_RAMPS1.4_V2.3.jpg">
 			<img src="./bilder/Hangprinter_electronics_diagram_Mechaduino_RAMPS1.4_V2.3_liten.jpg" alt="" width="500" height="354"/>
 		</a>
 		<figcaption>
