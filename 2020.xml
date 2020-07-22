@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
+<posts year="2020">
+  <post id="hangprinter_project_63" heading="Introducing Line Collision Detector" date="22-7-2020">
+    <p>
+      I got asked again recently, about the Hangprinter print volume.
+      How big is it really?
+      The short answer is that there is no well defined print volume.
+      The long answer is complicated.
+    </p>
+    <h3>The Long Answer</h3>
+    <p>
+      First, lets split the question into two parts:
+      <ul>
+        <li>Where can we reach?</li>
+        <li>What can we print?</li>
+      </ul>
+    </p>
+    <h3>The Reachable Volume</h3>
+	  <figure>
+	  	<a href="./bilder/ReachableVolume.png">
+	  		<img src="./bilder/ReachableVolume_liten.png" alt="" width="500" height="444"/>
+	  	</a>
+	  	<figcaption>
+	  	</figcaption>
+	  </figure>
+    <p>
+      The Hangprinter's effector is fully constrained when moving within the tetrahedron spanned up by its four anchors.
+      An evil AI driven firmware could theoretically use the motors to toss the effector out of this envelope, but let's ignore that possibility
+      and call the anchor-spanned tetrahedron <i>the reachable volume</i>.
+    </p>
+    <p>
+      I reality, we won't be able to print close to the walls of the reachable volume, since gravity will make
+      the effector sag inwards.
+      So <i>the usable volume</i> is a few percent smaller than the reachable volume.
+      Exactly how much sag to expect could be calculated from the weight of the effector and the maximum static force of the motors,
+      but let's save those calculations for another blog post.
+    </p>
+	  <figure>
+	  	<a href="./bilder/hp_volume.png">
+	  		<img src="./bilder/hp_volume_liten.png" alt="" width="500" height="293"/>
+	  	</a>
+	  	<figcaption>
+        Fred Hedenberg made this nice and correct rendering of the usable print volume of a particular Hangprinter.
+	  	</figcaption>
+	  </figure>
+    <p>
+      This is where I wish we could end the analysis and say "print volume = tetrahedron minus sag".
+      But alas.
+      We cannot fill up the whole usable volume with tetrahedron-shaped benchy fractals.
+      At least not in a single big print.
+    </p>
+    <h3>So, For Any Particular 3d-model: Can we print it?</h3>
+    <p>
+      With Hangprinter we have to consider the risk that lines might collide with the half-finished print.
+      Every tad of extruded material is a potential obstacle that the Hangprinter's every subsequent move must avoid.
+    </p>
+    <p>
+      Actually, the answer to the question "is this object printable in my Hangprinter?", depends on
+      how your object is rotated,
+      where it's placed on the build plate,
+      and in which order you put down the material!
+      Lots of stuff to think about. (Uuugh...)
+    </p>
+    <p>
+      I'm just teasing you with all these horrible facts.
+      There
+    </p>
+
+  </post>
+</posts>

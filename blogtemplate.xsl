@@ -127,8 +127,23 @@
                        <a  href="2017.html#hangprinter_project_44">[45]</a>,
                        <a  href="2017.html#hangprinter_project_45">[46]</a>,
                        <a  href="2017.html#hangprinter_project_46">[47]</a>,
-                       <a  href="2017.html#hangprinter_project_46">[48]</a>,
-                       <a  href="2017.html#hangprinter_project_46">[49]</a>
+                       <a  href="2017.html#hangprinter_project_47">[48]</a>,
+                       <a  href="2017.html#hangprinter_project_48">[49]</a>,
+                       <a  href="2017.html#hangprinter_project_49">[50]</a>,
+                       <a  href="2017.html#hangprinter_project_50">[51]</a>,
+                       <a  href="2018.html#hangprinter_project_51">[52]</a>,
+                       <a  href="2018.html#hangprinter_project_52">[53]</a>,
+                       <a  href="2018.html#hangprinter_project_53">[54]</a>,
+                       <a  href="2018.html#hangprinter_project_54">[55]</a>,
+                       <a  href="2018.html#hangprinter_project_55">[56]</a>,
+                       <a  href="2018.html#hangprinter_project_56">[57]</a>,
+                       <a  href="2018.html#hangprinter_project_57">[58]</a>,
+                       <a  href="2018.html#hangprinter_project_58">[59]</a>,
+                       <a  href="2018.html#hangprinter_project_59">[60]</a>,
+                       <a  href="2018.html#hangprinter_project_60">[61]</a>,
+                       <a  href="2018.html#hangprinter_project_61">[62]</a>,
+                       <a  href="2018.html#hangprinter_project_62">[63]</a>,
+                       <a  href="2020.html#hangprinter_project_63">[64]</a>
 </p>
 <p>
   Hangprinter Project Homepage: <a href="https://hangprinter.org">hangprinter.org</a>

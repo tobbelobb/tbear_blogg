@@ -387,7 +387,7 @@ M584 A5 B6 C7 D8 P4     ; map ABCD-axes to ext driver pins (four visible)
 		You can be the first person to combine Hangprinter with Duet, RepRapFirmware, and 32-bit controllers.
 		If you get it working, your Hangprinter will be the fastest one on earth.
 		You will be on the bleeding edge, and help Hangprinter development.
-		See <a href="#hangprinter_project_60">the previous blog post</a> and
+		See <a href="#hangprinter_project_59">the previous blog post</a> and
 		<a href="https://www.duet3d.com/">duet3d.com</a> for more on how Duet and RepRapFirmware will make HP4 better than HP3.
 	</p>
 	<h3>Wiring</h3>
