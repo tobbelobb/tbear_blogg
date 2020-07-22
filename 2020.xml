@@ -52,9 +52,33 @@
     </p>
     <h3>So, For Any Particular 3d-model: Can we print it?</h3>
     <p>
-      With Hangprinter we have to consider the risk that lines might collide with the half-finished print.
+      With Hangprinter we also have to consider the risk that lines might collide with the half-finished print.
       Every tad of extruded material is a potential obstacle that the Hangprinter's every subsequent move must avoid.
     </p>
+    <p>
+      Consider the following render to get some intuition about what a line collision is and how it occurs:
+    </p>
+	  <figure>
+	  	<a href="./bilder/cone_shapes.jpg">
+	  		<img src="./bilder/cone_shapes_liten.jpg" alt="" width="500" height="344"/>
+	  	</a>
+	  	<figcaption>
+        The Hangprinter's effector is attached to the ground with 6 different lines.
+        For each layer, each line will move within a "cone shape". The top of the cone shape is a convex hull of the current top layer.
+	  	</figcaption>
+	  </figure>
+    <p>
+      And as evidence that these collisions are a real world problem, consider this failed spiral vase that I printed at an event:
+    </p>
+	  <figure>
+	  	<a href="./bilder/line-collision.png">
+	  		<img src="./bilder/line-collision_liten.png" alt="" width="500" height="719"/>
+	  	</a>
+	  	<figcaption>
+        This print continued and survived the line collision (with a 1 cm deep artifact) because it was a smooth spiral vase.
+        The more common case is that lines snap, prints break loose, big disasters of various kinds.
+	  	</figcaption>
+	  </figure>
     <p>
       Actually, the answer to the question "is this object printable in my Hangprinter?", depends on
       how your object is rotated,
@@ -64,7 +88,9 @@
     </p>
     <p>
       I'm just teasing you with all these horrible facts.
-      There
+      There now exists a program that lets you check if you will get a line collision or not.
+      It's called
+      <a href="https://gitlab.com/hangprinter/line-collision-detector">line-collision-detector</a>.
     </p>
 
   </post>
