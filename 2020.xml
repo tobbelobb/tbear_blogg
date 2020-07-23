@@ -41,7 +41,7 @@
 	  		<img src="./bilder/hp_volume_liten.png" alt="" width="500" height="293"/>
 	  	</a>
 	  	<figcaption>
-        Fred Hedenberg made this nice and correct rendering of the usable print volume of a particular Hangprinter.
+        Fred Hedenberg made this nice and correct rendering of a usable print volume.
 	  	</figcaption>
 	  </figure>
     <p>
@@ -53,10 +53,10 @@
     <h3>So, For Any Particular 3d-model: Can we print it?</h3>
     <p>
       With Hangprinter we also have to consider the risk that lines might collide with the half-finished print.
-      Every tad of extruded material is a potential obstacle that the Hangprinter's every subsequent move must avoid.
+      Every tad of extruded material is a potential obstacle for every subsequent move.
     </p>
     <p>
-      Consider the following render to get some intuition about what a line collision is and how it occurs:
+      Consider the following render for some intuition about line collisions:
     </p>
 	  <figure>
 	  	<a href="./bilder/cone_shapes.jpg">
@@ -68,30 +68,79 @@
 	  	</figcaption>
 	  </figure>
     <p>
-      And as evidence that these collisions are a real world problem, consider this failed spiral vase that I printed at an event:
+      Actually, the answer to the question "is this object printable with my Hangprinter?", depends on a lot of things.
+      For example:
+      <ul>
+        <li>The positions of your anchors,</li>
+        <li>the shape of your effector,</li>
+        <li>how your object is rotated,</li>
+        <li>where it's placed on the build plate,</li>
+        <li>where you make your travel moves,</li>
+        <li>and in which order you put down the material!</li>
+      </ul>
+      Lots of stuff to think about.
+      Way more stuff than we'd like to think about.
+    </p>
+    <h3>The Solution</h3>
+    <p>
+      Since the start of the Hangprinter Project, I've wanted simple hardware and advanced software,
+      so I thought I should try to solve the line collision problem by writing a computer program.
+      <a href="https://gitlab.com/hangprinter/line-collision-detector">Line-collision-detector</a>
+      is the result.
+      It checks whether you'll have a line collision during print.
     </p>
 	  <figure>
-	  	<a href="./bilder/line-collision.png">
-	  		<img src="./bilder/line-collision_liten.png" alt="" width="500" height="719"/>
-	  	</a>
+      <video width="500" height="341" controls="controls">
+        <source src="bilder/usage00.mp4" type="video/mp4"/>
+         <!--source src="movie.ogg" type="video/ogg"-->
+         Your browser does not support the video tag.
+      </video>
 	  	<figcaption>
-        This print continued and survived the line collision (with a 1 cm deep artifact) because it was a smooth spiral vase.
-        The more common case is that lines snap, prints break loose, big disasters of various kinds.
+        The most basic usage of line-collision-detector.
+        A collision is detected.
+        The big-benchy.stl contains a 16.4x scaled up benchy.
+        The params file contains positions of anchor points and effector pivot points.
+        See the <a href="https://gitlab.com/hangprinter/linc/-/blob/f1282432a53a9c59042edb43716f4256b6de8caf/linc/params-example">params-example</a>
+        file in the repo for information about the params file.
+	  	</figcaption>
+	  </figure>
+	  <figure>
+      <video width="500" height="340" controls="controls">
+        <source src="bilder/usage01.mp4" type="video/mp4"/>
+         <!--source src="movie.ogg" type="video/ogg"-->
+         Your browser does not support the video tag.
+      </video>
+	  	<figcaption>
+        Here, a non-scaled 3DBenchy is analyzed, and since it's so small, no collision is detected.
+        The <code>-l</code> option is used to tell line-collision-detector to use a layer height of max 3 mm.
+        A bigger l-value lets the program terminate faster because there are fewer layers to analyze.
+	  	</figcaption>
+	  </figure>
+	  <figure>
+      <video width="500" height="283" controls="controls">
+        <source src="bilder/usage02.mp4" type="video/mp4"/>
+         <!--source src="movie.ogg" type="video/ogg"-->
+         Your browser does not support the video tag.
+      </video>
+	  	<figcaption>
+        I recommend viewing this in fullscreen.
+        Here, the <code>-o</code> option is used to create a debug model, which is inspected with <a href="https://www.blender.org/">Blender</a>.
+        We can confirm that the effector is at a sensible position, and that there really is a line collision occuring at z=393.6.
 	  	</figcaption>
 	  </figure>
     <p>
-      Actually, the answer to the question "is this object printable in my Hangprinter?", depends on
-      how your object is rotated,
-      where it's placed on the build plate,
-      and in which order you put down the material!
-      Lots of stuff to think about. (Uuugh...)
+      For details about how to build and develop line-collision-detector, I refer to <a href="https://gitlab.com/hangprinter/line-collision-detector/-/blob/master/README.md">the readme in the line-collision-detector repo</a>
+      and <a href="https://gitlab.com/hangprinter/linc/-/blob/master/README.md">the readme in the linc subrepo</a>.
+      For details on how to use the program, I recommend typing <code>run --help</code> on the command line.
     </p>
     <p>
-      I'm just teasing you with all these horrible facts.
-      There now exists a program that lets you check if you will get a line collision or not.
-      It's called
-      <a href="https://gitlab.com/hangprinter/line-collision-detector">line-collision-detector</a>.
+      This post is already quite long, so I realize I should save the details of the line-collision-detector
+      algorithm for another blog post.
     </p>
-
+    <p>
+      Anyways, I hope you find this new tool useful! =D
+      And well, we now kind of have a short answer to "how big is the build volume?":
+      16x 3DBenchy.
+    </p>
   </post>
 </posts>
