@@ -1,19 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
 <posts year="2020">
-  <post id="hangprinter_project_63" heading="Introducing Line Collision Detector" date="22-7-2020">
+  <post id="hangprinter_project_63" heading="Introducing Line Collision Detector" date="24-7-2020">
     <p>
       I got asked again recently, about the Hangprinter print volume.
-      How big is it really?
-      The short answer is that there is no well defined print volume.
-      The long answer is complicated.
+      How big is it, and what shape is it?
+    </p>
+    <h3>A Print Volume?</h3>
+    <p>
+      All 3D printers I know, except Hangprinter, have a <i>print volume</i>:
+      A volume within which we can print freely,
+      and outside which we can't print at all.
+      A print volume has a shape and a size that doesn't change.
+    </p>
+    <p>
+      The print volume is used to determine if an object is too big for a particular 3D printer.
+      If the object doesn't fit in the printers print volume, then it is too big.
+      Otherwise, it's not too big.
+    </p>
+    <h3>The Short Answer</h3>
+    <p>
+      How big is it? What shape is it?
+      Sorry, can't answer that.
+      A Hangprinter doesn't have a well defined print volume.
+    </p>
+    <p>
+      I sometimes lie a bit and say "it's a big trumpet shaped print volume".
+      That mostly gives a good enough intuition about what's printable with Hangprinter.
+      And it saves me from having to formulate the long answer.
     </p>
     <h3>The Long Answer</h3>
     <p>
-      First, lets split the question into two parts:
+      Let's first restrict ourselves to objects that are printed layer by layer.
+      Then, for any particular Hangprinter, assume that we could deduce a <i>max object</i>:
+      An object that has a larger size than any other object that is printable with that Hangprinter.
+      Let's call the volume enclosed by the max object <i>the max volume</i>.
+      It would have <i>the max size</i> and <i>the max shape</i>.
+    </p>
+    <p>
+      The max shape would probably look vaugely similar to a slightly triangluar trumpet.
+      Finding it would be nice, and useful.
+      The max size would roughly capture the size of the entire Hangprinter in one number.
+      As with a print volume, we could for sure print freely within the max volume.
+    </p>
+    <p>
+      However, Hangprinter would not be restricted to only ever print within the max volume,
+      so the max volume would not be the print volume we're looking for.
+      We'll explain this weird fact, but let's focus on two related, more practical questions first.
       <ul>
-        <li>Where can we reach?</li>
-        <li>What can we print?</li>
+        <li>What positions are reachable?</li>
+        <li>What objects are printable?</li>
       </ul>
     </p>
     <h3>The Reachable Volume</h3>
@@ -25,35 +61,43 @@
 	  	</figcaption>
 	  </figure>
     <p>
-      The Hangprinter's effector is fully constrained when moving within the tetrahedron spanned up by its four anchors.
-      An evil AI driven firmware could theoretically use the motors to toss the effector out of this envelope, but let's ignore that possibility
-      and call the anchor-spanned tetrahedron <i>the reachable volume</i>.
+      A hypothetical weightless Hangprinter effector would be able to reach any position within the tetrahedron spanned up by its four anchors.
+      Let's call this <i>the enclosing volume</i>.
     </p>
     <p>
-      I reality, we won't be able to print close to the walls of the reachable volume, since gravity will make
-      the effector sag inwards.
-      So <i>the usable volume</i> is a few percent smaller than the reachable volume.
-      Exactly how much sag to expect could be calculated from the weight of the effector and the maximum static force of the motors,
-      but let's save those calculations for another blog post.
+      Adding mass to the effector changes things slightly.
+      Firstly, the machine then gains the ability to toss the effector out of this tetrahedonal envelope,
+      so the volume is not an enclosing one anymore.
+      Secondly, the machine looses the ability to keep the effector still near any of the tetrahedrons three upper faces.
+      Mass will sag inwards towards the origin, no matter the stiffness of the lines or torque of the motors.
+    </p>
+    <p>
+      Since Hangprinter can't print out an enclosing volume shaped object, the enclosing volume is not the print volume.
+    </p>
+    <p>
+      Adding a sag to the enclosing volume gives us <i>the reachable volume</i>:
+      The volume within which it's possible for the Hangprinter to position its effector and make it stay put.
+      It would looks like this:
     </p>
 	  <figure>
 	  	<a href="./bilder/hp_volume.png">
 	  		<img src="./bilder/hp_volume_liten.png" alt="" width="500" height="293"/>
 	  	</a>
 	  	<figcaption>
-        Fred Hedenberg made this nice and correct rendering of a usable print volume.
+        Exactly how much sag to expect can be calculated from the weight of the effector and the maximum static force of the motors.
+        Fred Hedenberg made this nice rendering when investigating error due to line flex.
+        Error due to limited motor power will have the same basic shape.
 	  	</figcaption>
 	  </figure>
+    <h3>Can We Print That?</h3>
     <p>
-      This is where I wish we could end the analysis and say "print volume = tetrahedron minus sag".
-      But alas.
-      We cannot fill up the whole usable volume with tetrahedron-shaped benchy fractals.
-      At least not in a single big print.
+      We can't actually reach our whole reachable volume in a controlled way yet, since we don't have flex compensation in the firmware.
+      But even ignoring flex, we still wouldn't have been able to print out an object with the shape and size of the reachable volume.
     </p>
-    <h3>So, For Any Particular 3d-model: Can we print it?</h3>
     <p>
-      With Hangprinter we also have to consider the risk that lines might collide with the half-finished print.
-      Every tad of extruded material is a potential obstacle for every subsequent move.
+      The problem is, ABC lines point downwards, so they can collide with the half-finished print.
+      All previously extruded material is potentially an obstacle for every following move.
+      Every possible half-finished print state shadows out part of the reachable volume in its own unique way.
     </p>
     <p>
       Consider the following render for some intuition about line collisions:
@@ -63,31 +107,51 @@
 	  		<img src="./bilder/cone_shapes_liten.jpg" alt="" width="500" height="344"/>
 	  	</a>
 	  	<figcaption>
-        The Hangprinter's effector is attached to the ground with 6 different lines.
-        For each layer, each line will move within a "cone shape". The top of the cone shape is a convex hull of the current top layer.
+        The Hangprinter's effector is attached to the ground with six different lines.
+        For each layer, each line will move within a "cone shape" (red).
+        The top of each cone shape is a convex hull of the current top layer.
+        Line collisions are marked in yellow.
 	  	</figcaption>
 	  </figure>
     <p>
-      Actually, the answer to the question "is this object printable with my Hangprinter?", depends on a lot of things.
-      For example:
+      Coming back to the max volume, we can now imagine how it's possible to print outside of it.
+      We could add a wart on the max object and for every layer, make a render like the above.
+      Then we could simply remove any part of the old max shape that turned yellow, in order to make the wart fully printable.
+      That would give us a large printable object that is not contained by the max volume.
+      By this we learn that different printable objects might take up different, mutually exclusive parts of the reachable volume.
+    </p>
+    <p>
+      Ok, so the print volume doesn't exist, because of line collisions.
+      Let's then revert to talking about <i>printable</i> versus <i>non-printable</i> objects.
+      No more print volume, only reachable volume and printable/non-printable objects.
+    </p>
+    <h3>What Can We Print Then?</h3>
+    <p>
+      For every object that we want to print, we must perform a separate
+      analysis to check whether a line collision would occur.
+      The result of the analysis, depends on a lot of things, like:
       <ul>
-        <li>The positions of your anchors,</li>
-        <li>the shape of your effector,</li>
-        <li>how your object is rotated,</li>
+        <li>The positions of the anchors,</li>
+        <li>the shape of the effector,</li>
+        <li>how the object is rotated,</li>
         <li>where it's placed on the build plate,</li>
-        <li>where you make your travel moves,</li>
-        <li>and in which order you put down the material!</li>
+        <li>where we make our travel moves,</li>
+        <li>and in which order we put down the material!</li>
       </ul>
-      Lots of stuff to think about.
-      Way more stuff than we'd like to think about.
+      Lots of stuff to think about, and for every single print.
+      Sounds like we're in trouble?
     </p>
     <h3>The Solution</h3>
     <p>
-      Since the start of the Hangprinter Project, I've wanted simple hardware and advanced software,
-      so I thought I should try to solve the line collision problem by writing a computer program.
-      <a href="https://gitlab.com/hangprinter/line-collision-detector">Line-collision-detector</a>
-      is the result.
-      It checks whether you'll have a line collision during print.
+      As complicated as the analysis sounds, it shouldn't have to be more than a small addition
+      to the wealth of analyses that common slicer software already does for us before every single print.
+      We as users should get a warning if a potential line collision is detected.
+      The rest of the time, we shouldn't have to think about line collisions at all.
+    </p>
+    <p>
+      Detecting line collisions isn't entirely trivial, but I'm happy to tell you that it's already done =D
+      It's not baked into any slicer yet, but I've written a free-standing program who does the analysis separately.
+      Let me present <a href="https://gitlab.com/hangprinter/line-collision-detector">line-collision-detector</a>.
     </p>
 	  <figure>
       <video width="500" height="341" controls="controls">
@@ -138,9 +202,9 @@
       algorithm for another blog post.
     </p>
     <p>
-      Anyways, I hope you find this new tool useful! =D
-      And well, we now kind of have a short answer to "how big is the build volume?":
-      16x 3DBenchy.
+      Anyways, I hope you find this new tool useful!
+      And well, I now kind of have a better short answer to "how big is the build volume?":
+      Ca one 15.675x scale 3DBenchy =D
     </p>
   </post>
 </posts>

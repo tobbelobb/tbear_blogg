@@ -1,0 +1,424 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   
+      <meta name="author" content="Torbjorn">
+      <meta name="keywords" content="Reprap, blog, development">
+      <meta name="description" content="Torbj&oslash;rn Ludvigsen's Reprap blog.">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+      <link rel="stylesheet" href="style.css" type="text/css">
+      <link href="http://vitana.se/opr3d/tbear/feed.xml" rel="alternate" type="application/rss+xml" title="Torbj&oslash;rn's Reprap blog's RSS feed"><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script><title>Torbj&oslash;rns Reprap blog</title>
+   </head>
+   <body>
+      <div id="SiteName">
+         <div class="right"><a href="#Links">Contact, archive, etc</a></div>
+         <div class="left">
+            Reprap blog 2020
+         </div>
+      </div>
+      <div id="MainContent">
+         <h1 id="hangprinter_project_63">Introducing Line Collision Detector</h1>
+         <div class="date">24-7-2020</div>
+         <p>
+            I got asked again recently, about the Hangprinter print volume.
+            How big is it, and what shape is it?
+                
+         </p>
+         <h3>A Print Volume?</h3>
+         <p>
+                  All 3D printers I know, except Hangprinter, have a <i>print volume</i>:
+                  A volume within which we can print freely,
+                  and outside which we can't print at all.
+                  A print volume has a shape and a size that doesn't change.
+                
+         </p>
+         <p>
+                  The print volume is used to determine if an object is too big for a particular 3D printer.
+                  If the object doesn't fit in the printers print volume, then it is too big.
+                  Otherwise, it's not too big.
+                
+         </p>
+         <h3>The Short Answer</h3>
+         <p>
+                  How big is it? What shape is it?
+                  Sorry, can't answer that.
+                  A Hangprinter doesn't have a well defined print volume.
+                
+         </p>
+         <p>
+                  I sometimes lie a bit and say "it's a big trumpet shaped print volume".
+                  That mostly gives a good enough intuition about what's printable with Hangprinter.
+                  And it saves me from having to formulate the long answer.
+                
+         </p>
+         <h3>The Long Answer</h3>
+         <p>
+                  Let's first restrict ourselves to objects that are printed layer by layer.
+                  Then, for any particular Hangprinter, assume that we could deduce a <i>max object</i>:
+                  An object that has a larger size than any other object that is printable with that Hangprinter.
+                  Let's call the volume enclosed by the max object <i>the max volume</i>.
+                  It would have <i>the max size</i> and <i>the max shape</i>.
+                
+         </p>
+         <p>
+                  The max shape would probably look vaugely similar to a slightly triangluar trumpet.
+                  Finding it would be nice, and useful.
+                  The max size would roughly capture the size of the entire Hangprinter in one number.
+                  As with a print volume, we could for sure print freely within the max volume.
+                
+         </p>
+         <p>
+                  However, Hangprinter would not be restricted to only ever print within the max volume,
+                  so the max volume would not be the print volume we're looking for.
+                  We'll explain this weird fact, but let's focus on two related, more practical questions first.
+                  
+            <ul>
+                       
+               <li>What positions are reachable?</li>
+                       
+               <li>What objects are printable?</li>
+                     
+            </ul>
+                
+         </p>
+         <h3>The Reachable Volume</h3>
+         <figure>
+            	  	<a href="./bilder/ReachableVolume.png">
+               	  		<img src="./bilder/ReachableVolume_liten.png" alt="" width="500" height="444">
+               	  	</a>
+            	  	
+            <figcaption>
+               	  	
+            </figcaption>
+            	  
+         </figure>
+         <p>
+                  A hypothetical weightless Hangprinter effector would be able to reach any position within the tetrahedron spanned up
+            by its four anchors.
+                  Let's call this <i>the enclosing volume</i>.
+                
+         </p>
+         <p>
+                  Adding mass to the effector changes things slightly.
+                  Firstly, the machine then gains the ability to toss the effector out of this tetrahedonal envelope,
+                  so the volume is not an enclosing one anymore.
+                  Secondly, the machine looses the ability to keep the effector still near any of the tetrahedrons three upper faces.
+                  Mass will sag inwards towards the origin, no matter the stiffness of the lines or torque of the motors.
+                
+         </p>
+         <p>
+                  Since Hangprinter can't print out an enclosing volume shaped object, the enclosing volume is not the print volume.
+                
+         </p>
+         <p>
+                  Adding a sag to the enclosing volume gives us <i>the reachable volume</i>:
+                  The volume within which it's possible for the Hangprinter to position its effector and make it stay put.
+                  It would looks like this:
+                
+         </p>
+         <figure>
+            	  	<a href="./bilder/hp_volume.png">
+               	  		<img src="./bilder/hp_volume_liten.png" alt="" width="500" height="293">
+               	  	</a>
+            	  	
+            <figcaption>
+                       Exactly how much sag to expect can be calculated from the weight of the effector and the maximum static force of the
+               motors.
+                       Fred Hedenberg made this nice rendering when investigating error due to line flex.
+                       Error due to limited motor power will have the same basic shape.
+               	  	
+            </figcaption>
+            	  
+         </figure>
+         <h3>Can We Print That?</h3>
+         <p>
+                  We can't actually reach our whole reachable volume in a controlled way yet, since we don't have flex compensation in
+            the firmware.
+                  But even ignoring flex, we still wouldn't have been able to print out an object with the shape and size of the reachable
+            volume.
+                
+         </p>
+         <p>
+                  The problem is, ABC lines point downwards, so they can collide with the half-finished print.
+                  All previously extruded material is potentially an obstacle for every following move.
+                  Every possible half-finished print state shadows out part of the reachable volume in its own unique way.
+                
+         </p>
+         <p>
+                  Consider the following render for some intuition about line collisions:
+                
+         </p>
+         <figure>
+            	  	<a href="./bilder/cone_shapes.jpg">
+               	  		<img src="./bilder/cone_shapes_liten.jpg" alt="" width="500" height="344">
+               	  	</a>
+            	  	
+            <figcaption>
+                       The Hangprinter's effector is attached to the ground with six different lines.
+                       For each layer, each line will move within a "cone shape" (red).
+                       The top of each cone shape is a convex hull of the current top layer.
+                       Line collisions are marked in yellow.
+               	  	
+            </figcaption>
+            	  
+         </figure>
+         <p>
+                  Coming back to the max volume, we can now imagine how it's possible to print outside of it.
+                  We could add a wart on the max object and for every layer, make a render like the above.
+                  Then we could simply remove any part of the old max shape that turned yellow, in order to make the wart fully printable.
+                  That would give us a large printable object that is not contained by the max volume.
+                  By this we learn that different printable objects might take up different, mutually exclusive parts of the reachable
+            volume.
+                
+         </p>
+         <p>
+                  Ok, so the print volume doesn't exist, because of line collisions.
+                  Let's then revert to talking about <i>printable</i> versus <i>non-printable</i> objects.
+                  No more print volume, only reachable volume and printable/non-printable objects.
+                
+         </p>
+         <h3>What Can We Print Then?</h3>
+         <p>
+                  For every object that we want to print, we must perform a separate
+                  analysis to check whether a line collision would occur.
+                  The result of the analysis, depends on a lot of things, like:
+                  
+            <ul>
+                       
+               <li>The positions of the anchors,</li>
+                       
+               <li>the shape of the effector,</li>
+                       
+               <li>how the object is rotated,</li>
+                       
+               <li>where it's placed on the build plate,</li>
+                       
+               <li>where we make our travel moves,</li>
+                       
+               <li>and in which order we put down the material!</li>
+                     
+            </ul>
+                  Lots of stuff to think about, and for every single print.
+                  Sounds like we're in trouble?
+                
+         </p>
+         <h3>The Solution</h3>
+         <p>
+                  As complicated as the analysis sounds, it shouldn't have to be more than a small addition
+                  to the wealth of analyses that common slicer software already does for us before every single print.
+                  We as users should get a warning if a potential line collision is detected.
+                  The rest of the time, we shouldn't have to think about line collisions at all.
+                
+         </p>
+         <p>
+                  Detecting line collisions isn't entirely trivial, but I'm happy to tell you that it's already done =D
+                  It's not baked into any slicer yet, but I've written a free-standing program who does the analysis separately.
+                  Let me present <a href="https://gitlab.com/hangprinter/line-collision-detector">line-collision-detector</a>.
+                
+         </p>
+         <figure>
+                  
+            <video width="500" height="341" controls="controls">
+                       
+               <source src="bilder/usage00.mp4" type="video/mp4"></source>
+                        
+               <!--source src="movie.ogg" type="video/ogg"-->
+                        Your browser does not support the video tag.
+                     
+            </video>
+            	  	
+            <figcaption>
+                       The most basic usage of line-collision-detector.
+                       A collision is detected.
+                       The big-benchy.stl contains a 16.4x scaled up benchy.
+                       The params file contains positions of anchor points and effector pivot points.
+                       See the <a href="https://gitlab.com/hangprinter/linc/-/blob/f1282432a53a9c59042edb43716f4256b6de8caf/linc/params-example">params-example</a>
+                       file in the repo for information about the params file.
+               	  	
+            </figcaption>
+            	  
+         </figure>
+         <figure>
+                  
+            <video width="500" height="340" controls="controls">
+                       
+               <source src="bilder/usage01.mp4" type="video/mp4"></source>
+                        
+               <!--source src="movie.ogg" type="video/ogg"-->
+                        Your browser does not support the video tag.
+                     
+            </video>
+            	  	
+            <figcaption>
+                       Here, a non-scaled 3DBenchy is analyzed, and since it's so small, no collision is detected.
+                       The <code>-l</code> option is used to tell line-collision-detector to use a layer height of max 3 mm.
+                       A bigger l-value lets the program terminate faster because there are fewer layers to analyze.
+               	  	
+            </figcaption>
+            	  
+         </figure>
+         <figure>
+                  
+            <video width="500" height="283" controls="controls">
+                       
+               <source src="bilder/usage02.mp4" type="video/mp4"></source>
+                        
+               <!--source src="movie.ogg" type="video/ogg"-->
+                        Your browser does not support the video tag.
+                     
+            </video>
+            	  	
+            <figcaption>
+                       I recommend viewing this in fullscreen.
+                       Here, the <code>-o</code> option is used to create a debug model, which is inspected with <a href="https://www.blender.org/">Blender</a>.
+                       We can confirm that the effector is at a sensible position, and that there really is a line collision occuring at
+               z=393.6.
+               	  	
+            </figcaption>
+            	  
+         </figure>
+         <p>
+                  For details about how to build and develop line-collision-detector, I refer to <a href="https://gitlab.com/hangprinter/line-collision-detector/-/blob/master/README.md">the readme in the line-collision-detector repo</a>
+                  and <a href="https://gitlab.com/hangprinter/linc/-/blob/master/README.md">the readme in the linc subrepo</a>.
+                  For details on how to use the program, I recommend typing <code>run --help</code> on the command line.
+                
+         </p>
+         <p>
+                  This post is already quite long, so I realize I should save the details of the line-collision-detector
+                  algorithm for another blog post.
+                
+         </p>
+         <p>
+                  Anyways, I hope you find this new tool useful!
+                  And well, I now kind of have a better short answer to "how big is the build volume?":
+                  Ca one 15.675x scale 3DBenchy =D
+                
+         </p>
+         <p>
+            - tobben
+            
+         </p><br><br><br><br><br><br><br><br><br><br><br><h1 id="Links">
+            Links
+            
+         </h1>
+         <p>
+            Hangprinter Campaign: <a href="https://salt.bountysource.com/teams/hangprinter">Bountysource Salt</a></p>
+         <p>
+            Hangprinter Merchandise USA: <a href="https://shop.spreadshirt.com/hangprinter-merchandise/">Spreadshirt.com</a></p>
+         <p>
+            Hangprinter Merchandise Sweden: <a href="https://shop.spreadshirt.se/hangprinter-merchandise/">Spreadshirt.se</a></p>
+         <p>
+            Hangprinter Project: <a href="2014.html#Hangprinter">[1]</a>,
+            <a href="2015.html#Slideprinter_Update">[2]</a>,
+            <a href="2015.html#hangprinter_project_2">[3]</a>,
+            <a href="2015.html#hangprinter_project_3">[4]</a>,
+            <a href="2015.html#hangprinter_project_4">[5]</a>,
+            <a href="2015.html#hangprinter_project_5">[6]</a>,
+            <a href="2015.html#hangprinter_project_6">[7]</a>,
+            <a href="2015.html#hangprinter_project_7">[8]</a>,
+            <a href="2015.html#hangprinter_project_8">[9]</a>,
+            <a href="2015.html#hangprinter_project_9">[10]</a>,
+            <a href="2015.html#hangprinter_project_10">[11]</a>,
+            <a href="2015.html#hangprinter_project_11">[12]</a>,
+            <a href="2015.html#hangprinter_project_12">[13]</a>,
+            <a href="2015.html#hangprinter_project_13">[14]</a>,
+            <a href="2015.html#hangprinter_project_14">[15]</a>,
+            <a href="2015.html#hangprinter_project_15">[16]</a>,
+            <a href="2015.html#hangprinter_project_16">[17]</a>,
+            <a href="2015.html#hangprinter_project_17">[18]</a>,
+            <a href="2015.html#hangprinter_project_18">[19]</a>,
+            <a href="2016.html#hangprinter_project_19">[20]</a>,
+            <a href="2016.html#hangprinter_project_20">[21]</a>,
+            <a href="2016.html#hangprinter_project_21">[22]</a>,
+            <a href="2016.html#hangprinter_project_22">[23]</a>,
+            <a href="2016.html#hangprinter_project_23">[24]</a>,
+            <a href="2016.html#hangprinter_project_24">[25]</a>,
+            <a href="2016.html#hangprinter_project_25">[26]</a>,
+            <a href="2016.html#hangprinter_project_26">[27]</a>,
+            <a href="2016.html#hangprinter_project_27">[28]</a>,
+            <a href="2017.html#hangprinter_project_28">[29]</a>,
+            <a href="2017.html#hangprinter_project_29">[30]</a>,
+            <a href="2017.html#hangprinter_project_30">[31]</a>,
+            <a href="2017.html#hangprinter_project_31">[32]</a>,
+            <a href="2017.html#hangprinter_project_32">[33]</a>,
+            <a href="2017.html#hangprinter_project_33">[34]</a>,
+            <a href="2017.html#hangprinter_project_34">[35]</a>,
+            <a href="2017.html#hangprinter_project_35">[36]</a>,
+            <a href="2017.html#hangprinter_project_36">[37]</a>,
+            <a href="2017.html#hangprinter_project_37">[38]</a>,
+            <a href="2017.html#hangprinter_project_38">[39]</a>,
+            <a href="2017.html#hangprinter_project_39">[40]</a>,
+            <a href="2017.html#hangprinter_project_40">[41]</a>,
+            <a href="2017.html#hangprinter_project_41">[42]</a>,
+            <a href="2017.html#hangprinter_project_42">[43]</a>,
+            <a href="2017.html#hangprinter_project_43">[44]</a>,
+            <a href="2017.html#hangprinter_project_44">[45]</a>,
+            <a href="2017.html#hangprinter_project_45">[46]</a>,
+            <a href="2017.html#hangprinter_project_46">[47]</a>,
+            <a href="2017.html#hangprinter_project_47">[48]</a>,
+            <a href="2017.html#hangprinter_project_48">[49]</a>,
+            <a href="2017.html#hangprinter_project_49">[50]</a>,
+            <a href="2017.html#hangprinter_project_50">[51]</a>,
+            <a href="2018.html#hangprinter_project_51">[52]</a>,
+            <a href="2018.html#hangprinter_project_52">[53]</a>,
+            <a href="2018.html#hangprinter_project_53">[54]</a>,
+            <a href="2018.html#hangprinter_project_54">[55]</a>,
+            <a href="2018.html#hangprinter_project_55">[56]</a>,
+            <a href="2018.html#hangprinter_project_56">[57]</a>,
+            <a href="2018.html#hangprinter_project_57">[58]</a>,
+            <a href="2018.html#hangprinter_project_58">[59]</a>,
+            <a href="2018.html#hangprinter_project_59">[60]</a>,
+            <a href="2018.html#hangprinter_project_60">[61]</a>,
+            <a href="2018.html#hangprinter_project_61">[62]</a>,
+            <a href="2018.html#hangprinter_project_62">[63]</a>,
+            <a href="2020.html#hangprinter_project_63">[64]</a></p>
+         <p>
+            Hangprinter Project Homepage: <a href="https://hangprinter.org">hangprinter.org</a></p>
+         <p>
+            Print Issue Solution Filter Project: <a href="2014.html#Introducing_PISF">[1]</a>,
+            <a href="2014.html#Presenting_PISF_Again">[2]</a>,
+            <a href="2014.html#PISF_Online_Sort_Of">[3]</a>,
+            <a href="2014.html#PISF">[4]</a></p>
+         <p>
+            Sourcing RepRappro Mendel in Larvik: <a href="2014.html#Sourcing_Mendel_1">[1]</a>,
+            <a href="2014.html#Sourcing_Mendel_2">[2]</a>,
+            <a href="2014.html#Sourcing_Mendel_3">[3]</a>,
+            <a href="2014.html#Sourcing_Mendel_4">[4]</a>,
+            <a href="2014.html#Sourcing_Mendel_5">[5]</a>,
+            <a href="2014.html#Sourcing_Mendel_6">[6]</a>,
+            <a href="2014.html#Sourcing_Mendel_7">[7]</a></p>
+         <p>
+            Archive: <a href="2014.html">2014</a>, <a href="2015.html">2015</a>, <a href="2016.html">2016</a>, <a href="2017.html">2017</a>, <a href="2018.html">2018</a></p>
+         <p>
+            Github Profile: <a href="https://github.com/tobbelobb/">link</a><br></p>
+         <p>
+            Vimeo User: <a href="https://vimeo.com/user23166500">link</a><br></p>
+         <p>
+            Twitter User: <a href="https://twitter.com/tobbelobb">link</a><br></p>
+         <p>
+            Master's Thesis: <a href="http://opensourceecology.org/wiki/File:Thesis.pdf">link</a><br></p>
+         <p>
+            Linkedin Profile: <a href="https://se.linkedin.com/in/torbjorn-ludvigsen">link</a><br></p>
+         <p>
+            Appropedia User: <a href="http://www.appropedia.org/User:Tobben">link</a><br></p>
+         <p>
+            RepRap Forums User: <a href="http://forums.reprap.org/profile.php?1,22385">link</a></p>
+         <p>
+            Forums threads: <a href="http://forums.reprap.org/read.php?178,344022">Hangprinter version 1</a>,
+            <a href="http://forums.reprap.org/read.php?1,738858">Hangprinter version 2</a>,
+            <a href="http://forums.reprap.org/read.php?1,792937">Hangprinter version 3</a>,
+            <a href="https://reprap.org/forum/list.php?423">List of Hangprinter threads</a></p>
+         <p>
+            Source for this blog: <a href="https://gitlab.com/tobben/tbear_blogg">Github repo</a></p>
+         <p>
+            Everything on this homepage, except the videos, is licenced under the <a href="https://www.gnu.org/licenses/fdl">Gnu Free Documentation Licence</a>.
+            The videos published via Vimeo or Youtube are also licenced via Vimeo or Youtube.
+            
+         </p>
+      </div><br><br><br><br><br><br><br><br><script type="text/javascript">
+  MathJax.Hub.Configured()
+</script></body>
+</html>
