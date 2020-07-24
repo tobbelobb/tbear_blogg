@@ -77,9 +77,6 @@
   Hangprinter Merchandise Sweden: <a href="https://shop.spreadshirt.se/hangprinter-merchandise/">Spreadshirt.se</a>
 </p>
 <p>
-  Hangprinter assebly workshops: <a href="https://www.eventbrite.com/e/hangprinter-assembly-workshop-1-tickets-44216520804">#1</a>
-</p>
-<p>
   Hangprinter Project: <a  href="2014.html#Hangprinter">[1]</a>,
                        <a  href="2015.html#Slideprinter_Update">[2]</a>,
                        <a  href="2015.html#hangprinter_project_2">[3]</a>,
@@ -176,9 +173,6 @@ Vimeo User: <a href="https://vimeo.com/user23166500">link</a><br />
 Twitter User: <a href="https://twitter.com/tobbelobb">link</a><br />
 </p>
 <p>
-Work Microblog: <a href="http://opensourceecology.org/wiki/Tobben_Log">link</a><br />
-</p>
-<p>
 Master's Thesis: <a href="http://opensourceecology.org/wiki/File:Thesis.pdf">link</a><br />
 </p>
 <p>
@@ -188,25 +182,20 @@ Linkedin Profile: <a href="https://se.linkedin.com/in/torbjorn-ludvigsen">link</
 Appropedia User: <a href="http://www.appropedia.org/User:Tobben">link</a><br />
 </p>
 <p>
-Company website (in Norwegian): <a href="http://ludvigsen3dprinting.com/">link</a>
-</p>
-<p>
-Email: <a href="mailto:post@ludvigsen3dprinting.com">post@ludvigsen3dprinting.com</a>
-</p>
-<p>
 RepRap Forums User: <a href="http://forums.reprap.org/profile.php?1,22385">link</a>
 </p>
 <p>
 Forums threads: <a href="http://forums.reprap.org/read.php?178,344022">Hangprinter version 1</a>,
                 <a href="http://forums.reprap.org/read.php?1,738858">Hangprinter version 2</a>,
-                <a href="http://forums.reprap.org/read.php?1,792937">Hangprinter version 3</a>
+                <a href="http://forums.reprap.org/read.php?1,792937">Hangprinter version 3</a>,
+                <a href="https://reprap.org/forum/list.php?423">List of Hangprinter threads</a>
 </p>
 <p>
-  Source for this blog: <a href="https://github.com/tobbelobb/tbear_blogg">Github repo</a>
+  Source for this blog: <a href="https://gitlab.com/tobben/tbear_blogg">Github repo</a>
 </p>
 <p>
 Everything on this homepage, except the videos, is licenced under the <a href="https://www.gnu.org/licenses/fdl">Gnu Free Documentation Licence</a>.
-The videos are licenced via Vimeo or Youtube.
+The videos published via Vimeo or Youtube are also licenced via Vimeo or Youtube.
 </p>
 </div>
 <br /><br /><br /><br /><br /><br /><br /><br />
