@@ -180,9 +180,15 @@
                   Coming back to the max volume, we can now imagine how it's possible to print outside of it.
                   We could add a wart on the max object and for every layer, make a render like the above.
                   Then we could simply remove any part of the old max shape that turned yellow, in order to make the wart fully printable.
-                  That would give us a large printable object that is not contained by the max volume.
-                  By this we learn that different printable objects might take up different, mutually exclusive parts of the reachable
-            volume.
+                  Then if the wart turns yellow when any of the later layers are printed, we'll reshape those layers (by creating an inverted
+            wart
+                  on the appropriate place) until all line collisions are avoided.
+                
+            <p>
+                   
+            </p>
+                  That procedure would give us a large printable object that is not contained by the max volume.
+                  Hence we learn that different printable objects might take up different, mutually exclusive parts of the reachable volume.
                 
          </p>
          <p>
