@@ -1,6 +1,132 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
 <posts year="2020">
+  <post id="personal_1" heading="Becoming A Type 3 Worker" date="25-8-2020">
+    <p>
+      I've been thinking about what I want to make this year.
+      I've quit my job because I wanted to work on Hangprinter.
+      No real plan. So now what?
+    </p>
+    <p>
+      I think I will be heading where we all will be heading.
+      I think work is changing.
+    </p>
+    <h3>History of Worker Types</h3>
+    <h4>Type 0</h4>
+    <p>
+      Let's skip hunter/gatherers.
+      Let self-sufficient farmers be our basline type 0 workers.
+      They spent most of their time producing food for themselves at home.
+    </p>
+    <h4>Type 1</h4>
+    <p>
+      A few generations ago, work moved from farms into factories or factory-like workplaces.
+      These workplaces packed people tightly together.
+      They had two pre-defined economical roles built-in, two roles with often conflicting interests: Workers and owners.
+    </p>
+    <p>
+      Groups with conflicting interests packed together created power struggle.
+      Owners were powerful because they decided what type 1 workers should do.
+      The workers bonded together to collectively gain the power to refuse.
+      Company employment structures were invented to regulate work relations, like families had done for type 0 workers.
+    </p>
+    <p>
+      Work regulation efforts were successful, and factories produced a lot of material output.
+      This enabled a third economical role: Consumers.
+      Type 1 consumers bought factory output.
+      Owners forwarded money to workers, via companies.
+    </p>
+    <p>
+      Type 1 workers got paid for working hours, so that they could be consumers during non-work hours.
+      They became type 1 worker/consumers.
+      Work and consumption got separate physical spaces:
+      Work places, and consumption places.
+      Work and consumption also got separate time slots:
+      9-5 work, and 5-9 consumption.
+    </p>
+    <p>
+      They improved in both roles over time.
+      This was the happy, but unsustainable equilibrium state worker/consumer type 1:
+      Producing objects at work, buying objects at home, more and more, better and better.
+    </p>
+    <h4>Type 2</h4>
+    <p>
+      As factories moved abroad, work moved into office buildings.
+      These contained no conflicting roles, and produced no physical output.
+    </p>
+    <p>
+      Office buildings were still quite packed, but there was no new power struggle.
+      Rather, there was a great consensus:
+      Every single aspect of type 2 economic everyday life
+      should mimic the type 1 system as closely as possible.
+      Still more and more, better and better, only not objects.
+    </p>
+    <p>
+      Workers got employed by companies.
+      They were paid for being in offices, 9-5.
+      They consumed 5-9.
+      The worker and consumers roles were kept distinct.
+    </p>
+    <p>
+      Since the consensus was to not change the words, people changed the words' meanings instead.
+      "Work" was generalized, from "the thing you must do" to "the thing you're specialized at", or even "whatever pays your rent".
+      In the type 2 system, "work" could mean very passive things, like "being the owner of something profitable".
+    </p>
+    <p>
+      The meaning of "consumption" was also generalized.
+      It transitioned from "buying/using objects" to "spending money".
+      In the type 2 system, people "consumed" abstract things like time, expertise and beauty.
+    </p>
+    <p>
+      An "employer" transitioned from "a work-family where you live your work-life, that takes care of you and owns your output" to
+      "a legal entity that fits you into formalities".
+      A common way to be "employed" in the type 2 system was to create a personal company that employed only onself.
+    </p>
+    <p>
+      Near the end of the type 2 era, work consisted almost entirely of feeding computers information via mouse and keyboard.
+    </p>
+    <h4>Type 3</h4>
+    <p>
+      Work soon moved out of the office and onto the Internet.
+      The Internet was not factory-like or office-like at all.
+      The consensus about mimicing the type 1 system broke down.
+      There went 9-5/5-9 time slots, specific work buildings, and employers.
+    </p>
+    <p>
+      The type 2 "service" economy lost ownership of the very word "service".
+      A type 2 service was a paid human action.
+      A type 3 service was a computer replying to requests via the Internet.
+      Human activity on the Internet got new terms: content creation/consumption.
+    </p>
+    <p>
+      So here we are, in a new era with less old structure, and with new built-in economic roles: Platforms, creators, and users.
+      There is also new finite resource, to spend and earn: Attention.
+      The meaning of the word "work" is moving towards "whatever someone pays attention to you doing".
+    </p>
+    <p>
+      Like in the type 1 era, I think we will see some conflicting interests, and power struggles.
+      Platforms, creators, and users must split work, money and attention between them.
+      These three are not a family, their relationship is not well regulated.
+    </p>
+    <p>
+      Platforms are my far the more powerful today, but their power will be tamed.
+      Both creators and users might bond together, and gain the power to refuse bad deals.
+      Current platforms are few and exposed, and they are formally still companies.
+      This means they are easy to regulate with type 1 regulations.
+    </p>
+    <p>
+      Like in the type 1 era, a fruitful regulation can be carved out.
+      An incredible output of entertainment, science, and inventions might be produced.
+      More and more, better and better, only not service.
+    </p>
+    <h4>Type 4</h4>
+    <p>
+      Future platforms will have their own currencies and be omnipresent,
+      as integrated parts of the Internet itself.
+      They will have to be regulated mostly by the users themselves.
+      Most states will be unable to or unwilling to regulate these platforms.
+    </p>
+  </post>
   <post id="hangprinter_project_63" heading="Introducing Line Collision Detector" date="24-7-2020">
     <p>
       I got asked again recently, about the Hangprinter print volume.
@@ -217,159 +343,6 @@
       Anyways, I hope you find this new tool useful!
       And well, I now kind of have a better short answer to "how big is the build volume?":
       Ca one 15.675x scale 3DBenchy =D
-    </p>
-  </post>
-  <post id="personal_1" heading="Embracing Platforms" date="24-8-2020">
-    <p>
-      I've been thinking about what I want to make this year.
-      I've quit my day job because I wanted to work on Hangprinter.
-      No real plan. So now what?
-    </p>
-    <p>
-      First some background about where I think information work in society is heading in general.
-    </p>
-    <h3>History of Worker Types</h3>
-    <h4>Type 0</h4>
-    <p>
-      Let's skip hunter/gatherers.
-      Let our type 0 worker be largely self-sufficient farmers.
-    </p>
-    <h4>Type 1</h4>
-    <p>
-      A few generations ago, work moved from farms into factories or factory-like workplaces.
-      These workplaces were dirty, and had two built-in economical roles: Workers and owners.
-      These groups often had conflicting interests.
-      Company employment structures were invented to regulate their relations, like families had done for type 0 workers.
-    </p>
-    <p>
-      Factories produced a lot of material output.
-      This made possible a third economical role: Consumer.
-      Consumers buy factory output.
-    </p>
-    <p>
-      Type 1 workers got paid for their work hours, so that they could consumers during non-work hours.
-      Work and consumption got separate physical spaces.
-      Work places, consumption places.
-      Work and consumption also got separate time slots in Type 1 workers' everyday lives.
-      9-5 work. 5-9 consumption.
-    </p>
-    <p>
-      Type 1 workers got better at both over time.
-      Factories produced more, and consumers consumed more.
-      This is the happy, unsustainable, equilibrium state of worker type 1:
-      Producing objects, consuming objects, more and more, better and better.
-    </p>
-    <h4>Type 2</h4>
-    <p>
-      As factories moved abroad, work moved into office buildings.
-      These contained no conflicting roles, and produced no physical output.
-    </p>
-    <p>
-      Rather than pleasing via some kind of physical object,
-      type 2 pleased consumers directly, with human actions.
-      They got paid for delivering knowledge or services.
-      Still more and more, better and better, but no objects.
-      More sustainable.
-    </p>
-    <p>
-      Services and knowledge did not strictly require 9-5 work locations.
-      Regardless, type 2 workers kept most type 1 customs.
-      Company employment structures were kept.
-      The separation of work locations from consumption locations were kept.
-      The separation of work times from consumption times were also kept.
-    </p>
-    <p>
-      However, the meaning of the word "work" was not kept.
-      It transitioned from "the thing you must do" to "the thing you're specialized at", or even "whatever someone pays you to do".
-    </p>
-    <h4>Type 3</h4>
-    <p>
-      Work soon moved out of the office and onto the Internet.
-      The type 2 worker couldn't maintain type 1 customs outside of the office building for very long.
-    </p>
-    <p>
-      Work/consumption locations merged.
-      Work/consumption times merged.
-      The type 1 company employment regulation didn't fit anymore.
-    </p>
-    <p>
-      Now, there are content creators, platforms, and users.
-      There will be a power struggle between creators and platforms.
-      Users will be easily manipulated by both groups, unless platforms backstab each other.
-    </p>
-    <p>
-      Creators and platforms will form powerful unions.
-      In some countries, a practical regulatory framework that benefits
-      everyone will be carved out.
-      These nations will become rich and stable.
-    </p>
-    <p>
-      Current platforms are few and exposed.
-      They are easy to regulate with type 1 regulations.
-      Future platforms will have their own currencies and be omnipresent,
-      as integrated parts of the Internet itself.
-      They will have to be regulated mostly by the users themselves.
-      Most states will be unable to or unwilling to regulate these platforms.
-    </p>
-    <p>
-      The meaning of "work" transitions further into "whatever someone pays attention to you doing".
-      It can mean "playing a computer game" or "whistling old songs with funny make-up on".
-    </p>
-    <h3>Preparing for Type 3 Life!</h3>
-    <p>
-      I want to make my attention very expensive.
-    </p>
-    <h3>Requests From Strangers</h3>
-    <p>
-      I get a lot of random requests from strangers, mostly nice people.
-      But the Internet is so big.
-      I will stop feeling bad for not answering them.
-    </p>
-    <h3>Social Media</h3>
-    <p>
-      As a free software activist, I've avoided social media all my life.
-      Maybe I shouldn't.
-      Social media can be cozy.
-
-    </p>
-    <h3>The News</h3>
-    <p>
-      Corona has made me realize.
-      Toxic news coverage creates more damange than the virus itself does.
-      I must avoid them like I avoid the virus.
-    </p>
-
-      I will stop feeling bad about not answering strangers' requests.
-      I will block political messages from all my feeds.
-      I will shield myself from advertisement and general news sites.
-      When news leak through my shield, I will know that the journalist might just have misunderstood the subject completely.
-      I will not judge news I hear to be good, bad, true, or false.
-
-      My content
-
-
-
-
-
-
-      My attention is a finite resource.
-
-
-      I think I've found a new business model:
-
-      So I add value to the world by publishing things on the Internet.
-      I publish open source software and hardware.
-      I also publish things on the Internet.
-
-      I sell a creation process.
-      I create open source software and hardware.
-
-      I don't sell software or hardware.
-      I'm not a startup.
-      I'm the carrier of a creative process, and if I get money, I'll pay attention to it.
-      If I can't afford to continue, then I'll get a day job again.
-      Then the creative process, the one who made Hangprinter and this blog, stagnates or dies.
-
     </p>
   </post>
 </posts>
