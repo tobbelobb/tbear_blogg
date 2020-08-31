@@ -203,7 +203,7 @@ Forums threads: <a href="http://forums.reprap.org/read.php?178,344022">Hangprint
   Source for this blog: <a href="https://gitlab.com/tobben/tbear_blogg">Gitlab repo</a>
 </p>
 <p>
-Everything on this homepage, except the videos, is licenced under the <a href="https://www.gnu.org/licenses/fdl">Gnu Free Documentation Licence</a>.
+Everything on this homepage, except those videos who are published via Vimeo or Youtube, is licenced under the <a href="https://www.gnu.org/licenses/fdl">Gnu Free Documentation Licence</a>.
 The videos published via Vimeo or Youtube are also licenced via Vimeo or Youtube.
 </p>
 </div>
