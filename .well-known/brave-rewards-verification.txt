@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: torbjornludvigsen.com
+Token: 9af94ab8b0d3b82750d5fec8511685d9bb9a271bbd545867c1d5fa0895cb4b7b
