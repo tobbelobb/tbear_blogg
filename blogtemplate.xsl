@@ -35,6 +35,7 @@
     <a href="#Links">Contact, archive, etc</a>
   </div>
   <div class="left">
+   <!-- Everyone benefits if I solve a hard problem -->
     Reprap blog <xsl:value-of select="posts/@year" />
   </div>
 </div>

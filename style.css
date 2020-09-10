@@ -2,9 +2,11 @@
   font-family: myFirstFont;
   src: url(OpenSansRegular.woff);
 }
-* {
+
+*:not(code) {
    font-family: myFirstFont;
 }
+
 body {
 	background-color:#ffffff;
 }

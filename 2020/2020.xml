@@ -18,12 +18,12 @@
       Let self-sufficient farmers be our basline type 0 workers.
       They spent most of their time producing food at home.
     </p>
-	  <figure>
-	  	<a href="./bilder/Polish_berry_pickers_color.jpg">
-	  		<img src="./bilder/Polish_berry_pickers_color_liten.jpg" alt="" width="500" height="354"/>
-	  	</a>
+    <figure>
+      <a href="./bilder/Polish_berry_pickers_color.jpg">
+        <img src="./bilder/Polish_berry_pickers_color_liten.jpg" alt="" width="500" height="354"/>
+      </a>
       <figcaption>Mrs. Bissie and family in 1909. <a href="https://commons.wikimedia.org/wiki/File:Polish_berry_pickers_color.jpg">Image source</a></figcaption>
-	  </figure>
+    </figure>
     <h4>Type 1</h4>
     <p>
       A few generations ago, work moved from farms into factories or factory-like workplaces.
@@ -74,12 +74,12 @@
       Consumption became "spending money".
       Employer became "shoehorn for legal formalities".
     </p>
-	  <figure>
-	  	<a href="./bilder/Office_building.jpg">
-	  		<img src="./bilder/Office_building_liten.jpg" alt="" width="500" height="333"/>
-	  	</a>
+    <figure>
+      <a href="./bilder/Office_building.jpg">
+        <img src="./bilder/Office_building_liten.jpg" alt="" width="500" height="333"/>
+      </a>
       <figcaption>Image by: <a href="https://commons.wikimedia.org/wiki/User:XRay">Dietmar Rabich</a>, <a href="https://commons.wikimedia.org/wiki/File:Münster,_LVM,_Bürogebäude_--_2013_--_5149-51.jpg">Image source</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" rel="license">CC BY-SA 4.0</a></figcaption>
-	  </figure>
+    </figure>
     <p>
       A common way to get "employed" was to create a 1-person company, and simply hire onself.
       Most type 2 work was about feeding computers anyways.
@@ -109,12 +109,12 @@
       Rules and platforms were changing.
       Time, size, and even currency of payouts were in flux.
     </p>
-	  <figure>
-	  	<a href="./bilder/disintegration-meme.png">
-	  		<img src="./bilder/disintegration-meme_liten.png" alt="" width="500" height="277"/>
-	  	</a>
+    <figure>
+      <a href="./bilder/disintegration-meme.png">
+        <img src="./bilder/disintegration-meme_liten.png" alt="" width="500" height="277"/>
+      </a>
       <!-- figcaption><a href="https://picsart.com/i/263056102004202">Image source</a></figcaption -->
-	  </figure>
+    </figure>
     <h4>Late Type 3</h4>
     <p>
       So here we are, in a new era with less old structure, and with new built-in economic roles:
@@ -173,12 +173,12 @@
       It has a list over content owners, and it wants to cover basically all content.
       I've registered as the owner of my content, so you can now support me for example like this:
     </p>
-	  <figure>
-	  	<a href="./bilder/brave_button.png">
-	  		<img src="./bilder/brave_button_liten.png" alt="" width="500" height="303"/>
-	  	</a>
+    <figure>
+      <a href="./bilder/brave_button.png">
+        <img src="./bilder/brave_button_liten.png" alt="" width="500" height="303"/>
+      </a>
       <figcaption>Late type 3 work. You can barely see the human in there anymore. It sits behind the contribution buttons saying "thank you".</figcaption>
-	  </figure>
+    </figure>
     <p>
       Also, if you get Brave Browser via <a href="https://brave.com/tor840">this link</a>, then I'll get a small kickback.
       So, hint hint, and thank you for reading.
@@ -189,14 +189,14 @@
       I got asked again recently, about the Hangprinter print volume.
       How big is it, and what shape is it?
     </p>
-	  <figure>
-	  	<a href="./bilder/lincol_benchy.jpeg">
-	  		<img src="./bilder/lincol_benchy_liten.jpeg" alt="" width="500" height="284"/>
-	  	</a>
-	  	<figcaption>
+    <figure>
+      <a href="./bilder/lincol_benchy.jpeg">
+        <img src="./bilder/lincol_benchy_liten.jpeg" alt="" width="500" height="284"/>
+      </a>
+      <figcaption>
         A line collision. We don't want this.
-	  	</figcaption>
-	  </figure>
+      </figcaption>
+    </figure>
     <h3>A Print Volume?</h3>
     <p>
       All 3D printers I know, except Hangprinter, have a <i>print volume</i>:
@@ -244,13 +244,13 @@
       </ul>
     </p>
     <h3>The Reachable Volume</h3>
-	  <figure>
-	  	<a href="./bilder/ReachableVolume.png">
-	  		<img src="./bilder/ReachableVolume_liten.png" alt="" width="500" height="444"/>
-	  	</a>
-	  	<figcaption>
-	  	</figcaption>
-	  </figure>
+    <figure>
+      <a href="./bilder/ReachableVolume.png">
+        <img src="./bilder/ReachableVolume_liten.png" alt="" width="500" height="444"/>
+      </a>
+      <figcaption>
+      </figcaption>
+    </figure>
     <p>
       A hypothetical weightless Hangprinter effector would be able to reach any position within the tetrahedron spanned up by its four anchors.
       Let's call this <i>the enclosing volume</i>.
@@ -270,16 +270,16 @@
       The volume within which it's possible for the Hangprinter to position its effector and make it stay put.
       It would looks like this:
     </p>
-	  <figure>
-	  	<a href="./bilder/hp_volume.png">
-	  		<img src="./bilder/hp_volume_liten.png" alt="" width="500" height="293"/>
-	  	</a>
-	  	<figcaption>
+    <figure>
+      <a href="./bilder/hp_volume.png">
+        <img src="./bilder/hp_volume_liten.png" alt="" width="500" height="293"/>
+      </a>
+      <figcaption>
         Exactly how much sag to expect can be calculated from the weight of the effector and the maximum static force of the motors.
         Fred Hedenberg made this nice rendering when investigating error due to line flex.
         Error due to limited motor power will have the same basic shape.
-	  	</figcaption>
-	  </figure>
+      </figcaption>
+    </figure>
     <h3>Can We Print That?</h3>
     <p>
       We can't actually reach our whole reachable volume in a controlled way yet, since we don't have flex compensation in the firmware.
@@ -293,17 +293,17 @@
     <p>
       Consider the following render for some intuition about line collisions:
     </p>
-	  <figure>
-	  	<a href="./bilder/cone_shapes.jpg">
-	  		<img src="./bilder/cone_shapes_liten.jpg" alt="" width="500" height="344"/>
-	  	</a>
-	  	<figcaption>
+    <figure>
+      <a href="./bilder/cone_shapes.jpg">
+        <img src="./bilder/cone_shapes_liten.jpg" alt="" width="500" height="344"/>
+      </a>
+      <figcaption>
         The Hangprinter's effector is attached to the ground with six different lines.
         For each layer, each line will move within a "cone shape" (red).
         The top of each cone shape is a convex hull of the current top layer.
         Line collisions are marked in yellow.
-	  	</figcaption>
-	  </figure>
+      </figcaption>
+    </figure>
     <p>
       Coming back to the max volume, we can now imagine how it's possible to print outside of it.
       We could add a wart on the max object and for every layer, make a render like the above.
@@ -325,6 +325,7 @@
       For every object that we want to print, we must perform a separate
       analysis to check whether a line collision would occur.
       The result of the analysis, depends on a lot of things, like:
+    </p>
       <ul>
         <li>The positions of the anchors,</li>
         <li>the shape of the effector,</li>
@@ -333,6 +334,7 @@
         <li>where we make our travel moves,</li>
         <li>and in which order we put down the material!</li>
       </ul>
+    <p>
       Lots of stuff to think about, and for every single print.
       Sounds like we're in trouble?
     </p>
@@ -348,45 +350,45 @@
       It's not baked into any slicer yet, but I've written a free-standing program who does the analysis separately.
       Let me present <a href="https://gitlab.com/hangprinter/line-collision-detector">line-collision-detector</a>.
     </p>
-	  <figure>
+    <figure>
       <video width="500" height="341" controls="controls">
         <source src="bilder/usage00.mp4" type="video/mp4"/>
          <!--source src="movie.ogg" type="video/ogg"-->
          Your browser does not support the video tag.
       </video>
-	  	<figcaption>
+      <figcaption>
         The most basic usage of line-collision-detector.
         A collision is detected.
         The big-benchy.stl contains a 16.4x scaled up benchy.
         The params file contains positions of anchor points and effector pivot points.
         See the <a href="https://gitlab.com/hangprinter/linc/-/blob/f1282432a53a9c59042edb43716f4256b6de8caf/linc/params-example">params-example</a>
         file in the repo for information about the params file.
-	  	</figcaption>
-	  </figure>
-	  <figure>
+      </figcaption>
+    </figure>
+    <figure>
       <video width="500" height="340" controls="controls">
         <source src="bilder/usage01.mp4" type="video/mp4"/>
          <!--source src="movie.ogg" type="video/ogg"-->
          Your browser does not support the video tag.
       </video>
-	  	<figcaption>
+      <figcaption>
         Here, a non-scaled 3DBenchy is analyzed, and since it's so small, no collision is detected.
         The <code>-l</code> option is used to tell line-collision-detector to use a layer height of max 3 mm.
         A bigger l-value lets the program terminate faster because there are fewer layers to analyze.
-	  	</figcaption>
-	  </figure>
-	  <figure>
+      </figcaption>
+    </figure>
+    <figure>
       <video width="500" height="283" controls="controls">
         <source src="bilder/usage02.mp4" type="video/mp4"/>
          <!--source src="movie.ogg" type="video/ogg"-->
          Your browser does not support the video tag.
       </video>
-	  	<figcaption>
+      <figcaption>
         I recommend viewing this in fullscreen.
         Here, the <code>-o</code> option is used to create a debug model, which is inspected with <a href="https://www.blender.org/">Blender</a>.
         We can confirm that the effector is at a sensible position, and that there really is a line collision occuring at z=393.6.
-	  	</figcaption>
-	  </figure>
+      </figcaption>
+    </figure>
     <p>
       For details about how to build and develop line-collision-detector, I refer to <a href="https://gitlab.com/hangprinter/line-collision-detector/-/blob/master/README.md">the readme in the line-collision-detector repo</a>
       and <a href="https://gitlab.com/hangprinter/linc/-/blob/master/README.md">the readme in the linc subrepo</a>.
