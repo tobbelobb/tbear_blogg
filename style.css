@@ -1,3 +1,10 @@
+@font-face {
+  font-family: myFirstFont;
+  src: url(OpenSansRegular.woff);
+}
+* {
+   font-family: myFirstFont;
+}
 body {
 	background-color:#ffffff;
 }
@@ -8,7 +15,7 @@ body {
 	top:50px;
 	width:606px;
 	max-width:100%;
-	height:45px;
+	height:auto;
 	z-index:2;
 	font-size:35px;
 	color:#777d8f;
@@ -16,7 +23,7 @@ body {
 }
 .right {
 	max-width:255px;
-	font-size:11px;
+	font-size:12px;
 	text-align:right;
 	vertical-align:bottom;
 	position:absolute;
@@ -28,7 +35,7 @@ body {
 }
 h1 {
 	color:#000000;
-	font-size:20px;
+	font-size:21px;
 	line-height: 100%;
 	margin-bottom: 0px;
 }
@@ -45,17 +52,17 @@ h1 {
 	width:606px;
 	margin:0px auto;
 	z-index:6;
-	font-size:14px;
+	font-size:15px;
 	line-height:150%;
 	color:#30424c;
 }
 img{
     height:auto;
     max-width:100%;
-    border-radius: 15px;
+    border-radius: 11px;
 }
 video {
     height:auto;
     max-width:100%;
-    border-radius: 15px;
+    border-radius: 11px;
 }
