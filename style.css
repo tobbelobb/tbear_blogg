@@ -52,3 +52,11 @@ h1 {
 	line-height:150%;
 	color:#30424c;
 }
+img{
+    height:auto;
+    max-width:100%;
+}
+video {
+    height:auto;
+    max-width:100%;
+}
