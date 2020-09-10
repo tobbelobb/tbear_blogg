@@ -55,8 +55,10 @@ h1 {
 img{
     height:auto;
     max-width:100%;
+    border-radius: 15px;
 }
 video {
     height:auto;
     max-width:100%;
+    border-radius: 15px;
 }
