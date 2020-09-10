@@ -6,9 +6,8 @@ body {
 	text-align:left;
 	margin: 0 auto;
 	top:50px;
-	width:100%;
-	max-width:606px;
-	padding:0px 10px 0px 10px;
+	width:606px;
+	max-width:100%;
 	height:45px;
 	z-index:2;
 	font-size:35px;
@@ -16,12 +15,11 @@ body {
 	overflow:hidden;
 }
 .right {
-	width:255px;
+	max-width:255px;
 	font-size:11px;
 	text-align:right;
 	vertical-align:bottom;
 	position:absolute;
-	top:0;
 	right:0;
 }
 .left {
@@ -43,11 +41,10 @@ h1 {
 #MainContent {
 	position:relative;
 	top:110px;
-	width:100%;
-	max-width:606px;
-	padding:0px 10px 30px 10px;
+	max-width:100%;
+	width:606px;
+	margin:0px auto;
 	z-index:6;
-	margin: 0 auto;
 	font-size:14px;
 	line-height:150%;
 	color:#30424c;
