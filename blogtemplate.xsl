@@ -9,7 +9,7 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <meta name="author" content="Torbjorn" />
+  <meta name="author" content="Torbjorn Ludvigsen" />
   <meta name="keywords" content="Reprap, blog, development" />
   <meta name="description" content="Torbjorn Ludvigsen's website" />
   <meta property="og:type" content="website" />
@@ -26,9 +26,8 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@tobbelobb" />
   <meta name="twitter:creator" content="@tobbelobb" />
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <link rel="preload" href="../OpenSansRegular.woff" as="font" type="font/woff" crossorigin="anonymous" />
-  <link rel="stylesheet" href="style.css?v=1.1" type="text/css" />
+  <link rel="stylesheet" href="../style.css?v=1.1" type="text/css" />
 
   <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png" />
