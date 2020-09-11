@@ -8,7 +8,13 @@
 <html lang="en">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+  <meta name="theme-color" content="#FBE8A6" />
+  <!-- A color theme: -->
+  <!-- #FBE8A6 light yellow -->
+  <!-- #F4976C more orange -->
+  <!-- #303C6C darker blue -->
+  <!-- #B4DFE5 lighter blue/cyan -->
+  <!-- #D2FDFF even lighter blue/cyan -->
   <meta name="author" content="Torbjorn Ludvigsen" />
   <meta name="keywords" content="Reprap, blog, development" />
   <meta name="description" content="Torbjorn Ludvigsen's website" />
@@ -17,7 +23,7 @@
 
   <!-- Link back to itself in every file... -->
   <xsl:text disable-output-escaping="yes">
-    &lt;meta property="og:url" content="https://torbjornludvigsen.com/</xsl:text>
+    &lt;meta property="og:url" content="https://torbjornludvigsen.com/blog/</xsl:text>
   <xsl:value-of select="posts/@year" />
   <xsl:text disable-output-escaping="yes">"&gt;</xsl:text>
 
@@ -26,23 +32,21 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@tobbelobb" />
   <meta name="twitter:creator" content="@tobbelobb" />
-  <link rel="preload" href="../OpenSansRegular.woff" as="font" type="font/woff" crossorigin="anonymous" />
-  <link rel="stylesheet" href="../style.css?v=1.1" type="text/css" />
+  <link rel="preload" href="../../OpenSansRegular.woff" as="font" type="font/woff" crossorigin="anonymous" />
+  <link rel="stylesheet" href="../../style.css?v=1.1" type="text/css" />
 
-  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png" />
-  <link rel="manifest" href="../site.webmanifest" />
-  <link rel="mask-icon" href="../safari-pinned-tab.svg" color="#5bbad5" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png" />
+  <link rel="manifest" href="../../site.webmanifest" />
+  <link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#5bbad5" />
   <meta name="msapplication-TileColor" content="#2d89ef" />
-  <meta name="theme-color" content="#ffffff" />
 
   <script type="text/javascript"
            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML">
   </script>
 
   <title>Torbjorn Ludvigsen</title>
-  <!--img style="border-radius:50%;" src="./torbjornludvigsen.JPG" /-->
 </head>
 <body>
 <div id="SiteName">
@@ -233,6 +237,16 @@ The videos published via Vimeo or Youtube are also licenced via Vimeo or Youtube
 </p>
 </div>
 <br /><br /><br /><br /><br /><br /><br /><br />
+<script type="text/javascript">
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
 <script type="text/javascript">
   MathJax.Hub.Configured()
 </script>
