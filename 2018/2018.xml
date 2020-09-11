@@ -799,7 +799,13 @@ M569 P8 I0x0d
   At first, I just upped the speed, and it looked like this:
 </p>
 <figure>
-  <iframe src="https://www.youtube.com/embed/RrSPoS3iqcE" width="500" height="315" frameborder="0" allow="encrypted-media" allowfullscreen="true"></iframe>
+  <div class='embed-container'>
+    <iframe src='https://www.youtube.com/embed/RrSPoS3iqcE'
+      frameborder='0'
+      allowfullscreen='true'
+      allow='encrypted-media'>
+    </iframe>
+  </div>
   <figcaption>
     During the longer travel moves in this video, the lines got very slack/over tight.
     This is because the computations that translate between linear (cartesian) and non-linear (Hangprinter) coordinates are not going fast enough when running Marlin on an Atmega2560 processor.
@@ -828,7 +834,13 @@ M569 P8 I0x0d
   Warning: video is noisy.
 </p>
 <figure>
-  <iframe src="https://www.youtube.com/embed/OIXtI-Ro_4M" width="500" height="315" frameborder="0" allow="encrypted-media" allowfullscreen="true"></iframe>
+  <div class='embed-container'>
+    <iframe src='https://www.youtube.com/embed/OIXtI-Ro_4M'
+      frameborder='0'
+      allowfullscreen='true'
+      allow='encrypted-media'>
+    </iframe>
+  </div>
   <figcaption>
   </figcaption>
 </figure>
@@ -884,7 +896,13 @@ M569 P8 I0x0d
   Lastly, a little video of the printer running with the doubled mechanical advantage.
 </p>
 <figure>
-  <iframe src="https://www.youtube.com/embed/bkbuvCg6B-I" width="500" height="315" frameborder="0" allow="encrypted-media" allowfullscreen="true"></iframe>
+  <div class='embed-container'>
+    <iframe src='https://www.youtube.com/embed/bkbuvCg6B-I'
+      frameborder='0'
+      allowfullscreen='true'
+      allow='encrypted-media'>
+    </iframe>
+  </div>
   <figcaption>
   </figcaption>
 </figure>
@@ -908,7 +926,13 @@ M569 P8 I0x0d
   I recorded the whole thing as documentation:
 </p>
 <figure>
-  <iframe src="https://www.youtube.com/embed/gVIOwNDe3kc" width="500" height="315" frameborder="0" allow="encrypted-media" allowfullscreen="true"></iframe>
+  <div class='embed-container'>
+    <iframe src='https://www.youtube.com/embed/gVIOwNDe3kc'
+      frameborder='0'
+      allowfullscreen='true'
+      allow='encrypted-media'>
+    </iframe>
+  </div>
   <figcaption>
   </figcaption>
 </figure>
@@ -916,7 +940,13 @@ M569 P8 I0x0d
   I also did another video where I create a new Hangprinter part in HAWS.
 </p>
 <figure>
-  <iframe src="https://www.youtube.com/embed/Ocwx6vzX3C8" width="500" height="315" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="true"></iframe>
+  <div class='embed-container'>
+    <iframe src='https://www.youtube.com/embed/Ocwx6vzX3C8'
+      frameborder='0'
+      allowfullscreen='true'
+      allow='encrypted-media'>
+    </iframe>
+  </div>
   <figcaption>
   </figcaption>
 </figure>
@@ -940,7 +970,13 @@ M569 P8 I0x0d
   Yesterday, I did my first successful test print with the Super Volcano hot end over at E3D's headquarters in Oxford:
 </p>
 <figure>
-  <iframe src="https://www.youtube.com/embed/mwf0_VpTmc8" width="500" height="315" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="true"></iframe>
+  <div class='embed-container'>
+    <iframe src='https://www.youtube.com/embed/mwf0_VpTmc8'
+      frameborder='0'
+      allowfullscreen='true'
+      allow='encrypted-media'>
+    </iframe>
+  </div>
   <figcaption>
   </figcaption>
 </figure>

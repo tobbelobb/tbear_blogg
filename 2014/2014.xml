@@ -360,13 +360,23 @@ I crawled the web after an image of me and a 3d-printer today, to use in an arti
   piece printing:
 </p>
 <figure>
-  <iframe width="560" height="315" src="http://www.youtube.com/embed/kFUj9GaLH48?rel=0" frameborder="0" allowfullscreen="true"></iframe>
+  <div class='embed-container'>
+    <iframe src='https://www.youtube.com/embed/kFUj9GaLH48'
+      frameborder='0'
+      allowfullscreen='true'>
+    </iframe>
+  </div>
 </figure>
 <p>
   We also made a time-lapse of the mounting process:
 </p>
 <figure>
-  <iframe width="560" height="315" src="http://www.youtube.com/embed/pZAF2geRqx4?rel=0" frameborder="0" allowfullscreen="true"></iframe>
+  <div class='embed-container'>
+    <iframe src='https://www.youtube.com/embed/pZAF2geRqx4'
+      frameborder='0'
+      allowfullscreen='true'>
+    </iframe>
+  </div>
 </figure>
 <figure>
   <a href="./bilder/Ludvigsen_3D-Printing.PNG">

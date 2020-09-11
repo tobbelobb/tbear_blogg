@@ -614,7 +614,12 @@ Left at the library were only a few makers,
   I recommend Jens' own stories about the what how and why of his own work and FabLabs in general:
 </p>
 <figure>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/tVnCb-zCXxw?rel=0" frameborder="0" allowfullscreen="true"></iframe>
+<div class='embed-container'>
+    <iframe src='https://www.youtube.com/embed/tVnCb-zCXxw'
+      frameborder='0'
+      allowfullscreen='true'>
+    </iframe>
+  </div>
 </figure>
 <p>
   On the technical projects side, Jens introduced me to a project he has been working on called Vbird.
