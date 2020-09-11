@@ -11,7 +11,21 @@
 
   <meta name="author" content="Torbjorn" />
   <meta name="keywords" content="Reprap, blog, development" />
-  <meta name="description" content="Torbjorn Ludvigsen's website." />
+  <meta name="description" content="Torbjorn Ludvigsen's website" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Torbjorn Ludvigsen" />
+
+  <!-- Link back to itself in every file... -->
+  <xsl:text disable-output-escaping="yes">
+    &lt;meta property="og:url" content="https://torbjornludvigsen.com/</xsl:text>
+  <xsl:value-of select="posts/@year" />
+  <xsl:text disable-output-escaping="yes">"&gt;</xsl:text>
+
+  <meta property="og:description" content="Torbjorn Ludvigsen's website" />
+  <meta property="og:image" content="https://torbjornludvigsen.com/torbjornludvigsen.JPG" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@tobbelobb" />
+  <meta name="twitter:creator" content="@tobbelobb" />
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <link rel="stylesheet" href="style.css?v=1.1" type="text/css" />
 
@@ -28,6 +42,7 @@
   </script>
 
   <title>Torbjorn Ludvigsen</title>
+  <!--img style="border-radius:50%;" src="./torbjornludvigsen.JPG" /-->
 </head>
 <body>
 <div id="SiteName">

@@ -10,3 +10,4 @@ cp 2020/index.html index.html
 sed -i 's/="\.\/bilder/="bilder/g' index.html
 sed -i 's/="bilder/="2020\/bilder/g' index.html
 sed -i 's/href=\"\.\./href="\./g' index.html
+sed -i 's/<meta property="og:url" content="https:\/\/torbjornludvigsen.com\/2020/<meta property="og:url" content="https:\/\/torbjornludvigsen.com/g' index.html
