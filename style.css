@@ -24,16 +24,14 @@ body {
 	overflow:hidden;
 }
 .right {
-	max-width:255px;
 	font-size:12px;
 	text-align:right;
 	vertical-align:bottom;
-	position:absolute;
 	right:0;
 }
 .left {
 	overflow:hidden;
-	height:45px;
+	height:46px;
 }
 h1 {
 	color:#000000;

@@ -32,11 +32,11 @@
 <body>
 <div id="SiteName">
   <div class="right">
-    <a href="#Links">Contact, archive, etc</a>
+    <a href="#Links">Links</a>
   </div>
   <div class="left">
    <!-- Everyone benefits if I solve a hard problem -->
-    Reprap blog <xsl:value-of select="posts/@year" />
+    Reprap Blog <xsl:value-of select="posts/@year" />
   </div>
 </div>
 <div id="MainContent">
