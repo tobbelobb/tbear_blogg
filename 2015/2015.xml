@@ -7,13 +7,29 @@
   Ok, ok, little on the latest work:
 </p>
 <figure>
-  <iframe src="https://player.vimeo.com/video/147953445" width="500" height="375" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>
+    <div class='embed-container'>
+    <iframe src="https://player.vimeo.com/video/147953445"
+      frameborder="0"
+      webkitallowfullscreen="true"
+      mozallowfullscreen="true"
+      allowfullscreen="true">
+    </iframe>
+  </div>
+
   <figcaption>
     Clerck printing the latest version of its own bottom plate.
   </figcaption>
 </figure>
 <figure>
-  <iframe src="https://player.vimeo.com/video/147953496" width="500" height="375" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>
+    <div class='embed-container'>
+    <iframe src="https://player.vimeo.com/video/147953496"
+      frameborder="0"
+      webkitallowfullscreen="true"
+      mozallowfullscreen="true"
+      allowfullscreen="true">
+    </iframe>
+  </div>
+
   <figcaption>
     Finishing the bottom plate print. Print took 3 hrs.
   </figcaption>
@@ -62,7 +78,15 @@
 
 <post id="hangprinter_project_17" heading="Second finished print" date="30-11-2015">
 <figure>
-  <iframe src="https://player.vimeo.com/video/147278540" width="500" height="375" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>
+    <div class='embed-container'>
+    <iframe src="https://player.vimeo.com/video/147278540"
+      frameborder="0"
+      webkitallowfullscreen="true"
+      mozallowfullscreen="true"
+      allowfullscreen="true">
+    </iframe>
+  </div>
+
   <figcaption>
     After ~ 6 hours of printing, Clerck has reached a height of ca 900 mm. Finished print is 950 mm tall.
   </figcaption>
@@ -392,7 +416,15 @@
   Did another test print today, and this time it finished.
 </p>
 <figure>
-  <iframe src="https://player.vimeo.com/video/146706733" width="500" height="375" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>
+    <div class='embed-container'>
+    <iframe src="https://player.vimeo.com/video/146706733"
+      frameborder="0"
+      webkitallowfullscreen="true"
+      mozallowfullscreen="true"
+      allowfullscreen="true">
+    </iframe>
+  </div>
+
   <figcaption>
     After two hours of print, the lines have gotten a ~2 mm slack.
     The observant viewer could spot the unwanted pendulum movements as well as the jumping slack line.
@@ -446,13 +478,29 @@ Having said that, I guess I have to try to implement some kind of custom bignum 
   Did the first test print just now:
 </p>
 <figure>
-  <iframe src="https://player.vimeo.com/video/146566086" width="500" height="375" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>
+    <div class='embed-container'>
+    <iframe src="https://player.vimeo.com/video/146566086"
+      frameborder="0"
+      webkitallowfullscreen="true"
+      mozallowfullscreen="true"
+      allowfullscreen="true">
+    </iframe>
+  </div>
+
   <figcaption>
     The hanging RepRap trying to do its very first print for the fourth time.
   </figcaption>
 </figure>
 <figure>
-  <iframe src="https://player.vimeo.com/video/146566059" width="500" height="375" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>
+    <div class='embed-container'>
+    <iframe src="https://player.vimeo.com/video/146566059"
+      frameborder="0"
+      webkitallowfullscreen="true"
+      mozallowfullscreen="true"
+      allowfullscreen="true">
+    </iframe>
+  </div>
+
   <figcaption>
     A couple of minutes later, same print as above.
   </figcaption>
@@ -599,7 +647,15 @@ Having said that, I guess I have to try to implement some kind of custom bignum 
   first I want to show you the hardware upgrades in a little video:
 </p>
 <figure>
-  <iframe src="https://player.vimeo.com/video/141524128" width="500" height="375" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>
+    <div class='embed-container'>
+    <iframe src="https://player.vimeo.com/video/141524128"
+      frameborder="0"
+      webkitallowfullscreen="true"
+      mozallowfullscreen="true"
+      allowfullscreen="true">
+    </iframe>
+  </div>
+
   <figcaption>
     The Hangprinter dry printing a 270 mm square with sparse infill at 52.5 mm/s.
     Notice how leftmost lines get slack at rightmost positions.
@@ -710,7 +766,15 @@ Having said that, I guess I have to try to implement some kind of custom bignum 
   Did one print today with much better precision:
 </p>
 <figure>
-  <iframe src="https://player.vimeo.com/video/139842830" width="500" height="375" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>
+    <div class='embed-container'>
+    <iframe src="https://player.vimeo.com/video/139842830"
+      frameborder="0"
+      webkitallowfullscreen="true"
+      mozallowfullscreen="true"
+      allowfullscreen="true">
+    </iframe>
+  </div>
+
 </figure>
 </post>
 
@@ -737,7 +801,15 @@ Having said that, I guess I have to try to implement some kind of custom bignum 
   when calibrated such that 4 or more abc-lines stay tight, as this video shows:
 </p>
 <figure>
-  <iframe src="https://player.vimeo.com/video/139691092" width="500" height="375" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>
+    <div class='embed-container'>
+    <iframe src="https://player.vimeo.com/video/139691092"
+      frameborder="0"
+      webkitallowfullscreen="true"
+      mozallowfullscreen="true"
+      allowfullscreen="true">
+    </iframe>
+  </div>
+
 </figure>
 <p>
   On the other hand, some large improvements need to me made before further testing can get up to speed.
@@ -884,7 +956,15 @@ if (counter_d > 0) {
   Finally, here is a video of the Hangprinter climbing its first climb.
 </p>
 <figure>
-  <iframe src="https://player.vimeo.com/video/139438054" width="500" height="375" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>
+    <div class='embed-container'>
+    <iframe src="https://player.vimeo.com/video/139438054"
+      frameborder="0"
+      webkitallowfullscreen="true"
+      mozallowfullscreen="true"
+      allowfullscreen="true">
+    </iframe>
+  </div>
+
 </figure>
 </post>
 
@@ -924,7 +1004,14 @@ if (counter_d > 0) {
   Hello again! Just thought I'd share progress again. The Hangprinter has gotten its firmware and bluetooth module working =) Video:
 </p>
 <figure>
-  <iframe src="https://player.vimeo.com/video/138978064" width="500" height="375" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>
+    <div class='embed-container'>
+    <iframe src="https://player.vimeo.com/video/138978064"
+      frameborder="0"
+      webkitallowfullscreen="true"
+      mozallowfullscreen="true"
+      allowfullscreen="true">
+    </iframe>
+  </div>
 </figure>
 </post>
 
