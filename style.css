@@ -21,7 +21,6 @@ body {
 	z-index:2;
 	font-size:35px;
 	color:#777d8f;
-	overflow:hidden;
 }
 .right {
 	font-size:12px;
@@ -30,7 +29,6 @@ body {
 	right:0;
 }
 .left {
-	overflow:hidden;
 	height:46px;
 }
 h1 {
