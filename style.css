@@ -1,10 +1,10 @@
 @font-face {
-  font-family: myFirstFont;
-  src: url(OpenSansRegular.woff);
+	font-family: myFirstFont;
+	src: url(OpenSansRegular.woff);
 }
 
 *:not(code) {
-   font-family: myFirstFont;
+	font-family: myFirstFont;
 }
 
 body {
@@ -59,15 +59,16 @@ h1 {
 	color:#30424c;
 }
 img{
-    height:auto;
-    max-width:100%;
-    border-radius: 11px;
+	height:auto;
+	max-width:100%;
+	border-radius:11px;
 }
 video {
-    height:auto;
-    max-width:100%;
-    border-radius: 11px;
+	height:auto;
+	max-width:100%;
+	border-radius:11px;
 }
 figure{
-  margin-top:30px;
+	max-width:100%;
+	margin-top:30px;
 }
