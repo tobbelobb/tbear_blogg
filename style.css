@@ -32,6 +32,7 @@
 }
 
 body {
+	margin:0;
 	background-color:white;
 }
 #SiteName {
@@ -56,9 +57,19 @@ body {
 	height:46px;
 }
 h1 {
-	color:#000000;
+	color:#1f2326;
 	font-size:21px;
 	margin-bottom: 0px;
+}
+h2 {
+	color:#23282b;
+}
+h3 {
+	color:#282f33;
+}
+h4 {
+	margin-top:10px;
+	margin-bottom:2px;
 }
 #date {
 	font: bold 50%;
@@ -66,6 +77,14 @@ h1 {
 	line-height: 100%;
 	margin-bottom: 10px;
 }
+#FrontPageMain {
+	position:relative;
+	top:70px;
+	max-width:100%;
+	width:600px;
+	margin:0px auto;
+}
+
 #MainContent {
 	position:relative;
 	top:110px;
@@ -76,6 +95,7 @@ h1 {
 	font-size:15px;
 	line-height:150%;
 	color:#30424c;
+
 }
 
 img{
