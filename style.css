@@ -145,6 +145,7 @@ figure{
 	align-items: center;
 	margin-top:30%;
 	width:200px;
+	height:200px;
 	max-width:57%;
 	border-radius:50%;
 	margin-left:auto;
@@ -241,4 +242,16 @@ figure{
 		display: block;
 		text-align: left;
 	}
+}
+.social-list {
+	text-align: center;
+	display: block;
+	position:relative;
+	list-style: none;
+	padding: 0;
+}
+
+.social-list li {
+	display:inline-block;
+	font-size:22px;
 }
