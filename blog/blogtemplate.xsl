@@ -32,8 +32,9 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@tobbelobb" />
   <meta name="twitter:creator" content="@tobbelobb" />
-  <link rel="preload" href="../../OpenSansRegular.woff" as="font" type="font/woff" crossorigin="anonymous" />
+  <link rel="preload" href="../../OpenSansRegular.woff" as="font" type="font/woff"/>
   <link rel="stylesheet" href="../../style.css?v=1.2" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
   <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png" />
@@ -51,7 +52,7 @@
 <body>
 <div class="topnav" id="myTopnav">
   <a href="../">Home</a>
-  <a href="" class="active">Blog</a>
+  <a href="../blog" class="active">Blog</a>
   <a href="../donate">Donate</a>
   <a href="../about">About</a>
   <a href="../links">Links</a>
@@ -256,6 +257,16 @@ function myFunction() {
 </script>
 <script type="text/javascript">
   MathJax.Hub.Configured()
+</script>
+<script type="text/javascript">
+  function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
 </script>
 </body>
 </html>
