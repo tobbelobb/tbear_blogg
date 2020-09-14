@@ -47,12 +47,6 @@ body {
 	font-size:35px;
 	color:#777d8f;
 }
-.right {
-	font-size:12px;
-	text-align:right;
-	vertical-align:bottom;
-	right:0;
-}
 .left {
 	height:46px;
 }
@@ -157,6 +151,12 @@ figure{
 	margin-right:auto;
 }
 
+@media screen and (max-width: 600px) {
+	.front-image {
+		margin-top:10%;
+	}
+}
+
 /* Add a background color to the top navigation */
 .topnav {
 	display:flex;
@@ -189,7 +189,7 @@ figure{
 	padding: 14px 16px;
 	text-decoration: none;
 	font-size: 17px;
-	width:25%;
+	width:20%;
 }
 
 /* When the screen is less than 600 pixels wide,

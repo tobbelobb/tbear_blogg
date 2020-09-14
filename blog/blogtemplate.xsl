@@ -49,10 +49,17 @@
   <title>Torbjorn Ludvigsen</title>
 </head>
 <body>
+<div class="topnav" id="myTopnav">
+  <a href="../">Home</a>
+  <a href="" class="active">Blog</a>
+  <a href="../donate">Donate</a>
+  <a href="../about">About</a>
+  <a href="../links">Links</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
 <div id="SiteName">
-  <div class="right">
-    <a href="#Links">Links</a>
-  </div>
   <div class="left">
    <!-- Everyone benefits if I solve a hard problem -->
     Reprap Blog <xsl:value-of select="posts/@year" />
