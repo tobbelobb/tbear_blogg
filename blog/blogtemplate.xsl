@@ -17,7 +17,7 @@
   <!-- #D2FDFF even lighter blue/cyan -->
   <meta name="author" content="Torbjorn Ludvigsen" />
   <meta name="keywords" content="Reprap, blog, development" />
-  <meta name="description" content="Torbjorn Ludvigsen's website" />
+  <meta name="description" content="Reprap blog" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Torbjorn Ludvigsen" />
 
@@ -27,7 +27,7 @@
   <xsl:value-of select="posts/@year" />
   <xsl:text disable-output-escaping="yes">"&gt;</xsl:text>
 
-  <meta property="og:description" content="Torbjorn Ludvigsen's website" />
+  <meta property="og:description" content="Reprap blog" />
   <meta property="og:image" content="https://torbjornludvigsen.com/torbjornludvigsen.JPG" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@tobbelobb" />

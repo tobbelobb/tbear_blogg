@@ -77,14 +77,6 @@ h4 {
 	line-height: 100%;
 	margin-bottom: 10px;
 }
-#FrontPageMain {
-	position:relative;
-	top:70px;
-	max-width:100%;
-	width:600px;
-	margin:0px auto;
-}
-
 #MainContent {
 	position:relative;
 	top:110px;
@@ -95,7 +87,6 @@ h4 {
 	font-size:15px;
 	line-height:150%;
 	color:#30424c;
-
 }
 
 img{
@@ -128,9 +119,39 @@ figure{
 	height: 100%;
 	border-radius:11px;
 }
-.front-image {
+#FrontPageMain {
 	display:block;
+	position:relative;
+	max-width:100%;
+	width:600px;
+	margin:0px auto;
+	max-width:93%;
+}
+#FrontPageMain h1 {
+	text-align:center;
+	font-size:29px;
+}
+#FrontPageMain h2 {
+	text-align:center;
+	font-size:20px;
+	margin:0 auto;
+	color:#777d8f;
+}
+#FrontPageMain h3 {
+	text-align:center;
+	font-weight:normal;
+	font-size:15px;
+	max-width:60%;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.front-image {
+	display:flex;
+	align-items: center;
+	margin-top:30%;
 	width:200px;
+	max-width:57%;
 	border-radius:50%;
 	margin-left:auto;
 	margin-right:auto;
@@ -145,8 +166,8 @@ figure{
 	width:600px;
 	max-width:100%;
 
-	/*background-color: white;*/
-	background-color: #D2FDFF;
+	background-color: white;
+	/*background-color: #D2FDFF;*/
 	overflow: hidden;
 }
 
@@ -162,9 +183,8 @@ figure{
 .topnav a {
 	float: left;
 	margin:auto;
-
 	display: block;
-	color: #303C6C;
+	color: #23282b;
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
@@ -182,13 +202,16 @@ figure{
 
 /* Change the color of links on hover */
 .topnav a:hover {
-	background-color: #B4DFE5;
+	color:#777d8f;
+	background-color:white;
+	font-weight:bold;
 }
 
 /* Add an active class to highlight the current page */
 .topnav a.active {
-	background-color: #F4976C;
-	color: white;
+	color: #F4976C;
+	background-color: white;
+	font-weight:bold;
 }
 
 /* Hide the link that should open and close the topnav on small screens */
