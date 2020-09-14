@@ -96,16 +96,16 @@ figure{
 	padding-bottom: 56.25%;
 	height: 0;
 	overflow: hidden;
-  width:500px;
+	width:500px;
 	max-width: 100%;
 }
 .embed-container iframe, .embed-container object, .embed-container embed {
-  position: absolute;
+	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
-  border-radius:11px;
+	border-radius:11px;
 }
 .front-image {
 	display:block;
@@ -117,35 +117,56 @@ figure{
 
 /* Add a background color to the top navigation */
 .topnav {
-  float:center;
-  display:block;
-  margin-left:auto;
-  margin-right:auto;
-	background-color: #ffffff;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	margin:auto;
+	width:606px;
+	max-width:100%;
+
+	/*background-color: white;*/
+	background-color: #D2FDFF;
 	overflow: hidden;
+}
+
+/* When the screen is less than 600 pixels wide,
+ * we want block rather than flex display */
+@media screen and (max-width: 600px) {
+	.topnav {
+		display:block;
+	}
 }
 
 /* Style the links inside the navigation bar */
 .topnav a {
 	float: left;
+	margin:auto;
+
 	display: block;
 	color: #303C6C;
-  /*text-color:#303C6C;*/
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
 	font-size: 17px;
+	width:25%;
+}
+
+/* When the screen is less than 600 pixels wide,
+ * we want nav links to not have the "fill full width" behaviour */
+@media screen and (max-width: 600px) {
+	.topnav a {
+		width:auto;
+	}
 }
 
 /* Change the color of links on hover */
 .topnav a:hover {
-	background-color: #ddd;
-	color: black;
+	background-color: #B4DFE5;
 }
 
 /* Add an active class to highlight the current page */
 .topnav a.active {
-	background-color: #4CAF50;
+	background-color: #F4976C;
 	color: white;
 }
 
@@ -153,26 +174,27 @@ figure{
 .topnav .icon {
 	display: none;
 }
-/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home").
+ * Show the link that contains should open and close the topnav (.icon) */
 @media screen and (max-width: 600px) {
-  .topnav a:not(:first-child) {display: none;}
-  .topnav a.icon {
-    float: right;
-    display: block;
-  }
+	.topnav a:not(:first-child) {display: none;}
+	.topnav a.icon {
+		float: right;
+		display: block;
+	}
 }
 
 /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
 @media screen and (max-width: 600px) {
-  .topnav.responsive {position: relative;}
-  .topnav.responsive a.icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
+	.topnav.responsive {position: relative;}
+	.topnav.responsive a.icon {
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+	.topnav.responsive a {
+		float: none;
+		display: block;
+		text-align: left;
+	}
 }
