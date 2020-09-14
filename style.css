@@ -39,7 +39,7 @@ body {
 	text-align:left;
 	margin: 0 auto;
 	top:50px;
-	width:606px;
+	width:600px;
 	max-width:100%;
 	height:auto;
 	z-index:2;
@@ -70,7 +70,7 @@ h1 {
 	position:relative;
 	top:110px;
 	max-width:100%;
-	width:606px;
+	width:600px;
 	margin:0px auto;
 	z-index:6;
 	font-size:15px;
@@ -121,7 +121,7 @@ figure{
 	align-items:center;
 	justify-content:center;
 	margin:auto;
-	width:606px;
+	width:600px;
 	max-width:100%;
 
 	/*background-color: white;*/
