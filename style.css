@@ -3,12 +3,36 @@
 	src: url(OpenSansRegular.woff);
 }
 
+/* #2 Italic Style */
+@font-face {
+	font-family: myFirstFont;
+	font-style: italic;
+	font-weight: normal;
+	src: url(OpenSansItalic.woff);
+}
+
+/* #3 Bold Weight */
+@font-face {
+	font-family: myFirstFont;
+	font-style: normal;
+	font-weight: bold;
+	src: url(OpenSansBold.woff);
+}
+
+/* #4 Bold Italic Style */
+@font-face {
+	font-family: myFirstFont;
+	font-style: italic;
+	font-weight: bold;
+	src: url("OpenSansBoldItalic.woff");
+}
+
 *:not(code) {
 	font-family: myFirstFont;
 }
 
 body {
-	background-color:#ffffff;
+	background-color:white;
 }
 #SiteName {
 	position:relative;
