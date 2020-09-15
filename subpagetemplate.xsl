@@ -63,38 +63,29 @@
 </head>
 <body>
   <xsl:variable name="currentCname" select="/subpage/@cname"/>
-  <div class="topnav" id="myTopnav">
-    <xsl:for-each select="document('')/xsl:stylesheet/var:allNavPages/page">
-      <a>
-        <xsl:attribute name="href" >
-          <xsl:value-of select="./@url" />
-        </xsl:attribute>
-        <xsl:if test="$currentCname=./@cname">
-          <xsl:attribute name="class" >active</xsl:attribute>
-        </xsl:if>
-        <xsl:value-of select="./@cname" />
-      </a>
-    </xsl:for-each>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-      <i class="fa fa-bars"></i>
-    </a>
-  </div>
+  <nav>
+    <ul>
+      <xsl:for-each select="document('')/xsl:stylesheet/var:allNavPages/page">
+        <li>
+          <a>
+            <xsl:attribute name="href" >
+              <xsl:value-of select="./@url" />
+            </xsl:attribute>
+            <xsl:if test="$currentCname=./@cname">
+              <xsl:attribute name="class" >active</xsl:attribute>
+            </xsl:if>
+            <xsl:value-of select="./@cname" />
+          </a>
+        </li>
+      </xsl:for-each>
+    </ul>
+  </nav>
   <div id="SiteName">
     <xsl:value-of select="/subpage/@cname" />
   </div>
   <div id="MainContent">
     <xsl:copy-of select="/subpage/*" />
   </div>
-  <script type="text/javascript">
-    function myFunction() {
-      var x = document.getElementById("myTopnav");
-      if (x.className === "topnav") {
-        x.className += " responsive";
-      } else {
-        x.className = "topnav";
-      }
-    }
-  </script>
 </body>
 </html>
 

@@ -50,16 +50,15 @@
   <title>Torbjorn Ludvigsen</title>
 </head>
 <body>
-<div class="topnav" id="myTopnav">
-  <a href="../">Home</a>
-  <a href="../blog" class="active">Blog</a>
-  <a href="../donate">Donate</a>
-  <a href="../about">About</a>
-  <a href="../links">Links</a>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
-  </a>
-</div>
+<nav>
+  <ul>
+    <li><a href="../">Home</a></li>
+    <li><a href="../blog" class="active">Blog</a></li>
+    <li><a href="../donate">Donate</a></li>
+    <li><a href="../about">About</a></li>
+    <li><a href="../links">Links</a></li>
+  </ul>
+</nav>
 <div id="SiteName">
   <div class="left">
    <!-- Everyone benefits if I solve a hard problem -->
@@ -245,16 +244,6 @@ The videos published via Vimeo or Youtube are also licenced via Vimeo or Youtube
 </p>
 </div>
 <br /><br /><br /><br /><br /><br /><br /><br />
-<script type="text/javascript">
-function myFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
-</script>
 <script type="text/javascript">
   MathJax.Hub.Configured()
 </script>

@@ -36,16 +36,15 @@
     <title>Torbjorn Ludvigsen</title>
   </head>
   <body>
-    <div class="topnav" id="myTopnav">
-      <a href="" class="active">Home</a>
-      <a href="./blog">Blog</a>
-      <a href="./donate">Donate</a>
-      <a href="./about">About</a>
-      <a href="./links">Links</a>
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-        <i class="fa fa-bars"></i>
-      </a>
-    </div>
+    <nav>
+      <ul>
+        <li><a href="" class="active">Home</a></li>
+        <li><a href="./blog">Blog</a></li>
+        <li><a href="./donate">Donate</a></li>
+        <li><a href="./about">About</a></li>
+        <li><a href="./links">Links</a></li>
+      </ul>
+    </nav>
     <div id="FrontPageMain">
       <img class="front-image" src="./torbjornludvigsen_small.JPG" />
       <h1>Torbjørn Ludvigsen</h1>
@@ -54,35 +53,7 @@
         I develop Hangprinter.
         I like engineering, open hardware, and doing new things.
       </h3>
-      <!--ul class="social-list">
-        <li>
-          <a href="https://twitter.com/tobbelobb">
-            <i class="fab fa-twitter"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://gitlab.com/tobben" aria-label="Gitlab">
-            <i class="fab fa-gitlab" aria-hidden="true"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/tobbelobb" aria-label="GitHub">
-            <i class="fab fa-github" aria-hidden="true"></i>
-          </a>
-        </li>
-      </ul-->
     </div>
     <canvas></canvas>
-
-    <script type="text/javascript">
-      function myFunction() {
-        var x = document.getElementById("myTopnav");
-        if (x.className === "topnav") {
-          x.className += " responsive";
-        } else {
-          x.className = "topnav";
-        }
-      }
-    </script>
   </body>
 </html>
