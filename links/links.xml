@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="subpagetemplate.xsl"?>
+<subpage name="links" cname="Links" description="Links">
+  <p style="font-size:35px;line-height:100%;margin:0px auto;">
+    <a href="https://twitter.com/tobbelobb"><i class="fab fa-twitter"></i></a>
+    <a href="https://github.com/tobbelobb/"><i class="fab fa-github"></i></a>
+    <a href="https://gitlab.com/tobben"><i class="fab fa-gitlab"></i></a>
+    <a href="https://www.youtube.com/channel/UCw1Nz0VCw4z-dfq4WjSkFzQ"><i class="fab fa-youtube"></i></a>
+    <a href="https://vimeo.com/user23166500"><i class="fab fa-vimeo"></i></a>
+    <a href="https://forums.reprap.org/profile.php?1,22385">
+      <svg style="max-height:30px;" version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        width="30" height="58.5371094px" viewBox="0 0 48.4941406 58.5371094" enable-background="new 0 0 48.4941406 58.5371094" xml:space="preserve">
+        <path fill="green" d="M24.2470703,0L7.1025391,17.1455078C2.7148438,21.5332031,0,27.59375,0,34.2900391c0,13.3916016,10.8564453,24.2470703,24.2470703,24.2470703s24.2470703-10.8554688,24.2470703-24.2470703c0-6.6953125-2.7138672-12.7568359-7.1015625-17.144043L24.2470703,0z" />
+      </svg>
+    </a><br />
+  </p>
+  <h3>Projects</h3>
+  <p>
+    <a href="https://hangprinter.org"><img src="hangprinter-logo.png" style="max-height:65px;margin:0px 0px 0px 0px;" /></a>
+  </p>
+  <h3>Campaigns</h3>
+  <p>
+    <a href="https://salt.bountysource.com/teams/hangprinter"><img src="bountysource-icon.svg" style="width:200px;max-width:50%;" /></a><br />
+  </p>
+  <h3>Blog Archive</h3>
+  <p>
+    By Year:
+    <a href="../blog/2014">[2014]</a>,
+    <a href="../blog/2015">[2015]</a>,
+    <a href="../blog/2016">[2016]</a>,
+    <a href="../blog/2017">[2017]</a>,
+    <a href="../blog/2018">[2018]</a>,
+    <a href="../blog/2020">[2020]</a>.
+  </p>
+  <p>
+    Hangprinter Posts:
+    <a href="../blog/2014#Hangprinter">[1]</a>,
+    <a href="../blog/2015#Slideprinter_Update">[2]</a>,
+    <a href="../blog/2015#hangprinter_project_2">[3]</a>,
+    <a href="../blog/2015#hangprinter_project_3">[4]</a>,
+    <a href="../blog/2015#hangprinter_project_4">[5]</a>,
+    <a href="../blog/2015#hangprinter_project_5">[6]</a>,
+    <a href="../blog/2015#hangprinter_project_6">[7]</a>,
+    <a href="../blog/2015#hangprinter_project_7">[8]</a>,
+    <a href="../blog/2015#hangprinter_project_8">[9]</a>,
+    <a href="../blog/2015#hangprinter_project_9">[10]</a>,
+    <a href="../blog/2015#hangprinter_project_10">[11]</a>,
+    <a href="../blog/2015#hangprinter_project_11">[12]</a>,
+    <a href="../blog/2015#hangprinter_project_12">[13]</a>,
+    <a href="../blog/2015#hangprinter_project_13">[14]</a>,
+    <a href="../blog/2015#hangprinter_project_14">[15]</a>,
+    <a href="../blog/2015#hangprinter_project_15">[16]</a>,
+    <a href="../blog/2015#hangprinter_project_16">[17]</a>,
+    <a href="../blog/2015#hangprinter_project_17">[18]</a>,
+    <a href="../blog/2015#hangprinter_project_18">[19]</a>,
+    <a href="../blog/2016#hangprinter_project_19">[20]</a>,
+    <a href="../blog/2016#hangprinter_project_20">[21]</a>,
+    <a href="../blog/2016#hangprinter_project_21">[22]</a>,
+    <a href="../blog/2016#hangprinter_project_22">[23]</a>,
+    <a href="../blog/2016#hangprinter_project_23">[24]</a>,
+    <a href="../blog/2016#hangprinter_project_24">[25]</a>,
+    <a href="../blog/2016#hangprinter_project_25">[26]</a>,
+    <a href="../blog/2016#hangprinter_project_26">[27]</a>,
+    <a href="../blog/2016#hangprinter_project_27">[28]</a>,
+    <a href="../blog/2017#hangprinter_project_28">[29]</a>,
+    <a href="../blog/2017#hangprinter_project_29">[30]</a>,
+    <a href="../blog/2017#hangprinter_project_30">[31]</a>,
+    <a href="../blog/2017#hangprinter_project_31">[32]</a>,
+    <a href="../blog/2017#hangprinter_project_32">[33]</a>,
+    <a href="../blog/2017#hangprinter_project_33">[34]</a>,
+    <a href="../blog/2017#hangprinter_project_34">[35]</a>,
+    <a href="../blog/2017#hangprinter_project_35">[36]</a>,
+    <a href="../blog/2017#hangprinter_project_36">[37]</a>,
+    <a href="../blog/2017#hangprinter_project_37">[38]</a>,
+    <a href="../blog/2017#hangprinter_project_38">[39]</a>,
+    <a href="../blog/2017#hangprinter_project_39">[40]</a>,
+    <a href="../blog/2017#hangprinter_project_40">[41]</a>,
+    <a href="../blog/2017#hangprinter_project_41">[42]</a>,
+    <a href="../blog/2017#hangprinter_project_42">[43]</a>,
+    <a href="../blog/2017#hangprinter_project_43">[44]</a>,
+    <a href="../blog/2017#hangprinter_project_44">[45]</a>,
+    <a href="../blog/2017#hangprinter_project_45">[46]</a>,
+    <a href="../blog/2017#hangprinter_project_46">[47]</a>,
+    <a href="../blog/2017#hangprinter_project_47">[48]</a>,
+    <a href="../blog/2017#hangprinter_project_48">[49]</a>,
+    <a href="../blog/2017#hangprinter_project_49">[50]</a>,
+    <a href="../blog/2017#hangprinter_project_50">[51]</a>,
+    <a href="../blog/2018#hangprinter_project_51">[52]</a>,
+    <a href="../blog/2018#hangprinter_project_52">[53]</a>,
+    <a href="../blog/2018#hangprinter_project_53">[54]</a>,
+    <a href="../blog/2018#hangprinter_project_54">[55]</a>,
+    <a href="../blog/2018#hangprinter_project_55">[56]</a>,
+    <a href="../blog/2018#hangprinter_project_56">[57]</a>,
+    <a href="../blog/2018#hangprinter_project_57">[58]</a>,
+    <a href="../blog/2018#hangprinter_project_58">[59]</a>,
+    <a href="../blog/2018#hangprinter_project_59">[60]</a>,
+    <a href="../blog/2018#hangprinter_project_60">[61]</a>,
+    <a href="../blog/2018#hangprinter_project_61">[62]</a>,
+    <a href="../blog/2018#hangprinter_project_62">[63]</a>,
+    <a href="../blog/2020#hangprinter_project_63">[64]</a>.
+  </p>
+  <p>
+    Print Issue Solution Filter Blog Posts:
+    <a href="../blog/2014#Introducing_PISF">[1]</a>,
+    <a href="../blog/2014#Presenting_PISF_Again">[2]</a>,
+    <a href="../blog/2014#PISF_Online_Sort_Of">[3]</a>,
+    <a href="../blog/2014#PISF">[4]</a>.
+  </p>
+  <p>
+    Self-sourced Mendel Blog Posts:
+    <a href="../blog/2014#Sourcing_Mendel_1">[1]</a>,
+    <a href="../blog/2014#Sourcing_Mendel_2">[2]</a>,
+    <a href="../blog/2014#Sourcing_Mendel_3">[3]</a>,
+    <a href="../blog/2014#Sourcing_Mendel_4">[4]</a>,
+    <a href="../blog/2014#Sourcing_Mendel_5">[5]</a>,
+    <a href="../blog/2014#Sourcing_Mendel_6">[6]</a>,
+    <a href="../blog/2014#Sourcing_Mendel_7">[7]</a>.
+  </p>
+  <!--h3>Master's Thesis</h3>
+    <p style="font-size:35px;line-height:100%;margin:0px auto;">
+    <a href="http://opensourceecology.org/wiki/File:Thesis.pdf"><i class="fas fa-graduation-cap"></i></a>
+  </p-->
+  <br /><br /><br /><br /><br /><br /><br /><br />
+</subpage>
