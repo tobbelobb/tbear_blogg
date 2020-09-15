@@ -152,6 +152,16 @@ figure{
 	margin-right:auto;
 }
 
+table {
+  border-spacing:0px 50px;
+}
+
+@media screen and (max-width: 430px) {
+  td {
+    display:block;
+  }
+}
+
 @media screen and (max-width: 600px) {
 	.front-image {
 		margin-top:10%;
