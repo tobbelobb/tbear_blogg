@@ -1,11 +1,11 @@
 @font-face {
-	font-family: myFirstFont;
+	font-family: open-sans;
 	src: url(OpenSansRegular.woff);
 }
 
 /* #2 Italic Style */
 @font-face {
-	font-family: myFirstFont;
+	font-family: open-sans;
 	font-style: italic;
 	font-weight: normal;
 	src: url(OpenSansItalic.woff);
@@ -13,7 +13,7 @@
 
 /* #3 Bold Weight */
 @font-face {
-	font-family: myFirstFont;
+	font-family: open-sans;
 	font-style: normal;
 	font-weight: bold;
 	src: url(OpenSansBold.woff);
@@ -21,14 +21,14 @@
 
 /* #4 Bold Italic Style */
 @font-face {
-	font-family: myFirstFont;
+	font-family: open-sans;
 	font-style: italic;
 	font-weight: bold;
 	src: url("OpenSansBoldItalic.woff");
 }
 
 *:not(code) {
-	font-family: myFirstFont;
+	font-family: open-sans;
 }
 
 body {
@@ -83,6 +83,12 @@ h4 {
 	color:#30424c;
 }
 
+@media screen and (max-height: 760px) {
+	#MainContent.notop {
+		top:0px;
+	}
+}
+
 img{
 	height:auto;
 	max-width:100%;
@@ -128,7 +134,7 @@ figure{
 #FrontPageMain h2 {
 	text-align:center;
 	font-size:20px;
-	margin:0 auto;
+	margin:5px auto;
 	color:#777d8f;
 }
 #FrontPageMain h3 {
@@ -145,12 +151,24 @@ figure{
 	align-items: center;
 	margin-top:30%;
 	width:200px;
-	height:200px;
+	height:auto;
 	max-width:57%;
 	border-radius:50%;
 	margin-left:auto;
 	margin-right:auto;
 }
+
+.about-image {
+	display:flex;
+	align-items: center;
+	width:90%;
+	height:auto;
+	border-radius:25px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+
 
 table {
 	border-spacing:0px 50px;
@@ -162,7 +180,7 @@ table {
 	}
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-height: 760px) {
 	.front-image {
 		margin-top:10%;
 	}
@@ -187,9 +205,8 @@ nav ul li {
 /* Style the links inside the navigation bar */
 nav ul li a {
 	display: flex;
-	width:20%;
 	color: #23282b;
-	padding: 14px 16px;
+	padding: 14px;
 	text-decoration: none;
 	font-size: 17px;
 }
