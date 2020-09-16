@@ -60,10 +60,7 @@
   </ul>
 </nav>
 <div id="SiteName">
-  <div class="left">
-   <!-- Everyone benefits if I solve a hard problem -->
-    Reprap Blog <xsl:value-of select="posts/@year" />
-  </div>
+  Reprap Blog <xsl:value-of select="posts/@year" />
 </div>
 <div id="MainContent">
   <xsl:for-each select="posts/post">

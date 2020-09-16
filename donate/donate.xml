@@ -4,7 +4,7 @@
   <div id="SiteName">
     Donate &lt;3&lt;3&lt;3
   </div>
-  <div id="MainContent" class="notop">
+  <div id="MainContent" class="notop2">
     <table style="width:100%">
       <tr>
         <td><h3>Hangprinter campaign</h3></td>
@@ -23,8 +23,8 @@
         <td style="width:60%"><a style="text-decoration:none;" href="https://brave.com/tor840"><img src="brave.svg" style="height:46px;margin:0;" /></a>Getting Brave via my <a style="text-decoration:none;" href="https://brave.com/tor840">referral link</a> will give me ca $5 kickback. There are also multiple ways to donate from within the Brave Browser.</td>
       </tr>
     </table>
-    <div id="SiteName">
-      Thanks!!! &lt;3&lt;3&lt;3
-    </div>
+  </div>
+  <div id="SiteName">
+    Thanks!!! &lt;3&lt;3&lt;3
   </div>
 </subpage>

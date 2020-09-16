@@ -34,46 +34,48 @@
 body {
 	margin:0;
 	background-color:white;
+	color:rgb(48,66,76);
 }
 #SiteName {
 	position:relative;
 	text-align:left;
 	margin: 0 auto;
-	top:50px;
+	top:10px;
+	line-height:1;
 	width:600px;
 	max-width:93%;
 	height:auto;
 	z-index:2;
-	font-size:35px;
-	color:#777d8f;
+	font-size:29px;
 }
 .left {
 	height:46px;
 }
 h1 {
-	color:#1f2326;
-	font-size:21px;
+	font-weight:normal;
+	font-size:22px;
 	margin-bottom: 0px;
 }
 h2 {
-	color:#23282b;
+	font-weight:normal;
 }
 h3 {
-	color:#282f33;
+	font-weight:normal;
 }
 h4 {
+	font-weight:normal;
 	margin-top:10px;
 	margin-bottom:2px;
+	font-style:italic;
 }
-#date {
-	font: bold 50%;
-	color: rgb(110,110,110);
+.date {
+	color:rgb(160,160,160);
 	line-height: 100%;
 	margin-bottom: 10px;
 }
 #MainContent {
 	position:relative;
-	top:110px;
+	top:15px;
 	max-width:93%;
 	width:600px;
 	margin:0px auto;
@@ -86,6 +88,9 @@ h4 {
 @media screen and (max-height: 760px) {
 	#MainContent.notop {
 		top:0px;
+	}
+	#MainContent.notop2 {
+		top:30px;
 	}
 }
 
@@ -120,9 +125,7 @@ figure{
 	border-radius:11px;
 }
 #FrontPageMain {
-	display:block;
 	position:relative;
-	max-width:100%;
 	width:600px;
 	margin:0px auto;
 	max-width:93%;
@@ -205,21 +208,19 @@ nav ul li {
 /* Style the links inside the navigation bar */
 nav ul li a {
 	display: flex;
-	color: #23282b;
 	padding: 14px;
 	text-decoration: none;
 	font-size: 17px;
+	color:rgb(48,66,76);
 }
 
 
 /* Change the color and weight of links on hover */
 nav ul li:hover a {
-	color:#777d8f;
-	background-color:white;
+	color:rgb(119, 125, 143);
 }
 
 /* Add an active class to highlight the current page */
 nav a.active {
-	color: #F4976C;
-	background-color: white;
+	color:rgb(244, 151, 108);
 }

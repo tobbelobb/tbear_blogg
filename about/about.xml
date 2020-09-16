@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="subpagetemplate.xsl"?>
 <subpage name="about" cname="About" description="About">
-  <div id="SiteName">
+  <div id="SiteName" style="text-align:center;">
     Hello!
   </div>
   <div id="MainContent">
@@ -14,9 +14,7 @@
     <p>
       I'm quite passionate about solving problems once
       and for all in a way that benefits everyone.
-      So I publish everything I do, until I go broke.
-      Then I take paid work if I have to.
-      Then I rinse and repeat.
+      So I publish everything I do.
     </p>
     <p>
       My current focus is to make Hangprinter practically useful.
