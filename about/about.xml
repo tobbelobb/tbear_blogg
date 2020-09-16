@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="subpagetemplate.xsl"?>
 <subpage name="about" cname="About" description="About">
-  <p>
-    Nothing about me here yet
-  </p>
+  <div id="SiteName">
+    About
+  </div>
+  <div id="MainContent">
+    <p>
+      Nothing about me here yet
+    </p>
+  </div>
 </subpage>

@@ -80,12 +80,7 @@
       </xsl:for-each>
     </ul>
   </nav>
-  <div id="SiteName">
-    <xsl:value-of select="/subpage/@cname" />
-  </div>
-  <div id="MainContent">
-    <xsl:copy-of select="/subpage/*" />
-  </div>
+  <xsl:copy-of select="/subpage/*" />
 </body>
 </html>
 
