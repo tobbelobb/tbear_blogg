@@ -183,6 +183,15 @@ table {
 	}
 }
 
+@media screen and (min-width: 431px) {
+	.center-if-wide {
+		text-align:center;
+	}
+	.right-if-wide {
+		text-align:right;
+	}
+}
+
 @media screen and (max-height: 760px) {
 	.front-image {
 		margin-top:10%;
