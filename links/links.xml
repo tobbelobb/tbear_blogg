@@ -4,17 +4,6 @@
   <div id="MainContent" class="notop">
     <table style="width:100%">
       <tr>
-        <td><h3>Social/Platforms</h3></td>
-        <td class="links-container">
-          <a href="https://twitter.com/tobbelobb" style="color:rgb(29,161,242)"><i class="fab fa-twitter"></i></a>
-          <a href="https://github.com/tobbelobb/" style="color:black"><i class="fab fa-github"></i></a>
-          <a href="https://gitlab.com/tobben"><img style="vertical-align:bottom;min-width:35px;" src="gitlab-icon-rgb-small.svg" /></a>
-          <a href="https://www.youtube.com/channel/UCw1Nz0VCw4z-dfq4WjSkFzQ" style="color:rgb(255,0,0);"><i class="fab fa-youtube"></i></a>
-          <a href="https://vimeo.com/user23166500" style="color:rgb(26,183,234)"><i class="fab fa-vimeo"></i></a>
-          <a href="https://forums.reprap.org/profile.php?1,22385"><img style="vertical-align:bottom;height:34px;min-width:35px;" src="RepRap_Teardrop.svg" /></a>
-        </td>
-      </tr>
-      <tr>
         <td><h3>Projects</h3></td>
         <td style="text-align:center;"><a href="https://hangprinter.org"><img src="logo_med_text_horizontal.svg" style="height:50px;margin:0;" /></a></td>
       </tr>
@@ -114,6 +103,17 @@
             <a href="../blog/2014#Sourcing_Mendel_6">[6]</a>,
             <a href="../blog/2014#Sourcing_Mendel_7">[7]</a>.
           </p>
+        </td>
+      </tr>
+      <tr>
+        <td><h3>Social/Platforms</h3></td>
+        <td class="links-container">
+          <a href="https://twitter.com/tobbelobb" style="color:rgb(29,161,242)"><i class="fab fa-twitter"></i></a>
+          <a href="https://github.com/tobbelobb/" style="color:black"><i class="fab fa-github"></i></a>
+          <a href="https://gitlab.com/tobben"><img style="vertical-align:bottom;min-width:35px;" src="gitlab-icon-rgb-small.svg" /></a>
+          <a href="https://www.youtube.com/channel/UCw1Nz0VCw4z-dfq4WjSkFzQ" style="color:rgb(255,0,0);"><i class="fab fa-youtube"></i></a>
+          <a href="https://vimeo.com/user23166500" style="color:rgb(26,183,234)"><i class="fab fa-vimeo"></i></a>
+          <a href="https://forums.reprap.org/profile.php?1,22385"><img style="vertical-align:bottom;height:34px;min-width:35px;" src="RepRap_Teardrop.svg" /></a>
         </td>
       </tr>
     </table>
