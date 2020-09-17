@@ -47,7 +47,7 @@
            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML">
   </script>
 
-  <title>Torbjorn Ludvigsen</title>
+  <title>Torbjorn Ludvigsen|Blog</title>
 </head>
 <body>
 <nav>
