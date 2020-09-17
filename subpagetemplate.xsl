@@ -81,6 +81,8 @@
     </ul>
   </nav>
   <xsl:copy-of select="/subpage/*" />
+  <script data-goatcounter="https://torbjornludvigsen.goatcounter.com/count"
+    async="true" src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
 

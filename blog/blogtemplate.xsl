@@ -244,6 +244,8 @@ The videos published via Vimeo or Youtube are also licenced via Vimeo or Youtube
 <script type="text/javascript">
   MathJax.Hub.Configured()
 </script>
+<script data-goatcounter="https://torbjornludvigsen.goatcounter.com/count"
+  async="true" src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
 
