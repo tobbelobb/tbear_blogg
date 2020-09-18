@@ -1,6 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
 <posts year="2020">
+  <post id="moving" heading="This Blog Has Moved To torbjornludvigsen.com/blog" date="18-9-2020">
+    <p>
+      I'm entering a new period of full-time independent open source work.
+      I figured that I will need a nice place to publish stuff.
+    </p>
+    <p>
+      So, I've given my blog some love and moved it to a prettier domain =)=)=).
+      I have made it easier to maintain, and also added some rudimentary analytics.
+      (Publicly viewable, see <a href="https://torbjornludvigsen.goatcounter.com">https://torbjornludvigsen.goatcounter.com</a>.)
+      The new page replaces the good old <a href="https://vitana.se/opr3d/tbear/index.html#Links">list of links</a> with more obvious and touch screen friendly navigation.
+    </p>
+    <p>
+      This is the last post to be published on the old domain, vitana.se/opr3d/tbear.
+    </p>
+    <h3>Ehem. A Few Final Words</h3>
+    <p>
+      It's the end of a little mini-era.
+      The blog started out in Jan 2014, as a hand-coded html document with 50 lines of hand-coded css.
+      It wasn't even version controlled.
+      A friend said "I can host your page", so we uploaded the html, the css, and the images to his server via command-line ftp.
+      And it appeared on the web within 1 min, it was a bit magic to me.
+    </p>
+    <p>
+      My mentality at the time was "keep everything extremely simple, and thresholds extremely low, and feel no prestige ever".
+      So I kept the ftp deployment strategy, uploading each html and each image individually via command line.
+      I also kept the long url, added no javascript, no analytics, no comments sections or anything.
+      There was no platform around it, no ads, almost no readers.
+    </p>
+    <p>
+      The extreme simplicity and low threshold worked.
+      It got my productivity from 0 to something.
+      I wrote simple posts about simple things.
+    </p>
+    <p>
+      Web programming is very time consuming.
+      The very simple <a href="https://torbjornludvigsen.com">torbjornludvigsen.com</a> web site took me 10 full working days
+      to massage into its current shape.
+      While my old ftp-based hand-coded system was clunky, it has also "just worked" for 6 years straight.
+      Thanks sluggo setting it up and for hosting it.
+      I hope the new page will be as simple and robust as what you set up for me in 15 minutes in 2014 :)
+    </p>
+  </post>
   <post id="personal_1" heading="Becoming a Type 3 Worker" date="25-8-2020">
     <p>
       I've been thinking about what I want to make this year.
