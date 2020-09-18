@@ -338,7 +338,7 @@
 <post id="hangprinter_project_15" heading="Making the Hangprinter project easier to follow" date="27-11-2015">
 <h4>Subscriptions</h4>
 <p>
-  I've made an <a href="http://vitana.se/opr3d/tbear/feed.xml">RSS feed</a> for this blog.
+  I've made an <a href="https://vitana.se/opr3d/tbear/feed.xml">RSS feed</a> for this blog.
   How it looks and how subscriptions work depend on your browser and subscriptions manager.
   Be warned that this blog is all i one HTML document for now, so loading RSS previews and such will load the complete blog.
   However, the CSS and markup is so simple that reading the blog within any HTML+CSS rendering program will probably work flawlessly.
@@ -633,7 +633,7 @@ Having said that, I guess I have to try to implement some kind of custom bignum 
   As a part of solving my bureaucratic problems I needed to complete a 80 hour
   project aiming to improve the quality of my university programme.
   I got a request from the head of the programme, and the result is
-  <a href="https://vitana.se/opr3d/tbear/pdf/produktrapport.pdf">this report</a>.
+  <a href="https://torbjornludvigsen.com/pdf/produktrapport.pdf">this report</a>.
 </p>
 <p>
   Be warned that it's probably only interesting for those who read Swedish and
