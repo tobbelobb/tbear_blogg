@@ -36,6 +36,7 @@ body {
 	background-color:white;
 	color:rgb(48,66,76);
 }
+
 #SiteName {
 	position:relative;
 	text-align:left;
@@ -164,7 +165,8 @@ figure{
 .about-image {
 	display:flex;
 	align-items: center;
-	width:90%;
+	width:500px;
+	max-width:90%;
 	height:auto;
 	border-radius:25px;
 	margin-left:auto;

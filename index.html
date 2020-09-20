@@ -29,7 +29,7 @@
 
     <title>Torbjorn Ludvigsen</title>
   </head>
-  <body>
+  <body style="height: calc(100vh - 16px);width:100%;">
     <nav>
       <ul>
         <li><a href="" class="active">Home</a></li>
@@ -40,7 +40,7 @@
       </ul>
     </nav>
     <div id="FrontPageMain">
-      <img class="front-image" src="./torbjornludvigsen_small.JPG" />
+      <img class="front-image" src="./torbjornludvigsen_small.JPG" onclick="fun()" />
       <h1>Torbjørn Ludvigsen</h1>
       <h2>Full-Time Reprapper</h2>
       <h3>
@@ -48,7 +48,70 @@
         I like engineering, open hardware, and doing new things.
       </h3>
     </div>
+    <div id="there-you-go" style="position:fixed;"></div>
     <script data-goatcounter="https://torbjornludvigsen.goatcounter.com/count"
             async="true" src="//gc.zgo.at/count.js"></script>
+    <script>
+      var img = document.getElementById('FrontPageMain');
+      var dx = Math.random()*8 - 4.0;
+      var dy = Math.random()*8 - 4.0;
+      var offsetY = window.innerHeight > 760 ? 150 : 60;
+      if (window.innerWidth < 387 ) {
+        offsetY -= 60;
+      }
+      function fun() {
+        var bodyRect = document.body.getBoundingClientRect();
+        var elemRect = img.getBoundingClientRect();
+        img.style.position = "fixed";
+        var left = elemRect.left;
+        var top = elemRect.top - offsetY;
+        offsetY = 0;
+        counter = 1000;
+        interval = 20; // ms
+        countDown = document.getElementById('there-you-go');
+        countDown.style.width = "100%";
+        countDown.style.textAlign = "center";
+        countDown.style.top = bodyRect.bottom/2;
+        countDown.innerHTML = "<h1>progress 0%...</h1>";
+        document.body.appendChild(countDown);
+        window.setTimeout(wanderAround, interval);
+        var leftOffset = window.innerWidth > 430 ? -400 : -300;
+        var rightOffset = window.innerWidth > 430 ? -200 : -100;
+        var topOffset = window.innerHeight > 760 ? -180 : -60;
+        var bottomOffset = window.innerHeight > 760 ? -375 : -235;
+        function wanderAround() {
+          countDown.innerHTML = "<h1>progress " + Math.floor((1.0 - counter/1001)*100) + "%...</h1>";
+          img.style.left = left + "px";
+          img.style.top = top + "px";
+          --counter;
+          if (counter < 0)
+          {
+            countDown.innerHTML = "<h1>There you go.</h1>";
+            return;
+          }
+          else
+          {
+            // Animate a bit more
+            left += dx;
+            if (left > bodyRect.right + leftOffset || left < rightOffset)
+            {
+              dx = -dx;
+            }
+
+            top  += dy;
+            if (top < topOffset || top > bodyRect.bottom + bottomOffset)
+            {
+              dy = -dy;
+            }
+            img.style.left = left + "px";
+            img.style.top  = top  + "px";
+
+            // Re-trigger ourselves
+            window.setTimeout(wanderAround, interval);
+          }
+        }
+        wanderAround();
+      }
+    </script>
   </body>
 </html>
