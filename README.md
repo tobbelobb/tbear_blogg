@@ -1,3 +1,3 @@
 ## Tbear Blog
 
-This repo contains the files published on my blog, [torbjornludvigsen.com](torbjornludvigsen.com).
+This repo contains the files published on my website, [torbjornludvigsen.com](torbjornludvigsen.com).
