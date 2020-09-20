@@ -5,7 +5,7 @@
     Hello!
   </div>
   <div id="MainContent">
-    <img src="total_madness6.jpeg" class="about-image"/>
+    <a href="total_madness6.jpeg"><img src="total_madness6_small.jpeg" class="about-image" /></a>
     <p>
       I'm tobben.
       I've been publishing my RepRap, Open Source Hardware, and Open Source work since 2014.
