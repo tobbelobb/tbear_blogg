@@ -1,6 +1,213 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
 <posts year="2020">
+  <post id="hangprinter_project_64" heading="hp-mark: Computer Vision for Hangprinter" date="11-11-2020">
+    <figure>
+      <a href="./bilder/hp-mark-logo.png">
+        <img src="./bilder/hp-mark-logo.png" alt="" width="500" height="500"/>
+      </a>
+      <figcaption style="text-align:center">The hp-mark logo</figcaption>
+    </figure>
+    <p>
+      As promised in the <a href="https://hangprinter.org/newsletter/#post_27">October Newsletter</a>,
+      I've spent this month trying to add computer vision system to Hangprinter.
+      The system is called hp-mark, and is continuously published <a href="https://gitlab.com/tobben/hp-mark">here</a>.
+    </p>
+    <p>
+      The core goal of hp-mark is to be able to measure the pose of the Hangprinter effector;
+      its rotations and translations.
+      Easy at it might sound, it's quite hard to get right.
+      Choosing to go for it has changed the direction of HP4 development.
+    </p>
+    <h3>Increment or Revolution?</h3>
+    <p>
+      The HP4 Prototype One, the finished and working machine that I mounted in my ceiling two years ago,
+      is still just a prototype. No official version 4 of the Hangprinter has been released.
+    </p>
+    <figure>
+      <a href="./bilder/HP4PT1_11_nov_2020_2.JPG">
+        <img src="./bilder/HP4PT1_11_nov_2020_2_liten.JPG" alt="" width="500" height="498"/>
+      </a>
+      <figcaption>State of the HP4 PT1 hanging over me as I write this blog post.</figcaption>
+    </figure>
+    <p>
+      The Prototype One can do some nice things, like
+      <a href="https://www.youtube.com/watch?v=dEbyvdhdg88">printing OK Benchys</a>,
+      but it's still just an incremental improvement over HP3.
+      It has the same parts and features as HP3, just better.
+      It also has the same fundamental limitations, like being hard to calibrate, and lacking
+      guarantees when it comes to precision and accuracy.
+    </p>
+    <p>
+      So I've chosen between pushing HP4 as an incremental improvement,
+      or investing big in the big computer vision improvement first.
+    </p>
+    <p>
+      This is a classical problem of engineering management.
+      The rule of thumb is to always do the incremental dance, because that way:
+      <ul>
+        <li>Wrong assumptions get surfaced faster. Saves eons of time and resources.</li>
+        <li>You always have an up-to-date working machine out there.</li>
+      </ul>
+    </p>
+    <h3>Straying Away From Safety</h3>
+    <p>
+      I'm not going incremental, I'm making hp-mark a whole new system, with all the risks and challenges that entails.
+      I'll try to face assumptions fast through structured testing in software.
+      I'll also have to accept that my HP4PT1 machine won't be up-to-date or out there for a while.
+    </p>
+    <p>
+      I've also strayed further away from the safe incremental track by deciding to use
+      colored spheres instead of standard flat fiducial markers, like this one:
+    </p>
+    <figure>
+      <a href="./bilder/aruco.jpeg">
+        <img src="./bilder/aruco.jpeg" alt="" style="border-radius:0px;display:block;margin:auto;"/>
+      </a>
+    </figure>
+    <p>
+      There exist good technical arguments going spherical, but in honesty I discovered those after-the-fact.
+      My hp-mark decision making process looked more like this:
+      "I can not use the effector itself as a marker since I want to change it frequently, so I must add markers.
+      The markers must be pretty and practical, so effector mountable spheres is my only option."
+    </p>
+    <figure>
+      <a href="./bilder/synthetic_image_32mm_0_0_0_50_0_0_755.png">
+        <img src="./bilder/synthetic_image_32mm_0_0_0_50_0_0_755_liten.png" alt="" width="500" height="262"/>
+      </a>
+      <figcaption>The currently preferred trade off between pretty and practical.</figcaption>
+    </figure>
+    <h3>Road Ahead/How Practical?</h3>
+    <p>
+      I sincerely hope I can make safe decisions and rush towards something useful during the next couple of months.
+      Some good news that point in this direction:
+    </p>
+    <p>
+      It has proven feasible to 3D-print small but accurate spheres (with some post processing):
+    </p>
+    <figure>
+      <div class='embed-container'>
+        <iframe src='https://www.youtube.com/embed/EFOeW-I1IgM'
+          frameborder='0'
+          allowfullscreen='true'>
+        </iframe>
+      </div>
+    </figure>
+    <figure>
+      <a href="./bilder/mounted_sphere_marker_2.JPG">
+        <img src="./bilder/mounted_sphere_marker_2_liten.JPG" alt="" width="500" height="281"/>
+      </a>
+      <figcaption>Not too far away from the render, eh?</figcaption>
+    </figure>
+    <p>
+      Libraries like
+      <a href="https://opencv.org/">OpenCV</a>
+      and
+      <a href="https://libcamera.org/">libcamera</a>
+      work really well on the Raspberry Pi 4.
+      Support, documentation and tools for Raspberry Pi 4 and the Picam in general
+      has proven great.
+      Tools like
+      <a href="https://www.raspberrypi.org/documentation/usage/camera/raspicam/raspistill.md">raspistill</a>
+      has given a lot of speed and convenience so far.
+    </p>
+    <p>
+      I had to stitch together
+      <a href="https://gitlab.com/tobben/hp-mark/-/tree/master/camera-calibration">a calibration program</a>
+      from bits and pieces of OpenCV.
+      It turned out robust enough to work with calibration patterns displayed directly on a flat-ish computer screen.
+    </p>
+    <figure>
+      <a href="./bilder/charuco_on_monitor.JPG">
+        <img src="./bilder/charuco_on_monitor_liten.JPG" alt="" width="500" height="281"/>
+      </a>
+      <figcaption>My monitor during camera calibration</figcaption>
+    </figure>
+    <figure>
+      <a href="./bilder/monitor_curvature.png">
+        <img src="./bilder/monitor_curvature_liten.png" alt="" width="500" height="312"/>
+      </a>
+      <figcaption>The calibration program is able to detect my monitor's 0.8mm curvature and compensate for it.</figcaption>
+    </figure>
+    <p>
+      With this calibration, and very simple detector code, hp-mark can already find depth-positions
+      shorter than 1500mm on real but simple test images with ~1mm accuracy.
+    </p>
+    <figure>
+      <a href="./bilder/sphere_detected.png">
+        <img src="./bilder/sphere_detected_liten.png" alt="" width="500" height="376"/>
+      </a>
+      <figcaption>This image is taken only 233mm away from the marker. Click the image or zoom in to see the marker outline and center that hp-mark has drawn.
+        The black border stems from undistorting (removing lens-effects from the Picam).
+      </figcaption>
+    </figure>
+    <p>
+      That's the same accuracy as my hand measurements, so I need a less manual way to generate benchmark images.
+      I've looked into using OpenScad for that purpose.
+      It could generate benchmark images with known camera- and marker-locations.
+    </p>
+    <p>
+      I didn't known the focal distance of the OpenScad camera, so I decided to generate calibration images as well:
+    </p>
+    <figure>
+      <a href="./bilder/generated_calibration_image.png">
+        <img src="./bilder/generated_calibration_image_liten.png" alt="" width="500" height="262"/>
+      </a>
+      <figcaption>Calibration image generated from within OpenScad. Click on image to get larger version.</figcaption>
+    </figure>
+    <p>
+      If you look closely at the generated calibration image, you'll see that there are no grey pixels,
+      only black/white ones, and that the border between them is chopped like a staircase.
+      This, interestingly enough, made my camera calibration program regard the calibration pattern as non-flat:
+    </p>
+    <figure>
+      <a href="./bilder/ridges.png">
+        <img src="./bilder/ridges_liten.png" alt="" width="500" height="359"/>
+      </a>
+      <figcaption>Calibration image generated from within OpenScad. Click on image to get larger version.
+        Lines have been drawn in to emphasize the pattern of "ridges" and "valleys" that the calibration program
+        found that it had to compensate out.</figcaption>
+    </figure>
+    <p>
+      This all made curious.
+      I found out eventually that OpenScad will change its field of view depending on image size.
+      I carefully deduced the focal length and field of view at a fixed image size, by generating a large series of images,
+      to learn exactly when an image disappears from the field of view.
+      Details are <a href="https://gitlab.com/tobben/hpm/-/blob/b2ab3c380823ba2f4e1d114ce7521c8b5a832f1c/hpm/example-cam-params/openscadHandCodedCamParams.xml">here</a>
+      and
+      <a href="https://gitlab.com/tobben/hp-mark/-/blob/4adcba5041ed8e07f098f257f7914ab137d32453/camera-calibration/calibrate_openscad_camera/test.scad">here</a>.
+    </p>
+    <p>
+      I was able to confirm that the camera calibration script had found the right focal distance, within a 0.5 px accuracy.
+    </p>
+    <p>
+      Anyways, running hp-mark on the pretty and practical image above shows what we want to see:
+    </p>
+    <figure>
+      <a href="./bilder/simpleBlobDetectorResult.png">
+        <img src="./bilder/simpleBlobDetectorResult_liten.png" alt="" width="500" height="262"/>
+      </a>
+    </figure>
+    <p>
+      hp-mark prints out the following positions for the six spheres:
+    </p>
+    <code>
+(139.999, 19.6511, 734.160)mm
+( 74.4718, 93.1089, 823.895)mm
+(-140.08, 19.6511, 734.160)mm
+(-74.5623, 93.1093, 823.895)mm
+(65.9931, -63.3267, 638.315)mm
+(-66.0632, -63.3267, 638.315)mm
+    </code>
+    <p>
+      I haven't yet verified that the positions are correct.
+      All I've done is to be happy that they're so close to symmetrical.
+    </p>
+    <p>
+      But now it's dinner. Nice to end the working day on a high note. Bye bye.
+    </p>
+  </post>
+
   <post id="moving" heading="This Blog Has Moved To torbjornludvigsen.com/blog" date="18-9-2020">
     <p>
       I'm entering a new period of full-time independent open source work.
