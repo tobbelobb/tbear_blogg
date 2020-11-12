@@ -256,14 +256,27 @@
                        <img src="./bilder/ridges_liten.png" alt="" width="500" height="359">
                      </a>
                   
-            <figcaption>Calibration image generated from within OpenScad. Click on image to get larger version.
+            <figcaption>"Flatness" of the calibration pattern, according to the camera calibration program
+                       after it had analyzed the calibration images generated from within OpenScad.
+                       Click on image to get larger version.
                        Lines have been drawn in to emphasize the pattern of "ridges" and "valleys" that the calibration program
                        found that it had to compensate out.
             </figcaption>
                 
          </figure>
          <p>
+                  The script that generates the OpenScad calibration images and runs the camera calibration program on them,
+                  (ie how the "flatness" plot above was generated)
+                  can be found
+                  <a href="https://gitlab.com/tobben/hp-mark/-/blob/657e2ee303cad1d292a81f0b4804cb326b0899a2/camera-calibration/calibrate_openscad_camera/doit.sh">here</a>.
+                
+         </p>
+         <p>
                   I thought those ridges didn't look promising.
+                  Maybe the calibration program failed?
+                
+         </p>
+         <p>
                   To check if the calibration program had found the right values,
                   I carefully deduced the OpenScad camera's focal length by hand.
                   I managed to do that by generating a large series of images,
