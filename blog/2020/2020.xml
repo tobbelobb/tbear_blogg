@@ -1,6 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
 <posts year="2020">
+  <post id="hangprinter_project_65" heading="Testing hp-mark on OpenScad Renders" date="14-11-2020">
+    <p>
+      This is a short update on the previous post.
+      I've been trying to use OpenScad for generating benchmark images for hp-mark recently.
+      I produced some learnings that I wanted to publish here.
+    </p>
+    <p>
+      First of all, just to have said it, the OpenScad not advertised
+      as a tool for generating computer vision benchmark images.
+      Don't judge it based on my non-recommended usage of it.
+    </p>
+    <h3>Short Experiment</h3>
+    <p>
+      I started with placing out seven spherical markers in OpenScad, and generating some top view images, like this one:
+    </p>
+    <figure>
+      <a href="./bilder/generated_benchmark_nr2_32_0_0_0_0_0_0_755.png">
+        <img src="./bilder/generated_benchmark_nr2_32_0_0_0_0_0_0_755_liten.png" alt="" width="500" height="262"/>
+      </a>
+      <figcaption>Benchmark image for hp-mark generated within OpenScad.</figcaption>
+    </figure>
+    <p>
+      I generated three top view images,
+      and the only thing that differentiated them was their different resolutions: 2560x1343, 5120x2686, and 10240x5372.
+    </p>
+    <p>
+      hp-mark, based on this top view at different resolutions, generated three different sets of position estimations.
+      I have represented the position estimations with ocean-green spheres in the tilted images below:
+    </p>
+    <figure>
+      <a href="./bilder/generated_benchmark_nr2_2560_res_result.png">
+        <img src="./bilder/generated_benchmark_nr2_2560_res_result_liten.png" alt="" width="500" height="262"/>
+      </a>
+      <figcaption>Estimations based on 2560x1343 image.</figcaption>
+    </figure>
+    <figure>
+      <a href="./bilder/generated_benchmark_nr2_5120_res_result.png">
+        <img src="./bilder/generated_benchmark_nr2_5120_res_result_liten.png" alt="" width="500" height="262"/>
+      </a>
+      <figcaption>Estimations based on 5120x2686 image.</figcaption>
+    </figure>
+    <figure>
+      <a href="./bilder/generated_benchmark_nr2_10240_res_result.png">
+        <img src="./bilder/generated_benchmark_nr2_10240_res_result_liten.png" alt="" width="500" height="262"/>
+      </a>
+      <figcaption>Estimations based on 10240x5372 image.</figcaption>
+    </figure>
+    <p>
+      As we see in the above images, position estimations are way off in the camera's depth-direction.
+      We also see that the error shrinks when the image resolution is increased.
+    </p>
+    <p>
+      All edge markers are estimated to be closer to the center than they really are, but only by 1mm or less.
+      The error in the depth-direction accounts for 95% or more of the total error, and it is much worse
+      on the edge markers.
+    </p>
+    <p>
+      The error of the middle marker's position shrinks from 4.1 to 2.0 to 0.6 over those three images.
+      The error of one of the edge markers went from 10.8 to 8.2 to 7.1.
+    </p>
+    <figure>
+      <a href="./bilder/linear_errs.png">
+        <img src="./bilder/linear_errs.png" alt="" width="500" height="375"/>
+      </a>
+      <figcaption>Errors on a linear scale.</figcaption>
+    </figure>
+    <figure>
+      <a href="./bilder/semilogy_errs.png">
+        <img src="./bilder/semilogy_errs.png" alt="" width="500" height="375"/>
+      </a>
+      <figcaption>Errors on a semilogy scale.</figcaption>
+    </figure>
+    <p>
+      We see that the center marker's error would probably go towards zero if we continued to increase resolution.
+      For the edge marker however, the error decreases, but not towards zero, more towards 6.5.
+    </p>
+    <p>
+      Sooo, hp-mark is probably theoretically right about depth in the center of the image, but
+      wrong towards the edges.
+      Something is wrong about how I've modelled the projection then.
+    </p>
+    <p>
+      I guess I'll work on that next week. Bye!
+    </p>
+  </post>
   <post id="hangprinter_project_64" heading="hp-mark: Computer Vision for Hangprinter" date="11-11-2020">
     <figure>
       <a href="./bilder/hp-mark-logo.png">
