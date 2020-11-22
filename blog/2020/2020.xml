@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
 <posts year="2020">
+  <!--post id="hangprinter_project_66" heading="As Far As We'll Get With SimpleBlobDetector" date="22-11-2020">
+    <p>
+      So last week came and went.
+      I just wanted to show you how far I came.
+    </p>
+    <figure>
+      <a href="./bilder/generated_benchmark_nr2_32_0_0_0_0_0_0_755_sbd_res.png">
+        <img src="./bilder/generated_benchmark_nr2_32_0_0_0_0_0_0_755_sbd_res_liten.png" alt="" width="500" height="262"/>
+      </a>
+      <figcaption></figcaption>
+    </figure>
+  </post-->
   <post id="hangprinter_project_65" heading="Testing hp-mark on OpenScad Renders" date="14-11-2020">
     <p>
       This is a short update on the previous post.
@@ -8,7 +20,7 @@
       I produced some learnings that I wanted to publish here.
     </p>
     <p>
-      First of all, just to have said it, the OpenScad not advertised
+      First of all, just to have said it, OpenScad is not advertised
       as a tool for generating computer vision benchmark images.
       Don't judge it based on my non-recommended usage of it.
     </p>
@@ -83,7 +95,7 @@
       Something is wrong about how I've modelled the projection then.
     </p>
     <p>
-      While increasing resolution worsk, increasing the roundness of the spheres (from 70-sided to 700-sided circles)
+      While increasing resolution works, increasing the roundness of the spheres (from 70-sided to 700-sided circles)
       does not work:
     </p>
     <figure>
