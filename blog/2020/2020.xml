@@ -1,18 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
 <posts year="2020">
-  <!--post id="hangprinter_project_66" heading="As Far As We'll Get With SimpleBlobDetector" date="22-11-2020">
+  <post id="hangprinter_project_66" heading="Good Enough For Now, With SimpleBlobDetector" date="23-11-2020">
     <p>
       So last week came and went.
-      I just wanted to show you how far I came.
+      I want to show you how far I came.
     </p>
     <figure>
-      <a href="./bilder/generated_benchmark_nr2_32_0_0_0_0_0_0_755_sbd_res.png">
-        <img src="./bilder/generated_benchmark_nr2_32_0_0_0_0_0_0_755_sbd_res_liten.png" alt="" width="500" height="262"/>
+      <a href="./bilder/grid-red-2000.png">
+        <img src="./bilder/grid-red-2000_liten.png" alt="Results from hp-mark's SimpleBlobDetector" width="500" height="262"/>
       </a>
-      <figcaption></figcaption>
+      <figcaption>hp-mark was shown this image, a render of 32mm diameter markers in a planar grid,
+        seen directly from above at 2000mm height.</figcaption>
     </figure>
-  </post-->
+    <figure>
+      <a href="./bilder/sphere-grid-sbd-res.png">
+        <img src="./bilder/sphere-grid-sbd-res_liten.png" alt="Results from hp-mark's SimpleBlobDetector" width="500" height="267"/>
+      </a>
+      <figcaption>hp-mark's results in ocean green. Markers' actual positions in red are the same
+        grid as in the previous figure except the camera's position and rotation has changed to make it easier
+        to spot z-direction errors. Also, the top row and bottom row of markers has been removed in this image,
+        since hp-mark did not detect them. Click image for larger version.</figcaption>
+    </figure>
+    <p>
+      The results render shows quite ok performance.
+      All 105 detected markers were positioned with 3 mm accuracy or better.
+      Errors are 0.15% or less over the whole image plane at a 2000 mm distance.
+      The same precision is achieved for blue and green markers as well,
+      and rigorous regression tests have been implemented so we'll never slip back into worseness.
+      Let me just pat myself on the back for 10 seconds before I pick my work apart.
+    </p>
+    <p>
+      (patting...).
+    </p>
+    <h3>Not Perfect</h3>
+    <p>
+      We see some surprising peculiarities in the result visualization above.
+      Look for example at the diagonal neighbours of the origin-marker.
+      Their z-positions are too far away from the camera, when almost all other markers are too
+      close to the camera, particularly those close to the origin.
+      Also, they're all placed too far to the left (towards negative x).
+    </p>
+    <p>
+      Another peculiarity that catches my eye is that the three rightmost columns are red, while
+      only one column on the left (the leftmost one) is red.
+      So the z-positioning algorithm is not symmetrical over the y-axis (!?).
+      There are theoretical errors in how positions are calculated, although way smaller than what
+      I presented in my previous post.
+    </p>
+    <p>
+      After writing the previous post, I learned that spheres project an ellipse onto the imaging plane
+      through the pinhole of the camera, not a circle, like I had previously thought.
+      So hp-mark should look for ellipses in the images, not circles.
+      All I had was a circle detector, provided by OpenCV, called <code>SimpleBlobDetector</code>.
+    </p>
+    <figure>
+      <a href="./bilder/sbd-ellipse.png">
+        <img src="./bilder/sbd-ellipse_liten.png" alt="" width="500" height="500"/>
+      </a>
+      <figcaption><code>SimpleBlobDetector</code> will fit a circle to any near-circular ellipses it detects.</figcaption>
+    </figure>
+    <p>
+      The black center mark and a diameter corresponding to the black circle in the figure above,
+      is all the information that <code>SimpleBlobDetector</code> gives hp-mark.
+      We don't get the ellipse's major/minor axes, nor its rotation or "roundness".
+      hp-mark deviates from theoretical perfection when it approximates the major axis' length.
+    </p>
+    <h3>Good Enough For Now</h3>
+    <p>
+      Before diving into perfecting that approximation (I'm sure it could be done),
+      I ran my benchmark script,
+      <code>benchit.sh</code> that tests hp-mark on real images, taken by hand with the Picam.
+      Results vary more than 3 mm (ca plus/minus 10 mm) based on which version of my camera calibration values
+      that I use.
+      The errors are also way larger than 3 mm (ca 25mm) regardless of which calibration values that are used.
+    </p>
+    <p>
+      I will therefore call the results presented in this post "good enough" for detecting approximate positions
+      of single markers individually.
+      I will go on with combining 6 marker positions into the 6 degrees of freedom that we desire for the real
+      Hangprinter effector.
+      That is, I'll go on and try to solve the PnP problem using the blob detector I have.
+    </p>
+    <p>
+      Finding/creating a better major axis approximation is put in the backlog, but with a low priority.
+      Perfecting camera calibration seems more important.
+    </p>
+  </post>
   <post id="hangprinter_project_65" heading="Testing hp-mark on OpenScad Renders" date="14-11-2020">
     <p>
       This is a short update on the previous post.
