@@ -1663,7 +1663,7 @@
             
          </figure>
          <p>
-              It has a practical <a href="http://hangprinter.org/calculate.html">Hangprinter Calibration Calculator</a> page that implements the equations from the <a href="2016.html#hangprinter_project_21">calibration manual</a> <i>[NOTE from Jan 25, 2018: Both the calculator and the calibration manual are taken out of use. Use <a href="http://reprap.org/wiki/Links_Into_Hangprinter_v3_Build_Video#Now_going_into_an_hour_of_measuring_this">this reference instead</a>.]</i>
+              It has a practical <a href="http://hangprinter.org/calculate.html">Hangprinter Calibration Calculator</a> page that implements the equations from the <a href="../2016/#hangprinter_project_21">calibration manual</a> <i>[NOTE from Jan 25, 2018: Both the calculator and the calibration manual are taken out of use. Use <a href="http://reprap.org/wiki/Links_Into_Hangprinter_v3_Build_Video#Now_going_into_an_hour_of_measuring_this">this reference instead</a>.]</i>
             
          </p>
          <figure>
@@ -2146,7 +2146,7 @@
          <p>
               I've conducted a few experiments recently,
                 and I think I've arrived at a usable implementation of the line buildup compensation that I described in
-              <a href="2016.html#hangprinter_project_26">an earlier blog post</a>.
+                <a href="../2016/#hangprinter_project_26">an earlier blog post</a>.
               In this post, I'll try to go a bit more in detail.
             
          </p>
@@ -2274,7 +2274,7 @@
          </p>
          <p>
               Just for reference: apart from missing a factor to account for mechanical advantage,
-              the above equation corresponds exactly to the equation I presented in a <a href="2016.html#hangprinter_project_26">previous blog post</a>, see Equation <a href="2016.html#eqn0">*</a>.
+              the above equation corresponds exactly to the equation I presented in a <a href="../2016/#hangprinter_project_26">previous blog post</a>, see Equation <a href="../2016/#eqn0">*</a>.
               In that equation, \(x\) is split up into the parts to account for mechanical advantage and calibration procedures.
               In this theoretical review, we rather want to simplify our notation, like this:
             
@@ -2288,7 +2288,7 @@
             
          </p>
          <p>
-              where \(a = \tfrac{t}{\alpha}\), \(c_1\) is the factor that multiplies with \(D\) in Equation <a href="2016.html#eqn0">*</a> and \(c_0\) is the rest of the constants below the root sign in Equation <a href="2016.html#eqn0">*</a>.
+              where \(a = \tfrac{t}{\alpha}\), \(c_1\) is the factor that multiplies with \(D\) in Equation <a href="../2016/#eqn0">*</a> and \(c_0\) is the rest of the constants below the root sign in Equation <a href="../2016/#eqn0">*</a>.
             
          </p>
          <h3>Step 4: Testing...</h3>
@@ -2305,7 +2305,7 @@
               
             <figcaption>
                  Figure 3: During the left print, Equation \eqref{6} was applied on every G1 move.
-                 The used used \(x\) was exactly between the move's start point and end point, like suggested in <a href="2016.html#hangprinter_project_26">the previous blog post</a>.
+                 The used used \(x\) was exactly between the move's start point and end point, like suggested in <a href="../2016/#hangprinter_project_26">the previous blog post</a>.
                  The right print was printed without line buildup compensation.
                  It has some skipped steps along the vertical axis because the lines pulling downwards get tighter and tighter when line
                buildup is not accounted for.
@@ -2458,7 +2458,7 @@
               The line compensation code may increase print volume noticeably.
               During testing, it has allowed Hangprinter version 2 to go places
               where version 1 surely would have over-tightened lines and skipped steps.
-              <a href="2016.html#hangprinter_project_27">Read more...</a>
+              <a href="../2016/#hangprinter_project_27">Read more...</a>
             
          </p><br><br><br><h1 id="hangprinter_project_26">Compensating Line Buildup on Spools</h1>
          <div class="date">11-12-2016</div>
@@ -2469,14 +2469,14 @@
               as print dimensions grew close to 1 m.
               The problem was particularly noticeable on the D-axis since it has three doubled lines,
               so moving 1 mm in the D-direction puts 6 mm of line on the D-spool.
-              <a href="2016.html#hangprinter_project_26">Read more...</a>
+              <a href="../2016/#hangprinter_project_26">Read more...</a>
             
          </p><br><br><br><h1 id="hangprinter_project_25">The Worm Drive Works</h1>
          <div class="date">8-12-2016</div>
          <p>
               Just tested the worm drive.
               I was so happy to see it work that I made a little video.
-              <a href="2016.html#hangprinter_project_25">Read more...</a>
+              <a href="../2016/#hangprinter_project_25">Read more...</a>
             
          </p><br><br><br><h1 id="hangprinter_project_24">Adjustable D Line Lengths and New Look</h1>
          <div class="date">26-11-2016</div>
@@ -2485,32 +2485,32 @@
               This is useful to get Hangprinter's corners in level with bed.
               Newest changes are at a
               <a href="https://github.com/tobbelobb/hangprinter/tree/adjustable_d_lines_and_new_look">new branch in the repo</a>.
-              <a href="2016.html#hangprinter_project_24">Read more...</a>
+              <a href="../2016/#hangprinter_project_24">Read more...</a>
             
          </p><br><br><br><h1 id="hangprinter_project_23"> Worm Drive on D-axis</h1>
          <div class="date">18-11-2016</div>
          <p>
               The best part is that the worm is pure parametrized OpenSCAD and renders nicely.
-              <a href="2016.html#hangprinter_project_23">Read more...</a>
+              <a href="../2016/#hangprinter_project_23">Read more...</a>
             
          </p><br><br><br><h1 id="hangprinter_project_22">Another Stop Motion Video</h1>
          <div class="date">5-11-2016</div>
          <p>
               Hangprinting 0.9 m high twisted P at Teknisk Museum's 3D-printerfestival.
               Note: this text was edited on 7-11-2016.
-              <a href="2016.html#hangprinter_project_22">Read more...</a>
+              <a href="../2016/#hangprinter_project_22">Read more...</a>
             
          </p><br><br><br><h1 id="hangprinter_project_21">Hangprinter Calibration Manual v0.1</h1>
          <div class="date">3-11-2016</div>
          <p>
               This post will make it easier to calibrate Clerck by avoiding the need for measurements like this:
-              <a href="2016.html#hangprinter_project_21">Read more...</a>
+              <a href="../2016/#hangprinter_project_21">Read more...</a>
             
          </p><br><br><br><h1 id="oslo_skaperfestival_2016">Oslo Skaperfestival 2016</h1>
          <div class="date">25-10-2016</div>
          <p>
               Clerck was demonstrated in public for the first time this weekend!
-              <a href="2016.html#oslo_skaperfestival_2016">Read more...</a>
+              <a href="../2016/#oslo_skaperfestival_2016">Read more...</a>
             
          </p><br><br><br><h1 id="hangprinter_project_20">Homing the Hangprinter Without Adding Hardware</h1>
          <div class="date">23-9-2016</div>
@@ -2523,14 +2523,14 @@
               I don't have the time to implement the proposed
               <a href="http://www.appropedia.org/Clerck,_a_RepRap_3D_printer_hanging_from_the_ceiling#Home_position">accelerometer dependent homing procedure</a>
               before the festival.
-              <a href="2016.html#hangprinter_project_20">Read more...</a>
+              <a href="../2016/#hangprinter_project_20">Read more...</a>
             
          </p><br><br><br><h1 id="VSE_1">Yet Another Very Simple Extruder Design</h1>
          <div class="date">21-9-2016</div>
          <p>
               I've thought about a second generation Hangprinter lately, including the extruder.
               My current favourite re-design uses two motors running synchronously.
-              <a href="2016.html#VSE_1">Read more...</a>
+              <a href="../2016/#VSE_1">Read more...</a>
             
          </p><br><br><br><h1 id="masters_2">Why Optimize Chaotic Production?</h1>
          <div class="date">10-9-2016</div>
@@ -2539,7 +2539,7 @@
                 <a href="http://opensourceecology.org/wiki/File:Thesis.pdf">my Master's thesis</a>
               on productivity numbers doesn't resonate with them.
               This tickled me to think about and formulate why I do what I do, hence this post.
-              <a href="2016.html#masters_2">Read more...</a>
+              <a href="../2016/#masters_2">Read more...</a>
             
          </p><br><br><br><h1 id="portable_gcode_1">Portable Gcode and Short Status</h1>
          <div class="date">5-9-2016</div>
@@ -2549,7 +2549,7 @@
               The technical obstacles are small and it would be an obvious optimization of chaotic production.
               See <a href="http://forums.reprap.org/read.php?1,705311">the forum post</a> for details.
               Hoping for an interesting discussion there.
-              <a href="2016.html#portable_gcode_1">Read more...</a>
+              <a href="../2016/#portable_gcode_1">Read more...</a>
             
          </p><br><br><br><h1 id="masters_1">Optimize Chaotic Production</h1>
          <div class="date">29-6-2016</div>
@@ -2557,14 +2557,14 @@
               I presented my Master's recently, with a story line that was very RepRap centric.
               I'd like to re-present and develop my thoughts with some colors here.
               Be warned that this is a post about <i>why</i> I RepRap, not <i>how</i> I RepRap.
-              <a href="2016.html#masters_1">Read more...</a>
+              <a href="../2016/#masters_1">Read more...</a>
             
          </p><br><br><br><h1 id="hangprinter_project_19">Update and Clerck Build Instructions</h1>
          <div class="date">8-2-2016</div>
          <p>
               I've been working on Open Source Ecology 3D printer workshops (see my <a href="http://opensourceecology.org/wiki/Tobben_Log">work log</a> for exactly what I've been up to)
               the past month, and will continue to work on that until mid summer.
-              <a href="2016.html#hangprinter_project_19">Read more...</a>
+              <a href="../2016/#hangprinter_project_19">Read more...</a>
             
          </p><br><br><br><br><br><br><br><br><br><br><br><h1 id="Links">
             Links
