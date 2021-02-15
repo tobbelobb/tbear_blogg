@@ -173,7 +173,13 @@
                        <a  href="../2018#hangprinter_project_60">[61]</a>,
                        <a  href="../2018#hangprinter_project_61">[62]</a>,
                        <a  href="../2018#hangprinter_project_62">[63]</a>,
-                       <a  href="../2020#hangprinter_project_63">[64]</a>
+                       <a  href="../2020#hangprinter_project_63">[64]</a>,
+                       <a  href="../2020#hangprinter_project_64">[65]</a>,
+                       <a  href="../2020#hangprinter_project_65">[66]</a>,
+                       <a  href="../2020#hangprinter_project_66">[67]</a>,
+                       <a  href="../2020#hangprinter_project_67">[68]</a>,
+                       <a  href="../2020#hangprinter_project_68">[69]</a>,
+                       <a  href="../2021#hangprinter_project_69">[70]</a>
 </p>
 <p>
   Hangprinter Project Homepage: <a href="https://hangprinter.org">hangprinter.org</a>
@@ -194,7 +200,7 @@
                                        <a href="../2014#Sourcing_Mendel_7">[7]</a>
 </p>
 <p>
-  Archive: <a href="../2014">2014</a>, <a href="../2015">2015</a>, <a href="../2016">2016</a>, <a href="../2017">2017</a>, <a href="../2018">2018</a>, <a href="../2020">2020</a>
+  Archive: <a href="../2014">2014</a>, <a href="../2015">2015</a>, <a href="../2016">2016</a>, <a href="../2017">2017</a>, <a href="../2018">2018</a>, <a href="../2020">2020</a>, <a href="../2021">2021</a>
 </p>
 <p>
 Github Profile: <a href="https://github.com/tobbelobb/">link</a><br />

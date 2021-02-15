@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
+<posts year="2021">
+  <post id="hangprinter_project_69" heading="hp-mark Exists Now" date="15-2-2021">
+    <p>
+      I climbed down a rabbit hole recently.
+      Nearly half a year working on hp-mark.
+      The past 84 days even skipping blog post and newsletter writing.
+    </p>
+    <p>
+      Progress has been steady.
+      It works now.
+      <a href="https://gitlab.com/tobben/hp-mark">hp-mark</a> measures positions, like:
+    </p>
+    <figure>
+      <a href="./bilder/result-217_0.png">
+        <img src="./bilder/result-217_0_liten.png" alt="First ever non-zero result from hp-mark" width="500" height="376"/>
+      </a>
+      <figcaption>Result 1: [-1.27, -217.65, 2.68]. Hand measured position is [0, -217, 0].</figcaption>
+    </figure>
+    <p>
+      Accuracy is not fantastic.
+      The image above is a lucky one, with only 3 mm of error.
+      A more commonly seen error is around 35 mm.
+    </p>
+    <p>
+      A lot of hp-mark work remains.
+      I ticked 2 boxes, and added 6 new ones in the
+      <a href="https://gitlab.com/tobben/hp-mark/-/blob/master/README.md#status">roadmap</a>
+      today:
+    </p>
+    <p>
+      <input type="checkbox" checked="checked" disabled="disabled">Aquire camera 6D pose (this includes defining our world coordinate system)<br /></input>
+      <input type="checkbox" checked="checked" disabled="disabled">Aquire effector 6D pose<br /></input>
+      <input type="checkbox" disabled="disabled">Detect all markers on 95% of training images<br /></input>
+      <input type="checkbox" disabled="disabled">Take image ourselves upon request, don't rely on other programs to take image first<br /></input>
+      <input type="checkbox" disabled="disabled">Create a continous stream of position measurements (video?)<br /></input>
+      <input type="checkbox" disabled="disabled">Get a statistical idea about size of error<br /></input>
+      <input type="checkbox" disabled="disabled">Respond to RepRapFirmware/Duet request for position measurement<br /></input>
+      <input type="checkbox" disabled="disabled">Integrate a second camera, to reduce error<br /></input>
+    </p>
+    <p>
+      I'm a bit overwhelmed still.
+      I need to look backwards a bit.
+    </p>
+    <h3>What Have I Done?</h3>
+    <p>
+      I've been surprised.
+    </p>
+    <figure>
+      <video width="500" height="367" controls="controls">
+        <source src="bilder/fun.mp4" type="video/mp4"/>
+         <!--source src="movie.ogg" type="video/ogg"-->
+         Your browser does not support the video tag.
+      </video>
+      <figcaption>
+        Video stitched together from todays test images.
+      </figcaption>
+    </figure>
+    <!--figure>
+      <a href="./bilder/result-217_4.png">
+        <img src="./bilder/result-217_4_liten.png" alt="First ever non-zero result from hp-mark" width="500" height="376"/>
+      </a>
+      <figcaption>Result 3: [0.24, -220.14, 1.99]. Hand measured position is [0, -217, 0].</figcaption>
+    </figure -->
+    <p>
+      I chose C++, OpenCV, and a very traditional approach for this project.
+      I just wanted the most basic code that would mecanically find circles among pixels,
+      and then apply static geometric equations to transform circles into a nozzle position.
+      No AI stuff, no GPU stuff, no fancy hardware control, just
+$$
+  f(x) \rightarrow y,
+$$
+     where \(x\) is an image, and \(y\) is a nozzle position.
+    </p>
+    <p>
+      Such an old and explored problem!
+      I felt confident.
+    </p>
+    <p>
+      Some things that took long for me to program, in descending order:
+      <ul>
+        <li><b>Good enough ellipse detection.</b> OpenCV's <code>SimpleBlobDetector</code> was ok, but ultimately not
+          robust enough for our purposes. I was lucky to find <a href="https://github.com/CihanTopal/ED_Lib">ED_Lib</a>, and spent a little over a month integrating it into hp-mark.</li>
+        <li><b>Geometry.</b> A photon bounces off a sphere, through a pinhole, and onto an image sensor. Many more follow.
+          They create a pattern, a projection, on the image sensor.
+          Given the position of the sphere, what's the equation of its projection? Or vice versa; given a projection,
+          what's the position of the sphere? Which projected point correspond to the sphere's center? I derived all relevant equations by hand and wrote tests that wouldn't go
+          green before I was exactly right.
+          To bootstrap the chain of testable geometric functions, I derived the most basic equation in two different
+          ways, and tested that the two derived functions gave exactly the same results.
+          The system would never be good if the theory it rested upon wasn't sound, so I spent the time to make this
+          perfect.</li>
+        <li><b>Filtering among ellipses.</b> The improved ellipse detector found <i>lots</i> of ellipses.
+          Getting hp-mark to determine which ellipses represent real markers, was hard.
+          To  be real useful, hp-mark must be able to identify all its markers almost all the time,
+          so I spent extra time here as well. I will return to this point in the future, but we're at least finding
+          all the markers ca 80% of the time now.</li>
+        <li><b>Color recognition.</b> The human brain is full of heuristics that helps us determine color,
+          in a wide variety of situations. Very fine details of camera settings, light/shadow,
+          and way of definition, throws a simplistic computer program off very easily.
+          The strongest heuristic I was able to program, in which all colors are relative, still can not
+          identify a non-marker in a set of six real and one false marker.
+          Still, I was able to keep color as a marker categorizer that lets us
+          avoid having to put QR-codes on our markers.
+          I fought a bit for the aestetics.
+        </li>
+      </ul>
+    </p>
+    <p>
+      I feel like I'm almost too tired of it to even write about this stuff now.
+      But before I climb out of this rabbit hole,
+      I can show you something about how the ellipse detector works internally:
+    </p>
+    <figure>
+      <a href="./bilder/input.png">
+        <img src="./bilder/input_liten.png" alt="Input to ellipse detector" width="500" height="376"/>
+      </a>
+      <figcaption>The PiCam v2 took this image.</figcaption>
+    </figure>
+    <figure>
+      <a href="./bilder/edgeImage.png">
+        <img src="./bilder/edgeImage_liten.png" alt="edge image inside ellipse detector" width="500" height="376"/>
+      </a>
+      <figcaption>Color contrast between pixels were used to find these edges in the image.</figcaption>
+    </figure>
+    <figure>
+      <a href="./bilder/segmentImage.png">
+        <img src="./bilder/segmentImage_liten.png" alt="segment image inside ellipse detector" width="500" height="376"/>
+      </a>
+      <figcaption>The edge pixels are the grouped into segments. Each segment has a different color in this visualization.</figcaption>
+    </figure>
+    <figure>
+      <a href="./bilder/lines1Image.png">
+        <img src="./bilder/lines1Image_liten.png" alt="lines image inside ellipse detector" width="500" height="376"/>
+      </a>
+      <figcaption>The segments are split up further into lines and arcs. These are the lines.</figcaption>
+    </figure>
+    <figure>
+      <a href="./bilder/edarcs1Image.png">
+        <img src="./bilder/edarcs1Image_liten.png" alt="arcs image inside ellipse detector" width="500" height="376"/>
+      </a>
+      <figcaption>... and these are the arcs.</figcaption>
+    </figure>
+    <figure>
+      <a href="./bilder/edCircles.png">
+        <img src="./bilder/edCircles_liten.png" alt="output of ellipse detector" width="500" height="376"/>
+      </a>
+      <figcaption>The arcs are combined into circles and ellipses according to many different heuristics.</figcaption>
+    </figure>
+    <p>
+      In the image above, we see that one marker was missed (click images to get larger versions).
+      That image convinced me to put background plates below my markers.
+      That is what I'm currently working on.
+      They will probably en up looking something like this:
+    </p>
+    <figure>
+      <a href="./bilder/octagon.jpeg">
+        <img src="./bilder/octagon_liten.jpeg" alt="marker with bent octagonal background" width="500" height="500"/>
+      </a>
+      <figcaption>Test of marker background with bent octagonal background.</figcaption>
+    </figure>
+    <p>
+      The final background design will probably be flat and circular, and hp-mark will use the edge of the
+      background, as well as the marker itself, to determine its position.
+      But not today.
+      I'm so tired of that kind of programming.
+      Let's celebrate the restuls at the top of this post for a while first.
+      And let's rest.
+    </p>
+  </post>
+</posts>
