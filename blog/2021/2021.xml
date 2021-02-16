@@ -81,7 +81,9 @@ $$
       Some things that took long for me to program, in descending order:
       <ul>
         <li><b>Good enough ellipse detection.</b> OpenCV's <code>SimpleBlobDetector</code> was ok, but ultimately not
-          robust enough for our purposes. I was lucky to find <a href="https://github.com/CihanTopal/ED_Lib">ED_Lib</a>, and spent a little over a month integrating it into hp-mark.</li>
+          robust enough for our purposes. I was lucky to find <a href="https://github.com/CihanTopal/ED_Lib">ED_Lib</a>, and spent a little over a month integrating it into hp-mark.
+          For example, I had to fight a little to get sub-pixel accuracy in the center and size data. More about that
+          <a href="https://github.com/CihanTopal/ED_Lib/issues/12">here</a>.</li>
         <li><b>Geometry.</b> A photon bounces off a sphere, through a pinhole, and onto an image sensor. Many more follow.
           They create a pattern, a projection, on the image sensor.
           Given the position of the sphere, what's the equation of its projection? Or vice versa; given a projection,
