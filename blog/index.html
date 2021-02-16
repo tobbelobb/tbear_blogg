@@ -166,7 +166,7 @@
                             identify a non-marker in a set of six real and one false marker.
                             Still, I was able to keep color as a marker categorizer that lets us
                             avoid having to put QR-codes on our markers.
-                            I fought a bit for the aestetics.
+                            I fought a bit for the aesthetics.
                           
                </li>
                      
@@ -180,58 +180,69 @@
                 
          </p>
          <figure>
-                  <a href="2021/bilder/input.png">
-                       <img src="2021/bilder/input_liten.png" alt="Input to ellipse detector" width="500" height="376">
+                  <a href="2021/bilder/input3.png">
+                       <img src="2021/bilder/input3.png" alt="Input to ellipse detector" width="500" height="407">
                      </a>
                   
-            <figcaption>The PiCam v2 took this image.</figcaption>
+            <figcaption>A zoomed in version of the original image from the PiCam v2.</figcaption>
                 
          </figure>
          <figure>
-                  <a href="2021/bilder/edgeImage.png">
-                       <img src="2021/bilder/edgeImage_liten.png" alt="edge image inside ellipse detector" width="500" height="376">
+                  <a href="2021/bilder/edgeImage3.png">
+                       <img src="2021/bilder/edgeImage3.png" alt="edge image inside ellipse detector" width="500" height="407">
                      </a>
                   
             <figcaption>Color contrast between pixels were used to find these edges in the image.</figcaption>
                 
          </figure>
          <figure>
-                  <a href="2021/bilder/segmentImage.png">
-                       <img src="2021/bilder/segmentImage_liten.png" alt="segment image inside ellipse detector" width="500" height="376">
+                  <a href="2021/bilder/segmentImage3.png">
+                       <img src="2021/bilder/segmentImage3.png" alt="segment image inside ellipse detector" width="500" height="407">
                      </a>
                   
-            <figcaption>The edge pixels are the grouped into segments. Each segment has a different color in this visualization.</figcaption>
+            <figcaption>The edge pixels are the grouped into segments. Each segment has a different color in this visualization.
+                       A single segment that forms a closed circle or ellipse will be detected already at this stage.
+                       Most detectors can find complete closed-curve ellipses quickly and easily.
+                       What sets ED_Lib apart is how hard it tries to piece together the chopped-up circles, and how quick and cheap
+                       it manages to do this.
+                     
+            </figcaption>
                 
          </figure>
          <figure>
-                  <a href="2021/bilder/lines1Image.png">
-                       <img src="2021/bilder/lines1Image_liten.png" alt="lines image inside ellipse detector" width="500" height="376">
+                  <a href="2021/bilder/lines1Image3.png">
+                       <img src="2021/bilder/lines1Image3.png" alt="lines image inside ellipse detector" width="500" height="407">
                      </a>
                   
             <figcaption>The segments are split up further into lines and arcs. These are the lines.</figcaption>
                 
          </figure>
          <figure>
-                  <a href="2021/bilder/edarcs1Image.png">
-                       <img src="2021/bilder/edarcs1Image_liten.png" alt="arcs image inside ellipse detector" width="500" height="376">
+                  <a href="2021/bilder/edarcs1Image3.png">
+                       <img src="2021/bilder/edarcs1Image3.png" alt="arcs image inside ellipse detector" width="500" height="407">
                      </a>
                   
             <figcaption>... and these are the arcs.</figcaption>
                 
          </figure>
          <figure>
-                  <a href="2021/bilder/edCircles.png">
-                       <img src="2021/bilder/edCircles_liten.png" alt="output of ellipse detector" width="500" height="376">
+                  <a href="2021/bilder/edCircles3.png">
+                       <img src="2021/bilder/edCircles3.png" alt="output of ellipse detector" width="500" height="407">
                      </a>
                   
             <figcaption>The arcs are combined into circles and ellipses according to many different heuristics.</figcaption>
                 
          </figure>
          <p>
-                  In the image above, we see that one marker was missed (click images to get larger versions).
-                  That image convinced me to put background plates below my markers.
+                  In the image above, we see that one marker was missed, despise ED_Lib's many different heuristics.
+                  I tried to tune the heuristics for the hp-mark use case.
+                  See how that went, <a href="https://github.com/CihanTopal/ED_Lib/issues/13">here</a>.
+                
+         </p>
+         <p>
+                  Ultimately failing to tune the heuristics convinced me to put background plates below my markers.
                   That is what I'm currently working on.
-                  They will probably en up looking something like this:
+                  They will probably end up looking something like this:
                 
          </p>
          <figure>
@@ -244,7 +255,11 @@
          </figure>
          <p>
                   The final background design will probably be flat and circular, and hp-mark will use the edge of the
-                  background, as well as the marker itself, to determine its position.
+                  background, as well as the marker itself, to determine its position, further improving both robustness and accuracy
+            of the system.
+                
+         </p>
+         <p>
                   But not today.
                   I'm so tired of that kind of programming.
                   Let's celebrate the restuls at the top of this post for a while first.
