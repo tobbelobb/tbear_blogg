@@ -42,12 +42,325 @@
          
       </div>
       <div id="MainContent">
-         <h1 id="hangprinter_project_69">hp-mark Exists Now</h1>
+         <h1 id="hangprinter_project_70">hp-mark Is Good But Lonely</h1>
+         <div class="date">27-3-2021</div>
+         <p>
+            The rabbit hole has gotten deeper.
+            But progress is fast at this stage.<br>
+            Average error (that's accuracy) has shrunk from ca 35 mm to ca 3.5 mm.
+                Maybe even smaller.
+                  I haven't had much time to test accuracy thoroughly yet.
+                
+         </p>
+         <p>
+                  Precision (that's stability of repeated measurements) at the origin is down from ca 5 mm to ca 1 mm.
+                  And also:
+                
+         </p>
+         <p>
+                  CHECK!<input type="checkbox" checked disabled>Detect all markers on 95% of training images<br>
+                
+         </p>
+         <p>
+                  The markers have changed from small colored spheres to bigger retro-reflective disks.
+                  They're cheaper, lighter, easier to manufacture, and perform much, much better.
+                
+         </p>
+         <p>
+                  I had to go and implement the disk geometric equations.
+                  My body protested for days when I picked up that task.
+                  Luckily, this time I had a research paper to guide me through most of the theory,
+                  and I could quickly replicate my old test structure.
+                  This made me ca 10x faster compared to when I did the sphere geometry.
+                
+         </p>
+         <p>
+                  I've posted a couple of demos since last time:
+                
+         </p>
+         <figure>
+                  
+            <div class="embed-container">
+                       <iframe src="https://www.youtube.com/embed/m9qjuZQowCE" frameborder="0" allowfullscreen="true">
+                          </iframe>
+                     
+            </div>
+                
+         </figure>
+         <figure>
+                  
+            <div class="embed-container">
+                       <iframe src="https://www.youtube.com/embed/yRF-zevGHlQ" frameborder="0" allowfullscreen="true">
+                          </iframe>
+                     
+            </div>
+                
+         </figure>
+         <p>
+                  The first video shows the more important use case: anchor calibration aided by hp-mark.
+                  It enables all other hp-mark use cases, including homing.
+                
+         </p>
+         <p>
+                  So hp-mark is growing up.
+                
+         </p>
+         <p>
+                  The extremely high recognition and identification rate I have now is thanks to some LEDs
+                  that I put around the camera:
+                
+         </p>
+         <figure>
+                  <a href="2021/bilder/POWERFUL.jpeg">
+                       <img src="2021/bilder/POWERFUL_liten.jpeg" alt="My Picam with led rings around it" width="500" height="253">
+                     </a>
+                  
+            <figcaption>My picam v2 with two rings of in total 20 LEDs around it.
+                       This removes most problems I had with shadows disturbing measurements.
+                       I'd say it took identification rate from ca 95% to ca 99%(?).
+                       Out of ca 1000 test images, I haven't recorded a single identification failure yet.
+                     
+            </figcaption>
+                
+         </figure>
+         <p>
+                  I know I could enhance accuracy and precision further by mounting these slightly higher end, low distortion lenses:
+                
+         </p>
+         <figure>
+                  <a href="2021/bilder/low_distortion_lenses.jpeg">
+                       <img src="2021/bilder/low_distortion_lenses_liten.jpeg" alt="A set of low distortion lenses" width="500" height="281">
+                     </a>
+                  
+            <figcaption>A set of low distortion lenses that I ordered from Arducam.
+                       This setup would use the same image sensor, wire connection, and software interface as the current Picam v2.
+            </figcaption>
+                
+         </figure>
+         <p>
+                  However, changing the camera PCB and camera lens means having to calibrate the new camera and making a new mounting
+            bracket.
+                  Plus all the fiddling with wires, focusing the camera, unexpected stuff etc.
+                
+         </p>
+         <p>
+                  My guess is 1-2 days of work.
+                  Is it worth it? What are my goals?
+                
+         </p>
+         <h3>Keep Your Head Down And Work!</h3>
+         <p>
+                  This sprint's goal is "high accuracy auto calibration".
+                  The higher level goal is "a reliable work horse".
+                  Peace of mind.
+                
+         </p>
+         <p>
+                  The better camera achieves all of that.
+                  So I have to do it.
+                  Just like I redid the markers.
+                
+         </p>
+         <p>
+                  This isn't how I worked a few years back.
+                  This isn't how the HP1, HP2, HP3, and first prototype of HP4 were made.
+                  They were all "just barely working"-systems.
+                  This is why HP4 will be different.
+                
+         </p>
+         <h3>AAAAAAA!</h3>
+         <p>
+                  Body is shouting loudly.
+                  And for good reason.
+                
+         </p>
+         <p>
+                  Rest of World, aka everyone I meet, care extremely little about hp-mark
+                  in its current form.
+                  It you're reading this blog post, your among very few
+                  (<a href="https://torbjornludvigsen.goatcounter.com/">source</a>).
+                
+         </p>
+         <p>
+                  As much as I crave attention, Rest of World craves brain tickle.
+                  Humans need this always.
+                  Brains want to light up.
+                
+         </p>
+         <p>
+                  Current form hp-mark just isn't very...
+                
+         </p>
+         <figure>
+                  <a href="2021/bilder/darth_vader_helmet.jpg">
+                       <img src="2021/bilder/darth_vader_helmet_liten.jpg" alt="A side shot of Darth Vader's helmet" width="500" height="376">
+                     </a>
+                  
+            <figcaption>MRI scan of person reading up on how a measurement system that is unrelated to their life improved from 35 to 3.5.</figcaption>
+                
+         </figure>
+         <p>
+                  ... stimulating.
+                  For me, a person who is constantly dying for attention, this is a problem.
+                
+         </p>
+         <h3>What To Do</h3>
+         <p>
+                  Even at nanometer precision, isolated hp-mark would be precisely one nano stimulating to the non-Hangprinter owning
+            Rest of World.
+                  Common solutions to this kind of problem:
+                  
+            <ol>
+                       
+               <li>Pay folks to suffer thruogh your under-stimulating thing. Attention-as-a-service. Day jobs. Ads. This is the most common solution
+                  out in the wild.
+               </li>
+                       
+               <li>Find people who love your stuff by unusual amounts.</li>
+                       
+               <li>Put your thing into a more exciting context/story.</li>
+                       
+               <li>Pitch! Learn pitching dark arts.</li>
+                       
+               <li>Accept defeat.</li>
+                     
+            </ol>
+                
+         </p>
+         <p>
+                  All of these have their own pros and cons.
+                  Too much to write down here.
+                  I will do number 5 for the rest of this sprint, and then try my luck at number 3.
+                
+         </p>
+         <figure style="left-margin:auto">
+                  <a href="2021/bilder/current_sprint.JPG">
+                       <img src="2021/bilder/current_sprint_liten.JPG" alt="Tasks of the current sprint" width="338" height="600">
+                     </a>
+                  
+            <figcaption>The sprint in question.</figcaption>
+                
+         </figure>
+         <p>
+                  The first slightly more exciting context, at least for hp-mark, will be HP4.
+                  End-to-end, released machine, with build manual and all.
+                  I look forward to that.
+                
+         </p>
+         <h3>Outlook</h3>
+         <p>
+                  HP4 is not very interesting on its own either though.
+                  It will need it's own number 3 eventually.
+                  A context creates a story.
+                  Without a story, humans can not understand, or hardly even percieve your stuff.
+                
+         </p>
+         <h3>Number 3 Suggestions for HP4</h3>
+         <ul>
+                  
+            <li>
+                       Hangprinting a body shaped house that's later sold as an art piece on a blockchain.
+                     
+            </li>
+                  
+            <li>
+                       A variable size telescope rod framed Hangprinter on wheels that collects its own raw material and can flip pancakes.
+                       Perfect for Burning Man.
+                     
+            </li>
+                  
+            <li>
+                       Using HP4 as a motorized trampoline for cats. Computer vision detects cat. Ejects/bounces cat. Cat happy. The end.
+                     
+            </li>
+                  
+            <li>
+                       A Hangprinter v4 built... inside Minecraft. And then being sold as an NFT on a blockchain. Just add the blockchain
+               to the end of every suggestion from here on.
+                     
+            </li>
+                  
+            <li>
+                       A Hangprinter with AI that registers its own company, and prints and assembles an array of other machines to be its
+               employees.
+                     
+            </li>
+                  
+            <li>
+                       A Hangprinter that just connects deeply with people.
+                     
+            </li>
+                  
+            <li>
+                       Something simpler. A HP that puts cheese on a pizza and the slices it.
+                     
+            </li>
+                  
+            <li>
+                       Hangprinter doing something oddly satesfying, like cutting paper, or 3d printing ceramic poop. With glazing.
+                     
+            </li>
+                  
+            <li>
+                       A Hangprinter hanging down from space.
+                     
+            </li>
+                  
+            <li>
+                       A Hangprinter mounted upside-down. So D-anchor is on floor, ABC-anchors in ceiling, and print surface is in the ceiling.
+                       Mounted sideways would also work, for hype purposes, but not very well in practice.
+                     
+            </li>
+                  
+            <li>
+                       A big Hangprinter outside using a hundred helium balloons as its D-anchor.
+                     
+            </li>
+                  
+            <li>
+                       A single, fat, vertical, constant speed extrusion. Preferrably made with the HP from space.
+                     
+            </li>
+                  
+            <li>
+                       Printing a complete working bike in one go.
+                     
+            </li>
+                  
+            <li>
+                       A flexible motor driven suspended Hang-printbed. A <a href="https://gitlab.com/tobben/hangbed">hangbed</a>.
+                     
+            </li>
+                  
+            <li>
+                       A HP that's just super huge, with ABC anchors mounted on big trucks, and D on a high crane.
+                       This is the most frequently encountered one out in the wild, which more or less guarantees that it's a good one.
+                       The word HUUUUGE by itself already tickles a bit. I'm sure you can feel it.
+                     
+            </li>
+                
+         </ul>
+         <h3>Short End Note</h3>
+         <p>
+                  The old HP story is basically "a living thing that creates economic value".
+                  Fully automated, self-replicating, printing furniture, taking zero space when not in use.
+                  I'm not sure if that is tickly enough from my attention cravings' perspective.
+                  Before it's even out there we'll never know.
+                
+         </p>
+         <p>
+                  hp-mark is getting quite good, but also lonely.
+                
+         </p>
+         <p>
+            - tobben
+            
+         </p><br><br><br><h1 id="hangprinter_project_69">hp-mark Exists Now</h1>
          <div class="date">15-2-2021</div>
          <p>
-            I climbed down a rabbit hole recently.
-            Nearly half a year working on hp-mark.
-            The past 84 days even skipping blog post and newsletter writing.
+                  I climbed down a rabbit hole recently.
+                  Nearly half a year working on hp-mark.
+                  The past 84 days even skipping blog post and newsletter writing.
                 
          </p>
          <p>
