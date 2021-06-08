@@ -1,5 +1,6 @@
 saxon-xslt 2021/2021.xml blogtemplate.xsl > 2021/index.html
 saxon-xslt 2020/2020.xml blogtemplate.xsl > 2020/index.html
+saxon-xslt 2019/2019.xml blogtemplate.xsl > 2019/index.html
 saxon-xslt 2018/2018.xml blogtemplate.xsl > 2018/index.html
 saxon-xslt 2017/2017.xml blogtemplate.xsl > 2017/index.html
 saxon-xslt 2016/2016.xml blogtemplate.xsl > 2016/index.html

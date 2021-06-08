@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
+<posts year="2019">
+  <post id="no_post" heading="No Posts" date="8-6-2021">
+    <p>
+      You've found the lost year of my RepRap blog.
+    </p>
+    <figure>
+      <a href="./bilder/nothingtoseehere.jpg">
+        <img src="./bilder/nothingtoseehere_liten.jpg" alt="Nothing to See Here" width="500" height="321"/>
+      </a>
+    </figure>
+  </post>
+</posts>
