@@ -780,12 +780,12 @@ Left at the library were only a few makers,
     <img src="./bilder/clonewars_liten.png" alt="" />
   </a>
   <figcaption>
-    Figure 5: A graph displaying part of the data set from the <a href="http://maytheclonebewithyou.com/">Clone Wars project</a>.
+    Figure 5: A graph displaying part of the data set from the <a href="https://web.archive.org/web/20160713090205/http://maytheclonebewithyou.com/">Clone Wars project</a>.
     Every node is a person and every edge represents a transfer of RepRap 3D printed parts.
     Similar graphs describing RepRap designs are found
       <a href="http://reprap.org/wiki/RepRap_Family_Tree">here</a> and
       <a href="http://makezine.com/2015/12/02/a-reprap-family-tree-tracking-the-printers-that-started-it-all/">here</a>,
-      and a graph for RepRap machines is found <a href="http://maytheclonebewithyou.com/">here</a>.
+      and a graph for RepRap machines is found <a href="https://web.archive.org/web/20160713090205/http://maytheclonebewithyou.com/">here</a>.
     As far as I know, the person-centric graph in this figure is unique.
   </figcaption>
 </figure>
