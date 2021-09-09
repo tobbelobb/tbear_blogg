@@ -1,6 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
 <posts year="2021">
+  <!--post id="hangprinter_project_74" heading="Snaily Snails Fighting Line Wear" date="9-9-2021">
+  </post-->
+  <post id="hangprinter_project_73" heading="Works" date="5-9-2021">
+    <p>
+      Hangprinter version 4 works now.
+      It is the default Hangprinter design in the repo.
+      It has some documentation, and it has some builders.
+      It prints decent quality things, like this:
+    </p>
+    <figure>
+      <a href="./bilder/foodwastebagholder.jpeg">
+        <img src="./bilder/foodwastebagholder_liten.jpeg" alt="food waste bag holder Hangprinted" width="500" height="281"/>
+      </a>
+      <figcaption>A holder for paper bags.</figcaption>
+    </figure>
+    <p>
+      ... and this:
+    </p>
+    <figure>
+      <a href="./bilder/selfreplicatedspool.jpeg">
+        <img src="./bilder/selfreplicatedspool_liten.jpeg" alt="self-replicated spool Hangprinted" width="500" height="281"/>
+      </a>
+      <figcaption>A self-replicated spool for HP4.</figcaption>
+    </figure>
+    <p>
+      ... and this:
+    </p>
+    <figure>
+      <a href="./bilder/WhiteBenchy.png">
+        <img src="./bilder/WhiteBenchy_liten.png" alt="White Benchy" width="500" height="281"/>
+      </a>
+      <figcaption>A white Benchy printed by HP4 while tuning firmware and slicer configs.</figcaption>
+    </figure>
+  </post>
   <post id="hangprinter_project_72" heading="Hangprinter v4" date="9-7-2021">
     <figure>
       <a href="./bilder/DSC_1065.JPG">
