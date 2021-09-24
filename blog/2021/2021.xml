@@ -1,6 +1,220 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
 <posts year="2021">
+  <post id="hangprinter_project_75" heading="Hopes, Dreams, and Agendas" date="26-9-2021">
+    <p>
+      I thought I would alternate between using HP4 and using the old trusty Prusa right now.
+      In reality, I haven't used the Prusa since mid August.
+      HP4 works well enough for everyday use.
+      Tiny things remain. Like attaching a Z-probe.
+    </p>
+    <p>
+      Coming to this point awakens some thoughts about RepRap, Hangprinter, and myself.
+      It was one image in particular that propelled me into the Hangprinter project:
+    </p>
+    <figure>
+      <a href="./bilder/clonewars.png">
+        <img src="./bilder/clonewars_liten.png" alt="" width="500" height="328"/>
+      </a>
+      <figcaption>
+        A directed graph showing how some real people have forwarded RepRaps to each other.
+        Every node is a person and every edge represents a transfer of RepRap 3D printed parts.
+      </figcaption>
+    </figure>
+    <p>
+      RepRaps have been spreading through a print-it-forward culture.
+      That's an unusual way for machines to spread.
+    </p>
+    <h4>Getting Propelled</h4>
+    <p>
+      I was already hooked on an idea.
+      The image looked like proof that it could happen.
+      I wanted to make a robust and distributed worldwide network of manufacturing.
+      Peer to peer.
+    </p>
+    <p>
+      It was a very frequent idea at the time, ca between 2011 and 2016, and lots of people were working on it.
+    </p>
+    <h4>Distributed Production. A New System</h4>
+    <p>
+      Central to the idea is eliminating thresholds for newcomers.
+      Easy access.
+      Anyone can join and become a manufacturer.
+    </p>
+    <p>
+      Also central is ease of replication.
+      Anyone can easily help anyone else become a manufacturer.
+    </p>
+    <figure>
+      <a href="./bilder/people_tree.png">
+        <img src="./bilder/people_tree.png" alt="" width="467" height="403"/>
+      </a>
+      <figcaption>
+        A tiny network of stick figures.
+      </figcaption>
+    </figure>
+    <p>
+      The ethos was copied from free/open source software, and from the Internet itself.
+      We had achieved universal access to information and publishing in the preceding decade.
+      Now was the time to achieve universal access to goods and manufacturing.
+    </p>
+    <p>
+      Praying it would take only a dacade or so.
+    </p>
+    <h4>Making Free Software and The Internet Was Hard</h4>
+    <p>
+      There were too few ways to reward early creators of the Internet and of free sofware.
+      Giving anyone special treatment would undermine the whole point of the projects.
+      Donations were small and unpredictible.
+    </p>
+    <p>
+      Being non-owned and distributed, there were no stock options to hand out.
+      (Before tech giants appeared, but let's not go there yet.)
+    </p>
+    <p>
+      With no ways of reward, why did anyone work on unceirtain and difficult projects
+      like free software and the Internet?
+    </p>
+    <p>
+      We'll get there. Some did work on it. Let's call them activists.
+      The Internet and free software were made by activists.
+    </p>
+    <p>
+      What they made stayed true to activist specific ideals for many years, thanks to automation.
+      Robustness and equality was encoded in Internet protocols.
+      Free software was copied by the millions, with its ideals encoded into the self-replicating copyleft licensing scheme.
+    </p>
+    <h4>Distributed Production Requires Humans Who Require Rewards</h4>
+    <p>
+      It's questionable whether those ideals could be automated inside a manufacturing network back in 2011.
+      Terms of Internet communication are agreed upon by computers.
+      Terms of RepRap manufacturing were, and still are, agreed upon and executed by people.
+    </p>
+    <p>
+      People must be rewarded.
+      Otherwise, they do something else.
+    </p>
+    <p>
+      Duplicating Internet activism within manufacturing requires more automation, or more reward
+      to be present within the network than outside of it.
+      It sounds hard.
+      Still people tried.
+    </p>
+    <p>
+      Hard and complex work was done under umbrellas such as RepRap, Arduino, and Open Source Hardware.
+      Code and design files were maintained and improved.
+      Plans were crafted and executed upon.
+      Manifestos were written.
+    </p>
+    <p>
+      RepRaps were printed forward at least in the thousands, maybe in the millions,
+      before more centralized brands and companies took over, and made the once distributed
+      network of RepRaps more familiarly star shaped.
+    </p>
+    <p>
+      The same star shape was given to the Internet by tech giants.
+      Centralization of the RepRap network was maybe even faster than that of the Internet.
+      RepRap was centralized by the very earliest RepRap activists themselves.
+    </p>
+    <h4>Why Was That Hopeless "Distributed Manufacturing" Idea so Common, Again?</h4>
+    <p>
+      For me, it was like this: I wanted to be useful.
+      If accepting lower rewards made me more useful then, well ok then.
+      There are, and have been, many of us.
+    </p>
+    <p>
+      Through all times, there have been talented people who chose to be monks/nuns, philosophers, and artists for example.
+      Of course such personality traits still exist.
+      They're everywhere.
+    </p>
+    <p>
+      I meet them every day and would have died of boredom without them.
+    </p>
+    <h4>Fencing In</h4>
+    <p>
+      Predictably, at the center of star shaped networks, tired creators are currently building fences around their work.
+      Having followed the activist track for a few years, they want stability and rewards.
+      Patents, strict copyright licenses, and secretive development practices fit their needs.
+    </p>
+    <p>
+      No one objects a fading activist.
+      Everyone should wish them stability and rewards, myself and their customers included.
+      Even as distributed production is rapidly tamed.
+    </p>
+    <p>
+      In their wake, we find a richer commons (from early years, and through doors left open), and awesome products,
+      mostly retro-fitted into centralized manufacturing.
+      No low threshold network, but old gems and happy customers.
+    </p>
+    <h4>Giving Up on Distributed Production?</h4>
+    <p>
+      Since I started my activism, I feel the manufacturing commons has plateaued, but at a higher level.
+      I enjoy the hights we've reached.
+    </p>
+    <p>
+      But fencing in is lowering the ambition.
+      And patenting delays the next leap by a generation each time.
+    </p>
+    <p>
+      There is still much to achieve.
+      The manufacturing of today is still fragile and alienating.
+      RepRap is as exposed to chip supply shortage as any old company.
+    </p>
+    <p>
+      We got half way towards an Internet-like manufacturing network,
+      then took the long road back to the old system.
+      Our open machines are still comparable to what some factories already had since the 80s.
+    </p>
+    <p>
+      We're not automating, we're not winning. We're tired.
+      We have achieved a manufacturing increment, still not a manufacturing revolution.
+    </p>
+    <h4>The Next Leap</h4>
+    <p>
+      Blockchain projects, with their cryptocurrencies are a more fruitful attempt att duplicating the Internet's ideals and success.
+      It is cyberpunk flavoured free software money, squeezed into the Internets own design template.
+      Made by unknown activists towards whom we should be grateful.
+    </p>
+    <p>
+      It is a protocol of rewards.
+      Automated rewards.
+      Non-activists stay on the the network, and keep their computers on the network, because of the rewards.
+    </p>
+    <p>
+      Distributed production needs automation and rewards.
+      Let's try again.
+    </p>
+    <p>
+      Let's design protocols for manufacturing.
+      Let's reward manufacturing efforts with tokens.
+      Let's introduce a blockchained manufacturing network, capable of representing and transferring real value.
+      As real as the objects we make.
+    </p>
+    <p>
+      Let's build a treasury owned by the network itself.
+      Let's govern it on chain, according to our own protocol.
+    </p>
+    <p>
+      We can't shoot objects through Internet cables.
+      But we can shoot more things through them than we could before.
+      Deals, rights, rewards, money, commitments, contracts, designs, plans, hopes, dreams, and progress.
+      Let's try.
+    </p>
+    <p>
+      What do we have to win?
+      Well, all the objects we'll make.
+      Money.
+      Pride.
+      Manufacturing, baby!
+    </p>
+    <p>
+      And I think freedom.
+      A place in society.
+      Resilience.
+      Owning ourselves more.
+      Also described <a href="../2016/index.html#masters_2">in 2016</a>.
+    </p>
+  </post>
   <post id="hangprinter_project_74" heading="Snaily Snails Fighting Line Wear" date="9-9-2021">
     <p>
       The HP4 has done ca 75 hours of printing now, and shown great promise!
@@ -129,6 +343,7 @@
     <p>
       We could let the line from the ceiling enter the "snail" in a particular way,
       so that all forces from that entrance goes through the desired axis of rotation:
+      o
     </p>
     <figure>
       <a href="./bilder/Momentum.png">
