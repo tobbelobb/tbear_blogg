@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
 <posts year="2021">
-  <post id="hangprinter_project_76" heading="Tips For Survival in Open Source" date="12-10-2021">
+  <post id="hangprinter_project_76" heading="Where Should Open Source Go?" date="16-10-2021">
     <p>
       In earlier texts I've linked open source to warm fuzzy feelings, freedom, and happiness.
-      Critique often comes in terms of survival of the developer, food on the table, and such.
-      So I've been thinking about the survival of open source devs.
+      Critique often comes in terms of survival or well being of the developer.
+      The most typical question is whether open source work can put food on the table.
+      I've been thinking about that.
     </p>
     <p>
       With "open source" in this text, I mean the practice of sharing intellectual work
-      down to excruciating detail.
+      publicly down to excruciating detail.
     </p>
     <figure>
       <a href="./bilder/so_open_source.png">
@@ -22,23 +23,36 @@
       The level of sharing is of course a continuum, and "open source" has many definitions.
       In this text, let's associate "open source" with the most sharing end.
     </p>
-    <h3>Finding Harmony</h3>
     <p>
-      Many open source developers want to be at the most sharing end, but struggle to make
-      ideals and survival line up.
+      This text is written to a community who wants to endure life at the sharing end.
+      Food on the table is just one of many challenges we face,
+      but we're asked about this so often that
+      it deserves an answer.
+    </p>
+    <h3>Open Source Devs Have The Same Question</h3>
+    <p>
+      Sharing requires surviving, which requires covering one's expenses.
+      The typical dev wants to share, but must also pay the bills.
+    </p>
+    <p>
+      Perceiving a conflict between open source and paying the bills,
+      the developer faces a stark choice.
+      Either they must find an open source business model,
+      or they must leave their open source work.
     </p>
     <figure>
       <a href="./bilder/harmony.jpg">
         <img src="./bilder/harmony_liten.jpg" alt="" width="500" height="281"/>
       </a>
       <figcaption>
-        Lining up internally makes you strong and stable.
+        It can be frustrating to not have ideals line up with the need for income.
+        Making the two line up and build on each other would feel better.
       </figcaption>
     </figure>
     <p>
-      Finding such harmony while sharing means working on projects that:
+      The economically pressured open source developer will search for projects that:
       <ol>
-        <li>Have to be open source in order to survive</li>
+        <li>Must be open source in order to make sense</li>
         <li>Help the creator survive</li>
       </ol>
     </p>
@@ -48,45 +62,55 @@
     </p>
     <p>
       That's partly because survival was always hard.
-      Look at the history or anything, and you'll find hardship and randomness.
+      Look at the history of almost anything, and you'll find hardship and randomness.
     </p>
     <p>
-      But it's also because being open source limits some options.
-      You want money?
-      Open source is a terrible business plan.
+      But it's also because being open source is almost always a
+      terrible business plan.
     </p>
     <p>
-      As an open source developer I need to think through some strategies.
-      Some things that could help the creator survive.
+      With risk of actually breaking my brain,
+      I will chase this train of thought as far as I can in this text.
+      Let's look at four strategies that might help the pressed open creator survive.
     </p>
     <figure>
       <a href="./bilder/stamps_are_nice.jpeg">
         <img src="./bilder/stamps_are_nice_stor.jpeg" alt="" width="500" height="602"/>
       </a>
       <figcaption>
-        Open source developers are often compared with stamp collectors.
-        So unfair.
-        Stamp collection is a real job.
+        When working on open source projects, I'm often compared to a stamp collector.
+        The perception is that I spend time on my little hobby, for myself, in my own room, and for my own sake.
+        It's not the activity itself that is considered useless, it's the lack of generated income.
       </figcaption>
     </figure>
-    <h3>Strategy 1️⃣: Politics</h3>
+    <h3>Strategy 1️⃣  Politics</h3>
     <p>
-      This first one is a toy example.
+      This strategy is obvious but infrequent.
+      Don't ask me why.
+      Elsewhere in society, all kinds of groups seek political protection all the time.
+      Industries, religious groups, age groups and even genders use
+      politics to benefit themselves.
+      So why wouldn't we?
     </p>
     <p>
-      Society as a whole could make a broad bet on open source.
-      We could fund some good open source projects with tax money.
+      Through politics we could organize society wide efforts
+      to support open source.
+      We could fund our best projects with tax money.
       Or we could force companies that misbehave on the closed
       market to open source their products.
     </p>
     <p>
-      I think the open source community should be a bit worried about this one.
-      Open source devs filter out bad projects and let most of them die.
-      Policians in meeting rooms maybe wouldn't.
+      I find politics exhausting, but I also find that we should get our act together and do it anyways.
+      Refusing to stand up for our beliefs in public debate is a self defeating attitude.
+      (Talking for those of us who live in functioning democracies.)
     </p>
     <p>
-      We'll get a bad rep if low quality open source projects doesn't die quickly.
-      Open source as an idea could go down like a burning zeppelin.
+      At the same time the open source community must be mindful
+      about potential downsides political projects.
+    </p>
+    <p>
+      For example, politics can breed prestige and a tendency to
+      inflate public expectations with helium.
     </p>
     <figure>
       <a href="./bilder/burning_zeppelin.jpg">
@@ -95,12 +119,30 @@
       <figcaption>
         There was a time when techies pushed for zeppelins.
         Big disasters scared the public away from the idea.
-        Mixing open source with politics could have us look a bit like this.
+        Public open source projects gone bad would make us look a bit like this.
       </figcaption>
     </figure>
-    <h3>Strategy 2️⃣: Fence In</h3>
     <p>
-      This second one is a common idea, so I'll explore it in some depth.
+      Saving individuals could also drag the community down.
+      Open source gets a bad rep if low quality projects don't die quick enough.
+    </p>
+    <p>
+      In today's harsh conditions, any survivor project is exceptional.
+      With politics in the mix however, we will risk that projects get life support
+      just to save someone's face.
+    </p>
+    <p>
+      I think good technical leadership in publicly funded open source is possible,
+      but let's not head too far into dreamery.
+    </p>
+    <p>
+      Let's stop it there.
+      There's little apetite for politics within our community, and we're far from political victories.
+    </p>
+    <h3>Strategy 2️⃣  Fence In</h3>
+    <p>
+      Let's look at some similar strategies that don't involve parliments.
+      These ones are much more common, so I'll explore them in more depth.
     </p>
     <p>
       Let's generalize "fence" as
@@ -113,12 +155,18 @@
       Once everyone is inside, we're all open and good.
     </p>
     <p>
-      The upside is that we don't have to make a society wide bet to try this strategy.
+      However, if we get a few of these open islands, and not everyone gets onboard,
+      then everyone is stuck in half-open source land, which would be bad.
     </p>
     <p>
-      However, if we get a few of these open islands, or don't get everyone onboard,
-      then we're stuck in half-open source land.
-      That's the downside.
+      Being open for everyone is exactly the point of open source.
+      Those who would be shut out first are the ones we're the most eager to reach.
+      Not reaching everyone is an openness failure.
+    </p>
+    <p>
+      So the downside of many fencing stategies is that they start with openness failure,
+      and try to gradually reduce the amount of failure along the way.
+      Having to lure people over to "the open side" leads to complications.
     </p>
     <p>
       Here follows a list of common fencing suggestions.
@@ -155,7 +203,7 @@
     </p>
     <p>
       A law firm could take on large companies in court.
-      Insured open source creators could be enjoy legal security and stability.
+      Insured open source creators could enjoy legal security and stability.
     </p>
     <p>
       Uninsured creators could be protected by proactive law firms who
@@ -163,17 +211,23 @@
       and split infringement compensations with rights holders.
     </p>
     <p>
-      Alas, most open source devs aren't keen on punishing anyone.
+      Alas, this is exhausting work, almost worse than politics, and most open source devs aren't keen on punishing anyone.
     </p>
     <h4>🤺Fence 4: Insider Mentoring and Treasury</h4>
     <p>
       Availability of learning resources and tools is what currently recruits
       every single programmer to be an open source developer initially.
+      It's just impossible to learn how to program without also being exposed
+      to open source history, methodology, and ideology.
+    </p>
+    <p>
+      A high rate of recruitment keeps open source in existence despite being a terrible business plan.
       When people leave open source, it's most often for "food-on-the-table" reasons.
     </p>
     <p>
       Some contact with a more experienced open source developer
       would help many to stay in open source for longer.
+      Opportunities could be highlighted, skills improved, and sense of community strengthened.
     </p>
     <p>
       At this point in the list, pooling up some funds in a treasury
@@ -195,7 +249,7 @@
       Nice prices inside the fence could boost survival rates.
     </p>
     <p>
-      However, it only works if some closed source businesses still buys the insiders' stuff.
+      However, it only works if some closed source businesses still buy our stuff at non-discounted prices.
       We can't be too aggressive with pricing schemes, or it will backfire.
     </p>
     <h4>🤺Fence 6: Union of Open Source</h4>
@@ -208,6 +262,7 @@
     </p>
     <p>
       Making it float is a tad complicated.
+      We're getting close to politics again.
     </p>
     <h4>🤺Fence 7: Pooling Patents</h4>
     <p>
@@ -230,8 +285,9 @@
         <img src="./bilder/Sun_liten.jpg" alt="" width="500" height="375"/>
       </a>
       <figcaption>
-        Do we wan to orbit a burning union sun?
-        Sounds a bit too warm and cozy to me.
+        Strong fencing strategies like unions and patent pools makes me think about the sun.
+        A shining bright light with strong gravity.
+        They could become so powerful that everyone would have to adapt, for better or worse.
       </figcaption>
     </figure>
     <p>
@@ -244,17 +300,23 @@
       We can't beat them and have virtue at the same time.
       We're great, but I don't think we're that superior.
     </p>
-    <h3>Strategy 3️⃣: Survive In Self-Made Niches</h3>
     <p>
-      We're looking for strategies to help the creators survive.
+      Rather, I think we're making an error of thought by pitting open source
+      up against closed source.
+      It's like pitting pets up against wild animals in the jungle.
+      Or mammals up against dinosaurs.
+    </p>
+    <h3>Strategy 3️⃣  Survive In Self-Made Niches</h3>
+    <p>
+      We're looking for strategies to help our open source creators survive.
       To do better, let's stop treating open source like a broken business plan.
       It's not a business plan.
       It's more like a culture.
     </p>
     <p>
-      One strategy is to not tie our culture to anything inside the current system.
-      Rather stay fluid, develop our culture in the background, and wait
-      patiently for break throughs.
+      Being a culture gives us more options.
+      We can untie ourselves from commercial culture and company culture.
+      We can stay fluid and develop our own culture in the background.
     </p>
     <p>
       Survival wise, be the little mammals in the age of big tech dinosaurs.
@@ -280,7 +342,7 @@
     <h4>We Can Skip Self Censoring</h4>
     <p>
       We can be vulgar, political, and personal if we like to.
-      We can dive into the big wastes of time that people still want.
+      If others think we're wasting time, we don't have to care.
     </p>
     <p>
       We can risk saying what we feel.
@@ -302,7 +364,7 @@
       and art robots.
       It's perfect for us!
       If art ever scales, it looses value.
-      Companies must scale, so they can't do art.
+      Closed companies must scale, so they can't do art.
     </p>
     <p>
       We can play with all forcibly low volume things.
@@ -318,21 +380,38 @@
       closed source can't follow
       will help an open source developer survive on the sharing end.
     </p>
-    <h3>Strategy 4️⃣: Hibernate</h3>
+    <h4>We Can Change Our Perspective</h4>
+    <p>
+      The new culture framework puts the question about food on the table
+      in a different light.
+      Food on the table is still hard, but the explanation, and its implied difficulties, changes.
+    </p>
+    <p>
+      "Open source is bad business" changes into "you can't front-run the new culture development".
+      That's the updated reason to why open source is so hard.
+      No text book model can predict what we will become.
+    </p>
+    <p>
+      The implied pragmatic answer changes from "open source is bad, so leave it"
+      to something more like "keep re-inventing yourself until you can go where you want".
+    </p>
+    <h3>Strategy 4️⃣  Hibernate</h3>
     <p>
       Surviving is about taking opportunity when there is one,
       and saving energy if there's none.
-      Maybe there are few opportunities around right now.
+      Maybe there are few open source opportunities around you right now.
     </p>
     <p>
       One can always do something else for a while,
       or cut down on expenses.
-      We can pause.
+      If we know who we are,
+      we can pause our work with confidence, and recognize opportunities to resume when we see them.
     </p>
     <p>
-      This strategy makes sense if you're think an asteroid event will
-      come and make place for more open source culture soon.
-      It could be one of these:
+      This strategy makes sense if you, as the early open source mammal you are,
+      think an asteroid event will
+      clear some survival space for the real and cooler you in the future.
+      The asteroid could be any one of these:
     </p>
     <figure>
       <a href="./bilder/asteroid2.jp">
@@ -343,18 +422,21 @@
     </figure>
     <h4>☄️A Mass Layoff</h4>
     <p>
-      Those happen from time to time, and developers get it too.
-      Many will turn to cool open source culture if it exists,
-      full time or as a hobby.
+      Automation and economic downturns will hit all professions.
+      Many developers will turn to cool open source culture if it exists.
+      We saw this after 2008 and during covid-19, and we'll see it again.
     </p>
     <h4>☄️A Digital Divide</h4>
     <p>
       Western and Chinese tech are increasingly being made incompatible
       for military strategic reasons.
       Closed source have to choose sides.
-      Open source doesn't.
-      Having foothold on both sides makes open source more valuable
-      relative to the one-sided closed source.
+    </p>
+    <p>
+      Open source can also be caught in the cross-fires, but we generally have
+      more leeway to get aroud embargos.
+      The growing gap between east and west could create
+      big exclusive open-only zones.
     </p>
     <h4>☄️A More Open Web</h4>
     <p>
@@ -368,14 +450,14 @@
     </p>
     <h4>☄️A Modernized Democracy</h4>
     <p>
-      Today algorithms make important decisions in our society,
+      Algorithms make important decisions in our society today,
       and a few powerful people control them.
       It's reasonable to expect democratic control over the code in the future.
       Representatives will vote on what code gets deployed and what doesn't.
     </p>
     <p>
       To learn about the code,
-      people must be able to see it,
+      the people must see it,
       so it must be open source.
     </p>
     <p>
@@ -386,21 +468,25 @@
     <h4>☄️The Mother of All Scandals</h4>
     <p>
       Scandals already drive a lot of open source adoption,
-      and there's no reason to believe they have subsided.
+      and we'll probably see more of them.
+      The question is how big they will be.
     </p>
     <p>
-      Facebook and Google might come down like burning zeppelins
-      if their services go down, if their data leaks, or if it's used for evil.
+      If they're very big,
+      the closed source world might be the one coming down like burning zeppelin.
+      This would leave loads of space for open to grow into.
     </p>
     <p>
-      Data collection is also happening in China.
-      Scandals that scare people are possible there as well.
+      Mega-scale uncritical data collection is continuing in the US as well as in China.
+      We have no historical presedence, so we don't know how that will play out.
     </p>
     <figure>
       <a href="./bilder/crystal_ball.jpeg">
         <img src="./bilder/crystal_ball_liten.jpeg" alt="" width="500" height="445"/>
       </a>
       <figcaption>
+        The greatest illusion is continuity.
+        We can know for ceirtain that dramatic events will occur, and the future will be different.
       </figcaption>
     </figure>
     <h4>☄️Closed Source Funds Dry Up</h4>
@@ -418,9 +504,10 @@
       Will they ever pay down their debts?
     </p>
     <p>
-      What's appearing instead of new tech giants are crypto projects.
+      What's appearing instead of new tech giants is crypto projects.
       Hundreds of them.
       They're typically very profitable and all open source.
+      They gladly go into profitable spaces that closed source can't reach.
     </p>
     <h4>☄️Food On The Table Becomes Free</h4>
     <p>
@@ -428,18 +515,18 @@
       If it became reality, open source would thrive even more.
       The tens of years you spent building a CV that would give you a job that would put food on the table,
       they would be in vein.
-      You could have been doing open source all that time.
+      You could have been doing open source all that time, and your CV would have looked much better.
     </p>
     <figure>
       <a href="./bilder/learn_how_to_live.jpg">
         <img src="./bilder/learn_how_to_live.jpg" alt="" width="500" height="375"/>
       </a>
       <figcaption>
-        I can't teach people how to live.
+        We can't teach people how to live.
         We have Wikihow for that.
         This is the first image in the tutorial <a href="https://www.wikihow.com/Learn-to-Live-Independently">How to Learn to Live Independently</a>.
-        It's called "Find a job".
-        It shows you what to do with illustrative arrows.
+        It promotes templated textbook style living, as typically seen outside of open source.
+        The image is called "Find a job".
       </figcaption>
     </figure>
     <h3>Wrapping Up</h3>
@@ -448,22 +535,6 @@
       as irrational as a bet in favour.
       Building a portfolio takes time, and it's too late to be early
       when everybody wants in.
-    </p>
-    <p>
-      Hangprinter is a bet that some day, some time in the future,
-      people will look up from their phones and care about their physical lives again.
-      And then they will want to use their hands and manufacture.
-    </p>
-    <p>
-      To be honest, sharing my brain on the web is what makes me what I am,
-      and I don't know how to stop.
-      There's been food on my table all my life.
-      I would have uploaded that to the web too if I could.
-    </p>
-    <p>
-      Maybe I know too little about death to know about survival.
-      I know nothing about starvation.
-      To my comfort, my critics don't either.
     </p>
   </post>
   <post id="hangprinter_project_75" heading="Hopes, Dreams, and Agendas" date="26-9-2021">
