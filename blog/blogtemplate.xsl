@@ -179,7 +179,14 @@
                        <a  href="../2020#hangprinter_project_66">[67]</a>,
                        <a  href="../2020#hangprinter_project_67">[68]</a>,
                        <a  href="../2020#hangprinter_project_68">[69]</a>,
-                       <a  href="../2021#hangprinter_project_69">[70]</a>
+                       <a  href="../2021#hangprinter_project_69">[70]</a>,
+                       <a  href="../2021#hangprinter_project_70">[71]</a>,
+                       <a  href="../2021#hangprinter_project_71">[72]</a>,
+                       <a  href="../2021#hangprinter_project_72">[73]</a>,
+                       <a  href="../2021#hangprinter_project_73">[74]</a>,
+                       <a  href="../2021#hangprinter_project_74">[75]</a>,
+                       <a  href="../2021#hangprinter_project_75">[76]</a>,
+                       <a  href="../2021#hangprinter_project_76">[77]</a>
 </p>
 <p>
   Hangprinter Project Homepage: <a href="https://hangprinter.org">hangprinter.org</a>
