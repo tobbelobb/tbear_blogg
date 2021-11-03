@@ -1,0 +1,399 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="theme-color" content="#FBE8A6">
+      <meta name="author" content="Torbjorn Ludvigsen">
+      <meta name="keywords" content="Reprap, blog, development">
+      <meta name="description" content="Reprap blog">
+      <meta property="og:type" content="website">
+      <meta property="og:title" content="Torbjorn Ludvigsen">
+      <meta property="og:url" content="https://torbjornludvigsen.com/blog/2021">
+      <meta property="og:description" content="Reprap blog">
+      <meta property="og:image" content="https://torbjornludvigsen.com/torbjornludvigsen.JPG">
+      <meta name="twitter:card" content="summary">
+      <meta name="twitter:site" content="@tobbelobb">
+      <meta name="twitter:creator" content="@tobbelobb">
+      <link rel="preload" href="../../OpenSansRegular.woff" as="font" type="font/woff" crossorigin="anonymous">
+      <link rel="stylesheet" href="../../style.css?v=2" type="text/css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+      <link rel="manifest" href="../../site.webmanifest">
+      <link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#5bbad5">
+      <meta name="msapplication-TileColor" content="#2d89ef"><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script><title>Torbjorn Ludvigsen|Blog</title>
+   </head>
+   <body>
+      <nav>
+         <ul>
+            <li><a href="../../">Home</a></li>
+            <li><a href="../../blog" class="active">Blog</a></li>
+            <li><a href="../../donate">Donate</a></li>
+            <li><a href="../../about">About</a></li>
+            <li><a href="../../links">Links</a></li>
+         </ul>
+      </nav>
+      <div id="SiteName">
+         Reprap Blog 2021
+      </div>
+      <div id="MainContent">
+         <h1 id="super_secret_1">Project Total Overhang</h1>
+         <div class="date">4-11-2021</div>
+         <p>
+            So I've been thinking recently, about making a kit.
+            Hangprinter v4 is now more or less done.
+            I've seen what it can do.
+            Next version ideas keep creeping up on me.
+                
+         </p>
+         <p>
+                  Let's call the new thing the Overhang. And the project is the Project Total Overhang.
+                
+         </p>
+         <p>
+                  This post tries to stitch together ideas and experiences that will drive my future Hangprinter work, whether it's Hangprinter
+            v5 or the Overhang.
+                
+         </p>
+         <h3>I Would Want to Make</h3>
+         <p>
+                  a machine that
+                  
+            <ol>
+                       
+               <li>is enjoyable to use.</li>
+                       
+               <li>I enjoy using myself.</li>
+                       
+               <li>runs quietly.</li>
+                       
+               <li>let's me leave the room.</li>
+                       
+               <li>is easily stoved away after use, leaving the room cleared.</li>
+                       
+               <li>requires no hand measurements by the user. Basically comissions itself.</li>
+                       
+               <li>plug and play compatible with commercially available tool heads.</li>
+                       
+               <li>serves the unserved.</li>
+                       
+               <li>is driven by computer vision.</li>
+                       
+               <li>beats conventional CNC machinery on every single metric.</li>
+                     
+            </ol>
+                
+         </p>
+         <p>
+                  Points 1 through 7 are already fulfilled by HP4, although I'm sure we would like to polish some of them a bit more.
+                
+         </p>
+         <h4>Serves the Unserved</h4>
+         <p>
+                  Those already invested in ballscrews are out of our reach.
+                  They are right to be very skeptic about line driven precision machinery.
+                  We must find others, who don't have frames already ingrained in their brains.
+                
+         </p>
+         <p>
+                  These other people aren't used to doing any kind of manufacturing.
+                  They must be tempted into doing it.
+                  The Overhang must be made unresistable to them in many more ways than a typical CNC machine usually is.
+                  It must look good, and sound good (be quiet).
+                  It must help them brag by for example doing little tricks with tennis balls, and posting its own updates on social media
+            when a print is finished.
+                  It must not smell bad, like molten plastic does.
+                
+         </p>
+         <h4>Is Driven By Computer Vision</h4>
+         <p>
+                  In some ways this is a continuation of an earlier blog post called <a href="../2020/#hangprinter_project_68">On Demand Precision</a>.
+                
+         </p>
+         <p>
+                  Computer vision might sound like an optional luxury add-on that we could do without.
+                  For most concrete use cases of the computer vision system, there exist other potential solutions
+                  that rely on
+                  
+            <ul>
+                       
+               <li>line tension data,</li>
+                       
+               <li>line lenght measurements,</li>
+                       
+               <li>bed proximity sensors,</li>
+                       
+               <li>maybe some accelerometer data,</li>
+                       
+               <li>maybe some basic encoder tricks,</li>
+                       
+               <li>or increasingly complicated physics models based on a growing heap of assumptions.</li>
+                     
+            </ul>
+                
+         </p>
+         <p>
+                  We should do all those things when we have time.
+                  But we should also do computer vision.
+                  And we should do computer vision first because it aids the development of all the others.
+                  The others don't aid the computer vision.
+                
+         </p>
+         <p>
+                  Some use cases include
+                  
+            <ul>
+                       
+               <li>Automated homing</li>
+                       
+               <li>Verification durint print that the print head is exactly where it's supposed to be</li>
+                       
+               <li>Safety feature: if anything except the effector is moving inside the print volume, pause the print, raise an alarm. This will
+                  save many prints, but also cats and dogs.
+               </li>
+                     
+            </ul>
+                
+         </p>
+         <p>
+                  But forget the use cases.
+                  The computer vision system is superior to all the other measurement solutions because it covers every imaginable
+                  use case and introduces redundancy.
+                  It measures exactly the thing we want to know, which is "Where is the print head right now?", instead of measuring a
+            proxy to that.
+                  It's cheap, and
+                  knowing the exact position at all times, even if all lines snapped and all motors are offline, is simply unbeatable
+            value.
+                
+         </p>
+         <p>
+                  Such data makes a wide range of situations recoverable, who is almost impossible to recover otherwise.
+                  
+            <ul>
+                       
+               <li>An encoder slips,</li>
+                       
+               <li>there's a power outage,</li>
+                       
+               <li>a gear is loose on a motor shaft,</li>
+                       
+               <li>an old bearing destroys line tension data,</li>
+                       
+               <li>the print head crashes into something during print and gets a tilted mover after that,</li>
+                       
+               <li>a print was paused during night because a landlord didn't trust machine to not catch fire, and one of the lines stretched,
+                  or the whole hose warped, by 0.1 mm during that pause.
+               </li>
+                     
+            </ul>
+                  Stuff like that happens a lot, it happens all the time. Maybe 90% of large prints have some kind of incident that leaves
+            a visible artifact on the print.
+                  Most large prints have many.
+                
+         </p>
+         <p>
+                  We don't want to predict and prevent every single thing that could happen.
+                  Instead we want to automatically pause at the right time, and be perfectly recoverable afterwards, regardless of what
+            the problem might have been.
+                
+         </p>
+         <p>
+                  I'm aware that machinists are generally sceptical to the computer vision idea because so many had it before, and failed
+            at implementing it well enough.
+                  The same is true for cable driven robotics in general.
+                  When time resources get tight, and there is no cheap programmer around, machinists always revert back to century old
+            trusted methods.
+                  And the old methods serve them well.
+                  Mechanical simplicity is not easy to beat with digital measurement and compensation.
+                  But that's what we will be trying to do.
+                  So we should bring out the large cannons, and make as few assumptions as we can.
+                
+         </p>
+         <h4>Beats Conventional CNC Machinery on Every Single Metric</h4>
+         <p>
+                  We want to wipe the floor with framed machines by exceeding their
+                  
+            <ul>
+                       
+               <li>realiability,</li>
+                       
+               <li>precision and accuracy,</li>
+                       
+               <li>speed,</li>
+                     
+            </ul>
+                  while reducing
+                  
+            <ul>
+                       
+               <li>cost of investment,</li>
+                       
+               <li>cost of transportation,</li>
+                       
+               <li>cost of installation and comissioning,</li>
+                       
+               <li>cost of personel training,</li>
+                       
+               <li>cost of daily usage,</li>
+                       
+               <li>cost of storage</li>
+                     
+            </ul>
+                  to less than 10% of similar-volume framed machines.
+                
+         </p>
+         <p>
+                  Among the six types of cost, the cost of storage is by far the biggest, most important, and most overlooked.
+                  Typical CNC users never imagined being able to escape the cost of having to give up floor space in their shop for a
+            large CNC machine.
+                
+         </p>
+         <p>
+            - tobben
+            
+         </p><br><br><br><br><br><br><br><br><br><br><br><h1 id="Links">
+            Links
+            
+         </h1>
+         <p>
+            Hangprinter Campaign: <a href="https://salt.bountysource.com/teams/hangprinter">Bountysource Salt</a></p>
+         <p>
+            Hangprinter Merchandise USA: <a href="https://shop.spreadshirt.com/hangprinter-merchandise/">Spreadshirt.com</a></p>
+         <p>
+            Hangprinter Merchandise Sweden: <a href="https://shop.spreadshirt.se/hangprinter-merchandise/">Spreadshirt.se</a></p>
+         <p>
+            Hangprinter Project: <a href="../2014#Hangprinter">[1]</a>,
+            <a href="../2015#Slideprinter_Update">[2]</a>,
+            <a href="../2015#hangprinter_project_2">[3]</a>,
+            <a href="../2015#hangprinter_project_3">[4]</a>,
+            <a href="../2015#hangprinter_project_4">[5]</a>,
+            <a href="../2015#hangprinter_project_5">[6]</a>,
+            <a href="../2015#hangprinter_project_6">[7]</a>,
+            <a href="../2015#hangprinter_project_7">[8]</a>,
+            <a href="../2015#hangprinter_project_8">[9]</a>,
+            <a href="../2015#hangprinter_project_9">[10]</a>,
+            <a href="../2015#hangprinter_project_10">[11]</a>,
+            <a href="../2015#hangprinter_project_11">[12]</a>,
+            <a href="../2015#hangprinter_project_12">[13]</a>,
+            <a href="../2015#hangprinter_project_13">[14]</a>,
+            <a href="../2015#hangprinter_project_14">[15]</a>,
+            <a href="../2015#hangprinter_project_15">[16]</a>,
+            <a href="../2015#hangprinter_project_16">[17]</a>,
+            <a href="../2015#hangprinter_project_17">[18]</a>,
+            <a href="../2015#hangprinter_project_18">[19]</a>,
+            <a href="../2016#hangprinter_project_19">[20]</a>,
+            <a href="../2016#hangprinter_project_20">[21]</a>,
+            <a href="../2016#hangprinter_project_21">[22]</a>,
+            <a href="../2016#hangprinter_project_22">[23]</a>,
+            <a href="../2016#hangprinter_project_23">[24]</a>,
+            <a href="../2016#hangprinter_project_24">[25]</a>,
+            <a href="../2016#hangprinter_project_25">[26]</a>,
+            <a href="../2016#hangprinter_project_26">[27]</a>,
+            <a href="../2016#hangprinter_project_27">[28]</a>,
+            <a href="../2017#hangprinter_project_28">[29]</a>,
+            <a href="../2017#hangprinter_project_29">[30]</a>,
+            <a href="../2017#hangprinter_project_30">[31]</a>,
+            <a href="../2017#hangprinter_project_31">[32]</a>,
+            <a href="../2017#hangprinter_project_32">[33]</a>,
+            <a href="../2017#hangprinter_project_33">[34]</a>,
+            <a href="../2017#hangprinter_project_34">[35]</a>,
+            <a href="../2017#hangprinter_project_35">[36]</a>,
+            <a href="../2017#hangprinter_project_36">[37]</a>,
+            <a href="../2017#hangprinter_project_37">[38]</a>,
+            <a href="../2017#hangprinter_project_38">[39]</a>,
+            <a href="../2017#hangprinter_project_39">[40]</a>,
+            <a href="../2017#hangprinter_project_40">[41]</a>,
+            <a href="../2017#hangprinter_project_41">[42]</a>,
+            <a href="../2017#hangprinter_project_42">[43]</a>,
+            <a href="../2017#hangprinter_project_43">[44]</a>,
+            <a href="../2017#hangprinter_project_44">[45]</a>,
+            <a href="../2017#hangprinter_project_45">[46]</a>,
+            <a href="../2017#hangprinter_project_46">[47]</a>,
+            <a href="../2017#hangprinter_project_47">[48]</a>,
+            <a href="../2017#hangprinter_project_48">[49]</a>,
+            <a href="../2017#hangprinter_project_49">[50]</a>,
+            <a href="../2017#hangprinter_project_50">[51]</a>,
+            <a href="../2018#hangprinter_project_51">[52]</a>,
+            <a href="../2018#hangprinter_project_52">[53]</a>,
+            <a href="../2018#hangprinter_project_53">[54]</a>,
+            <a href="../2018#hangprinter_project_54">[55]</a>,
+            <a href="../2018#hangprinter_project_55">[56]</a>,
+            <a href="../2018#hangprinter_project_56">[57]</a>,
+            <a href="../2018#hangprinter_project_57">[58]</a>,
+            <a href="../2018#hangprinter_project_58">[59]</a>,
+            <a href="../2018#hangprinter_project_59">[60]</a>,
+            <a href="../2018#hangprinter_project_60">[61]</a>,
+            <a href="../2018#hangprinter_project_61">[62]</a>,
+            <a href="../2018#hangprinter_project_62">[63]</a>,
+            <a href="../2020#hangprinter_project_63">[64]</a>,
+            <a href="../2020#hangprinter_project_64">[65]</a>,
+            <a href="../2020#hangprinter_project_65">[66]</a>,
+            <a href="../2020#hangprinter_project_66">[67]</a>,
+            <a href="../2020#hangprinter_project_67">[68]</a>,
+            <a href="../2020#hangprinter_project_68">[69]</a>,
+            <a href="../2021#hangprinter_project_69">[70]</a>,
+            <a href="../2021#hangprinter_project_70">[71]</a>,
+            <a href="../2021#hangprinter_project_71">[72]</a>,
+            <a href="../2021#hangprinter_project_72">[73]</a>,
+            <a href="../2021#hangprinter_project_73">[74]</a>,
+            <a href="../2021#hangprinter_project_74">[75]</a>,
+            <a href="../2021#hangprinter_project_75">[76]</a>,
+            <a href="../2021#hangprinter_project_76">[77]</a></p>
+         <p>
+            Hangprinter Project Homepage: <a href="https://hangprinter.org">hangprinter.org</a></p>
+         <p>
+            Print Issue Solution Filter Project: <a href="../2014#Introducing_PISF">[1]</a>,
+            <a href="../2014#Presenting_PISF_Again">[2]</a>,
+            <a href="../2014#PISF_Online_Sort_Of">[3]</a>,
+            <a href="../2014#PISF">[4]</a></p>
+         <p>
+            Sourcing RepRappro Mendel in Larvik: <a href="../2014#Sourcing_Mendel_1">[1]</a>,
+            <a href="../2014#Sourcing_Mendel_2">[2]</a>,
+            <a href="../2014#Sourcing_Mendel_3">[3]</a>,
+            <a href="../2014#Sourcing_Mendel_4">[4]</a>,
+            <a href="../2014#Sourcing_Mendel_5">[5]</a>,
+            <a href="../2014#Sourcing_Mendel_6">[6]</a>,
+            <a href="../2014#Sourcing_Mendel_7">[7]</a></p>
+         <p>
+            Archive: <a href="../2014">2014</a>, <a href="../2015">2015</a>, <a href="../2016">2016</a>, <a href="../2017">2017</a>, <a href="../2018">2018</a>, <a href="../2020">2020</a>, <a href="../2021">2021</a></p>
+         <p>
+            Github Profile: <a href="https://github.com/tobbelobb/">link</a><br></p>
+         <p>
+            Gitlab Profile: <a href="https://gitlab.com/tobben">link</a><br></p>
+         <p>
+            Hangprinter project on Gitlab: <a href="https://gitlab.com/hangprinter">link</a><br></p>
+         <p>
+            Vimeo User: <a href="https://vimeo.com/user23166500">link</a><br></p>
+         <p>
+            Youtube User: <a href="https://www.youtube.com/channel/UCw1Nz0VCw4z-dfq4WjSkFzQ">link</a><br></p>
+         <p>
+            Twitter User: <a href="https://twitter.com/tobbelobb">link</a><br></p>
+         <p>
+            Master's Thesis: <a href="http://opensourceecology.org/wiki/File:Thesis.pdf">link</a><br></p>
+         <p>
+            Linkedin Profile: <a href="https://se.linkedin.com/in/torbjorn-ludvigsen">link</a><br></p>
+         <p>
+            Appropedia User: <a href="http://www.appropedia.org/User:Tobben">link</a><br></p>
+         <p>
+            RepRap Forums User: <a href="http://forums.reprap.org/profile.php?1,22385">link</a></p>
+         <p>
+            Forums threads: <a href="http://forums.reprap.org/read.php?178,344022">Hangprinter version 1</a>,
+            <a href="http://forums.reprap.org/read.php?1,738858">Hangprinter version 2</a>,
+            <a href="http://forums.reprap.org/read.php?1,792937">Hangprinter version 3</a>,
+            <a href="https://reprap.org/forum/list.php?423">List of Hangprinter threads</a></p>
+         <p>
+            Source for this blog: <a href="https://gitlab.com/tobben/tbear_blogg">Gitlab repo</a></p>
+         <p>
+            Everything on this homepage, except those videos who are published via Vimeo or Youtube, is licensed under the <a href="https://www.gnu.org/licenses/fdl">Gnu Free Documentation License</a>.
+            The videos published via Vimeo or Youtube are also licensed via Vimeo or Youtube.
+            
+         </p>
+      </div><br><br><br><br><br><br><br><br><script type="text/javascript">
+  MathJax.Hub.Configured()
+</script><script data-goatcounter="https://torbjornludvigsen.goatcounter.com/count" async="true" src="//gc.zgo.at/count.js"></script></body>
+</html>
