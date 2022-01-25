@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
+<posts year="2022">
+  <post id="hangprinter_project_77" heading="Projects as Subtractive Processes" date="25-1-2022">
+    <p>
+      Technical projects are often thought of as additive processes.
+      Engineers will often say that they're makers or builders of new products or technologies,
+      adding value to something, or that they're designing a new solution.
+    </p>
+    <p>
+      Those are all useful ways to describe technology development,
+      but it can also be good to describe projects with subtractive terms,
+      as in "we're removing obstacles".
+      I think I need some of that.
+    </p>
+    <figure>
+      <a href="./bilder/wall_p1_shiny_1.JPG">
+        <img src="./bilder/wall_p1_shiny_1_small.JPG" alt="" width="500" height="298"/>
+      </a>
+      <figcaption>
+      </figcaption>
+    </figure>
+    <p>
+      Let's make a little model of (or remove confusion about) projects in general, to explain the image above.
+    </p>
+    <p>
+      Imagine that every technical project is carving out a hole in a wall that separates a user or consumer from something desirable. <br />
+    </p>
+    <figure>
+      <a href="./bilder/wall_p1_shiny_2.JPG">
+        <img src="./bilder/wall_p1_shiny_2_small.JPG" alt="" width="500" height="322"/>
+      </a>
+      <figcaption>
+      </figcaption>
+    </figure>
+    <p>
+      Obstacles can be categorized and layered. Different projects have different kinds and amounts of layers.
+    </p>
+    <figure>
+      <a href="./bilder/wall_p2_shiny_1.JPG">
+        <img src="./bilder/wall_p2_shiny_1_small.JPG" alt="" width="500" height="243"/>
+      </a>
+      <figcaption>
+      </figcaption>
+    </figure>
+    <p>
+      Let's look at the lowest layer. Before one starts a project, it's important to learn if the desired outcome conflicts with the laws of physics. Don't start a project where laws of physics stand between your user and success.
+    </p>
+    <p>
+      So product creation is a subtractive process, removing obstacles between the user and some desirable outcome.
+    </p>
+    <p>
+      To maximize the field of view for the consumer through the hole, we should shape it like this, ideally:
+    </p>
+    <figure>
+      <a href="./bilder/wall_p3_shiny_1.JPG">
+        <img src="./bilder/wall_p3_shiny_1_small.JPG" alt="" width="500" height="323"/>
+      </a>
+      <figcaption>
+      </figcaption>
+    </figure>
+    <p>
+      The field of view metaphor says that the more unknown or fundamental problems should be removed more thoroughly, or require more work per user happiness.
+    </p>
+    <p>
+      But product creation is a process. We need to plan some steps between start and finish.
+    </p>
+    <p>
+      The process is often designed to secure sustainable funding throughout the development process, like this:
+    </p>
+    <figure>
+      <a href="./bilder/wall_p4_shiny_1.JPG">
+        <img src="./bilder/wall_p4_shiny_1_small.JPG" alt="" width="500" height="519"/>
+      </a>
+      <figcaption>
+      </figcaption>
+    </figure>
+    <p>
+      A well known but ambitious project, like quantum computing or a space mission, will look like a pit dug down from above,
+      at least for the first few years.
+      This shape makes people expect breakthroughs.
+    </p>
+    <p>
+      An in-house product development or research project, will look more like a cone shape drilling up from below.
+      The shape of invisible ground work.
+      This shape makes people confused and surprised.
+    </p>
+    <p>
+      The ideal final shape of a hole can also be discussed.
+      A heavily marketed product looks good from afar, like this:
+    </p>
+    <figure>
+      <a href="./bilder/wall_p5_shiny_1.JPG">
+        <img src="./bilder/wall_p5_shiny_1_small.JPG" alt="" width="500" height="514"/>
+      </a>
+      <figcaption>
+      </figcaption>
+    </figure>
+    <p>
+      A more niched or indy-style product is invisible from afar, but looks good if you come up close, like this:
+    </p>
+    <figure>
+      <a href="./bilder/wall_p5_shiny_2.JPG">
+        <img src="./bilder/wall_p5_shiny_2_small.JPG" alt="" width="500" height="508"/>
+      </a>
+      <figcaption>
+      </figcaption>
+    </figure>
+    <p>
+      I think Hangprinter has become a product with goodness that is almost completely unapproachable, like this:
+    </p>
+    <figure>
+      <a href="./bilder/wall_p6_shiny_1.JPG">
+        <img src="./bilder/wall_p6_shiny_1_small.JPG" alt="" width="500" height="201"/>
+      </a>
+      <figcaption>
+      </figcaption>
+    </figure>
+    <p>
+      ... Or even this:
+    </p>
+    <figure>
+      <a href="./bilder/wall_p6_shiny_2.JPG">
+        <img src="./bilder/wall_p6_shiny_2_small.JPG" alt="" width="500" height="316"/>
+      </a>
+      <figcaption>
+      </figcaption>
+    </figure>
+    <p>
+      Or actually, most of the people that I want to reach haven't even heard about Hangprinter.
+      Like the shape in the first image of this post, with no opening at the top.
+    </p>
+    <p>
+      I hope this home-made toy-model of a project can be useful or entertaining to you.
+      Try it when you need to communicate project status or during project planning.
+      Bye!
+    </p>
+  </post>
+</posts>
