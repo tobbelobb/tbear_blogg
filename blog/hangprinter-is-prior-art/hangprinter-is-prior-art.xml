@@ -43,6 +43,17 @@
       </figcaption>
     </figure>
     <p>
+      If you look closely in the video, you'll see anchors that are very similar to this:
+    </p>
+    <figure>
+      <a href="./media/Their_fig_7.png">
+        <img src="./media/Their_fig_7_small.png" alt="" width="500" height="427"/>
+      </a>
+      <figcaption>
+        Fig 7 from from the patent in question.
+      </figcaption>
+    </figure>
+    <p>
       However, the similarities are not merely superficial.
       This text will show similarities on the conceptual level in the form of ideas that were formulated, and sometimes also implemented within the Hangprinter Project,
       before they were reiterated in the patent.
@@ -164,7 +175,7 @@
       </a>
       <figcaption>
         Click the image for a larger version.
-        Although all parts were finished, this assembly file was admittedly not finished.
+        All individual parts were finished, but the file that renders their assembly was not finished.
         Still, we can clearly see the intent of having motors offloaded from the effector.
       </figcaption>
     </figure>
@@ -234,6 +245,8 @@
       </div>
       <figcaption>
         Brandon Heller's Youtube video from 2013.
+        Like most cable driven translation robots, Hangprinter included,
+        it uses pairs of  that are "generally parallel to each other" as it's formulated in the patent.
       </figcaption>
     </figure>
     <p>
