@@ -1,0 +1,596 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="theme-color" content="#FBE8A6">
+      <meta name="author" content="Torbjorn Ludvigsen">
+      <meta name="keywords" content="Reprap, blog, development">
+      <meta name="description" content="Reprap blog">
+      <meta property="og:type" content="website">
+      <meta property="og:title" content="Torbjorn Ludvigsen">
+      <meta property="og:url" content="https://torbjornludvigsen.com/blog/2022">
+      <meta property="og:description" content="Reprap blog">
+      <meta property="og:image" content="https://torbjornludvigsen.com/torbjornludvigsen.JPG">
+      <meta name="twitter:card" content="summary">
+      <meta name="twitter:site" content="@tobbelobb">
+      <meta name="twitter:creator" content="@tobbelobb">
+      <link rel="preload" href="../../OpenSansRegular.woff" as="font" type="font/woff" crossorigin="anonymous">
+      <link rel="stylesheet" href="../../style.css?v=2" type="text/css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+      <link rel="manifest" href="../../site.webmanifest">
+      <link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#5bbad5">
+      <meta name="msapplication-TileColor" content="#2d89ef"><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script><title>Torbjorn Ludvigsen|Blog</title>
+   </head>
+   <body>
+      <nav>
+         <ul>
+            <li><a href="../../">Home</a></li>
+            <li><a href="../../blog" class="active">Blog</a></li>
+            <li><a href="../../donate">Donate</a></li>
+            <li><a href="../../about">About</a></li>
+            <li><a href="../../links">Links</a></li>
+         </ul>
+      </nav>
+      <div id="SiteName">
+         Reprap Blog 2022
+      </div>
+      <div id="MainContent">
+         <h1 id="prior_art_1">Prior Art Relevant to Patent US 11230032</h1>
+         <div class="date">2-2-2022</div>
+         <p>
+                The <a href="https://wayfinder.digital/fedinvent/patents-2022/details-patents-20220125.html#11230032_DOE">patent in question</a> was filed on Apr 13, 2018.
+            We will refer to the patented contraption as SkyBAAM for short.
+            We will present prior art relevant to SkyBAAM, all of which was unmentioned and unreferenced in the patent.
+            The prior art we present will mostly have been published within context of the open source project called Hangprinter.
+                
+         </p>
+         <p>
+                  The patent made only two references to Hangprinter:
+                  
+            <ul>
+                       
+               <li><a href="https://en.wikipedia.org/wiki/Hangprinter">The Wikipedia Article</a></li>
+                       
+               <li><a href="https://www.3ders.org/articles/20170308-frameless-hangprinter-reprap-turns-an-entire-room-into-a-3d-printer.html">An out of date article from 3ders.org</a></li>
+                     
+            </ul>
+                
+         </p>
+         <p>
+                  Those two sources alone do not cover enough details to reveal how deeply similar SkyBAAM is to the pre-existing Hangprinter.
+                
+         </p>
+         <h2>First Of All</h2>
+         <p>
+                  The patent contains many ideas that have been explored, published, and then discontinued within the Hangprinter community.
+                
+         </p>
+         <p>
+                  The Hangprinter prototype that was most visually similar to Fig 4 in the patent might be this
+                  early version 3 prototype, that was <a href="http://vitana.se/opr3d/tbear/2017#hangprinter_project_42">published and described in detail on April 4, 2017</a>.
+                
+         </p>
+         <figure>
+                  
+            <video width="500" controls="true">
+                       
+               <source src="../2017/bilder/Freds_gopro.mp4" type="video/mp4"></source>
+                     
+            </video>
+                  
+            <figcaption>
+                       The video shows the first Hangprinter prototype that offloaded the motors and most of the electronics to one of the
+               anchors.
+                     
+            </figcaption>
+                
+         </figure>
+         <figure>
+                  <a href="./media/Their_fig_4.png">
+                       <img src="./media/Their_fig_4_small.png" alt="" width="500" height="436">
+                     </a>
+                  
+            <figcaption>
+                       Fig 4 from from the patent in question.
+                     
+            </figcaption>
+                
+         </figure>
+         <p>
+                  However, the similarities are not merely superficial.
+                  This text will show similarities on the conceptual level in the form of ideas that were formulated, and sometimes also
+            implemented within the Hangprinter Project,
+                  before they were reiterated in the patent.
+                
+         </p>
+         <h3>Let's Dive Into the Details</h3>
+         <p>
+                  This writing will be long and detailed.
+                  The corpus of relevant prior art published publicly before April 13 2018 is vast,
+                  since the Hangprinter Project was already four years old at the time.
+                  This prior art includes (but is not limited to)
+                  
+            <ul>
+                       
+               <li><a href="https://torbjornludvigsen.com/blog/2018/#hangprinter_project_55">56 technical blog posts</a></li>
+                       
+               <li>Ca 350 posts on Reprap forums
+                  <ul>
+                                 
+                     <li><a href="https://reprap.org/forum/read.php?178,344022">thread 1</a></li>
+                                 
+                     <li><a href="https://reprap.org/forum/read.php?1,738858">thread 2</a></li>
+                                 
+                     <li><a href="https://reprap.org/forum/read.php?423,792937">thread 3</a></li>
+                               
+                  </ul>
+                          
+               </li>
+                       
+               <li><a href="https://www.facebook.com/groups/hangprinter">A few hundred posts in the Facebook group</a></li>
+                       
+               <li><a href="https://www.youtube.com/results?search_query=Hangprinter&amp;sp=CAI%253D">Ca 25 relevant Youtube videos</a></li>
+                       
+               <li><a href="https://vimeo.com/user23166500">37 videos published on Vimeo</a></li>
+                       
+               <li><a href="https://twitter.com/tobbelobb">Ca 100 Tweets</a></li>
+                       
+               <li><a href="https://hangprinter.org/newsletter/">13 Hangprinter Newsletters</a></li>
+                       
+               <li>Wiki articles on <a href="https://www.appropedia.org/Clerck,_a_RepRap_3D_printer_hanging_from_the_ceiling">Appropedia</a>, and <a href="https://web.archive.org/web/20180330041707/https://reprap.org/wiki/Hangprinter">Reprap Wiki</a>.
+               </li>
+                       
+               <!--li><a href="https://en.wikipedia.org/wiki/Hangprinter">Wikipedia</a></li-->
+                       
+               <li><a href="https://web.archive.org/web/20180405053344/http://hangprinter.org/">A hangprinter.org landing page</a></li>
+                       
+               <li><a href="https://hangprinter.org/doc/v3/">Rich and visual documentation, created on April 10, 2018</a></li>
+                       
+               <li><a href="https://github.com/tobbelobb/hangprinter">A public Github repo containing over 500 relevant commits and issues</a></li>
+                       
+               <li>A number of news articles, including at
+                          
+                  <ul>
+                               
+                     <!--li><a href="https://www.3ders.org/articles/20170308-frameless-hangprinter-reprap-turns-an-entire-room-into-a-3d-printer.html">3ders.org</a></li-->
+                               
+                     <li><a href="https://hackaday.com/2017/03/20/hanging-3d-printer-uses-entire-room-as-print-bed/">hackaday.com</a></li>
+                               
+                     <li><a href="https://3dprintingindustry.com/news/interview-inventor-frameless-hangprinter-3d-printer-building-tower-babel-107749/">3dprintingindustry.com</a></li>
+                               
+                     <li><a href="https://www.seeker.com/open-source-prototype-turns-any-room-into-a-3d-printer-2313142390.html">seeker.com</a></li>
+                               
+                     <li><a href="https://hackaday.com/2017/12/16/hangprinter-build-videos/">hackaday.com again</a></li>
+                               
+                     <li><a href="https://www.sciencedaily.com/releases/2017/03/170308083723.htm">sciencedaily.com</a></li>
+                               
+                     <li><a href="https://www.fabbaloo.com/2017/03/the-hangprinter-a-frameless-3d-printer">fabbaloo.com</a></li>
+                               
+                     <li><a href="https://www.wired.com/beyond-the-beyond/2017/03/hangprinter-printer-just-sorta-hangs/">wired.com</a></li>
+                             
+                  </ul>
+                        
+               </li>
+                     
+            </ul>
+                
+         </p>
+         <h2>Prior Art Published in the Repo</h2>
+         <p>
+                  <a href="https://github.com/tobbelobb/hangprinter">The main Hangprinter repo</a> is the heart of the Hangprinter project.
+                
+         </p>
+         <p>
+                  Hangprinter is developed following open source methodology.
+                  This means that all source files are published to the repo,
+                  freely for anyone to use,
+                  for any purpose, soon after they are created.
+                  They are also re-uploaded soon after any modification is made.
+                
+         </p>
+         <p>
+                  The re-uploads do not overwrite old work.
+                  Instead, each change is registered in an elaborate version control system (git/Github),
+                  that presents the newest version to the user, as well as saving and catalouging every previous version in chronological
+            order.
+                
+         </p>
+         <p>
+                  The "source files" include, but are not limited to
+                  
+            <ul>
+                       
+               <li>CAD drawings</li>
+                       
+               <li>Source code for programming the firmware of any microcontrollers involved</li>
+                       
+               <li>Assembly and usage instructions</li>
+                       
+               <li>A copyright license</li>
+                     
+            </ul>
+                
+         </p>
+         <p>
+                  The version controlled, and publicly available directory is called "the repo".
+                  It can be found <a href="https://github.com/tobbelobb/hangprinter">here</a>.
+                
+         </p>
+         <h3>Was The Repo Publicly Available?</h3>
+         <p>
+                  Anyone had access and usage rights to the repo on Apr 13, 2018, if they could find the link.
+                  Because of a wave of media attention in 2017, the link to the Hangprinter repo was widely spread out, across hundreds
+            of websites.
+                
+         </p>
+         <p>
+                    Information about how popular and well known the repo was on Apr 13, 2018 can be found by using <a href="http://archive.org">archive.org</a>, also known as Wayback Machine.
+                  It is service that stores and archives old web pages, so we can visit them again, and see exactly how they looked on
+            given dates.
+                
+         </p>
+         <p>
+                  This is how github.com/tobbelobb/hangprinter looked on Jun 26, 2017:
+                
+         </p>
+         <figure>
+                  <a href="./media/Jun26_2017_Github.png">
+                       <img src="./media/Jun26_2017_Github_small.png" alt="" width="500" height="276">
+                     </a>
+                  
+            <figcaption>
+                       Click the image for a larger version.
+                     
+            </figcaption>
+                
+         </figure>
+         <p>
+                  In the image we can see that the repo had 77 watchers, 248 stars, and 49 forks.
+                  This means that this was a popular repo at the time.
+                  The 49 forks means that at least 49 people have copied Hangprinter's source files
+                  to use as the basis for their own cable driven robot build.
+                
+         </p>
+         <p>
+                  The license in the repo allows and encourages such copying.
+                  Hangprinter was the most popular and widely known basis for cable driven robot development in 2017 and 2018.
+                
+         </p>
+         <h3>What Was In the Repo?</h3>
+         <p>
+                  On Apr 13, 2018 the Hangprinter version 2 development had just been concluded (this happened on Feb 12, 2018).
+                  Work on Hangprinter version 3 had been going on since April 2017.
+                
+         </p>
+         <p>
+                  The state of the art of version 2 in the repo on Apr 13, 2018 can be found <a href="https://github.com/tobbelobb/hangprinter/tree/c9295eceff474d44da9f7ad971b1a9f0303fea45">here</a>.
+                
+         </p>
+         <p>
+                  The state of the art of version 3 in the repo on Apr 13, 2018 can be found <a href="https://github.com/tobbelobb/hangprinter/tree/3fa54dbe37858ce02146a2d9f31bb17343fdf504">here</a>.
+                
+         </p>
+         <p>
+                  This is how a state-of-the art Hangprinter version 3 looked like in CAD on Apr 10, 2018, according to the repo:
+                
+         </p>
+         <figure>
+                  <a href="./media/HP3_status_Apr_10_2018.png">
+                       <img src="./media/HP3_status_Apr_10_2018_small.png" alt="" width="500" height="304">
+                     </a>
+                  
+            <figcaption>
+                       Click the image for a larger version.
+                       Although all parts were finished, this assembly file was admittedly not finished.
+                       Still, we can clearly see the intent of having motors offloaded from the effector.
+                     
+            </figcaption>
+                
+         </figure>
+         <p>
+                  This is how a state-of-the art Hangprinter version 2 looked like in CAD on Apr 10, 2018, according to the repo:
+                
+         </p>
+         <figure>
+                  <a href="./media/HP2_status_Feb_12_2018.png">
+                       <img src="./media/HP2_status_Feb_12_2018_small.png" alt="" width="500" height="331">
+                     </a>
+                  
+            <figcaption>
+                       Click the image for a larger version.
+                     
+            </figcaption>
+                
+         </figure>
+         <h2>Prior Art Published On Reprap Forums</h2>
+         <h3>The First Thread</h3>
+         <p>
+                  The first forum thread is ca 65 posts long, and ca 13 people took part in the open discussion.
+                  In it, I present the idea of a cable driven Reprap.
+                  You can find it <a href="https://reprap.org/forum/read.php?178,344022">here</a>.
+                
+         </p>
+         <p>
+                  I will re-post some relevant images and quotes here.
+                  Not all quotes are mine, but all images are mine.
+                  All were posted between Apr 23, 2014 and Nov 14 2017.
+                  Further details are in the <a href="https://reprap.org/forum/read.php?178,344022">forum thread</a>.
+                
+         </p>
+         <figure>
+                  <a href="./media/very_first_digital_sketch.png">
+                       <img src="./media/very_first_digital_sketch_small.png" alt="" width="500" height="317">
+                     </a>
+                  
+            <figcaption>
+                     
+            </figcaption>
+                
+         </figure>
+         <p>
+                  
+            <ul>
+                       
+               <li>"... possibly introducing hardware to help keep the xy-plane wires tight..."</li>
+                       
+               <li>"... The most compact ... out there."</li>
+                       
+               <li>"... Extreme print heights ...</li>
+                       
+               <li>"The only thing we control in this system, is the length of the three wires. Every possible combination of wire-lengths, (l0,
+                  l1, l2), corresponds to a unique point in the avilable print area (a triangle). To map a point (x', y') to the corresponding
+                  wire-lengths, all we have to do is place the wires anchor-points in the cartesian coordinate system, and compute the lengths
+                  from each anchor point to the point (x', y'). Like this:"
+               </li>
+                     
+            </ul>
+                
+         </p>
+         <figure>
+                  <a href="./media/geometry_2d.gif">
+                       <img src="./media/geometry_2d.gif" alt="" width="500" height="500">
+                     </a>
+                  
+            <figcaption>
+                     
+            </figcaption>
+                
+         </figure>
+         <p>
+                  
+            <ul>
+                       
+               <li>"Check out the <a href="https://designmakeshare.wordpress.com/2013/09/16/introducing-skydelta/">SkyDelta</a>."
+               </li>
+                     
+            </ul>
+                
+         </p>
+         <p>
+                  It's worth pausing at the SkyDelta, and note that it too has striking similarities to the patented contraption.
+                  I won't go into the details here, but in the detailed blog post from 2013 linked above, Brandon Heller includes a video
+            that
+                  shows similarities from an overview perspective:
+                
+         </p>
+         <figure>
+                  
+            <div class="embed-container">
+                       <iframe src="https://www.youtube.com/embed/lnp1Pmki3lI" frameborder="0" allowfullscreen="true" allow="encrypted-media">
+                          </iframe>
+                     
+            </div>
+                  
+            <figcaption>
+                       Brandon Heller's Youtube video from 2013.
+                     
+            </figcaption>
+                
+         </figure>
+         <p>
+                  Now let's continue to explore the first forum thread.
+                  
+            <ul>
+                       
+               <li>"A setup with a dedicated z-motor, and no springs at all. This will require the four motors to work against each other to
+                  keep the lines tight."
+               </li>
+                       
+               <li>"A sprung loaded Z motor. You then don't have to worry as much about getting all 4 motors perfectly in sync."</li>
+                       
+               <li>"Might be an interesting concept for something like cement printing?"</li>
+                       
+               <li>"You could sink poles and then string them like you would do a tent."</li>
+                       
+               <li>"You could install it outside in a large area."</li>
+                       
+               <li>"But generally this is the best concept for DIY house printing because you don't need large heavy and stiff frames or cranes."</li>
+                       
+               <li>"The one action line going to the roof could be made triple and attached to each corner of the triangular print platform to
+                  handle forces downwards."
+               </li>
+                     
+            </ul>
+                
+         </p>
+         <figure>
+                  <a href="./media/three_z_configuration.png">
+                       <img src="./media/three_z_configuration_small.png" alt="" width="500" height="476">
+                     </a>
+                  
+            <figcaption>
+                     
+            </figcaption>
+                
+         </figure>
+         <p>
+                  
+            <ul>
+                       
+               <li>"I love the idea of being able to print a house!"</li>
+                       
+               <li>"There's some students somewhere that executed something like this but they're printing with clay. Search "sky printer" on
+                  instructables."
+               </li>
+                       
+               <li>"... instead of three motors you can use only two and a spring-loaded rewinder or a weight at the free end of the wire."</li>
+                     
+            </ul>
+                
+         </p>
+         <h3>The Second Thread</h3>
+         <p>
+                  ...
+                
+         </p>
+         <p>
+            - tobben
+            
+         </p><br><br><br><br><br><br><br><br><br><br><br><h1 id="Links">
+            Links
+            
+         </h1>
+         <p>
+            Hangprinter Campaign: <a href="https://salt.bountysource.com/teams/hangprinter">Bountysource Salt</a></p>
+         <p>
+            Hangprinter Merchandise USA: <a href="https://shop.spreadshirt.com/hangprinter-merchandise/">Spreadshirt.com</a></p>
+         <p>
+            Hangprinter Merchandise Sweden: <a href="https://shop.spreadshirt.se/hangprinter-merchandise/">Spreadshirt.se</a></p>
+         <p>
+            Hangprinter Project: <a href="../2014#Hangprinter">[1]</a>,
+            <a href="../2015#Slideprinter_Update">[2]</a>,
+            <a href="../2015#hangprinter_project_2">[3]</a>,
+            <a href="../2015#hangprinter_project_3">[4]</a>,
+            <a href="../2015#hangprinter_project_4">[5]</a>,
+            <a href="../2015#hangprinter_project_5">[6]</a>,
+            <a href="../2015#hangprinter_project_6">[7]</a>,
+            <a href="../2015#hangprinter_project_7">[8]</a>,
+            <a href="../2015#hangprinter_project_8">[9]</a>,
+            <a href="../2015#hangprinter_project_9">[10]</a>,
+            <a href="../2015#hangprinter_project_10">[11]</a>,
+            <a href="../2015#hangprinter_project_11">[12]</a>,
+            <a href="../2015#hangprinter_project_12">[13]</a>,
+            <a href="../2015#hangprinter_project_13">[14]</a>,
+            <a href="../2015#hangprinter_project_14">[15]</a>,
+            <a href="../2015#hangprinter_project_15">[16]</a>,
+            <a href="../2015#hangprinter_project_16">[17]</a>,
+            <a href="../2015#hangprinter_project_17">[18]</a>,
+            <a href="../2015#hangprinter_project_18">[19]</a>,
+            <a href="../2016#hangprinter_project_19">[20]</a>,
+            <a href="../2016#hangprinter_project_20">[21]</a>,
+            <a href="../2016#hangprinter_project_21">[22]</a>,
+            <a href="../2016#hangprinter_project_22">[23]</a>,
+            <a href="../2016#hangprinter_project_23">[24]</a>,
+            <a href="../2016#hangprinter_project_24">[25]</a>,
+            <a href="../2016#hangprinter_project_25">[26]</a>,
+            <a href="../2016#hangprinter_project_26">[27]</a>,
+            <a href="../2016#hangprinter_project_27">[28]</a>,
+            <a href="../2017#hangprinter_project_28">[29]</a>,
+            <a href="../2017#hangprinter_project_29">[30]</a>,
+            <a href="../2017#hangprinter_project_30">[31]</a>,
+            <a href="../2017#hangprinter_project_31">[32]</a>,
+            <a href="../2017#hangprinter_project_32">[33]</a>,
+            <a href="../2017#hangprinter_project_33">[34]</a>,
+            <a href="../2017#hangprinter_project_34">[35]</a>,
+            <a href="../2017#hangprinter_project_35">[36]</a>,
+            <a href="../2017#hangprinter_project_36">[37]</a>,
+            <a href="../2017#hangprinter_project_37">[38]</a>,
+            <a href="../2017#hangprinter_project_38">[39]</a>,
+            <a href="../2017#hangprinter_project_39">[40]</a>,
+            <a href="../2017#hangprinter_project_40">[41]</a>,
+            <a href="../2017#hangprinter_project_41">[42]</a>,
+            <a href="../2017#hangprinter_project_42">[43]</a>,
+            <a href="../2017#hangprinter_project_43">[44]</a>,
+            <a href="../2017#hangprinter_project_44">[45]</a>,
+            <a href="../2017#hangprinter_project_45">[46]</a>,
+            <a href="../2017#hangprinter_project_46">[47]</a>,
+            <a href="../2017#hangprinter_project_47">[48]</a>,
+            <a href="../2017#hangprinter_project_48">[49]</a>,
+            <a href="../2017#hangprinter_project_49">[50]</a>,
+            <a href="../2017#hangprinter_project_50">[51]</a>,
+            <a href="../2018#hangprinter_project_51">[52]</a>,
+            <a href="../2018#hangprinter_project_52">[53]</a>,
+            <a href="../2018#hangprinter_project_53">[54]</a>,
+            <a href="../2018#hangprinter_project_54">[55]</a>,
+            <a href="../2018#hangprinter_project_55">[56]</a>,
+            <a href="../2018#hangprinter_project_56">[57]</a>,
+            <a href="../2018#hangprinter_project_57">[58]</a>,
+            <a href="../2018#hangprinter_project_58">[59]</a>,
+            <a href="../2018#hangprinter_project_59">[60]</a>,
+            <a href="../2018#hangprinter_project_60">[61]</a>,
+            <a href="../2018#hangprinter_project_61">[62]</a>,
+            <a href="../2018#hangprinter_project_62">[63]</a>,
+            <a href="../2020#hangprinter_project_63">[64]</a>,
+            <a href="../2020#hangprinter_project_64">[65]</a>,
+            <a href="../2020#hangprinter_project_65">[66]</a>,
+            <a href="../2020#hangprinter_project_66">[67]</a>,
+            <a href="../2020#hangprinter_project_67">[68]</a>,
+            <a href="../2020#hangprinter_project_68">[69]</a>,
+            <a href="../2021#hangprinter_project_69">[70]</a>,
+            <a href="../2021#hangprinter_project_70">[71]</a>,
+            <a href="../2021#hangprinter_project_71">[72]</a>,
+            <a href="../2021#hangprinter_project_72">[73]</a>,
+            <a href="../2021#hangprinter_project_73">[74]</a>,
+            <a href="../2021#hangprinter_project_74">[75]</a>,
+            <a href="../2021#hangprinter_project_75">[76]</a>,
+            <a href="../2021#hangprinter_project_76">[77]</a></p>
+         <p>
+            Hangprinter Project Homepage: <a href="https://hangprinter.org">hangprinter.org</a></p>
+         <p>
+            Print Issue Solution Filter Project: <a href="../2014#Introducing_PISF">[1]</a>,
+            <a href="../2014#Presenting_PISF_Again">[2]</a>,
+            <a href="../2014#PISF_Online_Sort_Of">[3]</a>,
+            <a href="../2014#PISF">[4]</a></p>
+         <p>
+            Sourcing RepRappro Mendel in Larvik: <a href="../2014#Sourcing_Mendel_1">[1]</a>,
+            <a href="../2014#Sourcing_Mendel_2">[2]</a>,
+            <a href="../2014#Sourcing_Mendel_3">[3]</a>,
+            <a href="../2014#Sourcing_Mendel_4">[4]</a>,
+            <a href="../2014#Sourcing_Mendel_5">[5]</a>,
+            <a href="../2014#Sourcing_Mendel_6">[6]</a>,
+            <a href="../2014#Sourcing_Mendel_7">[7]</a></p>
+         <p>
+            Archive: <a href="../2014">2014</a>, <a href="../2015">2015</a>, <a href="../2016">2016</a>, <a href="../2017">2017</a>, <a href="../2018">2018</a>, <a href="../2020">2020</a>, <a href="../2021">2021</a></p>
+         <p>
+            Github Profile: <a href="https://github.com/tobbelobb/">link</a><br></p>
+         <p>
+            Gitlab Profile: <a href="https://gitlab.com/tobben">link</a><br></p>
+         <p>
+            Hangprinter project on Gitlab: <a href="https://gitlab.com/hangprinter">link</a><br></p>
+         <p>
+            Vimeo User: <a href="https://vimeo.com/user23166500">link</a><br></p>
+         <p>
+            Youtube User: <a href="https://www.youtube.com/channel/UCw1Nz0VCw4z-dfq4WjSkFzQ">link</a><br></p>
+         <p>
+            Twitter User: <a href="https://twitter.com/tobbelobb">link</a><br></p>
+         <p>
+            Master's Thesis: <a href="http://opensourceecology.org/wiki/File:Thesis.pdf">link</a><br></p>
+         <p>
+            Linkedin Profile: <a href="https://se.linkedin.com/in/torbjorn-ludvigsen">link</a><br></p>
+         <p>
+            Appropedia User: <a href="http://www.appropedia.org/User:Tobben">link</a><br></p>
+         <p>
+            RepRap Forums User: <a href="http://forums.reprap.org/profile.php?1,22385">link</a></p>
+         <p>
+            Forums threads: <a href="http://forums.reprap.org/read.php?178,344022">Hangprinter version 1</a>,
+            <a href="http://forums.reprap.org/read.php?1,738858">Hangprinter version 2</a>,
+            <a href="http://forums.reprap.org/read.php?1,792937">Hangprinter version 3</a>,
+            <a href="https://reprap.org/forum/list.php?423">List of Hangprinter threads</a></p>
+         <p>
+            Source for this blog: <a href="https://gitlab.com/tobben/tbear_blogg">Gitlab repo</a></p>
+         <p>
+            Everything on this homepage, except those videos who are published via Vimeo or Youtube, is licensed under the <a href="https://www.gnu.org/licenses/fdl">Gnu Free Documentation License</a>.
+            The videos published via Vimeo or Youtube are also licensed via Vimeo or Youtube.
+            
+         </p>
+      </div><br><br><br><br><br><br><br><br><script type="text/javascript">
+  MathJax.Hub.Configured()
+</script><script data-goatcounter="https://torbjornludvigsen.goatcounter.com/count" async="true" src="//gc.zgo.at/count.js"></script></body>
+</html>
