@@ -54,7 +54,49 @@
       </figcaption>
     </figure>
     <p>
-      However, the similarities are not merely superficial.
+      It's not only technical objects in the patent that bear similarities with prior Hangprinter publications.
+      Their artistic expression is also strikingly similar.
+    </p>
+    <figure>
+      <a href="./media/Babylon2.jpeg">
+        <img src="./media/Babylon2_small.jpeg" alt="" width="500" height="333"/>
+      </a>
+      <figcaption>
+          This image was published <a href="https://vitana.se/opr3d/tbear/2017#hangprinter_project_33">in a blog post on 24 Feb, 2017</a>.
+      </figcaption>
+    </figure>
+    <figure>
+      <a href="./media/Their_fig_2.png">
+        <img src="./media/Their_fig_2_small.png" alt="" width="500" height="325"/>
+      </a>
+      <figcaption>
+        Fig 2 from from the patent in question.
+      </figcaption>
+    </figure>
+    <p>
+      The artistic expression, of an unfinished circular tower with tall arched windows, and a thick helical structure along the outer wall, being printed under a cable driven parallel robot with four cable-directions, one of which is near vertical, driving an effector with rotational degrees of freedom being constrained by pairs of generally parallel cables, of which anchors (called base stations in the patent) are potentially lifted above ground level with thin tall structures, can not have escaped the patent holders' attention in the year before the patent was filed.
+    </p>
+    <figure>
+      <video width="500" controls="true">
+        <source src="./media/front_page_hangprinter-org_2.mp4" type="video/mp4"></source>
+      </video>
+      <figcaption>
+          The video shows how the 3d animation covering <a href="https://web.archive.org/web/20170421035011/http://hangprinter.org/">hangprinter.org's front page for a full year before the patent in question was filed</a>. <a href="https://twitter.com/tobbelobb/status/849040245593165824">hangprinter.org was launched on Apr 4, 2017</a>, and the animation was there until it was <a href="https://twitter.com/tobbelobb/status/1308064219355648002">replaced on 21 Sep, 2020</a>.
+      </figcaption>
+    </figure>
+    <p>
+      Examples of very similar
+      <ul>
+        <li><a href="https://www.fabbaloo.com/2017/03/the-hangprinter-a-frameless-3d-printer">fabbaloo.com</a></li>
+        <li><a href="https://www.3dnatives.com/de/hangprinter-3d-drucker-1003171/#!">3dnatives.com</a></li>
+        <li><a href="https://www.archdaily.com/866985/umea-university-develops-low-cost-flexible-3d-printer">archdaily.com</a></li>
+        <li><a href="https://3dprintingindustry.com/news/interview-inventor-frameless-hangprinter-3d-printer-building-tower-babel-107749/">3dprintingindustry.com</a></li>
+        <li><a href="https://3dprint.com/167250/hangprinter-midair-3d-printer/">3dprint.com</a></li>
+      </ul>
+      ... and many more.
+    </p>
+    <p>
+      However, the similarities between the patented contraption and Hangprinter are not merely superficial.
       This text will show similarities on the conceptual level in the form of ideas that were formulated, and sometimes also implemented within the Hangprinter Project,
       before they were reiterated in the patent.
     </p>
@@ -93,6 +135,7 @@
           <li><a href="https://www.sciencedaily.com/releases/2017/03/170308083723.htm">sciencedaily.com</a></li>
           <li><a href="https://www.fabbaloo.com/2017/03/the-hangprinter-a-frameless-3d-printer">fabbaloo.com</a></li>
           <li><a href="https://www.wired.com/beyond-the-beyond/2017/03/hangprinter-printer-just-sorta-hangs/">wired.com</a></li>
+          <li><a href="https://3dprint.com/167250/hangprinter-midair-3d-printer/">3dprint.com</a></li>
         </ul>
       </li>
       </ul>
@@ -198,7 +241,7 @@
       You can find it <a href="https://reprap.org/forum/read.php?178,344022">here</a>.
     </p>
     <p>
-      I will re-post some relevant images and quotes here.
+      I will re-post some relevant images and quotes here in chronological order.
       Not all quotes are mine, but all images are mine.
       All were posted between Apr 23, 2014 and Nov 14 2017.
       Further details are in the <a href="https://reprap.org/forum/read.php?178,344022">forum thread</a>.
@@ -214,7 +257,7 @@
       <ul>
         <li>"... possibly introducing hardware to help keep the xy-plane wires tight..."</li>
         <li>"... The most compact ... out there."</li>
-        <li>"... Extreme print heights ...</li>
+        <li>"... Extreme print heights ..."</li>
         <li>"The only thing we control in this system, is the length of the three wires. Every possible combination of wire-lengths, (l0, l1, l2), corresponds to a unique point in the avilable print area (a triangle). To map a point (x', y') to the corresponding wire-lengths, all we have to do is place the wires anchor-points in the cartesian coordinate system, and compute the lengths from each anchor point to the point (x', y'). Like this:"</li>
       </ul>
     </p>
@@ -228,30 +271,6 @@
     <p>
       <ul>
         <li>"Check out the <a href="https://designmakeshare.wordpress.com/2013/09/16/introducing-skydelta/">SkyDelta</a>."</li>
-      </ul>
-    </p>
-    <p>
-      It's worth pausing at the SkyDelta, and note that it too has striking similarities to the patented contraption.
-      I won't go into the details here, but in the detailed blog post from 2013 linked above, Brandon Heller includes a video that
-      shows similarities from an overview perspective:
-    </p>
-    <figure>
-      <div class='embed-container'>
-        <iframe src='https://www.youtube.com/embed/lnp1Pmki3lI'
-          frameborder='0'
-          allowfullscreen='true'
-          allow='encrypted-media'>
-        </iframe>
-      </div>
-      <figcaption>
-        Brandon Heller's Youtube video from 2013.
-        Like most cable driven translation robots, Hangprinter included,
-        it uses pairs of  that are "generally parallel to each other" as it's formulated in the patent.
-      </figcaption>
-    </figure>
-    <p>
-      Now let's continue to explore the first forum thread.
-      <ul>
         <li>"A setup with a dedicated z-motor, and no springs at all. This will require the four motors to work against each other to keep the lines tight."</li>
         <li>"A sprung loaded Z motor. You then don't have to worry as much about getting all 4 motors perfectly in sync."</li>
         <li>"Might be an interesting concept for something like cement printing?"</li>
@@ -279,6 +298,27 @@
     <p>
       ...
     </p>
+
+    <h3>Non-Hangprinter Prior Art</h3>
+    <p>
+      It's worth looking at the SkyDelta, and note that it too has striking similarities to the patented contraption.
+      I won't go into the details here, but in the detailed blog post from 2013 linked above, Brandon Heller includes a video that
+      shows similarities from an overview perspective:
+    </p>
+    <figure>
+      <div class='embed-container'>
+        <iframe src='https://www.youtube.com/embed/lnp1Pmki3lI'
+          frameborder='0'
+          allowfullscreen='true'
+          allow='encrypted-media'>
+        </iframe>
+      </div>
+      <figcaption>
+        Brandon Heller's Youtube video from 2013.
+        Like most cable driven translation robots, Hangprinter included,
+        it uses pairs of cables that are "generally parallel to each other" as it's formulated in the patent.
+      </figcaption>
+    </figure>
   </post>
 </posts>
 
