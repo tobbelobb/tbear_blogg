@@ -1,0 +1,129 @@
+"Cable flexibility is accounted for in the control systems through advanced vibration control techniques like input shaping."
+See early reprap.org/wiki/hangprinter
+
+"Absolute position feedback can be provided by GPS or a laster tracker positioned out of the 3D workspace W ensuring accurate placement of the deposited material."
+See Thread 1 Dejay's comment
+
+"The base stations can be adjustable to allow the end effector to print taller structures without interfering with the cables."
+
+"The various cables can be wound around their associated cable winders for transportation to a worksite."
+
+"After setup, the system 14 can go through a calibration routine so that the location of the end effector 20 can be tracked through 3D space. The location of the cable winders 32, 40 on the aerial hoist 18 and base stations 22A, 22B, 22C must also be known in 3D space."
+
+"For most additive manufacturing, only three DOF control is needed. Linear translation is necessary in all three directions; however, the three rotational degrees of freedom are not needed. Instead of controlling the rotational degrees of freedom, it is better to simply freeze them and only control the linear degrees of freedom. By carefully choosing the cable geometry and controlling multiple cables from one winder, this is achieved with the system"
+
+Yes, this is a core part of Hangprinter since 2014.
+The concept can also also be found in any introductory text about cable driven robotics.
+
+"Furthermore, it is undesirable to over-constrain the system. If there are more cables than are necessary to fully constrain the system, it becomes over-constrained. In an over-constrained system, forces can quickly get quite large, and the demands on the control system are much greater."
+Yes, the exact amounts of force are calculated in thread 1, 2014.
+
+"All rotational degrees of freedom are frozen."
+The technical term I think you mean is 'constrained'.
+The word frozen refers to the state of a liquid that is at or below it's freezing point temperature limit.
+
+"These three cables 30 all run off one cable winder 32 (FIG. 2) or the like located on the platform 34, so that their length is always identical. This keeps the end effector 20 from tilting, which freezes two rotational DOF of the end effector 20."
+Yes, this is exactly what Hangprinter has been doing since 2014.
+However, it's not physically correct that two rotational degrees of freedom would be constrained by these three lines.
+You see, a line can only pull and not push.
+Therefore, a force pushing up on the effector from below, at a point other than the center of mass, would cause the effector to rotate.
+So two rotational DOF are constrained in one direction, and limited, but not constrained, by a gravitational force in the other direction.
+
+The system 14 is also simplified by eliminating the aerial platform of the aerial hoist 18. Instead, the aerial hoist 18 can comprise at least one pulley 48, multiple pulleys, or another suitable cable guide which route the suspension cable 30 to change the direction of the force applied by the cable 30.
+
+"With only one aerial cable 30, it is possible to run the cable 30 over the pulley 48 or another suitable cable guide and down to a cable winder 50 or the like located on one of the base stations 22B, or provided separately from the base stations 22A, 22B, 22C, 22D."
+This is also possible if you have more than one "aerial cable". It is possible and common to reroute any number of cables with pulleys.
+
+"Another difference is that the system 14 has an additional base station 22D and cable 28D to provide tension only."
+A very old, obvious and thoroughly discussed idea.
+
+"Furthermore, a stiffer system leads to higher natural frequencies, which makes control of the system easier."
+This does not reflect my practical experience.
+
+"In selecting a cable and the required tension for the system 14, the effects of catenary sag must be considered. A cable span under gravity sags in a well-known and well-studied shape called a catenary. The amount of catenary sag is dependent upon the amount of tension in the cable. This results in significant non-linearities in the stiffness of cables."
+Hangprinter uses light and stiff UHMWPE lines to avoid catenary sag.
+This is commented on in the forum threads (and maybe the blog?).
+
+ "The composite stiffness value was determined by combining the non-linear stiffness produced by catenary sag of the steel wire cable along with the elastic stiffness of the steel wire cable."
+ Hangprinter opted to not use steel wire because it's simply not stiff enough.
+ This is detailed in github issues and forum threads.
+
+"Second, analysis and control of linear systems is significantly easier as compared to non-linear systems."
+It's actually not hard either way. This is a rich and very well explored field of research.
+
+"Some suitable examples for the cables 28A, 28B, 28C, 28D that can fulfill the requirements of the system 14 include 7.times.19 steel wire rope and ropes made from ultra-high-molecular-weight polyethylene (UHMWPE) fibers, such as Dyneema.RTM. ropes."
+Yes, this is what Hangprinter does, and has been doing publicly since 2014.
+
+
+"For the cables 28A, 28B, 28C, 28D to operate within the linear range of stiffness, all of the cables 28A, 28B, 28C, 28D are kept at a predetermined minimum tension."
+Pre-tension in wires is the default way of working within translatory cable driven parallel robotics.
+Hangprinter is unusual in not doing this.
+It was deferred already in 2014. Details are in forum thread 1.
+
+
+"The base station 22 can mobile for transport to and from the worksite"
+All construction equipment must be mobile for transport. Otherwise they can never reach the construction site.
+
+
+"... , and is configured to be statically arranged about the perimeter of the 3D workspace W during use."
+This is exactly what Hangprinter does.
+
+
+"The base station 22 includes one cable winder 40, and both cables 28U, 28L can be adjustably extended from the cable winder 40 and retracted back on the cable winder 40.  A motor 52 or the like can control the cable winder 40."
+The general concept of a cable winder is as old as the general concept of a motor, or even older.
+
+"The motor 52 can be can be in operative communication with a winder motor controller and power supply 54, which provides power to and control of the winder motor 52 to operate the cable winder 40. The winder motor controller and power supply 54 can be in operative communication with a central controller as described above."
+All robots with planned motions use motion controllers.
+Most of the research field of cable driven robotics revolves around the details of how to control cable winders.
+
+"The base station 22 includes one pulley 42U disposed above the cable winder 40, and two pulleys 42M, 42L disposed below the cable winder 40. The first or upper motion-control cable 28U runs from the cord winder 40, wraps around the upper pulley 42U, and extends to the end effector. The second or lower motion-control cable 28L runs from the cord winder 40, winds around the middle pulley 42M, wraps around the lower pulley 42, and extends to the end effector."
+Having two cables controlled by a single cable winder is exactly how Hangprinter has been doing it since 2014.
+However, the possibility of running one cable winder per cable has been discussed many times.
+One motor per cable would be the most frequent way of applying cable winders in cable driven robot designs.
+
+"The base station 22 can include a support 56 adapted to be statically fixed to the ground or otherwise anchored at the worksite, and a framework 58 extending upwardly from the support 56."
+I like how the word anchor finally shows up.
+We associate it with any statically fixed part in the Hangprinter design community.
+
+
+"The framework 58 can include a support surface 60 for the cable winder 40 and pulleys 42U, 42M, and 42L. From the pulleys 42U, 42M, and 42L to the end effector, the cables 28U, 28L can run generally orthogonally to the support surface 60."
+This does not check out physically or mathematically.
+If the cables run orthogonally to the static and fixed support surface 60, then your effector can only move along a straight line parallel to the surface 60's normal direction.
+Since you have three of these base stations, with separate support surfaces that don't have parallel normal directions, it means your effector is fixed and can not move.
+You're either using the word generally to make implicit the whole point of the contraption that you're trying to describe,
+or you're forgetting to explain that the support surface is supposed to rotate freely around a vertical axis (which is an obvious solution if your lines really need to be orthogonal to the support surface 60).
+There's no explanation of  why the lines would need to be generally orthogonal to the support surface.
+
+
+"The base station 22 can be adjustable to allow the end effector to print taller structures without interfering with the cables 28U, 28L. As described above, generally, the point at which the cables 28U, 28L extend in the x-y plane away from the base station 22 needs to be able to raise up as the printed structure gets taller."
+This has been suggested several times in all the Hangprinter forum threads.
+
+
+"In one embodiment, at least a portion of the base station 22 can telescope to raise the pulleys 42U, 42M, and 42L. For example, the support surface 60 can be a telescoping support surface 60, the framework 58 can be a telescoping framework 58, or the support 56 can telescope or be otherwise adjustable."
+There are many obvious examples to consider.
+The telescoping rod idea is a very frequen, but not very good one.
+I hope I can find examples of it in the forum threads.
+
+"The base station 22 can optionally include a cable winder 50 for a suspension cable 30 used to adjust the position of an aerial hoist 18 (FIG. 8). The suspension cable 30 can be adjustably extended from the cable winder 50 and retracted back on the cable winder 50."
+This would make your kinematic system a nested one, comprising of a series of two identical or near effectors, just at different heights and possibly scales, with one's effector position being the other one's D-anchor (highest anchor) position.
+Even this has been discussed in the Hangprinter forum threads.
+
+"A motor 62 or the like can control the cable winder 50. The motor 62 can be can be in operative communication with a winder motor controller and power supply 64, which provides power to and control of the winder motor 62 to operate the cable winder 38. The winder motor controller and power supply 64 can be in operative communication with a central controller as described above."
+This is pure repetition of the obvious.
+
+"The aerial hoist 18 can suspended by existing construction equipment, such as a conventional crane 24 (FIG. 2). The aerial hoist 18 forms an apex of the cable configuration for the cable-driven system. The aerial hoist 18 can include a framework 70 that is hung from the crane 24 by a connector 72. Springs 74 can be provided between the connector 72 and the framework 70 to provide compliance between the aerial hoist 18 and the crane 24, which may sway during operation, and to prevent the crane 24 from pulling up too hard on the aerial hoist 18. Guy-wire connectors 76 are provided on the framework 70 for securing the aerial hoist 18 with guy-wires (not shown)."
+and
+"Yet another advantage of the various embodiments of the additive manufacturing systems and methods disclosed herein is that the crane or other suspender acting as a static hoist point for the system does not need to have high rigidity, it only needs to supply sufficient upward force. Conventional cranes are not rigid; rather they have a fairly low effective spring rate and so would be unsuitable to use with prior additive manufacturing systems which require rigidity. In contrast, the various embodiments of the additive manufacturing systems and methods disclosed herein can be with a crane, a lighter-than-air balloon, the roof of an inflatable building, or other systems without high rigidity but which provide sufficient upward force for the system."
+
+Fixating the top anchor in this way, with a spring between it and a crane, is not something I've seen before.
+It might be something new.
+
+"Another advantage of the various embodiments of the additive manufacturing systems and methods disclosed herein is the single lift point or aerial hoist. Most cable driven robots have cable winders at multiple aerial points. In a situation where the robot is permanently installed in a building or high-bay, this not a problem as these winders can be affixed to a large frame or to the columns of the building itself. However, in an outdoor fieldable platform this is less practical. The cable-driven system disclosed herein has an aerial hoist suspending by existing construction equipment, namely a crane, or a balloon. Implementing a crane suspended system will allow for much quicker machine set up and versatility in construction site location."
+The keyword here is most.
+It does not include Hangprinter, since Hangprinter was already doing this, and publicly talking about scaling up to house size using cranes and baloons already in 2014.
+
+
+"The above description is that of current embodiments of the invention. Various alterations and changes can be made without departing from the spirit and broader aspects of the invention as defined in the appended claims, which are to be interpreted in accordance with the principles of patent law including the doctrine of equivalents. This disclosure is presented for illustrative purposes and should not be interpreted as an exhaustive description of all embodiments of the invention or to limit the scope of the claims to the specific elements illustrated or described in connection with these embodiments. The present invention is not limited to only those embodiments that include all of these features or that provide all of the stated benefits, except to the extent otherwise expressly set forth in the issued claims. Any reference to claim elements in the singular, for example, using the articles "a," "an," "the" or "said," is not to be construed as limiting the element to the singular. The technology disclosed and claimed herein may be available for licensing in specific fields of use by the assignee of record."
+If everything about SkyBAAM is to be interpreted in broad and generalizable ways, then so should everything published about Hangprinter.
+Then Hangprinter would cover the whole patent and a great much more, given how much more material that has been published about Hangprinter,
+by a much greater number of people, over a much longer time.
