@@ -641,8 +641,12 @@ With one stationary PCB and long cables to stationary motors, it will be a lot o
     <p>
       Some might believe that the SkyBAAM's guy wires would have a constant tension in them, but in fact they would not have constant tension.
       The tension in the SkyBAAM's guy wires would vary greatly depending on variation in the pulling force from above, and depending on
-      where within the build volume (called W in the patent) were at any given time.
+      where within the build volume (called W in the patent) were at any given time, because the end effector is connected to the D-anchor (highest anchor),
+      where the guy wires are also connected.
       Therefore, the conceptual difference between the SkyBAAM's guy wires and Hangprinter's guy wires is only superficial if at all.
+    </p>
+    <p>
+      So even though it might look like Hangprinter doesn't need guy wires, it does have them, as part of a dual purpose line routing configuration.
     </p>
 
     <h3>Non-Hangprinter Prior Art</h3>
