@@ -985,4 +985,12 @@ Version 3 forum thread: https://reprap.org/forum/read.php?423,792937
 
 Rail-less delta design: https://reprap.org/forum/read.php?1,525804,532222#msg-532222
 
+
+
+
+I just realized, Hangprinter has guy wires very similar to those claimed in the patent.
+Hangprinters' version are re-routed out to the end-effector, but they have static pivot points, and do the same pulling down with varying force on the D-anchor as the guy wires in the patent.
+
+Thinking about it, it's could be unneccesarily complicated to lift up a D-anchor in a crane, drag guy-wires to the base stations, terminate them in the anchors (base stations), and have separate varying-length spools (cable rewinders) in the anchors (base stations) that go out to the end effector...
+
 -->
