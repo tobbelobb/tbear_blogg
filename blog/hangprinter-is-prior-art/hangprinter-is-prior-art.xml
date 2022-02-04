@@ -246,7 +246,7 @@
         This is largely similar to the machine we saw in the 2017 news articles linked above.
       </figcaption>
     </figure>
-
+    <h4>The Firmware</h4>
     <p>
       The firmware was also published in the same repo along with instructions of how to use them:
     </p>
@@ -292,7 +292,35 @@
       A Mechaduino is a type of circuit board that controls the movement of one motor, executing commands sent to it by the central controller, which is another circuit board.
       By sending a special command to the Hangprinter, the user could put any motor into "torque mode", and specify a requested constant torque.
       This would cause the motor to exert a constant torque on the cable rewinder, in the direction that winds cable inwards, creating a constant tension in the attached cable.
+      Here's one of the linked videos that demonstrate it:
     </p>
+    <figure>
+      <div class='embed-container'>
+        <iframe src="https://player.vimeo.com/video/227891846"
+            frameborder="0"
+            webkitallowfullscreen="true"
+            mozallowfullscreen="true"
+            allowfullscreen="true">
+        </iframe>
+      </div>
+      <figcaption>
+        Video published August 1, 2017, demonstrating how one can drag Hangprinter around by hand when in Torque mode (called tension control in the patent).
+      </figcaption>
+    </figure>
+    <figure>
+      <div class='embed-container'>
+        <iframe src="https://player.vimeo.com/video/227893849"
+            frameborder="0"
+            webkitallowfullscreen="true"
+            mozallowfullscreen="true"
+            allowfullscreen="true">
+        </iframe>
+      </div>
+      <figcaption>
+        Another video published on August 1, 2017, demonstrating how one can drag Hangprinter around by hand when in Torque mode (called tension control in the patent).
+        In this case the tension control is used to help collect auto calibration data.
+      </figcaption>
+    </figure>
     <p>
       This is an example of a "tension control mechanism", frequently mentioned in the patent.
     </p>
@@ -328,6 +356,25 @@
         In this video from Apr 15, 2017, it's clear that the lines are terminated at different z-heights during different parts of the print.
       </figcaption>
     </figure>
+    <p>
+      All of these firmware features were <a href="https://github.com/MarlinFirmware/Marlin/pull/9180#issuecomment-380536959">being merged into the world's most used firmware at the time</a>,
+      called Marlin Firmware, in a public merge thread (similar to a forum thread) that was publicly available and open for anyone to read and participate in.
+      This means Hangprinter and all its features were becoming an integrated and widely available type of 3d printer at the firmware level at the time before April 13, 2018.
+    </p>
+    <p>
+      In the merge thread, there were a mention of scaling Hangprinter up:
+      <ul>
+        <li>"I have seen videos on youtube , and the first thing I imagine , is the size limitless ......"</li>
+      </ul>
+    </p>
+    <p>
+      There's also an <a href="https://github.com/MarlinFirmware/Marlin/issues/9101">earlier merge thread</a> with important info.
+      Comments made publicly on Jan 9, 2018 relate to the obvious idea of adding more motion axes (called "cable rewinders" in the patent) than four to Hangprinter.
+      <ul>
+        <li>"... It's would also give us trouble the day want to add a fifth motion axis, and a couple more extruders, which is not unlikely."</li>
+        <li>"... This would allow fifth and sixth motion axes, along with additional extruders, to be easily added, but it would take some more work to implement."</li>
+      </ul>
+    </p>
     <h2>Prior Art Published On Reprap Forums</h2>
     <h3>The First Thread</h3>
     <p>
