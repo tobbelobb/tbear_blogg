@@ -4,7 +4,7 @@
   <post id="prior_art_1" heading="Prior Art Relevant to Patent US 11230032" date="2-2-2022">
     <p>
         The <a href="https://wayfinder.digital/fedinvent/patents-2022/details-patents-20220125.html#11230032_DOE">patent in question</a> was filed on Apr 13, 2018.
-        We will refer to the patented contraption as SkyBAAM for short.
+        We will refer to the patented contraption as SkyBAAM, or "the patented contraption", for short.
         We will present prior art relevant to SkyBAAM, all of which was unmentioned and unreferenced in the patent.
         The prior art we present will mostly have been published within context of the open source project called Hangprinter.
     </p>
@@ -516,6 +516,99 @@ With one stationary PCB and long cables to stationary motors, it will be a lot o
     <p>
       TODO: Have only searched through pages 1, 2, 3...
     </p>
+
+    <h2>Prior Art Published On in the Facebook Group</h2>
+    <p>
+      The idea of 3d printing houses with Hangprinter was frequently discussed in the Hangprinter Facebook group around 2017 and 2018.
+      At least one of these conversations included some visuals.
+    </p>
+    <figure>
+      <a href="./media/crane_on_facebook_2018-03-17-20:02:41.png">
+        <img src="./media/crane_on_facebook_2018-03-17-20:02:41_small.png" alt="" width="500" height="281"/>
+      </a>
+      <figcaption>
+        Click the image for a larger version.
+        Screenshot from the facebook group called "Hangprinter - RepRap Project " on March 17, 2018.
+        A person called Ed Aylward posted visuals, related to the common idea of scaling up Hangprinter for printing concrete buildings, in the facebook group, stating patent pending on the idea.
+      </figcaption>
+    </figure>
+    <p>
+      I will point out some important details in the image above.
+      In the top right corner, we see the computer displayed the current date at the time: "Sat Mar 17 20:02".
+      The year 2018 is confirmed in the bottom right, where it says: "Facebook © 2018"
+    </p>
+    <p>
+      In the top left corner, it says "public group".
+      The group had <a href="https://www.facebook.com/groups/hangprinter/posts/194019467774887/">over 200 members and increasing, already a year earlier</a>.
+      This was a big public group with very active discussion about Hangprinter.
+    </p>
+    <p>
+      Here's a part of the conversation in the screendump, suggesting a crane with wheels, as we saw in the SkyBAAM patent:
+      <ul>
+        <li><font color="blue">Jeff Smith</font>: "Crane looks a bit more permanent than the building... You know they make those with wheels right?"</li>
+        <li><font color="green">Ed Aylward</font>: "yes of course"    </li>
+        <!--li><font color="red">tobben</font>: "Mr Aylward has emailed me three times before, with talk of getting rich through a patent.<br /><br />
+          You are welcome to get rich from using Hangprinter, Mr. Aylward. It is my honest opinion that you are wasting your time with this patent nonsense.<br /><br />
+          I have no money, you if you plan to sue me there is nothing there for you to win. As indicated by the above conversation, you will spend your time fighting the Hangprinter Community, not with getting rich."</li-->
+      </ul>
+    </p>
+    <p>
+      Below the conversation, we see that Mr Aylward had posted two hours earlier:
+      <li>A link to a web page</li>
+      <li>An image</li>
+      <li>A text: "3D CONCRETE BUILDING PRINTER. INVESTORS WANTED. Patents Pending, ©All rights reserved. (not to scale)"</li>
+    </p>
+    <p>
+      The web page that Mr Aylward linked to in his post was <a href="https://web.archive.org/web/20180228165805/https://p3d.in/O6NBW+welcome">saved by Wayback Machine on 28 Feb, 2018</a>,
+        so he had clearly created it at least a few days before posting publicly.
+      At the time of writing this, <a href="https://p3d.in/O6NBW">the web page is still up</a>.
+    </p>
+    <figure>
+      <a href="./media/edward_aylwards_page.png">
+        <img src="./media/edward_aylwards_page_small.png" alt="" width="500" height="284"/>
+      </a>
+      <figcaption>
+        Click the image for a larger version.
+        The web page linked in Mr Aylward's public post.
+      </figcaption>
+    </figure>
+    <p>
+      The linked web page, as well as the image posted in the public facebook group, showed a 3d model of Hangprinter version 1,
+      that had been copied straight from the Hangprinter repo
+    </p>
+    <figure>
+      <a href="./media/HP1_Aylwards_web_page.png">
+        <img src="./media/HP1_Aylwards_web_page_small.png" alt="" width="500" height="274"/>
+      </a>
+      <figcaption>
+        Click the image for a larger version.
+        Aylward's web page displays 3d graphics, and lets us zoom in on the displayed object.
+        We can see that this is Hangprinter version 1, and not version 2, because it does not yet use a worm gear for its D-axis (mostly vertical axis), like the Hangprinter version 2 did.
+        If we search through Github's catalouge, we can probably pin down when it was downloaded because it includes a distinct bug:
+        there are two motors with "B-gears", both driving the "B-lines" in the render.
+        That bug would make the machine not work as intended in practice, and was probably removed soon after, in the real Hangprinter repo.
+        The three low anchors are also identical to those published as Hangprinter version 1 anchors in the Hangprinter repo.
+      </figcaption>
+    </figure>
+    <figure>
+      <a href="./media/Aylwards_web_page2.png">
+        <img src="./media/Aylwards_web_page2_small.png" alt="" width="500" height="399"/>
+      </a>
+      <figcaption>
+        Click the image for a larger version.
+        An illustration of the frequent and common idea of 3d printing a concrete house with Hangprinter, screendumped from Aylward's publicly linked web site.
+      </figcaption>
+    </figure>
+    <p>
+      Searching with Google Patents and <a href="https://ppubs.uspto.gov/pubwebapp/">PPUBS Patent Public Search</a> with our best efforts, shows no trace of Edward Aylward's patent claim.
+      He could have been refused, or he might not have filed for a patent afterall.
+      We will therefore consider Aylward's publication in the public Hangprinter group as prior art.
+    </p>
+    <!--p>
+      The conversation received a lot of attention, and the conversation was deleted by a moderator later that day for reasons that are unknown to me.
+      Aylward were also blocked from the public group the same day, also for reasons unknown to me.
+      I was not the creator of, nor a moderator of, the public Hangprinter group on Facebook.
+    </p-->
 
 
     <h3>Non-Hangprinter Prior Art</h3>
