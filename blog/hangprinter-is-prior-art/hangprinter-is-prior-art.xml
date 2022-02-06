@@ -447,8 +447,9 @@
     </p>
     <p>
       The idea of printing with cement <a href="https://reprap.org/forum/read.php?178,344022,444205#msg-444205">
-        appeared already on the first page of the first forum thread about Hangprinter back in 2014</a>,
-        and has kept appearing at a rate of every fiftieth forum post or so suggesting it.
+      appeared already on the first page of the first forum thread about Hangprinter back in 2014</a>,
+      and has kept appearing at a rate of every fiftieth forum post or so suggesting it.
+      My reply was that <a href="https://www.facebook.com/groups/hangprinter/posts/342461566264009/?comment_id=342592839584215">beefing up the parts should be straightforward</a>.
     </p>
     <p>
       Scaling up is among the first two benefits I mention in the very first blog post about Hangprinter, from <a href="https://vitana.se/opr3d/tbear/2014.html#Hangprinter">May 15, 2014</a>.
@@ -461,8 +462,8 @@
       </figcaption>
     </figure>
     <p>
-      Apart from being very obvious,
-      the general idea of "3d printing houses with Hangprinters hanging from cranes"
+      Apart from <a href="https://github.com/MarlinFirmware/Marlin/pull/9180#issuecomment-369829924">being very obvious</a>,
+      the general idea of "<a href="https://reprap.org/forum/read.php?178,344022,445524#msg-445524">3d printing houses with Hangprinters</a>, <a href="https://reprap.org/forum/read.php?1,738858,760264#msg-760264">out of concrete</a>, while hanging from cranes"
       was frequently discussed in public around 2017 and 2018.
       One of the more entertaining conversations included these visuals.
     </p>
@@ -526,93 +527,136 @@
     <p>
       No, of course I understand that the cylinder would contain un-cured concrete, and the very large Hangprinter would be printing a concrete shell for a house.
     </p>
+    <h2>But The Super Smart Tension Control Described In the Patent, How About That?</h2>
     <p>
+      I assume they mean torque control, as it's called in Hangprinter circles?
+      All Hangprinter anchors have tension control.
+    </p>
+    <figure>
+      <div class='embed-container'>
+        <iframe src="https://player.vimeo.com/video/227891846"
+            frameborder="0"
+            webkitallowfullscreen="true"
+            mozallowfullscreen="true"
+            allowfullscreen="true">
+        </iframe>
+      </div>
+      <figcaption>
+        Video published August 1, 2017.
+        Since torque mode (tension control) only controls the torque of the motors (and hence the tension of the cables),
+        the en effector will move if you drag it by hand.
+      </figcaption>
+    </figure>
+    <p>
+      Torque mode is a standard feature since 2017.
+      It's very practical when you start the printer up and want to move the end effector
+      safely and rapidly without thinking too much.
     </p>
     <p>
-      However, the similarities between the patented contraption and Hangprinter are not merely superficial.
-      This text will show similarities on the conceptual level in the form of ideas that were formulated, and sometimes also implemented within the Hangprinter Project,
-      before they were reiterated in the SkyBAAM patent.
-    </p>
-    <h2>Is Scaling Up Hangprinter A Patentable Idea?</h2>
-    <p>
-      In 2017 and 2018 I got questions every week,
-      about the possibility of patenting a house printing Hangprinter.
-      Most of them went via private channels, but the idea was also frequently posted in public channels.
+      It's also used during auto-calibration (automatic anchor localization within the xyz coordinate system).
+      During auto calibration it's common for a Hangprinter to mix the normal "position mode" with torque mode,
+      frequently switching modes for individual motors.
     </p>
     <p>
-      I will show some more old screendumps mentioning
+      An advanced non-linear minimization algorith is applied to transform the set of collected quadruples of motor positions,
+      into a set of four anchor locations.
+      The version of the algorithm that was available on Apr 13, 2018 can be found here: <a href="https://gitlab.com/tobben/auto-calibration-simulation-for-hangprinter/-/tree/a3e7878987f88ff29ca2785d49390a34414e9027">auto-calibration-simulation-for-hangprinter</a>.
+    </p>
+    <h2>But SkyBAAM Has Its Cable Rewinders At The Base Stations! Hangprinter Does Not</h2>
+    <p>
+      This is another discussion that has kept coming back at a rate of ca one out of fifty forum posts.
+      <a href="https://reprap.org/forum/read.php?1,738858,746545#msg-746545">The following one is from Feb 2017</a>:
+    </p>
+    <p>
       <ul>
-        <li>"Scale up"</li>
-        <li>"house"</li>
-        <li>"concrete"</li>
+        <li><font color="blue">MechaBits</font>: "Was there a reason you never went with the motors on the walls?"</li>
+        <li><font color="red">tobben</font>:     "Yup several reasons, of course. One of them is that I have to tidy up after me each time I've used the printer. <i> [part of quote left out for brevity] ...</i>"</li>
+        <li><font color="blue">MechaBits</font>: "But surely you could also do that with motors on the walls."</li>
+        <li><font color="red">tobben</font>:     "Quite possible, of course. I'd love to see such a solution."</li>
+        <li><font color="blue">MechaBits</font>: "I would have thought you where in a better position to mentally picture what it would look like, due to your experience with this."</li>
+        <li><font color="red">tobben</font>:     "Oh yes, you would have to choose between synchronizing steppers wirelessly, drive them from a stationary PCB or to find a smart way to wind stepper cables. <br /><br />Last alternative first: You could carry the stepper drivers and the microcontroller on the moving part. Signal noise because of the stepper cable lengths would be no (or a very small) problem, but they will of course have weight. You could wind in the motors when not in use and park everything in the ceiling. Nice. <br /><br />Wireless motor control is probably the best solution for very big high-performance machines. You must do more programming, need more PCBs and more power supplies. The PCBs could be placed almost anywhere and you don't need to hide a lot of ugly cables. Semi nice. <br /><br />
+With one stationary PCB and long cables to stationary motors, it will be a lot of work to make it look tidy. You will have to transform your entire room into a RepRap frame. If quick and dirty solutions, like cables taped to the floor/ceiling, works for you, and if you never need your room for something else, then this solution gives you the most print performance for your time and your buck. Or at least, that's my guess."</li>
       </ul>
-      in the context of Hangprinter usage and development.
+    </p>
+    <p>
+      In my humble opinion, moving the motors to the anchors is a very obvious thing to do for anyone wanting to scale up Hangprinter.
+      For example Open Source Ecology had this on their Hangprinter wiki page already on 17 Dec, 2017:
     </p>
     <figure>
-      <a href="./media/the_why_again_2.png">
-        <img src="./media/the_why_again_2_small.png" alt="" width="500" height="108"/>
+      <a href="./media/OSE_10.png">
+        <img src="./media/OSE_10_small.png" alt="" width="500" height="436"/>
       </a>
       <figcaption>
       </figcaption>
     </figure>
     <p>
-      Reiterating my motivations and large scale ambitions in a <a href="https://vitana.se/opr3d/tbear/2017.html">7 Dec, 2017 blog post</a>.
+      Open Source Ecology seemed to think that Hangprinter was already being used for 3d printing of buildings.
+      They also knew that "Keep Motors on the anchor stations" was a prerequisite for a minimal viable product.
+    </p>
+    <p>
+      Note that Open Source Ecology, and <a href="https://www.facebook.com/groups/hangprinter/posts/181973192312848/">all the others</a> that <a href="https://www.facebook.com/groups/hangprinter/posts/212829602560540/">suggested locating the motors at the various anchor points</a> back in 2017 and early 2018, in all the links are <a href="https://www.facebook.com/groups/hangprinter/posts/208550112988489">laymen trying to help out</a>,
+      not even having "ordinary skill in the art" of cable driven robotics.
+      That's how obvious these ideas are.
+    </p>
+    <h2>What About the Guy Wires?</h2>
+    <p>
+      The patent in question describes guy wires going from the D-anchor (high-up) anchor down to the anchors (base stations) with tension in them to pull
+      the D-anchor downwards and outwards, and hence stabilizing it.
+      See for example lines 36 in Fig 4 from their patent, near the top of this web page.
+    </p>
+    <p>
+      We have never used the terms "guy-wire" or "suspension wire" much in the Hangprinter community.
+      However, we've had lines going between the D-anchor and the lower anchors, just like guy wires would, since April 2017.
+      See for example the video posted at the top of this article, or this image that was published on Dec 7, 2017:
     </p>
     <figure>
-      <a href="./media/OSE_basics_2017_2018.png">
-        <img src="./media/OSE_basics_2017_2018_small.png" alt="" width="500" height="197"/>
+      <a href="./media/people_want_to_reprap.JPG">
+        <img src="./media/people_want_to_reprap_small.JPG" alt="" width="500" height="749"/>
       </a>
       <figcaption>
+        Click the image for a larger version.
+        Hangprinter version 3 being demonstrated on Maker Fair Rome in December 2017.
+        Lines pulling the D-anchor down towards all three low anchors, with fixated start points and end points, are visible in the image
+        against the white background.
+      </figcaption>
+    </figure>
+    <figure>
+      <a href="./media/nick_scott_Feb_9_2018_facebook_group_small.jpg">
+        <img src="./media/nick_scott_Feb_9_2018_facebook_group_small.jpg" alt="" width="500" height="667"/>
+      </a>
+      <figcaption>
+        This render was <a href="https://www.facebook.com/groups/hangprinter/posts/320622445114588/">uploaded on Feb 9, 2018, by Nick Scott, to the public Hangprinter group on Facebook</a>.
       </figcaption>
     </figure>
     <p>
-      The start of <a href="https://wiki.opensourceecology.org/wiki/Hangprinter">Open Source Ecology Wiki's Hangprinter page, published on 17 December, 2017.</a>.
-      They also published about the same on
-      <a href="https://wiki.opensourceecology.org/wiki/Hangprinter">22 March, 2017</a>.
+      Although Hangprinter's guy wires are rerouted to also serve as transmitting motion forces to the end effector,
+      these lines double up to do the same guy-wire pulling as the static cables mentioned in the patent would do,
+      as long as all the lines are always tight, which they always are since the machine would otherwise loose
+      control over the effectors translational movement.
     </p>
     <p>
-      TODO: Facebook, Youtube comments, Reprap Forums...
+      Some might believe that the SkyBAAM's guy wires would have a constant tension in them, but in fact they would not have constant tension.
+      The tension in the SkyBAAM's guy wires would vary greatly depending on variation in the pulling force from above, and depending on
+      where within the build volume (called W in the patent) were at any given time, because the end effector is connected to the D-anchor (highest anchor),
+      where the guy wires are also connected.
+      Therefore, the conceptual difference between the SkyBAAM's guy wires and Hangprinter's guy wires is only superficial if at all.
     </p>
-    <!--figure>
-      <a href="./media/.png">
-        <img src="./media/.png" alt="" width="500" height="341"/>
-      </a>
-      <figcaption>
-      </figcaption>
-    </figure-->
+    <p>
+      So even though it might look like Hangprinter doesn't need guy wires, it does have them, as part of a dual purpose line routing configuration.
+    </p>
 
-    <h2>Prior Art Published in the Repo</h2>
+
+    <h2>But The UHMWPE Wires Then? Does Hangprinter Have Them?</h2>
     <p>
-      <a href="https://github.com/tobbelobb/hangprinter">The main Hangprinter repo</a> is the heart of the Hangprinter project.
+      Yes. Hangprinter has never used anything else.
+      See for example this <a href="https://www.appropedia.org/w/index.php?title=Clerck,_a_RepRap_3D_printer_hanging_from_the_ceiling&amp;oldid=318273#Costs">Bill Of Materials List from Dec 9, 2015</a>.
     </p>
     <p>
-      Hangprinter is developed following open source methodology.
-      This means that all source files are published to the repo,
-      freely for anyone to use,
-      for any purpose, soon after they are created.
-      They are also re-uploaded soon after any modification is made.
+      Ok, so we've been having some fun.
+      However, the similarities between the patented contraption and Hangprinter are not merely superficial.
+      We can dive deeper, and ask questions like:
     </p>
-    <p>
-      The re-uploads do not overwrite old work.
-      Instead, each change is registered in an elaborate version control system (git/Github),
-      that presents the newest version to the user, as well as saving and catalouging every previous version in chronological order.
-      Catalouged versions are available through git and the Github web interface.
-    </p>
-    <p>
-      The "source files" include, but are not limited to
-      <ul>
-        <li>CAD drawings</li>
-        <li>Source code for programming the firmware of any microcontrollers involved</li>
-        <li>Assembly and usage instructions</li>
-        <li>A copyright license</li>
-      </ul>
-    </p>
-    <p>
-      The version controlled, and publicly available directory that serves
-      the source files to the general public is called "the repo".
-      It can be found <a href="https://github.com/tobbelobb/hangprinter">here</a>.
-    </p>
-    <h3>Was The Repo Publicly Available?</h3>
+    <h2>But Was The Repo Publicly Available?</h2>
     <p>
       The general public had access and usage rights to the repo continously at all times since Dec 15, 2014, including on Apr 13, 2018.
     </p>
@@ -643,120 +687,7 @@
       The license in the repo allows and encourages such copying.
       Hangprinter was the most popular and widely known basis for cable driven robot development in 2017 and 2018.
     </p>
-    <h3>What Was In the Repo?</h3>
-    <p>
-      On Apr 13, 2018 the Hangprinter version 2 development had just been concluded (this happened on Feb 12, 2018).
-      Work on Hangprinter version 3 had been going on since April 2017.
-    </p>
-    <p>
-      The state of the art of version 2 in the repo on Apr 13, 2018 can be found in the Github catalouge, <a href="https://github.com/tobbelobb/hangprinter/tree/c9295eceff474d44da9f7ad971b1a9f0303fea45">here</a>.
-    </p>
-    <p>
-      The state of the art of version 3 in the repo on Apr 13, 2018 can be found in the Github catalouge, <a href="https://github.com/tobbelobb/hangprinter/tree/3fa54dbe37858ce02146a2d9f31bb17343fdf504">here</a>.
-    </p>
-    <p>
-      This is how a state-of-the art Hangprinter version 3 looked like in CAD on Apr 10, 2018, according to the repo:
-    </p>
-    <figure>
-      <a href="./media/HP3_status_Apr_10_2018.png">
-        <img src="./media/HP3_status_Apr_10_2018_small.png" alt="" width="500" height="304"/>
-      </a>
-      <figcaption>
-        Click the image for a larger version.
-        All individual parts were finished, but the file that renders their assembly was not finished.
-        Still, we can clearly see the intent of having motors offloaded from the effector.
-      </figcaption>
-    </figure>
-    <p>
-      This is how a state-of-the art Hangprinter version 2 looked like in CAD on Apr 10, 2018, according to the repo:
-    </p>
-    <figure>
-      <a href="./media/HP2_status_Feb_12_2018.png">
-        <img src="./media/HP2_status_Feb_12_2018_small.png" alt="" width="500" height="331"/>
-      </a>
-      <figcaption>
-        Click the image for a larger version.
-        This is largely similar to the machine we saw in the 2017 news articles linked above.
-      </figcaption>
-    </figure>
-    <h4>The Firmware</h4>
-    <p>
-      The firmware was also published in the same repo along with instructions of how to use them:
-    </p>
-    <figure>
-      <a href="./media/firmware_readme_v3.png">
-        <img src="./media/firmware_readme_v3_small.png" alt="" width="500" height="293"/>
-      </a>
-      <figcaption>
-        Click the image for a larger version.
-        This is the README file from the firmware directory of the repo.
-      </figcaption>
-    </figure>
-    <p>
-      A README file is common to include in any open source public repo, to help users understand how the source files are meant to be used.
-      The firmwares of Hangprinter version 2 and Hangprinter version 3 were identical and interchangeable apart from default configuration values.
-    </p>
-    <p>
-      The above README file told users of Hangprinter version 3, visiting on Apr 10, 2018, what they needed to know in order to use the firmware.
-      Since the text in the image is very small, I will quote some important parts to highlight them.
-    </p>
-    <p>
-        "Both Hangprinter v2 (master branch) and Hangprinter v3 (Gbg_version_3 branch) uses<br />
-          - Arduino Mega + RAMPS running and old fork or Marlin, contained in this directory<br />
-          - Three or four Mechaduino controlled steppers, running the firmware in the Mechaduino_subtree directory"
-    </p>
-    <p>
-      The quote made clear that users had a choice to omit one of the four motors if they wanted to.
-      This is because only 3 degrees of freedom are strictly needed to define a point in 3D space, as described in the patent.
-    </p>
-    <p>
-      Because cables can only pull, and not push the effector, at least one more force vector needs to work on the effector,
-      in addition to those from the three lines themselves, in order to keep all lines tight.
-      Some users preferred to use gravity, springs, and other tension controlling mechanisms, rather than buy a fourth motor and a fourth set of cables.
-    </p>
-    <p>
-      The second quote from the README describes a "tension controlling mechanism":
-    </p>
-    <p>
-      "Mechaduinos are there to provide closed loop control (no skipped steps), torque mode, and for making automatic calibration (locating anchor points) possible.
-      See <a href="https://vimeo.com/227893849">https://vimeo.com/227893849</a> and <a href="https://vimeo.com/227891846">https://vimeo.com/227891846</a> for demos of torque mode and autocal data collection."
-    </p>
-    <p>
-      A Mechaduino is a type of circuit board that controls the movement of one motor, executing commands sent to it by the central controller, which is another circuit board.
-      By sending a special command to the Hangprinter, the user could put any motor into "torque mode", and specify a requested constant torque.
-      This would cause the motor to exert a constant torque on the cable rewinder, in the direction that winds cable inwards, creating a constant tension in the attached cable.
-      Here's one of the linked videos that demonstrate it:
-    </p>
-    <figure>
-      <div class='embed-container'>
-        <iframe src="https://player.vimeo.com/video/227891846"
-            frameborder="0"
-            webkitallowfullscreen="true"
-            mozallowfullscreen="true"
-            allowfullscreen="true">
-        </iframe>
-      </div>
-      <figcaption>
-        Video published August 1, 2017, demonstrating how one can drag Hangprinter around by hand when in Torque mode (called tension control in the patent).
-      </figcaption>
-    </figure>
-    <figure>
-      <div class='embed-container'>
-        <iframe src="https://player.vimeo.com/video/227893849"
-            frameborder="0"
-            webkitallowfullscreen="true"
-            mozallowfullscreen="true"
-            allowfullscreen="true">
-        </iframe>
-      </div>
-      <figcaption>
-        Another video published on August 1, 2017, demonstrating how one can drag Hangprinter around by hand when in Torque mode (called tension control in the patent).
-        In this case the tension control is used to help collect auto calibration data.
-      </figcaption>
-    </figure>
-    <p>
-      This is an example of a "tension control mechanism", frequently mentioned in the patent.
-    </p>
+    <h3>And We Can Go Deeper...</h3>
     <p>
       Although the patent doesn't mention kinematics transforms in detail, I will mention Hangprinter's briefly here,
       to make the case that Hangprinter was capable of doing a superset of the effector movements that the authors envision in the patent.
@@ -794,13 +725,7 @@
       called Marlin Firmware, in a public merge thread (similar to a forum thread) that was publicly available and open for anyone to read and participate in.
       This means Hangprinter and all its features were becoming an integrated and widely available type of 3d printer at the firmware level at the time before April 13, 2018.
     </p>
-    <p>
-      In the merge thread, there were a mention of scaling Hangprinter up:
-      <ul>
-        <li>"I have seen videos on youtube , and the first thing I imagine , is the size limitless ......"</li>
-      </ul>
-    </p>
-    <p>
+    <!--p>
       There's also an <a href="https://github.com/MarlinFirmware/Marlin/issues/9101">earlier merge thread</a> with important info.
       Comments made publicly on Jan 9, 2018 relate to the obvious idea of adding more motion axes (called "cable rewinders" in the patent) than four to Hangprinter.
       <ul>
@@ -948,52 +873,6 @@ With one stationary PCB and long cables to stationary motors, it will be a lot o
 
     <h2>Prior Art Published On in the Facebook Group</h2>
 
-    <h2>What About the Guy Wires?</h2>
-    <p>
-      The patent in question describes guy wires going from the D-anchor (high-up) anchor down to the anchors (base stations) with tension in them to pull
-      the D-anchor downwards and outwards, and hence stabilizing it.
-      See for example lines 36 in Fig 4 from their patent, near the top of this web page.
-    </p>
-    <p>
-      We have never used the term "guy-wire" much in the Hangprinter community.
-      However, we've had lines going between the D-anchor and the lower anchors, just like guy wires would, since April 2017.
-      See for example the video posted at the top of this article, or this image that was published on Dec 7, 2017:
-    </p>
-    <figure>
-      <a href="./media/people_want_to_reprap.JPG">
-        <img src="./media/people_want_to_reprap_small.JPG" alt="" width="500" height="749"/>
-      </a>
-      <figcaption>
-        Click the image for a larger version.
-        Hangprinter version 3 being demonstrated on Maker Fair Rome in December 2017.
-        Lines pulling the D-anchor down towards all three low anchors, with fixated start points and end points, are visible in the image
-        against the white background.
-      </figcaption>
-    </figure>
-    <figure>
-      <a href="./media/nick_scott_Feb_9_2018_facebook_group_small.jpg">
-        <img src="./media/nick_scott_Feb_9_2018_facebook_group_small.jpg" alt="" width="500" height="667"/>
-      </a>
-      <figcaption>
-        This render was <a href="https://www.facebook.com/groups/hangprinter/posts/320622445114588/">uploaded on Feb 9, 2018, by Nick Scott, to the public Hangprinter group on Facebook</a>.
-      </figcaption>
-    </figure>
-    <p>
-      Although Hangprinter's guy wires are rerouted to also serve as transmitting motion forces to the end effector,
-      these lines double up to do the same guy-wire pulling as the static cables mentioned in the patent would do,
-      as long as all the lines are always tight, which they always are since the machine would otherwise loose
-      control over the effectors translational movement.
-    </p>
-    <p>
-      Some might believe that the SkyBAAM's guy wires would have a constant tension in them, but in fact they would not have constant tension.
-      The tension in the SkyBAAM's guy wires would vary greatly depending on variation in the pulling force from above, and depending on
-      where within the build volume (called W in the patent) were at any given time, because the end effector is connected to the D-anchor (highest anchor),
-      where the guy wires are also connected.
-      Therefore, the conceptual difference between the SkyBAAM's guy wires and Hangprinter's guy wires is only superficial if at all.
-    </p>
-    <p>
-      So even though it might look like Hangprinter doesn't need guy wires, it does have them, as part of a dual purpose line routing configuration.
-    </p>
     <h3>Comments on Edward Aylward's Crane Visuals</h3>
     <p>
       The idea of 3d printing houses with Hangprinter was frequently discussed in the Hangprinter Facebook group around 2017 and 2018.
@@ -1024,9 +903,9 @@ With one stationary PCB and long cables to stationary motors, it will be a lot o
       <ul>
         <li><font color="blue">Jeff Smith</font>: "Crane looks a bit more permanent than the building... You know they make those with wheels right?"</li>
         <li><font color="green">Ed Aylward</font>: "yes of course"    </li>
-        <!--li><font color="red">tobben</font>: "Mr Aylward has emailed me three times before, with talk of getting rich through a patent.<br /><br />
+        <li><font color="red">tobben</font>: "Mr Aylward has emailed me three times before, with talk of getting rich through a patent.<br /><br />
           You are welcome to get rich from using Hangprinter, Mr. Aylward. It is my honest opinion that you are wasting your time with this patent nonsense.<br /><br />
-          I have no money, you if you plan to sue me there is nothing there for you to win. As indicated by the above conversation, you will spend your time fighting the Hangprinter Community, not with getting rich."</li-->
+          I have no money, you if you plan to sue me there is nothing there for you to win. As indicated by the above conversation, you will spend your time fighting the Hangprinter Community, not with getting rich."</li>
       </ul>
     </p>
     <p>
@@ -1081,57 +960,16 @@ With one stationary PCB and long cables to stationary motors, it will be a lot o
       He could have been refused, or he might not have filed for a patent afterall.
       We will therefore consider Aylward's publication in the public Hangprinter group as prior art.
     </p>
-    <!--p>
+    <p>
       The conversation received a lot of attention, and the conversation was deleted by a moderator later that day for reasons that are unknown to me.
       Aylward were also blocked from the public group the same day, also for reasons unknown to me.
       I was not the creator of, nor a moderator of, the public Hangprinter group on Facebook.
     </p-->
 
-
-
-    <h3>Non-Hangprinter Prior Art</h3>
-    <p>
-      It's worth looking at the SkyDelta, and note that it too has striking similarities to the patented contraption.
-      I won't go into the details here, but in the detailed blog post from 2013 linked above, Brandon Heller includes a video that
-      shows similarities from an overview perspective:
-    </p>
-    <br />
     <h2>Why I Wrote This Prior Art Presentation</h2>
     <p>
-      I'm Torbjørn Ludvigsen, and I have been sharing Hangprinter developments openly since 2014.
-    </p>
-    <!--p>
-      Through creating an open community around the Hangprinter Project, I want to democratize large scale free form fabrication.
-    </p>
-    <p>
-      My dream is to help create a cluster of independent profitable companies, that that share a common technology basis in Hangprinter.
-    </p-->
-    <p>
-      I have shared the fruits of my efforts freely for eight years.
-      It's a costly endavour.
-      Some think I'm a hobbyist,
-      or that I'm naïve or that I'm just trying too hard to be noble.
-    </p>
-    <p>
-      As much as I love open source for it's own sake, I also have economical incentives.
-      I'm trying to put myself at the center of an emerging industry, namely cable driven robotics.
-      I do this by providing the technical groundwork, and by tying contacts in the process.
-    </p>
-    <p>
-      As the number of Hangprinter companies that make a profit increases,
-      so does the value of my network, and my professional opportunities.
-    </p>
-    <p>
-      The patent in question is problematic to me because its ideas are obvious and very general.
-      This scares away investments from current and future Hangprinter companies alike.
-      Therefore, I want:
-      <ol>
-        <li>The patent in question to be withdrawn or invalidated.</li>
-        <li>The patent holders (ORNL) to join the Hangprinter community, who will warmly welcome them.</li>
-      </ol>
-    </p>
-    <p>
-      I hope this presentation of prior art will enhance my chances of reaching these two goals.
+      I think the patent in question is problematic because it's way too general, and covers well known and established knowledge.
+      Nothing in the patent fulfills the criteria of being non-obvious to a person having ordinary skill in the art of cable driven robotics.
     </p>
   </post>
 </posts>
