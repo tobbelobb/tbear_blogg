@@ -218,7 +218,9 @@
       What we see here is of course a very general machine.
       The fewer the lines in the sketch, the more general the machine.
       Like futuristic art, you fill in the rest with your fantasy.
-      No, let's try to read the patent closely.
+    </p>
+    <p>
+      Let's try to avoid fantasy and read the patent closely instead.
     </p>
     <h2>So What Does The Patent In Question Cover?</h2>
     <p>
@@ -226,11 +228,13 @@
       As an engineer, I must say, the claims section reads like someone is preparing for a post-modernistic poetry slam competition.
     </p>
     <p>
-      From reading only the claims, it sounds to me like the patent covers
-      the field of translational parallel cable driven robotics in its entirety.
+      From reading only the claims, it sounds to me like the patent tries to cover
+      the field of translational parallel cable driven robotics in its entirety,
+      or a very siginificant portion of it, as if it didn't already exist.
     </p>
+    <h2>Any Number Of Lines And Base Stations</h2>
     <p>
-      Formulations like these in the detailed description give a similar impression:
+      Formulations like these in the detailed description give a similar, overly general impression:
       <ul>
         <li>"[...] an outdoor work site. Smaller-scale and/or indoor implementation are also contemplated"</li>
         <li>"one or more additional base stations"</li>
@@ -239,9 +243,23 @@
       </ul>
     </p>
     <p>
-      Maybe the rest of us will have to continue our research on machines with three or less base stations, then.
-      Or maybe it helps us to show that Hangprinter used between four and six lines in each direction already on July 5, 2017?
+      Maybe the rest of us will have to continue our research on machines with three or less base stations, then?
     </p>
+    <h3>Hangprinter's Number of Anchors (Base Stations)</h3>
+    <p>
+      As we will see later, in the firmware section, adding one anchor does not increase the computational complexity of the kinematics.
+      Keeping the option of adding more motors and anchors <a href="https://github.com/MarlinFirmware/Marlin/issues/9101#issuecomment-356319633">was being taken care of and discussed publicly before April 13, 2018</a>.
+    </p>
+    <p>
+        It was also widely understood in the Hangprinter community that we sooner or later would
+        want to <a href="https://wiki.opensourceecology.org/wiki/Hangprinter#Anchor_Module">add more anchors to Hangprinter</a>.
+    </p>
+    <p>
+      That was easy to understand because many <a href="https://www.youtube.com/watch?v=7HNAL8ZKdyM">translational parallel cable driven robots</a> with similar goals as ours
+      already had more than four anchor
+      <a href="https://www.youtube.com/watch?v=RCa8uDFzbsw">a long time before 13 Apr, 2018</a>, and thereby reaching larger volumes and better performance overall.
+    </p>
+    <h3>Hangprinter's Number of Lines</h3>
     <figure>
       <div class='embed-container'>
         <iframe src="https://player.vimeo.com/video/224390884"
@@ -252,21 +270,94 @@
         </iframe>
       </div>
       <figcaption>
-        Video published August 1, 2017, demonstrating how additional lines in all directions help constrain rotational degrees of freedom.
+        Video published August 1, 2017, demonstrating how additional parallel lines in all directions help constrain rotational degrees of freedom.
       </figcaption>
     </figure>
     <p>
-      Oh well, maybe all <a href="https://github.com/MarlinFirmware/Marlin/issues/9101#issuecomment-356319633">previous posted plans</a> to <a href="https://wiki.opensourceecology.org/wiki/Hangprinter#Anchor_Module">add more anchors to Hangprinter</a> must be put on hold?
-      Or maybe it helps us that many <a href="https://www.youtube.com/watch?v=7HNAL8ZKdyM">translational parallel cable driven robots</a> already had more than four anchor
-      <a href="https://www.youtube.com/watch?v=RCa8uDFzbsw">a long time before 13 Apr, 2018</a>?
+      The most common configuration around 2017-2018 was to have 2 or 4 lines in each of the ABC-directions, and 3 or 6 lines in the D direction, like this:
+    </p>
+    <figure>
+      <a href="./media/HP2_status_Feb_12_2018.png">
+        <img src="./media/HP2_status_Feb_12_2018_small.png" alt="" width="500" height="331"/>
+      </a>
+      <figcaption>
+          Assembly CAD file of Hangprinter version 2, as it was in <a href="https://github.com/tobbelobb/hangprinter/tree/c9295eceff474d44da9f7ad971b1a9f0303fea45">the public repo on April 10, 2018</a>.
+      </figcaption>
+    </figure>
+    <p>
+      However, we've also experimented with 1 and 3 lines in the ABC-directions and 1 (possibly doubled line) in the D-direction.
+    </p>
+    <figure>
+      <a href="./media/very_first_digital_sketch.png">
+        <img src="./media/very_first_digital_sketch_small.png" alt="" width="500" height="317"/>
+      </a>
+      <figcaption>
+          The very first sketch published on <a href="https://reprap.org/forum/read.php?178,344022,344022#msg-344022">April 23, 2014</a> had single lines in all directions.
+      </figcaption>
+    </figure>
+    <figure>
+      <a href="./media/three_z_configuration.png">
+        <img src="./media/three_z_configuration_small.png" alt="" width="500" height="476"/>
+      </a>
+      <figcaption>
+          Later in the same forum thread, this sketch with three D lines but single ABC-lines was published, on <a href="https://reprap.org/forum/read.php?178,344022,445524#msg-445524">Dec 9, 2014</a>.
+          Notice that at the time, we mixed up the Z-axis and the D-axis, just like the authors of the patent.
+          It's a common mistake for beginners.
+      </figcaption>
+    </figure>
+    <p>
+      <a href="https://www.facebook.com/groups/hangprinter/posts/212237115953122/">A Hangprinter remix dubbed "Hangaround" by Jonas Forsell, May 28, 2017</a>, actually used the single-ABC-triple-D configuration shown above.
+      Its rotations around the z-axis were completely unconstrained, a property it could have in common with the contraption on Fig 2 in the patent if the two attachment points or the 28B are stacked vertically.
+      These machines' end effectors will oscillate like a <a href="https://youtu.be/GGO2I_sN8hI">torsion pendulum</a> (not previous art).
     </p>
     <p>
-      You never know.
-      Let's see if something in this patent might still be valid.
+      We even experimented with using suspended closed loop belts, in thet place of cable winder spools,
+      so we could tie in any number of lines to the belt at any time, like this:
     </p>
-    <h2>Probably Mistaken Descriptions Of The Motion System</h2>
+    <figure>
+      <a href="./media/belt_tie_in.png">
+        <img src="./media/belt_tie_in_small.png" alt="" width="500" height="264"/>
+      </a>
+      <figcaption>
+          This concept image that creates a cable driven axis by tying a line to a belt loop was <a href="http://vitana.se/opr3d/tbear/2017#hangprinter_project_42">published on my blog on April 4, 2017</a>.
+          This was meant as a "concept of spanning up linear actuators between winch and ABC anchor points".
+          The caption from the post says: "The yellow loop runs around the motor shaft and an idler. The grey line is tied onto the yellow loop."
+      </figcaption>
+    </figure>
     <p>
-      The detailed description does narrow its scope down by specifying some things:
+      In the practical experiment, we kept the D-line a single one (or "doubled up" however you see it).
+      Called "single lift point or aerial hoist".
+    </p>
+    <p>
+      It turned out that if the D-line attachment point singular, then three attachment points in all the ABC-directions were
+      needed to properly constrain rotations.
+      Reposting the video here to save you from scrolling back.
+    </p>
+    <figure>
+      <video width="500" controls="true">
+        <source src="../2017/bilder/Freds_gopro.mp4" type="video/mp4"></source>
+      </video>
+      <figcaption>
+      </figcaption>
+    </figure>
+    <p>
+      The number of anchors and lines in a parallel cable driven robot is a quite
+      fluid and easily adjustable thing.
+      Specifying any fixed number, or saying "one or more" does not constitute an invention in the field.
+    </p>
+    <p>
+      Anyways, let's see if something in this patent might still be valid.
+    </p>
+    <h2>Probably Mistaken Descriptions Of SkyBAAM's Motion System</h2>
+    <p>
+      But if we read the patent more closely, it turns out that
+      the patent's claim 1, as well as the detailed description,
+      narrows the scope down considerably, if taken litterally.
+    </p>
+    <p>
+      A stationary end effector is described in several places.
+      Maybe they are all mistakes.
+      I will explain.
     </p>
     <p>
       "FIG 4. [...] three adjustable suspension cables 30 run from the aerial hoist 18 to the end effector 20, and perform the z-axis motion"
@@ -293,17 +384,21 @@
     </p>
     <p>
       The statement that the hoist "controls linear translation along the z-axis", or is "at least a portion extending along the z-axis" is repeated 8 times in the patent, including in claim 1.
-      In a Hangprinter, all the cable driven movement axes are involved in controlling any linear motion of the end effector, regardless of its direction or length.
     </p>
     <p>
-      Oh well, that suddenly made the patent very narrow, bordering on the unexpected.
+      In a Hangprinter type of robot, all the cable driven movement axes are involved in controlling any linear motion of the end effector.
+      If you want to move along a straight line, you must adjust the length of all the cables connected to the end effector.
+      No anchor, not even the highest one, has any special relation to either of the x, y, or z-axes of the Cartesian coordinate system.
+    </p>
+    <p>
+      That understanding makes the patents description of the movement system sound very narrow, bordering on the unexpected.
       Let's help the patent authors by assuming they made a mistake.
     </p>
     <p>
       After all, Fig 4 is only "another embodiment of a cable configuration for the cable-driven additive manufacturing system".
       So let's look closer for details that differentiates it from for example a Hangprinter.
     </p>
-    <h3>Descriptions of Angles In The Patent Text Are Wrong</h3>
+    <h3>Descriptions of Angles and Consraints In The Patent Text Are Wrong</h3>
     <p>
       "One difference is that three adjustable suspension cables 30 run from the aerial hoist 18 to the end effector 20 [...] all run off one cable winder 32 [...] so that their length is always identical."
     </p>
@@ -355,20 +450,27 @@
     <p>
       In claim 1 of the claims section, and ca 10 other places in the patent text,
       the patent authors insist on
-      base stations being the ones who control motions in the xy-plane:
+      base stations being the ones who control motions in the x-y plane specifically:
     </p>
     <p>
       "motion-control base stations disposed below the aerial hoist and configured to control linear translation of the end effector in an x-y plane defined by the x-axis and the y-axis".
     </p>
     <p>
-      However, in one section of the detailed description, they want to allow the lower cables to tilt up to 20 degrees (upwards?) during operation:
+      This is the same mistake as they did with the "z-axis" above.
+      In reality, all lines are extended or shortened during any linear movement, and base stations can not be constrained to only control motions in an x-y plane unless
+      all of the machine's motions are in that exact plane.
+    </p>
+    <p>
+      One section of the detailed description in the patent tells us more about what the authors were intending to describe.
+      They want to allow the lower cables to tilt up to 20 degrees (upwards?) during operation:
       "... or alternatively up to 20 degrees from parallel to the x-y plane during operation."
     </p>
     <p>
-      Let's assume all statements similar to "base stations control motions in the x-y plane" were mistakes from the patent authors side,
-      and that that 20 degrees of tilt is still "substantially horizontal".
-      Or let's actually allow much more tilt, or their machine maybe won't work,
-      since these angles get steep quickly when the end effector moves close to an anchor (base station).
+      But that's probably not enough either.
+      In reality, these angles get steep quickly when the end effector moves close to an anchor (base station).
+    </p>
+    <p>
+      These angles will not at all be "substantially in the x-y plane" or in any other fixed plane.
     </p>
     <h3>Last Geometry Nitpick, I Promise</h3>
     <p>
@@ -388,6 +490,7 @@
       </a>
       <figcaption>
         Fig 7 from from the patent in question.
+        It does not rotate during operation, from what we can see here or read in the patent.
       </figcaption>
     </figure>
     <figure>
@@ -1022,77 +1125,6 @@ With one stationary PCB and long cables to stationary motors, it will be a lot o
       called Marlin Firmware, in a public merge thread (similar to a forum thread) that was open for anyone to read and participate in.
       This means Hangprinter and all its features were becoming an integrated and widely available type of 3d printer at the firmware level at the time before April 13, 2018.
     </p>
-    <h2>But SkyBAAM Has A Vaguely Specified Number Of Lines In Each Direction! Surely, Hangprinter Didn't Publish Prior Art On Every Possible Combination?</h2>
-    <p>
-      No, not every possible combination, but quite a few.
-    </p>
-    <p>
-      The most common configuration around 2017-2018 was to have 2 or 4 lines in each of the ABC-directions, and 3 or 6 lines in the D direction, like this:
-    </p>
-    <figure>
-      <a href="./media/HP2_status_Feb_12_2018.png">
-        <img src="./media/HP2_status_Feb_12_2018_small.png" alt="" width="500" height="331"/>
-      </a>
-      <figcaption>
-          Assembly CAD file of Hangprinter version 2, as it was in <a href="https://github.com/tobbelobb/hangprinter/tree/c9295eceff474d44da9f7ad971b1a9f0303fea45">the public repo on April 10, 2018</a>.
-      </figcaption>
-    </figure>
-    <p>
-      However, we've also experimented with 1 and 3 lines in the ABC-directions and 1 (possibly doubled line) in the D-direction.
-    </p>
-    <figure>
-      <a href="./media/very_first_digital_sketch.png">
-        <img src="./media/very_first_digital_sketch_small.png" alt="" width="500" height="317"/>
-      </a>
-      <figcaption>
-          The very first sketch published on <a href="https://reprap.org/forum/read.php?178,344022,344022#msg-344022">April 23, 2014</a> had single lines in all directions.
-      </figcaption>
-    </figure>
-    <figure>
-      <a href="./media/three_z_configuration.png">
-        <img src="./media/three_z_configuration_small.png" alt="" width="500" height="476"/>
-      </a>
-      <figcaption>
-          Later in the same forum thread, this sketch with three D lines but single ABC-lines was published, on <a href="https://reprap.org/forum/read.php?178,344022,445524#msg-445524">Dec 9, 2014</a>.
-          Notice that at the time, we mixed up the Z-axis and the D-axis, just like the authors of the patent.
-          It's a common mistake for beginners.
-      </figcaption>
-    </figure>
-    <p>
-      <a href="https://www.facebook.com/groups/hangprinter/posts/212237115953122/">A Hangprinter remix dubbed "Hangaround" by Jonas Forsell, May 28, 2017</a>, actually used the single-ABC-triple-D configuration shown above.
-      Its rotations around the z-axis were completely unconstrained, a property it could have in common with the contraption on Fig 2 in the patent if the two attachment points or the 28B are stacked vertically.
-      These machines' end effectors will oscillate like a <a href="https://youtu.be/GGO2I_sN8hI">torsion pendulum</a> (not previous art).
-    </p>
-    <p>
-      We even experimented with using suspended closed loop belts, in thet place of cable winder spools,
-      so we could tie in any number of lines to the belt at any time, like this:
-    </p>
-    <figure>
-      <a href="./media/belt_tie_in.png">
-        <img src="./media/belt_tie_in_small.png" alt="" width="500" height="264"/>
-      </a>
-      <figcaption>
-          This concept image that creates a cable driven axis by tying a line to a belt loop was <a href="http://vitana.se/opr3d/tbear/2017#hangprinter_project_42">published on my blog on April 4, 2017</a>.
-          This was meant as a "concept of spanning up linear actuators between winch and ABC anchor points".
-          The caption from the post says: "The yellow loop runs around the motor shaft and an idler. The grey line is tied onto the yellow loop."
-      </figcaption>
-    </figure>
-    <p>
-      In the practical experiment, we kept the D-line a single one (or "doubled up" however you see it).
-      Called "single lift point or aerial hoist".
-    </p>
-    <p>
-      It turned out that if the D-line attachment point singular, then three attachment points in all the ABC-directions were
-      needed to properly constrain rotations.
-      Reposting the video here to save you from scrolling back.
-    </p>
-    <figure>
-      <video width="500" controls="true">
-        <source src="../2017/bilder/Freds_gopro.mp4" type="video/mp4"></source>
-      </video>
-      <figcaption>
-      </figcaption>
-    </figure>
     <!--h2>Hey, You're Not Mentioning Their Clames Section!</h2>
     <p>
       "The additive manufacturing system of claim 9, wherein the at least one suspension cable comprises a single suspension cable."
@@ -1246,8 +1278,10 @@ With one stationary PCB and long cables to stationary motors, it will be a lot o
       and that they can to do what they want with it without asking for a license.
     </p>
     <p>
-      Very few in comparison know about the patented copy called "SkyBAAM", which sits at a total of two - 2 - public publications (one of which is the patent itself),
+      Very few in comparison know about the patented copy called "SkyBAAM", which sits at a total of two public publications (one of which is the patent itself),
       both published much later and with a very opaque language, and having no community outside of a small closed circle.
+      On the filing date, SkyBAAM had zero publications out on the open internet,
+      compared to several hundred for Hangprinter.
     </p>
     <h3>Why I Wrote This Prior Art Presentation</h3>
     <p>
