@@ -1,3 +1,4 @@
+saxon-xslt hangprinter-is-prior-art/hangprinter-is-prior-art.xml blogtemplate.xsl > hangprinter-is-prior-art/index.html
 saxon-xslt 2022/2022.xml blogtemplate.xsl > 2022/index.html
 saxon-xslt 2021/2021.xml blogtemplate.xsl > 2021/index.html
 saxon-xslt 2020/2020.xml blogtemplate.xsl > 2020/index.html
