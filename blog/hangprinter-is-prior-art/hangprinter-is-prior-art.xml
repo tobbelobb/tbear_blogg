@@ -691,7 +691,7 @@
       We'll come back to the explicit spring later in this text.
     </p>
     <p>
-      So, the "aerial hoist" does the same job as the v-shaped bearings in this image, from a previously presented video (except Hangprinter avoids springs if it can):
+      So, the "aerial hoist" does the same job as the v-shaped bearings in this image (except Hangprinter avoids springs if it can):
     </p>
     <figure>
       <a href="./media/thread_lines.png">
@@ -718,7 +718,7 @@
     </figure>
     <p>
       SkyBAAM's aerial hoist also redirects the cable.
-      But all Hangprinter (and all SkyBAAM) will be redirected in practice.
+      But all of Hangprinter's (and all of SkyBAAM's) cables will be redirected in practice.
       Motor placement on a cable driven robot is quite arbitrary because cable redirection is so simple and cheap.
     </p>
     <p>
@@ -734,14 +734,13 @@
         An early sketch of Hangprinter version 1,
         <a href="https://reprap.org/forum/read.php?178,344022,507773#msg-507773">published on May 11, 2015</a>.
         All the blue and purple you see are bearings.
-        I'm not proud of this blurb, as it over-complicates the simple task of routing lines, much like SkyBAAM does.
-        Another common mistake for aspiring Hangprinter designers.
+        I'm not proud of this blurb, as it over-complicates the simple task of routing lines, much like the patent's Fig 8 does.
+        Doing so is a common mistake for aspiring Hangprinter designers.
       </figcaption>
     </figure>
     <h2>But SkyBAAM Adds Springs! More Cleverer Than Hangprinter, No?</h2>
     <p>
-      But there's one last peculiar thing about Fig 8.
-      It includes springs (74) between the top hook and the cables.
+      It's true that Fig 8 includes explicit springs (74) between the top hook and the cables, and that Hangprinters don't have this.
     </p>
     <p>
       Introducing springs here and there to keep lines tight or avoid over-tightening, is a common beginner's mistake when designing Hangprinters,
