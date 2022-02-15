@@ -3,18 +3,18 @@
 <posts year="2022">
   <post id="prior_art_1" heading="Prior Art Relevant to Patent US 11230032" date="9-2-2022">
     <p>
-      The <a href="https://wayfinder.digital/fedinvent/patents-2022/details-patents-20220125.html#11230032_DOE">patent in question</a> was filed on Apr 13, 2018.
+      The <a href="https://wayfinder.digital/fedinvent/patents-2022/details-patents-20220125.html#11230032_DOE">patent in question</a> was filed on April 13, 2018.
       We will refer to the patented contraption as SkyBAAM, or "the patented contraption".
-      We will present prior art relevant to SkyBAAM, all of which was unmentioned and unreferenced in the patent.
-      The prior art we present will mostly have been published within context of the open source project called Hangprinter.
+      We will present prior art relevant to SkyBAAM, all of which were unmentioned and unreferenced in the patent.
+      We find most of our prior art examples within the open source project called Hangprinter.
     </p>
     <p>
       The patent contains many ideas that have been explored, published, and then discontinued within the Hangprinter community
-      before Apr 13, 2018.
+      before April 13, 2018.
     </p>
     <p>
       This writing will be long and detailed.
-      The corpus of relevant prior art published publicly before April 13 2018 is vast,
+      The corpus of relevant prior art published publicly before April 13, 2018, is vast
       since the Hangprinter Project was already four years old at the time.
       This prior art includes, but is not limited to:
       <ul>
@@ -106,16 +106,22 @@
           </ul>
         </li>
         <li>An <a href="https://patents.google.com/patent/RU166163U1/ru">unreferenced Russian Patent</a> (not Hangprinter)</li>
-        <li>A widely known cable driven robotics project called <a href="https://iaac.net/project/on-site-robotics/">on site robotics</a> (not Hangprinter)</li>
+        <li>A widely known cable-driven robotics project called <a href="https://iaac.net/project/on-site-robotics/">on site robotics</a> (not Hangprinter)</li>
+        <li>Three other unreferenced robots that are similar to SkyBAAM both in name and workings:
+        <ul>
+          <li><a href="https://designmakeshare.wordpress.com/2013/09/16/introducing-skydelta/">SkyDelta</a> (not Hangprinter)</li>
+          <li><a href="https://www.instructables.com/Sky-Printer-Prototyping-An-Adaptable-Large-Scale-3/">Sky Printer</a> (not Hangprinter)</li>
+          <li><a href="https://en.wikipedia.org/w/index.php?title=Skycam&amp;oldid=827979277">SkyCam</a> (not Hangprinter)</li>
+        </ul></li>
       </ul>
-      Note that all links in this post points to previous art that was published publicly before April 13, 2018, unless "not previous art" is noted directly after the link.
+      Note that all links in this post points to prior art published before April 13, 2018, unless "not prior art" is noted directly after the link.
     </p>
     <br />
     <h2>Hangprinter References In the Patent</h2>
     <p>
       The patent made two references to Hangprinter:
       <ul>
-        <li><a href="https://en.wikipedia.org/w/index.php?title=Hangprinter&amp;oldid=831632485">The English Wikipedia Article, who was mostly just a list of links at the time</a></li>
+        <li><a href="https://en.wikipedia.org/w/index.php?title=Hangprinter&amp;oldid=831632485">The English Wikipedia article, which was mostly just a list of links at the time</a></li>
         <li><a href="https://www.3ders.org/articles/20170308-frameless-hangprinter-reprap-turns-an-entire-room-into-a-3d-printer.html">An out of date article from 3ders.org</a></li>
       </ul>
     </p>
@@ -124,13 +130,14 @@
       I will therefore present a selection of prior art here, picked from the long list above.
     </p>
     <p>
-      I will comment on prior art that covers the highest level, most general ideas presented in the patent first,
+      I will comment on prior art covering the highest level, most general ideas presented in the patent first,
       and slowly zoom in on technical details and implementation.
-      However, some similarities are visible even at a long distance, and without further explanation, so I will cover those first.
+      However, some similarities are visible at a distance, without further explanation.
+      I will cover those first.
     </p>
-    <h2>Full Concept From A Distance</h2>
+    <h2>Complete Concept From A Distance</h2>
     <p>
-      The first thing that strikes you, is how the Fig 2 from the patent in question
+      The first thing that strikes you is how Fig 2 from the patent in question
       looks like a feature-by-feature copy of the most widely published press images of Hangprinter from 2017.
     </p>
     <figure>
@@ -138,7 +145,7 @@
         <img src="./media/Babylon2_small.jpeg" alt="" width="500" height="333"/>
       </a>
       <figcaption>
-          This image was published <a href="https://vitana.se/opr3d/tbear/2017#hangprinter_project_33">in a blog post on 24 Feb, 2017</a>.
+          I published this image <a href="https://vitana.se/opr3d/tbear/2017#hangprinter_project_33">in a blog post on February 24, 2017</a>.
       </figcaption>
     </figure>
     <figure>
@@ -146,28 +153,32 @@
         <img src="./media/Their_fig_2_small.png" alt="" width="500" height="325"/>
       </a>
       <figcaption>
-        Fig 2 from from the patent in question.
+        Fig 2 from the patent in question.
       </figcaption>
     </figure>
     <p>
-      The artistic expression (as well as the physical implementation),
-      of an open circular structure with tall arched windows,
-      and a thick helical structure along the outer wall,
-      being 3d printed by a cable driven parallel robot with four cable-directions,
-      one of which is near vertical,
-      driving an end effector with rotational degrees of freedom being constrained by pairs of generally parallel cables,
-      of which anchors (called base stations in the patent) are potentially lifted above ground level with thin tall structures,
-      was published widely on all 3d printing news sites in Feb/March 2017, a year before the patent was filed.
+      The artistic expression (as well as the physical implementation) of:
+      <ul>
+        <li>an open circular structure with tall arched windows,</li>
+        <li>a thick helical structure along the outer wall,</li>
+        <li>being 3d printed,</li>
+        <li>by a cable-driven parallel robot,</li>
+        <li>with four cable directions,</li>
+        <li>one of which is near vertical,</li>
+        <li>and an end effector with rotational degrees of freedom constrained,</li>
+        <li>by pairs of generally parallel cables,</li>
+        <li>of which anchors are potentially lifted above ground level,</li>
+        <li>by thin, tall structures,</li>
+      </ul>
+      was published widely on all 3d printing news sites in February/March 2017, a year before the patent was filed.
     </p>
     <figure>
       <video width="500" controls="true">
         <source src="./media/front_page_hangprinter-org_2.mp4" type="video/mp4"></source>
       </video>
       <figcaption>
-          The video shows how the 3d animation covering
-        <a href="https://web.archive.org/web/20170421035011/http://hangprinter.org/">hangprinter.org's front page for a full year before the patent in question was filed</a>.
-        <a href="https://twitter.com/tobbelobb/status/849040245593165824">hangprinter.org was launched on Apr 4, 2017</a>,
-          and the animation was there until it was <a href="https://twitter.com/tobbelobb/status/1308064219355648002">replaced on 21 Sep, 2020</a>.
+        This 3d animation covered
+        <a href="https://web.archive.org/web/20170421035011/http://hangprinter.org/">hangprinter.org's front page for an entire year before the patent in question was filed</a>.
       </figcaption>
     </figure>
     <p>
@@ -181,11 +192,11 @@
         <li><a href="https://all3dp.com/open-source-hangprinter-prints-without-frame/">all3dp.com</a></li>
       </ul>
     </p>
-    <h2>Look Closer And Similarities Continue To Appear</h2>
+    <h2>Look Closer, And Similarities Continue To Appear</h2>
     <p>
-      The Hangprinter prototype that was most visually similar to Fig 4 in the patent might be this
-      early version 3 prototype, that was <a href="https://www.facebook.com/groups/hangprinter/posts/195485447628289/">published and explained in the Facebook group on April 23, 2017</a>.
-      The same prototype is also explained some detail
+      The Hangprinter most visually similar to Fig 4 might be a
+      early version 3 prototype <a href="https://www.facebook.com/groups/hangprinter/posts/195485447628289/">published and explained in the Facebook group on April 23, 2017</a>.
+      The same prototype was also described in some detail
       <a href="http://vitana.se/opr3d/tbear/2017#hangprinter_project_42">in a blog post on April 4, 2017</a>.
     </p>
     <figure>
@@ -193,8 +204,8 @@
         <source src="../2017/bilder/Freds_gopro.mp4" type="video/mp4"></source>
       </video>
       <figcaption>
-        The video shows the first Hangprinter prototype that offloaded the motors and most of the electronics to one of the anchors.
-        Published on April 4, 2017.
+        The video shows the first Hangprinter prototype that offloaded the motors and most electronics to one of the anchors -
+        published on April 4, 2017.
       </figcaption>
     </figure>
     <figure>
@@ -202,7 +213,7 @@
         <img src="./media/Their_fig_4_small.png" alt="" width="500" height="436"/>
       </a>
       <figcaption>
-        Fig 4 from from the patent in question.
+        Fig 4 from the patent in question.
       </figcaption>
     </figure>
     <figure>
@@ -210,17 +221,14 @@
         <img src="./media/Their_fig_5_small.png" alt="" width="500" height="403"/>
       </a>
       <figcaption>
-        Fig 5 from from the patent in question.
-        All the entities we see, except the end effector in the middle, may appear in any number in some embodiment of the invention.
+        Fig 5 from the patent in question.
+        According to the patent, anchors and lines may appear in any number in some embodiment of the patented invention.
       </figcaption>
     </figure>
     <p>
-      What we see here is of course a very general machine.
-      The fewer the lines in the sketch, the more general the machine.
-      Like futuristic art, you fill in the rest with your fantasy.
-    </p>
-    <p>
-      Let's try to avoid fantasy and read the patent closely instead.
+      The patent seems very broad.
+      I might have misunderstood it because it's hard to read.
+      Let's try to read it closely.
     </p>
     <h2>So What Does The Patent In Question Cover?</h2>
     <p>
@@ -228,9 +236,9 @@
       As an engineer, I must say, the claims section reads like someone is preparing for a post-modernistic poetry slam competition.
     </p>
     <p>
-      From reading only the claims, it sounds to me like the patent tries to cover
-      the field of translational parallel cable driven robotics in its entirety,
-      or a very significant portion of it, as if it didn't already exist.
+      From reading only the claims, it sounds like the patent tries to cover
+      the field of translational parallel cable-driven robotics in its entirety,
+      or a very significant portion of it as if it didn't already exist.
     </p>
     <h2>Any Number Of Lines And Base Stations</h2>
     <p>
@@ -243,21 +251,21 @@
       </ul>
     </p>
     <p>
-      Maybe the rest of us will have to continue our research on machines with three or less base stations, then?
+      Maybe the rest of us will have to continue our research on machines with three or fewer base stations, then?
     </p>
-    <h3>Hangprinter's Number of Anchors (Base Stations)</h3>
+    <h3>Hangprinter's Number of Anchors</h3>
     <p>
       As we will see later, in the firmware section, adding one anchor does not increase the computational complexity of the kinematics.
-      Keeping the option of adding more motors and anchors <a href="https://github.com/MarlinFirmware/Marlin/issues/9101#issuecomment-356319633">was being taken care of and discussed publicly before April 13, 2018</a>.
+      The option of adding more motors and anchors <a href="https://github.com/MarlinFirmware/Marlin/issues/9101#issuecomment-356319633">was being taken care of and discussed publicly before April 13, 2018</a>.
     </p>
     <p>
         It was also widely understood in the Hangprinter community that we sooner or later would
         want to <a href="https://wiki.opensourceecology.org/wiki/Hangprinter#Anchor_Module">add more anchors to Hangprinter</a>.
     </p>
     <p>
-      That was easy to understand because many <a href="https://www.youtube.com/watch?v=7HNAL8ZKdyM">translational parallel cable driven robots</a> with similar goals as ours
-      already had more than four anchor
-      <a href="https://www.youtube.com/watch?v=RCa8uDFzbsw">a long time before 13 Apr, 2018</a>, and thereby reaching larger volumes and better performance overall.
+      That was easy to understand because many <a href="https://www.youtube.com/watch?v=7HNAL8ZKdyM">translational parallel cable-driven robots</a> with similar goals as ours
+      already had more than four anchors
+      <a href="https://www.youtube.com/watch?v=RCa8uDFzbsw">a long time before April 13, 2018</a>, thereby reaching larger volumes and better performance overall.
     </p>
     <h3>Hangprinter's Number of Lines</h3>
     <figure>
@@ -274,18 +282,18 @@
       </figcaption>
     </figure>
     <p>
-      The most common configuration around 2017-2018 was to have 2 or 4 lines in each of the ABC-directions, and 3 or 6 lines in the D direction, like this:
+      The most common configuration in 2017-2018 was to have 2/4 lines in ABC-directions, and 3/6 lines in the D direction, like this:
     </p>
     <figure>
       <a href="./media/HP2_status_Feb_12_2018.png">
         <img src="./media/HP2_status_Feb_12_2018_small.png" alt="" width="500" height="331"/>
       </a>
       <figcaption>
-          Assembly CAD file of Hangprinter version 2, as it was in <a href="https://github.com/tobbelobb/hangprinter/tree/c9295eceff474d44da9f7ad971b1a9f0303fea45">the public repo on April 10, 2018</a>.
+          The Hangprinter version 2, the way it was in <a href="https://github.com/tobbelobb/hangprinter/tree/c9295eceff474d44da9f7ad971b1a9f0303fea45">the public repo on April 10, 2018</a>.
       </figcaption>
     </figure>
     <p>
-      However, we've also experimented with 1 and 3 lines in the ABC-directions and 1 (possibly doubled line) in the D-direction.
+      However, we experimented with 1 and 3 lines in the ABC-directions and 1 (possibly doubled line) in the D-direction.
     </p>
     <figure>
       <a href="./media/very_first_digital_sketch.png">
@@ -300,15 +308,14 @@
         <img src="./media/three_z_configuration_small.png" alt="" width="500" height="476"/>
       </a>
       <figcaption>
-          Later in the same forum thread, this sketch with three D lines but single ABC-lines was published, on <a href="https://reprap.org/forum/read.php?178,344022,445524#msg-445524">Dec 9, 2014</a>.
+          Later in the same forum thread, this sketch with three D-lines but single ABC-lines was published, on <a href="https://reprap.org/forum/read.php?178,344022,445524#msg-445524">December 9, 2014</a>.
           Notice that at the time, we mixed up the Z-axis and the D-axis, just like the authors of the patent.
           It's a common mistake for beginners.
       </figcaption>
     </figure>
     <p>
-      <a href="https://www.facebook.com/groups/hangprinter/posts/212237115953122/">A Hangprinter remix dubbed "Hangaround" by Jonas Forsell, May 28, 2017</a>, actually used the single-ABC-triple-D configuration shown above.
+      <a href="https://www.facebook.com/groups/hangprinter/posts/212237115953122/">A Hangprinter remix dubbed "Hangaround" by Jonas Forsell, May 28, 2017</a>, used the single-ABC-triple-D configuration shown above.
     </p>
-
     <figure>
       <a href="./media/hangaround.png">
         <img src="./media/hangaround_small.png" alt="" width="500" height="283"/>
@@ -319,30 +326,30 @@
     </figure>
     <p>
       Its rotations around the z-axis were completely unconstrained, a property it could have in common with the contraption on Fig 2 in the patent if the two attachment points or the 28B are stacked vertically.
-      These machines' end effectors therefore oscillate like a <a href="https://youtu.be/GGO2I_sN8hI">torsion pendulum</a> (not previous art) during operation.
+      Therefore, these machines' end effectors oscillate like a <a href="https://youtu.be/GGO2I_sN8hI">torsion pendulum</a> (not prior art) during operation.
     </p>
     <p>
-      We even experimented with using suspended closed loop belts instead of cable winder spools,
-      so we could tie in any number of lines to the belt at any time, like this:
+      We even experimented with using suspended closed loop belts instead of cable winder spools
+      so that we could tie in any number of lines to the belt at any time, like this:
     </p>
     <figure>
       <a href="./media/belt_tie_in.png">
         <img src="./media/belt_tie_in_small.png" alt="" width="500" height="264"/>
       </a>
       <figcaption>
-          This concept image that creates a cable driven axis by tying a line to a belt loop was <a href="http://vitana.se/opr3d/tbear/2017#hangprinter_project_42">published on my blog on April 4, 2017</a>.
-          This was meant as a "concept of spanning up linear actuators between winch and ABC anchor points".
+          I published this image on my blog <a href="http://vitana.se/opr3d/tbear/2017#hangprinter_project_42">on April 4, 2017</a>.
+          It shows how we created a cable-driven axis by tying a line to a belt loop.
+          I described it as a concept of spanning up linear actuators between winch and ABC anchor points.
           The caption from the post says: "The yellow loop runs around the motor shaft and an idler. The grey line is tied onto the yellow loop."
       </figcaption>
     </figure>
     <p>
-      In the practical experiment, we kept the D-line a single one (or "doubled up" however you see it).
-      Called "single lift point or aerial hoist".
+      We kept the D-line a single one (or "doubled up" however you see it).
     </p>
     <p>
-      It turned out that if the D-line attachment point singular, then three attachment points in all the ABC-directions were
-      needed to properly constrain rotations.
-      Reposting the video here to save you from scrolling back.
+      It turned out that if the D-line attachment point was singular, then the end effector needed three attachment points in all the ABC-directions
+      to constrain its rotations properly.
+      I repost the video here to save you from scrolling back.
     </p>
     <figure>
       <video width="500" controls="true">
@@ -352,18 +359,17 @@
       </figcaption>
     </figure>
     <p>
-      The number of anchors and lines in a parallel cable driven robot is a quite
-      fluid and easily adjustable thing.
-      Specifying any fixed number, or saying "one or more" does not constitute an invention in the field.
+      The number of anchors and lines in a parallel cable-driven robot is quite fluid and easily adjustable.
+      Specifying a set of fixed numbers or saying "one or more" does not constitute an invention in the field.
     </p>
     <p>
       Anyways, let's see if something in this patent might still be valid.
     </p>
     <h2>Probably Mistaken Descriptions Of SkyBAAM's Motion System</h2>
     <p>
-      If we read the patent more closely, it turns out that
-      the patent's claim 1, as well as the detailed description,
-      narrows the scope down considerably, if taken literally.
+      If we read the patent more closely,
+      it turns out that the patent's claim 1 and the detailed description
+      narrow the scope down considerably if taken literally.
     </p>
     <p>
       A stationary end effector is described in several places.
@@ -376,7 +382,7 @@
     <p>
       Since "the fixed platform 34" is stationary,
       the formulation "z-axis motion" indicates that
-      the end effector 20 can only move along a straight vertical line line.
+      the end effector 20 can only move along a straight vertical line.
       Like this:
     </p>
     <figure>
@@ -384,30 +390,30 @@
         <img src="./media/HP3_status_Apr_10_2018_small.png" alt="" width="500" height="304"/>
       </a>
       <figcaption>
-        Hangprinter version 3, assembly file as it looked <a href="https://github.com/tobbelobb/hangprinter/tree/3fa54dbe37858ce02146a2d9f31bb17343fdf504">in the Hangprinter repo on Apr 10, 2018</a>.
-        We were unaware at the time, that our machine, even in this stripped down form, could deserve a patent.
+        Hangprinter version 3, assembly file as it looked <a href="https://github.com/tobbelobb/hangprinter/tree/3fa54dbe37858ce02146a2d9f31bb17343fdf504">in the Hangprinter repo on April 10, 2018</a>.
+        We were unaware at the time that our machine, even in this stripped-down form, could deserve a patent.
       </figcaption>
     </figure>
     <p>
       Movements "along the z-axis" and movements "towards the highest anchor" are generally not the same in a Hangprinter type of robot.
-      They are only the same if the end effector is situated directly below the highest anchor, and moves in a straight line towards the highest anchor
-      (given that the z-axis of the machine is vertical, which is stated other parts of the patent text).
+      They are only the same if the end effector is situated directly below the highest anchor and moves in a straight line towards or away from the highest anchor
+      (given that the z-axis of the machine is vertical, which the patent text states clearly elsewhere).
     </p>
     <p>
-      The statement that the hoist "controls linear translation along the z-axis", or is "at least a portion extending along the z-axis" is repeated 8 times in the patent, including in claim 1.
+      The statement that the hoist "controls linear translation along the z-axis" or is "at least a portion extending along the z-axis" is repeated eight times in the patent, including in claim 1.
     </p>
     <p>
-      In a Hangprinter type of robot, all the cable driven movement axes are involved in controlling any linear motion of the end effector.
+      In a Hangprinter type of robot, all the cable-driven movement axes are involved in controlling any linear motion of the end effector.
       If you want to move along a straight line, you must adjust the length of all the cables connected to the end effector.
-      No anchor, not even the highest one, has any special relation to either of the x, y, or z-axes of the Cartesian coordinate system.
+      No anchor, not even the highest one, has any particular relation to either of the x, y, or z-axes of the Cartesian coordinate system.
     </p>
     <p>
-      That understanding makes the patents description of the movement system sound very narrow, bordering on the unexpected.
+      That understanding makes the patent's description of the movement system sound very narrow, bordering on the unexpected.
       Let's help the patent authors by assuming they made a mistake.
     </p>
     <p>
       After all, Fig 4 is only "another embodiment of a cable configuration for the cable-driven additive manufacturing system".
-      So let's look closer for details that differentiates it from for example a Hangprinter.
+      So let's look closer for details that differentiate it from Hangprinters and other embodiments.
     </p>
     <h3>Descriptions of Angles and Constraints In The Patent Text Are Wrong</h3>
     <p>
@@ -426,19 +432,19 @@
         </iframe>
       </div>
       <figcaption>
-        Video published Dec 8, 2016, demonstrating a worm drive on the D-axis on-board cable rewinder.
-        We were unaware at the time that having three lines around a single spool could constitute an invention, so we didn't mention it, but it's clearly visible.
+        Video published December 8, 2016, demonstrating a worm drive on the D-axis onboard cable rewinder.
+        We were unaware at the time that having three lines around a single spool could constitute an invention, so we didn't mention it, but it's visible.
         The "cable rewinder" is onboard the end effector.
-        The "aerial hoist" is shown, in the form of free hanging bearings, at the start of the video.
+        At the start of the video, the "aerial hoist" is shown in the form of free-hanging bearings.
       </figcaption>
     </figure>
     <p>
       "This keeps the end effector 20 from tilting, which freezes two rotational DOF of the end effector 20."
     <p>
     </p>
-      I'm unsure what is meant by "freezing", since degrees of freedom are independent of degrees of temperature.
+      I'm unsure what "freezing" means here since degrees of freedom are independent of degrees of temperature.
       Ok, let's assume they made a mistake again.
-      They surely meant "constrains two rotational DOF", right?
+      They surely mean "constrains two rotational DOF", right?
       Like this:
     </p>
     <figure>
@@ -446,20 +452,20 @@
         <img src="./media/Overview_rot_small.jpeg" alt="" width="500" height="750"/>
       </a>
       <figcaption>
-        Image of Hangprinter version 2 published on my blog <a href="https://torbjornludvigsen.com/blog/2016/#hangprinter_project_27">on 14 Dec, 2016</a>.
+        Image of Hangprinter version 2 published on my blog <a href="https://torbjornludvigsen.com/blog/2016/#hangprinter_project_27">on December 14, 2016</a>.
       </figcaption>
     </figure>
     <p>
-      However, even if they meant "constrained", they would still be in error.
-      Those rotational degrees of freedom are not constrained in either of their Figs 4 and 5.
-      That's because they again narrow the scope of their patent by specifying that all cables, and hence anchors are in the x-y plane, like this:
+      Even if they meant "constrained", they would still be in error.
+      Those rotational degrees of freedom are not constrained in either of their Figs 4 or 5.
+      That's because they specify that all cables, and hence anchors are in the x-y plane:
     </p>
     <p>
       "... freezes all the rotational DOF [...].
       First, by putting more cables in the x-y plane, the stiffness of the system 14 is increased in the x-y plane."
     </p>
     <p>
-      In claim 1 of the claims section, and ca 10 other places in the patent text,
+      In claim 1 of the claims section, and ca ten other places in the patent text,
       the patent authors insist on
       base stations being the ones who control motions in the x-y plane specifically:
     </p>
@@ -467,12 +473,12 @@
       "motion-control base stations disposed below the aerial hoist and configured to control linear translation of the end effector in an x-y plane defined by the x-axis and the y-axis".
     </p>
     <p>
-      This is the same mistake as they did with the "z-axis" above.
+      That is the same mistake as with the "z-axis" above.
       In reality, all lines are extended or shortened during any linear movement, and base stations can not be constrained to only control motions in an x-y plane unless
-      all of the machine's motions are in that exact plane.
+      all of the machine's moves are in that exact plane.
     </p>
     <p>
-      One section of the detailed description in the patent tells us more about what the authors were intending to describe.
+      One section of the detailed description in the patent tells us more about what the authors intended to describe.
       They want to allow the lower cables to tilt up to 20 degrees (upwards?) during operation:
       "... or alternatively up to 20 degrees from parallel to the x-y plane during operation."
     </p>
@@ -481,27 +487,27 @@
       In reality, these angles get steep quickly when the end effector moves close to an anchor (base station).
     </p>
     <p>
-      These angles will not at all be "substantially in the x-y plane" or in any other fixed plane.
+      These angles will not be "substantially in the x-y plane" or any other fixed plane.
     </p>
     <h3>Last Geometry Nitpick, I Promise</h3>
     <p>
-      I'm trying to assume that they're honestly trying to describe normal translational 3d movements,
-      like other translational cable driven parallel robots do,
+      I'm trying to assume that they're honestly trying to describe regular translational 3d movements
+      as other translational cable-driven parallel robots do,
       but the patent's authors don't make it easy for me:
     </p>
     <p>
       "From the pulleys 42U, 42M, and 42L to the end effector, the cables 28U, 28L can run generally orthogonally to the support surface 60."
     </p>
     <p>
-      The number 60 they're talking about, is the front plate of this thing:
+      The number 60 they're talking about is the front plate of this thing:
     </p>
     <figure>
       <a href="./media/Their_fig_7.png">
         <img src="./media/Their_fig_7_small.png" alt="" width="500" height="427"/>
       </a>
       <figcaption>
-        Fig 7 from from the patent in question.
-        It does not rotate during operation, from what we can see here or read in the patent.
+        Fig 7 from the patent in question.
+        From what we can see here or read in the patent, it does not rotate during operation.
       </figcaption>
     </figure>
     <figure>
@@ -509,88 +515,55 @@
         <img src="./media/two_anchors_small.png" alt="" width="500" height="338"/>
       </a>
       <figcaption>
-        Old Hangprinter prototype versions of the same thing.
+        These are Hangprinter prototype versions of the same thing, only published much earlier.
         Two of them stacked on top of each other.
-        This is clipped from the April 4, 2017 video above, who shows how they're used.
+        This image is clipped from the April 4, 2017 video above, where their intended usage is shown.
       </figcaption>
     </figure>
     <p>
-      So, if the cables 28U and 28L are orthogonal to the front plate 60, then the end effector can only move along a line that is parallel to plate 60's normal direction.
-      With three different normal directions, this again constrains the end effector to stay put at a single point in space (or probably at no point in space, if we're going full on mathematical about it).
+      So, if the cables 28U and 28L are orthogonal to the front plate 60, the end effector can only move along a parallel line to plate 60's normal direction.
+      With three different normal directions, this again constrains the end effector to stay put at a single point in space (or probably at no point in space, if we're going full-on mathematical about it).
     </p>
     <p>
       In reality, the lines 28U and 28L will not stay orthogonal to 60, not even close, not even "generally".
     </p>
     <p>
       Let's assume the patent's authors made another mistake.
-      We wouldn't want the patent authors to inadvertently having patented this very general situation, but with concrete:
+      We wouldn't want the patent authors to have patented this very general situation inadvertently:
     </p>
     <figure>
       <a href="./media/disaster.jpeg">
         <img src="./media/disaster_small.jpeg" alt="" width="500" height="283"/>
       </a>
       <figcaption>
-        This is not previous art. It was <a href="https://twitter.com/tobbelobb/status/1186215813302439938">published too late, on Oct 21, 2019</a>.
+        For a real Hangprinter, a stationary end effector is a disaster. This image was <a href="https://twitter.com/tobbelobb/status/1186215813302439938">published on October 21, 2019</a> (not prior art).
       </figcaption>
     </figure>
     <h2>Telescoping Framework: For More Substantially Horizontal Lines</h2>
     <p>
-      The patent authors get back on track, by specifying:
+      The patent authors get back on track by specifying:
     </p>
     <p>
       "In one embodiment, at least a portion of the base station 22 can telescope to raise the pulleys 42U, 42M, and 42L."
     </p>
     <p>
-      So we're back up to one embodiment of their patented contraption that can carry out linear vertical motions,
-      by utilizing a total of at least 7 motors.
+      So we're back up to one embodiment of their patented contraption that can carry out linear vertical motions
+      by utilizing a total of at least seven motors.
     </p>
     <p>
-      The telescopes are supposed to act like linear vertical axes, that can lift the pivot points of the lower lines.
-      Kind of like this:
+      The telescopes are supposed to act like linear vertical axes that can lift the pivot points of the lower lines.
+      We can see that in Fig 2, or look at earlier Hangprinter implementations of the same thing:
     </p>
     <figure>
-      <a href="./media/baez.png">
-        <img src="./media/baez_small.png" alt="" width="500" height="415"/>
+      <a href="./media/baez_2.png">
+        <img src="./media/baez_2_small.png" alt="" width="500" height="878"/>
       </a>
       <figcaption>
-        A small Hangprinter version 3, <a href="https://www.facebook.com/groups/hangprinter/posts/296884167488416">published by Antonio Baez in the Facebook group on Dec 18, 2017</a>.
-        We see the lower lines being lifted by black v-shaped bearings, attached to yellow carriages that travel along linear rails.
-        The yellow carriages seem to not be motorized in "this embodiment of" Hangprinter version 3.
-        In another embodiment, it's perfect.
-        Just so you know.
+        This image shows a Hangprinter embodiment, <a href="https://www.facebook.com/groups/hangprinter/posts/288931208283712">published by Antonio Baez in the Facebook group on November 29, 2017</a>.
+        We see the lower lines lifted by black v-shaped bearings attached to yellow carriages that travel along linear rails.
+        Baez published this and several other similar but not identical Hangprinters in <a href="https://www.facebook.com/groups/176856636157837/search/?q=baez">December 2017 and January 2018</a>.
       </figcaption>
     </figure>
-    <p>
-      While we're on the topic of number of motors. They suggest increasing the number to at least 8 or 10, like this:
-    </p>
-    <p>
-      "The base station 22 can optionally include a cable winder 50 for a suspension cable 30 used to adjust the position of an aerial hoist 18 (FIG. 8)."
-    </p>
-    <p>
-      I feel like we're increasing the scope of this patent again.
-      Let's look at FIG. 8 and FIG. 2.
-    </p>
-    <figure>
-      <a href="./media/Their_fig_2.png">
-        <img src="./media/Their_fig_2_small.png" alt="" width="500" height="325"/>
-      </a>
-      <figcaption>
-        Fig 2 from from the patent in question.
-        The "aerial hoist" is number 18.
-      </figcaption>
-    </figure>
-    <figure>
-      <a href="./media/Their_fig_8.png">
-        <img src="./media/Their_fig_8_small.png" alt="" width="500" height="429"/>
-      </a>
-      <figcaption>
-        Fig 8 from from the patent in question.
-      </figcaption>
-    </figure>
-    <p>
-      We'll get back to the aerial hoist.
-      There's another thing I want to point out in a previously presented prior art image:
-    </p>
     <figure>
       <a href="./media/Babylon2.jpeg">
         <img src="./media/Babylon2_small.jpeg" alt="" width="500" height="333"/>
@@ -599,18 +572,6 @@
         Note the vertical post in the top left.
         It can "raise the pulleys 42U, 42M, and 42L",
         "... to allow the end effector 20 to print taller structures without interfering with the cables".
-      </figcaption>
-    </figure>
-    <p>
-      And here's another embodiment of Hangprinter version 3 that has its lower anchor points mounted on linear rails:
-    </p>
-    <figure>
-      <a href="./media/baez_2.png">
-        <img src="./media/baez_2_small.png" alt="" width="500" height="878"/>
-      </a>
-      <figcaption>
-        A Hangprinter embodiment, <a href="https://www.facebook.com/groups/hangprinter/posts/288931208283712">published by Antonio Baez in the Facebook group on Nov 29, 2017</a>.
-        Baez published a <a href="https://www.facebook.com/groups/176856636157837/search/?q=baez">sequence of  videos showing similar but not identical Hangprinter embodiments in December 2017 and January 2018</a>.
       </figcaption>
     </figure>
     <p>
@@ -625,9 +586,9 @@
         </iframe>
       </div>
       <figcaption>
-        In this video from Apr 15, 2017, it's clear that the ABC-lines are terminated at different z-heights during different parts of the print.
-        Although it's not visible in the video, the D-anchor was also moved upwards once during the print to avoid having too long
-        D-lines that would otherwise have started to act too much like springs.
+        In this video from April 15, 2017, it's clear that the ABC-lines are terminated at different z-heights during different parts of the print.
+        The D-anchor was likewise moved upwards mid-print.
+        They would otherwise have been too long and acted too much like springs during the lowest layers.
       </figcaption>
     </figure>
     <p>
@@ -656,37 +617,54 @@
     </p>
     <p>
       Oh well. Just don't pull too hard in 28A, and wear a helmet, alright?
-      The weight of the sagging suspension wire 28A in itself, could be enough to make base station 22A fall over on its side,
+      The weight of the sagging suspension wire 28A in itself could be enough to make base station 22A fall over on its side,
       particularly on a windy day.
       See Appendix for better ideas.
     </p>
-    <h2>But SkyBAAM Has An Aerial Hoist! Hangprinter Never Mention Aerial Hoist In Its Prior Art!</h2>
+    <h2>But SkyBAAM Has An Aerial Hoist! Hangprinter Sources Never Mention Aerial Hoist!</h2>
     <p>
-      That's true, we never use the term "aerial hoist".
-      We don't use anything that superficially looks like this:
+      Yes, the patent authors have invented their own jargon to describe their cable-driven robot idea.
+      That's cute but also a bit confusing.
+      Let's look closer at the "aerial hoist".
     </p>
+    <p>
+      "The base station 22 can optionally include a cable winder 50 for a suspension cable 30 used to adjust the position of an aerial hoist 18 (FIG. 8)."
+    </p>
+    <p>
+      Let's look at Fig 8 and Fig 2.
+    </p>
+    <figure>
+      <a href="./media/Their_fig_2.png">
+        <img src="./media/Their_fig_2_small.png" alt="" width="500" height="325"/>
+      </a>
+      <figcaption>
+        Fig 2 from the patent in question.
+        The "aerial hoist" is number 18.
+      </figcaption>
+    </figure>
     <figure>
       <a href="./media/Their_fig_8.png">
         <img src="./media/Their_fig_8_small.png" alt="" width="500" height="429"/>
       </a>
       <figcaption>
-        Fig 8 from from the patent in question.
+        Fig 8 from the patent in question.
+        This is the aerial hoist.
       </figcaption>
     </figure>
     <p>
-      After some deep reading of the patent, it turns out that all that Fig 8 really shows, is a spring connected pulley.
-      Just like the ones used in standard homework problems in introductory mechanics courses.
+      After some deep reading of the patent, it turns out that the aerial hoist is a spring-connected pulley,
+      just like the ones used in common homework problems in introductory mechanics courses.
     </p>
     <figure>
       <a href="./media/spring_connected_pulley.jpg">
         <img src="./media/spring_connected_pulley_small.jpg" alt="" width="500" height="772"/>
       </a>
       <figcaption>
-        This sketch of a spring connected pulley was <a href="https://physics.stackexchange.com/questions/544197/pulley-systems-connected-with-spring">published on Physics Stackexchange on Apr 15, 2020</a> (not prior art).
+        This sketch of a spring-connected pulley was <a href="https://physics.stackexchange.com/questions/544197/pulley-systems-connected-with-spring">published on Physics Stackexchange on April 15, 2020</a> (not prior art).
       </figcaption>
     </figure>
     <p>
-      The spring in the aerial has the same effect as flexibility in the suspension cable itself has.
+      The springs (nr 74 in Fig 8) have the same effect as flexibility in the suspension cable.
       Since the UHMWPE lines of Hangprinter already provide more flex than we need, we've never attached explicit springs to our machines.
       We'll come back to the explicit spring later in this text.
     </p>
@@ -698,28 +676,28 @@
         <img src="./media/thread_lines_small.png" alt="" width="500" height="264"/>
       </a>
       <figcaption>
-        The "aerial hoist" of Hangprinter version 1.
-        The cable rewinder is situated on the end effector itself.
-        This image is copied from <a href="https://torbjornludvigsen.com/blog/2016/#hangprinter_project_19">the Clerck Assembly Manual v0.1, published on 8 Feb, 2016</a>.
-        Clerck changed names to Hangprinter soon after the assembly manual was published.
+        This image shows the "aerial hoist" of Hangprinter version 1.
+        The cable rewinder is part of the end effector itself.
+        This image is copied from <a href="https://torbjornludvigsen.com/blog/2016/#hangprinter_project_19">the first assembly manual, published on February 8, 2016</a>.
       </figcaption>
     </figure>
     <p>
-      However, the "aerial hoist" in the Fig 8 "in one embodiment" redirects the line towards an anchor ("base station"),
-      so that all motors can potentially be located at ground level, like this:
+      However, the "aerial hoist" in Fig 8 "in one embodiment" redirects the line towards an anchor ("base station"),
+      so that all motors can potentially be located at ground level.
+      Once again, we can look at Hangprinter prior art to explain what they mean.
     </p>
     <figure>
       <a href="./media/baez_1.jpg">
         <img src="./media/baez_1_small.jpg" alt="" width="500" height="415"/>
       </a>
       <figcaption>
-        A Hangprinter with the motors (cable winders) placed on the floor, <a href="https://www.facebook.com/groups/hangprinter/posts/288931208283712">published by Antonio Baez in the Facebook group on Nov 29, 2017</a>. Baez mainly uses hooks with a low friction surface to reroute the lines.
+        Here we see a Hangprinter with the motors (cable winders) placed on the floor, <a href="https://www.facebook.com/groups/hangprinter/posts/288931208283712">published by Antonio Baez in the Facebook group on November 29, 2017</a>. Baez mainly uses hooks with a low friction surface to reroute the lines.
       </figcaption>
     </figure>
     <p>
-      SkyBAAM's aerial hoist also redirects the cable.
-      But all of Hangprinter's (and all of SkyBAAM's) cables will be redirected in practice.
-      Motor placement on a cable driven robot is quite arbitrary because cable redirection is so simple and cheap.
+      SkyBAAM's aerial hoist also redirects the cable, one could say.
+      But Common cable blocks redirect all cables of all cable-driven robots in practice.
+      Motor placement on a cable-driven robot is entirely arbitrary because cable redirection is cheap and straightforward.
     </p>
     <p>
       If the "invention" of the patent in question is the concept of routing lines through elaborate cable guides,
@@ -731,7 +709,7 @@
         <img src="./media/fairleads_small.png" alt="" width="500" height="263"/>
       </a>
       <figcaption>
-        An early sketch of Hangprinter version 1,
+        This image shows an early sketch of Hangprinter version 1,
         <a href="https://reprap.org/forum/read.php?178,344022,507773#msg-507773">published on May 11, 2015</a>.
         All the blue and purple you see are bearings.
         I'm not proud of this blurb, as it over-complicates the simple task of routing lines, much like the patent's Fig 8 does.
@@ -740,17 +718,18 @@
     </figure>
     <h2>But SkyBAAM Adds Springs! More Cleverer Than Hangprinter, No?</h2>
     <p>
-      It's true that Fig 8 includes explicit springs (74) between the top hook and the cables, and that Hangprinters don't have this.
+      It's true that Fig 8 includes explicit springs (74) between the top hook and the cables and that Hangprinters don't have this.
     </p>
     <p>
-      Introducing springs here and there to keep lines tight or avoid over-tightening, is a common beginner's mistake when designing Hangprinters,
+      Introducing springs here and there to keep lines tight or avoid over-tightening is a common beginner's mistake when designing Hangprinters
       because it reduces positional control, limits maximum speeds and accelerations, and introduces eigenfrequencies in the motion system.
-      It has <a href="https://reprap.org/forum/read.php?178,344022,345158#msg-345158">been discussed</a> many times, but never introduced into Hangprinter,
-      since it has more than enough flex in its UHMWPE lines already.
+      Adding springs to Hangprinter
+      has <a href="https://reprap.org/forum/read.php?178,344022,345158#msg-345158">been discussed</a> many times.
+      We don't add springs because there is already more than enough flex in its UHMWPE lines.
     </p>
     <p>
-      However, earlier open source translational cable driven parallel robots did use explicit springs,
-      like for example this one:
+      However, earlier open source translational cable-driven parallel robots did use explicit springs,
+      like for example, this one:
     </p>
     <figure>
       <div class='embed-container'>
@@ -761,43 +740,43 @@
         </iframe>
       </div>
       <figcaption>
-        Brandon Heller's Youtube video from 2013 shows the SkyDelta, that predates Hangprinter.
-        Like most cable driven translation robots, Hangprinter included,
-        it uses pairs of cables that are "generally parallel to each other" as it's formulated in the patent.
-        It also uses rubber bands to pull upwards in much the same way as the patented contraption uses its springs.
+        Brandon Heller's Youtube video from 2013 shows the SkyDelta that predates Hangprinter.
+        Like most cable-driven translation robots, Hangprinter included,
+        it uses pairs of cables that are "generally parallel to each other", as it's formulated in the patent.
+        It also uses rubber bands to pull upwards, much like the patented contraption uses its springs.
       </figcaption>
     </figure>
     <p>
       The way forward for all Hangprinters, from Mini to SkyBAAM size, is to handle, and possibly plan for,
-      the flex and springiness in the lines (or in the actual springs, if you add them voluntarily, like SkyBAAM does).
-      This implementation of this had not begun on Apr 13, 2018, but the theoretical groundwork and some considerations had been
-      <a href="https://torbjornludvigsen.com/blog/2018/#hangprinter_project_54">published on my blog on 21 Feb, 2018</a>.
+      the flex and springiness in the lines (or in the actual springs, if you add them voluntarily as SkyBAAM does).
+      Some related theoretical work was
+      <a href="https://torbjornludvigsen.com/blog/2018/#hangprinter_project_54">published on my blog on February 21, 2018</a>.
     </p>
     <h2>But How About Houses, Scaling Up, Using Concrete, Using A Crane For the Top Anchor?</h2>
     <p>
-      Just to be clear, the original Tower of Babel myth does not describe a 40x40x460 cm tower made of plastic.
-      The artistic idea there was to make the audience imagine something huge, something dwarfing the Colosseum.
+      To be clear, the original Tower of Babel myth does not describe a 40x40x460 cm tower made of plastic.
+      The artistic idea was to make the audience imagine something huge, dwarfing the Colosseum.
     </p>
     <figure>
       <a href="./media/3490mm_cropped.jpeg">
         <img src="./media/3490mm_cropped_small.jpeg" alt="" width="500" height="855"/>
       </a>
       <figcaption>
-        Image of the Babel Tower print <a href="https://torbjornludvigsen.com/blog/2017/#hangprinter_project_35">published on Mar 6, 2017</a>.
+        Image of the Babel Tower print <a href="https://torbjornludvigsen.com/blog/2017/#hangprinter_project_35">published on March 6, 2017</a>.
       </figcaption>
     </figure>
     <p>
-      Printing very large buildings with Hangprinter was on my mind before the Babel Print Project,
-      and I tried to make that obvious by choosing the Tower of Babel as my motive.
+      Printing buildings with Hangprinter was on my mind before the Babel Print Project,
+      and I tried to make that evident by choosing the Tower of Babel as my motive.
     </p>
     <p>
       Anyways, the idea of printing with cement <a href="https://reprap.org/forum/read.php?178,344022,444205#msg-444205">
-      appeared already on the first page of the first forum thread about Hangprinter back in 2014</a>,
+      appeared already on the first page of the first forum thread about Hangprinter back in 2014</a>
       and has kept appearing at a rate of every fiftieth forum post or so suggesting it.
       My reply has always been "go for it", and <a href="https://www.facebook.com/groups/hangprinter/posts/342461566264009/?comment_id=342592839584215">it should be straightforward</a>.
     </p>
     <p>
-      Scaling up is among the first two benefits I mention in the very first blog post about Hangprinter, from <a href="https://vitana.se/opr3d/tbear/2014.html#Hangprinter">May 15, 2014</a>.
+      Scaling up is among the first two benefits I mention in the first blog post about Hangprinter, from <a href="https://vitana.se/opr3d/tbear/2014.html#Hangprinter">May 15, 2014</a>.
     </p>
     <figure>
       <a href="./media/First_two_benefits.png">
@@ -807,7 +786,7 @@
       </figcaption>
     </figure>
     <p>
-      Apart from <a href="https://github.com/MarlinFirmware/Marlin/pull/9180#issuecomment-369829924">being very obvious</a>,
+      Apart from <a href="https://github.com/MarlinFirmware/Marlin/pull/9180#issuecomment-369829924">being very obvious</a>
       and <a href="https://github.com/tobbelobb/hangprinter/blob/9eda329b5d842a5ddbfc9932af34977e2422bd32/doc/v3/afterthought-view.xml">being the first explicitly suggested idea in the official Hangprinter documentation at the time</a>,
         the general idea of "<a href="https://reprap.org/forum/read.php?178,344022,445524#msg-445524">3d printing houses with Hangprinters</a>, <a href="https://reprap.org/forum/read.php?1,738858,760264#msg-760264">out of concrete</a>, hanging
         <a href="https://reprap.org/forum/read.php?178,344022,445503#msg-445503">from a crane</a>", like <a href="https://www.facebook.com/groups/makerbot/posts/1147723432011826/?comment_id=1147822648668571&amp;reply_comment_id=1147830892001080">industrial scale</a>,
@@ -821,18 +800,18 @@
       <figcaption>
         Click the image for a larger version.
         Screenshot from the Facebook group called "Hangprinter - RepRap Project " on March 17, 2018.
-        A person called Ed Aylward posted visuals, related to the common idea of scaling up Hangprinter for printing concrete buildings, in the Facebook group, stating patent pending on the idea.
-        The idea of "crane with wheels" is discussed in the conversation.
+        Ed Aylward posted visuals related to the common idea of scaling up Hangprinter for printing concrete buildings in the Facebook group, stating patent pending and "all rights reserved".
+        The idea of a "crane with wheels" (mobile crane) is also discussed in the conversation.
       </figcaption>
     </figure>
     <p>
-      The group had <a href="https://www.facebook.com/groups/hangprinter/posts/194019467774887/">over 200 members and increasing, already a year earlier</a>.
-      This was a big and rapidly growing public group with very active discussion about Hangprinter.
+      The group had <a href="https://www.facebook.com/groups/hangprinter/posts/194019467774887/">over 200 members and increased rapidly, already a year earlier</a>.
+      It was a big and rapidly growing public group with active discussions about Hangprinter, open for anyone to see, including non-members.
     </p>
     <p>
-      The web page that Mr Aylward linked to in his post was <a href="https://web.archive.org/web/20180228165805/https://p3d.in/O6NBW+welcome">saved by Wayback Machine on 28 Feb, 2018</a>,
-        so he had created it at least a few days before posting publicly.
-      At the time of writing this prior art post, <a href="https://p3d.in/O6NBW">Aylward's web page is still up</a>.
+      Wayback Machine saved the web page that Aylward linked to in his post
+      <a href="https://web.archive.org/web/20180228165805/https://p3d.in/O6NBW+welcome">on February 28, 2018</a>.
+      At the time of writing this, <a href="https://p3d.in/O6NBW">Aylward's web page is still up</a>.
     </p>
     <figure>
       <a href="./media/Aylwards_web_page2.png">
@@ -840,18 +819,18 @@
       </a>
       <figcaption>
         Click the image for a larger version.
-        An illustration of the frequent and common idea of 3d printing a concrete house with Hangprinter, clipped from Aylward's publicly linked web site.
+        An illustration of the frequent and common idea of 3d printing a concrete house with Hangprinter clipped from Aylward's publicly linked website.
       </figcaption>
     </figure>
     <p>
-      Initially however, it was unclear whether the "invention" in these visuals was to
+      Initially, however, it was unclear whether the "invention" in these visuals was to
       <ul>
         <li>Scale up a toy mixer truck, or to</li>
         <li>scale down the idea of a crane.</li>
       </ul>
     </p>
     <p>
-      Luckily, Mr Aylward included an object of known size in his 3d visualization:
+      Luckily, Aylward included an object of known size in his 3d visualization:
     </p>
     <figure>
       <a href="./media/HP1_Aylwards_web_page.png">
@@ -859,21 +838,21 @@
       </a>
       <figcaption>
         Click the image for a larger version.
-        Aylward's web page displays 3d graphics, and lets us zoom in on the displayed object.
-        We can see that this is Hangprinter version 1, and not version 2, because it does not yet use a worm gear for its D-axis (mostly vertical axis), like the Hangprinter version 2 did.
-        If we search through Github's version history, we can probably pin down when it was downloaded because it includes a distinct bug:
-        there are two motors with "B-gears", both driving the "B-lines" in the render.
-        That bug would make the machine not work as intended in practice, and was probably removed soon after, in the real Hangprinter repo.
+        Aylward's web page displays 3d graphics and lets us zoom in on the displayed object.
+        We can see that this is Hangprinter version 1 and not version 2 because it does not yet use a worm gear for its D-axis (mostly vertical axis), like the Hangprinter version 2 did.
+        If we search through Github's version history, we can probably pin down when Aylward downloaded it because it includes a distinct bug:
+        two motors with "B-gears", both driving the "B-lines" in the render.
+        That bug would make the machine not work as intended in practice and was removed soon after in the actual Hangprinter repo.
         The three low anchors are also identical to those published as Hangprinter version 1 anchors in the Hangprinter repo.
       </figcaption>
     </figure>
     <p>
-      This would imply that the "invention" was a combination of the two above.
-      A very large toy mixer truck pushing a cylinder down through a standard Hangprinter via a very small crane.
+      The image would imply that the "invention" was a combination of the two above.
+      A colossal toy mixer truck, pushing a cylinder down through a standard Hangprinter via a tiny crane.
     </p>
     <p>
-      Ok, just kidding.
-      The "print houses" idea is obvious, even here.
+      Ok, I am just kidding.
+      The "print houses" idea is obvious, even in Aylward's posts.
     </p>
     <h2>But The Super Smart Tension Control Described In the Patent, How About That?</h2>
     <p>
@@ -891,28 +870,28 @@
       </div>
       <figcaption>
         Video published August 1, 2017.
-        In the video, all four motors are set to "torque mode".
+        All four motors are in torque mode in the video.
         Since torque mode (tension control) only controls the torque of the motors (and hence the tension of the cables),
         the end effector will move if you push it around by hand.
       </figcaption>
     </figure>
     <p>
-      Torque mode is a standard feature since 2017.
-      It's very practical when you start the printer up and want to move the end effector
-      safely and rapidly without thinking too much.
+      Torque mode has been a standard feature since 2017.
+      It's convenient and lets you start the printer up and move the end effector safely and rapidly without overthinking.
+      Usage during printing is possible but uncommon.
     </p>
     <p>
-      It's also used during auto-calibration (automatic anchor localization within the xyz coordinate system).
-      During auto calibration it's common for a Hangprinter to mix the normal "position mode" with torque mode,
+      Torque mode is also used during auto-calibration (automatic anchor localization within the Cartesian coordinate system).
+      During auto-calibration, it's common for a Hangprinter to mix the normal "position mode" with torque mode,
       frequently switching modes for individual motors.
     </p>
     <p>
       A non-linear minimization algorithm is applied to transform the set of collected quadruples of motor positions,
-      into a set of four anchor locations.
-      The version of the algorithm that was available on Apr 13, 2018 can be found here: <a href="https://gitlab.com/tobben/auto-calibration-simulation-for-hangprinter/-/tree/a3e7878987f88ff29ca2785d49390a34414e9027">auto-calibration-simulation-for-hangprinter</a>.
+      into four anchor locations.
+      The algorithm version available on April 13, 2018, can be found here: <a href="https://gitlab.com/tobben/auto-calibration-simulation-for-hangprinter/-/tree/a3e7878987f88ff29ca2785d49390a34414e9027">auto-calibration-simulation-for-hangprinter</a>.
     </p>
     <p>
-      This video from Sep 4, 2017 shows how the automated data collection looks in practice:
+      This video from September 4, 2017, shows how automated data collection looks in practice:
     </p>
     <figure>
       <div class='embed-container'>
@@ -924,18 +903,18 @@
         </iframe>
       </div>
       <figcaption>
-        Video published Sep 4, 2017.
-        It shows a Hangprinter version 3 moving itself automatically around in its build volume, alternating between
-        position mode and torque mode in order to figure out the correct xyz-coordinates of its own anchors.
+        Video published September 4, 2017.
+        It shows a Hangprinter version 3 moving automatically around in its build volume, alternating between
+        position mode and torque mode to figure out the correct Cartesian coordinates of its anchors.
         In the video, the D-motor (the one pulling towards the highest anchor) is most often in position mode, while the A, B, and C motors
         (the three pulling towards the lowest anchors) alternate between position mode and torque mode.
-        The Hangprinter is however capable of any combination of position and torque modes, and may switch between them on the
-        users command at any time, during print or at any other time.
+        However, the Hangprinter can do of any combination of position and torque modes
+        and may switch between them on the users' command, during print, or whenever.
       </figcaption>
     </figure>
     <p>
       Fun fact: the precursor to Hangprinter's torque mode was called "button mode".
-      It was invented by Mikael Tulldahl, an published <a href="https://torbjornludvigsen.com/blog/2017/#hangprinter_project_43">on by blog on Jun 4, 2017</a>.
+      Mikael Tulldahl invented it, and I published it <a href="https://torbjornludvigsen.com/blog/2017/#hangprinter_project_43">on my blog on June 4, 2017</a>.
       It looked like this:
     </p>
     <figure>
@@ -947,7 +926,7 @@
       </figcaption>
     </figure>
     <p>
-      In case the somewhat vague tension control concept in the patent involves measuring the tension along the line, that's ok.
+      If the somewhat vague tension control concept in the patent involves measuring the tension along the line, that's ok.
       We've done that as well.
     </p>
     <figure>
@@ -956,13 +935,13 @@
            </iframe>
         </div>
         <figcaption>
-            "Constant tension mode" measured line tension with force sensing resistors, and looked like this in a <a href="https://torbjornludvigsen.com/blog/2017/#hangprinter_project_48">blog post published on 14 Oct, 2017</a>.
+            "Constant tension mode" measured line tension with force-sensing resistors and looked like this in a <a href="https://torbjornludvigsen.com/blog/2017/#hangprinter_project_48">blog post published on October 14, 2017</a>.
         </figcaption>
     </figure>
     <h2>But SkyBAAM Has Its Cable Rewinders At The Base Stations! Hangprinter Does Not</h2>
     <p>
-        This is another discussion that has kept <a href="https://www.facebook.com/groups/hangprinter/posts/217161735460660">coming back</a> at a rate of ca one out of fifty forum posts.
-      <a href="https://reprap.org/forum/read.php?1,738858,746545#msg-746545">The following one is from Feb 2017</a>:
+      Placing motors and spools at the anchors is another discussion that has kept <a href="https://www.facebook.com/groups/hangprinter/posts/217161735460660">coming back</a> at a rate of ca one out of fifty forum posts.
+      <a href="https://reprap.org/forum/read.php?1,738858,746545#msg-746545">The following one is from February 2017</a>:
     </p>
     <p>
       <ul>
@@ -976,8 +955,8 @@ With one stationary PCB and long cables to stationary motors, it will be a lot o
       </ul>
     </p>
     <p>
-      In my humble opinion, moving the motors to the anchors is a very obvious thing to do for anyone wanting to scale up Hangprinter.
-      For example Open Source Ecology had this on their Hangprinter wiki page already on 17 Dec, 2017:
+      Moving the motors to the anchors is self-evident for anyone wanting to scale up Hangprinter.
+      For example, Open Source Ecology had this on their Hangprinter wiki page already on December 17, 2017:
     </p>
     <figure>
       <a href="./media/OSE_10.png">
@@ -987,24 +966,24 @@ With one stationary PCB and long cables to stationary motors, it will be a lot o
       </figcaption>
     </figure>
     <p>
-      Open Source Ecology seemed to think that Hangprinter was already being used for 3d printing of buildings.
-      They also thought that "Keep Motors on the anchor stations" was a prerequisite for a minimal viable product.
+      Open Source Ecology seemed to think that Hangprinter was already used for for 3d printing of buildings.
+      They also believed that "Keep Motors on the anchor stations" was a prerequisite for a minimal viable product.
     </p>
     <p>
-        Note that Open Source Ecology, and <a href="https://www.facebook.com/groups/hangprinter/posts/181973192312848/">all the others</a> that <a href="https://www.facebook.com/groups/hangprinter/posts/212829602560540/">suggested</a> locating <a href="https://reprap.org/forum/read.php?1,738858,758624#msg-758624">the motors at the various anchor points</a> back in 2014 to early 2018, in all the links are mostly <a href="https://www.facebook.com/groups/hangprinter/posts/208550112988489">laypeople</a> trying to <a href="https://www.facebook.com/groups/makerbot/posts/1147723432011826/?comment_id=1147800225337480">help out</a>,
-      without having "ordinary skill in the art" of cable driven robotics.
+        Note that Open Source Ecology and <a href="https://www.facebook.com/groups/hangprinter/posts/181973192312848/">others</a> who <a href="https://www.facebook.com/groups/hangprinter/posts/212829602560540/">suggested</a> locating <a href="https://reprap.org/forum/read.php?1,738858,758624#msg-758624">the motors at the various anchor points</a> back in 2014 to early 2018, in all the links are primarily <a href="https://www.facebook.com/groups/hangprinter/posts/208550112988489">laypeople</a> trying to <a href="https://www.facebook.com/groups/makerbot/posts/1147723432011826/?comment_id=1147800225337480">help out</a>,
+      without having "ordinary skill in the art" of cable-driven robotics.
       That's how obvious these ideas are to anyone with even a rudimentary understanding of Hangprinter.
     </p>
     <h2>What About the Guy Wires?</h2>
     <p>
       The patent in question describes guy wires going from the D-anchor (high-up) anchor down to the ABC-anchors (base stations) with tension in them to pull
-      the D-anchor downwards and outwards in at least three directions, and hence stabilizing the D-anchor.
-      See for example lines 36 in Fig 4 from their patent, near the top of this web page.
+      the D-anchor downwards and outwards in at least three directions and hence stabilizing the D-anchor.
+      See, for example, lines 36 in Fig 4 from their patent, near the top of this web page.
     </p>
     <p>
       We have never used the terms "guy-wire" or "suspension wire" much in the Hangprinter community.
       However, we've had lines going between the D-anchor and the lower anchors, just like guy wires would, since April 2017.
-      See for example the video posted at the top of this article, or this image that was published on Dec 7, 2017:
+      See, for example, the video posted at the top of this article or this image published on December 7, 2017:
     </p>
     <figure>
       <a href="./media/people_want_to_reprap.JPG">
@@ -1012,8 +991,8 @@ With one stationary PCB and long cables to stationary motors, it will be a lot o
       </a>
       <figcaption>
         Click the image for a larger version.
-        Hangprinter version 3 being demonstrated on Maker Fair Rome in December 2017.
-        Lines pulling the D-anchor down towards all three low anchors, with fixated start points and end points, are visible in the image
+        It shows Hangprinter version 3 being demonstrated at Maker Fair Rome in December 2017.
+        Lines pulling the D-anchor down towards all three low anchors, with fixated start points and endpoints, are visible in the image
         against the white background.
       </figcaption>
     </figure>
@@ -1022,33 +1001,33 @@ With one stationary PCB and long cables to stationary motors, it will be a lot o
         <img src="./media/nick_scott_Feb_9_2018_facebook_group_small.jpg" alt="" width="500" height="667"/>
       </a>
       <figcaption>
-        This render was <a href="https://www.facebook.com/groups/hangprinter/posts/320622445114588/">uploaded on Feb 9, 2018, by Nick Scott, to the public Hangprinter group on Facebook</a>.
+        This render was <a href="https://www.facebook.com/groups/hangprinter/posts/320622445114588/">uploaded on February 9, 2018, by Nick Scott, to the public Hangprinter group on Facebook</a>.
       </figcaption>
     </figure>
     <p>
-      Although Hangprinter's guy wires are rerouted to also serve as transmitting motion forces to the end effector,
-      these lines also do the same guy-wire pulling as the guy wires mentioned in the patent would do.
+      Although Hangprinter's guy wires are rerouted to transmit motion forces to the end effector,
+      these lines also do similar guy-wire pulling as the guy wires mentioned in the patent do.
     </p>
     <p>
-      Some might believe that the SkyBAAM's guy wires would be different because they would have a constant tension in them.
-      But in fact, the SkyBAAM's guy wires would not have constant tension in them during operation.
-      The tension in the SkyBAAM's guy wires would vary greatly depending on variation in the pulling force from above, and depending on
+      Some might believe that the SkyBAAM's guy wires would be different because they would have constant tension.
+      But in fact, the SkyBAAM's guy wires would not have constant tension during operation.
+      The tension in the SkyBAAM's guy wires would vary greatly depending on variation in the pulling force from above and depending on
       the end effector's position at any given time.
       Let me explain.
     </p>
     <p>
-      The SkyBAAM's end effector is connected to the D-anchor (highest anchor), where the guy wires are also connected.
-      Any force in the D-wires going to the end effector will have to be cancelled out by opposite forces from the crane and the guy wires,
-      in order to keep the top anchor stationary.
-      Forces in the D-lines will be changing all the time during operation.
+      The SkyBAAM's end effector connects to the D-anchor (highest anchor), where the guy wires are also connected.
+      Any force in the D-wires going to the end effector will have to be canceled by opposite forces from the crane and the guy wires
+      to keep the top anchor stationary.
+      Forces from the D-lines will be changing all the time during operation.
     </p>
     <p>
       Hangprinter's guy wires also experience changing tension depending on the end effector's position,
       but there will be some tension in them at all times during operation.
-      So even though it might look like Hangprinter doesn't need guy wires, it does have them, as part of its dual purpose line routing configuration (in its most common version 3 embodiment).
+      So even though it might look like Hangprinter doesn't need guy wires, it does have them as part of its dual-purpose line routing configuration (in its most common version 3 embodiment).
     </p>
     <p>
-      The conceptual difference between the SkyBAAM's guy wires and Hangprinter's guy wires is only superficial,
+      The conceptual difference between the SkyBAAM's guy wires and Hangprinter's guy wires is only superficial
       if there's any difference at all.
     </p>
     <h2>But The <i>Adjustable</i> Guy Wires Then? What About Them?</h2>
@@ -1059,19 +1038,19 @@ With one stationary PCB and long cables to stationary motors, it will be a lot o
       "The guy-wires 36 can be adjustably extended from the cable winders 38 and retracted back on the cable winders 38."
     </p>
     <p>
-      This, combined to assumed adjustability of the crane's own top wire length means that "some embodiment of" the SkyBAAM might have a top anchor that
+      This quote, combined with assumed adjustability of the crane's top wire length, means that "some embodiment of" the SkyBAAM might have a top anchor that
       is as movable in 3d space as its end effector (or maybe even more movable if that embodiment happens to have the stationary end effector
       feature described in the patent, but again, let's assume that's not the case).
     </p>
     <p>
-      The patent in question patent therefore covers the idea of a nested Hangprinter, or in other words "one Hangprinter inside another".
+      The patent in question patent, therefore, covers the idea of a nested Hangprinter, or in other words, "one Hangprinter inside another".
     </p>
     <p>
-      That is, a Hangprinter that has it's high anchor point attached to another Hangprinter's end effector.
-      That sounds like an amusing combination of useless and incredibly inventive to me.
+      That is, a Hangprinter that has its high anchor point attached to another Hangprinter's end effector.
+      That sounds like a delightful combination of useless and incredibly inventive to me.
     </p>
     <p>
-      However, the Hangprinter community had already discussed this exotic idea publicly, before the patent's filing date:
+      However, the Hangprinter community had already discussed this exotic idea publicly before the patent's filing date:
     </p>
     <figure>
       <a href="./media/Dwayne_Esh.png">
@@ -1081,7 +1060,7 @@ With one stationary PCB and long cables to stationary motors, it will be a lot o
         This comment was <a href="https://www.facebook.com/groups/hangprinter/posts/342461566264009/">published on March 30, 2018, by Dwayne Esh, in the public Hangprinter group on Facebook</a>.
       </figcaption>
     </figure>
-    <h2>But SkyBAAM Is Easily Transportable! Hangprinter Doesn't Even Have A Frame, It Requires Pre-existing Structures, No?</h2>
+    <h2>But SkyBAAM is Easily Transportable! Hangprinter Doesn't Even Have a Frame, It Requires Pre-existing Structures, No?</h2>
     <p>
       No. Hangprinter has always been "build a frame if you need one".
       What we did (and still do) at trade shows and such was the most basic and cheap thing, a tetrahedron out of two-by-twos:
@@ -1091,14 +1070,14 @@ With one stationary PCB and long cables to stationary motors, it will be a lot o
         <img src="./media/framed_small.jpeg" alt="" width="500" height="281"/>
       </a>
       <figcaption>
-        This image from Maker Fair Rome 2017 was <a href="https://twitter.com/tobbelobb/status/937073323330154498/photo/2">published on Twitter on Dec 2, 2017</a>.
+        This image from Maker Fair Rome 2017 was <a href="https://twitter.com/tobbelobb/status/937073323330154498/photo/2">published on Twitter on December 2, 2017</a>.
         It shows Hangprinter in operation, with a frame, on a very public display.
         The idea of a more portable Hangprinter frame was being <a href="https://www.facebook.com/groups/hangprinter/posts/330753090768190/">discussed in the community at the time</a>.
       </figcaption>
     </figure>
     <p>
-      People are generally able to create four stationary points where they want them, even without detailed instructions.
-      Some design non-trivial full blown frames for themselves, like this portable one:
+      Most people can manage to create four stationary points where they want them, even without detailed instructions.
+      Some design non-trivial full-blown frames for themselves, like this portable one:
     </p>
     <figure>
       <a href="./media/Portable_hangprinter_frame.png">
@@ -1106,14 +1085,14 @@ With one stationary PCB and long cables to stationary motors, it will be a lot o
       </a>
       <figcaption>
         "Portable Hangprinter frame".
-        This frame was designed by Alex Benz, and
+        This frame was designed by Alex Benz and
         <a href="https://www.facebook.com/photo.php?fbid=354052058410306&amp;set=p.354052058410306&amp;type=3">published in the Facebook group on March 8, 2018</a>.
         For the surrounding discussion about portable frames, see <a href="https://www.facebook.com/groups/hangprinter/posts/330753090768190/">here</a>.
       </figcaption>
     </figure>
     <h2>But I Never Give Up! SkyBAAM Has A Hoisting Mechanism For Its Top Anchor. Hangprinter Did Not!!!1</h2>
     <p>
-      I encourage you to check out for example what Alex Benz and the others at The Marietta Makers Station in Atlanta GA
+      I encourage you to check out, for example, what Alex Benz and the others at The Marietta Makers Station in Atlanta, GA,
       were doing in 2017:
     </p>
     <figure>
@@ -1122,37 +1101,37 @@ With one stationary PCB and long cables to stationary motors, it will be a lot o
       </a>
       <figcaption>
         Click for a larger version.
-        This shows a common way of hoisting Hangprinter top anchors: with block and tackle.
-        <a href="https://www.facebook.com/groups/hangprinter/posts/298865100623656/">Published by Alex Benz on Dec 22, 2017</a>.
+        This image shows a common way of hoisting Hangprinter top anchors: block and tackle.
+        Alex Benz published it
+        <a href="https://www.facebook.com/groups/hangprinter/posts/298865100623656/">on December 22, 2017</a>.
       </figcaption>
     </figure>
     <p>
-      How to get the high anchor up is a very situation dependent problem that Hangprinter users need to solve for themselves,
-      which is why it's not included in the Hangprinter documentation.
-      It's surprising that the most obvious one ("use a crane") is the only one to have gotten patented so far.
+      Getting the high anchor up is a very situation-dependent problem that Hangprinter users need to solve for themselves, which is why it's not included in the Hangprinter documentation.
+      Surprisingly, the most obvious one ("use a crane") is the only one to have gotten patented so far.
     </p>
     <h2>But The UHMWPE Wires Then? Does Hangprinter Have Them?</h2>
     <p>
       Yes. Hangprinter has never used anything else.
-      See for example this <a href="https://www.appropedia.org/w/index.php?title=Clerck,_a_RepRap_3D_printer_hanging_from_the_ceiling&amp;oldid=318273#Costs">Bill Of Materials List from Dec 9, 2015</a>.
+      See, for example, this <a href="https://www.appropedia.org/w/index.php?title=Clerck,_a_RepRap_3D_printer_hanging_from_the_ceiling&amp;oldid=318273#Costs">Bill Of Materials List from December 9, 2015</a>.
     </p>
     <p>
       Ok, so we've been having some fun looking at the hardware.
-      Since we possess an ordinary skill in the art of cable driven robotics and 3d printing,
+      Since we possess an ordinary skill in the art of cable-driven robotics and 3d printing,
       we know that we also need to look at source files and firmware.
     </p>
     <p>
-      We must dive deeper, and ask questions like:
+      We must dive deeper and ask questions like:
     </p>
     <h2>But Was The Repo Publicly Available?</h2>
     <p>
-      The general public had access and usage rights to the repo continuously at all times since Dec 15, 2014, including on Apr 13, 2018.
+      The general public has continuously had access and usage rights to the repo since December 15, 2014, including April 13, 2018.
     </p>
     <p>
-      Information about how popular and well known the repo was on Apr 13, 2018 can be found by using <a href="http://archive.org">archive.org</a>, also known as Wayback Machine.
+      Information about how popular and well-known the repo was on April 13, 2018, can be found using <a href="http://archive.org">archive.org</a>, also known as Wayback Machine.
     </p>
     <p>
-      This is how github.com/tobbelobb/hangprinter looked on Jun 26, 2017:
+      Here's how github.com/tobbelobb/hangprinter looked on June 26, 2017:
     </p>
     <figure>
       <a href="./media/Jun26_2017_Github.png">
@@ -1163,19 +1142,19 @@ With one stationary PCB and long cables to stationary motors, it will be a lot o
       </figcaption>
     </figure>
     <p>
-      In the image we can see that the repo had 77 watchers, 248 stars, and 49 forks.
-      This means that this was a popular repo at the time.
-      The 49 forks means that at least 49 people have copied Hangprinter's source files
-      to use as the basis for their own cable driven robot build.
+      The image shows that the repo had 77 watchers, 248 stars, and 49 forks.
+      Those are high numbers for a cable-driven robot.
+      The 49 forks mean that at least 49 people have copied Hangprinter's source files
+      as the basis for their own cable-driven robot builds.
     </p>
     <p>
       The license in the repo allows and encourages such copying.
-      Hangprinter was the most popular and widely known basis for cable driven robot development in 2017 and 2018.
+      Hangprinter was the most popular and widely known basis for cable-driven robot development in 2017 and 2018.
     </p>
     <h3>Very Basic Inverse Kinematics</h3>
     <p>
-      Although the patent doesn't mention kinematics transforms in detail, I will mention Hangprinter's briefly here,
-      to make the case that Hangprinter was capable of doing a superset of the effector movements that the authors envision in the patent.
+      Although the patent doesn't mention kinematics transforms in detail, I will go through Hangprinter's briefly here
+      to make the case that Hangprinter could do a superset of the effector movements that the authors describe in the patent.
     </p>
     <figure>
       <a href="./media/inverse_transform.png">
@@ -1184,30 +1163,35 @@ With one stationary PCB and long cables to stationary motors, it will be a lot o
       <figcaption>
         Click the image for a larger version.
         These are the most important equations in the Hangprinter firmware,
-        in <a href="https://github.com/tobbelobb/hangprinter/blob/c9295eceff474d44da9f7ad971b1a9f0303fea45/firmware/Marlin/Marlin/Marlin_main.cpp#L1843">their exact form the way they were on Apr 10, 2018</a>.
+        in <a href="https://github.com/tobbelobb/hangprinter/blob/c9295eceff474d44da9f7ad971b1a9f0303fea45/firmware/Marlin/Marlin/Marlin_main.cpp#L1843">their exact form the way they were on April 10, 2018</a>.
         We see here that Hangprinter calculates its desired line lengths by using Pythagoras' theorem on all its cable directions.
-        The D-anchor is treated a bit differently, since its location's x-coordinate and y-coordinate are defined to be zero,
-        so they are omitted from the calculation.
-        The A, B, and C-anchors however, are treated in the most general way.
-        Adding "a plurality" of new anchor points to the firmware is therefore straightforward.
-        You simply use Pythagoras' theorem once for every anchor you have, irrespective of how many anchors there are.
+        The D-anchor's x- and y-coordinates are omitted from the calculation because they are defined to be zero.
+        However, the A, B, and C-anchors' coordinates could be any values.
+        Therefore, adding "a plurality" of new anchor points to the firmware straightforward.
+        You use Pythagoras' theorem once for every anchor you have, irrespective of how many anchors there are.
         The Hangprinter firmware had other advanced features at the time, like "<a href="https://torbjornludvigsen.com/blog/2017/#hangprinter_project_29">spool buildup compensation</a>", but
         let's stick to the basic principle of Pythagoras' theorem for this discussion.
       </figcaption>
     </figure>
     <p>
-      The anchors can therefore be placed at arbitrary positions around the print volume, and the firmware will still work.
+      Therefore, the anchors can be placed at arbitrary positions around the print volume, and adding more of them is easy.
+      Adding pure "tension control" lines requires no firmware changes at all.
     </p>
     <h2>But The SkyBAAM Moves Its Lower Anchors Upwards During Print. How Could Hangprinter Do That?</h2>
     <p>
-      Yes. See the gcode <a href="https://github.com/tobbelobb/hangprinter/blob/c9295eceff474d44da9f7ad971b1a9f0303fea45/firmware/Marlin/Marlin/Marlin_main.cpp#L1499">M665 in the firmware</a>.
-      It can be used during print.
+      Yes.
+      We touched upon this subject earlier, but let's explain how Hangprinter's firmware supported this.
+    </p>
+    <p>
+      See the gcode <a href="https://github.com/tobbelobb/hangprinter/blob/c9295eceff474d44da9f7ad971b1a9f0303fea45/firmware/Marlin/Marlin/Marlin_main.cpp#L1499">M665 in the firmware</a>.
+      A Hangprinter operator can use it during print to configure new anchor locations.
     </p>
     <p>
       The values of <code>anchor_A_z</code>, <code>anchor_B_z</code>, and <code>anchor_C_z</code> in the code excerpt above
-      describe the z-positions of the three normally lower placed anchors (the A-, B-, and C-anchors).
-      These three values, as well as all the other anchor position values, can be changed mid-print, with M665,
+      describe the z-positions of the three typically lower placed anchors (the A-, B-, and C-anchors).
+      These three values and all the other anchor position values, can be changed mid-print, with M665,
       as evidenced by the widely covered 2017 tall tower print.
+      I repost the video here to save you from scrolling back.
     </p>
     <figure>
       <div class='embed-container'>
@@ -1218,54 +1202,49 @@ With one stationary PCB and long cables to stationary motors, it will be a lot o
         </iframe>
       </div>
       <figcaption>
-        In this video from Apr 15, 2017, it's clear that the ABC-lines are terminated at different z-heights during different parts of the print.
-        Although it's not visible in the video, the D-anchor was also moved upwards once during the print to avoid having too long
-        D-lines that would otherwise have started to act like springs.
       </figcaption>
     </figure>
     <p>
       All of these firmware features were <a href="https://github.com/MarlinFirmware/Marlin/pull/9180#issuecomment-380536959">being merged into the world's most used 3d printer firmware at the time</a>,
-      called Marlin Firmware, in a public merge thread (similar to a forum thread) that was open for anyone to read and participate in.
-      This means Hangprinter and all its features were becoming an integrated and widely available type of 3d printer at the firmware level at the time before April 13, 2018.
+      called Marlin Firmware, in a public merge thread (similar to a forum thread) that was open for anyone.
+      This means Hangprinter was becoming an integrated and widely available type of 3d printer at the firmware level at the time before April 13, 2018.
     </p>
     <p>
       A comment on the changes required to make low anchors move continuously upwards during print.
       Please refer to the source code figure above to understand what I'm talking about here.
     </p>
     <p>
-      The three terms similar to <code>sq(anchor_ABC_z - cartesian[Z_AXIS])</code>, would need to be swapped out with a constant value.
+      The three terms similar to <code>sq(anchor_ABC_z - cartesian[Z_AXIS])</code> would need to be swapped out with a constant value.
     </p>
     <p>
-      The three new motors, those lifting the ABC-anchors, let's call them Q, P and R, would get their new positions calculated like this:
+      The three new motors, those lifting the ABC-anchors, let's call them Q, P, and R, would get their new positions calculated like this:
     </p>
     <p>
       <code>delta[Q_AXIS] = cartesian[Z_AXIS]</code>
     </p>
     <p>
-      That is, making the anchor movements continuous is a very small change to the kinematics.
+      Making the anchor movements continuous is a minimal change to the kinematics.
+      It is already in commercial use in February 2022; see <a href="https://en.bloft.fi/">bloft.fi</a> (not prior art).
     </p>
     <p>
-      This minimal adjustment of the Hangprinter kinematics is already in commercial use in Feb 2022, see <a href="https://en.bloft.fi/">bloft.fi</a> (not prior art).
-    </p>
-    <p>
-      Another way of "lifting anchor points continuously during operation" that was previously published on the patent's filing date, is to span up a giant 2d frame, like this:
+      Another way of "lifting anchor points continuously during operation" that was prior art on the patent's filing date is to span up a giant 2d frame, like this:
     </p>
     <figure>
       <a href="./media/russian_patent_2.png">
         <img src="./media/russian_patent_2_small.png" alt="" width="500" height="196"/>
       </a>
       <figcaption>
-          This is clipped from <a href="https://patents.google.com/patent/RU166163U1/ru">a Russian patent, RU166163U1, from 2016</a>, that went unreferenced by the patent in question.
+          This image is from <a href="https://patents.google.com/patent/RU166163U1/ru">a Russian patent, RU166163U1, from 2016</a> that went unreferenced by the patent in question.
       </figcaption>
     </figure>
     <h2>But The Balloon Idea? The Authors Mention Swapping The Crane For A Balloon In The Text. Can They Keep That Idea For Themselves?</h2>
     <p>
-      It's a fun idea but they are not the first to describe it.
-      It's been discussed in the Hangprinter community, obviously.
-      However, the Hangprinter Community weren't first to describe it either.
+      It's a fun idea, but they are not the first to describe it.
+      It has been discussed in the Hangprinter community.
+      However, the Hangprinter Community wasn't first either.
     </p>
     <p>
-      The idea is obvious to anyone with an ordinary skill in the art of parallel robotics.
+      The idea is evident to anyone with ordinary skills in the art of parallel robotics.
       It's even described in textbooks about parallel robotics:
     </p>
     <figure>
@@ -1273,13 +1252,13 @@ With one stationary PCB and long cables to stationary motors, it will be a lot o
         <img src="./media/balloon_Parallel_Robots_Mechanics_and_control_small.png" alt="" width="500" height="251"/>
       </a>
       <figcaption>
-          Figure 1.19 from page 19 of the book <a href="https://books.google.se/books?id=NDgTAgAAQBAJ">Parallel Robots: Mechanics and Control, by Hamid D. Taghirad, published Feb 20, 2013</a>.
+          Figure 1.19 from page 19 of the book <a href="https://books.google.se/books?id=NDgTAgAAQBAJ">Parallel Robots: Mechanics and Control, by Hamid D. Taghirad, published February 20, 2013</a>.
       </figcaption>
     </figure>
     <p>
-      The whole idea of a partly actuated cable driven robot,
+      The whole idea of a partly actuated cable-driven robot,
       whether the external force comes from a balloon, gravity, a spring, or even a "tension-control base station" is
-      not new in the world of cable driven robotics.
+      not new in the world of cable-driven robotics.
     </p>
     <figure>
       <a href="./media/partially_actuated.png">
@@ -1352,7 +1331,11 @@ With one stationary PCB and long cables to stationary motors, it will be a lot o
       TODO: Have only searched through pages 1, 2, 3...
     </p-->
 
-    <h2>Non-Hangprinter Previous Art That Went Unreferenced</h2>
+    <h2>Non-Hangprinter Prior Art That Went Unreferenced</h2>
+    <p>
+      I've already mentioned the SkyDelta but
+      I repost the video here to save you from scrolling back.
+    </p>
     <figure>
       <div class='embed-container'>
         <iframe src='https://www.youtube.com/embed/lnp1Pmki3lI'
@@ -1362,17 +1345,19 @@ With one stationary PCB and long cables to stationary motors, it will be a lot o
         </iframe>
       </div>
       <figcaption>
-        Brandon Heller's Youtube video from 2013 shows the SkyDelta, that predates Hangprinter.
-        Like most cable driven translation robots, Hangprinter included,
-        it uses pairs of cables that are "generally parallel to each other" as it's formulated in the patent.
-        It also uses rubber bands to pull upwards in much the same way as the patented contraption uses its springs.
+        Brandon Heller's Youtube video from 2013 shows the SkyDelta that predates Hangprinter.
       </figcaption>
     </figure>
     <p>
-      The SkyDelta can be said to be Hangprinter's predecessor in many ways.
-      It's possible that SkyBAAM got the first half of it's name from the SkyDelta,
-      or from the (also unreferenced) previous art called <a href="https://en.wikipedia.org/w/index.php?title=Skycam&amp;oldid=827979277">SkyCam</a>,
-      or from the (also unreferenced) previous art called <a href="https://www.instructables.com/Sky-Printer-Prototyping-An-Adaptable-Large-Scale-3/">Sky Printer</a>.
+      SkyBAAM shares the first half of its name with three pre-existing and very similar robots:
+      <ul>
+        <li>SkyDelta (2013),</li>
+        <li><a href="https://en.wikipedia.org/w/index.php?title=Skycam&amp;oldid=827979277">SkyCam (the 1980s)</a>,</li>
+        <li><a href="https://www.instructables.com/Sky-Printer-Prototyping-An-Adaptable-Large-Scale-3/">Sky Printer (2014)</a>.</li>
+      </ul>
+      These are similar to SkyBAAM in both name and implementation, and all of them are unreferenced in the patent.
+      It is necessary to Google up similar terms before choosing a project name like SkyBAAM to avoid name collisions.
+      Therefore, I find it unlikely that the patent authors didn't know about the above three projects when filing the patent.
     </p>
     <figure>
       <div class='embed-container'>
@@ -1387,19 +1372,23 @@ With one stationary PCB and long cables to stationary motors, it will be a lot o
       </figcaption>
     </figure>
     <p>
-      But it's not only Sky-something machines that went completely unreferenced by the patent in question.
+      But it's not only Hangprinter and the Sky-somethings that went unreferenced by the patent in question.
+      A related patent is also missing.
     </p>
     <figure>
       <a href="./media/russian_patent_2.png">
         <img src="./media/russian_patent_2_small.png" alt="" width="500" height="196"/>
       </a>
       <figcaption>
-          This is clipped from <a href="https://patents.google.com/patent/RU166163U1/ru">a Russian patent, RU166163U1, from 2016</a>, that went unreferenced by the patent in question.
+          This image is from <a href="https://patents.google.com/patent/RU166163U1/ru">a Russian patent, RU166163U1, from 2016</a> that went unreferenced by the patent in question.
           It's called "Carrier frame for the actuator of a construction 3d printer".
       </figcaption>
     </figure>
     <p>
-      Here's another high-profile project example from Advanced Architecture of Catalonia's (IAAC's) <a href="https://iaac.net/project/on-site-robotics/">on site robotics project in 2017</a>.
+      A quick Google search "cable-driven 3d-printer construction" gives us
+      another high-profile that went unreferenced.
+      This one is from Advanced Architecture of Catalonia's (IAAC's) <a href="https://iaac.net/project/on-site-robotics/">on site robotics project in 2017</a>.
+      Except for not using Hangprinter-like anchor-configuration, it's identical to SkyBAAM.
     </p>
     <figure>
       <div class='embed-container'>
@@ -1412,91 +1401,95 @@ With one stationary PCB and long cables to stationary motors, it will be a lot o
       <figcaption>
         IAAC's video from May 23, 2017.
         It shows the same concept as the patent in question, except they don't use the Hangprinter configuration with a single high anchor.
-        Instead they use four high anchors.
-        They did some <a href="https://youtu.be/_j7Ku3udHhk">physical tests as well, that were published in March 2017</a>, as well as a <a href="https://youtu.be/a8YOzYTYst4">demo in July 2017</a>.
+        Instead, they use four high anchors.
+        They did some <a href="https://youtu.be/_j7Ku3udHhk">physical tests as well, published in March 2017</a>, and a <a href="https://youtu.be/a8YOzYTYst4">demo in July 2017</a>.
       </figcaption>
     </figure>
     <p>
-      And here's another unreferenced example, this time from a scientific paper.
-      It points to how obvious the crane+base station concept is, and that it was already in use for precise positional control, long before 2018:
+      A search on Google Scholar gives yet
+      another unreferenced example.
+      It's presented unceremoniously as a generic example of cable-driven robot usage in a scientific paper.
+      It points to how prominent the crane+base station concept is and that it was already in use for precise positional control, long before 2018:
     </p>
     <figure>
       <a href="./media/extended_crane_system.png">
         <img src="./media/extended_crane_system_small.png" alt="" width="500" height="502"/>
       </a>
       <figcaption>
-          Figure 2 from <a href="https://link.springer.com/chapter/10.1007/978-3-319-09489-2_9">a paper called "Efficient Calibration of Cable-Driven Parallel Robots with Variable Structure", published on Aug 15, 2014</a>.
-          It shows a sketch of how a <a href="https://en.wikipedia.org/wiki/Solar_power_tower">solar power tower</a> (not previous art) might be built.
+          Figure 2 from <a href="https://link.springer.com/chapter/10.1007/978-3-319-09489-2_9">a paper called "Efficient Calibration of Cable-Driven Parallel Robots with Variable Structure", published on August 15, 2014</a>.
+          It shows a sketch of how a crane and some helper "base stations" with cable winders might put the top block onto a solar power tower.
           The paper is unreferenced in the patent.
       </figcaption>
     </figure>
     <h2>Postludium</h2>
     <p>
-      Adding together the current day (Feb 7, 2022) view counts from <a href="https://www.youtube.com/watch?v=Jk4fhQvNoaM">three</a> <a href="https://www.youtube.com/watch?v=ULJqLSTriRY">popular</a> <a href="https://www.youtube.com/watch?v=dZLtPFJEQi0">Hangprinter-related</a> Youtube videos published before Mar 30, 2017,
+      Adding together the current day (February 7, 2022) view counts from <a href="https://www.youtube.com/watch?v=Jk4fhQvNoaM">three</a> <a href="https://www.youtube.com/watch?v=ULJqLSTriRY">popular</a> <a href="https://www.youtube.com/watch?v=dZLtPFJEQi0">Hangprinter-related</a> Youtube videos published before March 30, 2017,
       gives a combined view count of 242041.
     </p>
     <p>
-      I consider it probable that every person following news channels covering 3d printing
+      I think every person following news channels covering 3d printing
       would have heard about Hangprinter on April 13, 2018, including its obvious potential to scale up.
-      All these people know that Hangprinter is open source,
-      and that they can to do what they want with it without asking for a license.
+      All these people know that Hangprinter is open source.
+      They know they can use Hangprinter however they like.
+      They also know nobody can patent Hangprinter or any other open source hardware project.
     </p>
     <p>
-        I'm happy to observe that <a href="https://3dprintingindustry.com/news/open-source-advocates-ornls-skybaam-3d-printer-copying-earlier-hangprinter-technology-203278/">central inventors in the 3d printing industry say that Hangprinter could be used to invalidate the patent</a> (not prior art).
+      I'm happy to observe that <a href="https://3dprintingindustry.com/news/open-source-advocates-ornls-skybaam-3d-printer-copying-earlier-hangprinter-technology-203278/">central inventors in the 3d printing industry say that Hangprinter could be used to invalidate the patent</a> (not prior art).
     </p>
     <h3>Why I Wrote This Prior Art Presentation</h3>
     <p>
-      I think the patent in question covers well known and established know-how and some demonstrably obvious and frequent ideas from the period before the filing date.
-      Nothing in the patent fulfills the criteria of being non-obvious to a person having ordinary skill in the art of cable driven robotics or 3d printing, not now, and not during the period before the filing date.
-      In short, I think patent US 11230032 should be withdrawn.
+      I think the patent in question covers well-known and established know-how and some demonstrably obvious and frequent ideas from the period before the filing date.
+      Nothing in the patent fulfills the criteria of being non-obvious to a person having ordinary skill in the art of cable-driven robotics or 3d printing, not now, and not during the period before the filing date.
+      In short, I think patent US 11230032 should be withdrawn or invalidated.
     </p>
     <figure>
       <a href="./media/upside_down_5.png">
         <img src="./media/upside_down_5_small.png" alt="" width="500" height="348"/>
       </a>
       <figcaption>
-        An improved version of Fig 2 that communicates the patent's core idea much more clearly.
+        This improved version of Fig 2 communicates the patent's core idea much more clearly.
       </figcaption>
     </figure>
     <h2>Appendix</h2>
     <h3>Safety Concerns</h3>
     <p>
-      First of all, the telescoping flagpole (Fig 3 in the patent in question) is a dangerous approach, given it's large risk of falling over.
+      First of all, the telescoping flagpole (Fig 3 in the patent in question) is a dangerous approach, given its considereable risk of falling over.
       Apart from damaging health and property, it would hurt Hangprinter's reputation
-      in the same way as <a href="https://www.reddit.com/r/3Dprinting/comments/8ah96r/anet_a8_burns_down_half_the_house/">self-igniting commercial clones has hurt the reputation of Prusa and other Repraps</a> (not previous art).
+      in the same way as <a href="https://www.reddit.com/r/3Dprinting/comments/8ah96r/anet_a8_burns_down_half_the_house/">self-igniting commercial clones hurt the reputation of Prusa and other RepRaps</a> (not prior art).
     </p>
     <p>
-      The mobile crane with it's arm over the Colosseum also risks falling over very easily.
-      Something like what's shown on Fig 3 in the patent in question should never be built in practice.
+      The mobile crane with its arm over the Colosseum also risks falling over very quickly.
+      Something like what's shown in Fig 3 in the patent in question should never be built in practice.
       Please consider safety before scaling up Hangprinter.
     </p>
     <h3>A More Sensible Approach To Designing Anchor Points For Construction Work With Hangprinter. Alternative To SkyBAAM's Single Crane And Telescoping Flagpoles</h3>
     <p>
-      A more useful base station would be any old mobile crane, since they're already available and not restricted to purely vertical motion.
+      A better base station would be any old mobile crane since they're already available and not restricted to purely vertical motion.
       Why not a <a href="https://www.alibaba.com/product-detail/5-Ton-5000kg-5T-diesel-engine_1600139278974.html">$23000 electric spider drive crane?</a> (not prior art),
       or a simpler <a href="https://aguidepro.com/wp-content/uploads/2019/04/Smittybilt-Winch-A-Best-Car-Trailer-Winch-1024x476.jpg">car winch size</a> (not prior art) for smaller jobs?
     </p>
     <p>
       Maybe the most practical thing would be three or four (or even more) spider crane-like vehicles lifting the D-anchor together,
-      with their lifting arms connected together at a single high point, forming a polyhedron shaped like a <a href="https://en.wikipedia.org/wiki/Tetrahedron#Related_polyhedra_and_compounds">regular pyramid</a> (not prior art).
-      The lift arms would not have to be very stiff, because of the self-supporting properties of pyramid shapes.
+      with their lifting arms connected at a single high point, forming a polyhedron shaped like a <a href="https://en.wikipedia.org/wiki/Tetrahedron#Related_polyhedra_and_compounds">regular pyramid</a> (not prior art).
+      The lift arms would not have to be very stiff because of the self-supporting properties of pyramid shapes.
     </p>
     <p>
-      The spider crane-like vehicles could also have cable winches on-board, close to the ground level.
-      If their lift-arms were in fact telescoping or foldable linear rails,
-      then the lower anchor points could slide up along the crane-arm-rails during operation if necessary,
-      in order to avoid suspension cables potentially interfering with the unfinished 3d print.
+      The spider crane-like vehicles could also have cable winches on board, close to the ground level.
+      If their lift-arms were, in fact, telescoping or foldable linear rails,
+      then the lower anchor points could slide up along the crane-arm-rails during operation if necessary
+      to avoid suspension cables potentially interfering with the unfinished 3d print.
     </p>
     <p>
-      Simple attachment points along the crane-arm, where blocks could be attached and lower (ABC) suspension cables could be rerouted
-      over would be simpler and easier to implement, but would require manual intervention and maybe manual lifting during operation.
+      Simple attachment points along the crane arm would be simpler and easier to implement.
+      Blocks at several attachment points could reroute lower (ABC) suspension cables.
+      Such rerouting would require manual intervention and maybe manual lifting during operation.
     </p>
     <p>
-      The crane-arm-rails or attachment points along the crane-arm would increase the stiffness requirements on the crane-arms considerably,
-      and should be made optional or be limited to a low enough max height to not risk the crane-arm breaking during operation.
+      The crane-arm-rails or attachment points along the crane-arm would increase the stiffness requirements on the crane-arms
+      considerably and should be made optional or be limited to a low enough max height not to risk the crane-arm breaking during operation.
     </p>
     <p>
-        PS! Please don't patent my ideas.<br />You know the rules, <a href="https://youtu.be/dQw4w9WgXcQ">and so do I</a>.
+      PS! Please don't patent my ideas.<br />You know the rules, <a href="https://youtu.be/dQw4w9WgXcQ">and so do I</a>.
     </p>
   </post>
 </posts>
