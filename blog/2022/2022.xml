@@ -6,9 +6,6 @@
       Hangprinter is a cable-driven robot.
       HP4 is the latest version.
     </p>
-    <p>
-      HP4 tries to be better than HP3, which tried to be better than HP2 and HP1. Actually, HP0 wasn't all that good.
-    </p>
     <!--p>
       For a cable-driven robot to be reliable and enjoyable to use it must be fully automated.
       The only thing we can rely on humans to enjoy doing is mounting stationary anchors.
@@ -155,13 +152,23 @@
         <ul>
           <li>Dynamic measurement and compensation for position and line tightness errors during print.</li>
         </ul>
+        <li>Absolute Encoders. They can start up completely still and give stiffer motor axles, without adding cost (due to better circuit boards that are not yet available).</li>
       </ul>
     </p>
     <p>
-      So the HP5 will be a way smaller upgrade than the HP4 was. So small in fact, that it might take even less than four years.
-
-      I think Hangprinter v5 could become
-      a design to manufacture in larger numbers.
+      So the HP5 will be a big upgrade, although smaller than the HP4 was.
+      Hopefully, HP5 will be designed and tested faster than HP4 was (which took four years).
+    </p>
+    <p>
+      The HP4 has impressed me and shown very much promise so far.
+      Compared to HP3 it's a dream to use.
+      It has encouraged me to continue along this design path.
+    </p>
+    <p>
+      I think it's successor, the Hangprinter v5, could become a real winner, a design that's very hard to optimize further,
+      and a good candidate for mass manufacturing.
+      I've written about local design optimums before.
+      I think HP5 could be one.
     </p>
   </post>
   <post id="hangprinter_project_77" heading="Projects as Subtractive Processes" date="25-1-2022">
