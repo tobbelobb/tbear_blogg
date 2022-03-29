@@ -1,0 +1,108 @@
+Awareness.
+The knowing of how time is spent, why, and how it makes us feel.
+
+Some webpage took 7 seconds to load.
+Why? Maybe the server is slow, or overloaded, or maybe there’s some inefficiencies in some javascript code somewhere.
+I lost concentration and felt slightly confused.
+
+Working with low awareness makes you feel less alive when you work.
+Not aware about yourself, you might unknowingly feel a bit crap when you work.
+The crappy feeling sneaks into your work.
+Makes it look grey, flat, and dead.
+
+Being honestly aware helps you do something with those crappy feelings that actually works, like taking a break.
+It helps good feelings spill into your work instead.
+From there, it to spills into your bosses, customers, mentors, adepts, and colleagues.
+
+## Hangprinter Way Forward
+
+The most important thing is that you use it.
+Play with it, find out what’s interesting about it, and make it yours.
+
+Focus on crisp problems.
+Ignore vague problems.
+
+Below is my personal list.
+Being hopelessly and constantly unfinished is the nature of our work.
+Being aware of where we are, why, and how we feel about it, and sometimes even what to do about it, helps.
+It helps to notice things.
+
+## The List. It's supposed to cover every single annoyance in the Hangprinter Project. Big and Small.
+
+Gitlab: CI doesn't run either tests, formatting, or tidy-scripts
+
+Gitlab: New users get confusing emails about credit card verification and pipelines failing
+
+Gitlab: Tobben is the sole contributor in all the repos
+
+Discord: Things get lost within hours, and there's no system to extract and structure value from the Discord chat
+
+Discord: We have no backup if it goes down
+
+Print quality: Corners never get perfectly crisp, and I don't know exactly why. It might be ODrives with not perfectly stiff motors?
+
+Motor bracket: It's fiddly to mount the encoder.
+
+Motor bracket: The one side of the belt roller tower easily breaks.
+
+Motor bracket: Must be printed in heat-resistant plastic.
+
+Motor bracket: Getting the smooth 8mm rod to push fit with perfect resistance is a bit hard.
+
+Motor bracket: Lines catch on to the belt too easily when slack/backwards rotation occurs.
+
+Motor bracket: Max amount of line is too limited.
+
+Spools and lines: The backing-trick described in the documentation need proper verification.
+
+Lines, ceramic eyelets, bearings: We need better data on fraying. How much occurs? Where? How much is acceptable? Can we reduce it further?
+
+Motor smoothness: Torque mode with anticogging is still not perfect for our use case. We want to cancel out rotational inertia of the motor, to prevent over-spin and "heavy feeling".
+
+Startup issue: It's annoying to know that index search might fail upon power up. We want absolute encoders, or at least a guarantee that motors index search in the safe direction.
+
+ODriveFirmware: It's annoying to be stuck on old firmware (0.5.1) because it makes the doc/v4 page look difficult.
+
+Docs: Some of the features descibed in the HP4 Unique Features list (https://torbjornludvigsen.com/blog/#hangprinter_project_78) are not described in the doc/v4 page!
+
+Line path, snail, line roller double: It feels like the 608 bearings introduce more friction and inertia than they have to. We could give them larger radii or change to smaller bearings.
+
+Outreach: There are no professional-looking video presenting HP4 in a serious way. Users expect this to exist for a serious design.
+
+hp-mark: Calibrating camera is hard and too much hassle.
+
+hp-mark: is too slow.
+
+hp-mark: Doesn't print warnings on result images.
+
+hp-mark: is a bit hard to trust. Need another camera and a way to normalize results. Currently possible to take two measurements right after each other, with different result but both low reproj. error.
+
+Force measurement: Measurements are imprecise. Vary by +-10N.
+
+Force measurement: Needs to be integrated into auto-calibration-simulation-for-hangprinter. Will make autocal better.
+
+hp-mark: should be able to measure positions of 6 markers relative to each other without requiring hand-measurements?
+
+hp-mark: should write to its own camera config file when flag -c/--camera-calibration is supplied.
+
+hp-mark: should be available from within ReprapFirmware.
+
+Auto-homing: Currently doesn't exist. Is an important feature. Must be put together.
+
+Outreach: we need a video of HP4 carrying a heavy extruder. It's written in multiple places that it's possible, but not yet demoed, so maybe still unconvincing.
+
+Hexatrumpet: we need a render of a Hexatrumpet, to answer the "build volume shape?"-question better.
+
+Outreach/funding: We need a deck of slides that presents HP4, it's unique features, and its potential.
+
+Doc: There's currently documentation in too many places. hangprinter.org/doc should be the place for everything. Currently lots of important stuff is spread across READMEs.
+
+Doc: It's a bit too hard to edit the various index.html files in the project. Simplify, particularly image and video inclusion (size scaling).
+
+Openscad, Motor Bracket, snail: Many stls come out of Openscad non-manifold, and need manual repair. That's a huge waste of time.
+
+Mesh Compensation, Forward Kinematics: It seemed like I needed to increase the values manually to make it compensate sufficiently?
+
+Cable Connections: We need to learn how to more securely connect cables, and teach this in the BOM and doc/v4.
+
+Full scale structured testing: None exists.
