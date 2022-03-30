@@ -27,41 +27,41 @@
       <ul>
         <li>Space Below Is Completely Cleared When Parked</li>
         <ul>
-          <li>Takes 5 Min to Park</li>
+          <li>Takes 5 Min to Park. (<a href="https://twitter.com/tobbelobb/status/1507390473706643456">1</a>, <a href="https://twitter.com/tobbelobb/status/1507394479501811717">2</a>)</li>
         </ul>
         <li>Supports Any Placement of Motor and Electronics, enabled by</li>
         <ul>
           <li>CAN Driven Communication</li>
-          <li>All Axes Are Conceptually Identical</li>
-          <li>Pre-Defined Placement is Also Avaliable as DXF/PDF</li>
+          <li>All Axes Are Conceptually Identical (<a href="https://github.com/Duet3D/RepRapFirmware/pull/554">1</a>)</li>
+          <li>Pre-Defined Placement is Also Avaliable as DXF/PDF (<a href="https://twitter.com/tobbelobb/status/1403282393784541191">1</a>)</li>
         </ul>
         <li>Slack Tolerance and Servicability, enabled by</li>
         <ul>
-          <li>Thick Stiff Wear Resistant Lines</li>
+          <li>Thick Stiff Wear Resistant Lines (<a href="https://youtu.be/K_fQpvZ3oeA">1</a>)</li>
           <li>Completely Closed Line Paths</li>
           <li>Ceramic Eyelets &amp; U-shaped Bearings Everywhere</li>
           <li>Little Risk of Lines Falling Off, Tangling, or Getting Stuck</li>
-          <li>Parts Along Line Path Can Be Mounted/Serviced Whithout Unthreading</li>
+          <li>Parts Along Line Path Can Be Mounted/Serviced Whithout Unthreading (<a href="https://youtu.be/CsXr_lqhI90">1</a>)</li>
         </ul>
-        <li>High Speeds (~900 mm/s), enabled by</li>
+        <li>High Speeds (~900 mm/s) (<a href="https://twitter.com/tobbelobb/status/1484209682420019206">1</a>), enabled by</li>
         <ul>
           <li>High Quality BLDC Motors</li>
           <li>Lots of Processing Power</li>
         </ul>
-        <li>Self-Calibration, enabled by</li>
+        <li>Self-Calibration (<a href="https://youtu.be/As3Y5J2NTGA">1</a>), enabled by</li>
         <ul>
-          <li>Built-in Motion Tracking</li>
-          <li>Built-in Force Sensing</li>
+          <li>Built-in Motion Tracking (<a href="https://twitter.com/tobbelobb/status/1466773203938852870">1</a>)</li>
+          <li>Built-in Force Sensing (<a href="https://github.com/Duet3D/RepRapFirmware/pull/564">1</a>)</li>
           <li>Few Hand-Measurements are Needed</li>
         </ul>
-        <li>High Precision and Accuracy, enabled by:</li>
+        <li>High Precision and Accuracy (<a href="https://twitter.com/tobbelobb/status/1473344630842445832">1</a>, <a href="https://twitter.com/tobbelobb/status/1472947513191768065">2</a>, <a href="https://twitter.com/tobbelobb/status/1433384365023715328">3</a>, <a href="https://twitter.com/tobbelobb/status/1430218354971848713">4</a>, <a href="https://www.youtube.com/watch?v=qdRI0cvxagU">5</a>, <a href="https://twitter.com/tobbelobb/status/1383821508238143491">6</a>, <a href="https://twitter.com/tobbelobb/status/1130065984881070080">7</a>, <a href="https://twitter.com/tobbelobb/status/1128704338162016262">8</a>), enabled by:</li>
         <ul>
-          <li>Motion Tracking</li>
-          <li>Force Sensing</li>
-          <li>Flex Compensation</li>
-          <li>Spool Buildup Compensation</li>
-          <li>Mechanical Bed Probe</li>
-          <li>Direct Connection Between Motors and Tip of Tool Head</li>
+          <li>Motion Tracking (<a href="https://twitter.com/tobbelobb/status/1466773203938852870">1</a>)</li>
+          <li>Force Sensing (<a href="https://github.com/Duet3D/RepRapFirmware/pull/564">1</a>)</li>
+          <li>Flex Compensation. (<a href="https://twitter.com/tobbelobb/status/1503840578236264455">1</a>, <a href="https://github.com/Duet3D/RepRapFirmware/pull/562">2</a>)</li>
+          <li>Spool Buildup Compensation (<a href="https://twitter.com/tobbelobb/status/1084185594497064961">1</a>)</li>
+          <li>Mechanical Bed Probe (<a href="https://twitter.com/tobbelobb/status/1458823899827871754">1</a>)</li>
+          <li>Direct Connection Between Motors and Tip of Tool Head. (<a href="https://twitter.com/tobbelobb/status/1508519679970664459/video/1">1</a>, <a href="https://twitter.com/tobbelobb/status/1123626333958021122">2</a>)</li>
           <li>High Number &amp; Wide Apart Line Force Points Stabilizing Effector</li>
         </ul>
         <li>User Friendliness, enabled by</li>
@@ -71,40 +71,47 @@
             <li>Plastic Filament</li>
             <li>Plastic Pellets</li>
             <li>Clay</li>
-            <li>Pen-plotting (standard HP4 plotting tool available)</li>
+            <li>Pen-plotting (standard HP4 plotting tool available). (<a href="https://twitter.com/tobbelobb/status/1460974351931654144">1</a>)</li>
           </ul>
           <li>Web GUI via Wifi</li>
           <li>Gcode Macros, User-Defined and Pre-Defined</li>
-          <li>Mesh Bed Compensation With Mechanical Probe</li>
-          <li>Risk of Line Collision Detected Before Print</li>
+          <li>Mesh Bed Compensation With Mechanical Probe (<a href="https://twitter.com/tobbelobb/status/1458823899827871754">1</a>)</li>
+          <li>Risk of Line Collision Detected Before Print (<a href="https://twitter.com/tobbelobb/status/1282801692757696513">1</a>, <a href="https://twitter.com/tobbelobb/status/1280787224519417856">2</a>)</li>
           <li>Stock Firmwares Means Updates Come For Free</li>
+          <li>Torque Mode (<a href="https://vimeo.com/227891846">1</a>)</li>
         </ul>
         <li>Safety, enabled by</li>
         <ul>
-          <li>Mechanical Line Release Mechanism</li>
+          <li>Mechanical Line Release Mechanism (<a href="https://twitter.com/tobbelobb/status/1410903567473459202">1</a>)</li>
           <li>Low Max Current Through Motors</li>
           <li>Various Fault Detection Mechanisms in Driver Software</li>
+          <li>Heat-resistant hose to protect electric wires from hot parts (<a href="https://twitter.com/tobbelobb/status/1444007666255384584">1</a>)</li>
+          <li>Hoist &amp; Lower the Ceiling Unit Easily. No ladders required for maintenance. (<a href="https://twitter.com/tobbelobb/status/1428025129406238723">1</a>).</li>
         </ul>
         <li>Heavy Duty Effector</li>
         <ul>
-          <li>Gear Up/Down With Block &amp; Talley System</li>
-          <li>Direct Connection Between Motors and Tip of Tool Head</li>
+          <li>Gear Up/Down With Block &amp; Talley System. (<a href="https://twitter.com/tobbelobb/status/1428702006844305413">1</a>)</li>
+          <li>Direct Connection Between Motors and Tip of Tool Head. (<a href="https://twitter.com/tobbelobb/status/1508519679970664459/video/1">1</a>, <a href="https://twitter.com/tobbelobb/status/1123626333958021122">2</a>)</li>
         </ul>
         <li>Smooth As Butter Motion System, enabled by</li>
         <ul>
           <li>Belt Transmission Between Motor And Spool</li>
-          <li>Anti-Cogging. Motor Drivers Cancel Out Unevenness Inside Motors</li>
+          <li>Anti-Cogging. Motor Drivers Cancel Out Unevenness Inside Motors. (<a href="https://twitter.com/tobbelobb/status/1405475942286376965">1</a>)</li>
         </ul>
         <li>Scales Up To Several Cubic Meters, enabled by</li>
         <ul>
-          <li>Automatic Length Control of Hanging Electrical Wires</li>
+          <li>Automatic Length Control of Hanging Electrical Wires (<a href="https://twitter.com/tobbelobb/status/1451208751692894210">1</a>)</li>
           <li>Support for Extra Backing-Line</li>
           <li>Support for Changing Anchor Placements Manually During Print</li>
+        </ul>
+        <li>The Cheapest to Transport Big 3d Printer, enabled by</li>
+        <ul>
+          <li>Being a cable driven robot. (<a href="https://twitter.com/tobbelobb/status/1497141161961664529">1</a>)</li>
         </ul>
       </ul>
     </p>
     <p>
-      That was 11 selling points for HP4.
+      That was 12 selling points for HP4.
       Nine of them are new since HP3.
       So HP4 is a cosmic upgrade.
     </p>
@@ -113,7 +120,7 @@
       <ul>
         <li>More Compact While Printing, enabled by</li>
         <ul>
-          <li>A Fifth Motion Axis, similar to the four we already have.</li>
+          <li>A Fifth Motion Axis, similar to the four we already have. Adding one more low anchor would allow better working angles, and hence less wasted space.</li>
           <li>A Narrower, Taller Effector</li>
         </ul>
         <li>Lower Price, enabled by</li>
