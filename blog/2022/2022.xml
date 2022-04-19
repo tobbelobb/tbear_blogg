@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
 <posts year="2022">
+  <post id="hangprinter_project_79" heading="Solving Hangprinter's Biggest Problem" date="27-3-2022">
+    <p>
+      So you've mounted your Hangprinter hardware.
+      You've threaded all the lines and attached all the anchors.
+      Motors are spinning.
+    </p>
+    <p>
+      Now there's just the configuration left and you're good to go! Weeee! =)=)=)
+    </p>
+    <p>
+      Ehem. Not so fast. Hangprinter configuration is very involved.
+      More than 25 values to get right, and doing so manually takes a lot of effort and training.
+      There's anchor locations, spool buildup factor (ie line thickness), line stiffness, spool radii (including unused line length), various types of gearing and so on.
+    </p>
+    <p>
+      How is a user supposed to keep up with that?
+      How to give efficient support?
+    </p>
+    <h3>✨Solution: Run The Motion Control in Reverse✨</h3>
+    <p>
+      What if you could ask your Hangprinter "am I doing it right?".
+      For the time being, you can't ask your Hangprinter directly, but you can ask
+      <a href="https://gitlab.com/tobben/auto-calibration-simulation-for-hangprinter">auto-calibration-simulation-for-hangprinter</a>'s simulation.py program this question.
+    </p>
+  </post>
   <post id="hangprinter_project_78" heading="Hangprinter v4 and Hangprinter v5" date="27-3-2022">
     <p>
       Hangprinter is a cable-driven robot.
