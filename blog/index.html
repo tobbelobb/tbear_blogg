@@ -42,16 +42,400 @@
          
       </div>
       <div id="MainContent">
-         <h1 id="hangprinter_project_78">Hangprinter v4 and Hangprinter v5</h1>
-         <div class="date">27-3-2022</div>
+         <h1 id="hangprinter_project_79">Solving Hangprinter's Biggest Problem</h1>
+         <div class="date">21-4-2022</div>
          <p>
-            Hangprinter is a cable-driven robot.
-            HP4 is the latest version.
+            So you've mounted your Hangprinter hardware.
+            You've threaded all the lines and attached all the anchors.
+            Motors are spinning.
                 
          </p>
          <p>
-            Goal for HP4 development was to create a reliable workhorse, that people enjoy using, for profit.
-            That sounds a bit like magic.
+                  Now there's just the configuration left and you're good to go! Weeee! =)=)=)
+                
+         </p>
+         <p>
+                  Ehem. Not so fast. Hangprinters kinematics is non-linear. Configuration is fiendishly hard.
+                
+         </p>
+         <figure>
+                  <a href="2022/bilder/Reuben-Margolin.jpg">
+                       <img src="2022/bilder/Reuben-Margolin_small.jpg" alt="" width="500" height="277">
+                     </a>
+                  
+            <figcaption>
+                       <a style="font-size:7px;" href="http://www.aesdes.org/2019/03/09/top-5-constraints-kinetic-art/">Image source</a>
+                     
+            </figcaption>
+                
+         </figure>
+         <h3>Kinematics? Non-linear? What?</h3>
+         <p>
+                  With non-linear here, we mean there's no flatness or straightness to be found in Hangprinter's physical parts.
+                  We use maths and physics to give it precision capabilities despite these weirdly shaped parts.
+                  Let me explain the problem more closely.
+                
+         </p>
+         <p>
+                  Hangprinter's movement commands are given in terms of x-, y-, and z-coordinates.
+                  Gcode files and user commands will tell the Hangprinter to
+                  "move to the position that has this x-coordinate, this y-coordinate, and this z-coordinate".
+                  Xyz-coordinates, sometimes called Cartesian coordinates, are flat and straight, with straight angles between them.
+                
+         </p>
+         <figure>
+                  <a href="2022/bilder/straight_movements_angled_lines.JPG">
+                       <img src="2022/bilder/straight_movements_angled_lines_small.JPG" alt="" width="500" height="474">
+                     </a>
+                  
+            <figcaption>
+                       In a simple pattern like this, you can count the corners to know how many movement commands the Hangprinter got.
+                       Each movement command told the Hangprinter to move from one corner to another corner.
+                       Hangprinter needs to figure out for itself how to make the movement in between the corners smooth, flat, and straight.
+                     
+            </figcaption>
+                
+         </figure>
+         <p>
+                  Hangprinter's physical parts are neither flat nor straight, as we mentioned.
+                  Therefore, it can't control xyz-positions directly by moving three independent motors at constant speeds, like traditional
+            gantry-style machines typically do.
+                
+         </p>
+         <p>
+                  Instead, its controls four motors, called A, B, C, and D.
+                  The motors are in turn connected to the moving unit (and each other) via belts, spools and strings.
+                
+         </p>
+         <p>
+                  None of the strings lie perfectly along the x-, y-, or z-axis.
+                  They point in all kinds of different directions at different times.
+                
+         </p>
+         <p>
+                  So to execute xyz-movement commands, the Hangprinter needs to convert xyz-positions into motor-positions (ABCD-positions).
+                  The conversion from xyz to ABCD is expressed in Hangprinter's firmware as an equation called
+                  the <b>inverse kinematics equation</b>.
+                  Let's abbreviate it as f(xyz) -&gt; (ABCD).
+                
+         </p>
+         <p>
+                  Take a deep breath.
+                
+         </p>
+         <figure>
+                  <a href="2022/bilder/Irish_Wave_at_Park_West_in_Dublin.jpg">
+                       <img src="2022/bilder/Irish_Wave_at_Park_West_in_Dublin_small.jpg" alt="" width="500" height="667">
+                     </a>
+                  
+            <figcaption>
+                     
+            </figcaption>
+                
+         </figure>
+         <p>
+                  Sorry I lied to you.
+                  If it was as easy as f(xyz) -&gt; (ABCD), then that wouldn't have been fiendishly hard at all.
+                  The inverse kinematics equation depends on many more values than just xyz.
+                  There are at least 25 other values.
+                  So f is better described like this:
+                
+         </p>
+         <p>
+                  f(xyzqwertuiopasdfghjklcvbnm...) -&gt; (ABCD)
+                
+         </p>
+         <p>
+                  Each letter in the qwert...-part corresponds to a configuration value.
+                  All these values describe physically measurable things,
+                  like the moving unit's weight, the lines' stiffness, the anchors' xyz-locations, the lines' thickness, the spools' radii
+            (including buildup from idle unused line), and the various types of gearing in the system.
+                
+         </p>
+         <p>
+                  The inverse kinematics function f is actually a fairly involved physics-model of your Hangprinter machine.
+                  If the model is configured wrong, so that it doesn't match reality, then the movements go wrong in reality.
+                  Typically manifestations of an f vs reality mismatch, are non-flat first layers, over-tight or slack lines, and generally
+            horrible printing quality.
+                
+         </p>
+         <h3>Ok Non-linear Bla-bla. But Still: What?</h3>
+         <p>
+                  Yeah, we don't want to have you learn all that.
+                  The complexity will also continue to increase in the future, just because reality is complicated and we want to develop
+            the inverse kinematics equation further.
+                
+         </p>
+         <p>
+                  How are you supposed to keep up with that?
+                  How are we supposed to give efficient support when 50% of users come and say "Hey, all my lines go slack"?
+                  Actually, it's probably 75%.
+                
+         </p>
+         <p>
+                  To be honest, configuring the qwert...-values from scratch drives everyone crazy.
+                  This is one reason why cable driven robots aren't very frequent out in industry already.
+                  Physics is too hard. We need to automate.
+                
+         </p>
+         <h3>&#10024;Solution: Verify&#10024;</h3>
+         <p>
+                  It's not enough to just hope configuration is good enough.
+                  With my fingers crossed all the time, I get less work done.
+                
+         </p>
+         <p>
+                  The machine must measure its own configuration values, as many as possible at once, and give us some proof that they
+            are indeed correct.
+                
+         </p>
+         <p>
+                  This is now possible, and it works (ok, it has been possible for a while, but it works much better now).
+                  It builds upon collecting some simple data, mostly with the machine itself.
+                
+         </p>
+         <p>
+                  Check out
+                  <a href="https://gitlab.com/tobben/auto-calibration-simulation-for-hangprinter">auto-calibration-simulation-for-hangprinter</a>, and its simulation.py program.
+                
+         </p>
+         <p>
+                  It works like this:
+                  You start with your mounted, but completely unconfigured Hangprinter v4.
+                  Put it into torque mode and push it to your desired origin point by hand.
+                  You send it a command who teaches the Hangprinter that this is the xyz=0 point from now on.
+                
+         </p>
+         <p>
+                  Next, you measure the line lengths (endpoint to endpoint along the lines) in all the four directions.
+                  This teaches your Hangprinter roughly how large it is, and helps you verify config values later on.
+                
+         </p>
+         <p>
+                  Then you locate some known points on your print bed, and one known point that is higher up.
+                  This teaches your Hangprinter what "flatness" is and where "upward" is.
+                
+         </p>
+         <p>
+                  Here's a video showing how I pushed my mover around, collecting data at each of the green, known positions.
+                
+         </p>
+         <figure>
+                  
+            <video width="500" height="367" controls="controls">
+                       
+               <source src="2022/bilder/collect_first_eight.webm" type="video/webm"></source>
+                        
+               <!--source src="movie.ogg" type="video/ogg"-->
+                        Your browser does not support the video tag.
+                     
+            </video>
+                  
+            <figcaption>
+                       Animation showing where I collected my first nine data points.
+                       Shows best in fullscreen.
+                     
+            </figcaption>
+                
+         </figure>
+         <p>
+                  Since I use <a href="gitlab.com/tobben/hp-mark">hp-mark</a>, I have known positions all around, but you can create
+                  known positions by for example using objects of known sizes, aiming plumbs and similar tools.
+                
+         </p>
+         <p>
+                  Lastly, you collect motor encoder data in lots (~40) of unknown xyz-positions, but with lines still straight but not
+            super tight, thanks to torque mode.
+                  This teaches the Hangprinter how a valid, safe position looks like, where no slackness but also no over-tightening happens.
+                
+         </p>
+         <figure>
+                  
+            <video width="500" height="367" controls="controls">
+                       
+               <source src="2022/bilder/collect_all.webm" type="video/webm"></source>
+                        
+               <!--source src="movie.ogg" type="video/ogg"-->
+                        Your browser does not support the video tag.
+                     
+            </video>
+                  
+            <figcaption>
+                       Animation showing where I collected all my data points.
+                       Shows best in fullscreen.
+                     
+            </figcaption>
+                
+         </figure>
+         <p>
+                  If your data was high quality, then the simulation.py program will find good configuration values for you,
+                  and tell you exactly how good they are:
+                
+         </p>
+         <figure>
+                  <a href="2022/bilder/simulation_output.png">
+                       <img src="2022/bilder/simulation_output_small.png" alt="" width="500" height="117">
+                     </a>
+                  
+            <figcaption>
+                       In the 44 positions show in the animation above, positional error will be maximum ~2mm,
+                       and the line lengths found were ~23 mm different from the hand-measured values, summed over all four directions,
+                       so a ca 6mm error in each direction on average.
+                       The configuration itself is the three lines of copy/paste-able M669 and M666-commands at the bottom.
+                     
+            </figcaption>
+                
+         </figure>
+         <p>
+                  Now, why is this a proof and a verification that the inverse kinematic function can work with these configuration values?
+                  Because the same inverse kinematics function that run on Hangprinter's controller board also runs inside simulation.py.
+                  If it works in simulation.py, together with the reality-check that collected data provides, then it works in the physical
+            Hangprinter as well.
+                
+         </p>
+         <p>
+                  For the time being, collecting all the data and running simulation.py is a bit cumbersome but <a href="https://gitlab.com/tobben/auto-calibration-simulation-for-hangprinter/-/blob/hp_mark_adjusted/README.md">well documented</a>.
+                
+         </p>
+         <p>
+                  Having a program that tells the user exactly what to do while double and triple checking the data, and running simulation.py
+            in the background, is the next big step in making Hangprinter easier to use.
+                  However, all the underlying maths and algorithms are established and working already.
+                
+         </p>
+         <h3>Why Collect All This Data? Why Not Just Use Measurement Tape, Like In the Good Old HP3-Days?</h3>
+         <p>
+                  Finding good configuration values based on collected data has three large advantages over hand-measuring everything
+            and hoping for the best:
+                  
+            <ul>
+                       
+               <li>It can be fully automated.</li>
+                       
+               <li>Less doubt. I always wonder if I made a typo or mistake with my measurement tape. The simulation.py method gives a proven
+                  and typo-free config.
+               </li>
+                       
+               <li>Easier support. The data gives a complete picture of your motion system. If I get your data, I can for example discover that
+                  your spools have the wrong radii, or that your gears miss a tooth.
+                            Or I can discover that you're collecting your data points in a too small volume, or with too tight lines. Such things
+                  are extremely hard to reliably clear up via chat, email or even voice chat.
+                            In the data, it's more or less obvious, and finding all these kinds of errors can even be automated, removing the
+                  need for support completely in the future.
+               </li>
+                     
+            </ul>
+                
+         </p>
+         <p>
+                  In addition to this, the approach of simulating Hangprinter gives me many advantages as a developer,
+                  allowing me to push Hangprinter technically forwards faster than I would have otherwise.
+                
+         </p>
+         <h3>I Use The Simulation To Double-Check hp-mark's Measurements</h3>
+         <p>
+                  Actually, simulation.py gives us an opportunity to check how accurate hp-mark is, and the general direction of its errors.
+                
+         </p>
+         <figure>
+                  <a href="2022/bilder/from_camera_view.png">
+                       <img src="2022/bilder/from_camera_view_small.png" alt="" width="500" height="257">
+                     </a>
+                  
+            <figcaption>
+                       Click the image for a closer view.
+                       This rendering is taken from roughly the hp-mark camera's point of view.
+                       The cyan colored points is where hp-mark thought the nozzle was.
+                       The red points is where simulation.py thought the nozzle was.
+                       We see that cyan and red points generally line up along the camera's depth direction.
+                     
+            </figcaption>
+                
+         </figure>
+         <figure>
+                  <a href="2022/bilder/orth_to_camera_view.png">
+                       <img src="2022/bilder/orth_to_camera_view_small.png" alt="" width="500" height="311">
+                     </a>
+                  
+            <figcaption>
+                       Click the image for a closer view.
+                       This is the same scene, but rendered from another point of view.
+                       The hp-mark camera would be located in the top right corner of this rendering.
+                       We see once again that errors are mostly along the depth-direction of the camera.
+                       Most often, but not always, the hp-mark position (cyan one) is closer to the camera than the simulation.py measured
+               position (red one).
+                     
+            </figcaption>
+                
+         </figure>
+         <p>
+                  The idea that hp-mark has measurement errors that are larger along its depth direction makes sense,
+                  and suggests that hp-mark must add a second camera before it can create data for the simulation.py configuration automation.
+                
+         </p>
+         <p>
+                  Configuration based on accurate positional data would be significantly faster to acquire, and also more precise than
+            the current procedure.
+                  This was the motivation for developing hp-mark in the first place, but as the images above show clearly, we're not there
+            yet.
+                
+         </p>
+         <h3>I Use The Simulation To Double-Check Hangprinter's Forward Kinematics</h3>
+         <p>
+                  I've described the function f(xyz) -&gt; (ABCD) and called it the inverse kinematics equation.
+                  There's also an inverse of this equation in the Hangprinter's firmware, doing the opposite of f.
+                  It's called the <b>forward kinematics equation</b>. Let's call it F and describe it like this:
+                
+         </p>
+         <p>
+                  F(ABCD) -&gt; (xyz)
+                
+         </p>
+         <p>
+                  Developing the function F is as hard as developing f, and I frequently use simulation.py to double-check that changes
+            to F work
+                  before putting them into the real Hangprinter firmware.
+                
+         </p>
+         <h3>I Use The Simulation To Check The Quality Of Force-Data</h3>
+         <p>
+                  The ODrives are capable of emitting some force data.
+                  My investigations have shown that the data is still too crude to be useful for any purpose.
+                
+         </p>
+         <p>
+                  However, once we get accurate force-data, the simulation.py script is prepared to take advantage of it,
+                  to give us even faster and more accurate configuration values.
+                
+         </p>
+         <h3>Having All The Equations Coded Up In simulation.py Makes Hangprinter More General</h3>
+         <p>
+                  The equations are really a large part of the value that the Hangprinter Project provides to the world.
+                  Having them coded up in Python is useful whenever one wants to make a plot or do a quick experiment.
+                
+         </p>
+         <p>
+                  Having them coded up in Python also opens up for easily implementing good Hangprinter support
+                  in Klipper or other Python based firmwares in the future.
+                
+         </p>
+         <p>
+                  That was all for today. I hope you will use and enjoy <a href="https://gitlab.com/tobben/auto-calibration-simulation-for-hangprinter">auto-calibration-simulation-for-hangprinter</a> for years to come.
+                
+         </p>
+         <p>
+            - tobben
+            
+         </p><br><br><br><h1 id="hangprinter_project_78">Hangprinter v4 and Hangprinter v5</h1>
+         <div class="date">27-3-2022</div>
+         <p>
+                  Hangprinter is a cable-driven robot.
+                  HP4 is the latest version.
+                
+         </p>
+         <p>
+                  Goal for HP4 development was to create a reliable workhorse, that people enjoy using, for profit.
+                  That sounds a bit like magic.
                   HP4, like any kind of magic, is complex and slow to develop.
                   
             <!--It's the kind of project that boards of directors love to shut down.-->
