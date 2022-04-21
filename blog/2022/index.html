@@ -42,16 +42,50 @@
          Reprap Blog 2022
       </div>
       <div id="MainContent">
-         <h1 id="hangprinter_project_78">Hangprinter v4 and Hangprinter v5</h1>
+         <h1 id="hangprinter_project_79">Solving Hangprinter's Biggest Problem</h1>
          <div class="date">27-3-2022</div>
          <p>
-            Hangprinter is a cable-driven robot.
-            HP4 is the latest version.
+            So you've mounted your Hangprinter hardware.
+            You've threaded all the lines and attached all the anchors.
+            Motors are spinning.
                 
          </p>
          <p>
-            Goal for HP4 development was to create a reliable workhorse, that people enjoy using, for profit.
-            That sounds a bit like magic.
+                  Now there's just the configuration left and you're good to go! Weeee! =)=)=)
+                
+         </p>
+         <p>
+            Ehem. Not so fast. Hangprinter configuration is very involved.
+            More than 25 values to get right, and doing so manually takes a lot of effort and training.
+                  There's anchor locations, spool buildup factor (ie line thickness), line stiffness, spool radii (including unused line
+            length), various types of gearing and so on.
+                
+         </p>
+         <p>
+                  How is a user supposed to keep up with that?
+                  How to give efficient support?
+                
+         </p>
+         <h3>&#10024;Solution: Run The Motion Control in Reverse&#10024;</h3>
+         <p>
+                  What if you could ask your Hangprinter "am I doing it right?".
+                  For the time being, you can't ask your Hangprinter directly, but you can ask
+                  <a href="https://gitlab.com/tobben/auto-calibration-simulation-for-hangprinter">auto-calibration-simulation-for-hangprinter</a>'s simulation.py program this question.
+                
+         </p>
+         <p>
+            - tobben
+            
+         </p><br><br><br><h1 id="hangprinter_project_78">Hangprinter v4 and Hangprinter v5</h1>
+         <div class="date">27-3-2022</div>
+         <p>
+                  Hangprinter is a cable-driven robot.
+                  HP4 is the latest version.
+                
+         </p>
+         <p>
+                  Goal for HP4 development was to create a reliable workhorse, that people enjoy using, for profit.
+                  That sounds a bit like magic.
                   HP4, like any kind of magic, is complex and slow to develop.
                   
             <!--It's the kind of project that boards of directors love to shut down.-->
