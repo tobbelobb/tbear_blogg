@@ -105,4 +105,4 @@ Mesh Compensation, Forward Kinematics: It seemed like I needed to increase the v
 
 Cable Connections: We need to learn how to more securely connect cables, and teach this in the BOM and doc/v4.
 
-Full scale structured testing: None exists.
+Full scale structured testing: None exists. If very subtle bugs sneak into the firmware, like temperature dependencies, race conditions, overflows, then we don't catch that.
