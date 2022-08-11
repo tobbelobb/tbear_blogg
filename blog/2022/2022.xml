@@ -1,6 +1,402 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
 <posts year="2022">
+  <post id="polkadot_1" heading="Polkadot's Red Flags" date="10-8-2022">
+    <p>
+      I went to Polkadot Academy recently.
+      It's a four-week in-person course about cryptography, blockchain, Polkadot, Substrate, Frame, and I guess implicitly about Parity and the parachains.
+    </p>
+    <p>
+      This is not an introductory text about Polkadot, so I'll just briefly define those words:
+      <ul>
+        <li><b>Cryptography</b>: Garbling data in ways that preserve or add value to it.</li>
+        <li><b>Blockchain</b>: Chunked sequence(s) of data where each new chunk contain garbled representation(s) of previous chunk(s).</li>
+        <li><b>Polkadot</b>:  Most blockchains are used in contexts where old data must never be overwritten. Polkadot is a service preventing adversarial overwrites of blockchains.</li>
+        <li><b>Substrate</b>: A software development kit for building blockchains. Used for building Polkadot and its parachains.</li>
+        <li><b>Frame</b>: Helper code for building and using plug-ins within Substrate.</li>
+        <li><b>Parity</b>: The company who develops Substrate, Frame, Polkadot, and some of the parachains.</li>
+        <li><b>Parachains</b>: Blockchains who use Polkadot to safeguard their old blocks.</li>
+      </ul>
+    </p>
+    <h3>Background</h3>
+    <p>
+      Before going to the Academy, I had a fantastic impression of Polkadot, almost too good to be true.
+      Suspecting that I might be overly positive, I Googled around to find Polkadot criticism.
+      I found that some people think Polkadot is overly friendly towards whales and early investors, but that was all.
+      Not exactly a death blow.
+    </p>
+    <p>
+      Now, after the Academy I want to try writing the post I was searching for before.
+      I still like Polkadot and this post is an attempt to help make it better.
+    </p>
+    <figure>
+      <a href="./bilder/dining_hall_wide_CCC.JPG">
+        <img src="./bilder/dining_hall_wide_CCC_small.JPG" alt="" width="500" height="281"/>
+      </a>
+      <figcaption>
+        Our dining hall during the Academy.
+      </figcaption>
+    </figure>
+    <h3>"Reliability Is Our Goal, Decentralization Is Just a Tool"</h3>
+    <p>
+      Gavin Wood is the founder of Polkadot and Parity.
+      He gave a welcome speech from the high table shown above.
+    </p>
+    <p>
+      The speech's main point was that decentralization is a tool, not an end goal.
+      The real goal of Polkadot is reliability.
+      Some decentralization improves reliability, and that's why Polkadot is somewhat decentralized.
+      This is how I understood the speech.
+    </p>
+    <p>
+      I love reliability.
+      But why dampen our decentralization expectations?
+    </p>
+    <p>
+      Maybe Parity is planning to let down nerds like myself, who find decentralization valuable on its own.
+      I find reliability to be a more slippery and context dependent word.
+      It's only measurable in retrospect.
+    </p>
+    <p>
+      Decentralization is a measure of node count and distance.
+      It's measurable at any time.
+      Letting unmeasurable future hindsight guide decentralization efforts wouldn't feel fantastic.
+    </p>
+    <p>
+      He didn't dismiss decentralization entirely, he just downgraded it to a necessary evil.
+      Which might be true for him. Still a red flag for me.
+    </p>
+    <h4>Doctor Gavin Wood</h4>
+    <p>
+      Before his speech, and at many other occasions during the Academy, Gavin was introduced as Dr Gavin Wood.
+      He holds a degree but not in a related field.
+    </p>
+    <p>
+      Mentions of unrelated titles might mislead a bit, but it doesn't disqualify a company or a code base.
+      However there was a broader tendency of people changing behavior when Gavin was around.
+    </p>
+    <p>
+      There's an obvious risk that ideas and concerns won't flow freely if the system designer is idolized and/or could fire you.
+      I didn't see more parity at Parity than at your average tech company, sometimes I even saw less.
+      That was a red flag to me.
+    </p>
+    <h3>Parity is Building a Star-Shaped Network</h3>
+    <p>
+      Polkadot's own documentation (<a href="https://wiki.polkadot.network/docs/getting-started">link</a>)
+      shows the Polkadot network's topology like this:
+    </p>
+    <figure>
+      <a href="./bilder/Polkadot_star3.png">
+        <img src="./bilder/Polkadot_star3_small.png" alt="" width="500" height="306"/>
+      </a>
+      <figcaption>
+        Clipped from Defi Teller's Youtube video which is embedded in Polkadot's Getting started page. (<a href="https://youtu.be/BQ60bTU1bPg?t=36">link</a>)
+      </figcaption>
+    </figure>
+    <p>
+      Network topology determine power relations in a network and differentiates fragile networks from reliable ones.
+      The image shows a very special network topology called star shape.
+      It is the most centralized and most fragile of all network topologies.
+    </p>
+    <p>
+      I have written about star shaped networks before, in a blog post called <a href="../2021/#hangprinter_project_75">Hopes, Dreams, and Agendas</a>.
+      Here's the most relevant part from that post:
+    </p>
+    <figure>
+      <a href="../2021/bilder/NetworkTopologies.png">
+        <img src="../2021/bilder/NetworkTopologies.png" alt="" width="503" height="249"/>
+      </a>
+      <figcaption>
+        Network topologies.
+        Only star leaves everyone disconnected when one single node goes down: The Center Node.
+        The star's center has leverage on everyone else.
+      </figcaption>
+    </figure>
+    <p>
+      Polkadot's designers could have opted for any other topology but chose star shape,
+      and they chose to put themselves at the center.
+      The Polkadot network is very strongly locked into this configuration for a few reasons:
+    </p>
+    <p>
+      <b>The star shape is replicated in the social and economical systems within the network.</b>
+      All or almost all parachain devs is or has been economically dependent on grants paid by W3F,
+      which is Parity's non-profit arm.
+      Parity also arranges and control access to almost every social event in the network.
+      If you want to meet Polkadot people, you go via Parity.
+    </p>
+    <p>
+      <b>Polkadot will stay in the network's center and must find ways to collect taxes indefinitely.</b>
+      This is because it provides security to all the parachains.
+      Distributing the responsibility for pooled security among parachains would lead to a tragedy of the commons.
+      Every parachain would be incentivized to use the pooled security as much as possible
+      while contributing as little as possible.
+    </p>
+    <p>
+      <b>Only Parity can maintain Substrate. Everyone else depend on Substrate.</b>
+      Parity has made Substrate into a large and very complex code repo.
+      They keep it operational while pushing the cutting edge of cryptography research.
+      To achieve both they pay high salaries to hundreds of researchers and programmers.
+      The cash flow and technical know-how required to maintain this quite experimental
+      code base is very high.
+      In fact impossible for any other company, and this will not change easily.
+    </p>
+    <!--p>
+      Sure, responsibility for maintaining Substrate could be distributed among parachains.
+      To achieve that, Substrate would need to drop its goals of cutting edge research and its broad generality.
+      Parachains should maintain a small codebase focused on their specific needs.
+      Otherwise, we'll see another tragedy of the commons where nobody maintain the generalized and cutting edge stuff.
+    </p>
+    <p>
+      Parity stays relevant as long as Substrate stays hairy. Substrate has not trended towards less hairy.
+    </p-->
+    <figure>
+      <a href="./bilder/Ceremony_small.JPG">
+        <img src="./bilder/Ceremony_small.JPG" alt="" width="500" height="281"/>
+      </a>
+      <figcaption>
+        Examination ceremony as seen from my dorm during the Academy.
+        People in the image are not related to Parity or Polkadot.
+        After many such ceremonies outside my window
+        I started to feel a bit related to them, which I guess was the intention of Parity when choosing Cambridge.
+      </figcaption>
+    </figure>
+    <p>
+      <b>Parity has leverage to place arbitrary burdens on smaller parachains. Larger parachains have incentives to let them do that.</b>
+      The larger or majority of parachains will benefit from letting Parity push smaller competitors down.
+    </p>
+    <p>
+      Everything will be done in the name of improving the network as a whole.
+      We see this already with the rollout of XCM and XCMP.
+      Every parachain is expected to put a post-office-like virtual machine at the gate of their chain, where
+      code from foreign blockchains are to be executed and acted upon.
+    </p>
+    <p>
+      I might be overly pessimistic here. The XCM and XCMP rollout still has time to play out and might still become a net positive for smaller chains.
+    </p>
+    <p>
+      Other examples of maintenance taxes that limit smaller parachain teams are the frequent and unreliable release schedules from Parity,
+      and the slow, expensive, and unavoidable parachain slot auctions.
+    </p>
+    <figure>
+      <a href="./bilder/New_court.JPG">
+        <img src="./bilder/New_court_small.JPG" alt="" width="500" height="281"/>
+      </a>
+      <figcaption>
+        The whole Academy was hosted at Corpus Christi College in Cambridge.
+        It was built very early on. Parts of it is from 1352.
+        The college today holds assets valued at £227.4M.
+      </figcaption>
+    </figure>
+    <h3>Reliability is not for the Guest Chains</h3>
+    <p>
+      As mentioned before, parachains need protection against overwrites of their old blocks,
+      and Polkadot is a service for providing such security.
+    </p>
+    <p>
+      However, Polkadot is a subscription service.
+      Parachains subscribe to, or lease, their parachain slot in the Polkadot network.
+      A lease is very hard to obtain and lasts for a maximum of two years.
+    </p>
+    <p>
+      Leases are distributed through a long intricate game called candle auctions.
+      If parachains can't win a candle auction or obtain a lease on the second hand market somehow,
+      they loose their security and stop working.
+    </p>
+    <p>
+      This is unreliability designed right into the user-facing part of Polkadot's ecosystem.
+      The power imbalance of it has made me think of Polkadot as the Daddy Chain, and parachains as Guest Chains.
+    </p>
+    <p>
+      If Parity wanted to deliver user-facing reliability then they would provide longer term leases or outright sell ownership of slots.
+      Or they could build parachains themselves.
+    </p>
+    <h3>Is Rust Reliable?</h3>
+    <p>
+      Parity use the Rust programming language exclusively for everything, including for all of Substrate.
+      They are Rust fanatics and push the Rust language to its limits all the time.
+      Unrestrained enthusiasm for any tool is already a red flag to me.
+    </p>
+    <p>
+      Rust is good for reliability because it has a borrow-checker, pedantic default compiler flags,
+      and a strong type system.
+    </p>
+    <p>
+      But Rust is also bad for reliability because it is immature compared to eg C++.
+      The Rust toolchain, best practices, and indeed the Rust programmers themselves have not had time to mature and accumulate long-term learnings.
+      Rust has only one real compiler, which changes frequently (every 3rd week), and it quite frankly has bugs.
+    </p>
+    <figure>
+      <a href="./bilder/why-rust-for-blockchain.png">
+        <img src="./bilder/why-rust-for-blockchain_small.png" alt="" width="500" height="281"/>
+      </a>
+      <figcaption>
+        Parity publish Rust praise from time to time.
+        This image was taken from one such blog post. <a href="https://www.parity.io/blog/why-rust">link</a>.
+      </figcaption>
+    </figure>
+    <p>
+      Anecdotally, I stumbled across a compiler bug during my first week of the Academy.
+      I have never experienced similar during my years of C++.
+    </p>
+    <p>
+      I had to use the nightly build of the Rust toolchain, otherwise I couldn't compile Substrate.
+      Nightly is kind of the opposite of reliable and seeing it used across Parity made me wonder what reliability really means in the Polkadot context.
+    </p>
+    <h4>Can Static Analysis Make Up For Lack of Compiler Alternatives?</h4>
+    <!--p>
+      Static analysis tools are programs that help programmers by running pattern matching algorithms across source code without actually executing it.
+      Such tools find bugs early and are very important to C++ programmers who aim for reliability.
+      The Rust compiler does lots of static analysis by default but as a programmer you always want more, to catch more bugs earlier.
+    </p-->
+    <p>
+      The first thing I tried in the Substrate repo was: <br /><code>$ rust-analyzer analysis-stats .</code><br />
+      The most basic command to collect static analysis output, with the most basic tool.
+      It crashed and could not finish.
+    </p>
+    <p>
+      The <a href="https://fasterthanli.me/articles/proc-macro-support-in-rust-analyzer-for-nightly-rustc-versions">problem was fixed on Aug 1</a>,
+      so I gave it another try.
+      It finished in 33 minutes and produced an analysis that <a href="https://substrate.stackexchange.com/questions/3887/cyclic-deps-in-substrate">simply wasn't right</a>.
+    </p>
+    <!--p>
+      It's common for static analysis tools to help text editors provide code navigation help, like jump-to-definition and list-references.
+      The rust-analyzer was so slow and prone to crashing that I often had to resort to manual grepping.
+    </p-->
+    <p>
+      I heard more than one Parity dev say they didn't use rust-analyzer at all.
+      A singular unreliable compiler accompanied by an even less reliable static analysis tool is a red flag for me.
+    </p>
+    <figure>
+      <a href="./bilder/Typewriter.JPG">
+        <img src="./bilder/Typewriter_small.JPG" alt="" width="500" height="281"/>
+      </a>
+      <figcaption>
+        Without multiple fast and correct static analysis tools I feel a bit like this.
+        Early 1900s typewriter found at Museum of Cambridge. Sure has rust. (sorry.)
+      </figcaption>
+    </figure>
+    <h3>Parity Risks Repeating Failed Macro Experiments of the Past</h3>
+    <p>
+      Substrate is not written in vanilla Rust.
+      It relies heavily on an exotic feature called proc macros.
+    </p>
+    <p>
+      A proc macro is almost a compiler in itself.
+      It is made executable early in the compilation process.
+      Later in the compilation process, it receives character streams from the compiler,
+      and returns potentially very different characters back to the compiler,
+      which then gets compiled as valid Rust code.
+    </p>
+    <p>
+      Proc macros were the feature that made rust-analyzer crash on me before Aug 1.
+      The internal proc macro interfaces are not stable, and rust-analyzer tripped.
+    </p>
+    <p>
+      More important gotchas face programmers who learn and try to use proc macros.
+      They change the syntax of the language, generally away from beauty and towards extreme brevity,
+      which creates steep learning curves and tough debugging sessions.
+    </p>
+    <p>
+      We know this because many Lisp projects made heavy use of very similar, mega powerful macros back in
+      the 70s, 80s, and 90s.
+      The macros were fun in the beginning, particularly for the domain experts who made them,
+      but proved hard to teach and maintain over time since they became opaque mini-languages of their own.
+      They contributed to Lisp's loss of favor against simpler languages like C and Java.
+    </p>
+    <p>
+      The Parity programmers I talked to at the Academy did not know the history of macros.
+      This is a red flag for me.
+    </p>
+    <figure>
+      <a href="./bilder/Proc_macro_beast.JPG">
+        <img src="./bilder/Proc_macro_beast_small.JPG" alt="" width="500" height="380"/>
+      </a>
+      <figcaption>
+        Proc macros risk stealing time and scaring away new programmers.
+        This is the Chronophage on top of <a href="https://en.wikipedia.org/wiki/Corpus_Clock">the Corpus Clock</a> which is on display at the corner of our college.
+      </figcaption>
+    </figure>
+    <h3>Substrate Makes Heavy Use of Comments</h3>
+    <p>
+      The comments inside the Substrate codebase are often 100 lines or more.
+      There is an unusual amount of comments across the Substrate codebase.
+    </p>
+    <p>
+      Comments age badly because they require manual expert maintenance.
+      Otherwise they get outdated and lead new devs awry.
+    </p>
+    <p>
+      I predict that Parity will have to delete all comments within a few years,
+      and change their coding style towards self-documenting code.
+    </p>
+    <p>
+      It's a red flag to me that Parity has places such a large burden of maintaining comments upon themselves.
+      Self-documenting code is a common best practice in other industries.
+      Many tech companies have made the big-comments mistake in the past.
+    </p>
+    <p>
+      Manually written online documentation have similar maintenance downsides.
+      I tripped into outdated online tutorials many times during my time at the Academy.
+    </p>
+    <figure>
+      <a href="./bilder/River_Cam2.JPG">
+        <img src="./bilder/River_Cam2_small.JPG" alt="" width="500" height="267"/>
+      </a>
+      <figcaption>
+        A beautiful day for punting on the river Cam.
+      </figcaption>
+    </figure>
+    <h3>Practical End-to-end Testing Doesn't Exist in the Substrate Ecosystem</h3>
+    <p>
+      One method to try to predict reliability of a software system is to look at its testing regime.
+      Coming from telecom, I expected to be presented with a tool that works like this:
+      <ul>
+        <li>One set of files describe different toy test networks in terms of hardware and connections.</li>
+        <li>Another kind of file lets devs specify external stimuli, sequential or in parallel, alongside expected network reactions, both within and flowing out of each node.</li>
+        <li>A tool spins up or connects nodes according to the network specification, creates the specified stimuli and compares the network's reaction to the pre-defined expectations.</li>
+        <li>The tool should also let the developer jump into the network to query nodes and read logs while still running.</li>
+      </ul>
+    </p>
+    <p>
+      I was told that no such tool exists.
+      However there's something <a href="https://github.com/paritytech/zombienet">Zombienet</a> that might grow up to address my concerns one day.
+      I don't understand how developers build trust in their networks without enforcing such tests on every commit.
+    </p>
+    <h3>Regression</h3>
+    <p>
+      I talked to parachain devs about how they handle the combination of frequent releases of Rust and Substrate
+      with limited tools for testing and static analysis.
+      The answer went something like this:
+    </p>
+    <p>
+      "We face Rust bugs and Substrate bugs.
+      We test old versions until we find combinations that work bug-free enough for our use case."
+    </p>
+    <p>
+      This pattern of having to search for compatible old versions is called regression; a return to a former or less developed state.
+      It is what you get when the solution to an old bug creates a new bug, and the new bug gets shipped.
+    </p>
+    <p>
+      As a systems programmer, fighting regression is the main boss.
+      It's like facing a T-Rex while herding cats at the same time.
+      Once you've failed to contain the bugs, they spread, they grow large, and they bite you.
+    </p>
+    <figure>
+      <a href="./bilder/Regress.png">
+        <img src="./bilder/Regress_small.png" alt="" width="500" height="377"/>
+      </a>
+      <figcaption>
+        Playing card from Magic the Gathering.
+        Regression is a system dev's nightmare.
+      </figcaption>
+    </figure>
+    <p>
+      Clamping down on a regression spiral is possible, given a rigorous enough testing regime.
+      Still, hearing that parachain devs face this spiral is a red flag to me.
+    </p>
+    <p>
+    </p>
+  </post>
   <post id="hangprinter_project_79" heading="Solving Hangprinter's Biggest Problem" date="21-4-2022">
     <p>
       So you've mounted your Hangprinter hardware.
