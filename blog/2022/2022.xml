@@ -1,10 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
 <posts year="2022">
-  <post id="polkadot_1" heading="Polkadot's Red Flags" date="10-8-2022">
+  <post id="polkadot_1" heading="Polkadot for Reprap - Potential Worries" date="10-8-2022">
     <p>
-      I went to Polkadot Academy recently.
-      It's a four-week in-person course about cryptography, blockchain, Polkadot, Substrate, Frame, and implicitly about Parity and the parachains.
+      I've previously written about how Repraps are different.
+      They lets users make and spread copied machines without permission or royalties.
+      I've written about how lots of people, including myself, did this.
+    </p>
+    <p>
+      Going against economics of scale and specialization, it was inefficient.
+      A few companies caught up and outrun us in the past ~5 years.
+      I marvel at how good the desings became, and how robust the community got, even before these star compenies finally did capture the market.
+    </p>
+    <p>
+      Running like crazy in the innovation track of 3d printing was a lot of fun.
+      Doing it with awesome strangers, without asking permission or paying royalties was a privilege.
+    </p>
+    <p>
+      I've though about ways to spur a new open period, concluding that more
+      automation and rewards are required to re-distribute Reprap.
+      I've suggested implementing network protocols for decentralized manufacturing,
+      and pointed to the success blockchain projects have had in building decentralized permissionless databases.
+    </p>
+    <p>
+      I've been a blockchain delettante for many years, lacking the real skill to innovate in the blockchain/protocol direction.
+      So I went to Polkadot Academy to see if I could fix that.
+      It was a four-week in-person course about cryptography, blockchain, Polkadot, Substrate, Frame, and implicitly about Parity and the parachains.
     </p>
     <p>
       This is not an introductory text about Polkadot, so I'll just briefly define those words:
@@ -18,11 +39,11 @@
         <li><b>Parachains</b>: Blockchains who use Polkadot to safeguard their old blocks.</li>
       </ul>
     </p>
-    <h3>Background</h3>
+    <h3>My Polkadot Background</h3>
     <p>
       Before going to the Academy, I had a fantastic impression of Polkadot, almost too good to be true.
-      Suspecting that I might be overly positive, I Googled around for good criticism.
-      I found less than expected.
+      Suspecting that I might be overly positive, I Googled around for good criticism,
+      but the articles I found were either dated or not relevant to my goals.
     </p>
     <p>
       Now, after the Academy I want to try writing the post I was searching for.
@@ -48,31 +69,38 @@
     </p>
     <p>
       I love reliability.
-      But why dampen our decentralization expectations?
+      But it's a slippery goal since it's only measurable in retrospect.
+    </p>
+    <p>
+      We don't have access to future hindsight.
+      So we can't use it to guide current decentralization efforts.
+    </p>
+    <p>
+      Why dampen our decentralization expectations?
     </p>
     <p>
       Maybe Parity is planning to let down nerds like myself, who find decentralization valuable on its own.
-      I find reliability to be a more slippery word since it's only measurable in retrospect.
-    </p>
-    <p>
-      Decentralization is more concrete and measurable.
-      It's a combination of node count and distance.
-      We don't have access to future hindsight.
-      So we can't use it to guide current decentralization efforts.
     </p>
     <p>
       Gavin didn't dismiss decentralization entirely, he just downgraded it to a necessary evil.
       Which might be true for him. Still a red flag for me.
     </p>
+    <p>
+      Even decentralization isn't perfect either.
+      It is only interesting if it comes from permissionlessness and low thresholds.
+      Emphasis on those terms would better match my goals.
+    </p>
     <figure>
-      <a href="./bilder/doctor.jpg">
-        <img src="./bilder/doctor_small.jpg" alt="" width="500" height="333"/>
+      <a href="./bilder/gav.JPG">
+        <img src="./bilder/gav_small.JPG" alt="" width="500" height="281"/>
       </a>
       <figcaption>
-        This doctor is not related to Parity of Polkadot.
+        Gavin Wood lecturing at Polkadot Academy.
+        His hat says "TOP GUN" and the slide says "Introduction to Cryptography for Engineers".
+        I loved the lecture, both the delivery and the contents. He's a great speaker.
       </figcaption>
     </figure>
-    <h3>Too Much Power in One Person</h3>
+    <h3>Lots of Power Concentrated in One Person</h3>
     <p>
       Before his speech, and at many other occasions during the Academy, Gavin was introduced as Doctor Gavin Wood.
     </p>
@@ -81,26 +109,35 @@
       Phds are ubiquitous in hi-tech workplaces, which makes it a bad habit to repeatedly mention unrelated ones.
     </p>
     <p>
-      This bad habit is common in the UK though, so it doesn't say much about Polkadot on its own.
-      However, the Dr-ing was part of a broader tendency.
-      People changed their behavior when Gavin was around.
+      Doing so anyways is common in the UK, so it doesn't say much about Polkadot on its own, although other peoples' phds went unmentioned troughout the Academy.
     </p>
     <p>
-      He is the locus of power in his own network: Founder, CEO, designer, public figurehead, and incredibly wealthy.
+      I felt the title mentioning around Gavin was part of a broader tendency, that
+      people changed behavior when Gavin was around.
+    </p>
+    <p>
+      The special treatment of Gavin is understandable.
+      He is the locus of power in Parity: Founder, CEO, designer, public figurehead, and incredibly wealthy.
       He coded large critical parts of Polkadot on his own, including governance.
       The Academy I went to was his idea.
     </p>
     <p>
-      He is not expendable.
-      If you want to trust Polkadot's future, you must first trust him.
-      Many at the Academy didn't just trust him, they idolized him.
+      His ideas get implemented and he's not treated as expendable.
+      He's on the one hand a servant of a higher goal, but he's also the one who formulates the goals.
     </p>
     <p>
-      There's an obvious risk that ideas and concerns won't flow freely if the system designer is idolized and/or could fire you.
+      If you want to trust Polkadot's future, you must first trust Gavin.
+      Many at the Academy didn't have a problem with this trust, they even displayed the opposite problem of idolizing him.
+      This is as understandable as it is problematic.
     </p>
     <p>
-      There was less parity than I expected inside Parity.
-      That was a red flag to me.
+      There's risk that ideas and concerns won't flow freely if the system designer is idolized and/or could fire you.
+      I would prefer if the project's followers leaned more on core principles and less on a singular person.
+    </p>
+    <p>
+      Bowyer removed himself from formal power within Reprap. Satoshi did the same within Bitcoin.
+      Gavin is different.
+      The concentration of power over the project is a red flag to me.
     </p>
     <h3>Parity is Building a Star-Shaped Network</h3>
     <p>
@@ -141,7 +178,7 @@
     </p>
     <p>
       <b>The star shape is replicated in the social and economical systems within the network.</b>
-      All or almost all parachain devs is or has been economically dependent on grants paid by W3F,
+      All or almost all parachain devs is or has been economically dependent on grants paid by the Web3 Foundation,
       which is Parity's non-profit arm.
       Parity also arranges and control access to almost every social event in the network.
       If you want to meet Polkadot people, you go via Parity.
@@ -156,7 +193,7 @@
     <p>
       <b>Only Parity can maintain Substrate. Everyone else depend on Substrate.</b>
       Parity has made Substrate into a large and very complex code repo.
-      They keep it operational while pushing the cutting edge of cryptography research.
+      They keep it operational while keeping its technical level at the cutting edge of cryptography research.
       To achieve both they pay high salaries to hundreds of researchers and programmers.
       The cash flow and technical know-how required to maintain this quite experimental
       code base is very high.
@@ -178,8 +215,6 @@
       <figcaption>
         Examination ceremony as seen from my dorm during the Academy.
         People in the image are not related to Parity or Polkadot.
-        After many such ceremonies outside my window
-        I started to feel a bit related to them, which I guess was the intention of Parity when choosing Cambridge.
       </figcaption>
     </figure>
     <p>
@@ -217,16 +252,16 @@
     </p>
     <p>
       However, Polkadot is a subscription service.
-      Parachains subscribe to, or lease, their parachain slot in the Polkadot network.
+      Parachains subscribe to, or lease, their slot in the Polkadot network.
       A lease is very hard to obtain and lasts for a maximum of two years.
     </p>
     <p>
-      Leases are distributed through a long intricate game called candle auctions.
-      If parachains can't win a candle auction or obtain a lease on the second hand market somehow,
+      Leases are distributed through an intricate game called candle auctions.
+      If parachains can't win a candle auction or obtain a lease on the second hand market,
       they loose their security and stop working.
     </p>
     <p>
-      This is unreliability designed right into the user-facing part of Polkadot's ecosystem.
+      This unreliability is designed right into the user-facing part of Polkadot's ecosystem.
       The power imbalance of it has made me think of Polkadot as the Daddy Chain, and parachains as Guest Chains.
     </p>
     <p>
@@ -239,17 +274,17 @@
     <h3>Is Rust Reliable?</h3>
     <p>
       Parity use the Rust programming language exclusively for everything, including for all of Substrate.
-      They are Rust fanatics and push the Rust language to its limits all the time.
-      Unrestrained enthusiasm for a new-ish programming tool is already a red flag to me.
     </p>
     <p>
       Rust is good for reliability because it has a borrow-checker, pedantic default compiler flags,
       and a strong type system.
     </p>
     <p>
-      But Rust is also bad for reliability because it is immature compared to eg C++.
+      But Rust is also bad for reliability because it is immature.
+      It is only 12 years old, which is young compared to eg C++, which is 37 years old.
       The Rust toolchain, best practices, and indeed the Rust programmers themselves have not had time to mature and accumulate long-term learnings.
-      Rust has only one real compiler, which changes <a href="https://steveklabnik.com/writing/how-often-does-rust-change">frequently</a>, and it quite frankly has bugs.
+      During these 12 years
+      Rust has had only one real compiler, which has been changing <a href="https://steveklabnik.com/writing/how-often-does-rust-change">frequently</a>, and it quite frankly has bugs.
     </p>
     <figure>
       <a href="./bilder/why-rust-for-blockchain.png">
@@ -266,7 +301,6 @@
     </p>
     <p>
       I had to use the nightly build of the Rust toolchain, otherwise I couldn't compile Substrate.
-      Nightly is kind of the opposite of reliable and seeing it used across Parity made me wonder what reliability really means in the Polkadot context.
     </p>
     <p>
       Polkadot inherits (un)reliability from Rust.
@@ -298,7 +332,6 @@
       The rust-analyzer was so slow and prone to crashing that I often had to resort to manual grepping.
     </p-->
     <p>
-      I heard two Parity devs say they didn't use rust-analyzer at all.
       A singular compiler accompanied by a disappointing static analysis tool is a red flag for me.
     </p>
     <figure>
@@ -310,11 +343,28 @@
         Early 1900s typewriter found at Museum of Cambridge.
       </figcaption>
     </figure>
-    <h3>Parity Risks Repeating Failed Macro Experiments of the Past</h3>
+    <h3>The Way Parity Uses Rust Might Not Be the Most Reliable</h3>
     <p>
-      Substrate is not written in vanilla Rust.
-      It relies heavily on an esoteric language feature called proc macros.
+      As mentioned above, only the nightly version of the Rust toolchain would compile Substrate.
+      Nightly is kind of the opposite of reliable and I saw it used across Parity (naturally, because they need to compile Substrate too).
+      Seeing this made me wonder what reliability really means in the Polkadot context.
     </p>
+    <p>
+      Similarly, Parity programmers are guaranteed to meet the same problems with rust-analyzer as I did.
+      If they use rust-analyzer at all, which I think many don't.
+      The frequent bugs and long time to finish means it's unpractical for large code bases.
+    </p>
+    <p>
+      But it's not just the tools and the language. I also worry about how Parity uses them.
+      Rust is full of cool features and Parity has many new programmers.
+      To borrow a phrase from a more experienced programmer:
+      "History tells us that programmers feel compelled to try every feature of their new language during the first project, [...]"
+        (<a href="https://www.codeofhonor.com/blog/tough-times-on-the-road-to-starcraft">link</a>)
+    </p>
+    <p>
+      I think Parity might be over-using three language features; proc macros, traits, and comments.
+    </p>
+    <h3>Substrate Relies Heavily on Esoteric and Over Powered Macros</h3>
     <p>
       A proc macro is almost a compiler in itself.
       It is made executable early in the compilation process.
@@ -323,11 +373,12 @@
       which then gets compiled as valid Rust code.
     </p>
     <p>
-      Proc macros were the language feature that made rust-analyzer crash on me before Aug 1.
+      Proc macros were the language feature that made rust-analyzer crash on me.
       The internal proc macro interfaces are not stable, and rust-analyzer tripped.
+        It's very hard for rust-analyzer to properly support proc macros for many reasons. (<a href="https://rust-analyzer.github.io/blog/2021/11/21/ides-and-macros.html">source</a>)
     </p>
     <p>
-      More serious gotchas face programmers who learn and try to use proc macros.
+      It's similarly hard for programmers to use proc macros.
       They change the syntax of the language, generally away from beauty and towards brevity and often obfuscation.
       This creates steep learning curves and circuitous debugging sessions.
       Fixing a proc macro bug, and teaching a proc macro interface are both arduous tasks.
@@ -352,6 +403,50 @@
         This is the Chronophage on top of <a href="https://en.wikipedia.org/wiki/Corpus_Clock">the Corpus Clock</a> which is on display at the corner of our college.
       </figcaption>
     </figure>
+    <h3>Lots of Traits and Types, Little Logic</h3>
+    <p>
+      Traits are a language feature that lets you abstract over types easily.
+      To specify logic in a Frame pallet, you plug type names into pre-defined traits.
+      All types that could be abstracted over in Frame, are abstracted over, including integer types.
+    </p>
+    <p>
+      Most of the code talks about resolving abstracted types to concrete types,
+      not about resolving variables or function calls into values.
+    </p>
+    <p>
+      The desireable outcome is that types and their behavior are very specific and extendable.
+      You provide a type into an interface and the compiler tells you which functions are missing.
+      Libraries can ship different plug-and-play types to choose from, and users can put them together like Legos.
+    </p>
+    <p>
+      The problem is that different types fulfilling lots of traits can be much harder than Legos to fit together.
+      Parts of the type-fu is hidden in proc macros who change the scope of your types,
+      so tooling can't to tell you how it should fit.
+      And you can't simple cut/paste and printf these type resolutions and scopes, you have to just learn the guts of each macro.
+    </p>
+    <p>
+      For example in
+      <a href="https://github.com/tobbelobb/quadratic-voting-exercise-substrate/blob/446acc52965eeeec03561bdc437c5a5f2762bcb4/pallets/qv/src/lib.rs#L163">my own code</a>,
+      I was asked by the compiler to implement translations between the (in practice identical) types:
+    </p>
+    <p>
+      <code>&lt;&lt;T as pallet::Config&gt;::Currency as Currency&lt;&lt;T as frame_system::Config&gt;::AccountId&gt;&gt;::Balance</code><br />
+      and
+      <br />
+      <code>&lt;&lt;T as pallet_referenda::Config&gt;::Currency as Currency&lt;&lt;T as frame_system::Config&gt;::AccountId&gt;&gt;::Balance</code>
+    </p>
+    <p>
+      I would have preferred to define a single common Balance type for my two pallets.
+      Instead I ended up using the one type who easily translates to the two different Balance-types: unsigned 32-bit integers.
+      That is a less specific type than I would have used in a simpler language.
+    </p>
+    <p>
+      Most Academy student friends ended up side-stepping the complex type machinery like this in the interest of time.
+      Maybe we just weren't enlightened enough, or maybe some type ceremonies were needlessly convoluted.
+    </p>
+    <p>
+      Either way, the time spent in the trait weeds was a red flag for me.
+    </p>
     <h3>Substrate Makes Heavy Use of Comments</h3>
     <p>
       The comments inside the Substrate codebase are often 100 lines or more.
@@ -420,7 +515,7 @@
     <p>
       This pattern of having to search for compatible old versions is called regression; a return to a former or less developed state.
       It is what you get when the solution to an old bug creates a new bug, and the new bug gets shipped, breaking things that worked before.
-      It's what makes my wife weary of updating her operating system.
+      It's what makes my wife weary of updating her operating system, and what keeps banks running COBOL for decades.
     </p>
     <p>
       As a systems programmer, fighting regression is the main boss.
@@ -438,7 +533,7 @@
     <p>
       Clamping down on a regression spiral is hard.
       You must develop a new and more rigorous testing regime.
-      You must probably drop some features and speak to each of those who used them, if you even know who they are.
+      You must probably drop some features and speak to each downstream programmer who used them, if you even know who they are.
     </p>
     <p>
       Hopefully Substrate isn't that bad off.
@@ -455,14 +550,24 @@
       and over time how they solve them.
     </p>
     <p>
-      I hope this text pointed out some of the things one can look at over time to form an
-      informed opinion about the Polkadot Project's quality.
+      I will keep a look-out for the following:
+      <ul>
+        <li>Is Gavin Wood removing himself from the Project? A yes would inspire confidence.</li>
+        <li>Is the star shaped topology broken up over time? Again, a yes would inspire confidence.</li>
+        <li>Are guest chains offered something better than candle auctions and 2-year leases? Offerings should span any time range continuously and be straight-forward to get.</li>
+        <li>Are we moving away from Rusts compiler being a single point of failure? The current emphasis on the generality of WASM and at the same time the superiority of Rust is self-contradictory.</li>
+        <li>Do we see organic adoption of Frame? I've only seen paid devs wade through the macro-and-trait weeds so far.</li>
+        <li>Is Substrate's broad generality utilized by anyone? If no, does Parity narrow its scope fast enough?</li>
+      </ul>
+    </p>
+    <p>
       This post focused on potential problems.
       One should of course also look at the potential value of the features that get shipped.
+      This is thoroughtly described in many other places, eg on Polkadot's own <a href="https://wiki.polkadot.network/">wiki</a>.
     </p>
     <p>
       Compared to some of their competitors, Polkadot and Parity still look very good in my opinion.
-      I own some DOT tokens and nothing here is financial advice.
+      I own some DOT tokens and nothing I write is financial advice.
     </p>
   </post>
   <post id="hangprinter_project_79" heading="Solving Hangprinter's Biggest Problem" date="21-4-2022">
