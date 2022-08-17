@@ -22,6 +22,14 @@
       I've suggested implementing network protocols for decentralized manufacturing,
       and pointed to the success blockchain projects have had in building decentralized permissionless databases.
     </p>
+    <figure>
+      <a href="./bilder/polkadot-new-dot-logo.png">
+        <img src="./bilder/polkadot-new-dot-logo_small.png" alt="" width="500" height="500"/>
+      </a>
+      <figcaption>
+        The Polkadot Project's logo.
+      </figcaption>
+    </figure>
     <p>
       I've been a blockchain delettante for many years, lacking the real skill to innovate in the blockchain/protocol direction.
       So I went to Polkadot Academy to see if I could fix that.
@@ -178,7 +186,7 @@
     </p>
     <p>
       <b>The star shape is replicated in the social and economical systems within the network.</b>
-      All or almost all parachain devs is or has been economically dependent on grants paid by the Web3 Foundation,
+      All or almost all parachain devs is or has been economically dependent on grants paid by the Web3 Foundation (W3F),
       which is Parity's non-profit arm.
       Parity also arranges and control access to almost every social event in the network.
       If you want to meet Polkadot people, you go via Parity.
@@ -191,10 +199,19 @@
       while contributing as little as possible.
     </p>
     <p>
+      Taxes are currently collected through transaction fees, inflation, and parachain slot auctions.
+      For fees, 80% are sent to the Polkadot treasury, which is controlled by Gavin Wood and <a href="https://polkadot.js.org/apps/#/council">12 other people</a>, 9 of whom are Parity/W3F employees, 2 represent specific parachains, and 1 is unknown to me.
+      Some DOT inflation also goes straight to the treasury.
+    </p>
+    <p>
+      The slot auctions temporary lock up DOT tokens, increasing price and relative voting power of all other DOT holders.
+      The Polkadot network itself is a sizeable DOT holder through its treasury.
+    </p>
+    <p>
       <b>Only Parity can maintain Substrate. Everyone else depend on Substrate.</b>
       Parity has made Substrate into a large and very complex code repo.
-      They keep it operational while keeping its technical level at the cutting edge of cryptography research.
-      To achieve both they pay high salaries to hundreds of researchers and programmers.
+      They keep it operational while chasing the cutting edge of cryptography research.
+      To achieve both at the same time, they pay high salaries to hundreds of researchers and programmers.
       The cash flow and technical know-how required to maintain this quite experimental
       code base is very high.
       In fact impossible for any other company, and this will not change easily.
@@ -266,7 +283,7 @@
     </p>
     <p>
       If Parity wanted to deliver user-facing reliability then they would provide longer term leases or outright sell ownership of slots.
-      Or they could build parachains themselves.
+      Or they could build all parachains themselves.
     </p>
     <p>
       Placing fundamental limitations on the security of the user-facing layer is a red flag for me.
@@ -362,7 +379,12 @@
         (<a href="https://www.codeofhonor.com/blog/tough-times-on-the-road-to-starcraft">link</a>)
     </p>
     <p>
-      I think Parity might be over-using three language features; proc macros, traits, and comments.
+      I think Parity might be over-using three language features:
+      <ul>
+        <li>Proc macros</li>
+        <li>Traits </li>
+        <li>Comments</li>
+      </ul>
     </p>
     <h3>Substrate Relies Heavily on Esoteric and Over Powered Macros</h3>
     <p>
@@ -420,14 +442,11 @@
     </p>
     <p>
       The problem is that different types fulfilling lots of traits can be much harder than Legos to fit together.
-      Parts of the type-fu is hidden in proc macros who change the scope of your types,
-      so tooling can't tell you how it should fit.
-      And you can't cut/paste and printf these type resolutions and scopes, you have to just learn the guts of each macro.
     </p>
     <p>
       For example in
       <a href="https://github.com/tobbelobb/quadratic-voting-exercise-substrate/blob/446acc52965eeeec03561bdc437c5a5f2762bcb4/pallets/qv/src/lib.rs#L163">my own code</a>,
-      I was asked by the compiler to implement translations between the (in practice identical) types:
+      I was asked by the compiler to implement translations between the same type with two different names:
     </p>
     <p>
       <code>&lt;&lt;T as pallet::Config&gt;::Currency as Currency&lt;&lt;T as frame_system::Config&gt;::AccountId&gt;&gt;::Balance</code><br />
@@ -436,8 +455,8 @@
       <code>&lt;&lt;T as pallet_referenda::Config&gt;::Currency as Currency&lt;&lt;T as frame_system::Config&gt;::AccountId&gt;&gt;::Balance</code>
     </p>
     <p>
-      I would have preferred to define a single common Balance type for my two pallets.
-      Instead I ended up using the one type who easily translates to the two different Balance-types: unsigned 32-bit integers.
+      These two names resolve to the same concrete type, but the compiler can't detect that.
+      I ended up using the one type who easily translates to the two different Balance-types: unsigned 32-bit integers.
       That is a less specific type than I would have used in a simpler language.
     </p>
     <p>
@@ -457,11 +476,11 @@
       They get outdated very quickly and lead new devs awry.
     </p>
     <p>
-      Parity programmers are conscientious and meticulous people, but they are also humans with deadlines.
-      Rust lets you run code tests within comments, but does not check natural language.
+      Parity programmers are conscientious and meticulous people, but they are also humans with deadlines, so comment maintainance will slip sometimes, even for them.
+      Rust lets you put runnable tests within comments, but Substrate's comments consist mainly of natural language.
+      I predict that Parity will have to delete most comments within a few years.
     </p>
     <p>
-      I predict that Parity will have to delete most comments within a few years.
       Their manually written online documentation have similar maintenance downsides.
       I tripped in outdated online tutorials many times during my time at the Academy.
     </p>
@@ -471,7 +490,7 @@
     </p>
     <p>
       I found Substrate's code hard to read, mainly because of macros usage, double-naming, and numerous verbose trait bounds.
-      Large comments and low code readability was a red flag to me.
+      Large comments paired with low code readability was a red flag to me.
     </p>
     <figure>
       <a href="./bilder/River_Cam2.JPG">
@@ -543,6 +562,17 @@
     </p>
     <h3>Last Words</h3>
     <p>
+      Polkadot as a software solution to adversarial blockchain overwrites, is big and hairy.
+      But solutions to specific problems in computer science are often quite hairy,
+      especially if heavy usage is expected.
+      Eg Fibonnachi heaps come to mind. (<a href="https://youtu.be/6JxvKfSV9Ns">link</a>).
+    </p>
+    <p>
+      Software being hairy is not a dealbreaker for my Reprap goals.
+      Neither are my complaints about macros, traits, and comments.
+    </p>
+    <p>
+      Polkadot is young and will look very different in a few years.
       All computer programs are notoriously unfinished, that's the nature of programming.
       The only problem-free repo is an empty one.
       Programming projects don't show strength by not having problems,
@@ -555,18 +585,26 @@
         <li>Is Gavin Wood detatching himself from the Project? A yes would inspire confidence.</li>
         <li>Is the star shaped topology broken up over time? Again, a yes would inspire confidence.</li>
         <li>Are guest chains offered something better than candle auctions and 2-year leases? Offerings should span any time range continuously and be straight-forward to get.</li>
-        <li>Are we moving away from Rusts compiler being a single point of failure? The current emphasis on the generality of WASM and at the same time the superiority of Rust is contradictory.</li>
-        <li>Do we see organic adoption of Frame? I've only seen paid devs wade through the macro-and-trait weeds so far.</li>
-        <li>Is Substrate's broad generality utilized by anyone? If no, does Parity narrow its scope fast enough?</li>
+        <li>Are we moving away from Rusts compiler being a single point of failure? The current emphasis on the generality of WASM and at the same time the superiority of Rust, and implicitly of the one Rust compiler, is somewhat contradictory.</li>
+        <li>Do we see organic adoption of Frame? I've only seen paid devs wade through the macro-and-trait weeds so far. Seeing students fiddle with this voluntarily on their own time would inspire far more confidence.</li>
+        <li>Is Substrate's broad generality utilized by anyone? If no, does Parity narrow its scope fast enough? Every multifaceted project must prove their flexibility by killing their darlings to prioritize project goals.</li>
+        <li>Are Polkadot's parachains reliable? If yes, did a small team ship that? Small teams shipping stable services would inspire confidence. Large parachain projects facing downtime would inspire the opposite.</li>
       </ul>
     </p>
     <p>
-      This post focused on potential problems.
-      One should of course also look at the potential value of the features that get shipped.
-      This is thoroughtly described in many other places, eg on Polkadot's own <a href="https://wiki.polkadot.network/">wiki</a>.
+      This post focused on potential worries.
+      To decide if Polkadot is a fit with my specific Reprap goals I must
+      also consider the potential value of Polkadot's features.
+    </p>
+    <p>
+      That's a whole other text, but I should mention that valuable features exist that fit my Reprap goals.
+      These are all features that might allow Polkadot to break out of its star shape in the future, like open source licenses and broad mind-share.
     </p>
     <p>
       Compared to some of their competitors, Polkadot and Parity still look very good in my opinion.
+      It's fun to see them run fast in the blockchain innovation track.
+    </p>
+    <p>
       I own some DOT tokens and nothing I write is financial advice.
     </p>
   </post>
