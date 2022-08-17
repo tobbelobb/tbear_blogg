@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
 <posts year="2022">
-  <post id="polkadot_1" heading="Polkadot for Reprap - Potential Worries" date="10-8-2022">
+  <post id="polkadot_1" heading="Polkadot for Reprap - Potential Worries" date="17-8-2022">
     <p>
       I've previously written about how Repraps are different.
       They lets users make and spread copied machines without permission or royalties.
@@ -569,13 +569,13 @@
     </p>
     <p>
       Software being hairy is not a dealbreaker for my Reprap goals.
-      Neither are my complaints about macros, traits, and comments.
+      Neither are my complaints about proc macros, traits, and comments.
     </p>
     <p>
       Polkadot is young and will look very different in a few years.
-      All computer programs are notoriously unfinished, that's the nature of programming.
       The only problem-free repo is an empty one.
-      Programming projects don't show strength by not having problems,
+      All computer programs are notoriously unfinished, that's the nature of programming.
+      Projects don't show strength by not having problems,
       but by which type of problems they have,
       and over time how they solve them.
     </p>
@@ -589,6 +589,7 @@
         <li>Do we see organic adoption of Frame? I've only seen paid devs wade through the macro-and-trait weeds so far. Seeing students fiddle with this voluntarily on their own time would inspire far more confidence.</li>
         <li>Is Substrate's broad generality utilized by anyone? If no, does Parity narrow its scope fast enough? Every multifaceted project must prove their flexibility by killing their darlings to prioritize project goals.</li>
         <li>Are Polkadot's parachains reliable? If yes, did a small team ship that? Small teams shipping stable services would inspire confidence. Large parachain projects facing downtime would inspire the opposite.</li>
+        <li>Does regression in Substrate decrease over time? A publicly posted, low or decreasing measure of regression would inspire confidence. Such a measure could be constructed either through heavy testing or by counting how quickly and successfully users upgrade to the latest version.</li>
       </ul>
     </p>
     <p>
@@ -606,6 +607,8 @@
     </p>
     <p>
       I own some DOT tokens and nothing I write is financial advice.
+      If you spot mistakes or have comments to this blog post, please reach out.
+      As my friend Ankan says; I'm not young enough to know everything.<br />😂
     </p>
   </post>
   <post id="hangprinter_project_79" heading="Solving Hangprinter's Biggest Problem" date="21-4-2022">
