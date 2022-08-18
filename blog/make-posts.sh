@@ -20,5 +20,7 @@ sed -i 's/href=\"\.\.\/\.\.\//href="\.\.\//g' index.html
 sed -i 's/<meta property="og:url" content="https:\/\/torbjornludvigsen.com\/blog\/2020/<meta property="og:url" content="https:\/\/torbjornludvigsen.com\/blog/g' index.html
 # Links pointing to posts from another year should not point one directory down
 sed -i 's/href=\"\.\.\/20/href=".\/20/g' index.html
+# Links pointing to posts from another year should not point one directory down
+sed -i 's/src=\"\.\.\/20/src=".\/20/g' index.html
 # Remove the "this is 2022" part for front page blog version
 sed -i 's/Reprap Blog 2022//g' index.html
