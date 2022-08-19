@@ -98,6 +98,25 @@
       It is only interesting if it comes from permissionlessness and low thresholds.
       Emphasis on those terms would better match my goals.
     </p>
+    <p>
+      As mentioned, Reprap temporarily suspended economic gravity through self-replication.
+      More successful companies emerged from Reprap than the whole 3d printing industry had before Reprap.
+      It was fun.
+    </p>
+    <p>
+      Polkadot's ability to hot-swap it's own WASM internals (self-upgrade in Reprap lingo),
+      as well as the advanced on-chain governance, sounds like it's awfully close to the self-replication
+      threshold that Reprap crossed.
+      Successful software projects who crossed the threshold are gcc and Linux,
+      who compile and copy new versions of themself, within themself.
+    </p>
+    <p>
+      I'm just dying to see Polkadot walk the last mile to enable cheap exponential growth
+      through self-replication.
+      They're halfway there.
+      My worry is that they could start walking backwards in the name of pragmatism.
+      Become a <a href="https://en.wikipedia.org/wiki/MakerBot#Controversies">Makerbot</a>, in Reprap lingo.
+    </p>
     <figure>
       <a href="./bilder/gav.JPG">
         <img src="./bilder/gav_small.JPG" alt="" width="500" height="281"/>
@@ -181,8 +200,24 @@
     </figure>
     <p>
       Polkadot's designers could have opted for any other topology but chose star shape,
-      and they chose to put themselves at the center (contrary to eg Cosmos and to some degree Avalanche).
-      The Polkadot network is very strongly locked into this configuration for a few reasons:
+      and they chose to put themselves at the center, contrary to eg Cosmos and to some degree Avalanche.
+      There's a reason for the star of course.
+      Those other blockchains don't deliver the shared security that Polkadot does.
+    </p>
+    <p>
+      Still, trading away all decentralization at the blockchain architecture level is a strong statement.
+      Delivering shared security today is the most important goal to Polkadot's designers,
+      more important than decentralizing the chains' network architecture.
+    </p>
+    <p>
+      This can be compared to the Internet, who replaced or swallowed its centralized predecessors.
+      It was given a maximally distributed topology at first, in the name of robustness,
+      and over time gravitated back towards clusters of more performant stars.
+    </p>
+    <p>
+      Polkadot's blockchain started out with star shape and gravity might pull it,
+      as well as it's creators, hard into the center of their own star, locking them in place,
+      for a few reasons:
     </p>
     <p>
       <b>The star shape is replicated in the social and economical systems within the network.</b>
@@ -192,9 +227,9 @@
       If you want to meet Polkadot people, you go via Parity.
     </p>
     <p>
-      <b>Polkadot will stay in the network's center and must find ways to collect taxes indefinitely.</b>
-      This is because it provides security to all the parachains.
-      Distributing the responsibility for pooled security among parachains would lead to a tragedy of the commons.
+      <b>Polkadot must stay connected to all nodes and must find ways to collect taxes indefinitely.</b>
+      This is because it provides security to all the parachains from a single pooled source.
+      Distributing the responsibility for such pooled security among parachains would lead to a tragedy of the commons.
       Every parachain would be incentivized to use the pooled security as much as possible
       while contributing as little as possible.
     </p>
@@ -287,6 +322,26 @@
     </p>
     <p>
       Placing fundamental limitations on the security of the user-facing layer is a red flag for me.
+    </p>
+    <p>
+      Current parachains are planning to mitigate this threat by amassing funds enough to dominate future slot auctions.
+      Some also plan to build out independent security mechanisms.
+      They're very wise and plan ahead.
+      I'd say most likely they'll make it.
+    </p>
+    <p>
+      But even if it plays out perfectly for them, the issue of looming insecurity still dampens my enthusiasm as a builder.
+      Imagine in 2009, if Bitcoin could plausibly loose all mining power at discrete planned events in 2011, 2013, 2015, ...
+      Or imagine if Ethereum's difficulty bomb was bound by a two year old contract, back in 2019.
+      Or if Repraps were designed for planned obsolescence within two years.
+    </p>
+    <p>
+      Parathreads is a simpler service where blockchain projects can buy security on-demand, block-by-block, without any auction.
+      It could help small blockchains gradually scale up.
+    </p>
+    <p>
+      Parathreads are less likely to save dislodged parachains from going down, since the chains would experience technical and reputational downgrade, both at once.
+      Users can quickly evacuate dying guest chains through eg XCM.
     </p>
     <h3>Is Rust Reliable?</h3>
     <p>
@@ -609,6 +664,9 @@
       I own some DOT tokens and nothing I write is financial advice.
       If you spot mistakes or have comments to this blog post, please reach out.
       As my friend Ankan says; I'm not young enough to know everything.<br />😅
+    </p>
+    <p>
+      Thanks to Ankan, Saurabh, and Maja for helpful feedback on this long post.
     </p>
   </post>
   <post id="hangprinter_project_79" heading="Solving Hangprinter's Biggest Problem" date="21-4-2022">
