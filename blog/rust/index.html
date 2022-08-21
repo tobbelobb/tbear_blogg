@@ -1,0 +1,542 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="theme-color" content="#FBE8A6">
+      <meta name="author" content="Torbjorn Ludvigsen">
+      <meta name="keywords" content="Reprap, blog, development">
+      <meta name="description" content="Reprap blog">
+      <meta property="og:type" content="website">
+      <meta property="og:title" content="Torbjorn Ludvigsen">
+      <meta property="og:url" content="https://torbjornludvigsen.com/blog/2022">
+      <meta property="og:description" content="Reprap blog">
+      <meta property="og:image" content="https://torbjornludvigsen.com/torbjornludvigsen.JPG">
+      <meta name="twitter:card" content="summary">
+      <meta name="twitter:site" content="@tobbelobb">
+      <meta name="twitter:creator" content="@tobbelobb">
+      <link rel="preload" href="../../OpenSansRegular.woff" as="font" type="font/woff" crossorigin="anonymous">
+      <link rel="stylesheet" href="../../style.css?v=2" type="text/css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+      <link rel="manifest" href="../../site.webmanifest">
+      <link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#5bbad5">
+      <meta name="msapplication-TileColor" content="#2d89ef"><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script><title>Torbjorn Ludvigsen|Blog</title>
+   </head>
+   <body>
+      <nav>
+         <ul>
+            <li><a href="../../">Home</a></li>
+            <li><a href="../../blog" class="active">Blog</a></li>
+            <li><a href="../../donate">Donate</a></li>
+            <li><a href="../../about">About</a></li>
+            <li><a href="../../links">Links</a></li>
+         </ul>
+      </nav>
+      <div id="SiteName">
+         Reprap Blog 2022
+      </div>
+      <div id="MainContent">
+         <h1 id="rust_1">Brackets in Rust</h1>
+         <div class="date">21-8-2022</div>
+         <p>
+            New Rust programmers notice that
+            Rust uses angle brackets (or chevrons) like this &lt; and this&gt; a lot.
+            When should they be used and when can they be omitted?
+                
+         </p>
+         <h3>Let's Start With Rounded Brackets First</h3>
+         <p>
+                  The round brackets (or parentheses) are more familiar to any old programmer.
+                  I'll compare Rust to C and Common Lisp, just to have something very old to reference back to.
+                
+         </p>
+         <p>
+                  Parenthesis mean "compute this now" in almost all programming languages.
+                  Zero or more bound variables and/or literal values should compute into zero or more return values.
+                
+         </p>
+         <p>
+                  In Common Lisp, a <code>(</code> always means "thing starts" and <code>)</code> means "thing ends".
+                  In other languages, things may start before the <code>(</code>.
+                  C does some of both, with for example function calls and grouping of expressions:
+                
+         </p>
+         <p>
+                  
+            <ul>
+                       
+               <li><code>f(x)</code></li>
+                       
+               <li><code>(1 + 2 + 3)</code></li>
+                     
+            </ul>
+                
+         </p>
+         <p>
+                  The second example works the same in Rust as in C.
+                  Functions are more complicated.
+                  Let's look at C's function declaration first:
+                
+         </p>
+         <p>
+                  <code>out_type f(in_type);</code>
+                
+         </p>
+         <p>
+                  The pre-defined types <code>in_type</code> and <code>out_type</code> describe inputs and outputs of the function <code>f</code>.
+                  Here, the parentheses don't mean "compute this now".
+                  Instead it means "prepare for computation request like this one later".
+                
+         </p>
+         <p>
+                
+         </p>
+         <p>
+                  The closest equivalent in ideomatic compileable Rust code would be:
+                
+         </p>
+         <p>
+                  <code>trait A { fn f(_: in_type) -&gt; out_type; }</code>
+                
+         </p>
+         <p>
+                  In Rust, you can't declare a free function without a body.
+                  The simplest possible free function would have an empty body and an unspecified return type:
+                
+         </p>
+         <p>
+                  <code>fn f(_: in_type) {}</code>
+                
+         </p>
+         <p>
+                  The <code>_</code> means "unused variable", like in Erlang and many pattern matching languages.
+                  The Common Lisp, you could declare without implementation like in C:
+                
+         </p>
+         <p>
+                  <code>(declaim (ftype (function (in_type)) f))</code>
+                
+         </p>
+         <p>
+                  Or you can do both declaration and implementation at once like in Rust:
+                
+         </p>
+         <p>
+                  <code>(defun f (_) (declare (ignore _) (in_type _)))</code>
+                
+         </p>
+         <p>
+                  In a real Lisp project who wanted types, one would probably use a library like <a href="https://github.com/lisp-maintainers/defstar">defstar</a> to be able to write:
+                
+         </p>
+         <p>
+                  <code>(defun* f ((_ in_type)))</code>
+                
+         </p>
+         <p>
+                  An unspecified return type in Rust defaults to <code>()</code>, which is a primitive type that has only one value that is also called <code>()</code>.
+                  Both the type and the value are often referred to as the unit.
+                  It's empty and means "compute nothing" or "this is nothing", similar to <code>void</code> in C, or indeed equivalent to <code>()</code> in Common Lisp.
+                  The empty body also behaves like in Common Lisp, it defaults to returning <code>()</code>.
+                
+         </p>
+         <p>
+                  An additional meaning of parentheses in Rust. Great. Let's write Rust's defaults out explicitly so we have seen them
+            at least once:
+                
+         </p>
+         <p>
+                  <code>fn f(_: in_type) -&gt; () { () }</code>
+                
+         </p>
+         <p>
+                  Read it like
+            
+                  
+            <table style="text-align: right; border-spacing: 0px; margin-left: 10px;; margin-right: 10px;">
+                       
+               <tbody>
+                            
+                  <tr>
+                     <td style="width: 10%"><code>fn f( </code></td>
+                     <td>"This is a function called f, it has the following parameters..."</td>
+                  </tr>
+                            
+                  <tr>
+                     <td style="width: 10%"><code>_ </code></td>
+                     <td> "... an unnamed one..."</td>
+                  </tr>
+                            
+                  <tr>
+                     <td style="width: 10%"><code>:  </code></td>
+                     <td> "... here follows a description of the parameter..."</td>
+                  </tr>
+                            
+                  <tr>
+                     <td style="width: 10%"><code>in_type </code></td>
+                     <td> "... the name of the parameter's type..."</td>
+                  </tr>
+                            
+                  <tr>
+                     <td style="width: 10%"><code>) </code></td>
+                     <td> "... end of parameter list..."</td>
+                  </tr>
+                            
+                  <tr>
+                     <td style="width: 10%"><code> -&gt;  </code></td>
+                     <td> "... here follows a description of the function's output"</td>
+                  </tr>
+                            
+                  <tr>
+                     <td style="width: 10%"><code>in_type </code></td>
+                     <td> "... the name of the function's return type."</td>
+                  </tr>
+                          
+               </tbody>
+                     
+            </table>
+                
+         </p>
+         <h3>Rust's Angle Brackets are for Generic Data Types</h3>
+         <p>
+                  Let's look at a slightly more complicated Rust function:
+                
+         </p>
+         <p>
+                  <code>fn f&lt;InType&gt;(_: InType) {}</code>
+                
+         </p>
+         <p>
+                  This looks like what we have seen before, except <code>InType</code> is now mentioned inside angle brackets (chevrons),
+                  right before the parenthesis that starts the parameter list.
+                  In this case the angle brackets modifies the meaning of <code>InType</code> to mean, not the name of a particular type,
+                  but a variable (generic type) that will resolve to zero or more concrete types, and a function will be generated for
+            each type,
+                  when the function is compiled.
+                  So <code>f</code> is here not one function, but a family of functions who only differ in what type they use as their <code>InType</code>.
+                
+         </p>
+         <p>
+                  C doesn't generate families of functions. C could use typecasting to achieve something vaguely similar with a single
+            function,
+                  but it wouldn't be the same.
+                
+         </p>
+         <p>
+                  The Common Lisp equivalent comes more naturally:
+                
+         </p>
+         <p>
+                  <code>(defun f (_) (declare (ignore _)))</code>
+                
+         </p>
+         <p>
+                  Common Lisp will always detect automatically which one among the family of functions called <code>f</code> that should be applied.
+                  You call it like: <code>(f 1)</code>
+                  Rust can also auto detect in this trivial case, so you can call <code>f</code> as if it was a single function: <code>f(1)</code>
+                
+         </p>
+         <p>
+                  However, Rust has some more advanced features that forces you to specify which <code>f</code> you want. Take a look at this:
+                
+         </p>
+         <p>
+                  <code>fn f&lt;T: Default&gt;() -&gt; T { T::default() }</code>
+                
+         </p>
+         <p>
+                  Read it like
+            
+                  
+            <table style="text-align: right; border-spacing: 0px; margin-left: 10px; margin-right: 10px;">
+                       
+               <tbody>
+                            
+                  <tr>
+                     <td style="width: 21%"><code>fn f&lt;</code></td>
+                     <td>"A family of functions <code>f</code>, who differ by ..."
+                     </td>
+                  </tr>
+                            
+                  <tr>
+                     <td style="width: 21%"><code>T</code></td>
+                     <td> "... a type variable, <code>T</code>, which represents any type..."
+                     </td>
+                  </tr>
+                            
+                  <tr>
+                     <td style="width: 21%"><code>: </code></td>
+                     <td> "... that fulfills..."</td>
+                  </tr>
+                            
+                  <tr>
+                     <td style="width: 21%"><code>Default</code></td>
+                     <td> "... a trait called <code>Default</code>."
+                     </td>
+                  </tr>
+                            
+                  <tr>
+                     <td style="width: 21%"><code>&gt;</code></td>
+                     <td> "Start defining functions <code>f</code>, with type variable(s) in scope."
+                     </td>
+                  </tr>
+                            
+                  <tr>
+                     <td style="width: 21%"><code>() -&gt; T { </code></td>
+                     <td> "Empty parameter list. <code>T</code> used as return type."
+                     </td>
+                  </tr>
+                            
+                  <tr>
+                     <td style="width: 21%"><code>T::default()</code></td>
+                     <td> "Call into <code>T</code>'s associated <code>default()</code> function."
+                     </td>
+                  </tr>
+                            
+                  <tr>
+                     <td style="width: 21%"><code>}</code></td>
+                     <td> "End of body."</td>
+                  </tr>
+                          
+               </tbody>
+                     
+            </table>
+                
+         </p>
+         <p>
+                  When we call into one of these functions, Rust can't always infer which <code>f</code> we meant.
+                  Placing a function call <code>f()</code> on a line of code without further type information won't be valid Rust and won't compile.
+                  Rust will not take a guess on your behalf.
+                
+         </p>
+         <p>
+                  One way to provide the compiler with the type info it needs, is with Rust's second-ugliest syntax in my opinion, the
+            <a href="https://www.reddit.com/r/rust/comments/3fimgp/comment/ctozkd0/">turbofish</a>:
+                
+         </p>
+         <p>
+                  <code>f::&lt;some_concrete_type&gt;();</code>
+                
+         </p>
+         <p>
+                  The turbofish, <code>::&lt;&gt;</code>, lets you treat <code>f</code> like one function who just needs its type parameters and other parameters to be provided separately.
+                
+         </p>
+         <p>
+                  Both grouping types by who implements a particular function, the <code>default</code> in the above example, and passing types to functions (families) are way beyond C's type system.
+                
+         </p>
+         <p>
+                  But can Common Lisp still keep up?
+                  Like, can we somehow say:
+                
+         </p>
+         <p>
+                  <code>(f 'fixnum)</code>
+                
+         </p>
+         <p>
+                  ... and get back the default value of the concrete type called <code>fixnum</code>?
+                
+         </p>
+         <p>
+                  The <code>'fixnum</code> above is really a symbol
+                  We can hack together something, like
+                
+         </p>
+         <p>
+                  <code>(defgeneric default (x))<br>
+                       (defmethod default ((s (eql 'fixnum))) 42)<br>
+                       (defun f (s) (declare (symbol s)) (default s))<br>
+                       (f 'fixnum)<br>
+                         =&gt; 42
+                     </code>
+                
+         </p>
+         <p>
+                  The <code>defgeneric</code> creates a dispatch table, and we're able to give <code>fixnum</code>
+                  it's own implementation.
+                  But, the <code>default</code> implementation is attached to a symbol, not to a type,
+                  and I can't get this to err at compile time without doing much more funky stuff.
+                
+         </p>
+         <p>
+                  I guess we shaked off both C and Common Lisp already here.
+                  Rust's traits, and handling of types, over powers Common Lisp's built in
+                  type system in this comparison.
+                  Common Lisp is a programmable programming language, so we could simulate most of Rust's
+                  features in there.
+                  With common lisp macros, absolutely, we can do anything.
+                  But it would be hard, and I wouldn't want to do it.
+                
+         </p>
+         <h3>Reading List</h3>
+         <p>
+                  To really understand where to put colons and angle brackets in Rust code, I had to read these texts:
+                
+         </p>
+         <p>
+                  
+            <ul>
+                       
+               <li><a href="https://techblog.tonsser.com/posts/what-is-rusts-turbofish">What is Rust's turbofish?</a></li>
+                       
+               <li><a href="https://matematikaadit.github.io/posts/rust-turbofish.html">Where to put the turbofish</a></li>
+                       
+               <li><a href="https://stackoverflow.com/questions/55113556/how-to-use-turbofish-operator-for-generic-trait-implementation">Fully Qualified Syntax Needed for Resolving Generic Traits</a></li>
+                       
+               <li><a href="https://doc.rust-lang.org/book/ch19-03-advanced-traits.html#fully-qualified-syntax-for-disambiguation-calling-methods-with-the-same-name">Fully Qualified Syntax Docs</a></li>
+                     
+            </ul>
+                
+         </p>
+         <p>
+            - tobben
+            
+         </p><br><br><br><br><br><br><br><br><br><br><br><h1 id="Links">
+            Links
+            
+         </h1>
+         <p>
+            Hangprinter Campaign: <a href="https://github.com/sponsors/tobbelobb/">Github Sponsors</a></p>
+         <p>
+            Hangprinter Merchandise USA: <a href="https://shop.spreadshirt.com/hangprinter-merchandise/">Spreadshirt.com</a></p>
+         <p>
+            Hangprinter Merchandise Sweden: <a href="https://shop.spreadshirt.se/hangprinter-merchandise/">Spreadshirt.se</a></p>
+         <p>
+            Hangprinter Project: <a href="../2014#Hangprinter">[1]</a>,
+            <a href="../2015#Slideprinter_Update">[2]</a>,
+            <a href="../2015#hangprinter_project_2">[3]</a>,
+            <a href="../2015#hangprinter_project_3">[4]</a>,
+            <a href="../2015#hangprinter_project_4">[5]</a>,
+            <a href="../2015#hangprinter_project_5">[6]</a>,
+            <a href="../2015#hangprinter_project_6">[7]</a>,
+            <a href="../2015#hangprinter_project_7">[8]</a>,
+            <a href="../2015#hangprinter_project_8">[9]</a>,
+            <a href="../2015#hangprinter_project_9">[10]</a>,
+            <a href="../2015#hangprinter_project_10">[11]</a>,
+            <a href="../2015#hangprinter_project_11">[12]</a>,
+            <a href="../2015#hangprinter_project_12">[13]</a>,
+            <a href="../2015#hangprinter_project_13">[14]</a>,
+            <a href="../2015#hangprinter_project_14">[15]</a>,
+            <a href="../2015#hangprinter_project_15">[16]</a>,
+            <a href="../2015#hangprinter_project_16">[17]</a>,
+            <a href="../2015#hangprinter_project_17">[18]</a>,
+            <a href="../2015#hangprinter_project_18">[19]</a>,
+            <a href="../2016#hangprinter_project_19">[20]</a>,
+            <a href="../2016#hangprinter_project_20">[21]</a>,
+            <a href="../2016#hangprinter_project_21">[22]</a>,
+            <a href="../2016#hangprinter_project_22">[23]</a>,
+            <a href="../2016#hangprinter_project_23">[24]</a>,
+            <a href="../2016#hangprinter_project_24">[25]</a>,
+            <a href="../2016#hangprinter_project_25">[26]</a>,
+            <a href="../2016#hangprinter_project_26">[27]</a>,
+            <a href="../2016#hangprinter_project_27">[28]</a>,
+            <a href="../2017#hangprinter_project_28">[29]</a>,
+            <a href="../2017#hangprinter_project_29">[30]</a>,
+            <a href="../2017#hangprinter_project_30">[31]</a>,
+            <a href="../2017#hangprinter_project_31">[32]</a>,
+            <a href="../2017#hangprinter_project_32">[33]</a>,
+            <a href="../2017#hangprinter_project_33">[34]</a>,
+            <a href="../2017#hangprinter_project_34">[35]</a>,
+            <a href="../2017#hangprinter_project_35">[36]</a>,
+            <a href="../2017#hangprinter_project_36">[37]</a>,
+            <a href="../2017#hangprinter_project_37">[38]</a>,
+            <a href="../2017#hangprinter_project_38">[39]</a>,
+            <a href="../2017#hangprinter_project_39">[40]</a>,
+            <a href="../2017#hangprinter_project_40">[41]</a>,
+            <a href="../2017#hangprinter_project_41">[42]</a>,
+            <a href="../2017#hangprinter_project_42">[43]</a>,
+            <a href="../2017#hangprinter_project_43">[44]</a>,
+            <a href="../2017#hangprinter_project_44">[45]</a>,
+            <a href="../2017#hangprinter_project_45">[46]</a>,
+            <a href="../2017#hangprinter_project_46">[47]</a>,
+            <a href="../2017#hangprinter_project_47">[48]</a>,
+            <a href="../2017#hangprinter_project_48">[49]</a>,
+            <a href="../2017#hangprinter_project_49">[50]</a>,
+            <a href="../2017#hangprinter_project_50">[51]</a>,
+            <a href="../2018#hangprinter_project_51">[52]</a>,
+            <a href="../2018#hangprinter_project_52">[53]</a>,
+            <a href="../2018#hangprinter_project_53">[54]</a>,
+            <a href="../2018#hangprinter_project_54">[55]</a>,
+            <a href="../2018#hangprinter_project_55">[56]</a>,
+            <a href="../2018#hangprinter_project_56">[57]</a>,
+            <a href="../2018#hangprinter_project_57">[58]</a>,
+            <a href="../2018#hangprinter_project_58">[59]</a>,
+            <a href="../2018#hangprinter_project_59">[60]</a>,
+            <a href="../2018#hangprinter_project_60">[61]</a>,
+            <a href="../2018#hangprinter_project_61">[62]</a>,
+            <a href="../2018#hangprinter_project_62">[63]</a>,
+            <a href="../2020#hangprinter_project_63">[64]</a>,
+            <a href="../2020#hangprinter_project_64">[65]</a>,
+            <a href="../2020#hangprinter_project_65">[66]</a>,
+            <a href="../2020#hangprinter_project_66">[67]</a>,
+            <a href="../2020#hangprinter_project_67">[68]</a>,
+            <a href="../2020#hangprinter_project_68">[69]</a>,
+            <a href="../2021#hangprinter_project_69">[70]</a>,
+            <a href="../2021#hangprinter_project_70">[71]</a>,
+            <a href="../2021#hangprinter_project_71">[72]</a>,
+            <a href="../2021#hangprinter_project_72">[73]</a>,
+            <a href="../2021#hangprinter_project_73">[74]</a>,
+            <a href="../2021#hangprinter_project_74">[75]</a>,
+            <a href="../2021#hangprinter_project_75">[76]</a>,
+            <a href="../2021#hangprinter_project_76">[77]</a></p>
+         <p>
+            Hangprinter Project Homepage: <a href="https://hangprinter.org">hangprinter.org</a></p>
+         <p>
+            Print Issue Solution Filter Project: <a href="../2014#Introducing_PISF">[1]</a>,
+            <a href="../2014#Presenting_PISF_Again">[2]</a>,
+            <a href="../2014#PISF_Online_Sort_Of">[3]</a>,
+            <a href="../2014#PISF">[4]</a></p>
+         <p>
+            Sourcing RepRappro Mendel in Larvik: <a href="../2014#Sourcing_Mendel_1">[1]</a>,
+            <a href="../2014#Sourcing_Mendel_2">[2]</a>,
+            <a href="../2014#Sourcing_Mendel_3">[3]</a>,
+            <a href="../2014#Sourcing_Mendel_4">[4]</a>,
+            <a href="../2014#Sourcing_Mendel_5">[5]</a>,
+            <a href="../2014#Sourcing_Mendel_6">[6]</a>,
+            <a href="../2014#Sourcing_Mendel_7">[7]</a></p>
+         <p>
+            Archive: <a href="../2014">2014</a>, <a href="../2015">2015</a>, <a href="../2016">2016</a>, <a href="../2017">2017</a>, <a href="../2018">2018</a>, <a href="../2020">2020</a>, <a href="../2021">2021</a></p>
+         <p>
+            Github Profile: <a href="https://github.com/tobbelobb/">link</a><br></p>
+         <p>
+            Gitlab Profile: <a href="https://gitlab.com/tobben">link</a><br></p>
+         <p>
+            Hangprinter project on Gitlab: <a href="https://gitlab.com/hangprinter">link</a><br></p>
+         <p>
+            Vimeo User: <a href="https://vimeo.com/user23166500">link</a><br></p>
+         <p>
+            Youtube User: <a href="https://www.youtube.com/channel/UCw1Nz0VCw4z-dfq4WjSkFzQ">link</a><br></p>
+         <p>
+            Twitter User: <a href="https://twitter.com/tobbelobb">link</a><br></p>
+         <p>
+            Master's Thesis: <a href="http://opensourceecology.org/wiki/File:Thesis.pdf">link</a><br></p>
+         <p>
+            Linkedin Profile: <a href="https://se.linkedin.com/in/torbjorn-ludvigsen">link</a><br></p>
+         <p>
+            Appropedia User: <a href="http://www.appropedia.org/User:Tobben">link</a><br></p>
+         <p>
+            RepRap Forums User: <a href="http://forums.reprap.org/profile.php?1,22385">link</a></p>
+         <p>
+            Forums threads: <a href="http://forums.reprap.org/read.php?178,344022">Hangprinter version 1</a>,
+            <a href="http://forums.reprap.org/read.php?1,738858">Hangprinter version 2</a>,
+            <a href="http://forums.reprap.org/read.php?1,792937">Hangprinter version 3</a>,
+            <a href="https://reprap.org/forum/list.php?423">List of Hangprinter threads</a></p>
+         <p>
+            Source for this blog: <a href="https://gitlab.com/tobben/tbear_blogg">Gitlab repo</a></p>
+         <p>
+            Everything on this homepage, except those videos who are published via Vimeo or Youtube, is licensed under the <a href="https://www.gnu.org/licenses/fdl">Gnu Free Documentation License</a>.
+            The videos published via Vimeo or Youtube are also licensed via Vimeo or Youtube.
+            
+         </p>
+      </div><br><br><br><br><br><br><br><br><script type="text/javascript">
+  MathJax.Hub.Configured()
+</script><script data-goatcounter="https://torbjornludvigsen.goatcounter.com/count" async="true" src="//gc.zgo.at/count.js"></script></body>
+</html>
