@@ -1,6 +1,152 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
 <posts year="2022">
+  <post id="polkadot_2" heading="Things That Would Have Made Me More Excited About Blockchain" date="4-10-2022">
+    <p>
+      As alluded to in my previous post, I am excited about aspects of Polkadot.
+      To explain my excitement I want to establish three terms
+      <ul>
+        <li>Good games</li>
+        <li>Reliable Computer Programs</li>
+        <li>The Substrate Ecosystem</li>
+      </ul>
+    </p>
+    <h3>Good Games</h3>
+    <p>
+      During the Polkadot Academy we did some practical experiments on game theory.
+      We played a game of auctions, guessing, and clever trickery within known and enforced rules.
+      Some students won some nice looking NFT art or a few Euros,
+      but even the loosers felt educated and uplifted afterwards.
+    </p>
+    <p>
+      It was a good game.
+      There's no short definition of a good game but you can feel it.
+      Humans are living detectors of the fair, fun, exciting goodness of some games.
+      Similarly, we recognize and despise bad games from early childhood on.
+    </p>
+    <h3>Reliable Computer Programs</h3>
+    <p>
+      This too is best described with feelings.
+      It's the "just works"-feeling.
+    </p>
+    <p>
+      Sometimes you know you found your reliable computer program because you're mind boggled.
+      Sometimes you know it when you refuse going back to the other stuff.
+      Ideally you never notice the reliable computer program because it never got in your way.
+    </p>
+    <h3>The Substrate Ecosystem</h3>
+    <p>
+      Substrate is a really large project.
+      Polkadot is one Substrate based blockchain.
+    </p>
+    <h3>Message Channels Not Equals Security Network</h3>
+    <h3>Communication Between Parachains</h3>
+    <p>
+      I'm excited about graphs like this one, if they mirror the reality of power relations:
+    </p>
+    <figure>
+      <a href="./bilder/communication_kusama2.png">
+        <img src="./bilder/communication_kusama2_small.png" alt="" width="500" height="502"/>
+      </a>
+      <figcaption>
+        Existing channels for XCM (cross chain messaging) between parachains connected to the Kusama relay chain
+        on Oct 5, 2022.
+        Credits: Gregory Luneau,
+          creator of <a href="https://dotsama-channels.vercel.app/#/">dotsama-channels.vercel.app</a>.
+      </figcaption>
+    </figure>
+    <p>
+      Compare to the network topologies graphs posted in my previous blog post.
+        (<a href="#network_topologies">link</a>)
+      The drawing above shows a well connected mesh, not a star.
+      It would have made me very excited if real.
+    </p>
+    <p>
+      However, all XCM goes via the relay chain today.
+      The direct connections between parachains don't exist, it's still a star shape under the hood.
+    </p>
+    <p>
+      I'm careful to spill my excitement on technical projects' plans and dreams,
+      but I note that both
+      <a href="https://wiki.polkadot.network/docs/learn-xcm">the docs</a>
+      and <a href="https://polkadot.network/blog/polkadot-roadmap-roundup/">the roadmap</a>
+      say that devs are close to making direct (XCMP) connections real.
+    </p>
+    <figure>
+      <a href="./bilder/communication_polkadot_and_kusama_separate.png">
+        <img src="./bilder/communication_polkadot_and_kusama_separate_small.png" alt="" width="500" height="292"/>
+      </a>
+      <figcaption>
+      </figcaption>
+    </figure>
+
+    <p>
+      For thinking about power distribution within the Substrate Ecosystem,
+      it can be useful to have a thought model of empires.
+      An empire is a state that gives subordinate states security guarantees in
+      exchange for taxes.
+      Polkadot being the kindest type, who helps build subordinates while
+      incorporating them in its own systems.
+    </p>
+    <p>
+      To be really Satoshi-level convincing, Parity has to build up its own competitors and
+      then die.
+    </p>
+
+    <h3>Substrate &gt; Polkadot</h3>
+    <p>
+      Polkadot and Substrate are different things.
+      Substrate lets us build a new exciting world, a web of trustable things, reliable programs.
+      Polkadot is a user of Substrate.
+      It is currently the most important Substrate chain
+      Polkadot is important because it bootstraps the Substrate ecosystem.
+      I am
+
+
+    </p>
+    <h3>Parachains can Jump Between Relay Chains</h3>
+    <p>
+      Blockchain triggers the idea of ownership.
+      Ownership can shorten our thoughts.
+      Stake can shrink our minds.
+      We ask fewer questions.
+      I don't like that.
+    </p>
+    <p>
+      Ask somebody outside of blockchain if we look stupid or not.
+      What's their thoughts on our tokenomics?
+    </p>
+    <p>
+      People love good games.
+      A well designed game brings out the best in people.
+      The joy is not merely about winning.
+      It's about being invited to play,
+      getting a fair chance,
+      the rules are known,
+      knowing no tricks are pulled,
+      that hard work and cleverness pays off,
+      that your success won't hinder others,
+      it's the friends you gain,
+      and the uncontested fair end result to measure up against.
+      Good games are bliss.
+    </p>
+    <p>
+      But there's also bad games.
+      There are games with cheaters and games that punish winners or loosers.
+      There are games with no clear end result and games butchered by referee blunders.
+      Some games reward betrayal.
+      Most people hate those games.
+      Even the winners hate them.
+    </p>
+    <p>
+      Ownership can be a bad game.
+      Blockchain is a new kind of ownership.
+      We're still shaping this game.
+      People, myself included, will get excited if we make it a good one.
+    </p>
+    <p>
+    </p>
+  </post>
   <post id="polkadot_1" heading="Polkadot for Reprap - Potential Worries" date="17-8-2022">
     <p>
       I've previously written about how Repraps are different.
@@ -188,7 +334,7 @@
       I have written about star shaped networks before, in a blog post called <a href="../2021/#hangprinter_project_75">Hopes, Dreams, and Agendas</a>.
       Here's the most relevant part from that post:
     </p>
-    <figure>
+    <figure id="network_topologies">
       <a href="../2021/bilder/NetworkTopologies.png">
         <img src="../2021/bilder/NetworkTopologies.png" alt="" width="503" height="249"/>
       </a>
