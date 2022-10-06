@@ -1,46 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
 <posts year="2022">
-  <post id="polkadot_2" heading="Things That Would Have Made Me More Excited About Blockchain" date="4-10-2022">
-    <p>
-      As alluded to in my previous post, I am excited about aspects of Polkadot.
-      To explain my excitement I want to establish three terms
-      <ul>
-        <li>Good games</li>
-        <li>Reliable Computer Programs</li>
-        <li>The Substrate Ecosystem</li>
-      </ul>
-    </p>
-    <h3>Good Games</h3>
-    <p>
-      During the Polkadot Academy we did some practical experiments on game theory.
-      We played a game of auctions, guessing, and clever trickery within known and enforced rules.
-      Some students won some nice looking NFT art or a few Euros,
-      but even the loosers felt educated and uplifted afterwards.
-    </p>
-    <p>
-      It was a good game.
-      There's no short definition of a good game but you can feel it.
-      Humans are living detectors of the fair, fun, exciting goodness of some games.
-      Similarly, we recognize and despise bad games from early childhood on.
-    </p>
-    <h3>Reliable Computer Programs</h3>
-    <p>
-      This too is best described with feelings.
-      It's the "just works"-feeling.
-    </p>
-    <p>
-      Sometimes you know you found your reliable computer program because you're mind boggled.
-      Sometimes you know it when you refuse going back to the other stuff.
-      Ideally you never notice the reliable computer program because it never got in your way.
-    </p>
-    <h3>The Substrate Ecosystem</h3>
-    <p>
-      Substrate is a really large project.
-      Polkadot is one Substrate based blockchain.
-    </p>
-    <h3>Message Channels Not Equals Security Network</h3>
-    <h3>Communication Between Parachains</h3>
+  <post id="polkadot_2" heading="Things That Would Have Made Me Even More Excited About Polkadot" date="4-10-2022">
+    <!-- Beginning missing -->
+    <h3>Direct Communication Between Parachains</h3>
     <p>
       I'm excited about graphs like this one, if they mirror the reality of power relations:
     </p>
@@ -49,7 +12,7 @@
         <img src="./bilder/communication_kusama2_small.png" alt="" width="500" height="502"/>
       </a>
       <figcaption>
-        Existing channels for XCM (cross chain messaging) between parachains connected to the Kusama relay chain
+        Existing channels for cross chain messaging (XCM via XCMP-Lite/HRMP) between parachains connected to the Kusama relay chain
         on Oct 5, 2022.
         Credits: Gregory Luneau,
           creator of <a href="https://dotsama-channels.vercel.app/#/">dotsama-channels.vercel.app</a>.
@@ -59,38 +22,125 @@
       Compare to the network topologies graphs posted in my previous blog post.
         (<a href="#network_topologies">link</a>)
       The drawing above shows a well connected mesh, not a star.
-      It would have made me very excited if real.
+      It excites me a lot whenever I see power relations of this shape.
     </p>
     <p>
-      However, all XCM goes via the relay chain today.
-      The direct connections between parachains don't exist, it's still a star shape under the hood.
+      However, the image shows channels of messaging, not security or other hard power.
+      It also shows channels using a protocol called XCMP-Lite,
+      which means all messages in reality go via the relay chain.
+      So the power structure under the hood is still an almost perfect star shape.
     </p>
     <p>
-      I'm careful to spill my excitement on technical projects' plans and dreams,
-      but I note that both
-      <a href="https://wiki.polkadot.network/docs/learn-xcm">the docs</a>
-      and <a href="https://polkadot.network/blog/polkadot-roadmap-roundup/">the roadmap</a>
-      say that devs are close to making direct (XCMP) connections real.
+      I say almost beacuse exciting improvements are coming.
+      To describe them lets first draw out today's real power structure:
     </p>
     <figure>
-      <a href="./bilder/communication_polkadot_and_kusama_separate.png">
-        <img src="./bilder/communication_polkadot_and_kusama_separate_small.png" alt="" width="500" height="292"/>
+      <a href="./bilder/communication_polkadot_and_kusama_separate4.png">
+        <img src="./bilder/communication_polkadot_and_kusama_separate4_small.png" alt="" width="500" height="347"/>
       </a>
       <figcaption>
+        The Polkadot and Kusama blockchain ecosystems.
+        All signed messages and transactions get passed via a white edge at least once.
       </figcaption>
     </figure>
-
+    <h3>Direct Messaging Connections Between Parachains</h3>
     <p>
-      For thinking about power distribution within the Substrate Ecosystem,
-      it can be useful to have a thought model of empires.
-      An empire is a state that gives subordinate states security guarantees in
-      exchange for taxes.
-      Polkadot being the kindest type, who helps build subordinates while
-      incorporating them in its own systems.
+      First, let's get the XCMP-Lite out of the way.
+      Both
+      <a href="https://wiki.polkadot.network/docs/learn-xcm">the docs</a>
+      and <a href="https://polkadot.network/blog/polkadot-roadmap-roundup/">the roadmap</a>,
+      suggest that we will see real direct messaging connections soon.
+      It's reasonable to expect them within a year or two.
     </p>
     <p>
-      To be really Satoshi-level convincing, Parity has to build up its own competitors and
-      then die.
+      This will definitely empower the most well connected parachains.
+      They can start trading services with their neighbors, picking and choosing what fits their interests,
+      bypassing the central hub.
+      Hopefully this means they can disregard the relay chain's eventual interests when composing messages.
+      For example a parachain who suspects validators are cheating can ask neighboring parachains about that.
+    </p>
+    <p>
+      The fact that Parity builds more direct connections is encouraging.
+      It's even more exciting to see the parachain teams themselves work on this.
+    </p>
+    <h3>Jumping Between Security Providers</h3>
+    <p>
+      Another thing that empowers parachains, is the newly proven freedom to choose
+      between security providers.
+      A chain called Kilt recently managed to change its relay chain from Kusama to Polkadot.
+      (See
+      <a href="https://polkadot.network/blog/first-parachain-successfully-migrates-from-kusama-to-polkadot/">Polkadot's Blog</a> and <a href="https://medium.com/kilt-protocol/kilt-is-now-a-parachain-on-polkadot-56b9206c2114">Kilt's blog</a>.)
+    </p>
+    <figure>
+      <a href="./bilder/kilts_trick.png">
+        <img src="./bilder/kilts_trick_small.png" alt="" width="500" height="276"/>
+      </a>
+      <figcaption>
+        Kilt did this manuever.
+        It smudged out its previous security dependency towards Kusama and established
+        a new one towards Polkadot instead.
+      </figcaption>
+    </figure>
+    <p>
+      The practical possibility of swapping out their security provider gives
+      implementation freedom and negotiation leverage to the parachains.
+      It softens the power potential of the white edge in the drawing.
+    </p>
+    <p>
+      In Kilt's case it was implementation freedom that motivated the switch.
+      No bad blood was involved.
+      However it's easy to imagine a future where parachains might sometimes want
+      to leave a relay chain or threaten to do so.
+      Kilt showed they can have this power.
+    </p>
+    <h3>A Market of More Substrate Security Providers</h3>
+    <p>
+      Such a threat can't work in today's environment of course,
+      where both the security providing chains are controlled by Parity.
+    </p>
+    <p>
+      Some efforts are being taken from Parity's side to, if not reduce then at least informalise this control.
+      See <a href="https://polkadot.network/blog/gov2-polkadots-next-generation-of-decentralised-governance/">the Gov2 blog post</a> and the <a href="https://github.com/polkadot-fellows/manifesto/blob/main/manifesto.pdf">Polkadot Fellowship Manifesto</a>.
+    </p>
+    <p>
+      However honorable their governance work,
+      they would have to completely remove themselves to really convince me
+      that access to the control levers is really up for grabs.
+      They won't do that because there's a trade-off to be made, and it limits my excitement.
+      Parity are best fit to govern Polkadot.
+      Removing them would be a loss.
+    </p>
+    <p>
+      It would be far more exciting to see external teams come in and compete with Polkadot
+      and Kusama for their parachain connections.
+      For the parachains the experience would be like getting to "jump between hard forks"
+      if that was ever possible in the Ethereum and Bitcoin worlds.
+    </p>
+    <h3>Blending the Two Messaging Nets</h3>
+    <p>
+      In the image above we see that Polkadot's and Kusama's message networks are separate.
+      This is for security management reasons.
+      A parachain gets security guarantees from its relay chain (Polkadot or Kusama).
+      Each relay chain is like a Covid cohort or household, and
+      Infection/security risks may be transmitted via messages.
+    </p>
+    <p>
+      Completely cutting the networks apart is of course sad.
+      Managing to merge them would be exciting.
+    </p>
+
+
+
+    <h3>Getting Rid of the White Lines</h3>
+    <p>
+      The first exciting thing would essentially be
+    </p>
+
+    <p>
+    </p>
+    <h3>Cross Chain Messaging and Security</h3>
+    <p>
+      Let's assume direct cross chain messaging becomes real.
     </p>
 
     <h3>Substrate &gt; Polkadot</h3>
