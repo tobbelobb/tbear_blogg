@@ -25,30 +25,31 @@
       It excites me a lot whenever I see power relations of this shape.
     </p>
     <p>
-      However, the image shows channels of messaging, not security or other hard power.
-      It also shows channels using a protocol called XCMP-Lite,
-      which means all messages in reality go via the relay chain.
-      So the power structure under the hood is still an almost perfect star shape.
+      However, the image shows messaging relations,
+      for messages not related to security or other hard power.
+      Moreover, all messages are routed via the relay chain (Polkadot or Kusama) anyways.
     </p>
     <p>
-      I say almost beacuse exciting improvements are coming.
-      To describe them lets first draw out today's real power structure:
+      A form of direct messaging petween parachains will ship probably within a year or two.
+      (See
+      <a href="https://wiki.polkadot.network/docs/learn-xcm">docs</a>
+      and <a href="https://polkadot.network/blog/polkadot-roadmap-roundup/">roadmap</a>.)
+      They will allow services to flow between parachains, except for one service which is security.
+      Polkadot/Kusama will still have security monopoly within their networks.
+      This gives power structures like this:
     </p>
     <figure>
       <a href="./bilder/communication_polkadot_and_kusama_separate4.png">
         <img src="./bilder/communication_polkadot_and_kusama_separate4_small.png" alt="" width="500" height="347"/>
       </a>
       <figcaption>
-        The Polkadot and Kusama blockchain ecosystems.
-        All signed messages and transactions get passed via a white edge at least once.
+        The Polkadot and Kusama blockchain ecosystems with XCM channels drawn in.
+        Security flows via white edges, arbitrary messages via cyan edges.
       </figcaption>
     </figure>
     <h3>Direct Messaging Connections Between Parachains</h3>
     <p>
       First, let's get the XCMP-Lite out of the way.
-      Both
-      <a href="https://wiki.polkadot.network/docs/learn-xcm">the docs</a>
-      and <a href="https://polkadot.network/blog/polkadot-roadmap-roundup/">the roadmap</a>,
       suggest that we will see real direct messaging connections soon.
       It's reasonable to expect them within a year or two.
     </p>
@@ -99,34 +100,110 @@
       where both the security providing chains are controlled by Parity.
     </p>
     <p>
-      Some efforts are being taken from Parity's side to, if not reduce then at least informalise this control.
+      Some efforts are being made by Parity to bootstrap on-chain formalised control outside of their company.
       See <a href="https://polkadot.network/blog/gov2-polkadots-next-generation-of-decentralised-governance/">the Gov2 blog post</a> and the <a href="https://github.com/polkadot-fellows/manifesto/blob/main/manifesto.pdf">Polkadot Fellowship Manifesto</a>.
     </p>
     <p>
-      However honorable their governance work,
-      they would have to completely remove themselves to really convince me
-      that access to the control levers is really up for grabs.
-      They won't do that because there's a trade-off to be made, and it limits my excitement.
-      Parity are best fit to govern Polkadot.
-      Removing them would be a loss.
+      In practice Polkadot's control levers are not up for grabs when Gov2 goes live.
+      Parity benefit from and are best fit to govern Polkadot and Kusama.
+      They will continue to do so by dominating Gov1, 2, 3, etc.
     </p>
     <p>
       It would be far more exciting to see external teams come in and compete with Polkadot
       and Kusama for their parachain connections.
-      For the parachains the experience would be like getting to "jump between hard forks"
-      if that was ever possible in the Ethereum and Bitcoin worlds.
+      Let parachains testing different sets of block times, block sizes, and
+      different parachain neighborhoods as if they're "jumping between hard forks".
+      That would be exciting.
+    </p>
+    <h3>Relay Chain's I'd Love to See</h3>
+    <h4>A Pure Clone</h4>
+    <p>
+      A non-Parity clone of Polkadot would be the easiest way to competition the relay chain space.
+      Parity's
+      <a href="https://github.com/paritytech/polkadot/blob/1c786b372617f26f5982fadc77269e9d4a7c5da2/LICENSE">license</a>
+      allows and encourages such copying as long as improvements are contributed back.
+    </p>
+    <p>
+      A potential threat to the bottom line from this
+      would stress-test Parity's open source stance.
+      Keeping the license and continuing to encourage copying would
+      confirm their position near
+      <a href="../2021/#hangprinter_project_76">the most sharing end</a>
+      and make me root for them even harder than I already do.
+    </p>
+    <p>
+      The pure clone might clarify power relations in the Substrate world,
+      and it could improve the parachain's implementation freedom and bargaining power.
+    </p>
+    <h4>Polkadot Leech</h4>
+    <p>
+      Substrate had few users for the first 5 years of its development.
+      This means it might contain entrenched features with low value and high maintenance.
+    </p>
+    <p>
+      By analyzing Substrate's real world use, one could build a
+      stripped-down simpler version of Substrate from scratch that still produces
+      nodes compatible with Polkadot.
+      However, the Leech nodes transparently collect
+      tiny taxes (staking rewards, fees or debts) into the Leech treasury.
+    </p>
+    <p>
+      When its treasury is large enough to support a safe proof-of-stake mechanism,
+      the Leech network can unbutton itself from the Pokladot
+      Relay chain and re-configure into its own Relay Chain.
+    </p>
+    <p>
+      Having the unbutton-logic already in the Leech version of Frame/Substrate,
+      the leech chain could just as easily split into yet another leech chain.
+      That is, we'd have a system for relay chain self-replication.
+    </p>
+    <p>
+      How to maintain XCM connections across self-unbuttoning events is
+      a hard but exciting problem all in itself.
     </p>
     <h3>Blending the Two Messaging Nets</h3>
     <p>
       In the image above we see that Polkadot's and Kusama's message networks are separate.
-      This is for security management reasons.
-      A parachain gets security guarantees from its relay chain (Polkadot or Kusama).
-      Each relay chain is like a Covid cohort or household, and
-      Infection/security risks may be transmitted via messages.
+      This is because Polkadot wants to stay up whenever Kusama goes down and vice versa.
     </p>
     <p>
-      Completely cutting the networks apart is of course sad.
-      Managing to merge them would be exciting.
+      Risk is contagious in a trusted environment, and
+      external messages are no safer than
+      the mechanisms that oversaw their creation and transport.
+      If Polkadot starts trusting messages created by Kusama,
+      then Kusama gets added to Polkadot's attack surface.
+    </p>
+    <p>
+      It would be exciting to break this isolation between networks.
+      It is possible to establish safe middle-grounds where information can be exchanged
+      under heavy surveillance (verification requirements).
+    </p>
+    <p>
+      A bridge between Kusama and Polkadot is already in the works. See
+      <a href="https://polkadot.network/blog/polkadot-roadmap-roundup/">the roadmap</a>.
+    </p>
+    <p>
+      I'm not deeply into bridging technology but my first stab would be something like this:
+    </p>
+    <figure>
+      <a href="./bilder/dotbridge.png">
+        <img src="./bilder/dotbridge_small.png" alt="" width="500" height="288"/>
+      </a>
+      <figcaption>
+        One parachain connected to both Polkadot and Kusama networks.
+      </figcaption>
+    </figure>
+    <p>
+      The parachain B runs in a single parachain binary that keeps tracks a mirrored set of data,
+      call them P and K,
+      one for Polkadot and one for Kusama.
+    </p>
+    <p>
+      When we send an XCM message to P-side,
+      then B's P-side collators include the message in the block and hand it over to Polkadot validators.
+      Part of B's P-side validation function, executed by Polkadot validators,
+      sends the XCM message over to Kusama's validators to be
+      included in Kusama's relay chain.
     </p>
 
 
