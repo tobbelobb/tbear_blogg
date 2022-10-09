@@ -3,32 +3,43 @@
 <posts year="2022">
   <post id="polkadot_2" heading="Things That Would Have Made Me Even More Excited About Polkadot" date="4-10-2022">
     <!-- Beginning missing -->
-    <h3>Direct Communication Between Parachains</h3>
+    <!--h3>Mesh Shaped Power Relations</h3-->
     <p>
-      I'm excited about graphs like this one, if they mirror the reality of power relations:
+      In the previous post I talked about star shaped networks of power, and their downsides.
+      In this post I talk about how Polkadot could become part of a mesh shaped
+      network instead.
     </p>
     <figure>
       <a href="./bilder/communication_kusama2.png">
         <img src="./bilder/communication_kusama2_small.png" alt="" width="500" height="502"/>
       </a>
       <figcaption>
-        Existing channels for cross chain messaging (XCM via XCMP-Lite/HRMP) between parachains connected to the Kusama relay chain
-        on Oct 5, 2022.
-        Credits: Gregory Luneau,
+        This is a mesh shaped network.
+        For robustness, we'd like the power structure around Polkadot to look something like this.
+        Image credits: Gregory Luneau,
           creator of <a href="https://dotsama-channels.vercel.app/#/">dotsama-channels.vercel.app</a>.
       </figcaption>
     </figure>
     <p>
-      Compare to the network topologies graphs posted in my previous blog post.
-        (<a href="#network_topologies">link</a>)
-      The drawing above shows a well connected mesh, not a star.
-      It excites me a lot whenever I see power relations of this shape.
+      In this post we'll play around with nodes, edges, and the word power.
+      A node represents a Substrate based blockchain project,
+      and an edge represents a potential for influence.
     </p>
     <p>
-      However, the image shows messaging relations,
-      for messages not related to security or other hard power.
-      Moreover, all messages are routed via the relay chain (Polkadot or Kusama) anyways.
+      The image above was snipped from a page that shows message channels (XCM via XCMP-Lite/HRMP)
+      between Kusama's parachains.
+      These messages do not project much power, and they're really all routed via Kusama anywas.
     </p>
+    <p>
+      The networks of power in Oct 2022, our starting point in this post, are perfectly star shaped, like this:
+    </p>
+    <figure>
+      <a href="./bilder/communication_polkadot_and_kusama_noxcmplite.png">
+        <img src="./bilder/communication_polkadot_and_kusama_noxcmplite_small.png" alt="" width="500" height="347"/>
+      </a>
+      <figcaption>
+      </figcaption>
+    </figure>
     <p>
       A form of direct messaging petween parachains will ship probably within a year or two.
       (See
@@ -44,15 +55,10 @@
       </a>
       <figcaption>
         The Polkadot and Kusama blockchain ecosystems with XCM channels drawn in.
-        Security flows via white edges, arbitrary messages via cyan edges.
+        Security flows via white edges, all other messages via cyan edges.
       </figcaption>
     </figure>
     <h3>Direct Messaging Connections Between Parachains</h3>
-    <p>
-      First, let's get the XCMP-Lite out of the way.
-      suggest that we will see real direct messaging connections soon.
-      It's reasonable to expect them within a year or two.
-    </p>
     <p>
       This will definitely empower the most well connected parachains.
       They can start trading services with their neighbors, picking and choosing what fits their interests,
