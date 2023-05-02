@@ -10,6 +10,7 @@
   <page cname="Donate" url="../donate" />
   <page cname="About" url="../about" />
   <page cname="Links" url="../links" />
+  <page cname="Shop" url="../shop" />
 </var:allNavPages>
 
 <xsl:template match="/">
