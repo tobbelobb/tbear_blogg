@@ -31,6 +31,77 @@
 	font-family: open-sans;
 }
 
+.full-screen-background {
+  background-image: url('./media/Heart_of_the_Ocean_1_cropped.png');
+  background-size: cover;
+  background-position: 70% 70%;
+  height: 100%;
+  position: relative;
+}
+
+.dotted-line {
+  position: absolute;
+  border: 0;
+  /*border-top: 3px dotted grey;
+  border-left: 3px dotted grey;
+  border-bottom: 3px dotted grey;
+  border-right: 3px dotted grey;
+  border-radius: 5rem;*/
+}
+
+.positioned-content {
+  position: absolute;
+  color: #ffffff;
+  /* Add other text styles as needed */
+}
+
+.top-left {
+  top: 10%;
+  left: 10%;
+}
+
+.top-right {
+  top: 10%;
+  right: 10%;
+}
+
+.bottom-left {
+  bottom: 10%;
+  left: 10%;
+}
+
+.bottom-right {
+  bottom: 10%;
+  right: 10%;
+}
+
+
+.overlay {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.transparent-nav {
+  background: transparent;
+}
+
+.transparent-nav ul {
+  margin: 0;
+}
+
+.transparent-nav a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.centered-content {
+  text-align: center;
+  color: #ffffff;
+  /* Add other text styles as needed */
+}
+
 body {
 	margin:0;
 	background-color:white;
@@ -260,6 +331,8 @@ nav a.active {
 	position: relative;
 }
 
+/*.dotted-line::before,
+.dotted-line::after,*/
 h5.card-title2::before,
 h5.card-title2::after {
 	content: '';
@@ -271,12 +344,14 @@ h5.card-title2::after {
 	border-radius: 5px 0 0 5px;
 }
 
+/*.dotted-line::before*/
 h5.card-title2::before {
 	border-width: 1px 0px 1px 1px;
 	width: 5px;
 	left: -15px;
 }
 
+/*.dotted-line::after*/
 h5.card-title2::after {
 	border-width: 1px 1px 1px 0px;
 	width: 5px;
@@ -284,7 +359,8 @@ h5.card-title2::after {
 	border-radius: 0 5px 5px 0;
 }
 
-h5.card-title2:hover {
+/*.dotted-line:hover*/
+h5.card-title2:hover{
 	text-decoration: none;
 	color: #333;
 	background-color: rgba(0, 0, 0, 0.1);
@@ -326,4 +402,36 @@ h5.card-title2:hover {
 	font-size: 0.9rem;
 	z-index: 1;
   border-radius: calc(0.25rem - 1px) 0 0 0;
+}
+
+@media screen and (min-width: 760px) {
+  #text-above-line {
+    position: absolute;
+    font-size: 64px;
+    color: #fff;
+    z-index: 100;
+  }
+
+  #text-below-line {
+    position: absolute;
+    font-size: 59px;
+    color: #fff;
+    z-index: 100;
+  }
+}
+
+@media screen and (max-width: 759px) {
+  #text-above-line {
+    position: absolute;
+    font-size: 44px;
+    color: #fff;
+    z-index: 100;
+  }
+
+  #text-below-line {
+    position: absolute;
+    font-size: 39px;
+    color: #fff;
+    z-index: 100;
+  }
 }
