@@ -18,7 +18,7 @@ function updateDottedLine() {
     const bowlWidth = 0.42*displayedImgWidth;
     const bowlHeight = 0.33*displayedImgHeight;
     const bowlLeftPosition = 0.43*displayedImgWidth;
-    const bowlTopPosition = 0.40*displayedImgHeight;
+    const bowlTopPosition = 0.43*displayedImgHeight;
     const leftPos = -0.7*cutOutWidth + bowlLeftPosition;
     const topPos = -0.7*cutOutHeight + bowlTopPosition;
 
@@ -34,9 +34,9 @@ function updateDottedLine() {
     textAboveLine.style.left = (leftPos - textAboveLine.clientWidth/2 + bowlWidth/2) + 'px';
     textAboveLine.style.top = (topPos - textAboveLine.clientHeight) + 'px';
 
-    const textBelowLine = document.getElementById('text-below-line');
-    textBelowLine.style.left = (leftPos - textBelowLine.clientWidth/2 + bowlWidth/2) + 'px';
-    textBelowLine.style.top = (topPos + bowlHeight) + 'px';
+    //const textBelowLine = document.getElementById('text-below-line');
+    //textBelowLine.style.left = (leftPos - textBelowLine.clientWidth/2 + bowlWidth/2) + 'px';
+    //textBelowLine.style.top = (topPos + bowlHeight) + 'px';
   };
 }
 
