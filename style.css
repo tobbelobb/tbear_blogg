@@ -79,7 +79,7 @@ h4 {
 	position:relative;
 	top:15px;
 	max-width:93%;
-	width:600px;
+	width:1200px;
 	margin:0px auto;
 	z-index:6;
 	font-size:15px;
@@ -244,4 +244,86 @@ nav a.active {
 	display:flex;
 	font-size:35px;
 	justify-content:space-between;
+}
+
+.no-margin-bottom {
+	margin-bottom: 0;
+}
+
+.artwork-title-link {
+	text-decoration: none;
+	padding: 0px 0px 0px 0px;
+	color: #333;
+	font-size: 1.25rem;
+	white-space: nowrap;
+	display: inline-block;
+	position: relative;
+}
+
+h5.card-title2::before,
+h5.card-title2::after {
+	content: '';
+	display: inline;
+	position: absolute;
+	height: 100%;
+	border-color: rgba(0, 0, 0, 0.2);
+	border-style: solid;
+	border-radius: 5px 0 0 5px;
+}
+
+h5.card-title2::before {
+	border-width: 1px 0px 1px 1px;
+	width: 5px;
+	left: -15px;
+}
+
+h5.card-title2::after {
+	border-width: 1px 1px 1px 0px;
+	width: 5px;
+	right: -15px;
+	border-radius: 0 5px 5px 0;
+}
+
+h5.card-title2:hover {
+	text-decoration: none;
+	color: #333;
+	background-color: rgba(0, 0, 0, 0.1);
+	border-color: rgba(0, 0, 0, 0.2);
+	border-width: 1px 1px 1px 1px;
+}
+
+.card {
+	margin-bottom: 1rem;
+}
+
+.hover-text {
+    position: absolute;
+    top: 33%;
+    left: 50%;
+    transform: translate(-40%, -50%);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    width: 80%;
+    opacity: 0;
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.card:hover .hover-text {
+    opacity: 1;
+}
+
+.sale-label {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 5px 10px;
+	background-color:rgb(224, 123, 0); /* A darker darkorange, which is (255, 140, 0) */
+	color: white;
+	font-weight: bold;
+	font-size: 0.9rem;
+	z-index: 1;
+  border-radius: calc(0.25rem - 1px) 0 0 0;
 }
