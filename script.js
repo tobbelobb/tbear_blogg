@@ -1,9 +1,32 @@
+function updateZIndex() {
+  const backgrounds = document.querySelectorAll('.full-screen-background');
+  const textAboveLines = document.querySelectorAll('.text-above-line');
+  const dottedLines = document.querySelectorAll('.dotted-line');
+
+  backgrounds.forEach((background, index) => {
+    const zIndex = backgrounds.length - index;
+    background.style.zIndex = zIndex;
+  });
+  textAboveLines.forEach((text, index) => {
+    const zIndex = textAboveLines.length - text;
+    text.style.zIndex = zIndex;
+  });
+  dottedLines.forEach((line, index) => {
+    const zIndex = dottedLines.length - line;
+    line.style.zIndex = zIndex;
+  });
+}
+
+
 function updateDottedLine(bgId, dottedLineId, textAboveLineId) {
   const background = document.getElementById(bgId);
-  const highlightWidthRatio = parseFloat(background.getAttribute('data-highlight-width-ratio'));
-  const highlightHeightRatio = parseFloat(background.getAttribute('data-highlight-height-ratio'));
-  const highlightLeftPositionRatio = parseFloat(background.getAttribute('data-highlight-left-position-ratio'));
-  const highlightTopPositionRatio = parseFloat(background.getAttribute('data-highlight-top-position-ratio'));
+
+  const style = window.getComputedStyle(background);
+  const highlightWidthRatio = parseFloat(style.getPropertyValue('--highlight-width-ratio'));
+  const highlightHeightRatio = parseFloat(style.getPropertyValue('--highlight-height-ratio'));
+  const highlightLeftPositionRatio = parseFloat(style.getPropertyValue('--highlight-left-position-ratio'));
+  const highlightTopPositionRatio = parseFloat(style.getPropertyValue('--highlight-top-position-ratio'));
+
   const backgroundPosition = getComputedStyle(background).backgroundPosition.split(' ');
   const backgroundPositionXRatio = parseFloat(backgroundPosition[0]) / 100;
   const backgroundPositionYRatio = parseFloat(backgroundPosition[1]) / 100;
@@ -48,8 +71,11 @@ function updateDottedLine(bgId, dottedLineId, textAboveLineId) {
   };
 }
 
-updateDottedLine('background-1', 'dotted-line-1', 'text-above-line-1');
-updateDottedLine('background-2', 'dotted-line-2', 'text-above-line-2');
+document.addEventListener('DOMContentLoaded', () => {
+  updateDottedLine('background-1', 'dotted-line-1', 'text-above-line-1');
+  updateDottedLine('background-2', 'dotted-line-2', 'text-above-line-2');
+  updateZIndex(); // Add this line
+});
 window.addEventListener('resize', () => {
   updateDottedLine('background-1', 'dotted-line-1', 'text-above-line-1');
   updateDottedLine('background-2', 'dotted-line-2', 'text-above-line-2');

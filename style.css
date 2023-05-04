@@ -37,48 +37,50 @@
 }
 
 .full-screen-background {
-  background-size: cover;
-  height: 100%;
   position: relative;
   min-height: 100vh;
+  background-size: cover;
+  height: 100%;
 }
 
 #background-1 {
   background-image: url('./media/Heart_of_the_Ocean_1_cropped.png');
   background-position: 70% 70%;
-  z-index: 100;
+  --highlight-width-ratio: 0.42;
+  --highlight-height-ratio: 0.33;
+  --highlight-left-position-ratio: 0.43;
+  --highlight-top-position-ratio: 0.41;
 }
 
 #background-2 {
   background-image: url('./media/art2_cropped.jpg');
   background-position: 50% 50%;
-  z-index: 99;
+  --highlight-width-ratio: 0.23;
+  --highlight-height-ratio: 0.22;
+  --highlight-left-position-ratio: 0.40;
+  --highlight-top-position-ratio: 0.40;
+}
+
+.text-with-shadow {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5), -1px -1px 2px rgba(255, 255, 255, 0.5);
+}
+
+.text-with-background {
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  /*border-radius: calc(0.25rem - 1px);*/
 }
 
 .dotted-line {
   position: absolute;
   border: 0;
-  border-top: 4px dotted grey;
+ /* border-top: 4px dotted grey;
   border-left: 4px dotted grey;
   border-bottom: 4px dotted grey;
   border-right: 4px dotted grey;
-  border-radius: 5rem;
-}
-
-#dotted-line-1 {
-  z-index: 100;
-}
-
-#dotted-line-2 {
-  z-index: 99;
-}
-
-#text-above-line-1 {
-  z-index: 100;
-}
-
-#text-above-line-2 {
-  z-index: 99;
+  border-radius: 5rem;*/
 }
 
 .positioned-content {
