@@ -1,5 +1,14 @@
-function updateDottedLine() {
-  const background = document.getElementById('background');
+function updateDottedLine(bgId, dottedLineId, textAboveLineId) {
+  const background = document.getElementById(bgId);
+  const highlightWidthRatio = parseFloat(background.getAttribute('data-highlight-width-ratio'));
+  const highlightHeightRatio = parseFloat(background.getAttribute('data-highlight-height-ratio'));
+  const highlightLeftPositionRatio = parseFloat(background.getAttribute('data-highlight-left-position-ratio'));
+  const highlightTopPositionRatio = parseFloat(background.getAttribute('data-highlight-top-position-ratio'));
+  const backgroundPosition = getComputedStyle(background).backgroundPosition.split(' ');
+  const backgroundPositionXRatio = parseFloat(backgroundPosition[0]) / 100;
+  const backgroundPositionYRatio = parseFloat(backgroundPosition[1]) / 100;
+
+
   const img = new Image();
   img.src = getComputedStyle(background).backgroundImage.slice(5, -2); // get the URL of the background image
 
@@ -15,59 +24,33 @@ function updateDottedLine() {
     const cutOutWidth = -backgroundWidth + displayedImgWidth;
     const cutOutHeight = -backgroundHeight + displayedImgHeight;
 
-    const bowlWidth = 0.42*displayedImgWidth;
-    const bowlHeight = 0.33*displayedImgHeight;
-    const bowlLeftPosition = 0.43*displayedImgWidth;
-    const bowlTopPosition = 0.43*displayedImgHeight;
-    const leftPos = -0.7*cutOutWidth + bowlLeftPosition;
-    const topPos = -0.7*cutOutHeight + bowlTopPosition;
+    const highlightWidth = highlightWidthRatio*displayedImgWidth;
+    const highlightHeight = highlightHeightRatio*displayedImgHeight;
+    const highlightLeftPosition = highlightLeftPositionRatio*displayedImgWidth;
+    const highlightTopPosition = highlightTopPositionRatio*displayedImgHeight;
+    const leftPos = -backgroundPositionXRatio*cutOutWidth + highlightLeftPosition;
+    const topPos = -backgroundPositionYRatio*cutOutHeight + highlightTopPosition;
 
-    const dottedLine = document.getElementById('dotted-line');
-    dottedLine.style.width = bowlWidth + 'px';
-    dottedLine.style.height = bowlHeight + 'px';
-    // -0.7 and -0.7 from css background-position: 70% 70%
+    const dottedLine = document.getElementById(dottedLineId);
+    dottedLine.style.width = highlightWidth + 'px';
+    dottedLine.style.height = highlightHeight + 'px';
     dottedLine.style.left = leftPos + 'px';
     dottedLine.style.top = topPos + 'px';
 
     // Position the text element above the dotted line
-    const textAboveLine = document.getElementById('text-above-line');
-    textAboveLine.style.left = (leftPos - textAboveLine.clientWidth/2 + bowlWidth/2) + 'px';
+    const textAboveLine = document.getElementById(textAboveLineId);
+    textAboveLine.style.left = (leftPos - textAboveLine.clientWidth/2 + highlightWidth/2) + 'px';
     textAboveLine.style.top = (topPos - textAboveLine.clientHeight) + 'px';
 
     //const textBelowLine = document.getElementById('text-below-line');
-    //textBelowLine.style.left = (leftPos - textBelowLine.clientWidth/2 + bowlWidth/2) + 'px';
-    //textBelowLine.style.top = (topPos + bowlHeight) + 'px';
+    //textBelowLine.style.left = (leftPos - textBelowLine.clientWidth/2 + highlightWidth/2) + 'px';
+    //textBelowLine.style.top = (topPos + highlightHeight) + 'px';
   };
 }
 
-updateDottedLine();
-window.addEventListener('resize', updateDottedLine);
-//
-//
-//
-//function updateDottedLine() {
-//  const background = document.getElementById('background');
-//  const img = new Image();
-//  img.src = getComputedStyle(background).backgroundImage.slice(5, -2); // get the URL of the background image
-//
-//  img.onload = function () {
-//    const backgroundWidth = background.clientWidth;
-//    const backgroundHeight = background.clientHeight;
-//    const imgWidth = img.width;
-//    const imgHeight = img.height;
-//
-//    const xOffsetPercentage = 0.42;
-//    const yOffsetPercentage = 0.36;
-//    const xOffset = imgWidth * 0.15 - 0.7*(imgWidth - backgroundWidth);
-//    const yOffset = -imgWidth * 0.15 -  0.7* (imgWidth - backgroundWidth);
-//
-//    const dottedLine = document.getElementById('dotted-line');
-//    dottedLine.style.width = imgWidth*0.85 + 'px';
-//    dottedLine.style.height = imgHeight*0.85 + 'px';
-//    dottedLine.style.left = xOffset + 'px';
-//    dottedLine.style.top = yOffset + 'px';
-//  };
-//}
-//
-//updateDottedLine();
-//window.addEventListener('resize', updateDottedLine);
+updateDottedLine('background-1', 'dotted-line-1', 'text-above-line-1');
+updateDottedLine('background-2', 'dotted-line-2', 'text-above-line-2');
+window.addEventListener('resize', () => {
+  updateDottedLine('background-1', 'dotted-line-1', 'text-above-line-1');
+  updateDottedLine('background-2', 'dotted-line-2', 'text-above-line-2');
+});

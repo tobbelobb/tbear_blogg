@@ -31,22 +31,54 @@
 	font-family: open-sans;
 }
 
+.background-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .full-screen-background {
-  background-image: url('./media/Heart_of_the_Ocean_1_cropped.png');
   background-size: cover;
-  background-position: 70% 70%;
   height: 100%;
   position: relative;
+  min-height: 100vh;
+}
+
+#background-1 {
+  background-image: url('./media/Heart_of_the_Ocean_1_cropped.png');
+  background-position: 70% 70%;
+  z-index: 100;
+}
+
+#background-2 {
+  background-image: url('./media/art2_cropped.jpg');
+  background-position: 50% 50%;
+  z-index: 99;
 }
 
 .dotted-line {
   position: absolute;
   border: 0;
-  /*border-top: 3px dotted grey;
-  border-left: 3px dotted grey;
-  border-bottom: 3px dotted grey;
-  border-right: 3px dotted grey;
-  border-radius: 5rem;*/
+  border-top: 4px dotted grey;
+  border-left: 4px dotted grey;
+  border-bottom: 4px dotted grey;
+  border-right: 4px dotted grey;
+  border-radius: 5rem;
+}
+
+#dotted-line-1 {
+  z-index: 100;
+}
+
+#dotted-line-2 {
+  z-index: 99;
+}
+
+#text-above-line-1 {
+  z-index: 100;
+}
+
+#text-above-line-2 {
+  z-index: 99;
 }
 
 .positioned-content {
@@ -405,14 +437,14 @@ h5.card-title2:hover{
 }
 
 @media screen and (min-width: 760px) {
-  #text-above-line {
+  .text-above-line {
     position: absolute;
     font-size: 64px;
     color: #fff;
     z-index: 100;
   }
 
-  #text-below-line {
+  .text-below-line {
     position: absolute;
     font-size: 59px;
     color: #fff;
@@ -421,14 +453,14 @@ h5.card-title2:hover{
 }
 
 @media screen and (max-width: 759px) {
-  #text-above-line {
+  .text-above-line {
     position: absolute;
     font-size: 44px;
     color: #fff;
     z-index: 100;
   }
 
-  #text-below-line {
+  .text-below-line {
     position: absolute;
     font-size: 39px;
     color: #fff;
