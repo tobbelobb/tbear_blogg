@@ -469,3 +469,36 @@ h5.card-title2:hover{
     z-index: 100;
   }
 }
+
+.scroll-arrow {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2em;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7); /* Adjust the last value (0.7) to set the desired transparency */
+  mix-blend-mode: difference; /* This property will create an inverted color effect */
+  cursor: pointer;
+  animation: arrow-float 2s infinite;
+}
+
+.scroll-arrow:hover {
+  color: rgba(255, 255, 255, 1); /* Full opacity on hover */
+}
+
+.scroll-down-arrow {
+  bottom: 20px;
+}
+
+.scroll-up-arrow {
+  top: 20px;
+}
+
+@keyframes arrow-float {
+  0%, 100% {
+    transform: translateY(0) translateX(-50%);
+  }
+  50% {
+    transform: translateY(-10px) translateX(-50%);
+  }
+}
