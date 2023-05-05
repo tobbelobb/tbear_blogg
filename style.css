@@ -171,7 +171,9 @@
 }
 
 .transparent-nav {
-  background: transparent;
+  /*background: transparent;*/
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5), -1px -1px 2px rgba(255, 255, 255, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .transparent-nav ul {
@@ -189,10 +191,15 @@
   /* Add other text styles as needed */
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
 	margin:0;
 	background-color:white;
 	color:rgb(48,66,76);
+  overflow-x: hidden;
 }
 
 #SiteName {
@@ -386,6 +393,12 @@ nav ul li a {
 	color:rgb(48,66,76);
 }
 
+@media screen and (max-width: 400px) {
+  nav ul li a {
+    padding: 7px; /* Reduce padding */
+    font-size: 14px; /* Reduce font size */
+  }
+}
 
 /* Change the color and weight of links on hover */
 nav ul li:hover a {
@@ -418,8 +431,6 @@ nav a.active {
 	position: relative;
 }
 
-/*.dotted-line::before,
-.dotted-line::after,*/
 h5.card-title2::before,
 h5.card-title2::after {
 	content: '';
@@ -431,14 +442,12 @@ h5.card-title2::after {
 	border-radius: 5px 0 0 5px;
 }
 
-/*.dotted-line::before*/
 h5.card-title2::before {
 	border-width: 1px 0px 1px 1px;
 	width: 5px;
 	left: -15px;
 }
 
-/*.dotted-line::after*/
 h5.card-title2::after {
 	border-width: 1px 1px 1px 0px;
 	width: 5px;
@@ -446,7 +455,6 @@ h5.card-title2::after {
 	border-radius: 0 5px 5px 0;
 }
 
-/*.dotted-line:hover*/
 h5.card-title2:hover{
 	text-decoration: none;
 	color: #333;
@@ -546,11 +554,11 @@ h5.card-title2:hover{
 }
 
 .scroll-down-arrow {
-  bottom: 20px;
+  bottom: 30px;
 }
 
 .scroll-up-arrow {
-  top: 20px;
+  top: 30px;
 }
 
 @keyframes arrow-float {
