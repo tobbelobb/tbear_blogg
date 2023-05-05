@@ -491,37 +491,42 @@ h5.card-title2:hover{
   border-radius: calc(0.25rem - 1px) 0 0 0;
 }
 
-@media screen and (min-width: 760px) {
+
+.text-above-line {
+  position: absolute;
+  color: #fff;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  max-width: 100%;
+  min-width: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+@media screen and (min-width: 759px) {
   .text-above-line {
-    position: absolute;
     font-size: 64px;
-    color: #fff;
-    z-index: 100;
-  }
-
-  .text-below-line {
-    position: absolute;
-    font-size: 59px;
-    color: #fff;
-    z-index: 100;
   }
 }
 
-@media screen and (max-width: 759px) {
+@media screen and (max-width: 758px) and (min-width: 525px) {
   .text-above-line {
-    position: absolute;
-    font-size: 44px;
-    color: #fff;
-    z-index: 100;
-  }
-
-  .text-below-line {
-    position: absolute;
-    font-size: 39px;
-    color: #fff;
-    z-index: 100;
+    font-size: 40px;
   }
 }
+
+@media screen and (max-width: 524px) {
+  .text-above-line {
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 37px;
+  }
+}
+
+
 
 .scroll-arrow {
   position: absolute;
@@ -533,6 +538,7 @@ h5.card-title2:hover{
   mix-blend-mode: difference; /* This property will create an inverted color effect */
   cursor: pointer;
   animation: arrow-float 2s infinite;
+  z-index: 100; /* Always on top */
 }
 
 .scroll-arrow:hover {

@@ -73,7 +73,12 @@ function updateDottedLine(bgId, dottedLineId, textAboveLineId, maybeCollideId) {
 
     // Position the text element above the dotted line
     const textAboveLine = document.getElementById(textAboveLineId);
-    textAboveLine.style.left = (leftPos - textAboveLine.clientWidth/2 + highlightWidth/2) + 'px';
+
+    if (window.innerWidth > 524) {
+      textAboveLine.style.left = (leftPos - textAboveLine.clientWidth/2 + highlightWidth/2) + 'px';
+    } else {
+      textAboveLine.style.left = '';
+    }
     textAboveLine.style.top = (topPos - textAboveLine.clientHeight) + 'px';
 
     if (maybeCollideId != '') {
@@ -82,9 +87,7 @@ function updateDottedLine(bgId, dottedLineId, textAboveLineId, maybeCollideId) {
         textAboveLine.style.top = (topPos + highlightHeight) + 'px';
       }
     }
-    //const textBelowLine = document.getElementById('text-below-line');
-    //textBelowLine.style.left = (leftPos - textBelowLine.clientWidth/2 + highlightWidth/2) + 'px';
-    //textBelowLine.style.top = (topPos + highlightHeight) + 'px';
+
   };
 }
 
