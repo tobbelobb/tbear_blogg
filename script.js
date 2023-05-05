@@ -17,8 +17,20 @@ function updateZIndex() {
   });
 }
 
+function isAlmostColliding(div1, div2) {
+  const rect1 = div1.getBoundingClientRect();
+  const rect2 = div2.getBoundingClientRect();
+  const spacePx = 3;
 
-function updateDottedLine(bgId, dottedLineId, textAboveLineId) {
+  return !(
+    rect1.right < (rect2.left - spacePx) ||
+    (rect1.left - spacePx) > rect2.right ||
+    rect1.bottom < (rect2.top - spacePx) ||
+    (rect1.top - spacePx) > rect2.bottom
+  );
+}
+
+function updateDottedLine(bgId, dottedLineId, textAboveLineId, maybeCollideId) {
   const background = document.getElementById(bgId);
 
   const style = window.getComputedStyle(background);
@@ -30,7 +42,6 @@ function updateDottedLine(bgId, dottedLineId, textAboveLineId) {
   const backgroundPosition = getComputedStyle(background).backgroundPosition.split(' ');
   const backgroundPositionXRatio = parseFloat(backgroundPosition[0]) / 100;
   const backgroundPositionYRatio = parseFloat(backgroundPosition[1]) / 100;
-
 
   const img = new Image();
   img.src = getComputedStyle(background).backgroundImage.slice(5, -2); // get the URL of the background image
@@ -65,6 +76,12 @@ function updateDottedLine(bgId, dottedLineId, textAboveLineId) {
     textAboveLine.style.left = (leftPos - textAboveLine.clientWidth/2 + highlightWidth/2) + 'px';
     textAboveLine.style.top = (topPos - textAboveLine.clientHeight) + 'px';
 
+    if (maybeCollideId != '') {
+      const maybeCollide = document.getElementById(maybeCollideId);
+      if (isAlmostColliding(textAboveLine, maybeCollide)) {
+        textAboveLine.style.top = (topPos + highlightHeight) + 'px';
+      }
+    }
     //const textBelowLine = document.getElementById('text-below-line');
     //textBelowLine.style.left = (leftPos - textBelowLine.clientWidth/2 + highlightWidth/2) + 'px';
     //textBelowLine.style.top = (topPos + highlightHeight) + 'px';
@@ -79,8 +96,8 @@ function scrollSection(targetSectionId) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  updateDottedLine('background-1', 'dotted-line-1', 'text-above-line-1');
-  updateDottedLine('background-2', 'dotted-line-2', 'text-above-line-2');
+  updateDottedLine('background-1', 'dotted-line-1', 'text-above-line-1', 'top-left-1');
+  updateDottedLine('background-2', 'dotted-line-2', 'text-above-line-2', '');
   updateZIndex();
 
   document.querySelectorAll('.scroll-arrow').forEach((arrow) => {
@@ -93,6 +110,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 window.addEventListener('resize', () => {
-  updateDottedLine('background-1', 'dotted-line-1', 'text-above-line-1');
-  updateDottedLine('background-2', 'dotted-line-2', 'text-above-line-2');
+  updateDottedLine('background-1', 'dotted-line-1', 'text-above-line-1', 'top-left-1');
+  updateDottedLine('background-2', 'dotted-line-2', 'text-above-line-2', '');
 });
