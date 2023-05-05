@@ -88,6 +88,23 @@ function updateDottedLine(bgId, dottedLineId, textAboveLineId, maybeCollideId) {
       }
     }
 
+
+    let textBoundingRect = textAboveLine.getBoundingClientRect();
+    const bgRect = background.getBoundingClientRect();
+    let fontSize = parseInt(window.getComputedStyle(textAboveLine).fontSize, 10);
+    // If we're overflowing into below bg, reduce font size many times.
+    // If overflow into above bg, reduce font size once and move the text down.
+    while ((textBoundingRect.bottom > bgRect.bottom || textBoundingRect.top < bgRect.top) && fontSize > 10) {
+      fontSize -= 2;
+      textAboveLine.style.fontSize = fontSize + 'px';
+
+      if (textBoundingRect.top < bgRect.top) {
+        const topOffset = bgRect.top - textBoundingRect.top;
+        textAboveLine.style.top = `${parseFloat(textAboveLine.style.top) + topOffset}px`;
+      }
+
+      textBoundingRect = textAboveLine.getBoundingClientRect();
+    }
   };
 }
 
