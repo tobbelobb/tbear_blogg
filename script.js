@@ -79,14 +79,15 @@ function updateDottedLine(bgId, dottedLineId, textAboveLineId, maybeCollideId) {
     } else {
       textAboveLine.style.left = '';
     }
-    textAboveLine.style.top = (topPos - textAboveLine.clientHeight) + 'px';
 
-    if (maybeCollideId != '') {
-      const maybeCollide = document.getElementById(maybeCollideId);
-      if (isAlmostColliding(textAboveLine, maybeCollide)) {
-        textAboveLine.style.top = (topPos + highlightHeight) + 'px';
-      }
-    }
+    textAboveLine.style.top = (topPos + highlightHeight) + 'px';
+    //textAboveLine.style.top = (topPos - textAboveLine.clientHeight) + 'px';
+    //if (maybeCollideId != '') {
+    //  const maybeCollide = document.getElementById(maybeCollideId);
+    //  if (isAlmostColliding(textAboveLine, maybeCollide)) {
+    //    textAboveLine.style.top = (topPos + highlightHeight) + 'px';
+    //  }
+    //}
 
 
     let textBoundingRect = textAboveLine.getBoundingClientRect();
