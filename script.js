@@ -71,27 +71,25 @@ function updateDottedLine(bgId, dottedLineId, textAboveLineId) {
   };
 }
 
-function addScrollListener(arrow, direction) {
-  arrow.addEventListener('click', (event) => {
-    event.preventDefault();
-    window.scrollBy({
-      top: window.innerHeight * direction,
-      left: 0,
-      behavior: 'smooth',
-    });
-  });
+function scrollSection(targetSectionId) {
+  const targetSection = document.getElementById(targetSectionId);
+  if (targetSection) {
+    targetSection.scrollIntoView({ behavior: 'smooth' });
+  }
 }
-
 
 document.addEventListener('DOMContentLoaded', () => {
   updateDottedLine('background-1', 'dotted-line-1', 'text-above-line-1');
   updateDottedLine('background-2', 'dotted-line-2', 'text-above-line-2');
   updateZIndex();
 
-  const scrollDownArrow = document.getElementById('scroll-down-arrow');
-  const scrollUpArrow = document.getElementById('scroll-up-arrow');
-  addScrollListener(scrollDownArrow, 1);
-  addScrollListener(scrollUpArrow, -1);
+  document.querySelectorAll('.scroll-arrow').forEach((arrow) => {
+    arrow.addEventListener('click', (event) => {
+      event.preventDefault();
+      const targetSectionId = arrow.dataset.target;
+      scrollSection(targetSectionId);
+    });
+  });
 });
 
 window.addEventListener('resize', () => {
