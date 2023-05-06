@@ -571,7 +571,10 @@ h5.card-title2:hover{
   }
 }
 
-
+/* Change the color and weight of links on hover */
+a .text-below-line:hover {
+	color:rgb(119, 125, 143);
+}
 
 .scroll-arrow {
   position: absolute;
