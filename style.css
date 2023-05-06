@@ -484,7 +484,7 @@ h5.card-title2:hover{
 }
 
 
-.text-above-line {
+.text-below-line {
   position: absolute;
   color: #fff;
   word-wrap: break-word;
@@ -499,13 +499,13 @@ h5.card-title2:hover{
 }
 
 @media screen and (min-width: 525px) {
-  .text-above-line {
+  .text-below-line {
     font-size: 40px;
   }
 }
 
 @media screen and (max-width: 524px) {
-  .text-above-line {
+  .text-below-line {
     left: 50%;
     transform: translateX(-50%);
     font-size: 28px;

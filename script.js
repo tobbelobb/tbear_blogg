@@ -1,14 +1,14 @@
 function updateZIndex() {
   const backgrounds = document.querySelectorAll('.full-screen-background');
-  const textAboveLines = document.querySelectorAll('.text-above-line');
+  const textBelowLines = document.querySelectorAll('.text-below-line');
   const dottedLines = document.querySelectorAll('.dotted-line');
 
   backgrounds.forEach((background, index) => {
     const zIndex = backgrounds.length - index;
     background.style.zIndex = zIndex;
   });
-  textAboveLines.forEach((text, index) => {
-    const zIndex = textAboveLines.length - text;
+  textBelowLines.forEach((text, index) => {
+    const zIndex = textBelowLines.length - text;
     text.style.zIndex = zIndex;
   });
   dottedLines.forEach((line, index) => {
@@ -30,7 +30,7 @@ function isAlmostColliding(div1, div2) {
   );
 }
 
-function updateDottedLine(bgId, dottedLineId, textAboveLineId, maybeCollideId) {
+function updateDottedLine(bgId, dottedLineId, textBelowLineId, maybeCollideId) {
   const background = document.getElementById(bgId);
 
   const style = window.getComputedStyle(background);
@@ -72,39 +72,39 @@ function updateDottedLine(bgId, dottedLineId, textAboveLineId, maybeCollideId) {
     dottedLine.style.top = topPos + 'px';
 
     // Position the text element above the dotted line
-    const textAboveLine = document.getElementById(textAboveLineId);
+    const textBelowLine = document.getElementById(textBelowLineId);
 
     if (window.innerWidth > 524) {
-      textAboveLine.style.left = (leftPos - textAboveLine.clientWidth/2 + highlightWidth/2) + 'px';
+      textBelowLine.style.left = (leftPos - textBelowLine.clientWidth/2 + highlightWidth/2) + 'px';
     } else {
-      textAboveLine.style.left = '';
+      textBelowLine.style.left = '';
     }
 
-    textAboveLine.style.top = (topPos + highlightHeight) + 'px';
-    //textAboveLine.style.top = (topPos - textAboveLine.clientHeight) + 'px';
+    textBelowLine.style.top = (topPos + highlightHeight) + 'px';
+    //textBelowLine.style.top = (topPos - textBelowLine.clientHeight) + 'px';
     //if (maybeCollideId != '') {
     //  const maybeCollide = document.getElementById(maybeCollideId);
-    //  if (isAlmostColliding(textAboveLine, maybeCollide)) {
-    //    textAboveLine.style.top = (topPos + highlightHeight) + 'px';
+    //  if (isAlmostColliding(textBelowLine, maybeCollide)) {
+    //    textBelowLine.style.top = (topPos + highlightHeight) + 'px';
     //  }
     //}
 
 
-    let textBoundingRect = textAboveLine.getBoundingClientRect();
+    let textBoundingRect = textBelowLine.getBoundingClientRect();
     const bgRect = background.getBoundingClientRect();
-    let fontSize = parseInt(window.getComputedStyle(textAboveLine).fontSize, 10);
+    let fontSize = parseInt(window.getComputedStyle(textBelowLine).fontSize, 10);
     // If we're overflowing into below bg, reduce font size many times.
     // If overflow into above bg, reduce font size once and move the text down.
     while ((textBoundingRect.bottom > bgRect.bottom || textBoundingRect.top < bgRect.top) && fontSize > 10) {
       fontSize -= 2;
-      textAboveLine.style.fontSize = fontSize + 'px';
+      textBelowLine.style.fontSize = fontSize + 'px';
 
       if (textBoundingRect.top < bgRect.top) {
         const topOffset = bgRect.top - textBoundingRect.top;
-        textAboveLine.style.top = `${parseFloat(textAboveLine.style.top) + topOffset}px`;
+        textBelowLine.style.top = `${parseFloat(textBelowLine.style.top) + topOffset}px`;
       }
 
-      textBoundingRect = textAboveLine.getBoundingClientRect();
+      textBoundingRect = textBelowLine.getBoundingClientRect();
     }
   };
 }
@@ -117,8 +117,8 @@ function scrollSection(targetSectionId) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  updateDottedLine('background-1', 'dotted-line-1', 'text-above-line-1', 'top-left-1');
-  updateDottedLine('background-2', 'dotted-line-2', 'text-above-line-2', '');
+  updateDottedLine('background-1', 'dotted-line-1', 'text-below-line-1', 'top-left-1');
+  updateDottedLine('background-2', 'dotted-line-2', 'text-below-line-2', '');
   updateZIndex();
 
   document.querySelectorAll('.scroll-arrow').forEach((arrow) => {
@@ -131,6 +131,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 window.addEventListener('resize', () => {
-  updateDottedLine('background-1', 'dotted-line-1', 'text-above-line-1', 'top-left-1');
-  updateDottedLine('background-2', 'dotted-line-2', 'text-above-line-2', '');
+  updateDottedLine('background-1', 'dotted-line-1', 'text-below-line-1', 'top-left-1');
+  updateDottedLine('background-2', 'dotted-line-2', 'text-below-line-2', '');
 });
