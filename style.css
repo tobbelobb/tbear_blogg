@@ -44,12 +44,12 @@
 }
 
 #background-1 {
-  background-image: url('./media/Heart_of_the_Ocean_1_cropped.png');
-  background-position: 70% 70%;
+  background-image: url('./media/Heart_of_the_Ocean_1000x1000.png');
+  background-position: 74% 70%;
   --highlight-width-ratio: 0.42;
-  --highlight-height-ratio: 0.33;
+  --highlight-height-ratio: 0.19;
   --highlight-left-position-ratio: 0.43;
-  --highlight-top-position-ratio: 0.41;
+  --highlight-top-position-ratio: 0.55;
 }
 
 #background-2 {
@@ -59,6 +59,10 @@
   --highlight-height-ratio: 0.22;
   --highlight-left-position-ratio: 0.40;
   --highlight-top-position-ratio: 0.40;
+  /* The uncropped art2.jpg wants this */
+  /*--highlight-height-ratio: 0.12;
+  --highlight-left-position-ratio: 0.395;
+  --highlight-top-position-ratio: 0.37;*/
 }
 
 .text-with-shadow {
@@ -543,17 +547,29 @@ h5.card-title2:hover{
   text-align: center;
 }
 
-@media screen and (min-width: 525px) {
+
+@media screen and (min-width: 900px) {
   .text-below-line {
-    font-size: 40px;
+    font-size: 30px;
   }
 }
 
-@media screen and (max-width: 524px) {
+@media screen and (max-width: 899px) {
+  .text-below-line {
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .text-below-line {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 475px) {
   .text-below-line {
     left: 50%;
     transform: translateX(-50%);
-    font-size: 28px;
   }
 }
 

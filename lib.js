@@ -74,7 +74,7 @@ function updateDottedLine(bgId, dottedLineId, textBelowLineId, maybeCollideId) {
     // Position the text element above the dotted line
     const textBelowLine = document.getElementById(textBelowLineId);
 
-    if (window.innerWidth > 524) {
+    if (window.innerWidth > 475) {
       textBelowLine.style.left = (leftPos - textBelowLine.clientWidth/2 + highlightWidth/2) + 'px';
     } else {
       textBelowLine.style.left = '';
