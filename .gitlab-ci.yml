@@ -9,5 +9,7 @@ pages:
   artifacts:
     paths:
       - public
+  exclude:
+    - .git/
   only:
     - master
