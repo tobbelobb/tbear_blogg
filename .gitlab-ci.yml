@@ -9,7 +9,7 @@ pages:
   artifacts:
     paths:
       - public
-  exclude:
-    - .git/
+    exclude:
+      - .git/
   only:
     - master
