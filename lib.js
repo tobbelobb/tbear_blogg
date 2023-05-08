@@ -1,3 +1,21 @@
+function updateCartDisplay() {
+  const cartItemsElement = document.getElementById("cartItems");
+  const totalCostElement = document.getElementById("totalCost");
+
+  // Clear the current cart items display
+  cartItemsElement.innerHTML = "";
+
+  const cartData = Cart.getCartData();
+
+  cartData.cart.forEach((item, index) => {
+    const listItem = document.createElement("li");
+    listItem.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+    cartItemsElement.appendChild(listItem);
+  });
+  const totalCost = cartData.totalCost;
+  totalCostElement.textContent = `Total: $${totalCost.toFixed(2)}`;
+}
+
 function updateZIndex() {
   const backgrounds = document.querySelectorAll('.full-screen-background');
   const textBelowLines = document.querySelectorAll('.text-below-line');

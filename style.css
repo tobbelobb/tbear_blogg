@@ -436,6 +436,7 @@ nav ul li a {
 /* Change the color and weight of links on hover */
 nav ul li:hover a {
 	color:rgb(119, 125, 143);
+  mix-blend-mode: difference;
 }
 
 /* Add an active class to highlight the current page */
@@ -614,4 +615,39 @@ a .text-below-line:hover {
   50% {
     transform: translateY(-10px) translateX(-50%);
   }
+}
+
+.carousel-image-container {
+  height: 0;
+  padding-bottom: 100%; /* Aspect ratio: 16:9 */
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.zoomable-image:hover {
+  cursor: zoom-in;
+}
+
+.modal-body {
+  cursor: zoom-in;
+}
+
+.modal-body img:hover {
+  transform: scale(2.0);
+  transition: transform .5s ease;
+}
+
+.modal-content {
+  overflow: hidden;
 }
