@@ -562,6 +562,10 @@ a .text-below-line:hover {
 	color:rgb(119, 125, 143);
 }
 
+.text-below-line-hover {
+	color:rgb(119, 125, 143);
+}
+
 .scroll-arrow {
   position: absolute;
   left: 50%;
