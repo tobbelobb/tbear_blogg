@@ -14,6 +14,10 @@ function updateCartDisplay() {
   });
   const totalCost = cartData.totalCost;
   totalCostElement.textContent = `Total: $${totalCost.toFixed(2)}`;
+
+  // Update cart item count
+  const cartItemCountElement = document.querySelector(".cart-item-count");
+  cartItemCountElement.textContent = cartData.length;
 }
 
 function updateZIndex() {

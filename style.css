@@ -139,13 +139,6 @@
   }
 }
 
-.overlay {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .transparent-nav {
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
@@ -589,11 +582,11 @@ a .text-below-line:hover {
   transform: translateX(-50%);
   font-size: 2em;
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.7); /* Adjust the last value (0.7) to set the desired transparency */
-  mix-blend-mode: difference; /* This property will create an inverted color effect */
+  color: rgba(255, 255, 255, 0.7);
+  mix-blend-mode: difference;
   cursor: pointer;
   animation: arrow-float 2s infinite;
-  z-index: 100; /* Always on top */
+  z-index: 100;
 }
 
 .scroll-arrow:hover {
@@ -639,15 +632,30 @@ a .text-below-line:hover {
   cursor: zoom-in;
 }
 
-.modal-body {
-  cursor: zoom-in;
+.shopping-cart-icon {
+  width: 25px;
+  position: absolute;
+  right: 13px;
+  box-sizing: content-box;
 }
 
-.modal-body img:hover {
-  transform: scale(2.0);
-  transition: transform .5s ease;
+.shopping-cart-icon img {
+  border-radius: 0px;
 }
 
-.modal-content {
-  overflow: hidden;
+.cart-item-count {
+  position: absolute;
+  bottom: 50%;
+  right: 25%;
+  background-color: red;
+  color: white;
+  font-size: 10px;
+  padding: 1px 5px;
+  border-radius: 50%;
+}
+
+.navbar-right {
+  position: absolute;
+  right: 13px;
+  z-index: 100;
 }

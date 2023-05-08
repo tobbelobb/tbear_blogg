@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   handleDropdownDisplay();
   handleDottedLineHover();
+  updateCartDisplay();
 });
 
 window.addEventListener('resize', () => {
