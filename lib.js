@@ -1,23 +1,23 @@
 function updateCartDisplay() {
   const cartItemsElement = document.getElementById("cartItems");
   const totalCostElement = document.getElementById("totalCost");
-
-  // Clear the current cart items display
-  cartItemsElement.innerHTML = "";
-
   const cartData = Cart.getCartData();
 
-  cartData.cart.forEach((item, index) => {
-    const listItem = document.createElement("li");
-    listItem.textContent = `${item.name} - $${item.price.toFixed(2)}`;
-    cartItemsElement.appendChild(listItem);
-  });
-  const totalCost = cartData.totalCost;
-  totalCostElement.textContent = `Total: $${totalCost.toFixed(2)}`;
+  // Clear the current cart items display
+  if (cartItemsElement) {
+    cartItemsElement.innerHTML = "";
+    cartData.cart.forEach((item, index) => {
+      const listItem = document.createElement("li");
+      listItem.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+      cartItemsElement.appendChild(listItem);
+    });
+    const totalCost = cartData.totalCost;
+    totalCostElement.textContent = `Total: $${totalCost.toFixed(2)}`;
+  }
 
   // Update cart item count
   const cartItemCountElement = document.querySelector(".cart-item-count");
-  cartItemCountElement.textContent = cartData.length;
+  cartItemCountElement.textContent = cartData.cart.length;
 }
 
 function updateZIndex() {
