@@ -631,7 +631,7 @@ a .text-below-line:hover {
 
 .carousel-image-container {
   height: 0;
-  padding-bottom: 100%; /* Aspect ratio: 16:9 */
+  padding-bottom: 100%;
   overflow: hidden;
   position: relative;
 }
