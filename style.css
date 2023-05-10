@@ -298,12 +298,12 @@ h4 {
 img{
 	height:auto;
 	max-width:100%;
-	border-radius:11px;
+	border-radius:4px;
 }
 video {
 	height:auto;
 	max-width:100%;
-	border-radius:11px;
+	border-radius:4px;
 }
 figure{
 	max-width:100%;
@@ -323,7 +323,7 @@ figure{
 	left: 0;
 	width: 100%;
 	height: 100%;
-	border-radius:11px;
+	border-radius:4px;
 }
 #FrontPageMain {
 	position:relative;
@@ -657,7 +657,6 @@ a .text-below-line:hover {
   width: auto; /* Keep the aspect ratio */
 }
 
-
 img, svg {
   vertical-align: middle;
 }
@@ -668,4 +667,32 @@ img, svg {
 
 .cart-item-count {
     vertical-align: middle;
+}
+
+.carousel-thumbnails {
+    margin-top: 20px; /* Space above thumbnails */
+}
+
+.carousel-thumbnails .col-2,
+.carousel-thumbnails .col-sm-1 {
+    padding: 0; /* Remove padding from columns */
+}
+
+.carousel-thumbnails img {
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform .1s; /* Animation */
+}
+
+.carousel-thumbnails img:hover {
+    transform: scale(1.04); /* Slightly larger on hover */
+}
+
+
+@media (pointer: coarse) and (hover: none) {
+  .carousel-item {
+    will-change: opacity;
+  }
 }
