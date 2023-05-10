@@ -14,11 +14,11 @@
     <meta name="theme-color" content="#FBE8A6">
     <meta name="author" content="Torbjorn Ludvigsen">
     <meta name="keywords" content="torbjorn ludvigsen, art, product, ceramics">
-    <meta name="description" content="Heart of the Ocean Bowl">
+    <meta name="description" content="Heart of the Ocean Sculpture">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Heart of the Ocean">
     <meta property="og:url" content="https://torbjornludvigsen.com/Heart_of_the_Ocean">
-    <meta property="og:description" content="Ceramic Art Bowl">
+    <meta property="og:description" content="Ceramic Sculpture">
     <meta property="og:image" content="https://torbjornludvigsen.com/torbjornludvigsen.JPG">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@tobbelobb">
@@ -55,9 +55,9 @@
           <li><a href="../about">About</a></li>
           <li><a href="../links">Links</a></li>
           <li>
-            <a href="#" class="shopping-cart-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="cart-icon-svg"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg>
-              <span class="cart-item-count">0</span>
+            <a href="#/cart" class="shopping-cart-icon snipcart-checkout">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="cart-icon-svg"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg>
+              <span class="cart-item-count">(<span class="snipcart-items-count"></span>)</span>
             </a>
           </li>
         </ul>
@@ -169,6 +169,7 @@
                 <li>Clay type: Earthenware</li>
                 <li>Glazing technique: Pour-over and wide brush</li>
                 <li>Digital shaping: Custom hand-coded script</li>
+                <li>Intended use: Sculpture</li>
               </ul>
             </p>
             <p>
@@ -183,18 +184,35 @@
                 <li>Stiff and strong around the two "swirls"</li>
                 <li>Relatively fragile elsewhere</li>
                 <li>Cracked bottom</li>
+                <li>Bowl-like shape</li>
               </ul>
-
             </p>
             <p>
-              <button id="buyButton" class="mt-auto align-self-end btn btn-primary">Add to Cart</button>
-              <div id="cart" class="mt-3 align-self-end">
+              <!--button id="buyButton" class="mt-auto align-self-end btn btn-primary snipcart-add-item"-->
+              <button id="buyButton" class="snipcart-add-item"
+                data-item-id="heart-of-the-ocean-0"
+                data-item-price="500.00"
+                data-item-description="Ceramic sculpture"
+                data-item-image="https://torbjornludvigsen.com/Heart_of_the_Ocean/media/gallery/PXL_20230201_154004751_small.jpg"
+                data-item-name="Heart of the Ocean"
+                data-item-custom1-name="Message to Torbjørn"
+                data-item-custom1-type="textarea"
+                data-item-custom2-name="Information"
+                data-item-custom2-type="readonly"
+                data-item-custom2-value="Reach out to tobben@fastmail.fm with feedback and questions."
+                data-item-max-quantity=1
+                data-item-stackable="always"
+                data-item-shippable=true
+                data-item-taxes="ARTVAT"
+                data-item-has-taxes-included=true
+                data-item-taxable=false
+                >Add to Cart</button>
+              <!--div id="cart" class="mt-3 align-self-end">
                 <h5>Cart</h5>
                 <ul id="cartItems" class="list-unstyled">
-                  <!-- Items will be added here dynamically -->
                 </ul>
                 <p id="totalCost">Total: $0.00</p>
-              </div>
+              </div-->
             </p>
           </div>
         </div>
@@ -220,5 +238,14 @@
       lightbox.init();
     </script>
     <script src="hoto_script.js"></script>
+    <!-- Snipcart docs tells us to put this directly after <body> but that feels so wrong -->
+    <script>
+      window.SnipcartSettings = {
+          publicApiKey: 'N2I3ZTcwYjctYTFmNC00M2U0LWJhOTMtOWM0YWZkZGVkZDEzNjM4MTkzMjAwOTMyMjY2NzM2',
+          loadStrategy: 'on-user-interaction',
+      };
+
+      (()=>{var c,d;(d=(c=window.SnipcartSettings).version)!=null||(c.version="3.0");var s,S;(S=(s=window.SnipcartSettings).timeoutDuration)!=null||(s.timeoutDuration=2750);var l,p;(p=(l=window.SnipcartSettings).domain)!=null||(l.domain="cdn.snipcart.com");var w,u;(u=(w=window.SnipcartSettings).protocol)!=null||(w.protocol="https");var f=window.SnipcartSettings.version.includes("v3.0.0-ci")||window.SnipcartSettings.version!="3.0"&&window.SnipcartSettings.version.localeCompare("3.4.0",void 0,{numeric:!0,sensitivity:"base"})===-1,m=["focus","mouseover","touchmove","scroll","keydown"];window.LoadSnipcart=o;document.readyState==="loading"?document.addEventListener("DOMContentLoaded",r):r();function r(){window.SnipcartSettings.loadStrategy?window.SnipcartSettings.loadStrategy==="on-user-interaction"&&(m.forEach(t=>document.addEventListener(t,o)),setTimeout(o,window.SnipcartSettings.timeoutDuration)):o()}var a=!1;function o(){if(a)return;a=!0;let t=document.getElementsByTagName("head")[0],e=document.querySelector("#snipcart"),i=document.querySelector(`src[src^="${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}"][src$="snipcart.js"]`),n=document.querySelector(`link[href^="${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}"][href$="snipcart.css"]`);e||(e=document.createElement("div"),e.id="snipcart",e.setAttribute("hidden","true"),document.body.appendChild(e)),v(e),i||(i=document.createElement("script"),i.src=`${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}/themes/v${window.SnipcartSettings.version}/default/snipcart.js`,i.async=!0,t.appendChild(i)),n||(n=document.createElement("link"),n.rel="stylesheet",n.type="text/css",n.href=`${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}/themes/v${window.SnipcartSettings.version}/default/snipcart.css`,t.prepend(n)),m.forEach(g=>document.removeEventListener(g,o))}function v(t){!f||(t.dataset.apiKey=window.SnipcartSettings.publicApiKey,window.SnipcartSettings.addProductBehavior&&(t.dataset.configAddProductBehavior=window.SnipcartSettings.addProductBehavior),window.SnipcartSettings.modalStyle&&(t.dataset.configModalStyle=window.SnipcartSettings.modalStyle),window.SnipcartSettings.currency&&(t.dataset.currency=window.SnipcartSettings.currency),window.SnipcartSettings.templatesUrl&&(t.dataset.templatesUrl=window.SnipcartSettings.templatesUrl))}})();
+    </script>
   </body>
 </html>

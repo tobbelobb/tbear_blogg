@@ -25,7 +25,7 @@ function enableSlideAnimationIfTouchscreen() {
 
 
           if (hasTouchscreen) {
-            setTimeout(() => {
+            setTimeout(() => { // This feels a little fragile?
               document.querySelector('#carouselExampleControls').classList.remove('carousel-fade');
               isTransitioning = false;
             }, 600);
@@ -39,10 +39,10 @@ function enableSlideAnimationIfTouchscreen() {
 document.addEventListener('DOMContentLoaded', () => {
   handleDropdownDisplay();
 
-  document.getElementById("buyButton").addEventListener("click", function () {
-    Cart.addToCart("Heart of the Ocean", 500.00);
-    updateCartDisplay();
-  });
-  updateCartDisplay();
+  //document.getElementById("buyButton").addEventListener("click", function () {
+  //  Cart.addToCart("Heart of the Ocean", 500.00);
+  //  updateCartDisplay();
+  //});
+  //updateCartDisplay();
   enableSlideAnimationIfTouchscreen();
 });
