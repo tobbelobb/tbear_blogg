@@ -34,10 +34,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   handleDropdownDisplay();
   handleDottedLineHover();
-  //updateCartDisplay();
+  initiateCartDisplay();
 });
 
 window.addEventListener('resize', () => {
   updateDottedLine('background-1', 'dotted-line-1', 'text-below-line-1', 'top-left-1');
   updateDottedLine('background-2', 'dotted-line-2', 'text-below-line-2', '');
+});
+
+document.addEventListener('snipcart.ready', () => {
+  Snipcart.events.on('item.removed', (parsedCartItem) => {
+    updateCartDisplay();
+  });
+  Snipcart.events.on('item.added', (parsedCartItem) => {
+    updateCartDisplay();
+  });
+  Snipcart.events.on('cart.reset', (parsedCartItem) => {
+    updateCartDisplay();
+  });
 });

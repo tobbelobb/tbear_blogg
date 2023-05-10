@@ -1,24 +1,14 @@
+function initiateCartDisplay() {
+  const cartItemCountElement = document.querySelector(".cart-item-count");
+  cartItemCountElement.textContent = '(' + CartCount.get() + ')';
+}
+
 function updateCartDisplay() {
-  const cartItemsElement = document.getElementById("cartItems");
-  const totalCostElement = document.getElementById("totalCost");
-  const cartData = Cart.getCartData();
-
-  if (cartItemsElement) {
-    cartItemsElement.innerHTML = "";
-    cartData.cart.forEach((item, index) => {
-      const listItem = document.createElement("li");
-      listItem.textContent = `${item.name} - $${item.price.toFixed(2)}`;
-      cartItemsElement.appendChild(listItem);
-    });
-  }
-  if (totalCostElement) {
-    const totalCost = cartData.totalCost;
-    totalCostElement.textContent = `Total: $${totalCost.toFixed(2)}`;
-  }
-
   // Update cart item count
   const cartItemCountElement = document.querySelector(".cart-item-count");
-  cartItemCountElement.textContent = '(' + cartData.cart.length + ')';
+  const count = Snipcart.store.getState().cart.items.count;
+  CartCount.set(count);
+  cartItemCountElement.textContent = '(' + count + ')';
 }
 
 function updateZIndex() {

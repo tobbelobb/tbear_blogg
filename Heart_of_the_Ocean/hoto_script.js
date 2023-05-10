@@ -38,11 +38,18 @@ function enableSlideAnimationIfTouchscreen() {
 
 document.addEventListener('DOMContentLoaded', () => {
   handleDropdownDisplay();
-
-  //document.getElementById("buyButton").addEventListener("click", function () {
-  //  Cart.addToCart("Heart of the Ocean", 500.00);
-  //  updateCartDisplay();
-  //});
-  //updateCartDisplay();
   enableSlideAnimationIfTouchscreen();
+  initiateCartDisplay();
+});
+
+document.addEventListener('snipcart.ready', () => {
+  Snipcart.events.on('item.removed', (parsedCartItem) => {
+    updateCartDisplay();
+  });
+  Snipcart.events.on('item.added', (parsedCartItem) => {
+    updateCartDisplay();
+  });
+  Snipcart.events.on('cart.reset', (parsedCartItem) => {
+    updateCartDisplay();
+  });
 });
