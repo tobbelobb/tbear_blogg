@@ -52,6 +52,11 @@ document.addEventListener("DOMContentLoaded", () => {
     element.style.backgroundColor = "rgba(0,0,0,0.85)";
   }
 
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = '../photoswipe/dist/photoswipe.css';
+  document.head.appendChild(link);
+
   handleDropdownDisplay();
   enableSlideAnimationIfTouchscreen();
   initiateCartDisplay();
