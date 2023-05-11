@@ -56,70 +56,65 @@ function updateDottedLine(bgId, dottedLineId, textBelowLineId, maybeCollideId) {
   const backgroundPositionXRatio = parseFloat(backgroundPosition[0]) / 100;
   const backgroundPositionYRatio = parseFloat(backgroundPosition[1]) / 100;
 
-  const img = new Image();
-  img.src = getComputedStyle(background).backgroundImage.slice(5, -2); // get the URL of the background image
+  const backgroundWidth = background.clientWidth;
+  const backgroundHeight = background.clientHeight;
+  const imgWidth = parseInt(style.getPropertyValue('--image-width'));
+  const imgHeight = parseInt(style.getPropertyValue('--image-height'));
 
-  img.onload = function () {
-    const backgroundWidth = background.clientWidth;
-    const backgroundHeight = background.clientHeight;
-    const imgWidth = img.width;
-    const imgHeight = img.height;
+  const scaleFactor = Math.max(backgroundWidth / imgWidth, backgroundHeight / imgHeight);
+  const displayedImgWidth = imgWidth * scaleFactor;
+  const displayedImgHeight = imgHeight * scaleFactor;
+  const cutOutWidth = -backgroundWidth + displayedImgWidth;
+  const cutOutHeight = -backgroundHeight + displayedImgHeight;
 
-    const scaleFactor = Math.max(backgroundWidth / imgWidth, backgroundHeight / imgHeight);
-    const displayedImgWidth = imgWidth * scaleFactor;
-    const displayedImgHeight = imgHeight * scaleFactor;
-    const cutOutWidth = -backgroundWidth + displayedImgWidth;
-    const cutOutHeight = -backgroundHeight + displayedImgHeight;
+  const highlightWidth = highlightWidthRatio*displayedImgWidth;
+  const highlightHeight = highlightHeightRatio*displayedImgHeight;
+  const highlightLeftPosition = highlightLeftPositionRatio*displayedImgWidth;
+  const highlightTopPosition = highlightTopPositionRatio*displayedImgHeight;
+  const leftPos = -backgroundPositionXRatio*cutOutWidth + highlightLeftPosition;
+  const topPos = -backgroundPositionYRatio*cutOutHeight + highlightTopPosition;
 
-    const highlightWidth = highlightWidthRatio*displayedImgWidth;
-    const highlightHeight = highlightHeightRatio*displayedImgHeight;
-    const highlightLeftPosition = highlightLeftPositionRatio*displayedImgWidth;
-    const highlightTopPosition = highlightTopPositionRatio*displayedImgHeight;
-    const leftPos = -backgroundPositionXRatio*cutOutWidth + highlightLeftPosition;
-    const topPos = -backgroundPositionYRatio*cutOutHeight + highlightTopPosition;
+  const dottedLine = document.getElementById(dottedLineId);
+  dottedLine.style.width = highlightWidth + 'px';
+  dottedLine.style.height = highlightHeight + 'px';
+  dottedLine.style.left = leftPos + 'px';
+  dottedLine.style.top = topPos + 'px';
 
-    const dottedLine = document.getElementById(dottedLineId);
-    dottedLine.style.width = highlightWidth + 'px';
-    dottedLine.style.height = highlightHeight + 'px';
-    dottedLine.style.left = leftPos + 'px';
-    dottedLine.style.top = topPos + 'px';
+  // Position the text element above the dotted line
+  const textBelowLine = document.getElementById(textBelowLineId);
 
-    // Position the text element above the dotted line
-    const textBelowLine = document.getElementById(textBelowLineId);
+  if (window.innerWidth > 475) {
+    textBelowLine.style.left = (leftPos - textBelowLine.clientWidth/2 + highlightWidth/2) + 'px';
+  } else {
+    textBelowLine.style.left = '';
+  }
 
-    if (window.innerWidth > 475) {
-      textBelowLine.style.left = (leftPos - textBelowLine.clientWidth/2 + highlightWidth/2) + 'px';
-    } else {
-      textBelowLine.style.left = '';
+  textBelowLine.style.top = (topPos + highlightHeight) + 'px';
+  //textBelowLine.style.top = (topPos - textBelowLine.clientHeight) + 'px';
+  //if (maybeCollideId != '') {
+  //  const maybeCollide = document.getElementById(maybeCollideId);
+  //  if (isAlmostColliding(textBelowLine, maybeCollide)) {
+  //    textBelowLine.style.top = (topPos + highlightHeight) + 'px';
+  //  }
+  //}
+
+
+  let textBoundingRect = textBelowLine.getBoundingClientRect();
+  const bgRect = background.getBoundingClientRect();
+  let fontSize = parseInt(window.getComputedStyle(textBelowLine).fontSize, 10);
+  // If we're overflowing into below bg, reduce font size many times.
+  // If overflow into above bg, reduce font size once and move the text down.
+  while ((textBoundingRect.bottom > bgRect.bottom || textBoundingRect.top < bgRect.top) && fontSize > 10) {
+    fontSize -= 2;
+    textBelowLine.style.fontSize = fontSize + 'px';
+
+    if (textBoundingRect.top < bgRect.top) {
+      const topOffset = bgRect.top - textBoundingRect.top;
+      textBelowLine.style.top = `${parseFloat(textBelowLine.style.top) + topOffset}px`;
     }
 
-    textBelowLine.style.top = (topPos + highlightHeight) + 'px';
-    //textBelowLine.style.top = (topPos - textBelowLine.clientHeight) + 'px';
-    //if (maybeCollideId != '') {
-    //  const maybeCollide = document.getElementById(maybeCollideId);
-    //  if (isAlmostColliding(textBelowLine, maybeCollide)) {
-    //    textBelowLine.style.top = (topPos + highlightHeight) + 'px';
-    //  }
-    //}
-
-
-    let textBoundingRect = textBelowLine.getBoundingClientRect();
-    const bgRect = background.getBoundingClientRect();
-    let fontSize = parseInt(window.getComputedStyle(textBelowLine).fontSize, 10);
-    // If we're overflowing into below bg, reduce font size many times.
-    // If overflow into above bg, reduce font size once and move the text down.
-    while ((textBoundingRect.bottom > bgRect.bottom || textBoundingRect.top < bgRect.top) && fontSize > 10) {
-      fontSize -= 2;
-      textBelowLine.style.fontSize = fontSize + 'px';
-
-      if (textBoundingRect.top < bgRect.top) {
-        const topOffset = bgRect.top - textBoundingRect.top;
-        textBelowLine.style.top = `${parseFloat(textBelowLine.style.top) + topOffset}px`;
-      }
-
-      textBoundingRect = textBelowLine.getBoundingClientRect();
-    }
-  };
+    textBoundingRect = textBelowLine.getBoundingClientRect();
+  }
 }
 
 function scrollSection(targetSectionId) {

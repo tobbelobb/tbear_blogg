@@ -45,7 +45,17 @@
 
 #background-1 {
   background-image: url('./media/Heart_of_the_Ocean_1000x1000.png');
+  background-image: -webkit-image-set(
+      url("./media/Heart_of_the_Ocean_1000x1000.avif"),
+      url("./media/Heart_of_the_Ocean_1000x1000.png")
+  );
+  background-image: image-set(
+      url("./media/Heart_of_the_Ocean_1000x1000.avif") type("image/avif"),
+      url("./media/Heart_of_the_Ocean_1000x1000.png") type("image/png")
+  );
   background-position: 74% 70%;
+  --image-width: 1000;
+  --image-height: 1000;
   --highlight-width-ratio: 0.42;
   --highlight-height-ratio: 0.19;
   --highlight-left-position-ratio: 0.43;
@@ -54,7 +64,17 @@
 
 #background-2 {
   background-image: url('./media/art2_cropped.jpg');
+  background-image: -webkit-image-set(
+      url("./media/art2_cropped.avif"),
+      url("./media/art2_cropped.jpg")
+  );
+  background-image: image-set(
+      url("./media/art2_cropped.avif") type("image/avif"),
+      url("./media/art2_cropped.jpg") type("image/jpg")
+  );
   background-position: 50% 50%;
+  --image-width: 2047;
+  --image-height: 1177;
   --highlight-width-ratio: 0.23;
   --highlight-height-ratio: 0.22;
   --highlight-left-position-ratio: 0.40;
