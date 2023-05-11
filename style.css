@@ -575,6 +575,7 @@ h5.card-title2:hover{
 	justify-content: center;
 	align-items: center;
 	text-align: center;
+	visibility: hidden; /* Allow javascript to place it before making it visible */
 }
 
 

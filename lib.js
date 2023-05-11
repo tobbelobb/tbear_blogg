@@ -110,6 +110,7 @@ function updateDottedLine(bgId, dottedLineId, textBelowLineId) {
 
     textBoundingRect = textBelowLine.getBoundingClientRect();
   }
+  textBelowLine.style.visibility = "visible";
 }
 
 function scrollSection(targetSectionId) {
