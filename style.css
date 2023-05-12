@@ -43,12 +43,6 @@ body {
 	overflow-x: hidden;
 }
 
-.product-description {
-	font-size: 0.95rem;
-	line-height: 1.55rem;
-}
-
-
 .background-container {
 	display: flex;
 	flex-direction: column;
@@ -679,9 +673,16 @@ img, svg {
 .product-name-right-column {
 	margin-bottom: 20px;
 	text-align: left;
+	font-size: 1.18rem;
 }
 
 .product-name-top {
 	margin-bottom: 20px;
 	text-align: center;
+	font-size: 1.18rem;
+}
+
+.product-description {
+	font-size: 0.95rem;
+	line-height: 1.55rem;
 }
