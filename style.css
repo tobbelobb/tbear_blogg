@@ -35,6 +35,18 @@
 	font-family: open-sans;
 }
 
+html {
+	overflow-x: hidden;
+}
+
+body {
+	margin:0;
+	background-color:white;
+	color:rgb(48,66,76);
+	overflow-x: hidden;
+}
+
+
 .background-container {
 	display: flex;
 	flex-direction: column;
@@ -165,6 +177,62 @@
 	}
 }
 
+nav {
+	text-align: center;
+	padding: 0;
+}
+
+nav ul {
+	display: flex;
+	list-style:none;
+	padding:0;
+}
+
+/* Style the links inside the navigation bar */
+nav ul li a {
+	display: flex;
+	padding: 14px;
+	text-decoration: none;
+	font-size: 17px;
+  fill: white;
+}
+
+nav.light ul li a {
+  fill: black;
+}
+
+@media screen and (max-width: 400px) {
+	nav ul li a, .shopping-cart-icon {
+		padding: 7px; /* Reduce padding */
+		font-size: 14px; /* Reduce font size */
+	}
+}
+
+nav ul li a:hover {
+	color: rgb(149, 155, 173);
+  fill: rgb(149, 155, 173);
+}
+
+nav.light ul li a:hover {
+	color: rgb(119, 125, 143);
+  fill: rgb(119, 125, 143);
+}
+
+/* Add an active class to highlight the current page */
+nav a.active {
+	color:rgb(244, 151, 108);
+}
+
+.links-container {
+	margin:0px 32px 0px 32px;
+	display:flex;
+	font-size:35px;
+	justify-content:space-between;
+}
+
+
+
+
 .transparent-nav {
 	background-color: rgba(0, 0, 0, 0.5);
 	display: flex;
@@ -173,7 +241,7 @@
 }
 
 .light {
-	background-color: rgba(200, 200, 200, 0.5);
+	background-color: rgba(200, 200, 200, 0.2);
 }
 
 .transparent-nav ul {
@@ -241,7 +309,7 @@
 }
 
 .light .dropdown-content {
-	background-color: rgba(200, 200, 200, 0.5);
+	background-color: rgba(200, 200, 200, 0.2);
 }
 
 
@@ -270,17 +338,6 @@ nav .dropdown-content a, .shopping-cart-icon {
 	color: #ffffff;
 }
 
-html {
-	overflow-x: hidden;
-}
-
-body {
-	margin:0;
-	background-color:white;
-	color:rgb(48,66,76);
-	overflow-x: hidden;
-}
-
 #SiteName {
 	position:relative;
 	text-align:left;
@@ -292,9 +349,6 @@ body {
 	height:auto;
 	z-index:2;
 	font-size:29px;
-}
-.left {
-	height:46px;
 }
 h1 {
 	font-weight:normal;
@@ -395,18 +449,6 @@ figure{
 	margin-right:auto;
 }
 
-.front-image {
-	display:flex;
-	align-items: center;
-	margin-top:30%;
-	width:200px;
-	height:auto;
-	max-width:57%;
-	border-radius:50%;
-	margin-left:auto;
-	margin-right:auto;
-}
-
 .about-image {
 	display:flex;
 	align-items: center;
@@ -445,59 +487,6 @@ td a{
 	.front-image {
 		margin-top:10%;
 	}
-}
-
-nav {
-	text-align: center;
-	padding: 0;
-}
-
-nav ul {
-	display: flex;
-	list-style:none;
-	padding:0;
-}
-
-/* Style the links inside the navigation bar */
-nav ul li a {
-	display: flex;
-	padding: 14px;
-	text-decoration: none;
-	font-size: 17px;
-  fill: white;
-}
-
-nav.light ul li a {
-  fill: black;
-}
-
-@media screen and (max-width: 400px) {
-	nav ul li a, .shopping-cart-icon {
-		padding: 7px; /* Reduce padding */
-		font-size: 14px; /* Reduce font size */
-	}
-}
-
-nav ul li a:hover {
-	color: rgb(149, 155, 173);
-  fill: rgb(149, 155, 173);
-}
-
-nav.light ul li a:hover {
-	color: rgb(119, 125, 143);
-  fill: rgb(119, 125, 143);
-}
-
-/* Add an active class to highlight the current page */
-nav a.active {
-	color:rgb(244, 151, 108);
-}
-
-.links-container {
-	margin:0px 32px 0px 32px;
-	display:flex;
-	font-size:35px;
-	justify-content:space-between;
 }
 
 .text-below-line {
