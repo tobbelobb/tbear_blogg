@@ -172,6 +172,10 @@
 	flex-wrap: wrap;
 }
 
+.light {
+	background-color: rgba(200, 200, 200, 0.5);
+}
+
 .transparent-nav ul {
 	margin: 0;
 	padding: 0;
@@ -182,6 +186,10 @@
 .transparent-nav a {
 	color: #ffffff;
 	text-decoration: none;
+}
+
+.light a {
+	color: #000000;
 }
 
 .transparent-nav li {
@@ -200,19 +208,19 @@
 		position: static;
 	}
 
-	.transparent-nav ul li {
+	nav ul li {
 		order: 1;
 	}
 
-	.transparent-nav ul li:last-child {
+	nav ul li:last-child {
 		order: 0;
 	}
 
-	.transparent-nav ul li a {
+	nav ul li a {
 		justify-content: center;
 	}
 
-	.transparent-nav ul {
+	nav ul {
 		justify-content: center;
 	}
 }
@@ -232,18 +240,30 @@
 	z-index: 1000;
 }
 
+.light .dropdown-content {
+	background-color: rgba(200, 200, 200, 0.5);
+}
+
+
 /* Links inside the dropdown */
-.transparent-nav .dropdown-content a, .shopping-cart-icon {
+.transparent-nav .dropdown-content a {
 	color: #ffffff;
+}
+
+.light .dropdown-content a {
+	color: #000000;
+}
+
+nav .dropdown-content a, .shopping-cart-icon {
 	padding: 12px 16px;
 	display: block;
 }
 
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: rgba(0.1, 0.1, 0.1, 0.5);}
 
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+	color: rgb(149, 155, 173);
+}
 
 .centered-content {
 	text-align: center;
@@ -428,19 +448,14 @@ td a{
 }
 
 nav {
-	display:block;
-	text-align:center;
-	background-color: white;
+	text-align: center;
 	padding: 0;
 }
 
 nav ul {
+	display: flex;
 	list-style:none;
 	padding:0;
-}
-
-nav ul li {
-	display:inline-block;
 }
 
 /* Style the links inside the navigation bar */
@@ -449,7 +464,11 @@ nav ul li a {
 	padding: 14px;
 	text-decoration: none;
 	font-size: 17px;
-	color:rgb(48,66,76);
+  fill: white;
+}
+
+nav.light ul li a {
+  fill: black;
 }
 
 @media screen and (max-width: 400px) {
@@ -459,13 +478,14 @@ nav ul li a {
 	}
 }
 
-nav ul li:hover a {
-	color: rgb(119, 125, 143);
-	mix-blend-mode: difference;
+nav ul li a:hover {
+	color: rgb(149, 155, 173);
+  fill: rgb(149, 155, 173);
 }
 
-.shoppin-cart-icon:hover {
-	fill: rgb(119, 125, 143);
+nav.light ul li a:hover {
+	color: rgb(119, 125, 143);
+  fill: rgb(119, 125, 143);
 }
 
 /* Add an active class to highlight the current page */
@@ -479,89 +499,6 @@ nav a.active {
 	font-size:35px;
 	justify-content:space-between;
 }
-
-.no-margin-bottom {
-	margin-bottom: 0;
-}
-
-.artwork-title-link {
-	text-decoration: none;
-	padding: 0px 0px 0px 0px;
-	color: #333;
-	font-size: 1.25rem;
-	white-space: nowrap;
-	display: inline-block;
-	position: relative;
-}
-
-h5.card-title2::before,
-h5.card-title2::after {
-	content: '';
-	display: inline;
-	position: absolute;
-	height: 100%;
-	border-color: rgba(0, 0, 0, 0.2);
-	border-style: solid;
-	border-radius: 5px 0 0 5px;
-}
-
-h5.card-title2::before {
-	border-width: 1px 0px 1px 1px;
-	width: 5px;
-	left: -15px;
-}
-
-h5.card-title2::after {
-	border-width: 1px 1px 1px 0px;
-	width: 5px;
-	right: -15px;
-	border-radius: 0 5px 5px 0;
-}
-
-h5.card-title2:hover{
-	text-decoration: none;
-	color: #333;
-	background-color: rgba(0, 0, 0, 0.1);
-	border-color: rgba(0, 0, 0, 0.2);
-	border-width: 1px 1px 1px 1px;
-}
-
-.card {
-	margin-bottom: 1rem;
-}
-
-.hover-text {
-	position: absolute;
-	top: 33%;
-	left: 50%;
-	transform: translate(-40%, -50%);
-	color: rgba(255, 255, 255, 0.8);
-	font-size: 3rem;
-	font-weight: bold;
-	text-align: center;
-	width: 80%;
-	opacity: 0;
-	transition: 0.5s;
-	pointer-events: none;
-}
-
-.card:hover .hover-text {
-	opacity: 1;
-}
-
-.sale-label {
-	position: absolute;
-	top: 0;
-	left: 0;
-	padding: 5px 10px;
-	background-color:rgb(224, 123, 0); /* A darker darkorange, which is (255, 140, 0) */
-	color: white;
-	font-weight: bold;
-	font-size: 0.9rem;
-	z-index: 1;
-	border-radius: calc(0.25rem - 1px) 0 0 0;
-}
-
 
 .text-below-line {
 	position: absolute;
@@ -606,11 +543,11 @@ h5.card-title2:hover{
 
 /* Change the color and weight of links on hover */
 a .text-below-line:hover {
-	color:rgb(119, 125, 143);
+	color: rgb(149, 155, 173);
 }
 
 .text-below-line-hover {
-	color:rgb(119, 125, 143);
+	color: rgb(149, 155, 173);
 }
 
 .scroll-arrow {
@@ -676,11 +613,11 @@ a .text-below-line:hover {
 	box-sizing: content-box;
 }
 
+
 .shopping-cart-icon svg {
 	border-radius: 0px;
-	fill: #ffffff;
-	height: 1em; /* Scale the icon to the same height as the text */
-	width: auto; /* Keep the aspect ratio */
+	height: 1em;
+	width: auto;
 }
 
 img, svg {
