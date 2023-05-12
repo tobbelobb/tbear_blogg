@@ -4,7 +4,6 @@
 	font-display: swap;
 }
 
-/* #2 Italic Style */
 @font-face {
 	font-family: open-sans;
 	font-style: italic;
@@ -13,7 +12,6 @@
 	font-display: swap;
 }
 
-/* #3 Bold Weight */
 @font-face {
 	font-family: open-sans;
 	font-style: normal;
@@ -22,7 +20,6 @@
 	font-display: swap;
 }
 
-/* #4 Bold Italic Style */
 @font-face {
 	font-family: open-sans;
 	font-style: italic;
@@ -44,6 +41,11 @@ body {
 	background-color:white;
 	color:rgb(48,66,76);
 	overflow-x: hidden;
+}
+
+.product-description {
+	font-size: 0.95rem;
+	line-height: 1.55rem;
 }
 
 
@@ -177,10 +179,12 @@ body {
 }
 
 nav {
-	position: fixed;
 	width: 100%;
-	text-align: center;
 	padding: 0;
+}
+
+nav.transparent-nav {
+	position: fixed;
 }
 
 nav.light {
@@ -191,6 +195,7 @@ nav ul {
 	display: flex;
 	list-style:none;
 	padding:0;
+	justify-content: center;
 }
 
 /* Style the links inside the navigation bar */
