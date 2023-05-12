@@ -1,8 +1,8 @@
 function enableSlideAnimationIfTouchscreen() {
   const carousel = document.getElementById("carouselExampleControls");
-  const hasTouchscreen = window.matchMedia("(pointer: coarse)").matches;
+  const touchDevice = isTouchDevice();
 
-  if (hasTouchscreen) {
+  if (touchDevice) {
     carousel.classList.add("slide");
   }
 
@@ -11,10 +11,10 @@ function enableSlideAnimationIfTouchscreen() {
 
   thumbnailElems.forEach((thumbnailElem) => {
     thumbnailElem.addEventListener("click", () => {
-      if (isTransitioning && hasTouchscreen) {
+      if (isTransitioning && touchDevice) {
         return;
       }
-      if (hasTouchscreen) {
+      if (touchDevice) {
         isTransitioning = true;
         document
           .querySelector("#carouselExampleControls")
@@ -26,7 +26,7 @@ function enableSlideAnimationIfTouchscreen() {
       const bsCarousel = new bootstrap.Carousel(carousel);
       bsCarousel.to(parseInt(goToSlide));
 
-      if (hasTouchscreen) {
+      if (touchDevice) {
         setTimeout(() => {
           document
             .querySelector("#carouselExampleControls")
