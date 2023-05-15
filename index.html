@@ -15,6 +15,10 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@tobbelobb">
   <meta name="twitter:creator" content="@tobbelobb">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   <link rel="preload" href="./OpenSansRegular.woff" as="font" type="font/woff" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css?v=2" type="text/css">
   <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
@@ -22,77 +26,211 @@
   <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
   <link rel="manifest" href="./site.webmanifest">
   <link rel="mask-icon" href="./safari-pinned-tab.svg" color="#5bbad5">
-  <link rel="preload" as="image" href="./media/Heart_of_the_Ocean_1000x1000.avif">
   <meta name="msapplication-TileColor" content="#2d89ef">
   <meta name="theme-color" content="#ffffff">
   <title>Torbjørn Ludvigsen</title>
 </head>
 <body>
-  <div class="background-container">
-    <div class="full-screen-background" id="background-1">
-      <nav class="transparent-nav">
-        <ul>
-          <li class="navbar-left">
-            <a href=".">Torbjørn Ludvigsen</a>
-          </li>
-          <li>
-            <div class="dropdown">
-              <a href=".">Creations</a>
-              <div class="dropdown-content">
-                <a href="./Heart_of_the_Ocean">
-                  Heart of the Ocean
-                </a>
-                <a href="./Another_Heart_of_the_Ocean">
-                  Another Heart of the Ocean
-                </a>
-              </div>
-            </div>
-          </li>
-          <li><a href="./blog">Blog</a></li>
-          <li><a href="./donate">Donate</a></li>
-          <li><a href="./about">About</a></li>
-          <li><a href="./links">Links</a></li>
-          <li>
-            <a href="#/cart" class="shopping-cart-icon snipcart-checkout">
-              <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 576 512" class="cart-icon-svg">
-                <path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"></path>
-              </svg> <span class="cart-item-count">()</span>
-            </a>
+  <div class="container">
+    <nav class="navbar navbar-expand-sm bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Torbjørn Ludvigsen</a>
+        <ul class="navbar-nav justify-content-right">
+          <!--li class="nav-item">
+            <button class="btn btn-primary" type="button">Reach Out</button>
+          </li-->
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Menu</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="./blog">Blog</a></li>
+              <li><a class="dropdown-item" href="./donate">Donate</a></li>
+              <li><a class="dropdown-item" href="./shop">Shop</a></li>
+              <li><a class="dropdown-item" href="#">Reach Out</a></li>
+            </ul>
           </li>
         </ul>
-      </nav>
-      <a href="./Heart_of_the_Ocean">
-        <div class="text-below-line text-with-background" id="text-below-line-1">
-          Heart of the Ocean
-        </div>
-        <div class="dotted-line" id="dotted-line-1"></div>
-      </a>
-      <a href="#" class="scroll-arrow scroll-down-arrow" id="scroll-down-arrow" data-target="background-2"><img src="arrow-down.svg" width="30" height="30" alt="Down arrow" /></a>
-    </div>
-    <div class="full-screen-background" id="background-2">
-      <a href="#" class="scroll-arrow scroll-up-arrow" id="scroll-up-arrow" data-target="background-1"><img src="arrow-up.svg" width="30" height="30" alt="Up arrow" loading="lazy" /></a>
-      <a href="./Another_Heart_of_the_Ocean">
-        <div class="text-below-line text-with-background" id="text-below-line-2">
-          Another Heart of the Ocean
-        </div>
-        <div class="dotted-line" id="dotted-line-2"></div>
-      </a>
-      <div class="positioned-content bottom-right">
-        <div class="centered-content">
-          <h2 class="text-with-shadow">This is Just An Example</h2>
-        </div>
+      </div>
+    </nav>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <h3>Inventor of Hangprinter</h3>
+        <p>Cable driven, open source 3d printer</p>
+      </div>
+      <div class="col-sm-6">
+        <picture loading="eager">
+          <source srcset="media/face_small.avif" type="image/avif">
+          <img src="media/face_small.jpg" width="500" height="667" alt="Torbjørn Ludvigsen">
+        </picture>
+        <p>
+          Torbjørn runs a small business.
+        </p>
       </div>
     </div>
-  </div><!-- Scripts -->
-  <script src="cart.js"></script>
+    <div class="row">
+      <div class="col-sm-6">
+        <picture loading="eager">
+          <source srcset="media/coral_small.avif" type="image/avif">
+          <img src="media/coral_small.jpg" width="500" height="667" alt="A 3D printed clay sculpture">
+        </picture>
+      </div>
+      <div class="col-sm-6">
+        <h3>
+        Torbjørn does
+        </h3>
+        <ul>
+          <li>Sell 3d prints made with his own Hangprinter, and hopefully soon Hangprinter kits.</li>
+          <li>Maintain an open source community around Hangprinter.</li>
+          <li>Some consulting relevant to the community.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <h3>Social Proof</h3>
+        <p>
+          Torbjørn has been going on with the Hangprinter for 10 years.
+          Here are some achievements.
+        </p>
+        <ul>
+          <li>(3d printing news outlets) Brought down a patent on Hangprinter</li>
+          <li>(3d printing news outlets) Probably the world's tallest PLA print indoors</li>
+          <li>(Github and Gitlab) Built and maintains plethora of open source Hangprinter software tools</li>
+          <li>Blog and newsletter running for 10 years</li>
+          <li>Thomas Sanladerer</li>
+          <li><a href="https://e3d-online.com/blogs/news/my-month-as-a-special-guest-at-e3d?_pos=1&_sid=a92cd423a&_ss=r">E3D</a></li>
+          <li>ODrive</li>
+          <li>Duet3D</li>
+          <li>Koenigsegg</li>
+        </ul>
+      </div>
+      <div class="col-sm-6">
+        <div class="row">
+          <picture>
+            <source srcset="media/coral_being_printed_small.avif" type="image/avif">
+            <img src="media/coral_being_printed_small.jpg" width="500" height="664" alt="Sculpture being printed">
+          </picture>
+        </div>
+        <!--picture>
+          <source srcset="media/tall_tower_by_johan_gunseus_small.avif" type="image/avif">
+          <img src="media/tall_tower_by_johan_gunseus_small.jpeg" width="500" height="989" alt="Torbjørn and the Babel Tower print">
+        </picture-->
+        <!--picture>
+          <source srcset="media/in_good_company_2_small.avif" type="image/avif">
+          <img src="media/in_good_company_2_small.jpg" width="500" height="333" alt="Torbjørn and workshop participants">
+        </picture-->
+        <!--picture>
+          <source srcset="media/Hangprinter_4_meter_tower_small.avif" type="image/avif">
+          <img src="media/Hangprinter_4_meter_tower_small.jpg" width="500" height="855" alt="A four meters tall 3d print made with Hangprinter">
+        </picture-->
+        <!--picture>
+          <source srcset="media/HP4_small.avif" type="image/avif">
+          <img src="media/HP4_small.jpg" width="500" height="281" alt="A Hangprinter v4 ceiling unit being built">
+        </picture-->
+        <!--div class="row mt-1">
+          <picture>
+            <source srcset="media/in_action_rome_2017_small.avif" type="image/avif">
+            <img src="media/in_action_rome_2017_small.jpg" width="500" height="281" alt="Building a Hangprinter together at Maker Faire Rome 2017">
+          </picture>
+        </div-->
+        <div class="row mt-1">
+          <picture>
+            <source srcset="media/intense_babysitting_small.avif" type="image/avif">
+            <img src="media/intense_babysitting_small.jpeg" width="500" height="667" alt="Babysittin a Hangprinter in a staircase">
+          </picture>
+        </div>
+        <!--div class="row mt-1">
+          <picture>
+            <source srcset="media/happy_small.avif" type="image/avif">
+            <img src="media/happy_small.jpeg" width="500" height="376" alt="Torbjørn cheering towards camera">
+          </picture>
+        </div-->
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="row">
+          <picture>
+            <source srcset="media/in_good_company_7_small.avif" type="image/avif">
+            <img src="media/in_good_company_7_small.jpeg" width="500" height="333" alt="Torbjørn giving a workshop">
+          </picture>
+        </div>
+
+        <div class="row mt-1">
+          <picture>
+            <source srcset="media/in_good_company_3_small.avif" type="image/avif">
+            <img src="media/in_good_company_3_small.jpeg" width="500" height="375" alt="Torbjørn and helpers">
+          </picture>
+        </div>
+        <!--picture>
+          <source srcset="media/coral_being_printed_small.avif" type="image/avif">
+          <img src="media/coral_being_printed_small.jpg" width="500" height="664" alt="A 3D printed clay sculpture">
+        </picture-->
+        <!--picture>
+          <source srcset="media/tall_tower_by_johan_gunseus_small.avif" type="image/avif">
+          <img src="media/tall_tower_by_johan_gunseus_small.jpeg" width="500" height="989" alt="Torbjørn and the Babel Tower print">
+        </picture-->
+        <!--picture>
+          <source srcset="media/frame_im_talkin_about_rot_small.avif" type="image/avif">
+          <img src="media/frame_im_talkin_about_rot_small.jpeg" width="500" height="725" alt="A Hangprinter in a frame">
+        </picture-->
+      </div>
+      <div class="col-sm-6">
+        <h3>Secret Sauce</h3>
+        <p>All-round initiative rich guy. Torbjørn keeps creating what he wish existed, even if it takes some planning and endurance.</p>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-sm-6">
+        <h3>
+          Reach Out
+        </h3>
+        <p>
+          Torbjørn is often available in the open forums for free chat and questions.
+          Here's how to reach him with consulting and business inquires.
+        </p>
+        <p>
+          He'll help you get up and running.
+        </p>
+      </div>
+      <div class="col-sm-6">
+        <picture>
+          <source srcset="media/dressed_up_cropped_small.avif" type="image/avif">
+          <img src="media/dressed_up_cropped_small.jpeg" width="500" height="560" alt="A Hangprinter v4 with pink lines on the spools">
+        </picture>
+      </div>
+    </div>
+    <div class="row">
+      <form novalidate>
+        <div class="mb-3 mt-3">
+          <label for="email" class="form-label">Email:</label>
+          <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
+        </div>
+        <div class="mb-3 mt-3">
+          <label for="comment">Message:</label>
+          <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
+        </div>
+        <button class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+    <div class="row links-container mt-5">
+      <div class="col">
+        <a href="https://twitter.com/tobbelobb" style="color:rgb(29,161,242)"><i class="fab fa-twitter"></i></a>
+      </div>
+      <div class="col">
+        <a href="https://github.com/tobbelobb/" style="color:black"><i class="fab fa-github"></i></a>
+      </div>
+      <div class="col">
+        <a href="https://gitlab.com/tobben"><img style="min-width:35px;" src="./links/gitlab-icon-rgb-small.svg"></a>
+      </div>
+      <div class="col">
+        <a href="https://www.youtube.com/channel/UCw1Nz0VCw4z-dfq4WjSkFzQ" style="color:rgb(255,0,0);"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+
   <script src="lib.js"></script>
-  <script>
-      window.SnipcartSettings = {
-          publicApiKey: 'N2I3ZTcwYjctYTFmNC00M2U0LWJhOTMtOWM0YWZkZGVkZDEzNjM4MTkzMjAwOTMyMjY2NzM2',
-          loadStrategy: 'on-user-interaction',
-      };
-      (()=>{var c,d;(d=(c=window.SnipcartSettings).version)!=null||(c.version="3.0");var s,S;(S=(s=window.SnipcartSettings).timeoutDuration)!=null||(s.timeoutDuration=2750);var l,p;(p=(l=window.SnipcartSettings).domain)!=null||(l.domain="cdn.snipcart.com");var w,u;(u=(w=window.SnipcartSettings).protocol)!=null||(w.protocol="https");var f=window.SnipcartSettings.version.includes("v3.0.0-ci")||window.SnipcartSettings.version!="3.0"&&window.SnipcartSettings.version.localeCompare("3.4.0",void 0,{numeric:!0,sensitivity:"base"})===-1,m=["focus","mouseover","touchmove","scroll","keydown"];window.LoadSnipcart=o;document.readyState==="loading"?document.addEventListener("DOMContentLoaded",r):r();function r(){window.SnipcartSettings.loadStrategy?window.SnipcartSettings.loadStrategy==="on-user-interaction"&&(m.forEach(t=>document.addEventListener(t,o)),setTimeout(o,window.SnipcartSettings.timeoutDuration)):o()}var a=!1;function o(){if(a)return;a=!0;let t=document.getElementsByTagName("head")[0],e=document.querySelector("#snipcart"),i=document.querySelector(`src[src^="${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}"][src$="snipcart.js"]`),n=document.querySelector(`link[href^="${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}"][href$="snipcart.css"]`);e||(e=document.createElement("div"),e.id="snipcart",e.setAttribute("hidden","true"),document.body.appendChild(e)),v(e),i||(i=document.createElement("script"),i.src=`${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}/themes/v${window.SnipcartSettings.version}/default/snipcart.js`,i.async=!0,t.appendChild(i)),n||(n=document.createElement("link"),n.rel="stylesheet",n.type="text/css",n.href=`${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}/themes/v${window.SnipcartSettings.version}/default/snipcart.css`,t.prepend(n)),m.forEach(g=>document.removeEventListener(g,o))}function v(t){!f||(t.dataset.apiKey=window.SnipcartSettings.publicApiKey,window.SnipcartSettings.addProductBehavior&&(t.dataset.configAddProductBehavior=window.SnipcartSettings.addProductBehavior),window.SnipcartSettings.modalStyle&&(t.dataset.configModalStyle=window.SnipcartSettings.modalStyle),window.SnipcartSettings.currency&&(t.dataset.currency=window.SnipcartSettings.currency),window.SnipcartSettings.templatesUrl&&(t.dataset.templatesUrl=window.SnipcartSettings.templatesUrl))}})();
-  </script>
-  <script src="script.js"></script>
+  <script src="frontpage_script.js"></script>
+  <script data-goatcounter="https://torbjornludvigsen.goatcounter.com/count" async="true" src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
