@@ -51,6 +51,7 @@ body {
 .full-screen-background {
 	position: relative;
 	min-height: 100vh;
+	min-height: 100lvh;
 	background-size: cover;
 	height: 100%;
 }
@@ -175,6 +176,7 @@ body {
 nav {
 	width: 100%;
 	padding: 0;
+	z-index: 1000;
 }
 
 nav.transparent-nav {
@@ -241,6 +243,10 @@ nav a.active {
 	flex-wrap: wrap;
 }
 
+.frontpage-nav {
+	background-color: rgba(0.0, 0, 0, 0.0);
+}
+
 .light {
 	background-color: rgba(240, 240, 240, 0.85);
 }
@@ -250,11 +256,16 @@ nav a.active {
 	padding: 0;
 	display: flex;
 	flex-wrap: wrap;
+	min-height: 51px;
 }
 
 .transparent-nav a {
 	color: #ffffff;
 	text-decoration: none;
+}
+
+.frontpage-nav a {
+	color: black;
 }
 
 .light a {
@@ -268,6 +279,11 @@ nav a.active {
 .navbar-left {
 	position: absolute;
 	left: 0;
+}
+
+.navbar-right {
+	position: absolute;
+	right: 0;
 }
 
 nav.light .navbar-left {
@@ -331,29 +347,55 @@ nav.light ul {
 	z-index: 1000;
 }
 
+nav.frontpage-nav {
+	position: relative;
+}
+
+.link {
+	background: none;
+	border: none;
+	text-decoration: none;
+	color: black;
+	font-family: inherit;
+	font-size: inherit;
+	cursor: pointer;
+	padding: 14px;
+}
+
+.my-dropdown {
+	position: relative;
+}
+
+.my-dropdown-menu {
+	position: absolute;
+	height: 100vh;
+	height: 100lvh;
+	width: 100vw;
+	left: 0;
+	top: 100%;
+	background-color: white;
+	padding: .75rem;
+	border-radius: .25rem;
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.1);
+	opacity: 0;
+	pointer-events: none;
+	transform: translateX(20%);
+	transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;
+}
+
+.my-dropdown.active > .link + .my-dropdown-menu {
+	transform: translateX(-10%);
+	opacity: 0.9;
+	pointer-events: auto;
+}
+
 .light .dropdown-content {
 	background-color: rgba(240, 240, 240, 0.85);
-}
-
-
-/* Links inside the dropdown */
-.transparent-nav .dropdown-content a {
-	color: #ffffff;
-}
-
-.light .dropdown-content a {
-	color: #000000;
 }
 
 nav .dropdown-content a, .shopping-cart-icon {
 	padding: 12px 16px;
 	display: block;
-}
-
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {
-	color: rgb(149, 155, 173);
 }
 
 .centered-content {
@@ -524,7 +566,7 @@ td a{
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-	visibility: hidden; /* Allow javascript to place it before making it visible */
+	visibility: hidden;
 }
 
 

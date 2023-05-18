@@ -31,26 +31,33 @@
   <title>Torbjørn Ludvigsen</title>
 </head>
 <body>
+  <nav class="transparent-nav frontpage-nav">
+    <ul>
+      <li class="navbar-left">
+        <a href=".">Torbjørn Ludvigsen</a>
+      </li>
+      <li class="navbar-right">
+        <div class="my-dropdown" data-dropdown>
+          <button class="link" data-dropdown-button>Menu</button>
+          <div class="my-dropdown-menu">
+            <a href="./blog">
+              Blog
+            </a>
+            <a href="./donate">
+              Donate
+            </a>
+            <a href="./shop">
+              Shop
+            </a>
+            <a href="./#reachout">
+              Reach Out
+            </a>
+            <!--button class="link" data-dropdown-button>X</button-->
+          </div>
+        </div>
+      </li>
+  </nav>
   <div class="container">
-    <nav class="navbar navbar-expand-sm bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Torbjørn Ludvigsen</a>
-        <ul class="navbar-nav justify-content-right">
-          <!--li class="nav-item">
-            <button class="btn btn-primary" type="button">Reach Out</button>
-          </li-->
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Menu</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="./blog">Blog</a></li>
-              <li><a class="dropdown-item" href="./donate">Donate</a></li>
-              <li><a class="dropdown-item" href="./shop">Shop</a></li>
-              <li><a class="dropdown-item" href="#">Reach Out</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
     <div class="row">
       <div class="col-sm-6">
         <h3>Inventor of Hangprinter</h3>
@@ -200,7 +207,7 @@
         </picture>
       </div>
     </div>
-    <div class="row">
+    <div class="row" id="reachout">
       <form novalidate action="https://formsubmit.co/3871a9a653cecb14ffddb40f44ffcc42" method="POST">
         <div class="mb-3 mt-3">
           <label for="email" class="form-label">Email:</label>
