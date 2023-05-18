@@ -8,7 +8,7 @@
   <page cname="Home" url="../" />
   <page cname="Blog" url="../blog" />
   <page cname="Donate" url="../donate" />
-  <page cname="About" url="../about" />
+  <page cname="About" url="../story" />
   <page cname="Links" url="../links" />
 </var:allNavPages>
 
