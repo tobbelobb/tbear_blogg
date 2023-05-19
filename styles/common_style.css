@@ -104,31 +104,6 @@ nav ul li.navbar-right {
 	}
 }
 
-nav.transparent-nav {
-	position: fixed;
-	background-color: rgba(0, 0, 0, 0.5);
-	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
-}
-
-nav.transparent-nav ul {
-	margin: 0;
-	padding: 0;
-	display: flex;
-	flex-wrap: wrap;
-	min-height: 51px;
-}
-
-nav.transparent-nav ul li {
-	list-style: none;
-}
-
-nav.transparent-nav a {
-	color: #ffffff;
-	text-decoration: none;
-}
-
 .links-container {
 	margin:0px 32px 0px 32px;
 	display:flex;

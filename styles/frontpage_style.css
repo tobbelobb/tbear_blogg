@@ -20,14 +20,16 @@ nav.frontpage-nav a {
 
 .my-dropdown {
 	position: relative;
+	right: 0;
+	text-align: right;
 }
 
 .my-dropdown-menu {
-	position: fixed;
 	height: 110vh;
 	height: 110lvh;
 	width: 100vw;
 	left: 0;
+	text-align: left;
 	background-color: white;
 	padding: .75rem;
 	border-radius: .25rem;
@@ -46,4 +48,13 @@ nav.frontpage-nav a {
 
 nav ul li .my-dropdown a {
 	display: block;
+}
+
+.sticky {
+	position: sticky;
+	top: -51px;
+}
+
+nav.frontpage-nav {
+	min-height: 51px;
 }

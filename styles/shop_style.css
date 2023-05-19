@@ -394,4 +394,27 @@ nav ul li a:hover {
 	background-color: rgba(240, 240, 240, 0.85);
 }
 
+nav.transparent-nav {
+	position: fixed;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
 
+nav.transparent-nav ul {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	min-height: 51px;
+}
+
+nav.transparent-nav ul li {
+	list-style: none;
+}
+
+nav.transparent-nav a {
+	color: #ffffff;
+	text-decoration: none;
+}
