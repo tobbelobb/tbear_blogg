@@ -1,3 +1,9 @@
+/*
+html, body {
+	overflow-x: hidden;
+}
+*/
+
 nav.frontpage-nav {
 	background-color: rgba(0.0, 0, 0, 0.0);
 	position: relative;
@@ -27,7 +33,9 @@ nav.frontpage-nav a {
 .my-dropdown-menu {
 	height: 110vh;
 	height: 110lvh;
-	width: 100vw;
+	width: 0;
+  padding: 0;
+  margin: 0;
 	left: 0;
 	text-align: left;
 	background-color: white;
@@ -37,13 +45,14 @@ nav.frontpage-nav a {
 	opacity: 0;
 	pointer-events: none;
 	transform: translateX(100%);
-	transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;
+	transition: opacity 200ms ease-in-out, transform 200ms ease-in-out, width 200ms ease-in-out;
 }
 
 .my-dropdown.active > .link + .my-dropdown-menu {
 	transform: translateX(calc(100% - 200px));
 	opacity: 0.92;
 	pointer-events: auto;
+  width: 200px;
 }
 
 nav ul li .my-dropdown a {
