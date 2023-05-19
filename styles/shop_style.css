@@ -332,7 +332,8 @@ nav .dropdown-content a, .shopping-cart-icon {
 	display: block;
 }
 
-nav.light {
+
+nav.transparent-nav.light {
 	position: static;
 	background-color: rgba(240, 240, 240, 0.85);
 }

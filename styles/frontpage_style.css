@@ -1,8 +1,6 @@
-/*
-html, body {
+body {
 	overflow-x: hidden;
 }
-*/
 
 nav.frontpage-nav {
 	background-color: rgba(0.0, 0, 0, 0.0);
@@ -31,15 +29,11 @@ nav.frontpage-nav a {
 }
 
 .my-dropdown-menu {
-	height: 110vh;
-	height: 110lvh;
-	width: 0;
-  padding: 0;
-  margin: 0;
+	height: 100lvh;
+	height: 100vh;
+	min-width: 200px;
 	left: 0;
-	text-align: left;
 	background-color: white;
-	padding: .75rem;
 	border-radius: .25rem;
 	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.1);
 	opacity: 0;
@@ -48,15 +42,14 @@ nav.frontpage-nav a {
 	transition: opacity 200ms ease-in-out, transform 200ms ease-in-out, width 200ms ease-in-out;
 }
 
+nav ul li a {
+	justify-content: left;
+}
+
 .my-dropdown.active > .link + .my-dropdown-menu {
 	transform: translateX(calc(100% - 200px));
 	opacity: 0.92;
 	pointer-events: auto;
-  width: 200px;
-}
-
-nav ul li .my-dropdown a {
-	display: block;
 }
 
 .sticky {
