@@ -240,5 +240,31 @@
         <li><a href="https://doc.rust-lang.org/book/ch19-03-advanced-traits.html#fully-qualified-syntax-for-disambiguation-calling-methods-with-the-same-name">Fully Qualified Syntax Docs</a></li>
       </ul>
     </p>
+    <h3>Lifetimes</h3>
+    <p>
+      All this, the old languages are left in the dust, and we still have more Rust-uses of angle brackets to explain.
+    </p>
+    <p>
+      Seems like wherever one can put a generic type, one can also put a lifetime annotation.
+      When attached to a "child thing", Rust knows that the "parent thing" can never outlive this "child thing".
+    </p>
+    <p>
+      <code>struct S&lt;'a&gt; {s: &amp;'a str} </code>
+    </p>
+    <p>
+      The <code>'a</code> there is the lifetime. No object of type <code>S</code> can ever outlive their referenced member called <code>s</code>.
+    </p>
+    <p>
+      For lifetimes, can we think of the angle brackets as creating a family of struct types?
+      Is a struct with a different lifetime another type of struct?
+      I think Rust wants us to think this way.
+    </p>
+    <p>
+      But similar to struct-families, when you want to implement a trait on the struct, you need to specify the lifetime as if this is a family of implementations,
+      covering all possible lifetimes.
+    </p>
+    <p>
+      <code>impl&lt;'a&gt; A for S&lt;'a&gt; {} </code>
+    </p>
   </post>
 </posts>

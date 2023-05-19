@@ -5,11 +5,11 @@
             encoding="UTF-8"
             indent="yes" />
 <var:allNavPages>
-  <page cname="Home" url="../" />
-  <page cname="Blog" url="../blog" />
-  <page cname="Donate" url="../donate" />
-  <page cname="About" url="../story" />
-  <page cname="Links" url="../links" />
+  <page cname="Home" url="/" />
+  <page cname="Blog" url="/blog" />
+  <page cname="Donate" url="/donate" />
+  <page cname="About" url="/story" />
+  <page cname="Links" url="/links" />
 </var:allNavPages>
 
 <xsl:template match="/">
@@ -45,16 +45,17 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@tobbelobb" />
   <meta name="twitter:creator" content="@tobbelobb" />
-  <link rel="preload" href="../OpenSansRegular.woff" as="font" type="font/woff" crossorigin="anonymous"/>
+  <link rel="preload" href="/fonts/OpenSansRegular.woff" as="font" type="font/woff" crossorigin="anonymous"/>
 
-  <link rel="stylesheet" href="../style.css?v=2" type="text/css" />
+  <link rel="stylesheet" href="/common_style.css" type="text/css" />
+  <link rel="stylesheet" href="/xsl_style.css" type="text/css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous" />
 
-  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png" />
-  <link rel="manifest" href="../site.webmanifest" />
-  <link rel="mask-icon" href="../safari-pinned-tab.svg" color="#5bbad5" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
   <meta name="msapplication-TileColor" content="#2d89ef" />
 
   <title>

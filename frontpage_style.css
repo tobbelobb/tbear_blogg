@@ -1,0 +1,49 @@
+nav.frontpage-nav {
+	background-color: rgba(0.0, 0, 0, 0.0);
+	position: relative;
+}
+
+nav.frontpage-nav a {
+	color: black;
+}
+
+.link {
+	background: none;
+	border: none;
+	text-decoration: none;
+	color: black;
+	font-family: inherit;
+	font-size: inherit;
+	cursor: pointer;
+	padding: 14px;
+}
+
+.my-dropdown {
+	position: relative;
+}
+
+.my-dropdown-menu {
+	position: fixed;
+	height: 110vh;
+	height: 110lvh;
+	width: 100vw;
+	left: 0;
+	background-color: white;
+	padding: .75rem;
+	border-radius: .25rem;
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.1);
+	opacity: 0;
+	pointer-events: none;
+	transform: translateX(100%);
+	transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;
+}
+
+.my-dropdown.active > .link + .my-dropdown-menu {
+	transform: translateX(calc(100% - 200px));
+	opacity: 0.92;
+	pointer-events: auto;
+}
+
+nav ul li .my-dropdown a {
+	display: block;
+}

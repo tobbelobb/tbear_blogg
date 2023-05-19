@@ -1,0 +1,137 @@
+@font-face {
+	font-family: open-sans;
+	src: url(/fonts/OpenSansRegular.woff);
+	font-display: swap;
+}
+
+@font-face {
+	font-family: open-sans;
+	font-style: italic;
+	font-weight: normal;
+	src: url(/fonts/OpenSansItalic.woff);
+	font-display: swap;
+}
+
+@font-face {
+	font-family: open-sans;
+	font-style: normal;
+	font-weight: bold;
+	src: url(/fonts/OpenSansBold.woff);
+	font-display: swap;
+}
+
+@font-face {
+	font-family: open-sans;
+	font-style: italic;
+	font-weight: bold;
+	src: url("/fonts/OpenSansBoldItalic.woff");
+	font-display: swap;
+}
+
+*:not(code) {
+	font-family: open-sans;
+}
+
+h1, h2, h3, h4 {
+	font-weight:normal;
+}
+h1 {
+	font-size:22px;
+}
+h4 {
+ 	font-style:italic;
+}
+
+nav {
+	width: 100%;
+	padding: 0;
+	z-index: 1000;
+}
+
+nav ul {
+	display: flex;
+	list-style:none;
+	padding:0;
+	justify-content: center;
+}
+
+nav ul li a {
+	display: flex;
+	padding: 14px;
+	text-decoration: none;
+	font-size: 17px;
+}
+
+nav ul li a:hover {
+	color: rgb(149, 155, 173);
+}
+
+nav a.active {
+	color:rgb(244, 151, 108);
+}
+
+nav ul li.navbar-left {
+	position: absolute;
+	left: 0;
+}
+
+nav ul li.navbar-right {
+	position: absolute;
+	right: 0;
+}
+
+@media screen and (max-width: 991px) {
+	nav ul li.navbar-left {
+		flex-basis: 100%;
+		text-align: center;
+		position: static;
+	}
+
+	nav ul li {
+		order: 1;
+	}
+
+	nav ul li:last-child {
+		order: 0;
+	}
+
+	nav ul li a {
+		justify-content: center;
+	}
+
+	nav ul {
+		justify-content: center;
+	}
+}
+
+nav.transparent-nav {
+	position: fixed;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+nav.transparent-nav ul {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	min-height: 51px;
+}
+
+nav.transparent-nav ul li {
+	list-style: none;
+}
+
+nav.transparent-nav a {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+.links-container {
+	margin:0px 32px 0px 32px;
+	display:flex;
+	font-size:35px;
+	justify-content:space-between;
+}

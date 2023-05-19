@@ -23,8 +23,8 @@
       and pointed to the success blockchain projects have had in building decentralized permissionless databases.
     </p>
     <figure>
-      <a href="./bilder/polkadot-new-dot-logo.png">
-        <img src="./bilder/polkadot-new-dot-logo_small.png" alt="" width="500" height="500"/>
+      <a href="/blog/2022/bilder/polkadot-new-dot-logo.png">
+        <img src="/blog/2022/bilder/polkadot-new-dot-logo_small.png" alt="" width="500" height="500"/>
       </a>
       <figcaption>
         The Polkadot Project's logo.
@@ -57,8 +57,8 @@
       Now, after the Academy I want to try writing the post I was searching for.
     </p>
     <figure>
-      <a href="./bilder/dining_hall_wide_CCC.JPG">
-        <img src="./bilder/dining_hall_wide_CCC_small.JPG" alt="" width="500" height="281"/>
+      <a href="/blog/2022/bilder/dining_hall_wide_CCC.JPG">
+        <img src="/blog/2022/bilder/dining_hall_wide_CCC_small.JPG" alt="" width="500" height="281"/>
       </a>
       <figcaption>
         Our dining hall during the Academy.
@@ -118,8 +118,8 @@
       Become a <a href="https://en.wikipedia.org/wiki/MakerBot#Controversies">Makerbot</a>, in Reprap lingo.
     </p>
     <figure>
-      <a href="./bilder/gav.JPG">
-        <img src="./bilder/gav_small.JPG" alt="" width="500" height="281"/>
+      <a href="/blog/2022/bilder/gav.JPG">
+        <img src="/blog/2022/bilder/gav_small.JPG" alt="" width="500" height="281"/>
       </a>
       <figcaption>
         Gavin Wood lecturing at Polkadot Academy.
@@ -172,8 +172,8 @@
       shows the Polkadot network's topology like this:
     </p>
     <figure>
-      <a href="./bilder/Polkadot_star3.png">
-        <img src="./bilder/Polkadot_star3_small.png" alt="" width="500" height="306"/>
+      <a href="/blog/2022/bilder/Polkadot_star3.png">
+        <img src="/blog/2022/bilder/Polkadot_star3_small.png" alt="" width="500" height="306"/>
       </a>
       <figcaption>
         Clipped from Defi Teller's Youtube video which is embedded in Polkadot's Getting started page. (<a href="https://youtu.be/BQ60bTU1bPg?t=36">link</a>)
@@ -185,12 +185,12 @@
       It is the most centralized and most fragile of all network topologies.
     </p>
     <p>
-      I have written about star shaped networks before, in a blog post called <a href="../2021/#hangprinter_project_75">Hopes, Dreams, and Agendas</a>.
+      I have written about star shaped networks before, in a blog post called <a href="/blog/2021/#hangprinter_project_75">Hopes, Dreams, and Agendas</a>.
       Here's the most relevant part from that post:
     </p>
     <figure>
-      <a href="../2021/bilder/NetworkTopologies.png">
-        <img src="../2021/bilder/NetworkTopologies.png" alt="" width="503" height="249"/>
+      <a href="/blog/2021/bilder/NetworkTopologies.png">
+        <img src="/blog/2021/bilder/NetworkTopologies.png" alt="" width="503" height="249"/>
       </a>
       <figcaption>
         Network topologies.
@@ -261,8 +261,8 @@
       Parity stays relevant as long as Substrate stays hairy. Substrate has not trended towards less hairy.
     </p-->
     <figure>
-      <a href="./bilder/Ceremony_small.JPG">
-        <img src="./bilder/Ceremony_small.JPG" alt="" width="500" height="281"/>
+      <a href="/blog/2022/bilder/Ceremony_small.JPG">
+        <img src="/blog/2022/bilder/Ceremony_small.JPG" alt="" width="500" height="281"/>
       </a>
       <figcaption>
         Examination ceremony as seen from my dorm during the Academy.
@@ -288,8 +288,8 @@
       and the slow, expensive, recurring and unavoidable parachain slot auctions.
     </p>
     <figure>
-      <a href="./bilder/New_court.JPG">
-        <img src="./bilder/New_court_small.JPG" alt="" width="500" height="281"/>
+      <a href="/blog/2022/bilder/New_court.JPG">
+        <img src="/blog/2022/bilder/New_court_small.JPG" alt="" width="500" height="281"/>
       </a>
       <figcaption>
         The whole Academy was hosted at Corpus Christi College in Cambridge.
@@ -359,8 +359,8 @@
       Rust has had only one real compiler, which has been changing <a href="https://steveklabnik.com/writing/how-often-does-rust-change">frequently</a>, and it quite frankly has bugs.
     </p>
     <figure>
-      <a href="./bilder/why-rust-for-blockchain.png">
-        <img src="./bilder/why-rust-for-blockchain_small.png" alt="" width="500" height="281"/>
+      <a href="/blog/2022/bilder/why-rust-for-blockchain.png">
+        <img src="/blog/2022/bilder/why-rust-for-blockchain_small.png" alt="" width="500" height="281"/>
       </a>
       <figcaption>
         Parity publish Rust praise from time to time.
@@ -407,8 +407,8 @@
       A singular compiler accompanied by a disappointing static analysis tool is a red flag for me.
     </p>
     <figure>
-      <a href="./bilder/Typewriter.JPG">
-        <img src="./bilder/Typewriter_small.JPG" alt="" width="500" height="281"/>
+      <a href="/blog/2022/bilder/Typewriter.JPG">
+        <img src="/blog/2022/bilder/Typewriter_small.JPG" alt="" width="500" height="281"/>
       </a>
       <figcaption>
         Without multiple fast and correct static analysis tools I feel a bit like this.
@@ -472,8 +472,8 @@
       This was a red flag for me.
     </p>
     <figure>
-      <a href="./bilder/Proc_macro_beast.JPG">
-        <img src="./bilder/Proc_macro_beast_small.JPG" alt="" width="500" height="380"/>
+      <a href="/blog/2022/bilder/Proc_macro_beast.JPG">
+        <img src="/blog/2022/bilder/Proc_macro_beast_small.JPG" alt="" width="500" height="380"/>
       </a>
       <figcaption>
         Proc macros risk stealing time and scaring away new programmers.
@@ -548,8 +548,8 @@
       Large comments paired with low code readability was a red flag to me.
     </p>
     <figure>
-      <a href="./bilder/River_Cam2.JPG">
-        <img src="./bilder/River_Cam2_small.JPG" alt="" width="500" height="267"/>
+      <a href="/blog/2022/bilder/River_Cam2.JPG">
+        <img src="/blog/2022/bilder/River_Cam2_small.JPG" alt="" width="500" height="267"/>
       </a>
       <figcaption>
         A beautiful day for punting on the river Cam.
@@ -596,8 +596,8 @@
       It's like facing a T-Rex and herding cats at the same time.
     </p>
     <figure>
-      <a href="./bilder/Regress.png">
-        <img src="./bilder/Regress_small.png" alt="" width="500" height="377"/>
+      <a href="/blog/2022/bilder/Regress.png">
+        <img src="/blog/2022/bilder/Regress_small.png" alt="" width="500" height="377"/>
       </a>
       <figcaption>
         Playing card from Magic the Gathering.
@@ -682,8 +682,8 @@
       Ehem. Not so fast. Hangprinters kinematics is non-linear. Configuration is fiendishly hard.
     </p>
     <figure>
-      <a href="./bilder/Reuben-Margolin.jpg">
-        <img src="./bilder/Reuben-Margolin_small.jpg" alt="" width="500" height="277"/>
+      <a href="/blog/2022/bilder/Reuben-Margolin.jpg">
+        <img src="/blog/2022/bilder/Reuben-Margolin_small.jpg" alt="" width="500" height="277"/>
       </a>
       <figcaption>
         <a style="font-size:7px;" href="http://www.aesdes.org/2019/03/09/top-5-constraints-kinetic-art/">Image source</a>
@@ -702,8 +702,8 @@
       Xyz-coordinates, sometimes called Cartesian coordinates, are flat and straight, with straight angles between them.
     </p>
     <figure>
-      <a href="./bilder/straight_movements_angled_lines.JPG">
-        <img src="./bilder/straight_movements_angled_lines_small.JPG" alt="" width="500" height="474"/>
+      <a href="/blog/2022/bilder/straight_movements_angled_lines.JPG">
+        <img src="/blog/2022/bilder/straight_movements_angled_lines_small.JPG" alt="" width="500" height="474"/>
       </a>
       <figcaption>
         In a simple pattern like this, you can count the corners to know how many movement commands the Hangprinter got.
@@ -733,8 +733,8 @@
       Take a deep breath.
     </p>
     <figure>
-      <a href="./bilder/Irish_Wave_at_Park_West_in_Dublin.jpg">
-        <img src="./bilder/Irish_Wave_at_Park_West_in_Dublin_small.jpg" alt="" width="500" height="667"/>
+      <a href="/blog/2022/bilder/Irish_Wave_at_Park_West_in_Dublin.jpg">
+        <img src="/blog/2022/bilder/Irish_Wave_at_Park_West_in_Dublin_small.jpg" alt="" width="500" height="667"/>
       </a>
       <figcaption>
       </figcaption>
@@ -809,7 +809,7 @@
     </p>
     <figure>
       <video width="500" height="367" controls="controls">
-        <source src="./bilder/collect_first_eight.webm" type="video/webm"/>
+        <source src="/blog/2022/bilder/collect_first_eight.webm" type="video/webm"/>
          <!--source src="movie.ogg" type="video/ogg"-->
          Your browser does not support the video tag.
       </video>
@@ -828,7 +828,7 @@
     </p>
     <figure>
       <video width="500" height="367" controls="controls">
-        <source src="./bilder/collect_all.webm" type="video/webm"/>
+        <source src="/blog/2022/bilder/collect_all.webm" type="video/webm"/>
          <!--source src="movie.ogg" type="video/ogg"-->
          Your browser does not support the video tag.
       </video>
@@ -842,8 +842,8 @@
       and tell you exactly how good they are:
     </p>
     <figure>
-      <a href="./bilder/simulation_output.png">
-        <img src="./bilder/simulation_output_small.png" alt="" width="500" height="117"/>
+      <a href="/blog/2022/bilder/simulation_output.png">
+        <img src="/blog/2022/bilder/simulation_output_small.png" alt="" width="500" height="117"/>
       </a>
       <figcaption>
         In the 44 positions show in the animation above, positional error will be maximum ~2mm,
@@ -884,8 +884,8 @@
       Actually, simulation.py gives us an opportunity to check how accurate hp-mark is, and the general direction of its errors.
     </p>
     <figure>
-      <a href="./bilder/from_camera_view.png">
-        <img src="./bilder/from_camera_view_small.png" alt="" width="500" height="257"/>
+      <a href="/blog/2022/bilder/from_camera_view.png">
+        <img src="/blog/2022/bilder/from_camera_view_small.png" alt="" width="500" height="257"/>
       </a>
       <figcaption>
         Click the image for a closer view.
@@ -896,8 +896,8 @@
       </figcaption>
     </figure>
     <figure>
-      <a href="./bilder/orth_to_camera_view.png">
-        <img src="./bilder/orth_to_camera_view_small.png" alt="" width="500" height="311"/>
+      <a href="/blog/2022/bilder/orth_to_camera_view.png">
+        <img src="/blog/2022/bilder/orth_to_camera_view_small.png" alt="" width="500" height="311"/>
       </a>
       <figcaption>
         Click the image for a closer view.
@@ -1142,8 +1142,8 @@
       I think I need some of that.
     </p>
     <figure>
-      <a href="./bilder/wall_p1_shiny_1.JPG">
-        <img src="./bilder/wall_p1_shiny_1_small.JPG" alt="" width="500" height="298"/>
+      <a href="/blog/2022/bilder/wall_p1_shiny_1.JPG">
+        <img src="/blog/2022/bilder/wall_p1_shiny_1_small.JPG" alt="" width="500" height="298"/>
       </a>
       <figcaption>
       </figcaption>
@@ -1155,8 +1155,8 @@
       Imagine that every technical project is carving out a hole in a wall that separates a user or consumer from something desirable. <br />
     </p>
     <figure>
-      <a href="./bilder/wall_p1_shiny_2.JPG">
-        <img src="./bilder/wall_p1_shiny_2_small.JPG" alt="" width="500" height="322"/>
+      <a href="/blog/2022/bilder/wall_p1_shiny_2.JPG">
+        <img src="/blog/2022/bilder/wall_p1_shiny_2_small.JPG" alt="" width="500" height="322"/>
       </a>
       <figcaption>
       </figcaption>
@@ -1165,8 +1165,8 @@
       Obstacles can be categorized and layered. Different projects have different kinds and amounts of layers.
     </p>
     <figure>
-      <a href="./bilder/wall_p2_shiny_1.JPG">
-        <img src="./bilder/wall_p2_shiny_1_small.JPG" alt="" width="500" height="243"/>
+      <a href="/blog/2022/bilder/wall_p2_shiny_1.JPG">
+        <img src="/blog/2022/bilder/wall_p2_shiny_1_small.JPG" alt="" width="500" height="243"/>
       </a>
       <figcaption>
       </figcaption>
@@ -1181,8 +1181,8 @@
       To maximize the field of view for the consumer through the hole, we should shape it like this, ideally:
     </p>
     <figure>
-      <a href="./bilder/wall_p3_shiny_1.JPG">
-        <img src="./bilder/wall_p3_shiny_1_small.JPG" alt="" width="500" height="323"/>
+      <a href="/blog/2022/bilder/wall_p3_shiny_1.JPG">
+        <img src="/blog/2022/bilder/wall_p3_shiny_1_small.JPG" alt="" width="500" height="323"/>
       </a>
       <figcaption>
       </figcaption>
@@ -1197,8 +1197,8 @@
       The process is often designed to secure sustainable funding throughout the development process, like this:
     </p>
     <figure>
-      <a href="./bilder/wall_p4_shiny_1.JPG">
-        <img src="./bilder/wall_p4_shiny_1_small.JPG" alt="" width="500" height="519"/>
+      <a href="/blog/2022/bilder/wall_p4_shiny_1.JPG">
+        <img src="/blog/2022/bilder/wall_p4_shiny_1_small.JPG" alt="" width="500" height="519"/>
       </a>
       <figcaption>
       </figcaption>
@@ -1218,8 +1218,8 @@
       A heavily marketed product looks good from afar, like this:
     </p>
     <figure>
-      <a href="./bilder/wall_p5_shiny_1.JPG">
-        <img src="./bilder/wall_p5_shiny_1_small.JPG" alt="" width="500" height="514"/>
+      <a href="/blog/2022/bilder/wall_p5_shiny_1.JPG">
+        <img src="/blog/2022/bilder/wall_p5_shiny_1_small.JPG" alt="" width="500" height="514"/>
       </a>
       <figcaption>
       </figcaption>
@@ -1228,8 +1228,8 @@
       A more niched or indy-style product is invisible from afar, but looks good if you come up close, like this:
     </p>
     <figure>
-      <a href="./bilder/wall_p5_shiny_2.JPG">
-        <img src="./bilder/wall_p5_shiny_2_small.JPG" alt="" width="500" height="508"/>
+      <a href="/blog/2022/bilder/wall_p5_shiny_2.JPG">
+        <img src="/blog/2022/bilder/wall_p5_shiny_2_small.JPG" alt="" width="500" height="508"/>
       </a>
       <figcaption>
       </figcaption>
@@ -1238,8 +1238,8 @@
       I think Hangprinter has become a product with goodness that is almost completely unapproachable, like this:
     </p>
     <figure>
-      <a href="./bilder/wall_p6_shiny_1.JPG">
-        <img src="./bilder/wall_p6_shiny_1_small.JPG" alt="" width="500" height="201"/>
+      <a href="/blog/2022/bilder/wall_p6_shiny_1.JPG">
+        <img src="/blog/2022/bilder/wall_p6_shiny_1_small.JPG" alt="" width="500" height="201"/>
       </a>
       <figcaption>
       </figcaption>
@@ -1248,8 +1248,8 @@
       ... Or even this:
     </p>
     <figure>
-      <a href="./bilder/wall_p6_shiny_2.JPG">
-        <img src="./bilder/wall_p6_shiny_2_small.JPG" alt="" width="500" height="316"/>
+      <a href="/blog/2022/bilder/wall_p6_shiny_2.JPG">
+        <img src="/blog/2022/bilder/wall_p6_shiny_2_small.JPG" alt="" width="500" height="316"/>
       </a>
       <figcaption>
       </figcaption>

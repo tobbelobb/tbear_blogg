@@ -8,14 +8,14 @@ form.addEventListener('submit', e => {
 })
 
 document.addEventListener('click', e => {
-  const isDropdownButton = e.target.matches("[data-dropdown-button]");
+  const isDropdownToggle = e.target.matches("[data-dropdown-toggle]");
 
-  if (!isDropdownButton && e.target.closest("[data-dropdown]") != null) {
+  if (!isDropdownToggle && e.target.closest("[data-dropdown]") != null) {
     return;
   }
 
   let currentDropdown;
-  if (isDropdownButton) {
+  if (isDropdownToggle) {
     currentDropdown = e.target.closest("[data-dropdown]");
     currentDropdown.classList.toggle('active');
   }
