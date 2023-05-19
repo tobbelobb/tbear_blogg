@@ -1340,7 +1340,7 @@ $$
 <post id="hangprinter_project_53" heading="Consequences of Miscalibrating Anchor Positions" date="28-1-2018">
 <p>
   I made a script recently, to get learn how a Hangprinter axis with bad anchor positions behaves.
-  The script itself is <a href="https://torbjornludvigsen.com/scripts/calibration_errors.py">here</a>.
+  The script itself is <a href="/blog/2018/scripts/calibration_errors.py">here</a>.
 </p>
   <h4>The Quick Take-Away:</h4>
 <p>

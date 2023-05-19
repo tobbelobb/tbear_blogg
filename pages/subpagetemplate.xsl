@@ -7,9 +7,9 @@
 <var:allNavPages>
   <page cname="Home" url="/" />
   <page cname="Blog" url="/blog" />
-  <page cname="Donate" url="/donate" />
-  <page cname="About" url="/story" />
-  <page cname="Links" url="/links" />
+  <page cname="Donate" url="/pages/donate" />
+  <page cname="About" url="/pages/story" />
+  <page cname="Links" url="/pages/links" />
 </var:allNavPages>
 
 <xsl:template match="/">
@@ -31,7 +31,7 @@
 
   <!-- Link back to itself in every file... -->
   <xsl:text disable-output-escaping="yes">
-    &lt;meta property="og:url" content="https://torbjornludvigsen.com/</xsl:text>
+    &lt;meta property="og:url" content="https://torbjornludvigsen.com/pages/</xsl:text>
   <xsl:value-of select="/subpage/@name" />
   <xsl:text disable-output-escaping="yes">"&gt;</xsl:text>
 
@@ -41,21 +41,21 @@
   <xsl:value-of select="/subpage/@description" />
   <xsl:text disable-output-escaping="yes">"&gt;</xsl:text>
 
-  <meta property="og:image" content="https://torbjornludvigsen.com/torbjornludvigsen.JPG" />
+  <meta property="og:image" content="https://torbjornludvigsen.com/media/torbjornludvigsen.JPG" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@tobbelobb" />
   <meta name="twitter:creator" content="@tobbelobb" />
   <link rel="preload" href="/fonts/OpenSansRegular.woff" as="font" type="font/woff" crossorigin="anonymous"/>
 
-  <link rel="stylesheet" href="/common_style.css" type="text/css" />
-  <link rel="stylesheet" href="/xsl_style.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/common_style.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/xsl_style.css" type="text/css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous" />
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/media/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/media/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/media/favicon-16x16.png" />
   <link rel="manifest" href="/site.webmanifest" />
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+  <link rel="mask-icon" href="/media/safari-pinned-tab.svg" color="#5bbad5" />
   <meta name="msapplication-TileColor" content="#2d89ef" />
 
   <title>
