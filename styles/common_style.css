@@ -28,22 +28,35 @@
 	font-display: swap;
 }
 
-*:not(code) {
+body:not(code) {
 	font-family: open-sans;
+}
+
+html {
+  color-scheme: light dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
 }
 
 h1, h2, h3, h4 {
 	font-weight:normal;
-}
-h1 {
-	font-size:22px;
 }
 h4 {
  	font-style:italic;
 }
 
 nav {
-	width: 100%;
 	padding: 0;
 	z-index: 1000;
 }

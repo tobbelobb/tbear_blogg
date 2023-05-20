@@ -1,9 +1,30 @@
 html {
-  scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
 
 body {
 	overflow-x: hidden;
+	line-height: 1.5;
+	font-size: 1.125rem;
+	width: min(65ch, 100% - 4rem);
+	margin-inline: auto;
+}
+
+main {
+	padding: 14px;
+}
+
+nav ul li a {
+	font-size: 1.125rem;
+}
+
+img,
+svg,
+video {
+	max-width: 100%;
+	display: block;
+	width: auto;
+	height: auto;
 }
 
 nav.frontpage-nav {
@@ -35,15 +56,20 @@ nav.frontpage-nav a {
 .my-dropdown-menu {
 	height: 100lvh;
 	height: 100vh;
-	min-width: 200px;
-	left: 0;
+	width: 0;
+	padding: 0;
+	margin: 0;
+	right: 0;
 	background-color: white;
 	border-radius: .25rem;
-	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.1);
 	opacity: 0;
+	visibility: hidden;
 	pointer-events: none;
 	transform: translateX(100%);
-	transition: opacity 200ms ease-in-out, transform 200ms ease-in-out, width 200ms ease-in-out;
+	transition: opacity 200ms ease-in-out,
+	            transform 200ms ease-in-out,
+	            width 200ms cubic-bezier(1, 0.01, 1, 0.01),
+	            visibility 200ms ease-in-out;
 }
 
 nav ul li a {
@@ -51,9 +77,14 @@ nav ul li a {
 }
 
 .my-dropdown.active > .link + .my-dropdown-menu {
-	transform: translateX(calc(100% - 200px));
-	opacity: 0.92;
+	width: 200px;
+	transform: translateX(50%);
+	transition: opacity 200ms ease-in-out,
+	            transform 200ms ease-in-out,
+	            visibility 200ms ease-in-out;
+	opacity: 0.95;
 	pointer-events: auto;
+	visibility: visible;
 }
 
 .sticky {
@@ -66,11 +97,11 @@ nav.frontpage-nav {
 }
 
 form {
-  width: 100%;
-  max-width: 100%;
-  padding-right: 12px;
-  padding-left: 12px;
-  margin-top: 0;
+	width: 100%;
+	max-width: 100%;
+	padding-right: 12px;
+	padding-left: 12px;
+	margin-top: 0;
 }
 
 .form-label {
@@ -79,35 +110,6 @@ form {
 
 label {
 	display: inline-block;
-}
-
-.mb-3 {
-  margin-bottom: 1rem;
-}
-
-.mt-3 {
-  margin-top: 1rem;
-}
-
-.mt-5 {
-	margin-top: 3rem;
-}
-
-.row {
-	display: flex;
-	flex-wrap: wrap;
-	margin-top: -1.5rem;
-	margin-right: -0.75rem;
-	margin-left: -0.75rem;
-}
-
-.row > * {
-	flex-shrink: 0;
-	width: 100%;
-	max-width: 100%;
-	padding-right: .75rem;
-	padding-left: .75rem;
-	margin-top: 0.25rem;
 }
 
 .form-control {
@@ -154,22 +156,22 @@ textarea.form-control {
 }
 
 .btn-primary:hover {
-    color: #fff;
-    background-color: #0b5ed7;
-    border-color: #0a58ca;
+	  color: #fff;
+	  background-color: #0b5ed7;
+	  border-color: #0a58ca;
 }
 
 .btn-primary:active {
-    color: #fff;
-    background-color: #0a58ca;
-    border-color: #0a53be;
+	  color: #fff;
+	  background-color: #0a58ca;
+	  border-color: #0a53be;
 }
 
 .btn-primary:focus {
-    color: #fff;
-    background-color: #0b5ed7;
-    border-color: #0a58ca;
-    box-shadow: 0 0 0 .25rem rgba(49,132,253,.5);
+	  color: #fff;
+	  background-color: #0b5ed7;
+	  border-color: #0a58ca;
+	  box-shadow: 0 0 0 .25rem rgba(49,132,253,.5);
 }
 
 [type="button"], [type="reset"], [type="submit"], button {
@@ -181,5 +183,5 @@ button, select {
 }
 
 button {
-  margin: 0;
+	margin: 0;
 }
