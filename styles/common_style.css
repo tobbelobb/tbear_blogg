@@ -57,6 +57,7 @@ h4 {
 }
 
 nav {
+	width: 100%;
 	padding: 0;
 	z-index: 1000;
 }
@@ -94,25 +95,25 @@ nav ul li.navbar-right {
 }
 
 @media screen and (max-width: 991px) {
-	nav ul li.navbar-left {
+	nav.transparent-nav ul li.navbar-left {
 		flex-basis: 100%;
 		text-align: center;
 		position: static;
 	}
 
-	nav ul li {
+	nav.transparent-nav ul li {
 		order: 1;
 	}
 
-	nav ul li:last-child {
+	nav.transparent-nav ul li:last-child {
 		order: 0;
 	}
 
-	nav ul li a {
+	nav.transparent-nav ul li a {
 		justify-content: center;
 	}
 
-	nav ul {
+	nav.transparent-nav ul {
 		justify-content: center;
 	}
 }
