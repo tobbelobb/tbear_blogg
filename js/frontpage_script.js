@@ -27,3 +27,5 @@ document.addEventListener('click', e => {
     dropdown.classList.remove('active');
   });
 })
+
+//  console.log(`Dark mode is ${darkModeOn ? '🌒 on' : '☀️ off'}.`);

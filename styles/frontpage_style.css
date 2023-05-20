@@ -15,9 +15,13 @@ main {
 	margin: auto;
 }
 
-h2, h3, p, ul, form {
+h2, h3, p, form {
 	padding-left: 10px;
 	padding-right: 10px;
+}
+
+ul {
+  padding-left: 40px;
 }
 
 body, nav ul li a {
@@ -112,15 +116,13 @@ nav.frontpage-nav {
 form {
 	width: 100%;
 	max-width: 100%;
-	margin-top: 10px;
-}
-
-.form-label {
-	margin-bottom: .5rem;
+  margin-top: 3px;
 }
 
 label {
 	display: inline-block;
+	margin-top: 7px;
+  margin-bottom: 3px;
 }
 
 .form-control {
@@ -198,12 +200,18 @@ button:not(.link) {
 }
 
 @media (prefers-color-scheme: dark) {
+
+  body {
+    background-color: rgb(33,33,33);
+    color: rgb(210,210,210);
+  }
+
 	nav.frontpage-nav a, .link {
-	  color: white;
+	  color: rgb(210,210,210);
 	}
 
 	.my-dropdown-menu {
-		background-color: rgb(18,18,18);
+		background-color: rgb(33,33,33);
 	}
 
 	#github {
