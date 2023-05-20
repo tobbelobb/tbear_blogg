@@ -32,8 +32,8 @@ video {
 	display: block;
 	width: auto;
 	height: auto;
-	padding-top: min(8px, 0.25vw);
-	padding-bottom: min(8px, 0.25vw);
+	padding-top: min(16px, 0.5vw);
+	padding-bottom: min(16px, 0.5vw);
 }
 
 nav.frontpage-nav {
@@ -87,7 +87,7 @@ nav ul li a {
 
 .my-dropdown.active > .link + .my-dropdown-menu {
 	width: 200px;
-	transform: translateX(50%);
+	transform: translateX(calc(100% - 12ch));
 	transition: opacity 200ms ease-in-out,
 	            transform 200ms ease-in-out,
 	            visibility 200ms ease-in-out;
@@ -193,7 +193,7 @@ button, select {
 	text-transform: none;
 }
 
-button {
+button:not(.link) {
 	margin: 9px 0 0 0;
 }
 
