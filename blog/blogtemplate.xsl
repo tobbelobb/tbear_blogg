@@ -59,6 +59,7 @@
     <li><a href="/shop">Shop</a></li>
   </ul>
 </nav>
+<script src="/js/darkmode.js"></script>
 <div id="SiteName">
   Reprap Blog <xsl:value-of select="posts/@year" />
 </div>

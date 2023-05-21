@@ -42,7 +42,7 @@ h4 {
 }
 @media (prefers-color-scheme: dark) {
   #MainContent {
-    color:var(--clr-text-darkmode);
+    color:var(--clr-blog-darkmode);
   }
 }
 

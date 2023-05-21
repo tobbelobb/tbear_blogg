@@ -81,6 +81,7 @@
       </xsl:for-each>
     </ul>
   </nav>
+  <script src="/js/darkmode.js"></script>
   <xsl:copy-of select="/subpage/*" />
   <script data-goatcounter="https://torbjornludvigsen.goatcounter.com/count"
     async="true" src="//gc.zgo.at/count.js"></script>

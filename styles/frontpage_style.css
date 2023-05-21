@@ -1,13 +1,7 @@
-html {
-	scroll-behavior: smooth;
-}
-
 body {
 	overflow-x: hidden;
 	width: min(65ch, 100%);
 	margin-inline: auto;
-  color: var(--eerie-black);
-  /*background-color: var(--papaya-whip);*/
 }
 
 main {
@@ -22,7 +16,7 @@ h2, h3, p, form {
 }
 
 ul {
-  padding-left: 40px;
+	padding-left: 40px;
 }
 
 body, nav ul li a {
@@ -42,19 +36,13 @@ video {
 }
 
 nav.frontpage-nav {
-	background-color:  var(--clr-nav-front);
 	position: relative;
-}
-
-nav.frontpage-nav a {
-	color: var(--clr-text);
 }
 
 .link {
 	background: none;
 	border: none;
 	text-decoration: none;
-	color: var(--clr-text);
 	font-family: inherit;
 	font-size: inherit;
 	cursor: pointer;
@@ -74,8 +62,6 @@ nav.frontpage-nav a {
 	padding: 0;
 	margin: 0;
 	right: 0;
-	background-color: var(--clr-light);
-	border-radius: .25rem;
 	opacity: 0;
 	visibility: hidden;
 	pointer-events: none;
@@ -103,7 +89,8 @@ nav ul li a {
 
 .sticky {
 	position: sticky;
-	top: -51px;
+	top: -56px;
+	z-index: 1000;
 }
 
 nav.frontpage-nav {
@@ -117,13 +104,13 @@ nav.frontpage-nav {
 form {
 	width: 100%;
 	max-width: 100%;
-  margin-top: 3px;
+	margin-top: 3px;
 }
 
 label {
 	display: inline-block;
 	margin-top: 7px;
-  margin-bottom: 3px;
+	margin-bottom: 3px;
 }
 
 .form-control {
@@ -200,22 +187,35 @@ button:not(.link) {
 	margin: 9px 0 0 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: var(--clr-dark);
-    color: var(--clr-text-darkmode);
-  }
-
-	nav.frontpage-nav a, .link {
-	  color: var(--clr-text-darkmode);
-	}
-
-	.my-dropdown-menu {
-		background-color: var(--clr-dark);
-	}
-
-	#github {
-	  filter: invert(1);
-	}
+/* Colors */
+/* First load default light colors */
+nav.frontpage-nav {
+	background-color:  var(--clr-nav-front);
 }
 
+nav.frontpage-nav a {
+	color: var(--clr-text);
+}
+
+.my-dropdown-menu {
+	background-color: var(--clr-light);
+}
+
+body.dark nav.frontpage-nav a, body.dark nav.frontpage-nav .link {
+	color: var(--clr-text-darkmode);
+}
+body.dark .my-dropdown-menu {
+	background-color: var(--clr-dark);
+}
+body.dark #github {
+	filter: invert(1);
+}
+body.dark nav.frontpage-nav a, body.dark .link {
+	color: var(--clr-text-darkmode);
+}
+body.dark .my-dropdown-menu {
+	background-color: var(--clr-dark);
+}
+body.dark #github {
+	filter: invert(1);
+}
