@@ -38,13 +38,13 @@
           <div class="my-dropdown" data-dropdown>
             <button class="link" data-dropdown-toggle>Menu</button>
             <div class="my-dropdown-menu">
-              <a href="/blog">
+              <a href="/blog" data-dropdown-toggle>
                 Blog
               </a>
-              <a href="/pages/donate">
+              <a href="/pages/donate" data-dropdown-toggle>
                 Donate
               </a>
-              <a href="/shop">
+              <a href="/shop" data-dropdown-toggle>
                 Shop
               </a>
               <a href="/#reachout" data-dropdown-toggle>
@@ -77,11 +77,11 @@
       What I Do
     </h3>
     <ul>
-      <li>Sell 3d prints made with his own Hangprinter, and hopefully soon Hangprinter kits.</li>
+      <li>Sell 3d prints made with Hangprinter, and hopefully soon Hangprinter kits.</li>
       <li>Maintain an open source community around Hangprinter.</li>
       <li>Some consulting relevant to the community.</li>
     </ul>
-    <video autoplay muted>
+    <video autoplay muted id="video1" onClick="playPause()">
       <source src="media/Coral_close2.mp4" type="video/mp4" />
     </video>
     <!--video autoplay muted>

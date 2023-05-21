@@ -28,4 +28,15 @@ document.addEventListener('click', e => {
   });
 })
 
+var myVideo = document.getElementById("video1");
+function playPause() {
+  if (myVideo.paused)
+    myVideo.play();
+  else
+    myVideo.pause();
+}
+
+
+
+
 //  console.log(`Dark mode is ${darkModeOn ? '🌒 on' : '☀️ off'}.`);
