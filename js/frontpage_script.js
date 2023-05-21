@@ -35,8 +35,3 @@ function playPause() {
   else
     myVideo.pause();
 }
-
-
-
-
-//  console.log(`Dark mode is ${darkModeOn ? '🌒 on' : '☀️ off'}.`);

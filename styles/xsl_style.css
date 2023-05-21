@@ -13,7 +13,7 @@ h4 {
 	margin-bottom:2px;
 }
 .date {
-	color:rgb(160,160,160);
+	color: var(--clr-weakertext);
 	line-height: 100%;
 	margin-bottom: 10px;
 }
@@ -38,32 +38,14 @@ h4 {
 	z-index:6;
 	font-size:15px;
 	line-height:150%;
-	color:#30424c;
+	color:var(--clr-weaktext);
 }
-#FrontPageMain {
-	position:relative;
-	width:600px;
-	margin:0px auto;
-	max-width:93%;
+@media (prefers-color-scheme: dark) {
+  #MainContent {
+    color:var(--clr-text-darkmode);
+  }
 }
-#FrontPageMain h1 {
-	text-align:center;
-	font-size:29px;
-}
-#FrontPageMain h2 {
-	text-align:center;
-	font-size:20px;
-	margin:10px auto;
-	color:#777d8f;
-}
-#FrontPageMain h3 {
-	text-align:center;
-	font-weight:normal;
-	font-size:15px;
-	max-width:60%;
-	margin-left:auto;
-	margin-right:auto;
-}
+
 @media screen and (max-height: 760px) {
 	#MainContent.notop {
 		top:0px;

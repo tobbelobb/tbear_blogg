@@ -5,8 +5,8 @@ html {
 
 body {
 	margin:0;
-	background-color:white;
-	color:rgb(48,66,76);
+	background-color: var(--clr-light);
+	color: var(--clr-weaktext);
 	overflow-x: hidden;
 }
 
@@ -77,8 +77,8 @@ img, svg {
 .text-with-background {
 	display: inline-block;
 	padding: 0.25em 0.5em;
-	background-color: rgba(0, 0, 0, 0.5);
-	color: #fff;
+	background-color: var(--clr-nav-shop-bg);
+	color: var(--clr-nav-shop);
 }
 
 .dotted-line {
@@ -95,12 +95,12 @@ img, svg {
 
 .positioned-content {
 	position: absolute;
-	color: #ffffff;
+	color: var(--clr-nav-shop);
 }
 
 .centered-content {
 	text-align: center;
-	color: #ffffff;
+	color: var(--clr-nav-shop);
 }
 
 @media screen and (min-width: 620px) {
@@ -152,7 +152,7 @@ img, svg {
 
 .text-below-line {
 	position: absolute;
-	color: #fff;
+	color: var(--clr-nav-shop);
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	white-space: normal;
@@ -192,11 +192,11 @@ img, svg {
 
 /* Change the color and weight of links on hover */
 a .text-below-line:hover {
-	color: rgb(149, 155, 173);
+	color: var(--clr-weakertext);
 }
 
 .text-below-line-hover {
-	color: rgb(149, 155, 173);
+	color: var(--clr-weakertext);
 }
 
 .scroll-arrow {
@@ -205,7 +205,7 @@ a .text-below-line:hover {
 	transform: translateX(-50%);
 	font-size: 2em;
 	text-decoration: none;
-	color: rgba(255, 255, 255, 0.7);
+	color: var(--clr-scroll-arrow);
 	mix-blend-mode: difference;
 	cursor: pointer;
 	animation: arrow-float 2s infinite;
@@ -213,7 +213,7 @@ a .text-below-line:hover {
 }
 
 .scroll-arrow:hover {
-	color: rgba(255, 255, 255, 1); /* Full opacity on hover */
+	color: var(--clr-scroll-arrow-hover);
 }
 
 .scroll-down-arrow {
@@ -335,17 +335,16 @@ nav .dropdown-content a, .shopping-cart-icon {
 
 nav.transparent-nav.light {
 	position: static;
-	background-color: rgba(240, 240, 240, 0.85);
+	background-color: var(--clr-nav-productpage-bg);
 }
 
 nav.light ul li a {
-	color: #000000;
-	fill: black;
-}
+	color: var(--clr-text);
+	fill: var(--clr-text)}
 
 nav.light ul li a:hover {
-	color: rgb(119, 125, 143);
-	fill: rgb(119, 125, 143);
+	color: var(--clr-weakertext);
+	fill: var(--clr-weakertext);
 }
 
 nav.light ul li.navbar-left {
@@ -371,11 +370,11 @@ nav.light ul {
 }
 
 nav ul li a {
-	fill: white;
+	fill: var(--clr-nav-shop);
 }
 
 nav ul li a:hover {
-	fill: rgb(149, 155, 173);
+	fill: var(--clr-weakertext);
 }
 
 .dropdown {
@@ -385,19 +384,19 @@ nav ul li a:hover {
 
 .dropdown-content {
 	display: none;
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: var(--clr-nav-shop-bg);
 	position: absolute;
 	min-width: 160px;
 	z-index: 1000;
 }
 
 .light .dropdown-content {
-	background-color: rgba(240, 240, 240, 0.85);
+	background-color: var(--clr-nav-productpage-bg);
 }
 
 nav.transparent-nav {
 	position: fixed;
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: var(--clr-nav-shop-bg);
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
@@ -416,6 +415,6 @@ nav.transparent-nav ul li {
 }
 
 nav.transparent-nav a {
-	color: #ffffff;
+	color: var(--clr-nav-shop);
 	text-decoration: none;
 }

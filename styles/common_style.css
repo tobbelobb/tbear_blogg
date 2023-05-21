@@ -1,3 +1,60 @@
+:root {
+  /* Themes */
+  /* Based on front page image */
+  --eerie-black: rgba(24, 24, 24, 1);
+  --raw-umber: rgba(163, 98, 47, 1);
+  --fawn: rgba(231, 166, 112, 1);
+  --dodger-blue: rgba(38, 146, 254, 1);
+  --atomic-tangerine: rgba(250, 156, 125, 1);
+  --papaya-whip: rgba(251, 235, 202, 1);
+  --beige: rgba(251, 249, 226, 1);
+  --beige-light: rgba(254, 253, 232, 1);
+  --gradient-top: linear-gradient(0deg, #181818ff, #A3622Fff, #2692FEff, #FA9C7Dff, #FBEBCAff);
+  --gradient-right: linear-gradient(90deg, #181818ff, #A3622Fff, #2692FEff, #FA9C7Dff, #FBEBCAff);
+  --gradient-bottom: linear-gradient(180deg, #181818ff, #A3622Fff, #2692FEff, #FA9C7Dff, #FBEBCAff);
+  --gradient-left: linear-gradient(270deg, #181818ff, #A3622Fff, #2692FEff, #FA9C7Dff, #FBEBCAff);
+  --gradient-top-right: linear-gradient(45deg, #181818ff, #A3622Fff, #2692FEff, #FA9C7Dff, #FBEBCAff);
+  --gradient-bottom-right: linear-gradient(135deg, #181818ff, #A3622Fff, #2692FEff, #FA9C7Dff, #FBEBCAff);
+  --gradient-top-left: linear-gradient(225deg, #181818ff, #A3622Fff, #2692FEff, #FA9C7Dff, #FBEBCAff);
+  --gradient-bottom-left: linear-gradient(315deg, #181818ff, #A3622Fff, #2692FEff, #FA9C7Dff, #FBEBCAff);
+  --gradient-radial: radial-gradient(#181818ff, #A3622Fff, #2692FEff, #FA9C7Dff, #FBEBCAff);
+
+  /* Lightmode (default) */
+  --clr-light: rgb(255, 255, 255);
+  --clr-text: rgb(0, 0, 0);
+  --clr-lessweaktext: rgb(56, 41, 26);
+  --clr-weaktext: rgb(48, 66, 76);
+  --clr-weakertext: rgb(160,160,160);
+  --clr-transparent: rgba(0.0, 0.0 , 0.0, 0.0);
+
+  /* Darkmode */
+  --clr-dark: rgb(33,33,33);
+  --clr-text-darkmode: var(--beige-light);
+  /*--clr-text-darkmode: rgb(210,210,210);*/
+
+
+
+  /* Button theme from Bootstrap */
+  --clr-button-primary: rgb(13,110,253);
+  --clr-button-alt-1: #0b5ed7;
+  --clr-button-alt-2: #0a58ca;
+  --clr-button-alt-3: #0a53be;
+  --clr-button-shadow: rgba(49,132,253,.5);
+
+  /* Old xsl theme */
+  --clr-theme-1: rgb(244, 151, 108);
+
+  --clr-nav-front: var(--clr-transparent);
+  --clr-nav-productpage-bg: rgba(240, 240, 240, 0.85);
+
+  --clr-nav-shop-bg: rgba(0, 0, 0, 0.5);
+  --clr-nav-shop: rgb(255, 255, 255);
+
+  --clr-scroll-arrow: rgba(255, 255, 255, 0.7);
+	--clr-scroll-arrow-hover: rgba(255, 255, 255, 1);
+
+}
+
 @font-face {
 	font-family: open-sans;
 	src: url(/fonts/OpenSansRegular.woff);
@@ -77,11 +134,11 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-	color: rgb(149, 155, 173);
+	color: var(--clr-weakertext);
 }
 
 nav a.active {
-	color:rgb(244, 151, 108);
+	color:var(--clr-theme-1);
 }
 
 nav ul li.navbar-left {
