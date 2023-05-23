@@ -60,8 +60,10 @@ body.light {
 .link {
 	color: var(--clr-text);
 }
-.link:hover {
-	color: var(--clr-weakertext);
+@media (hover: hover) {
+	.link:hover {
+		color: var(--clr-weakertext);
+	}
 }
 
 body.dark {
@@ -155,8 +157,10 @@ nav ul li a {
 	font-size: 17px;
 }
 
-nav ul li a:hover {
-	color: var(--clr-weakertext);
+@media (hover: hover) {
+	nav ul li a:hover {
+		color: var(--clr-weakertext);
+	}
 }
 
 nav a.active {

@@ -156,10 +156,12 @@ textarea.form-control {
 	border-color: var(--clr-button-primary);
 }
 
-.btn-primary:hover {
-	  color: var(--clr-light);
-	  background-color: var(--clr-button-alt-1);
-	  border-color:  var(--clr-button-alt-2);
+@media (hover: hover) {
+	.btn-primary:hover {
+		  color: var(--clr-light);
+		  background-color: var(--clr-button-alt-1);
+		  border-color:  var(--clr-button-alt-2);
+	}
 }
 
 .btn-primary:active {

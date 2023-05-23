@@ -38,12 +38,13 @@ h4 {
 	z-index:6;
 	font-size:15px;
 	line-height:150%;
+}
+
+body.light #MainContent {
 	color:var(--clr-weaktext);
 }
-@media (prefers-color-scheme: dark) {
-  #MainContent {
-    color:var(--clr-blog-darkmode);
-  }
+body.dark #MainContent {
+	color:var(--clr-blog-darkmode);
 }
 
 @media screen and (max-height: 760px) {
