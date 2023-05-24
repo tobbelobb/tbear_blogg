@@ -7,7 +7,6 @@ body {
 main {
 	padding-left: calc(calc(min(65ch, 100% - 4rem) - 400px)/2);
 	padding-right: calc(calc(min(65ch, 100% - 4rem) - 400px)/2);
-	padding-bottom: 60px;
 	margin: auto;
 }
 
@@ -32,10 +31,6 @@ ul {
 	padding-left: 40px;
 }
 
-body, nav ul li a {
-	line-height: 1.5;
-	font-size: clamp(0.9rem, 2vw + 0.5rem, 1.2rem);
-}
 
 img,
 svg,
@@ -46,74 +41,6 @@ video {
 	height: auto;
 	padding-top: min(16px, 0.5vw);
 	padding-bottom: min(16px, 0.5vw);
-}
-
-nav.frontpage-nav {
-	position: relative;
-}
-
-.link {
-	background: none;
-	border: none;
-	text-decoration: none;
-	font-family: inherit;
-	font-size: inherit;
-	cursor: pointer;
-	padding: 14px;
-}
-
-.my-dropdown {
-	position: relative;
-	right: 0;
-	text-align: right;
-}
-
-.my-dropdown-menu {
-	height: 101lvh;
-	height: 101vh;
-	width: 0;
-	padding: 0;
-	margin: 0;
-	right: 0;
-	opacity: 0;
-	visibility: hidden;
-	pointer-events: none;
-	transform: translateX(100%);
-	transition: opacity 200ms ease-in-out,
-	            transform 200ms ease-in-out,
-	            width 200ms cubic-bezier(1, 0.01, 1, 0.01),
-	            visibility 200ms ease-in-out;
-}
-
-nav ul li a {
-	justify-content: left;
-}
-
-
-nav.frontpage-nav .navbar-right .my-dropdown > .link {
-	width: 100%;
-	text-align: right;
-}
-
-.my-dropdown.active > .link + .my-dropdown-menu {
-	width: 12ch;
-	transform: translateX(calc(100% - 12ch));
-	transition: opacity 200ms ease-in-out,
-	            transform 200ms ease-in-out,
-	            visibility 200ms ease-in-out;
-	opacity: 0.95;
-	pointer-events: auto;
-	visibility: visible;
-}
-
-.sticky {
-	position: sticky;
-	top: -57px;
-	z-index: 2;
-}
-
-nav.frontpage-nav {
-	min-height: 51px;
 }
 
 .img_wrapper {
@@ -245,6 +172,7 @@ body .img_wrapper > h2 {
 	  mix-blend-mode: difference;
 	  visibility: hidden;
 	  pointer-events: none;
+    font-size: 11cqw;
 }
 
 body .img_wrapper2 {
@@ -364,37 +292,3 @@ button:not(.link) {
 	margin: 9px 0 0 0;
 }
 
-/* Colors */
-/* First load default light colors */
-nav.frontpage-nav {
-	background-color:  var(--clr-nav-front);
-}
-
-nav.frontpage-nav a, nav.frontpage-nav .link {
-	color: var(--clr-weaktext);
-	fill: var(--clr-weaktext);
-}
-
-.my-dropdown-menu {
-	background-color: var(--clr-light);
-}
-
-body.dark nav.frontpage-nav a, body.dark nav.frontpage-nav .link {
-	color: var(--clr-text-darkmode);
-}
-body.dark .my-dropdown-menu {
-	background-color: var(--clr-dark);
-}
-body.dark #github {
-	filter: invert(1);
-}
-body.dark nav.frontpage-nav a, body.dark .link {
-	color: var(--clr-text-darkmode);
-  fill: var(--clr-text-darkmode);
-}
-body.dark .my-dropdown-menu {
-	background-color: var(--clr-dark);
-}
-body.dark #github {
-	filter: invert(1);
-}

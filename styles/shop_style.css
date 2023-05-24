@@ -380,7 +380,7 @@ nav ul li a:hover {
 	z-index: 1000;
 }
 
-.light .dropdown-content {
+nav.light .dropdown-content {
 	background-color: var(--clr-nav-productpage-bg);
 }
 

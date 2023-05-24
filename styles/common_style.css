@@ -1,3 +1,4 @@
+/* Color stuff */
 :root {
 	/* Themes */
 	/* Based on front page image */
@@ -51,7 +52,6 @@
 	--clr-scroll-arrow: rgba(255, 255, 255, 0.7);
 	--clr-scroll-arrow-hover: rgba(255, 255, 255, 1);
 }
-
 body.light {
   color-scheme: light;
 	color: var(--eerie-black);
@@ -65,7 +65,6 @@ body.light {
 		color: var(--clr-weakertext);
 	}
 }
-
 body.dark {
   color-scheme: dark;
   background-color: var(--clr-dark);
@@ -74,17 +73,16 @@ body.dark {
 body.dark h1, body.dark h2, body.dark h3 {
 	color: var(--clr-text-darkmode);
 }
-
 body.dark img, body.dark video {
 	filter: grayscale(30%);
 }
 
+/* Font stuff */
 @font-face {
 	font-family: open-sans;
 	src: url(/fonts/OpenSansRegular.woff);
 	font-display: swap;
 }
-
 @font-face {
 	font-family: open-sans;
 	font-style: italic;
@@ -92,7 +90,6 @@ body.dark img, body.dark video {
 	src: url(/fonts/OpenSansItalic.woff);
 	font-display: swap;
 }
-
 @font-face {
 	font-family: open-sans;
 	font-style: normal;
@@ -100,7 +97,6 @@ body.dark img, body.dark video {
 	src: url(/fonts/OpenSansBold.woff);
 	font-display: swap;
 }
-
 @font-face {
 	font-family: open-sans;
 	font-style: italic;
@@ -108,15 +104,15 @@ body.dark img, body.dark video {
 	src: url("/fonts/OpenSansBoldItalic.woff");
 	font-display: swap;
 }
-
-html {
-	scroll-behavior: smooth;
-}
-
 body:not(code) {
 	font-family: open-sans;
 }
 
+/* Very general stuff */
+html {
+	scroll-behavior: smooth;
+  padding-bottom: 100px;
+}
 *,
 *::before,
 *::after {
@@ -214,4 +210,105 @@ nav ul li.navbar-right {
 	margin-right: 0.2rem;
   padding-top: 0;
   padding-bottom: 0;
+}
+
+body, nav ul li a {
+	line-height: 1.5;
+	font-size: clamp(0.9rem, 2vw + 0.5rem, 1.2rem);
+}
+
+nav.the-nav {
+	position: relative;
+	min-height: 51px;
+}
+
+.link {
+	background: none;
+	border: none;
+	text-decoration: none;
+	font-family: inherit;
+	font-size: inherit;
+	cursor: pointer;
+	padding: 14px;
+}
+
+.my-dropdown {
+	position: relative;
+	right: 0;
+	text-align: right;
+}
+
+.my-dropdown-menu {
+	height: 101lvh;
+	height: 101vh;
+	width: 0;
+	padding: 0;
+	margin: 0;
+	right: 0;
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+	transform: translateX(100%);
+	transition: opacity 200ms ease-in-out,
+	            transform 200ms ease-in-out,
+	            width 200ms cubic-bezier(1, 0.01, 1, 0.01),
+	            visibility 200ms ease-in-out;
+}
+
+
+nav.the-nav .navbar-right .my-dropdown > .link {
+	width: 100%;
+	text-align: right;
+}
+
+.my-dropdown.active > .link + .my-dropdown-menu {
+	width: 12ch;
+	transform: translateX(calc(100% - 12ch));
+	transition: opacity 200ms ease-in-out,
+	            transform 200ms ease-in-out,
+	            visibility 200ms ease-in-out;
+	opacity: 0.95;
+	pointer-events: auto;
+	visibility: visible;
+}
+
+.sticky {
+	position: sticky;
+	top: -57px;
+	z-index: 3;
+}
+
+/* Colors */
+/* First load default light colors */
+nav.the-nav {
+	background-color:  var(--clr-nav-front);
+}
+
+nav.the-nav a, nav.the-nav .link {
+	color: var(--clr-weaktext);
+	fill: var(--clr-weaktext);
+}
+
+.my-dropdown-menu {
+	background-color: var(--clr-light);
+}
+
+body.dark nav.the-nav a, body.dark nav.the-nav .link {
+	color: var(--clr-text-darkmode);
+}
+body.dark .my-dropdown-menu {
+	background-color: var(--clr-dark);
+}
+body.dark #github {
+	filter: invert(1);
+}
+body.dark nav.the-nav a, body.dark .link {
+	color: var(--clr-text-darkmode);
+  fill: var(--clr-text-darkmode);
+}
+body.dark .my-dropdown-menu {
+	background-color: var(--clr-dark);
+}
+body.dark #github {
+	filter: invert(1);
 }
