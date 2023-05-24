@@ -5,7 +5,6 @@ html {
 
 body {
 	margin:0;
-	background-color: var(--clr-light);
 	color: var(--clr-weaktext);
 	overflow-x: hidden;
 }
@@ -15,11 +14,11 @@ nav {
 	margin-inline: auto;
 }
 
-.sticky {
+.sticky.shopfront-nav {
 	background-color: var(--clr-nav-shop-bg);
 }
 
-.my-dropdown.active > .link + .my-dropdown-menu {
+.shopfront-nav .my-dropdown.active > .link + .my-dropdown-menu {
 	background-color: var(--clr-nav-shop-bg);
 }
 
@@ -302,7 +301,7 @@ a .text-below-line:hover {
 }
 
 
-nav.the-nav a, nav.the-nav .link {
+.shopfront-nav nav.the-nav a, .shopfront-nav nav.the-nav .link {
 	color: var(--clr-light);
 	fill: var(--clr-light);
 }
