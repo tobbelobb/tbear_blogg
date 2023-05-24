@@ -144,36 +144,66 @@ body .img_wrapper > h1 {
 }
 */
 body .img_wrapper > h1 {
-	  font-size: 36.2cqw;
-	  overflow-wrap: break-word;
-	  line-height: 0.91;
-	  position: absolute;
-	  z-index: 1;
-	  font-weight: bold;
-	  left: 0;
-	  right: 0%;
-	  top: 0%;
-	  color: #ff0000;
-	  margin-top: 0;
-	  margin-bottom: 0;
-	  mix-blend-mode: difference;
-	  text-align-last: right;
+	font-size: 36.2cqw;
+	overflow-wrap: break-word;
+	line-height: 0.91;
+	position: absolute;
+	z-index: 1;
+	font-weight: bold;
+	left: 0;
+	right: 0%;
+	top: 0%;
+	margin-top: 0;
+	margin-bottom: 0;
+	text-align-last: right;
 }
 
 body .img_wrapper > h2 {
-	  position: absolute;
-	  margin: 0;
-	  top: 50%;
-	  left: 50%;
-	  transform: translate(-50%, -50%);
-	  z-index: 1;
-	  font-weight: bold;
-	  color: #ff0000;
-	  mix-blend-mode: difference;
-	  visibility: hidden;
-	  pointer-events: none;
-    font-size: 11cqw;
+	position: absolute;
+	margin: 0;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 1;
+	font-weight: bold;
+	visibility: hidden;
+	pointer-events: none;
+	font-size: 11cqw;
 }
+
+body.dark .img_wrapper > h2, body.dark .img_wrapper > h1 {
+	mix-blend-mode: difference;
+	color: #ff0000;
+}
+
+body.dark .img_wrapper > h2.complement_clr, body.dark .img_wrapper > h1.complement_clr {
+	mix-blend-mode: difference;
+	color: #07bb92;
+}
+
+body.light .img_wrapper > h2, body.light .img_wrapper > h1 {
+	color: var(--clr-light);
+	/*color: #ffffff;*/
+	/*color: #ffdcc4;*/
+}
+
+body.light .img_wrapper > h2.complement_clr, body.light .img_wrapper > h1.complement_clr {
+	color: var(--clr-light);
+	/*color: #707070;*/
+	/*color: #e7e7e7*/
+}
+
+/*
+body.light .img_wrapper > h2.complement_clr, body.light .img_wrapper > h1.complement_clr {
+	  color: #ffffff;
+	  -webkit-text-stroke-width: unset;
+	  -webkit-text-stroke-color: rgba(0,0,0,1.0);
+}
+body.light .img_wrapper > h2, body.light .img_wrapper > h1 {
+	  mix-blend-mode: overlay;
+	  -webkit-text-stroke-width: thin;
+}
+*/
 
 body .img_wrapper2 {
 	  position: absolute;
