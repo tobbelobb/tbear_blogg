@@ -15,6 +15,18 @@ h2, h3, p, form {
 	padding-right: 10px;
 }
 
+h2, h3 {
+	font-weight: bold;
+}
+
+p, form, ul {
+	color: var(--clr-weaktext);
+}
+
+body.dark p, form, ul {
+	color: var(--clr-text-darkmode);
+}
+
 ul {
 	padding-left: 40px;
 }
@@ -217,7 +229,44 @@ body .img_wrapper > h1 {
 	  margin-top: 0;
 	  margin-bottom: 0;
 	  mix-blend-mode: difference;
-	  text-align-last: center;
+	  text-align-last: right;
+}
+
+body .img_wrapper > h2 {
+	  position: absolute;
+	  margin: 0;
+	  top: 50%;
+	  left: 50%;
+	  transform: translate(-50%, -50%);
+	  z-index: 1;
+	  font-weight: bold;
+	  color: #ff0000;
+	  mix-blend-mode: difference;
+	  visibility: hidden;
+	  pointer-events: none;
+}
+
+body .img_wrapper2 {
+	  position: absolute;
+	  z-index: 1;
+	  margin-top: 15%;
+	  margin-left: 4%;
+}
+
+body .img_wrapper2 ul, body .img_wrapper2 h3  {
+	line-height: 1.9;
+}
+
+body.light .img_wrapper2 ul, body.light .img_wrapper2 h3 {
+	color: var(--clr-dark);
+}
+
+body .img_wrapper2 ul {
+	font-size: 4.2cqw;
+}
+
+body .img_wrapper2 h3 {
+	font-size: 7.2cqw;
 }
 
 .img_wrapper h1 a {
@@ -320,7 +369,11 @@ nav.frontpage-nav {
 	background-color:  var(--clr-nav-front);
 }
 
-nav.frontpage-nav a {
+nav.frontpage-nav a, nav.frontpage-nav .link {
+	color: var(--clr-weaktext);
+}
+
+nav.frontpage-nav .my-dropdown a, nav.frontpage-nav .my-dropdown .link {
 	color: var(--clr-text);
 }
 

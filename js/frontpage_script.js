@@ -74,3 +74,20 @@ if (isTouchDevice()) {
     menuSwipeEndY = 0;
   }
 }
+
+vid = document.getElementById("video1");
+vid.addEventListener("pause", () => {
+  console.log("Paused");
+  const pl1 = document.getElementById("video1play");
+  const pl2 = document.getElementById("video1play2");
+  pl1.style.setProperty("visibility", "visible");
+  pl2.style.setProperty("visibility", "visible");
+});
+
+vid.addEventListener("play", () => {
+  console.log("Played");
+  const pl1 = document.getElementById("video1play");
+  const pl2 = document.getElementById("video1play2");
+  pl1.style.setProperty("visibility", "hidden");
+  pl2.style.setProperty("visibility", "hidden");
+});
