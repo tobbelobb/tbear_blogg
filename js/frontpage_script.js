@@ -63,6 +63,10 @@ if (isTouchDevice()) {
       document.querySelectorAll("[data-dropdown].active").forEach(dropdown => {
         dropdown.classList.remove('active');
       })
+    } else if ((menuSwipeEndX + 10) < menuSwipeStartX &&
+      Math.abs(menuSwipeStartX - menuSwipeEndX) > Math.abs(menuSwipeStartY - menuSwipeEndY)) {
+      const e = document.querySelector("[data-dropdown]");
+      e.classList.add("active");
     }
     menuSwipeStartX = 0;
     menuSwipeEndX = 0;
