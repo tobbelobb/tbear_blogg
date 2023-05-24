@@ -67,6 +67,9 @@
             <a href="/pages/donate" data-dropdown-toggle="">
               Donate
             </a>
+            <a href="/pages/story" data-dropdown-toggle="">
+              Story
+            </a>
             <a href="/shop" data-dropdown-toggle="">
               Shop
             </a>

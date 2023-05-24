@@ -1,6 +1,5 @@
 /* Section: General shop stuff */
 html {
-	overflow-x: hidden;
 }
 
 body {
@@ -10,10 +9,20 @@ body {
 	overflow-x: hidden;
 }
 
+nav {
+	width: min(65ch, 100%);
+	margin-inline: auto;
 img, svg {
 	vertical-align: middle;
 }
 
+.sticky {
+	background-color: var(--clr-nav-shop-bg);
+}
+
+.my-dropdown.active > .link + .my-dropdown-menu {
+	background-color: var(--clr-nav-shop-bg);
+}
 /* Section: Shop front page stuff */
 .background-container {
 	display: flex;
@@ -310,6 +319,9 @@ a .text-below-line:hover {
 	vertical-align: middle;
 }
 
+nav.the-nav a, nav.the-nav .link {
+	color: var(--clr-light);
+	fill: var(--clr-light);
 @media screen and (max-width: 400px) {
 	nav ul li a, .shopping-cart-icon {
 		padding: 7px; /* Reduce padding */
