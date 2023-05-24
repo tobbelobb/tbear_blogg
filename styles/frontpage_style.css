@@ -204,9 +204,9 @@ body .img_wrapper > h1 {
 }
 */
 body .img_wrapper > h1 {
-	  font-size: 34cqw;
+	  font-size: 36.2cqw;
 	  overflow-wrap: break-word;
-	  line-height: 0.9;
+	  line-height: 0.91;
 	  position: absolute;
 	  z-index: 1;
 	  font-weight: bold;
@@ -218,6 +218,11 @@ body .img_wrapper > h1 {
 	  margin-bottom: 0;
 	  mix-blend-mode: difference;
 	  text-align-last: center;
+}
+
+.img_wrapper h1 a {
+	text-decoration: none;
+	color: inherit;
 }
 
 
