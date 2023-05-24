@@ -306,16 +306,6 @@ a .text-below-line:hover {
 	box-sizing: content-box;
 }
 
-.shopping-cart-icon svg {
-	border-radius: 0px;
-	height: 1em;
-	width: auto;
-}
-
-.cart-icon-svg {
-	margin-right: 0.1em;
-}
-
 .cart-item-count {
 	vertical-align: middle;
 }

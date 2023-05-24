@@ -207,3 +207,11 @@ nav ul li.navbar-right {
 	font-size:35px;
 	justify-content:space-between;
 }
+
+.shopping-cart-icon svg {
+	border-radius: 0px;
+	width: 21px;
+	margin-right: 0.2rem;
+  padding-top: 0;
+  padding-bottom: 0;
+}

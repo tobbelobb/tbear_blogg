@@ -109,7 +109,7 @@ nav.frontpage-nav .navbar-right .my-dropdown > .link {
 .sticky {
 	position: sticky;
 	top: -57px;
-	z-index: 1000;
+	z-index: 2;
 }
 
 nav.frontpage-nav {
@@ -372,10 +372,7 @@ nav.frontpage-nav {
 
 nav.frontpage-nav a, nav.frontpage-nav .link {
 	color: var(--clr-weaktext);
-}
-
-nav.frontpage-nav .my-dropdown a, nav.frontpage-nav .my-dropdown .link {
-	color: var(--clr-text);
+	fill: var(--clr-weaktext);
 }
 
 .my-dropdown-menu {
@@ -393,6 +390,7 @@ body.dark #github {
 }
 body.dark nav.frontpage-nav a, body.dark .link {
 	color: var(--clr-text-darkmode);
+  fill: var(--clr-text-darkmode);
 }
 body.dark .my-dropdown-menu {
 	background-color: var(--clr-dark);
