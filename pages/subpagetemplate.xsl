@@ -65,7 +65,7 @@
 <body>
   <xsl:variable name="currentCname" select="/subpage/@cname"/>
   <div class="sticky">
-    <nav class="the-nav">
+    <nav>
       <ul>
         <li class="navbar-left">
           <a href="/">Torbjørn</a>

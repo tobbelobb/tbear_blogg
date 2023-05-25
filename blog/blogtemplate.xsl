@@ -45,7 +45,7 @@
 </head>
 <body>
 <div class="sticky">
-  <nav class="the-nav">
+  <nav>
     <ul>
       <li class="navbar-left">
         <a href="/">Torbjørn</a>

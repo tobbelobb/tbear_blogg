@@ -301,9 +301,16 @@ a .text-below-line:hover {
 }
 
 
-.shopfront-nav nav.the-nav a, .shopfront-nav nav.the-nav .link {
+.shopfront-nav a, .shopfront-nav .link {
 	color: var(--clr-light);
 	fill: var(--clr-light);
+}
+
+@media (hover: hover) {
+	.shopfront-nav a:hover, .shopfront-nav .link:hover {
+		color: var(--clr-weakertext);
+		fill: var(--clr-weakertext);
+	}
 }
 
 nav.light ul li {

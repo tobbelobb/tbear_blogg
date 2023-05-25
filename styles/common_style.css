@@ -60,11 +60,6 @@ body.light {
 .link {
 	color: var(--clr-text);
 }
-@media (hover: hover) {
-	.link:hover {
-		color: var(--clr-weakertext);
-	}
-}
 body.dark {
 	color-scheme: dark;
 	background-color: var(--clr-dark);
@@ -159,7 +154,7 @@ nav ul {
 	margin-top: 0;
 }
 
-nav ul li a {
+nav a {
 	display: flex;
 	padding: 14px;
 	text-decoration: none;
@@ -167,8 +162,13 @@ nav ul li a {
 }
 
 @media (hover: hover) {
-	nav ul li a:hover {
+	nav a:hover {
 		color: var(--clr-weakertext);
+		fill: var(--clr-weakertext);
+	}
+	link:hover, nav .link:hover {
+		color: var(--clr-weakertext);
+		fill: var(--clr-weakertext);
 	}
 }
 
@@ -207,12 +207,12 @@ body, nav ul li a {
 	font-size: clamp(0.9rem, 2vw + 0.5rem, 1.2rem);
 }
 
-nav.the-nav {
+nav {
 	position: relative;
 	min-height: 56.8px;
 }
 
-nav.the-nav li > * {
+nav li > * {
 	height: 56.8px;
 	align-items: center;
 }
@@ -251,14 +251,16 @@ nav.the-nav li > * {
 }
 
 
-nav.the-nav .navbar-right .my-dropdown > .link {
+nav .navbar-right .my-dropdown > .link {
 	width: 100%;
 	text-align: right;
 	height: 56.8px;
 }
 
 .my-dropdown.active > .link + .my-dropdown-menu {
-	width: 12ch;
+	/* 65ch and 100vw comes from min(65ch, 100%)
+	 * See shop_style.css nav width and other stylesheets' body width */
+	width: calc(12ch + 50vw - min(65ch, 100vw) / 2);
 	transform: translateX(calc(100% - 12ch));
 	transition: opacity 200ms ease-in-out,
 	            transform 200ms ease-in-out,
@@ -276,11 +278,11 @@ nav.the-nav .navbar-right .my-dropdown > .link {
 
 /* Colors */
 /* First load default light colors */
-nav.the-nav {
+nav {
 	background-color:  var(--clr-nav-front);
 }
 
-nav.the-nav a, nav.the-nav .link {
+nav a, nav .link {
 	color: var(--clr-weaktext);
 	fill: var(--clr-weaktext);
 }
@@ -289,7 +291,7 @@ nav.the-nav a, nav.the-nav .link {
 	background-color: var(--clr-light);
 }
 
-body.dark nav.the-nav a, body.dark nav.the-nav .link {
+body.dark nav a, body.dark nav .link {
 	color: var(--clr-text-darkmode);
 }
 body.dark .my-dropdown-menu {
@@ -298,7 +300,7 @@ body.dark .my-dropdown-menu {
 body.dark #github {
 	filter: invert(1);
 }
-body.dark nav.the-nav a, body.dark .link {
+body.dark nav a, body.dark .link {
 	color: var(--clr-text-darkmode);
 	fill: var(--clr-text-darkmode);
 }
