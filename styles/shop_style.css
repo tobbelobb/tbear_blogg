@@ -14,11 +14,11 @@ nav {
 	margin-inline: auto;
 }
 
-.sticky.shopfront-nav {
+.shopfront-nav {
 	background-color: var(--clr-nav-shop-bg);
 }
 
-.shopfront-nav .my-dropdown.active > .link + .my-dropdown-menu {
+.shopfront-nav .my-dropdown-menu {
 	background-color: var(--clr-nav-shop-bg);
 }
 
