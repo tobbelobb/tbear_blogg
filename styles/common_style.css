@@ -102,8 +102,12 @@ body.light img.already-dark{
 	src: url("/fonts/OpenSansBoldItalic.woff");
 	font-display: swap;
 }
-body:not(code) {
+body {
 	font-family: open-sans;
+}
+code {
+	font-family: monospace;
+	overflow-wrap: break-word;
 }
 
 /* Very general stuff */
@@ -158,7 +162,7 @@ nav a {
 	display: flex;
 	padding: 14px;
 	text-decoration: none;
-	height: 56.8px;
+	min-height: 56.8px;
 }
 
 @media (hover: hover) {
@@ -183,15 +187,15 @@ nav ul li.navbar-right {
 }
 
 .links-container {
-	margin:0px 32px 0px 32px;
+	margin:0rem 2rem 0rem 2rem;
 	display:flex;
-	font-size:35px;
+	font-size:2.1875rem;
 	justify-content:space-between;
 }
 
 .shopping-cart-icon svg {
 	border-radius: 0px;
-	width: 21px;
+	width: 1.3125rem;
 	margin-right: 0.2rem;
 	padding-top: 0;
 	padding-bottom: 0;
@@ -213,7 +217,7 @@ nav {
 }
 
 nav li > * {
-	height: 56.8px;
+	min-height: 56.8px;
 	align-items: center;
 }
 
@@ -225,6 +229,7 @@ nav li > * {
 	font-size: inherit;
 	cursor: pointer;
 	padding: 14px;
+	width: inherit;
 }
 
 .my-dropdown {
@@ -254,7 +259,7 @@ nav li > * {
 nav .navbar-right .my-dropdown > .link {
 	width: 100%;
 	text-align: right;
-	height: 56.8px;
+	min-height: 56.8px;
 }
 
 .my-dropdown.active > .link + .my-dropdown-menu {
