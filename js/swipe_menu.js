@@ -88,17 +88,16 @@ let menuSwipeEndX = 0;
 let menuSwipeStartY = 0;
 let menuSwipeEndY = 0;
 if (isTouchDevice()) {
-  const menuSwipeArea = document.body;
-  menuSwipeArea.addEventListener("touchstart", e => {
+  document.addEventListener("touchstart", e => {
     menuSwipeStartX = e.changedTouches[0].screenX;
     menuSwipeStartY = e.changedTouches[0].screenY;
   }, false);
-  menuSwipeArea.addEventListener("touchend", e => {
+  document.addEventListener("touchend", e => {
     menuSwipeEndX = e.changedTouches[0].screenX;
     menuSwipeEndY = e.changedTouches[0].screenY;
     menuGesture();
   }, false);
-  menuSwipeArea.addEventListener("touchcancel", e => {
+  document.addEventListener("touchcancel", e => {
     menuSwipeEndX = e.changedTouches[0].screenX;
     menuSwipeEndY = e.changedTouches[0].screenY;
     menuGesture();
