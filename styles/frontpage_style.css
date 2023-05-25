@@ -23,14 +23,13 @@ p, form, ul {
 	color: var(--clr-weaktext);
 }
 
-body.dark p, form, ul {
+body.dark p, body.dark form, body.dark ul {
 	color: var(--clr-text-darkmode);
 }
 
 ul {
 	padding-left: 40px;
 }
-
 
 img,
 svg,
