@@ -242,7 +242,7 @@ nav .navbar-right .my-dropdown-menu .link {
 
 .my-dropdown-menu {
 	position: absolute;
-	left: calc(12ch + 50vw - min(65ch, 100vw) / 2);
+	left: calc(13ch + 50vw - min(65ch, 100vw) / 2);
 	height: 101vh;
 	height: 101lvh;
 	width: 0;
@@ -268,7 +268,7 @@ nav .navbar-right .my-dropdown > .link {
 .sticky:not(.shopfront-nav) .my-dropdown.active > .link + .my-dropdown-menu {
 	/* 65ch and 100vw comes from min(65ch, 100%)
 	 * See shop_style.css nav width and other stylesheets' body width */
-	width: calc(12ch + 50vw - min(65ch, 100vw) / 2);
+	width: calc(13ch + 50vw - min(65ch, 100vw) / 2);
 	transform: translateX(calc(-16ch - 50vw + min(65ch, 100vw) / 2));
 	transition: opacity 200ms ease-in-out,
 	            transform 200ms ease-in-out,
@@ -281,7 +281,7 @@ nav .navbar-right .my-dropdown > .link {
 .sticky.shopfront-nav .my-dropdown.active > .link + .my-dropdown-menu {
 	/* 65ch and 100vw comes from min(65ch, 100%)
 	 * See shop_style.css nav width and other stylesheets' body width */
-	width: calc(12ch + 50vw - min(65ch, 100vw) / 2);
+	width: calc(13ch + 50vw - min(65ch, 100vw) / 2);
 	transform: translateX(calc(-16ch - 50vw + min(65ch, 100vw) / 2));
 	transition: opacity 200ms ease-in-out,
 	            transform 200ms ease-in-out,
