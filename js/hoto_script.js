@@ -1,43 +1,3 @@
-function enableSlideAnimationIfTouchscreen() {
-  const carousel = document.getElementById("carouselExampleControls");
-  const touchDevice = isTouchDevice();
-
-  if (touchDevice) {
-    carousel.classList.add("slide");
-  }
-
-  let isTransitioning = false;
-  const thumbnailElems = document.querySelectorAll(".carousel-thumbnails img");
-
-  thumbnailElems.forEach((thumbnailElem) => {
-    thumbnailElem.addEventListener("click", () => {
-      if (isTransitioning && touchDevice) {
-        return;
-      }
-      if (touchDevice) {
-        isTransitioning = true;
-        document
-          .querySelector("#carouselExampleControls")
-          .classList.add("carousel-fade");
-      }
-
-      const goToSlide = thumbnailElem.getAttribute("data-slide-to");
-      const carousel = document.getElementById("carouselExampleControls");
-      const bsCarousel = new bootstrap.Carousel(carousel);
-      bsCarousel.to(parseInt(goToSlide));
-
-      if (touchDevice) {
-        setTimeout(() => {
-          document
-            .querySelector("#carouselExampleControls")
-            .classList.remove("carousel-fade");
-          isTransitioning = false;
-        }, 600);
-      }
-    });
-  });
-}
-
 document.addEventListener("DOMContentLoaded", () => {
   const link = document.createElement('link');
   link.rel = 'stylesheet';
@@ -45,7 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
   document.head.appendChild(link);
 
   handleDropdownDisplay();
-  enableSlideAnimationIfTouchscreen();
   initiateCartDisplay();
 });
 
@@ -60,3 +19,32 @@ document.addEventListener("snipcart.ready", () => {
     updateCartDisplay();
   });
 });
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("carousel-item");
+  let thumbnails = document.getElementsByClassName("thumbnail");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < thumbnails.length; i++) {
+    thumbnails[i].className = thumbnails[i].className.replace(" active-img", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  thumbnails[slideIndex-1].className += " active-img";
+}
+
+let slideIndex = 1;
+showSlides(slideIndex);

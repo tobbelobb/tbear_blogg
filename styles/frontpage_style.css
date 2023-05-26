@@ -10,25 +10,12 @@ main {
 	margin: auto;
 }
 
-h2, h3, p, form {
-	padding-left: 10px;
-	padding-right: 10px;
-}
-
 h2, h3 {
 	font-weight: bold;
 }
 
-p, form, ul {
-	color: var(--clr-weaktext);
-}
-
 body.dark p, body.dark form, body.dark ul {
 	color: var(--clr-text-darkmode);
-}
-
-ul {
-	padding-left: 40px;
 }
 
 img,

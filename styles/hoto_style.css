@@ -1,0 +1,129 @@
+body {
+	overflow-x: hidden;
+	width: min(65ch, 100%);
+	margin-inline: auto;
+}
+
+main {
+	padding-left: calc(calc(min(65ch, 100% - 4rem) - 400px)/2);
+	padding-right: calc(calc(min(65ch, 100% - 4rem) - 400px)/2);
+	margin: auto;
+}
+
+.carousel {
+	position: relative;
+}
+
+.carousel-item {
+	position: relative;
+	display: none;
+}
+
+.carousel-item img {
+	width: 100%;
+	aspect-ratio: 1.3;
+}
+.prev, .next {
+	cursor: pointer;
+	position: absolute;
+	width: auto;
+	height: 100%;
+	top: 0%;
+	margin-top: 0;
+	color: white;
+	font-weight: bold;
+	font-size: 2rem;
+	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
+	user-select: none;
+	z-index: 2;
+	padding: 0 2rem 0 2rem;
+	display: flex;
+	align-items: center;
+}
+.next {
+	padding: 0 .7rem 0 2rem;
+	right: 0;
+	border-radius: 3px 0 0 3px;
+}
+.prev {
+	padding: 0 2rem 0 .7rem;
+}
+@media (hover: hover) {
+	.prev:hover, .next:hover {
+		opacity: 0.75;
+	}
+}
+.prev:focus, .next:focus {
+	background-color: rgba(0,0,0,0.8);
+}
+.image-zoom-link-area {
+	position: initial;
+}
+@media (hover: hover) {
+	.image-zoom-link-area:hover {
+		cursor: zoom-in;
+	}
+}
+.numbertext {
+	color: var(--clr-light);
+	font-size: 1rem;
+	padding: .5rem .75rem;
+	position: absolute;
+	top: 0;
+}
+.carousel-thumbnails {
+	display: grid;
+	gap: .5rem;
+	padding-top: .5rem;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+.carousel-thumbnails img {
+	width: 100%;
+	aspect-ratio: 1;
+	object-fit: cover;
+	cursor: pointer;
+	transition: transform .1s;
+}
+.fade {
+	animation-name: fade;
+	animation-duration: 1.5s;
+}
+.active-img {
+	animation-name: fade-fast;
+	animation-duration: 0.5s;
+}
+@keyframes fade {
+	from {opacity: .55}
+	to {opacity: 1}
+}
+@keyframes fade-fast {
+	from {opacity: .4}
+	to {opacity: 1}
+}
+.active-img,
+.thumbnail:not(.active-img) img:hover {
+	transform: scale(1.04);
+}
+
+.carousel-item {
+	will-change: opacity;
+}
+
+.product-name-right-column {
+	margin-bottom: 20px;
+	text-align: left;
+	font-size: 1.18rem;
+}
+
+.product-name-top {
+	margin-bottom: 20px;
+	text-align: center;
+	font-size: 1.18rem;
+}
+
+.product-description {
+	font-size: 0.95rem;
+	line-height: 1.55rem;
+}
+

@@ -124,6 +124,11 @@ body {
 	box-sizing: border-box;
 }
 
+h2, h3, p, form, .buy-button {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
 button,
 input,
 textarea,
@@ -295,6 +300,9 @@ nav .navbar-right .my-dropdown > .link {
 
 /* Colors */
 /* First load default light colors */
+body.light p, body.light form, body.light ul {
+	color: var(--clr-weaktext);
+}
 .sticky:not(.shopfront-nav) nav {
 	background-color:  var(--clr-nav-front);
 }
