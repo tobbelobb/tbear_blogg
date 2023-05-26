@@ -210,10 +210,9 @@ nav ul li.navbar-right {
 	vertical-align: middle;
 }
 
-
 body, nav ul li a {
 	line-height: 1.5;
-	font-size: clamp(0.9rem, 2vw + 0.5rem, 1.2rem);
+	font-size: clamp(0.85rem, 1.75vw + 0.5rem, 1.15rem);
 }
 
 nav {
