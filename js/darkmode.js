@@ -1,4 +1,14 @@
+// darkMode can be "enabled" or "disabled"
 let darkMode = localStorage.getItem("darkMode");
+// prevSys can be "dark" or "light"
+let prevSys = localStorage.getItem("darkModePrevSys");
+// Defaults are "disabled" and "light"
+if (darkMode === null ) {
+  darkMode = "disabled";
+}
+if (prevSys === null ) {
+  prevSys = "light";
+}
 
 const enableDarkMode = () => {
   document.body.classList.add("dark");
@@ -11,15 +21,27 @@ const disableDarkMode = () => {
   localStorage.setItem("darkMode", "disabled");
 };
 
-const sysDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-if (darkMode === "enabled") {
-  enableDarkMode();
-} else if (darkMode === "disabled") {
-  disableDarkMode();
-} else if (sysDark) {
-  enableDarkMode();
+const sysPref = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light"
+
+if (sysPref !== prevSys) {
+  // SysPrev change detected. Override local preference.
+  if (sysPref === "dark") {
+    console.log("sys preference change: dark");
+    enableDarkMode();
+  } else {
+    console.log("sys preference change: light");
+    disableDarkMode();
+  }
+  localStorage.setItem("darkModePrevSys", sysPref);
 } else {
-  disableDarkMode();
+  // No system preference change, use local preference.
+  if (darkMode === "enabled") {
+    console.log("local preference: dark");
+    enableDarkMode();
+  } else {
+    console.log("local preference: light");
+    disableDarkMode();
+  }
 }
 
 const darkModeToggle = document.querySelector("#dark-mode-toggle");
@@ -27,8 +49,10 @@ if (darkModeToggle !== null) {
   darkModeToggle.addEventListener("click", () => {
     darkMode = localStorage.getItem("darkMode");
     if (darkMode !== "enabled") {
+      console.log("local preference change: dark");
       enableDarkMode();
     } else {
+      console.log("local preference change: light");
       disableDarkMode();
     }
   });
