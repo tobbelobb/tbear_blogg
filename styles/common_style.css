@@ -34,11 +34,13 @@
 	--clr-blog-darkmode: rgb(215,215,215);
 
 	/* Button theme from Bootstrap */
-	--clr-button-primary: rgb(13,110,253);
-	--clr-button-alt-1: #0b5ed7;
-	--clr-button-alt-2: #0a58ca;
+	--clr-button-primary: #f6be92;
+	--clr-button-primary-dark: #7066b7;
+	--clr-button-alt-1-dark: #7066b77c;
+	--clr-button-alt-1: #f99e56;
+	--clr-button-alt-2: var(--atomic-tangerine);
 	--clr-button-alt-3: #0a53be;
-	--clr-button-shadow: rgba(49,132,253,.5);
+	--clr-button-shadow: #f6be927c;
 
 	/* Old xsl theme */
 	--clr-theme-1: rgb(244, 151, 108);
@@ -297,6 +299,24 @@ nav .navbar-right .my-dropdown > .link {
 	z-index: 3;
 }
 
+.btn {
+	display: inline-block;
+	font-weight: bold;
+	line-height: 1.5;
+	text-align: center;
+	text-decoration: none;
+	vertical-align: middle;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+	border: 1px solid transparent;
+	padding: .375rem .75rem;
+	border-radius: .25rem;
+	transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+
 /* Colors */
 /* First load default light colors */
 body.light p, body.light form, body.light ul {
@@ -321,4 +341,62 @@ body.dark .sticky:not(.shopfront-nav) .my-dropdown-menu {
 }
 body.dark #github {
 	filter: invert(1);
+}
+.btn-primary {
+	color: var(--clr-weaktext);
+	background-color: var(--clr-button-primary);
+	width: min(22ch, 75%); /* As long as a vat nr if that fits */
+}
+body.dark .btn-primary {
+	color: var(--clr-text-darkmode);
+	background-color: var(--clr-button-primary-dark);
+	border-color: var(--clr-button-primary-dark);
+}
+
+@media (hover: hover) {
+	.btn-primary:hover {
+		color: var(--clr-weaktext);
+		background-color: var(--clr-button-alt-1);
+		border-color:  var(--clr-button-alt-2);
+		border: 1px solid;
+	}
+	body.dark .btn-primary:hover {
+		color: var(--clr-weakertext);
+		background-color: var(--clr-button-alt-1-dark);
+		border-color: var(--clr-button-alt-1-dark);
+	}
+}
+
+.btn-primary:active {
+	color: var(--clr-light);
+	background-color: var(--clr-button-alt-2);
+	border-color: var(--clr-button-alt-3);
+	border: 1px solid;
+}
+body.dark .btn-primary:active {
+	color: var(--clr-dark);
+	border: 1px solid;
+}
+
+.btn-primary:focus {
+	color: var(--clr-light);
+	background-color: var(--clr-button-alt-1);
+	border-color: var(--clr-button-alt-2);
+	box-shadow: 0 0 0 .25rem var(--clr-button-shadow);
+	border: 2px solid;
+}
+body.dark .btn-primary:focus {
+	color: var(--clr-dark);
+}
+
+[type="button"], [type="reset"], [type="submit"], button {
+	-webkit-appearance: button;
+}
+
+button, select {
+	text-transform: none;
+}
+
+button:not(.link) {
+	margin: 18px 0 0 0;
 }
