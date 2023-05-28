@@ -34,11 +34,11 @@
 	--clr-blog-darkmode: rgb(215,215,215);
 
 	/* Button theme from Bootstrap */
-	--clr-button-primary: #f6be92;
+	--clr-button-primary: #7066b7;
 	--clr-button-primary-dark: #7066b7;
 	--clr-button-alt-1-dark: #7066b77c;
-	--clr-button-alt-1: #f99e56;
-	--clr-button-alt-2: var(--atomic-tangerine);
+	--clr-button-alt-1: var(--clr-light);
+	--clr-button-alt-2: #f99e56;
 	--clr-button-alt-3: #0a53be;
 	--clr-button-shadow: #f6be927c;
 
@@ -343,9 +343,10 @@ body.dark #github {
 	filter: invert(1);
 }
 .btn-primary {
-	color: var(--clr-weaktext);
+	color: var(--clr-light);
 	background-color: var(--clr-button-primary);
-	width: min(22ch, 75%); /* As long as a vat nr if that fits */
+	width: min(20ch, 75%); /* As long as a vat nr if that fits */
+	margin-bottom: 10px;
 }
 body.dark .btn-primary {
 	color: var(--clr-text-darkmode);
@@ -379,7 +380,7 @@ body.dark .btn-primary:active {
 }
 
 .btn-primary:focus {
-	color: var(--clr-light);
+	color: var(--clr-weaktext);
 	background-color: var(--clr-button-alt-1);
 	border-color: var(--clr-button-alt-2);
 	box-shadow: 0 0 0 .25rem var(--clr-button-shadow);
@@ -398,5 +399,5 @@ button, select {
 }
 
 button:not(.link) {
-	margin: 18px 0 0 0;
+	margin: 18px 0 10px 0;
 }
