@@ -70,11 +70,8 @@ body.dark {
 body.dark h1, body.dark h2, body.dark h3 {
 	color: var(--clr-text-darkmode);
 }
-body.dark img:not(.already-dark), body.dark video {
+body.dark img, body.dark video {
 	filter: grayscale(30%);
-}
-body.light img.already-dark{
-	filter: brightness(1.3);
 }
 
 /* Font stuff */
