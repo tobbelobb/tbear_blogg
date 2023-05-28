@@ -264,30 +264,34 @@ nav .navbar-right .my-dropdown > .link {
 }
 
 
-.sticky:not(.shopfront-nav) .my-dropdown.active > .link + .my-dropdown-menu {
+.sticky .my-dropdown.active > .link + .my-dropdown-menu {
 	/* 65ch and 100vw comes from min(65ch, 100%)
 	 * See shop_style.css nav width and other stylesheets' body width */
-	width: calc(14ch + 50vw - min(65ch, 100vw) / 2);
 	transform: translateX(calc(-16ch - 50vw + min(65ch, 100vw) / 2));
 	transition: opacity 200ms ease-in-out,
 	            transform 200ms ease-in-out,
 	            visibility 200ms ease-in-out;
-	opacity: 0.95;
 	pointer-events: auto;
 	visibility: visible;
 }
 
-.sticky.shopfront-nav .my-dropdown.active > .link + .my-dropdown-menu {
-	/* 65ch and 100vw comes from min(65ch, 100%)
-	 * See shop_style.css nav width and other stylesheets' body width */
+.sticky .my-dropdown.active > .link + .my-dropdown-menu {
 	width: calc(14ch + 50vw - min(65ch, 100vw) / 2);
-	transform: translateX(calc(-16ch - 50vw + min(65ch, 100vw) / 2));
-	transition: opacity 200ms ease-in-out,
-	            transform 200ms ease-in-out,
-	            visibility 200ms ease-in-out;
+}
+
+@media (width < 950px) {
+	.sticky .my-dropdown.active > .link + .my-dropdown-menu:has(.mini-shop.active) {
+		width: calc(29ch + 50vw - min(65ch, 100vw) / 2);
+		transform: translateX(calc(-31ch - 50vw + min(65ch, 100vw) / 2));
+	}
+}
+
+.sticky:not(.shopfront-nav) .my-dropdown.active > .link + .my-dropdown-menu {
+	opacity: 0.95;
+}
+
+.sticky.shopfront-nav .my-dropdown.active > .link + .my-dropdown-menu {
 	opacity: 1.0;
-	pointer-events: auto;
-	visibility: visible;
 }
 
 .sticky {
@@ -438,4 +442,13 @@ button:not(.link) {
 .mini-shop-toggle.active {
 	transform: rotate(90deg);
 	transition: transform 200ms ease-in-out;
+}
+
+nav .my-dropdown-menu .link, nav .my-dropdown-menu a {
+	min-height: 10px;
+}
+
+nav .my-dropdown-menu .mini-shop .link, nav .my-dropdown-menu .mini-shop a {
+	padding: 4.5px 0px 4.5px 24px;
+	font-size: clamp(0.975*0.85rem, 0.9*(1.75vw + 0.5rem), 0.9*1.15rem);
 }
