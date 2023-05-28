@@ -130,6 +130,10 @@ body .img_wrapper > h1 {
 }
 */
 body .img_wrapper > h1 {
+	/* Font size:
+	 * No support for cqw: Brave Version 1.28.105 Chromium: 92.0.4515.131
+	 * This min-statement is roughly equivalent to the cqw one */
+	font-size: min(36.2vw, 168px);
 	font-size: 36.2cqw;
 	overflow-wrap: break-word;
 	line-height: 0.91;
