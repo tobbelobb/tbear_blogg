@@ -65,6 +65,13 @@ scrollDistance(function (distance) {
 document.addEventListener('click', e => {
   const isDropdownToggle = e.target.matches("[data-dropdown-toggle]");
 
+  const isMiniShopToggle = e.target.matches("[data-mini-shop-toggle]");
+  if (isMiniShopToggle) {
+    e.target.classList.toggle('active');
+    currentMiniShop = e.target.nextElementSibling;
+    currentMiniShop.classList.toggle('active');
+  }
+
   if (!isDropdownToggle && e.target.closest("[data-dropdown]") != null) {
     return;
   }
@@ -81,6 +88,7 @@ document.addEventListener('click', e => {
     }
     dropdown.classList.remove('active');
   });
+
 })
 
 let menuSwipeStartX = 0;

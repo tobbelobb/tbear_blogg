@@ -401,3 +401,44 @@ button, select {
 button:not(.link) {
 	margin: 18px 0 10px 0;
 }
+
+.dropdown-inside-slideout {
+	display: flex;
+	justify-content: flex-start;
+	align-items: baseline;
+	flex-wrap: wrap;
+}
+
+.mini-shop {
+	visibility: hidden;
+	height: 0;
+	opacity: 0;
+	width: 0;
+	pointer-events: none;
+	transition: opacity 2000ms ease-in-out,
+	            height: 2000ms ease-in-out,
+	            visibility 2000ms ease-in-out;
+}
+
+.mini-shop.active {
+	padding-left: clamp(0.1rem, 0.5vw + 0.25rem, 1.15rem);
+	padding-right: 25px;
+	opacity: 1;
+	height: auto;
+	width: 100%;
+	pointer-events: auto;
+	visibility: visible;
+	transition: opacity 200ms ease-in-out,
+	            height 200ms ease-in-out,
+	            visibility 200ms ease-in-out;
+}
+
+.mini-shop-toggle {
+	transform: rotate(0deg);
+	transition: transform 200ms ease-in-out;
+}
+
+.mini-shop-toggle.active {
+	transform: rotate(90deg);
+	transition: transform 200ms ease-in-out;
+}
