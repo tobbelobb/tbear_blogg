@@ -81,20 +81,17 @@
           <div class="my-dropdown" data-dropdown="">
             <button class="link" data-dropdown-toggle="">Menu</button>
             <div class="my-dropdown-menu">
+              <a href="/shop" data-dropdown-toggle="">
+                Shop
+              </a>
               <a href="/blog" data-dropdown-toggle="">
                 Blog
-              </a>
-              <a href="/pages/donate" data-dropdown-toggle="">
-                Donate
               </a>
               <a href="/pages/story" data-dropdown-toggle="">
                 Story
               </a>
-              <a href="/shop" data-dropdown-toggle="">
-                Shop
-              </a>
-              <a href="/#reachout" data-dropdown-toggle="">
-                Reach Out
+              <a href="/pages/donate" data-dropdown-toggle="">
+                Donate
               </a>
               <button
                 class="link dark-mode-toggle"
