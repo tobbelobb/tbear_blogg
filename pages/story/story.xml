@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="subpagetemplate.xsl"?>
-<subpage name="about" cname="About" description="About">
+<subpage name="story" cname="Story" description="Story About Torbjørn and Hangprinter">
   <div id="SiteName" style="text-align:center;">
     Hello!
   </div>

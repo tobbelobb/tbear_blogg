@@ -20,6 +20,11 @@
   <xsl:value-of select="posts/@year" />
   <xsl:text disable-output-escaping="yes">"&gt;</xsl:text>
 
+  <xsl:text disable-output-escaping="yes">
+    &lt;link rel="canonical" href="https://torbjornludvigsen.com/blog/</xsl:text>
+  <xsl:value-of select="posts/@year" />
+  <xsl:text disable-output-escaping="yes">"&gt;</xsl:text>
+
   <meta property="og:description" content="Reprap blog" />
   <meta property="og:image" content="https://torbjornludvigsen.com/media/torbjornludvigsen.JPG" />
   <meta name="twitter:card" content="summary" />

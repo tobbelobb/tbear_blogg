@@ -35,6 +35,11 @@
   <xsl:value-of select="/subpage/@name" />
   <xsl:text disable-output-escaping="yes">"&gt;</xsl:text>
 
+  <xsl:text disable-output-escaping="yes">
+    &lt;link rel="canonical" href="https://torbjornludvigsen.com/pages/</xsl:text>
+  <xsl:value-of select="/subpage/@name" />
+  <xsl:text disable-output-escaping="yes">"&gt;</xsl:text>
+
   <!-- Meta og:description -->
   <xsl:text disable-output-escaping="yes">
     &lt;meta property="og:description" content="</xsl:text>
