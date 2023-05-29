@@ -44,92 +44,6 @@ video {
 	object-position: center;
 }
 
-/*
-body .img_wrapper > h1 {
-	font-size: 33cqw;
-	line-height: 1.0;
-	overflow-wrap: anywhere;
-	position: absolute;
-	z-index: 1;
-	font-weight: bold;
-	left: clamp(3%, 1% + 1vw, 10%);
-	right: clamp(3%, 1% + 1vw, 10%);
-	top: 0%;
-	color: black;
-	margin-top: 0;
-	margin-bottom: 0;
-	mix-blend-mode: overlay;
-	text-align-last: center;
-}
-*/
-
-/*
-body .img_wrapper > h1 {
-	  font-size: 15cqw;
-	  line-height: 1.2;
-	  overflow-wrap: anywhere;
-	  position: absolute;
-	  z-index: 1;
-	  left: clamp(4%, 1% + 1vw, 10%);
-	  right: clamp(4%, 1% + 1vw, 10%);
-	  top: 55%;
-	  color: black;
-	  margin-top: 0;
-	  margin-bottom: 0;
-	  text-align-last: center;
-}
-*/
-/*
-body.dark .img_wrapper > h1 {
-	  font-size: clamp(12ch, 8ch + 4vw, 13ch);
-	  line-height: 1.1;
-	  overflow-wrap: anywhere;
-	  position: absolute;
-	  z-index: 1;
-	  font-weight: bold;
-	  left: clamp(3%, 1% + 1vw, 10%);
-	  right: clamp(3%, 1% + 1vw, 10%);
-	  top: 0%;
-	  color: #ff0000;
-	  margin-top: 0;
-	  margin-bottom: 0;
-	  mix-blend-mode: difference;
-}
-*/
-/*
-body .img_wrapper > h1 {
-	  font-size: 15cqw;
-	  line-height: 4.5;
-	  position: absolute;
-	  z-index: 1;
-	  left: clamp(4%, 1% + 1vw, 10%);
-	  right: clamp(4%, 1% + 1vw, 10%);
-	  top: -11%;
-	  color: black;
-	  margin-top: 0;
-	  margin-bottom: 0;
-	  text-align-last: center;
-}
-*/
-/*
-body .img_wrapper > h1 {
-	  font-size: 11cqw;
-	  line-height: 1;
-	  position: absolute;
-	  z-index: 1;
-	  font-weight: bold;
-	  left: clamp(4%, 1% + 1vw, 10%);
-	  right: clamp(4%, 1% + 1vw, 10%);
-	  top: 58%;
-	  color: rgb(255 76 76 / 61%);
-	  margin-top: 0;
-	  margin-bottom: 0;
-	  mix-blend-mode: revert;
-	  text-align-last: center;
-	  -webkit-text-stroke-width: thin;
-	  -webkit-text-stroke-color: black;
-}
-*/
 body .img_wrapper > h1 {
 	/* Font size:
 	 * No support for cqw: Brave Version 1.28.105 Chromium: 92.0.4515.131
@@ -144,8 +58,9 @@ body .img_wrapper > h1 {
 	left: 0;
 	right: 0%;
 	top: 0%;
-	margin-top: 0;
+	margin-top: 6px;
 	margin-bottom: 0;
+	margin-left: 11px;
 	text-align-last: right;
 }
 
