@@ -67,9 +67,11 @@ document.addEventListener('click', e => {
 
   const isMiniShopToggle = e.target.matches("[data-mini-shop-toggle]");
   if (isMiniShopToggle) {
-    e.target.classList.toggle('active');
+    e.target.classList.toggle('active'); /* Make mini-button rotate */
     currentMiniShop = e.target.nextElementSibling;
-    currentMiniShop.classList.toggle('active');
+    currentMiniShop.classList.toggle('active'); /* Toggle mini-shop's padding, width etc */
+    menu = e.target.closest("[data-dropdown-menu]")
+    menu.classList.toggle('has-mini-shop-active') /* Toggle parent menu to grow */
   }
 
   if (!isDropdownToggle && e.target.closest("[data-dropdown]") != null) {

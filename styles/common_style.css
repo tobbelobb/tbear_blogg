@@ -266,7 +266,9 @@ nav .navbar-right .my-dropdown > .link {
 
 .sticky .my-dropdown.active > .link + .my-dropdown-menu {
 	/* 65ch and 100vw comes from min(65ch, 100%)
-	 * See shop_style.css nav width and other stylesheets' body width */
+	 * See shop_style.css nav width and other stylesheets' body width
+	 * 16ch comes from how many max characters in each menu item (plus some room for padding)
+	 * 50vw is the speed at which left edge pushes inwards as screen shrinks */
 	transform: translateX(calc(-16ch - 50vw + min(65ch, 100vw) / 2));
 	transition: opacity 200ms ease-in-out,
 	            transform 200ms ease-in-out,
@@ -276,14 +278,18 @@ nav .navbar-right .my-dropdown > .link {
 }
 
 .sticky .my-dropdown.active > .link + .my-dropdown-menu {
-	width: calc(14ch + 50vw - min(65ch, 100vw) / 2);
+	/* Make the menu wider than all the translateX values we might approach /*
+	width: calc(29ch + 50vw - min(65ch, 100vw) / 2);
 }
 
-@media (width < 950px) {
-	.sticky .my-dropdown.active > .link + .my-dropdown-menu:has(.mini-shop.active) {
-		width: calc(29ch + 50vw - min(65ch, 100vw) / 2);
-		transform: translateX(calc(-31ch - 50vw + min(65ch, 100vw) / 2));
-	}
+.sticky .my-dropdown.active > .link + .my-dropdown-menu.has-mini-shop-active {
+	/* The 980px determines the width after mini-shop activated on big screens.
+	 * It is the min screen width who can hold the whole menu without widening.
+	 * The -15ch determines the width on small screens.
+	 * -15ch was set to get line break in "Another heart of the Ocean" exactly
+	 * at screen width 320 px.
+	 * The rest is copied from the case above where no mini-shop is active */
+	transform: translateX(calc(max(min((100vw - 980px) / 2, 0px), -15ch) - 16ch - 50vw + min(65ch, 100vw) / 2));
 }
 
 .sticky:not(.shopfront-nav) .my-dropdown.active > .link + .my-dropdown-menu {
