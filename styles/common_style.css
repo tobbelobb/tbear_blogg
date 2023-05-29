@@ -278,7 +278,7 @@ nav .navbar-right .my-dropdown > .link {
 }
 
 .sticky .my-dropdown.active > .link + .my-dropdown-menu {
-	/* Make the menu wider than all the translateX values we might approach /*
+	/* Make the menu wider than all the translateX values we might approach */
 	width: calc(29ch + 50vw - min(65ch, 100vw) / 2);
 }
 
