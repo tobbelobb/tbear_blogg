@@ -105,23 +105,37 @@ if (isTouchDevice()) {
   document.addEventListener("touchend", e => {
     menuSwipeEndX = e.changedTouches[0].screenX;
     menuSwipeEndY = e.changedTouches[0].screenY;
-    menuGesture();
+    menuGesture(e);
   }, false);
   document.addEventListener("touchcancel", e => {
     menuSwipeEndX = e.changedTouches[0].screenX;
     menuSwipeEndY = e.changedTouches[0].screenY;
-    menuGesture();
+    menuGesture(e);
   }, false);
-  function menuGesture() {
+  function menuGesture(e) {
     if (menuSwipeEndX > (menuSwipeStartX + 10) &&
       Math.abs(menuSwipeStartX - menuSwipeEndX) > Math.abs(menuSwipeStartY - menuSwipeEndY)) {
-      document.querySelectorAll("[data-dropdown].active").forEach(dropdown => {
-        dropdown.classList.remove('active');
-      })
+      if (e.target.closest(".carousel") !== null) {
+        /* Try to slide the carousel if we're inside one */
+        plusSlides(-1);
+      } else if (e.target.closest(".pswp") !== null) {
+        /* Do nothing if we're in a photoswipe div */
+      } else {
+        document.querySelectorAll("[data-dropdown].active").forEach(dropdown => {
+          dropdown.classList.remove('active');
+        })
+      }
     } else if ((menuSwipeEndX + 10) < menuSwipeStartX &&
       Math.abs(menuSwipeStartX - menuSwipeEndX) > Math.abs(menuSwipeStartY - menuSwipeEndY)) {
-      const e = document.querySelector("[data-dropdown]");
-      e.classList.add("active");
+      if (e.target.closest(".carousel") !== null) {
+        /* Try to slide the carousel if we're inside one */
+        plusSlides(1);
+      } else if (e.target.closest(".pswp") !== null) {
+        /* Do nothing if we're in a photoswipe div */
+      } else {
+        const dropdown = document.querySelector("[data-dropdown]");
+        dropdown.classList.add("active");
+      }
     }
     menuSwipeStartX = 0;
     menuSwipeEndX = 0;
