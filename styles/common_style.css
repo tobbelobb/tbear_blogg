@@ -113,9 +113,11 @@ code {
 html {
 	scroll-behavior: smooth;
 	padding-bottom: 100px;
+	overflow-x: hidden;
 }
 body {
 	margin-top: 0;
+	overflow-x: clip;
 }
 *,
 *::before,
@@ -262,7 +264,6 @@ nav .navbar-right .my-dropdown > .link {
 	text-align: right;
 	min-height: 56.8px;
 }
-
 
 .sticky .my-dropdown.active > .link + .my-dropdown-menu {
 	/* 65ch and 100vw comes from min(65ch, 100%)

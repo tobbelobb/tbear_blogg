@@ -1,5 +1,4 @@
 body {
-	overflow-x: hidden;
 	width: min(65ch, 100%);
 	margin-inline: auto;
 }
