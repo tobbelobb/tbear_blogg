@@ -45,7 +45,7 @@
 	/* Old xsl theme */
 	--clr-theme-1: rgb(244, 151, 108);
 
-	--clr-nav-front: var(--clr-transparent);
+	--clr-nav-front: rgba(33,33,33,0.85);
 	--clr-nav-productpage-bg: rgba(240, 240, 240, 0.85);
 
 	--clr-nav-shop-bg: rgba(0, 0, 0, 0.5);
@@ -111,7 +111,6 @@ code {
 
 /* Very general stuff */
 html {
-	scroll-behavior: smooth;
 	padding-bottom: 100px;
 	overflow-x: hidden;
 }
@@ -280,6 +279,7 @@ nav .navbar-right .my-dropdown > .link {
 
 .sticky .my-dropdown.active > .link + .my-dropdown-menu {
 	/* Make the menu wider than all the translateX values we might approach */
+	opacity: 1.0;
 	width: calc(29ch + 50vw - min(65ch, 100vw) / 2);
 }
 
@@ -293,18 +293,15 @@ nav .navbar-right .my-dropdown > .link {
 	transform: translateX(calc(max(min((100vw - 980px) / 2, 0px), -15ch) - 16ch - 50vw + min(65ch, 100vw) / 2));
 }
 
-.sticky:not(.shopfront-nav) .my-dropdown.active > .link + .my-dropdown-menu {
-	opacity: 0.95;
-}
-
-.sticky.shopfront-nav .my-dropdown.active > .link + .my-dropdown-menu {
-	opacity: 1.0;
-}
-
 .sticky {
 	position: sticky;
 	top: -57px;
 	z-index: 3;
+	transition: top 400ms ease-in-out;
+}
+
+.sticky.active {
+	top: 0px;
 }
 
 .btn {
@@ -330,8 +327,11 @@ nav .navbar-right .my-dropdown > .link {
 body.light p, body.light form, body.light ul {
 	color: var(--clr-weaktext);
 }
-.sticky:not(.shopfront-nav) nav {
+body.dark .sticky:not(.shopfront-nav) nav {
 	background-color:  var(--clr-nav-front);
+}
+body.light .sticky:not(.shopfront-nav) nav {
+	background-color:  var(--clr-light);
 }
 nav a, nav .link {
 	color: var(--clr-weaktext);
@@ -345,7 +345,7 @@ body.dark nav a, body.dark nav .link {
 	fill: var(--clr-text-darkmode);
 }
 body.dark .sticky:not(.shopfront-nav) .my-dropdown-menu {
-	background-color: var(--clr-dark);
+	background-color: var(--clr-nav-front);
 }
 body.dark #github {
 	filter: invert(1);

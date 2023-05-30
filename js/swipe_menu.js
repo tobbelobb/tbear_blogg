@@ -50,7 +50,7 @@ scrollDistance(function (distance) {
   if (document.querySelectorAll("[data-dropdown].active").length !== 0) {
     acc_distance += distance;
     scroll_updates += 1;
-    if (acc_distance > 1000 || acc_distance < -2000 || scroll_updates >= 3) {
+    if (acc_distance > 1000 || acc_distance < -2000 || scroll_updates >= 4) {
       document.querySelectorAll("[data-dropdown].active").forEach(dropdown => {
         dropdown.classList.remove('active');
       });
@@ -60,6 +60,22 @@ scrollDistance(function (distance) {
   }
 });
 
+let lastScroll = 0;
+const navbar = document.querySelector(".sticky");
+window.addEventListener("scroll", () => {
+  if (document.scrollingElement.scrollTop === 0) {
+    navbar.classList.remove("active");
+  } else {
+    const currentScroll = window.pageYOffset;
+    const distance = currentScroll - lastScroll
+    lastScroll = currentScroll;
+    if (distance < 0) {
+      navbar.classList.add("active");
+    } else {
+      navbar.classList.remove("active");
+    }
+  }
+})
 
 
 document.addEventListener('click', e => {
@@ -84,13 +100,22 @@ document.addEventListener('click', e => {
     currentDropdown.classList.toggle('active');
   }
 
-  document.querySelectorAll("[data-dropdown].active").forEach(dropdown => {
-    if (dropdown === currentDropdown) {
-      return;
-    }
-    dropdown.classList.remove('active');
-  });
+  const activeDropdowns = document.querySelectorAll("[data-dropdown].active");
+  if (activeDropdowns.length !== 0) {
+    activeDropdowns.forEach(dropdown => {
+      if (dropdown === currentDropdown) {
+        return;
+      }
+      dropdown.classList.remove('active');
+      navbar.classList.remove("active");
+    });
+  }
 
+  if (e.target.matches("p, h1, h2, h3, #MainContent ul li, main ul li, figcaption")) {
+    if (activeDropdowns.length === 0) {
+      navbar.classList.toggle("active");
+    }
+  }
 })
 
 let menuSwipeStartX = 0;

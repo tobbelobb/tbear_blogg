@@ -1,3 +1,7 @@
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	width: min(65ch, 100%);
 	margin-inline: auto;
