@@ -354,7 +354,7 @@ body.dark #github {
 	color: var(--clr-light);
 	background-color: var(--clr-button-primary);
 	width: min(20ch, 75%); /* As long as a vat nr if that fits */
-	margin-bottom: 10px;
+	margin: 18px 0 10px 0;
 }
 body.dark .btn-primary {
 	color: var(--clr-text-darkmode);
@@ -404,10 +404,6 @@ body.dark .btn-primary:focus {
 
 button, select {
 	text-transform: none;
-}
-
-button:not(.link) {
-	margin: 18px 0 10px 0;
 }
 
 .dropdown-inside-slideout {
