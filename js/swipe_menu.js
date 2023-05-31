@@ -111,7 +111,7 @@ document.addEventListener('click', e => {
     });
   }
 
-  if (e.target.matches("p, h1, h2, h3, #MainContent ul li, main ul li, figcaption")) {
+  if (e.target.matches("p, h1, h2, h3, #MainContent ul li, main ul li, figcaption, .full-screen-background")) {
     if (activeDropdowns.length === 0) {
       navbar.classList.toggle("active");
     }

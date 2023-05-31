@@ -1,6 +1,8 @@
 /* Section: General shop stuff */
 html {
 	padding-bottom: 0px;
+	scroll-behavior: smooth;
+	scroll-snap-type: y mandatory;
 }
 
 body {
@@ -19,6 +21,7 @@ nav {
 	margin-bottom: -56.8px;
 }
 
+
 .shopfront-nav {
 	background-color: var(--clr-nav-shop-bg);
 }
@@ -33,6 +36,8 @@ nav {
 	min-height: 100lvh;
 	background-size: cover;
 	height: 100%;
+	scroll-snap-align: start;
+	scroll-snap-stop: always;
 }
 
 #background-1 {
@@ -198,12 +203,13 @@ nav {
 }
 
 /* Change the color and weight of links on hover */
-a .text-below-line:hover {
-	color: var(--clr-weakertext);
-}
-
-.text-below-line-hover {
-	color: var(--clr-weakertext);
+@media (hover: hover) {
+	a .text-below-line:hover {
+		color: var(--clr-weakertext);
+	}
+	.text-below-line-hover {
+		color: var(--clr-weakertext);
+	}
 }
 
 .scroll-arrow {
@@ -219,8 +225,10 @@ a .text-below-line:hover {
 	z-index: 100;
 }
 
-.scroll-arrow:hover {
-	color: var(--clr-scroll-arrow-hover);
+@media (hover: hover) {
+	.scroll-arrow:hover {
+		color: var(--clr-scroll-arrow-hover);
+	}
 }
 
 .scroll-down-arrow {
