@@ -8,9 +8,15 @@ body {
 	color: var(--clr-weaktext);
 }
 
+nav ul {
+	margin-bottom: 0;
+}
+
 nav {
+	position: relative;
 	width: min(65ch, 100%);
 	margin-inline: auto;
+	margin-bottom: -56.8px;
 }
 
 .shopfront-nav {
