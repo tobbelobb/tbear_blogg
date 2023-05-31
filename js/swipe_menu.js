@@ -69,9 +69,9 @@ window.addEventListener("scroll", () => {
     const currentScroll = window.pageYOffset;
     const distance = currentScroll - lastScroll
     lastScroll = currentScroll;
-    if (distance < -20) {
+    if (distance < -15) {
       navbar.classList.add("active");
-    } else if (distance > 20) {
+    } else if (distance > 15) {
       navbar.classList.remove("active");
     }
   }
