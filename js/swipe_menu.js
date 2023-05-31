@@ -118,6 +118,13 @@ document.addEventListener('click', e => {
   }
 })
 
+
+function mySnapScroll(elem) {
+  setTimeout(function() {
+    elem.scrollIntoView();
+  }, 350);
+}
+
 let menuSwipeStartX = 0;
 let menuSwipeEndX = 0;
 let menuSwipeStartY = 0;
@@ -140,6 +147,7 @@ if (isTouchDevice()) {
   function menuGesture(e) {
     if (menuSwipeEndX > (menuSwipeStartX + 10) &&
       Math.abs(menuSwipeStartX - menuSwipeEndX) > Math.abs(menuSwipeStartY - menuSwipeEndY)) {
+      // Right swipe
       if (e.target.closest(".carousel") !== null) {
         /* Try to slide the carousel if we're inside one */
         plusSlides(-1);
@@ -151,6 +159,7 @@ if (isTouchDevice()) {
         })
       }
     } else if ((menuSwipeEndX + 10) < menuSwipeStartX &&
+      // Left swipe
       Math.abs(menuSwipeStartX - menuSwipeEndX) > Math.abs(menuSwipeStartY - menuSwipeEndY)) {
       if (e.target.closest(".carousel") !== null) {
         /* Try to slide the carousel if we're inside one */
@@ -160,6 +169,22 @@ if (isTouchDevice()) {
       } else {
         const dropdown = document.querySelector("[data-dropdown]");
         dropdown.classList.add("active");
+      }
+    } else if ((menuSwipeEndY + 10) < menuSwipeStartY &&
+      Math.abs(menuSwipeStartY - menuSwipeEndX) > Math.abs(menuSwipeStartX - menuSwipeEndX)) {
+      // Down swipe
+      const bg1 = e.target.closest("#background-1");
+      if (bg1 !== null) {
+        const bg2 = document.getElementById("background-2");
+        mySnapScroll(bg2);
+      }
+    } else if (menuSwipeEndY > (menuSwipeStartY + 10) &&
+      Math.abs(menuSwipeStartY - menuSwipeEndX) > Math.abs(menuSwipeStartX - menuSwipeEndX)) {
+      // Up swipe
+      const bg2 = e.target.closest("#background-2");
+      if (bg2 !== null) {
+        const bg1 = document.getElementById("background-1");
+        mySnapScroll(bg1);
       }
     }
     menuSwipeStartX = 0;

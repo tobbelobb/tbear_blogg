@@ -2,7 +2,6 @@
 html {
 	padding-bottom: 0px;
 	scroll-behavior: smooth;
-	scroll-snap-type: y mandatory;
 }
 
 body {
@@ -36,8 +35,6 @@ nav {
 	min-height: 100lvh;
 	background-size: cover;
 	height: 100%;
-	scroll-snap-align: start;
-	scroll-snap-stop: always;
 }
 
 #background-1 {
