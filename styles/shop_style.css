@@ -15,8 +15,6 @@ nav ul {
 
 nav {
 	position: relative;
-	width: min(65ch, 100%);
-	margin-inline: auto;
 	margin-bottom: -56.8px;
 }
 

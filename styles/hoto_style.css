@@ -1,14 +1,3 @@
-body {
-	width: min(65ch, 100%);
-	margin-inline: auto;
-}
-
-main {
-	padding-left: calc(calc(min(65ch, 100% - 4rem) - 400px)/2);
-	padding-right: calc(calc(min(65ch, 100% - 4rem) - 400px)/2);
-	margin: auto;
-}
-
 .carousel {
 	position: relative;
 }

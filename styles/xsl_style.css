@@ -1,12 +1,6 @@
-body {
-	width: min(65ch, 100%);
-	margin-inline: auto;
-}
-
 h1 {
 	font-size:1.375rem;
 }
-
 h1 {
 	margin-bottom: 0px;
 }
