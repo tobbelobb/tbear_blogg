@@ -122,11 +122,14 @@ body {
 }
 nav {
 	width: min(65ch, 100%);
-	margin-inline: auto;
 }
 .sticky {
 	width: 100%;
+}
+nav {
+	padding: 0 calc(calc(min(65ch, 100%) - 464px)/2);
 	margin: auto;
+	z-index: 3;
 }
 main {
 	padding: 0 calc(calc(min(65ch, 100%) - 464px)/2);
@@ -161,11 +164,6 @@ h4 {
 img, svg {
 	vertical-align: middle;
 	align-self: center;
-}
-
-nav {
-	padding: 0;
-	z-index: 3;
 }
 
 nav ul {
@@ -340,10 +338,10 @@ nav .navbar-right .my-dropdown > .link {
 body.light p, body.light form, body.light ul {
 	color: var(--clr-weaktext);
 }
-body.dark .sticky:not(.shopfront-nav) nav {
+body.dark .sticky:not(.shopfront-nav) {
 	background-color:  var(--clr-nav-front);
 }
-body.light .sticky:not(.shopfront-nav) nav {
+body.light .sticky:not(.shopfront-nav) {
 	background-color:  var(--clr-light);
 }
 nav a, nav .link {
