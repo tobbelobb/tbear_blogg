@@ -129,8 +129,7 @@ nav {
 	margin: auto;
 }
 main {
-	padding-left: calc(calc(min(65ch, 100% - 4rem) - 400px)/2);
-	padding-right: calc(calc(min(65ch, 100% - 4rem) - 400px)/2);
+	padding: 0 calc(calc(min(65ch, 100%) - 464px)/2);
 	width: min(65ch, 100%);
 	margin: auto;
 }
