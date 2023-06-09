@@ -63,8 +63,15 @@ scrollDistance(function (distance) {
 let lastScroll = 0;
 const navbar = document.querySelector(".sticky");
 window.addEventListener("scroll", () => {
+  const body = document.body;
+  const html = document.documentElement;
+  const height = Math.max( body.scrollHeight, body.offsetHeight,
+    html.clientHeight, html.scrollHeight, html.offsetHeight );
+
   if (document.scrollingElement.scrollTop === 0) {
     navbar.classList.remove("active");
+  } else if (document.scrollingElement.scrollTop == height - window.innerHeight) {
+    navbar.classList.add("active");
   } else {
     const currentScroll = window.pageYOffset;
     const distance = currentScroll - lastScroll
