@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
+<posts year="2023">
+  <post id="patent_1" heading="Patent Case Over. Blog Reawakens." date="2-8-2023">
+    <p>
+      Early last year, I learned of a comprehensive new Hangprinter patent.
+      I decided to go after it, as it made community members nervous.
+    </p>
+    <p>
+      I got lots of help.
+      I found an awesome lawyer and we presented prior art to the USPTO.
+      The broad claims were then rejected.
+    </p>
+    <p>
+      In order to save some straws of their patent, the holders narrowed their claims.
+      They were pushed to cover just a narrow design path,
+      on top of the publicly available Hangprinter base design.
+    </p>
+    <p>
+      Fortunately, they chose to own an inferior, uninspiring path that should be avoided anyways, for technical reasons.
+      Trivial workarounds exist otherwise.
+    </p>
+    <p>
+      So we have won, in the sense that we can forget about the whole thing.
+    </p>
+  </post>
+</posts>
