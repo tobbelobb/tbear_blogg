@@ -102,7 +102,7 @@
       So in a sense it was an opportunity to realize an old activist's dream.
     </p>
     <p>
-      I put together a fundrasing campaign to pay for legal expenses (<a href="https://www.gofundme.com/f/keep-hangprinter-free">here</a>).
+      I put together a fundraising campaign to pay for legal expenses (<a href="https://www.gofundme.com/f/keep-hangprinter-free">here</a>).
       I didn't expect much. I gave it a single tweet saying "Hangprinter has been stolen by patent trolls. Here's a kind of hopeless fundraiser for those who can afford to help us fight back legally."
     </p>
     <p>
@@ -166,7 +166,7 @@
     <h3>Ex Partes Reexamination</h3>
     <p>
       From this point on in the story, there's a paper trace at the USPTO's website, <a href="https://patentcenter.uspto.gov/applications/90015140/ifw/docs">here</a>.
-      It shows our ex parte reexam request from October 2022.
+      It shows our ex partes reexam request from October 2022.
       To see the analysis we put forth, see "Receipt Original Ex Parte Reexamination by 3rd party fewer then 40 Pages Rule 1.20(C)(1)".
       Warning, it's 39 pages of legalese.
     </p>
@@ -189,7 +189,7 @@
     <p>
       I didn't analyze the new claims closely yet, since I still hoped the USPTO examiner would reject them.
       However, in July we got the Notice of Intent to Issue a Reexam Certificate.
-      The revised caims had been accepted.
+      The revised claims had been accepted.
     </p>
     <p>
       Looking closely, I could confirm that none of the existing Hangprinters are covered by the revised claims.
@@ -208,8 +208,8 @@
     <p>
       <ol>
         <li>Guy wires stabilizing a suspended top anchor.</li>
-        <li>One lower anchor's cables form a horizontal parallellogram,
-            another lower anchor's cables form a vertical parallellogram.</li>
+        <li>One lower anchor's cables form a horizontal parallelogram,
+            another lower anchor's cables form a vertical parallelogram.</li>
         <li>At least one anchor lack positional control, provides only tension control.</li>
         <li>Anchors move up/down to always be in the horizontal plane that goes through the effector.</li>
       </ol>
@@ -235,9 +235,9 @@
     </p>
     <h4>2</h4>
     <p>
-      There's nothing special about vertical or horizontal parallellograms.
-      Any parallellogram fixates rotational degrees of freedom equally well.
-      Making all anchors equal to each other is more desireable since it
+      There's nothing special about vertical or horizontal parallelograms.
+      Any parallelogram fixates rotational degrees of freedom equally well.
+      Making all anchors equal to each other is more desirable since it
       reduces special cases and the number of unique parts.
     </p>
     <h4>3</h4>
@@ -249,7 +249,7 @@
     </p>
     <h4>4</h4>
     <p>
-      It is desireable to be able to pull the effector in all directions, including downwards.
+      It is desirable to be able to pull the effector in all directions, including downwards.
       There are lots of forces from the print that pushes the effector upwards.
       If there's no anchor that can pull the effector downwards,
       then you get wobbling and artifacts in your print, or your effector needs to be very heavy which will slow
