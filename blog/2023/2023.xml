@@ -273,7 +273,7 @@
       energy usage of the machine. It also limits max speed and max acceleration.
       Having two types of lower anchors that work differently from each other makes new and
       exotic failure modes possible, in hardware as well as in software.
-      We've had toggleable torque mode (allowing to set a tension rather than a position)
+      We've had toggleable torque mode (allowing users to set a tension rather than a position)
       in all Hangprinter anchors since 2017.
       There are good reasons why we've never left it on during print.
     </p>
@@ -287,9 +287,20 @@
     </p>
     <h3>Closing Words</h3>
     <p>
-      We have successfully narrowed the patent and can safely forget about it.
+      The narrowed patent only covers machines that have all the features described above, all at once.
+      If you find yourself wanting to implement 1 or 2 or 3 of those features,
+      then you don't have to worry about the patent.
+      Make a slight deviation, a tiny angle or something, an you can probably have all 4.
+    </p>
+    <p>
+      This is in contrast to before, when you couldn't have even 1 of those features.
+      If an anchor was considered to do "tension control", then even
+      existing Hangprinters, and any related machine design, was covered by the old patent.
+      With the new patent we don't have to worry and can simply forget about it.
+    </p>
+    <p>
       I published much less than usual during the past year, out of fear that whatever I publish
-      might hurt my case, or contain unsound legal advice, or tempt the patent holders to
+      might hurt my case, or be interpreted as legal advice, or tempt the patent holders to
       copy more of my stuff into their own patent applications.
     </p>
     <p>
