@@ -240,7 +240,7 @@
     </p>
     <p>
       New independent claims 21 and 24 was added, but they share the same features, except maybe
-      claim 24 avoids feature 4, I'm not sure.
+      claim 24 avoids the "horizontal plane" part of feature 4, I'm not sure.
     </p>
     <p>
       Apart from being easy to work around, none of these features are desirable,
@@ -285,7 +285,7 @@
       then you get wobbling and artifacts in your print, or your effector needs to be very heavy which will slow
       you down.
     </p>
-    <h3>Closing Words</h3>
+    <h3>Why This is a Good Result</h3>
     <p>
       The narrowed patent only covers machines that have all the features described above, all at once.
       If you find yourself wanting to implement 1 or 2 or 3 of those features,
@@ -295,9 +295,10 @@
     <p>
       This is in contrast to before, when you couldn't have even 1 of those features.
       If an anchor was considered to do "tension control", then even
-      existing Hangprinters, and any related machine design, was covered by the old patent.
+      existing Hangprinters, and almost any related machine design, was covered by the old patent.
       With the new patent we don't have to worry and can simply forget about it.
     </p>
+    <h3>Looking Forwards</h3>
     <p>
       I published much less than usual during the past year, out of fear that whatever I publish
       might hurt my case, or be interpreted as legal advice, or tempt the patent holders to
@@ -318,7 +319,7 @@
       I'll make sure we're better prepared next time around.
       This time we were simply lucky that the path that closed was such an uninteresting one.
     </p>
-    <p>
+    <!--p>
       We were also lucky to have some relevant, structured, and old enough blog posts and videos,
       so that we could make the closing path very narrow.
       In particular, Thomas Sanladerer's Youtube videos were awesome for building prior art analysis upon.
@@ -326,10 +327,26 @@
       Not only did Tom as an interviewer make me explain basic concepts in detail,
       but the hundreds of Youtube comments were regarded by the USPTO as part of the same "published unit", which is good.
       These comments had date stamps and established that some design developments were obvious and commonly discussed.
+    </p-->
+    <h3>The Positive Take That I See Too Seldom</h3>
+    <p>
+      A patent case shouldn't make us sad or angry.
+      If we see no patent vultures then the invention in our hands is probably not very valuable.
+      If we find large entities spending money and taking risks to try and patent our things,
+      then it's a sign we're on a valuable path.
     </p>
     <p>
-      I'm looking forward to continue expanding world of open source.
-      Hangprinter is a gift to everyone, and the Hangprinter Community is open to anyone.
+      Any valuable design space will fill up with selfish for-profit players over time,
+      even the Hangprinter space, and we should be fine with that.
+      This patent case was not meant to expel for-profit companies from the community.
+      It was fought to make room for more of them by
+      making sure there's plenty of low hanging fruit left that everybody and nobody owns.
+    </p>
+    <p>
+      I'm looking forward to expand the world of open source by continuing to give my
+      Hangprinter developments as gifts to everyone, and by keeping the community open.
+      Come make a profitable Hangprinter business with us.
+      Just don't patent other people's inventions.
     </p>
   </post>
 </posts>
