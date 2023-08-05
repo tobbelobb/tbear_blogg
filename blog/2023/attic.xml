@@ -1,4 +1,7 @@
 
+
+
+
     <p>
 I've noticed that successful open source hardware projects evolve through cycles or "seasons". There's the springtime, when a big valuable design space is opened up (released to the commons) by the OSHW project. There's seemingly unlimited energy and visibility in the space. Then there's the autumn when there's increasingly selfish competition around a waning source of design space/energy. Nothing is new anymore and companies are hoarding to survive the coming winter. Winter is the innovation environment assumed by IP law, investors, and the common layman. Gravity towards winter is unavoidable and winter lasts until another design space is opened up by another open source project.
     </p>
@@ -17,3 +20,23 @@ I've learned that we should methodically teach every detail that makes our machi
     <p>
 It's a bit strange since each machine contains thousands of decisions and considerations. The USPTO, at least in our case, seem laser focused on the parts that would fit neatly into high school geometry or mechanics classes. A fraction of the overall innovation work. Grafting the idea of legal ownership onto this abstract, superficial, and short lived part of the innovation process seems quite random from a bogged down developer's perspective. But I'm more than willing to adjust since the reward is legal protection.
     </p>
+
+
+
+      Constantly pulling the effector towards one point (an anchor) reduces accuracy and greatly increases wear and
+      energy usage of the machine. It also limits max speed and max acceleration.
+      Unless the tension control is really smart.
+      There's actually no clear cut conceptual difference between tension control and position control.
+      Both come down to portioning out electrical current
+      through the coils of an electrical motor.
+      The motor converts the electrical energy to mechanical work, which creates torque,
+      which creates tension, which
+      creates acceleration (change of effector position), which changes the tension in all the other cables,
+      affecting the torque and therefore currents in all the other motors. And so on.
+
+    </p>
+    <p>
+      If you control tension really tightly and with foresight then you get position control, and vice versa.
+      However the patent clearly specifies two different kinds of anchors ("base stations").
+      Having two types of lower anchors that work differently from each other makes a whole slew of new and
+      exotic failure modes possible, in hardware as well as in software.
