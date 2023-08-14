@@ -1,6 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
 <posts year="2023">
+  <post id="comeback_2023" heading="The Big Comeback Post" date="14-8-2023">
+    <p>
+      I want to talk about my Hangprinter work over past few years, and the next few years.
+    </p>
+    <p>
+      Everything revolves around the grander goal of building out
+      an ecosystem of several independent companies that use Hangprinter.
+    </p>
+    <h3>Next Few Years</h3>
+    <p>
+      I'm planning to make a next version of Hangprinter, called Hangprinter v5 (HP5 for short),
+      and sell it as a kit.
+    </p>
+    <p>
+      For that, I need to learn how to make it a more profitable and enjoyable machine.
+      So I'm setting up a small business, a proto-business, that uses Hangprinter in production
+      and sells Hangprinted objects.
+    </p>
+    <p>
+      Next, I'll develop the proto-business into the Hangprinter kit supplier
+      that people have been asking me to build.
+    </p>
+    <!--p>
+      People have asked me for kits for ages, hundreds of times, but I've refused.
+      I first wanted to explore some obvious design developments, learn to love the machine myself,
+      and meet the interesting people that showed up
+      in the narrow niche community that Hangprinter currently is.
+    </p>
+    <p>
+      At the end of this, the plan is that you will be able to buy the polished machine
+      that emerges from this whole process.
+      I'll also make my support commercially available, sharing my
+      broad experience and understanding of for-profit Hangprinting.
+    </p-->
+    <h3>Past Few Years</h3>
+    <p>
+      The goals of the previous version, HP4, was published way back in
+      <a href="/blog/2018/#hangprinter_project_59">July 2018</a>, they were
+    </p>
+    <p>
+      <ul>
+        <li>A reliable workhorse</li>
+        <li>that people will enjoy using</li>
+        <li>and spreading</li>
+        <li>for profit</li>
+      </ul>
+    </p>
+    <p>
+      I built two prototypes and programmed a lot of new features to get towards this goal.
+      I kept publishing blog posts about it up until
+      <a href="/blog/2022/#hangprinter_project_79">April 2022</a>,
+      when the patent case popped up and jepordized the grander goal stated above.
+      Some crowdfunding and legal kung fu fixed it,
+      see my <a href="/blog/2023/#patent_1">previous post</a> for details.
+    </p>
+    <p>
+      Now free from patent worries, I want to publish everything I've worked on
+      in a big lump.
+      Here's a list of progress between April 2022 and today (August 2023):
+    </p>
+    <p>
+      <ul>
+        <li>Full software support for five anchors (one high, four low anchors) configuration is done,
+            including adjustments to flex compensation, forward transform, auto calibration
+            and reachable volume calculations.
+            See <a href="https://github.com/Duet3D/RepRapFirmware/pull/606">here</a> and
+            <a href="https://gitlab.com/tobben/auto-calibration-simulation-for-hangprinter/-/tree/five_anchors?ref_type=heads">here</a>
+            for details.
+            Thanks to jtimon for contributing to and pushing for this line of work.
+        </li>
+        <li>ReprapFirmware now lets you specify desired force (Newtons) when enabling torque mode,
+            rather than desired motor current (Ampere) that was used before.
+        </li>
+        <li>ReprapFirmware can now read measured motor currents from the ODrives,
+            and deduce an estimate of line force.</li>
+        <li>Incremental self-calibration with Kalman Filter has been coded and shown great promise in simulation,
+          <a href="https://gitlab.com/tobben/auto-calibration-simulation-for-hangprinter/-/merge_requests/2">here</a>.
+          It depends upon force readings.
+          Thanks to Mikael Tulldahl for the idea, initiative and expertise on this one.
+          The promise of a Hangprinter that notices when configuration is off, and can improve itself
+          automatically, is a holy grail for Hangprinter user experience.
+        </li>
+        <li>I've started printing clay rather than plastic.
+        </li>
+        <li>A <a href="https://3dpotter.com/extruders/1000-extruder">syringe-style clay extruder</a>
+            has been integrated with Hangprinter.
+            It's a simple and solid solution for printing small objects.
+            For those who want to build an equivalent one, I've heard good things about the
+            <a href="https://www.bryancera.com/cerastruder">CeraStruder</a>.
+        </li>
+        <li>A <a href="https://www.3dwasp.com/en/wasp-continuous-feeding-system/">continuous (clay) feeding system</a>
+            has been integrated with Hangprinter, after an in-depth exploration of the field of clay extrusion.
+            It's heavy, expensive, and hard to use but the performance I'm getting and the
+            large dimensions it allows are fantastic.
+        </li>
+        <li>A new <a href="https://torbjornludvigsen.com/">business home page</a> has been built.
+            Source <a href="https://gitlab.com/tobben/tbear_blogg">here</a>.
+        </li>
+        <li>The domains hangprinter.com and hangprinters.com have been donated to me.
+        </li>
+        <li>Lots of ceramic objects have been designed and printed.
+            I've gotten great feedback and I'm very eager to show you the products by putting them
+            up for sale in the coming few weeks.
+        </li>
+        <li>The blockchain innovation track has been investigated in depth and then paused.
+            I went with Polkadot, which turned out to be not great.
+            Reasons <a href="/blog/2022/#polkadot_1">here</a>
+            and
+            <a href="https://forum.polkadot.network/t/calling-polkadot-core-developers/506">here</a>.
+            Good blockchains don't die, so we'll have ample time to explore them in the future.
+        </li>
+        <li>I've
+            <a href="https://github.com/ashawkey/stable-dreamfusion/pulls?q=is%3Apr+author%3Atobbelobb+is%3Aclosed+">contributed</a>
+            to a really good text-to-3d generator called
+       	    <a href="https://github.com/ashawkey/stable-dreamfusion">Stable Dreamfusion</a>.
+            This is the most fun I've had in years, it might become my main tool for creating art.
+            When I tested (March 2023) it was still too janky to base a business upon,
+            but it will obviously be better in a few years.
+            While waiting, I wrote a custom gcode generator that I'm using for my proto-business' art.
+      	</li>
+      </ul>
+    </p>
+  </post>
   <post id="patent_1" heading="Patent Got Narrowed" date="5-8-2023">
     <h2>TLDR Version</h2>
     <p>
