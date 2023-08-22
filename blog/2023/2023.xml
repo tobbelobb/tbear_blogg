@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
 <posts year="2023">
-  <post id="comeback_2023" heading="Where I'm Going With This" date="21-8-2023">
+  <post id="comeback_2023" heading="Where I'm Going With This" date="22-8-2023">
     <p>
       I've started working on a version 5 of Hangprinter (HP5 for short).
       I plan to sell it as a kit once it's ready.
@@ -14,8 +14,7 @@
       (will later change to <a href="hangprinter.com/shop">hangprinter.com/shop</a>).
     </p>
     <p>
-      The proto-business
-      will gradually morph into a kit-selling one.
+      The proto-business will gradually morph into a kit-selling one.
       Supplying kits aligns with the longer term goal: an ecosystem of profitable Hangprinter companies.
     </p>
     <figure>
@@ -26,27 +25,56 @@
       </figcaption>
     </figure>
     <p>
-      I think it makes sense for Hangprinter companies to rise together, in two ways
+      I want Hangprinter companies to rise together, by two mechanisms
       <ul>
-        <li>Technical. Shared technical progress is the promise of science and open source.</li>
-        <li>Economical. Benefits of combined scale, shared risks, trading parts and services is the promise of capitalism.</li>
+        <li>Shared technical progress, as in science and open source.</li>
+        <li>Benefits of combined scale, shared risks, trading parts and services, as in capitalism.</li>
       </ul>
     </p>
     <p>
-      Combining the two, making both promises hold simultaneously,
-      might sound like an oxymoron for someone from a more established industry.
-      However, emerging industries often bond together to survive,
-      and Hangprinter has some unique prerequisites for such an ecosystem to stay positive.
+      Let's abbreviate profitable open source company to POC.
+      Making an ecosystem of POCs, where both mechanisms amplify growth interests me a lot.
+      Can it be be done? Will my plan work?
+      Any sign it might makes me very excited.
     </p>
-    <h4>Little Direct Competition</h4>
+    <figure>
+      <a href="/blog/2023/bilder/Default_Super_fantastic_shiny_cogwheels_given_to_a_hand_perfec_0.jpg">
+        <img src="/blog/2023/bilder/Default_Super_fantastic_shiny_cogwheels_given_to_a_hand_perfec_0_small.jpg" alt="" width="500" height="333"/>
+      </a>
+      <figcaption>
+      </figcaption>
+    </figure>
     <p>
-      Hangprinter companies will be somewhat localized geographically and in their niche.
-      They make heavy, specialized, and low volume products that are expensive to ship and don't generalize easily.
-      Contrary to what many expect, it's a hard and time consuming craft to develop a large 3d printed product.
-      The stakes are higher compared to small 3d printing, and
-      many more product specific lessons and processes must be learned before production starts for real.
-      Setup costs, material costs, end prices, lead times and margins are therefore much higher,
-      and risk of local competition is much lower.
+      This same idea has been tested before, so we can use history to guide our expectations.
+      There will be at least two kinds of Hangprinter companies:
+      <ol>
+        <li>Users, companies that use Hangprinters to make products,</li>
+        <li>Suppliers, companies that sell Hangprinter machinery.</li>
+      </ol>
+    </p>
+    <p>
+      Users stay POC, as long as the open tech is great.
+      Suppliers stay POC for a while but not for ever.
+      After that, the open tech goes back to being a hobby.
+      The closed tech is good, cheap, and widely available.
+      Tech progress stagnates util somebody sparks another open wave.
+    </p>
+    <p>
+      Rather than work against this, I think we should plan for it, even celebrate it, including the profits made during eventual stagnation.
+      When I get out competed by closed companies, I'll declare the grander goal was reached.
+      Maybe I start working on another wave? Or plant myself in an armchair, it's too early to tell.
+    </p>
+    <p>
+      The more immediate goals are
+      <ul>
+      <li>Make a profit, while</li>
+      <li>finishing the HP5 design.</li>
+      </ul>
+    </p>
+    <p>
+      Right now I have finished products, but I haven't sold them, and I have finished planning and most of the software of HP5.
+      Some CAN work, all the CAD work, and all the hardware work remains.
+      There will also be a push for documentation given the remaining budget from the patent case crowdfunding.
     </p>
     <figure>
       <a href="/blog/2023/bilder/single_cup.jpg">
@@ -54,53 +82,17 @@
       </a>
       <figcaption>
         A cup I made.
-        Hangprinting is objects for sale wonderfully tangible and blissfully void of hype and venture capital. Yet.
       </figcaption>
     </figure>
-    <h4>Shared Tech Base</h4>
-    <p>
-      The Hangprinters themselves though, look similar across the globe and across business niches.
-      So it's beneficial for the businesses to collaborate on the Hangprinter tech.
-    </p>
-    <h4>No Patent Risk</h4>
-    <p>
-      The outcome of the recent patent case clears away the most obvious potential source of contention between companies.
-    </p>
-    <!--p>
-      The Hangprinter machines themselves on the other hand, are small, and easy to ship around the world,
-      so we will see competition in the kit supplier market over time.
-      Once the machine supplier competition heats up, I imagine I'll have to pivot again, and that's ok.
-      Kicking off an industry is a very dynamic process, and I'll to what I can to keep allowing
-      things to happen by not adopting any monopolistic behavior.
-    </p-->
-    <h4>Fun</h4>
-    <p>
-      Modern Hangprinters have become very reliable and enjoyable to use over the past few years.
-      Many of the innovations are not yet widespread, and the community is still small and welcoming.
-    </p>
-    <!--figure>
+    <figure>
       <a href="/blog/2023/bilder/mega_coral_glazed.jpg">
         <img src="/blog/2023/bilder/mega_coral_glazed_small.jpg" alt="" width="500" height="376"/>
       </a>
       <figcaption>
         Giant porcelain sculpture in production.
       </figcaption>
-    </figure-->
-    <h4>Profitable</h4>
-    <p>
-      The market for large scale 3d prints is vibrant, even in a small city like Gothenburg.
-      I get offers all the time, but I don't really want to fill individual orders.
-      I want to make this industry catch fire worldwide.
-    </p>
-    <figure>
-      <a href="/blog/2023/bilder/Default_Super_fantastic_shiny_cogwheels_given_to_a_hand_perfec_0.jpg">
-        <img src="/blog/2023/bilder/Default_Super_fantastic_shiny_cogwheels_given_to_a_hand_perfec_0_small.jpg" alt="" width="500" height="333"/>
-      </a>
-      <figcaption>
-        Yeah, AI isn't great with cogwheels yet. Still, it caught on.
-      </figcaption>
     </figure>
-    <h4>Proven</h4>
+    <h4>Final Thoughts</h4>
     <p>
       The proto-business is there to prove these things beyond any doubt,
       and of course to provide me some income along the way.
@@ -108,18 +100,7 @@
       I'm planning a series of small blog posts in the coming weeks,
       to explain how far along I am, and what challenges I've overcome.
     </p>
-    <!--p>
-      People have asked me for kits for ages, hundreds of times, but I've refused.
-      I first wanted to explore some obvious design developments, learn to love the machine myself,
-      and meet the interesting people that showed up
-      in the narrow niche community that Hangprinter currently is.
-    </p>
-    <p>
-      At the end of this, the plan is that you will be able to buy the polished machine
-      that emerges from this whole process.
-      I'll also make my support commercially available, sharing my
-      broad experience and understanding of for-profit Hangprinting.
-    </p>
+    <!--
     <h3>Past Few Years</h3>
     <p>
       The goals of the previous version, HP4, was published way back in
