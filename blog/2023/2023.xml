@@ -3,19 +3,19 @@
 <posts year="2023">
   <post id="comeback_2023" heading="Where I'm Going With This" date="22-8-2023">
     <p>
-      I've started working on a version 5 of Hangprinter (HP5 for short).
+      I've started working on version 5 of Hangprinter (HP5 for short).
       I plan to sell it as a kit once it's ready.
     </p>
     <p>
       It will target for-profit users.
-      In order to learn about Hangprinter's strengths and weaknesses in a business context,
+      To learn about Hangprinter's strengths and weaknesses in a business context,
       I've started a proto-business.
       I'm using HP4 to print ceramics that I sell, over at <a href="https://torbjornludvigsen.com/shop">torbjornludvigsen.com/shop</a>
       (will later change to <a href="hangprinter.com/shop">hangprinter.com/shop</a>).
     </p>
     <p>
       The proto-business will gradually morph into a kit-selling one.
-      Supplying kits aligns with the longer term goal: an ecosystem of profitable Hangprinter companies.
+      Supplying kits aligns with the longer-term goal: an ecosystem of profitable Hangprinter companies.
     </p>
     <figure>
       <a href="/blog/2023/bilder/Default_fruitlike_triangles_hanging_from_trees_in_a_lush_light_0.jpg">
@@ -25,7 +25,7 @@
       </figcaption>
     </figure>
     <p>
-      I want Hangprinter companies to rise together, by two mechanisms
+      I want Hangprinter companies to rise together, through two mechanisms
       <ul>
         <li>Shared technical progress, as in science and open source.</li>
         <li>Benefits of combined scale, shared risks, trading parts and services, as in capitalism.</li>
@@ -34,8 +34,8 @@
     <p>
       Let's abbreviate profitable open source company to POC.
       Making an ecosystem of POCs, where both mechanisms amplify growth interests me a lot.
-      Can it be be done? Will my plan work?
-      Any sign it might makes me very excited.
+      Can it be done? Will my plan work?
+      Any sign it might work makes me very excited.
     </p>
     <figure>
       <a href="/blog/2023/bilder/Default_Super_fantastic_shiny_cogwheels_given_to_a_hand_perfec_0.jpg">
@@ -54,14 +54,14 @@
     </p>
     <p>
       Users stay POC, as long as the open tech is great.
-      Suppliers stay POC for a while but not for ever.
+      Suppliers stay POC for a while but not forever.
       After that, the open tech goes back to being a hobby.
       The closed tech is good, cheap, and widely available.
-      Tech progress stagnates util somebody sparks another open wave.
+      Tech progress stagnates until somebody sparks another open wave.
     </p>
     <p>
       Rather than work against this, I think we should plan for it, even celebrate it, including the profits made during eventual stagnation.
-      When I get out competed by closed companies, I'll declare the grander goal was reached.
+      When I get out-competed by closed companies, I'll declare the grander goal was reached.
       Maybe I start working on another wave? Or plant myself in an armchair, it's too early to tell.
     </p>
     <p>
@@ -72,8 +72,9 @@
       </ul>
     </p>
     <p>
-      Right now I have finished products, but I haven't sold them, and I have finished planning and most of the software of HP5.
-      Some CAN work, all the CAD work, and all the hardware work remains.
+      Right now I have finished products, but I haven't sold them.
+      I also have finished planning and most of the software of HP5.
+      The remaining work includes CAN integration, CAD work, and hardware work.
       There will also be a push for documentation given the remaining budget from the patent case crowdfunding.
     </p>
     <figure>
@@ -95,7 +96,7 @@
     <h4>Final Thoughts</h4>
     <p>
       The proto-business is there to prove these things beyond any doubt,
-      and of course to provide me some income along the way.
+      and of course to provide me with income along the way.
       I believe Hangprinter itself is well beyond good enough.
       I'm planning a series of small blog posts in the coming weeks,
       to explain how far along I am, and what challenges I've overcome.
@@ -205,7 +206,7 @@
       They accepted a narrower version of them.
     </p>
     <p>
-      We are fine with the narrow version of patent.
+      We are fine with the narrow version of the patent.
       It doesn't make us nervous.
     </p>
     <h2>Quite Long Version</h2>
@@ -217,7 +218,7 @@
     <h3>Collecting Advice</h3>
     <p>
       I talked to the Hangprinter community.
-      Some engineers way more experienced with patents than me said the patent
+      Some engineers who are way more experienced with patents than me said the patent
     </p>
     <p>
         <ol>
@@ -228,7 +229,7 @@
         </ol>
     </p>
     <p>
-      In hindsight this was all great insight.
+      In hindsight, this was all great insight.
     </p>
     <p>
       But the case also caught the interest of a community I hadn't met before,
@@ -243,20 +244,20 @@
       would strengthen the patent instead of weakening it.
       Many even suggested that the patent holders would win, not because they're right,
       but simply because they're rich and powerful.
-      Some were helpful and well meaning, some were academic and had very fancy titles,
-      a few shouted at me in all-caps for thinking I could challenge a US patent.
+      Some were helpful and well-meaning, some were academic and had very fancy titles,
+      and a few shouted at me in all-caps for thinking I could challenge a US patent.
     </p>
     <p>
-      I was told by the more serious sounding ones
+      I was told by the more serious-sounding ones
       that my prior art from up to one year <i>prior</i> to the patent application date was unusable
       due to a special loophole in US patent law.
-      (This legal loophole has actually been plugged a long time ago.)
+      (This legal loophole has been plugged a long time ago.)
       I got cost estimations ranging from 30k to 500k USD.
     </p>
     <p>
-      In parallel with learning about supposed horrors of the US patent system,
+      In parallel with learning about the supposed horrors of the US patent system,
       I tried to talk to the patent's inventors via email.
-      They seemed like good hearted people but maybe a bit naive.
+      They seemed like good-hearted people but maybe a bit naive.
       As soon as their company's legal dept was involved the email thread went silent.
       They might have done that to protect me from saying stupid things unknowingly.
     </p>
@@ -265,7 +266,7 @@
       might just be compactly cynical.
       Apart from the real legal experts,
       half of the internet was telling me that the US patent system was God's punishment to humanity.
-      The other half talked endlessly about how well intentioned the patent system is, how good it is
+      The other half talked endlessly about how well-intentioned the patent system is, how good it is
       compared to China etc etc.
       I wanted out.
     </p>
@@ -276,41 +277,41 @@
       considering how eager I was to escape this patent case.
     </p>
     <p>
-      Days and nights of writing claim mappings, trying to get the format, the date stamped sources,
+      Days and nights of writing claim mappings, trying to get the format, the date-stamped sources,
       the linked proof of every date stamp,
       the exact wordings,
       the technical details into a state that the various lawyers approved of.
     </p>
     <p>
       The patent text didn't even describe a sound physical geometry, but the
-      lawyers seemed utterly unimpressed by physics, maths and geometry based arguments,
+      lawyers seemed utterly unimpressed by physics, maths, and geometry-based arguments,
       which scared me a little.
       I had to "assume common misinterpretations"
       to even understand what the lawyers thought the text that I was supposed to argue with said.
       For a physicist and a coder, knowing that their misinterpretations might overrule reality was
       confusing and uncomfortable.
-      I gave up for a while, let all conversations die out, I needed silence.
+      I gave up for a while, and let all conversations die out, I needed silence.
     </p>
     <h3>Doing It</h3>
     <p>
-      After getting some rest, I felt like I should at least try to challenge the patent anyways.
+      After getting some rest, I felt like I should at least try to challenge the patent anyway.
       I'd been working on the Hangprinter Project for eight years after all,
       and the patent stood in the way of the most basic project goals.
       The do-nothing strategy was so boring and self-defeating.
       Even failure would feel better.
     </p>
     <p>
-      Besides, sometime in my past it was a little dream of mine to clear up a large design space for others,
+      Besides, sometime in the past, it was a little dream of mine to clear up a large design space for others,
       similar to what the expiration of Stratasys' US patent 5121329 had done back in 2009.
       That expiration supercharged the Reprap Project's potential by removing lots of patent risk.
       I'd dreamt of supercharging the Hangprinter Project as well,
       but not passively by waiting for an old patent to expire.
-      I wanted to actively remove a broad patent within the field of cable driven Hangprinter-like machines,
+      I wanted to actively remove a broad patent within the field of cable-driven Hangprinter-like machines,
       saving us the 20 years it takes for US patents to expire.
     </p>
     <p>
-      I read the patent text again, and found it to be clumsily written and obviously overreaching.
-      So I decided to put in a non-zero effort towards the old dream.
+      I read the patent text again and found that I might have a chance.
+      So I decided to put in a non-zero effort toward the old dream.
     </p>
     <p>
       I put together a fundraising campaign to pay for legal expenses (<a href="https://www.gofundme.com/f/keep-hangprinter-free">here</a>).
@@ -319,7 +320,7 @@
       Here's a kind of hopeless fundraiser for those who can afford to help us fight back legally."
     </p>
     <p>
-      It got way way more attention and funding than I had expected.
+      It got way more attention and funding than I had expected.
       But also way less than the 60k USD I thought I needed.
     </p>
     <p>
@@ -329,14 +330,14 @@
       I spoke to anyone who would speak to me, and to anyone they asked me to contact.
       Most often that meant their lawyer, or to people at the company who held the patent.
       One time it meant the "Patent Ombudsman" at the USPTO other times it was law professors.
-      I applied for pro bono legal help through a bunch of different programmes.
+      I applied for pro bono legal help through a bunch of different programs.
       Writing those applications took lots of time but I didn't get any meaningful answers.
     </p>
     <h3>Path to Clarity</h3>
     <p>
       Someone asked if I'd contacted EFF (Electronic Frontier Foundation).
       Out of the hundreds of emails and forum posts, this one made the biggest difference.
-      I had been meaning to contact them EFF for months, but that plan had drowned in all the fuzz.
+      I had been meaning to contact EFF for months, but that plan had drowned in all the fuzz.
       So I sent an email to info@eff.org.
       I was amused to get an answer from a person with the title "Mark Cuban Chair to Eliminate Stupid Patents".
     </p>
@@ -345,32 +346,32 @@
       We had another go at claim mapping, and we tried finding someone who could represent Hangprinter in the US.
     </p>
     <p>
-      It was Alex at PIPLIUS that told me about the famous Gnome patent case
+      It was Alex at PIPLIUS who told me about the famous Gnome patent case
       (<a href="https://blog.opensource.org/gnome-patent-troll-stripped-of-patent-rights/">here</a>),
       and introduced me to the IP lawyer who won that case for the open source side.
     </p>
     <p>
-      He already knew about the Hangprinter patent, and had even tried talking to me on Twitter already.
+      He already knew about the Hangprinter patent and had even tried talking to me on Twitter.
       He agreed to take the case and offered a very low rate.
       It wasn't pro bono (free) but I'll explain why I found the rate to be very low.
     </p>
     <p>
-      He obviously knew my budget since the crowdfunding campaign was public.
+      He knew my budget since the crowdfunding campaign was public.
       Lawyers charge in advance so my basic understanding of game theory told me that I'd
-      probably have send the whole crowdfunded sum to whatever lawyer I hired, all at once.
+      probably have to send the whole crowdfunded sum to whatever lawyer I hired, all at once.
       I had gotten 196k SEK from the campaign (190k SEK after adding Paypal donations and subtracting fees).
     </p>
     <p>
-      I paid 4000 USD (43072 SEK at the time) for initial unpatentability analysis, and later a 1500 USD (16834 SEK)
+      I paid 4000 USD (43072 SEK at the time) for the initial unpatentability analysis, and later a 1500 USD (16834 SEK)
       flat fee for the full ex partes reexamination process with the USPTO.
       He also helped reduce my fee paid to the USPTO by arguing that I should be categorized as a small entity.
       The USPTO fee was 3150 USD (35351 SEK) and was forwarded by the lawyer.
-      This left ca 95k SEK (currently equal to 9k USD) of donated money on my bank account.
+      This left ca 95k SEK (currently equal to 9k USD) of donated money in my bank account.
       More on that later.
     </p>
     <p>
-      For 20% of the price (or at a 80% discount) of the lowest rate any other lawyer had proposed (which was 26850 USD),
-      this lawyer did absolutely everything possible to invalidate or severely narrow the patent though an ex partes reexamination process.
+      For 20% of the price (or at an 80% discount) of the lowest rate any other lawyer had proposed (which was 26850 USD),
+      this lawyer did everything possible to invalidate or severely narrow the patent through an ex partes reexamination process.
       Including clearing up the misunderstanding that prior art needed to be more than a year older than the patent application.
       This improved the claims mapping considerably.
       He wrote the final analysis and handled the endless back-and-forth with the USPTO while
@@ -380,11 +381,11 @@
     <p>
       From this point on in the story, there's a paper trace at the USPTO's website, <a href="https://patentcenter.uspto.gov/applications/90015140/ifw/docs">here</a>.
       It shows our ex partes reexam request from October 2022.
-      To see the analysis we put forth, see "Receipt Original Ex Parte Reexamination by 3rd party fewer then 40 Pages Rule 1.20(C)(1)".
-      Warning, it's 39 pages of legalese.
+      To see the analysis we put forth, see "Receipt Original Ex Parte Reexamination by 3rd party fewer than 40 Pages Rule 1.20(C)(1)".
+      Warning: It's 39 pages of legalese.
     </p>
     <p>
-      The trace shows that the reexam was ordered in January 2023,
+      The trace shows that the re-exam was ordered in January 2023,
       meaning the USPTO agreed that our prior art and analysis raised a new question of patentability.
       Our application for reexamination was granted.
     </p>
@@ -397,7 +398,7 @@
       The ex partes reexamination procedure was chosen partly because it's cheap.
       However, it has the downside that the patent holder gets the last word.
       In June, the patent holders used this opportunity to ask if a
-      narrowed down version of their claims could be accepted.
+      narrowed-down version of their claims could be accepted.
     </p>
     <p>
       I didn't analyze the new claims closely yet, since I still hoped the USPTO examiner would reject them.
@@ -422,13 +423,13 @@
       <ol>
         <li>(Separate?) guy wires stabilizing a suspended top anchor.</li>
         <li>One lower anchor's cables form a horizontal parallelogram,
-            another lower anchor's cables form a vertical parallelogram.</li>
-        <li>At least one anchor lack positional control, provides only tension control.</li>
+            and another lower anchor's cables form a vertical parallelogram.</li>
+        <li>At least one anchor lacks positional control and provides only tension control.</li>
         <li>Anchors move up/down to always be in the horizontal plane that goes through the effector.</li>
       </ol>
     </p>
     <p>
-      New independent claims 21 and 24 was added, but they share the same features, except maybe
+      New independent claims 21 and 24 were added, but they share the same features, except maybe
       claim 24 avoids the "horizontal plane" part of feature 4, I'm not sure.
     </p>
     <p>
@@ -444,7 +445,7 @@
       Nesting one Hangprinter inside another is needlessly complex and adds many
       points of failure to the design.
       Besides, it was already suggested in the public Hangprinter Facebook group
-      in March 2018, so it shouldn't really be patentable (<a href="https://www.facebook.com/groups/hangprinter/posts/342461566264009/">here</a>) but who cares.
+      in March 2018, so it shouldn't be patentable (<a href="https://www.facebook.com/groups/hangprinter/posts/342461566264009/">here</a>) but who cares.
     </p>
     <p>
       See the appendix of my Hangprinter-is-Prior-Art post for more details and more sound alternatives, <a href="https://torbjornludvigsen.com/blog/hangprinter-is-prior-art/">here</a>.
@@ -458,7 +459,7 @@
     </p>
     <h4>3</h4>
     <p>
-      Constantly pulling the effector towards one point (an anchor) reduces accuracy and greatly increases wear and
+      Constantly pulling the effector towards one point (an anchor) reduces accuracy and greatly increases the wear and
       energy usage of the machine. It also limits max speed and max acceleration.
       Having two types of lower anchors that work differently from each other makes new and
       exotic failure modes possible, in hardware as well as in software.
@@ -469,8 +470,8 @@
     <h4>4</h4>
     <p>
       It is desirable to be able to pull the effector in all directions, including downwards.
-      There are lots of forces from the print that pushes the effector upwards.
-      If there's no anchor that can pull the effector downwards,
+      There are lots of forces from the print that push the effector upwards.
+      If no anchor can pull the effector downwards,
       then you get wobbling and artifacts in your print, or your effector needs to be very heavy which will slow
       you down.
     </p>
@@ -479,27 +480,27 @@
       The narrowed patent only covers machines that have all the features described above, all at once.
       If you find yourself wanting to implement 1 or 2 or 3 of those features,
       then you don't have to worry about the patent.
-      Make a slight deviation, a tiny angle or something, an you can probably have all 4.
+      Make a slight deviation, a tiny angle, or something, and you can probably have all 4.
     </p>
     <p>
-      This is in contrast to before, when you couldn't have even 1 of those features.
+      This is in contrast to before when you couldn't have even 1 of those features.
       If an anchor was considered to do "tension control", then even
       existing Hangprinters, and almost any related machine design, was covered by the old patent.
-      With the new patent we don't have to worry and can simply forget about it.
+      With the new patent, we don't have to worry and can simply forget about it.
     </p>
     <h3>Looking Forwards</h3>
     <p>
       I published much less than usual during the past year, out of fear that whatever I publish
       might hurt my case, or be interpreted as legal advice, or tempt the patent holders to
-      copy more of my stuff into their own patent applications.
+      copy more of my stuff into patent applications.
     </p>
     <p>
       Despite not publishing, I have been developing and innovating at full speed this entire time,
-      except the four weeks i did blockchain stuff (see my <a href="/blog/2022/#polkadot_1">previous post</a>).
-      I now have lots of Hangprinter related inventions lying around that need to be published properly.
+      except for the four weeks I did blockchain stuff (see my <a href="/blog/2022/#polkadot_1">previous post</a>).
+      I now have lots of Hangprinter-related inventions lying around that need to be published properly.
       I feel like the Hangprinter Community needs
       to secure the real interesting design paths and make sure they stay open.
-      The way forward is to find the promising design paths and then publish high quality prior art
+      The way forward is to find promising design paths and then publish high-quality prior art
       into the public domain.
     </p>
     <p>
@@ -508,15 +509,6 @@
       I'll make sure we're better prepared next time around.
       This time we were simply lucky that the path that closed was such an uninteresting one.
     </p>
-    <!--p>
-      We were also lucky to have some relevant, structured, and old enough blog posts and videos,
-      so that we could make the closing path very narrow.
-      In particular, Thomas Sanladerer's Youtube videos were awesome for building prior art analysis upon.
-      (See them <a href="https://www.youtu.be/Jk4fhQvNoaM">here</a> and <a href="https://www.youtu.be/gPvIHsF13D4">here</a>.)
-      Not only did Tom as an interviewer make me explain basic concepts in detail,
-      but the hundreds of Youtube comments were regarded by the USPTO as part of the same "published unit", which is good.
-      These comments had date stamps and established that some design developments were obvious and commonly discussed.
-    </p-->
     <h3>The Positive Take That I See Too Seldom</h3>
     <p>
       A patent case shouldn't make us sad or angry.
@@ -529,10 +521,10 @@
       even the Hangprinter space, and we should be fine with that.
       This patent case was not meant to expel for-profit companies from the community.
       It was fought to make room for more of them by
-      making sure there's plenty of low hanging fruit left that everybody and nobody owns.
+      making sure there's plenty of low-hanging fruit left that everybody and nobody owns.
     </p>
     <p>
-      I'm looking forward to expand the world of open source by continuing to give my
+      I'm looking forward to expanding the world of open source by continuing to give my
       Hangprinter developments as gifts to everyone, and by keeping the community open.
       Come make a profitable Hangprinter business with us.
       Just don't patent other people's inventions.
