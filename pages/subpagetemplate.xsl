@@ -94,11 +94,11 @@
                   &gt;
                 </button>
                 <div class="mini-shop" data-mini-shop="">
+                  <a href="/shop/Cups" data-dropdown-toggle="">
+                    Cups
+                  </a>
                   <a href="/shop/Heart_of_the_Ocean" data-dropdown-toggle="">
                     Heart of the Ocean
-                  </a>
-                  <a href="/shop/Another_Heart_of_the_Ocean" data-dropdown-toggle="">
-                    Another Heart of the Ocean
                   </a>
                 </div>
               </div>

@@ -36,6 +36,26 @@ nav {
 }
 
 #background-1 {
+	margin-top: 56.8px;
+	background-image: url('/shop/media/Cups2.png');
+	background-image: -webkit-image-set(
+		url("/shop/media/Cups2.avif"),
+		url("/shop/media/Cups2.png")
+	);
+	background-image: image-set(
+		url("/shop/media/Cups2.avif") type("image/avif"),
+		url("/shop/media/Cups2.png") type("image/jpg")
+	);
+	background-position: 50% 50%;
+	--image-width: 1449;
+	--image-height: 969;
+	--highlight-width-ratio: 0.90;
+	--highlight-height-ratio: 0.465;
+	--highlight-left-position-ratio: 0.05;
+	--highlight-top-position-ratio: 0.130;
+}
+
+#background-2 {
 	background-image: url('/shop/media/Heart_of_the_Ocean_1000x1000.png');
 	background-image: -webkit-image-set(
 		url("/shop/media/Heart_of_the_Ocean_1000x1000.avif"),
@@ -54,29 +74,6 @@ nav {
 	--highlight-top-position-ratio: 0.55;
 }
 
-#background-2 {
-	background-image: url('/shop/media/art2_cropped.jpg');
-	background-image: -webkit-image-set(
-		url("/shop/media/art2_cropped.avif"),
-		url("/shop/media/art2_cropped.jpg")
-	);
-	background-image: image-set(
-		url("/shop/media/art2_cropped.avif") type("image/avif"),
-		url("/shop/media/art2_cropped.jpg") type("image/jpg")
-	);
-	background-position: 50% 50%;
-	--image-width: 2047;
-	--image-height: 1177;
-	--highlight-width-ratio: 0.23;
-	--highlight-height-ratio: 0.22;
-	--highlight-left-position-ratio: 0.40;
-	--highlight-top-position-ratio: 0.40;
-	/* The uncropped art2.jpg wants this */
-	/*--highlight-height-ratio: 0.12;
-	--highlight-left-position-ratio: 0.395;
-	--highlight-top-position-ratio: 0.37;*/
-}
-
 .text-with-shadow {
 	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5), -1px -1px 2px rgba(255, 255, 255, 0.5);
 }
@@ -91,13 +88,11 @@ nav {
 .dotted-line {
 	position: absolute;
 	border: 0;
-	/*
-	border-top: 4px dotted grey;
+	/*border-top: 4px dotted grey;
 	border-left: 4px dotted grey;
 	border-bottom: 4px dotted grey;
 	border-right: 4px dotted grey;
-	border-radius: 5rem;
-	*/
+	border-radius: 5rem;*/
 }
 
 .positioned-content {
@@ -113,6 +108,11 @@ nav {
 @media screen and (min-width: 38.750em) {
 	.top-left {
 		top: 10%;
+		left: 10%;
+	}
+
+	.middle-left {
+		top: 40%;
 		left: 10%;
 	}
 
@@ -135,6 +135,11 @@ nav {
 @media screen and (max-width: 38.6875em) {
 	.top-left {
 		top: 10%;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	.middle-left {
+		top: 40%;
 		left: 50%;
 		transform: translateX(-50%);
 	}
@@ -164,7 +169,7 @@ nav {
 	overflow-wrap: break-word;
 	white-space: normal;
 	max-width: 100%;
-	min-width: 350px;
+	min-width: 200px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
