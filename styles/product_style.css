@@ -116,3 +116,6 @@
 	font-size: clamp(0.8rem, 2vw + 0.5rem, 1.0rem);
 }
 
+body.dark img {
+  filter: brightness(0.85);
+}

@@ -36,8 +36,8 @@ nav {
 }
 
 #background-1 {
-	margin-top: 56.8px;
-	background-image: url('/shop/media/Cups2.png');
+	/*margin-top: 56.8px;*/
+	/*background-image: url('/shop/media/Cups2.png');
 	background-image: -webkit-image-set(
 		url("/shop/media/Cups2.avif"),
 		url("/shop/media/Cups2.png")
@@ -45,14 +45,43 @@ nav {
 	background-image: image-set(
 		url("/shop/media/Cups2.avif") type("image/avif"),
 		url("/shop/media/Cups2.png") type("image/jpg")
-	);
+	);*/
+	display: grid;
+  gap: 0.25rem;
+  margin-bottom: 0.25rem;
+  grid-template-columns: 1fr 1fr 1fr;
+	min-height: 40vh;
+	min-height: 40lvh;
 	background-position: 50% 50%;
 	--image-width: 1449;
 	--image-height: 969;
 	--highlight-width-ratio: 0.90;
-	--highlight-height-ratio: 0.465;
+	--highlight-height-ratio: 0.375;
 	--highlight-left-position-ratio: 0.05;
-	--highlight-top-position-ratio: 0.130;
+	--highlight-top-position-ratio: 0.1;
+}
+
+#background-1 img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+@media (width < 450px) {
+	#background-1 {
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 0;
+  }
+	#background-1 .maybe-two-columns {
+	  grid-column: span 2;
+	}
+	#background-1 .maybe-two-columns img {
+    aspect-ratio: 1.4;
+	}
+	#background-1 .maybe-invisible {
+    visibility: hidden;
+    height: 0;
+	}
 }
 
 #background-2 {
