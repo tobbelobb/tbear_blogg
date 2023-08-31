@@ -53,6 +53,7 @@
 
 	--clr-scroll-arrow: rgba(255, 255, 255, 0.7);
 	--clr-scroll-arrow-hover: rgba(255, 255, 255, 1);
+
 }
 body.light {
 	color-scheme: light;
@@ -65,6 +66,37 @@ body.light {
 body.dark {
 	color-scheme: dark;
 	background-color: var(--clr-dark);
+	color: var(--clr-text-darkmode);
+  /* Snipcart */
+  --bgColor-modal: var(--clr-dark);
+  /*--color-default: var(--clr-light);*/
+  --bgColor-input: rgb(240, 240, 240);
+}
+body.dark .buttontext {
+  color: var(--clr-text-darkmode);
+}
+body.dark .snipcart-cart__footer .snipcart-summary-fees {
+  color: var(--clr-text-darkmode);
+}
+body.dark #snipcart .snipcart-item-line {
+	color: var(--eerie-black);
+	background-color: rgb(240,240,240);
+}
+body.dark #snipcart h1,
+body.dark #snipcart h2,
+body.dark #snipcart h3 {
+	color: var(--eerie-black);
+}
+body.dark #snipcart .snipcart-cart-header h3 {
+	color: var(--clr-text-darkmode);
+}
+body.dark #snipcart .snipcart-cart-header {
+	color: var(--clr-text-darkmode);
+}
+body.dark #snipcart .snipcart-cart-header .snipcart-modal__close-title {
+	color: var(--clr-text-darkmode);
+}
+body.dark #snipcart h3 .snipcart-featured-payment-methods__link {
 	color: var(--clr-text-darkmode);
 }
 body.dark h1, body.dark h2, body.dark h3 {

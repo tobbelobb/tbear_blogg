@@ -61,6 +61,16 @@
   z-index: 1;
   text-shadow: 0 0 20px rgb(100,100,100);
 }
+.qualitystamp {
+	color: var(--clr-light);
+	font-size: 1rem;
+	padding: .5rem .75rem;
+	position: absolute;
+	top: 0;
+  right: 0;
+  z-index: 1;
+  text-shadow: 0 0 20px rgb(100,100,100);
+}
 .carousel-thumbnails {
 	display: grid;
 	gap: .5rem;
