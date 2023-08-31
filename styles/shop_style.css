@@ -251,7 +251,7 @@ nav {
 	mix-blend-mode: difference;
 	cursor: pointer;
 	animation: arrow-float 2s infinite;
-	z-index: 100;
+	z-index: 3;
 }
 
 @media (hover: hover) {
