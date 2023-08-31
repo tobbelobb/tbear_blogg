@@ -99,6 +99,9 @@ body.dark #snipcart .snipcart-cart-header .snipcart-modal__close-title {
 body.dark #snipcart h3 .snipcart-featured-payment-methods__link {
 	color: var(--clr-text-darkmode);
 }
+body.dark #snipcart .snipcart-cart-summary h3 .snipcart-featured-payment-methods__link {
+	color: var(--eerie-black);
+}
 body.dark h1, body.dark h2, body.dark h3 {
 	color: var(--clr-text-darkmode);
 }
