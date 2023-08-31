@@ -1,13 +1,18 @@
 function initiateCartDisplay() {
   const cartItemCountElement = document.querySelector(".cart-item-count");
-  cartItemCountElement.textContent = `(${CartCount.get()})`;
+  if (cartItemCountElement !== null) {
+    cartItemCountElement.textContent = `(${CartCount.get()})`;
+  }
 }
 
 function updateCartDisplay() {
   const cartItemCountElement = document.querySelector(".cart-item-count");
-  const count = Snipcart.store.getState().cart.items.count;
-  CartCount.set(count);
-  cartItemCountElement.textContent = `(${count})`;
+  if (cartItemCountElement !== null) {
+    const count = Snipcart.store.getState().cart.items.count;
+    CartCount.set(count);
+    cartItemCountElement.textContent = `(${count})`;
+    console.log("updateCartDisplay: " + `(${count})`);
+  }
 }
 
 function updateZIndex() {
@@ -69,4 +74,27 @@ function handleDropdownDisplay() {
       });
     });
   }
+}
+
+function handleCartUpdates() {
+  document.addEventListener("snipcart.ready", () => {
+    Snipcart.events.on("item.removed", (item) => {
+      updateCartDisplay();
+    });
+    Snipcart.events.on("item.added", (item) => {
+      updateCartDisplay();
+    });
+    Snipcart.events.on("cart.reset", (cartState) => {
+      updateCartDisplay();
+    });
+    Snipcart.events.on("cart.confirmed", (cartConfirmResponse) => {
+      updateCartDisplay();
+    });
+    Snipcart.events.on('snipcart.initialized', (snipcartState) => {
+      updateCartDisplay();
+    });
+    Snipcart.events.on('snipcart.initialization.error', () => {
+        console.log('Failed to initialize Snipcart');
+    });
+  });
 }
