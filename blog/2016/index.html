@@ -65,176 +65,181 @@
          Reprap Blog 2016
       </div>
       <div id="MainContent">
-         <h1 id="hangprinter_project_27">Compensation May Allow Bigger Prints</h1>
-         <div class="date">14-12-2016</div>
-         <p>
-            The line compensation code may increase print volume noticeably.
-            During testing, it has allowed Hangprinter version 2 to go places
-            where version 1 surely would have over-tightened lines and skipped steps.
-            
-         </p>
-         <figure>
-              <a href="./bilder/Overview_rot.JPG">
-                   <img src="./bilder/Overview_rot_liten.JPG" alt="">
-                 </a>
-              
-            <figcaption>
-               Hangprinter version 2 at X=0, Y=-600 mm, Z=600 mm.
-               Securing anchor points with tape and weights works only as long as no lines over tighten.
-               During force testing, the motors easily ripped loose the weighed- and taped down anchor points without missing steps.
-               Forces on the lower left anchor point due to gravity in this picture is ca 15 N along the direction of the lines.
-                   Vertical force from the weights is also about 15 N, so the tape (under the weights) is necessary to keep the anchor point
-               in place.
-                   The kitchen bench is always this clean.
-                   Photo: Maja.
+         <article class="h-entry">
+            <h1 class="p-name" id="hangprinter_project_27">Compensation May Allow Bigger Prints</h1>
+            <div class="date">14-12-2016</div>
+            <time style="display:none" class="dt-published">2016-12-14T12:00:00Z</time>
+            <p>
+               The line compensation code may increase print volume noticeably.
+               During testing, it has allowed Hangprinter version 2 to go places
+               where version 1 surely would have over-tightened lines and skipped steps.
+               
+            </p>
+            <figure>
+                 <a href="./bilder/Overview_rot.JPG">
+                      <img src="./bilder/Overview_rot_liten.JPG" alt="">
+                    </a>
                  
-            </figcaption>
-            
-         </figure>
-         <figure>
-              <a href="./bilder/Sideview_rot.JPG">
-                 <img src="./bilder/Sideview_rot_liten.JPG" alt="">
-                 </a>
-              
-            <figcaption>
-                 Since the worm driven D-axis is so strong,
-                 and because line buildup compensation reduces the risk of over tightening,
-                 we can work with more extreme angles than before.
-                 Photo: Maja.
+               <figcaption>
+                  Hangprinter version 2 at X=0, Y=-600 mm, Z=600 mm.
+                  Securing anchor points with tape and weights works only as long as no lines over tighten.
+                  During force testing, the motors easily ripped loose the weighed- and taped down anchor points without missing steps.
+                  Forces on the lower left anchor point due to gravity in this picture is ca 15 N along the direction of the lines.
+                      Vertical force from the weights is also about 15 N, so the tape (under the weights) is necessary to keep the anchor point
+                  in place.
+                      The kitchen bench is always this clean.
+                      Photo: Maja.
+                    
+               </figcaption>
+               
+            </figure>
+            <figure>
+                 <a href="./bilder/Sideview_rot.JPG">
+                    <img src="./bilder/Sideview_rot_liten.JPG" alt="">
+                    </a>
                  
-            </figcaption>
-            
-         </figure>
-         <p>
-            - tobben
-            
-         </p>
-         <div style="display: none"><a class="u-url" href="https://torbjornludvigsen.com/blog/2016/index.html#hangprinter_project_27"></a><time class="dt-published">14-12-2016</time><a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
-               Torbj&oslash;rn Ludvigsen
-               <img class="u-photo" src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG" alt="Torbj&oslash;rn Ludvigsen"></a><span class="p-summary">Compensation May Allow Bigger Prints</span></div><br><br><br><h1 id="hangprinter_project_26">Compensating Line Buildup on Spools</h1>
-         <div class="date">11-12-2016</div>
-         <p>
-              I've added to Hangprinter-Marlins some code that
-              compensates for line buildup on the spools.
-              Without it, I found that error in steps/mm grew to several percent
-              as print dimensions grew close to 1 m.
-              The problem was particularly noticeable on the D-axis since it has three doubled lines,
-              so moving 1 mm in the D-direction puts 6 mm of line on the D-spool.
-            
-         </p>
-         <figure>
-              <a href="./bilder/Line_buildup_on_spool.JPG">
-                   <img src="./bilder/Line_buildup_on_spool_liten.JPG" alt="">
-                 </a>
-              
-            <figcaption>
-                   The D-spool in this figure has ca 15 m of 0.39 mm thick line wound around it.
-                   This gives the D-axis a movement range of 15/6 = 2.5 m.
-                   Without compensation, and if the line was winded in a perfectly compact manner, this would give a 5.5 % error in steps/mm
-               in the depicted position.
-                   As we see in the picture, windings are rather unevenly distributed along the spool's height.
-                   The error is therefore somewhat higher than 5.5 %.
-                   Hangprinter-Marlin currently approximates the cross-section of the line to be rectangular rather than circular.
-                   It therefore approximates the error to be 7 % instead of 5.5 %.
-                   My preliminary tests suggest that the experienced error is closer to 10 %.
+               <figcaption>
+                    Since the worm driven D-axis is so strong,
+                    and because line buildup compensation reduces the risk of over tightening,
+                    we can work with more extreme angles than before.
+                    Photo: Maja.
+                    
+               </figcaption>
+               
+            </figure>
+            <p>
+               - tobben
+               
+            </p>
+            <div style="display: none"><a class="u-url" href="https://torbjornludvigsen.com/blog/2016/index.html#hangprinter_project_27"></a><a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
+                  Torbj&oslash;rn Ludvigsen
+                  <img class="u-photo" src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG" alt="Torbj&oslash;rn Ludvigsen"></a><span class="p-summary">Compensation May Allow Bigger Prints</span></div><br><br><br></article>
+         <article class="h-entry">
+            <h1 class="p-name" id="hangprinter_project_26">Compensating Line Buildup on Spools</h1>
+            <div class="date">11-12-2016</div>
+            <time style="display:none" class="dt-published">2016-12-11T12:00:00Z</time>
+            <p>
+                 I've added to Hangprinter-Marlins some code that
+                 compensates for line buildup on the spools.
+                 Without it, I found that error in steps/mm grew to several percent
+                 as print dimensions grew close to 1 m.
+                 The problem was particularly noticeable on the D-axis since it has three doubled lines,
+                 so moving 1 mm in the D-direction puts 6 mm of line on the D-spool.
+               
+            </p>
+            <figure>
+                 <a href="./bilder/Line_buildup_on_spool.JPG">
+                      <img src="./bilder/Line_buildup_on_spool_liten.JPG" alt="">
+                    </a>
                  
-            </figcaption>
-            
-         </figure>
-         <p id="eqn0">
-              The approximation of new spool radii that I've used looks like this:
-            
-         </p>
-         <p>
-            \begin{equation}
-            \frac{\gamma\cdot g}{\sqrt{\beta(l_0 + \omega(D_0 - D)) + r^2}},
-            \tag{*}
-            \label{*}
-            \end{equation}
-            
-         </p>
-         <p>
-             where
-            
-         </p>
-         <ul>
-              
-            <li>\(\gamma\)
-                   is the number of motor steps required to rotate the spool 1 radian,
-            </li>
-              
-            <li>\(g\)
-                   is mechanical advantage (2 for doubled lines),
-            </li>
-              
-            <li>\(\beta\)
-                   is the volume taken up by 1 length unit of line divided by \(\pi\) and the spool's height,
-            </li>
-              
-            <li>\(l_0\)
-                   is the length of the line on the spool when printer is home (in origo),
-            </li>
-              
-            <li>\(\omega\)
-                   is the total number of lines along a direction (3 doubled lines \(\Leftrightarrow\) 6 lines),
-            </li>
-              
-            <li>\(D_0\)
-                   is the distance from an anchor point to an action point when at home,
-            </li>
-              
-            <li>\(D\)
-                   is the current distance from anchor point to anchor point and
-            </li>
-              
-            <li>\(r\)
-                   is the spool's radius when there is no line on it.
-            </li>
-            
-         </ul>
-         <p>
-              Setting these variables will require some measuring and messing around in <code>Configuration.h</code>.
-              The comments in <code>Configuration.h</code> are honestly trying to be helpful.
-            
-         </p>
-         <p>
-              The above equation requires quite a bit of computation.
-              If an Atmega2560 running Hangprinter-Marlin were to perform it more frequently than ~10 times per second,
-              it would risk computing new movements slower than it performed them, leading to unwanted print pauses and jerky movements.
-            
-         </p>
-         <p>
-              To limit the computational load Hangprint-Marlin is currently only computing new steps/mm once per received G1 or G92 commands.
-              A gcode file with 300 G1 movements would cause Hangprinter-Marlin to compute new steps/mm 300 times.
-            
-         </p>
-         <p>
-              Computing steps/mm only once per movement is of course an approximation.
-              We will only get steps/mm right at exactly one point along the G1-move.
-              It is tempting to place this point at one of the ends since that would be computationally cheap.
-              However, it would kill precision, even for simple movements like the following
-            
-         </p><pre><code>
+               <figcaption>
+                      The D-spool in this figure has ca 15 m of 0.39 mm thick line wound around it.
+                      This gives the D-axis a movement range of 15/6 = 2.5 m.
+                      Without compensation, and if the line was winded in a perfectly compact manner, this would give a 5.5 % error in steps/mm
+                  in the depicted position.
+                      As we see in the picture, windings are rather unevenly distributed along the spool's height.
+                      The error is therefore somewhat higher than 5.5 %.
+                      Hangprinter-Marlin currently approximates the cross-section of the line to be rectangular rather than circular.
+                      It therefore approximates the error to be 7 % instead of 5.5 %.
+                      My preliminary tests suggest that the experienced error is closer to 10 %.
+                    
+               </figcaption>
+               
+            </figure>
+            <p id="eqn0">
+                 The approximation of new spool radii that I've used looks like this:
+               
+            </p>
+            <p>
+               \begin{equation}
+               \frac{\gamma\cdot g}{\sqrt{\beta(l_0 + \omega(D_0 - D)) + r^2}},
+               \tag{*}
+               \label{*}
+               \end{equation}
+               
+            </p>
+            <p>
+                where
+               
+            </p>
+            <ul>
+                 
+               <li>\(\gamma\)
+                      is the number of motor steps required to rotate the spool 1 radian,
+               </li>
+                 
+               <li>\(g\)
+                      is mechanical advantage (2 for doubled lines),
+               </li>
+                 
+               <li>\(\beta\)
+                      is the volume taken up by 1 length unit of line divided by \(\pi\) and the spool's height,
+               </li>
+                 
+               <li>\(l_0\)
+                      is the length of the line on the spool when printer is home (in origo),
+               </li>
+                 
+               <li>\(\omega\)
+                      is the total number of lines along a direction (3 doubled lines \(\Leftrightarrow\) 6 lines),
+               </li>
+                 
+               <li>\(D_0\)
+                      is the distance from an anchor point to an action point when at home,
+               </li>
+                 
+               <li>\(D\)
+                      is the current distance from anchor point to anchor point and
+               </li>
+                 
+               <li>\(r\)
+                      is the spool's radius when there is no line on it.
+               </li>
+               
+            </ul>
+            <p>
+                 Setting these variables will require some measuring and messing around in <code>Configuration.h</code>.
+                 The comments in <code>Configuration.h</code> are honestly trying to be helpful.
+               
+            </p>
+            <p>
+                 The above equation requires quite a bit of computation.
+                 If an Atmega2560 running Hangprinter-Marlin were to perform it more frequently than ~10 times per second,
+                 it would risk computing new movements slower than it performed them, leading to unwanted print pauses and jerky movements.
+               
+            </p>
+            <p>
+                 To limit the computational load Hangprint-Marlin is currently only computing new steps/mm once per received G1 or G92 commands.
+                 A gcode file with 300 G1 movements would cause Hangprinter-Marlin to compute new steps/mm 300 times.
+               
+            </p>
+            <p>
+                 Computing steps/mm only once per movement is of course an approximation.
+                 We will only get steps/mm right at exactly one point along the G1-move.
+                 It is tempting to place this point at one of the ends since that would be computationally cheap.
+                 However, it would kill precision, even for simple movements like the following
+               
+            </p><pre><code>
   G92 X0
   G1 X100
   G1 X0
   </code></pre><p>
-              The printer would use different steps/mm settings for the two different G1-moves.
-              It would not end up where it started.
-            
-         </p>
-         <p>
-              Instead of correctness at endpoints, Hangprinter-Marlin computes steps/mm to be correct at the middle of every G1 move.
-              This solves the trivial example of back-and-forth movement described above, but it is still an approximation.
-              The next theoretical step will be to find an equation describing the error we accumulate from not
-              continuously computing new values for steps/mm.
-            
-         </p>
-         <p>
-              If you want to improve the approach to dynamic steps/mm I've described above,
-              then you will most probably want to improve lines 1757 to 1763 in <code>Marlin_main.cpp</code>:
-            
-         </p><pre><code>
+                 The printer would use different steps/mm settings for the two different G1-moves.
+                 It would not end up where it started.
+               
+            </p>
+            <p>
+                 Instead of correctness at endpoints, Hangprinter-Marlin computes steps/mm to be correct at the middle of every G1 move.
+                 This solves the trivial example of back-and-forth movement described above, but it is still an approximation.
+                 The next theoretical step will be to find an equation describing the error we accumulate from not
+                 continuously computing new values for steps/mm.
+               
+            </p>
+            <p>
+                 If you want to improve the approach to dynamic steps/mm I've described above,
+                 then you will most probably want to improve lines 1757 to 1763 in <code>Marlin_main.cpp</code>:
+               
+            </p><pre><code>
     <font color="green">float</font> <font color="blue">halfway_delta</font><font color="grey">[</font>4<font color="grey">];</font>
     <font color="green">float</font> <font color="blue">halfway</font><font color="grey">[</font>3<font color="grey">];</font>
     <font color="green">for</font><font color="grey">(</font><font color="green">int8_t</font> <font color="blue">i</font> = 0<font color="grey">;</font> <font color="blue">i</font> &lt; 3<font color="grey">;</font> <font color="blue">i</font>++<font color="grey">)</font><font color="grey">{</font>
@@ -243,1423 +248,1459 @@
     <font color="purple">calculate_delta</font><font color="grey">(</font><font color="blue">halfway</font>, <font color="blue">halfway_delta</font><font color="grey">);</font>
     <font color="purple">update_axis_steps_per_unit</font><font color="grey">(</font><font color="blue">delta</font>, <font color="blue">halfway_delta</font><font color="grey">);</font>
   </code></pre><p>
-              I've taken the liberty to highlight variables and functions with the colors blue and purple.
-              See <a href="https://github.com/tobbelobb/hangprinter">master branch in the repo</a> to fetch the code.
-            
-         </p>
-         <p>
-            - tobben
-            
-         </p>
-         <div style="display: none"><a class="u-url" href="https://torbjornludvigsen.com/blog/2016/index.html#hangprinter_project_26"></a><time class="dt-published">11-12-2016</time><a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
-               Torbj&oslash;rn Ludvigsen
-               <img class="u-photo" src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG" alt="Torbj&oslash;rn Ludvigsen"></a><span class="p-summary">Compensating Line Buildup on Spools</span></div><br><br><br><h1 id="hangprinter_project_25"> The Worm Drive Works</h1>
-         <div class="date">8-12-2016</div>
-         <p>
-              Just tested the worm drive.
-              I was so happy to see it work that I made a little video.
-            
-         </p>
-         <figure>
-              
-            <div class="embed-container">
-                   <iframe src="https://player.vimeo.com/video/194813962" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true">
-                      </iframe>
-                 
-            </div>
-              
-            <figcaption>
-                 
-            </figcaption>
-            
-         </figure>
-         <p>
-              Thanks to Simon, Jens and strangers at 3D-printerfestivalen for suggesting a worm drive.
-              The worm itself is printed in nylon by Simon.
-            
-         </p>
-         <p>
-            - tobben
-            
-         </p>
-         <div style="display: none"><a class="u-url" href="https://torbjornludvigsen.com/blog/2016/index.html#hangprinter_project_25"></a><time class="dt-published">8-12-2016</time><a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
-               Torbj&oslash;rn Ludvigsen
-               <img class="u-photo" src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG" alt="Torbj&oslash;rn Ludvigsen"></a><span class="p-summary"> The Worm Drive Works</span></div><br><br><br><h1 id="hangprinter_project_24">Adjustable D Line Lengths and New Look</h1>
-         <div class="date">26-11-2016</div>
-         <p>
-              Just made the D-line lengths easier to adjust independently.
-              This is useful to get Hangprinter's corners in level with bed.
-              Newest changes are at a
-              <a href="https://github.com/tobbelobb/hangprinter/tree/adjustable_d_lines_and_new_look">new branch in the repo</a>.
-            
-         </p>
-         <p>
-              I'll be testing out d-line-adjustment, worm drive and new extruder with a physical prototype.
-              Decided to celebrate by creating an alternative look.
-              It saves some plastic too.
-            
-         </p>
-         <figure>
-              <a href="./bilder/d_length_adjustment.png">
-                   <img src="./bilder/d_length_adjustment_liten.png" alt="">
-                 </a>
-              
-            <figcaption>
-                 Line can be wound around screw, which can be rotated to adjust D-line lengths.
-                 The rightmost vertical line goes through a channel in the plastic.
-                 
-            </figcaption>
-            
-         </figure>
-         <figure>
-              <a href="./bilder/Sparser_bottom_plate.png">
-                   <img src="./bilder/Sparser_bottom_plate_liten.png" alt="">
-                 </a>
-              
-            <figcaption>
-                 To construct the star/round shapes, I used circular paths with
-                 added sine waves and <code>linear_extrude()</code>.
-                 
-            </figcaption>
-            
-         </figure>
-         <figure>
-              <a href="./bilder/New_look.png">
-                   <img src="./bilder/New_look_liten.png" alt="">
-                 </a>
-              
-            <figcaption>
-                 Rounding off the work night with a full render.
-                 Almost kills my laptop.
-                 
-            </figcaption>
-            
-         </figure>
-         <p>
-              Cheers!
-            
-         </p>
-         <p>
-            - tobben
-            
-         </p>
-         <div style="display: none"><a class="u-url" href="https://torbjornludvigsen.com/blog/2016/index.html#hangprinter_project_24"></a><time class="dt-published">26-11-2016</time><a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
-               Torbj&oslash;rn Ludvigsen
-               <img class="u-photo" src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG" alt="Torbj&oslash;rn Ludvigsen"></a><span class="p-summary">Adjustable D Line Lengths and New Look</span></div><br><br><br><h1 id="hangprinter_project_23">Worm Drive on D-axis</h1>
-         <div class="date">18-11-2016</div>
-         <p>
-              Click on gif to make it stop rotating.
-            
-         </p>
-         <figure>
-              <a href="./index_norotate_18_nov_2016.html">
-                   <img src="./bilder/worm_rotate_liten.gif" alt="">
-                 </a>
-              
-            <figcaption>
-                   Worm rotating indefinitely. Click on it to make it stop.
-                 
-            </figcaption>
-            
-         </figure>
-         <figure>
-              <a href="./bilder/mounted_worm_closeup.png">
-                   <img src="./bilder/mounted_worm_closeup_liten.png" alt="">
-                 </a>
-              
-            <figcaption>
-                   Closeup when it's mounted.
-                   The best part is that it's pure parametrized OpenSCAD and renders nicely.
-                 
-            </figcaption>
-            
-         </figure>
-         <figure>
-              <a href="./bilder/Sstruder_v0.2_closer.png">
-                   <img src="./bilder/Sstruder_v0.2_closer_liten.png" alt="">
-                 </a>
-              
-            <figcaption>
-                   There has also been progress on the extruder side of things.
-                   Direct drive, spring loaded, no idler bearing, easier to print.
-                 
-            </figcaption>
-            
-         </figure>
-         <p>
-              Check out all improvements at
-              <a href="https://github.com/tobbelobb/hangprinter/tree/worm_and_direct_drive">worm_and_direct_drive branch in repo</a>.
-            
-         </p>
-         <p>
-            - tobben
-            
-         </p>
-         <div style="display: none"><a class="u-url" href="https://torbjornludvigsen.com/blog/2016/index.html#hangprinter_project_23"></a><time class="dt-published">18-11-2016</time><a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
-               Torbj&oslash;rn Ludvigsen
-               <img class="u-photo" src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG" alt="Torbj&oslash;rn Ludvigsen"></a><span class="p-summary">Worm Drive on D-axis</span></div><br><br><br><h1 id="hangprinter_project_22">Another Stop Motion Video</h1>
-         <div class="date">5-11-2016</div>
-         <figure>
-              
-            <div class="embed-container">
-                   <iframe src="https://player.vimeo.com/video/190390850" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true">
-                      </iframe>
-                 
-            </div>
-              
-            <figcaption>
-                   Hangprinting 0.9 m high twisted P at Teknisk Museum's 3D-printerfestival.
-                   Note: this text was edited on 7-11-2016.
-                 
-            </figcaption>
-            
-         </figure>
-         <p>
-            - tobben
-            
-         </p>
-         <div style="display: none"><a class="u-url" href="https://torbjornludvigsen.com/blog/2016/index.html#hangprinter_project_22"></a><time class="dt-published">5-11-2016</time><a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
-               Torbj&oslash;rn Ludvigsen
-               <img class="u-photo" src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG" alt="Torbj&oslash;rn Ludvigsen"></a><span class="p-summary">Another Stop Motion Video</span></div><br><br><br><h1 id="hangprinter_project_21">Hangprinter Calibration Manual v0.1</h1>
-         <div class="date">3-11-2016</div>
-         <p>
-              <i>
-                   NOTE from Jan 25, 2018: This manual was created for a very specific version 2 setup, and is served for historical interest
-               only. For actual calibration in 2018 and onwards, do not use the equations in this post. See <a href="http://reprap.org/wiki/Links_Into_Hangprinter_v3_Build_Video#Now_going_into_an_hour_of_measuring_this">this page</a> to learn how to measure <code>ANCHOR_ABCD_XYZ</code> directly instead.
-                 </i>
-            
-         </p>
-         <p>
-              This post will make it easier to calibrate Clerck by avoiding the need for measurements like this:
-            
-         </p>
-         <figure>
-              <a href="./bilder/Hard_calibration_measurement.png">
-                   <img src="./bilder/Hard_calibration_measurement_liten.png" alt="">
-                 </a>
-              
-            <figcaption>
-                   Figure 0: Perpendicular distances like these are hard to measure accurately in practice.
-                   When measuring <code>C_Z</code>, the dangling Hangprinter is hard to fixate, and the point where
-                   <code>ANCHOR_C_Y</code> and <code>ANCHOR_C_X</code> meet is hard to determine.
-                   (Se <a href="#step16">Step 16</a> in <a href="#Clerck_assembly_manual">Clerck Assembly manual v0.1</a> for another figure.)
-                 
-            </figcaption>
-            
-         </figure>
-         <h3>Step 0: Mount Wall Frame Parts</h3>
-         <p>
-              Mount all the lower frame parts at roughly equal heights above your floor.
-              While not theoretically necessary, this makes calculations and measurement procedures easier.
-              We assume your floor is perpendicular to gravity.
-            
-         </p>
-         <figure>
-              <a href="./bilder/In_a_plane.png">
-                   <img src="./bilder/In_a_plane_liten.png" alt="">
-                 </a>
-              
-            <figcaption>
-                    Figure 1: All lower frame parts mounted in a plane perpendicular to gravity (on the same floor or table).
-                 
-            </figcaption>
-            
-         </figure>
-         <p>
-              Keep the flat sides of lower frame parts as parallel to the ceiling frame part's sides as you can.
-            
-         </p>
-         <figure>
-              <a href="./bilder/topview.png">
-                   <img src="./bilder/topview_liten.png" alt="">
-                 </a>
-              
-            <figcaption>
-                    Figure 2: Configuration of side plates and top plate as seen from above, through a transparent ceiling...
-                    Note how the sides of the ceiling frame part are parallel to the wall frame parts.
-                 
-            </figcaption>
-            
-         </figure>
-         <h3>Step 1: Mark out Origo in XY-Plane</h3>
-         <p>
-              Use tape or ink to mark out a point directly below your ceiling frame part.
-              This point will be used for measurement and homing reference, so keep it fixed and visible.
-            
-         </p>
-         <figure>
-              <a href="./bilder/Finding_origo2.png">
-                   <img src="./bilder/Finding_origo2_liten.png" alt="">
-                 </a>
-              
-            <figcaption>
-                   Figure 3: A yellow aiming plumb points at origo, which is marked with a tiny red dot.
-                   The grey surface is your floor or print surface.
-                 
-            </figcaption>
-            
-         </figure>
-         <h3>Step 2: Measure Six distances</h3>
-         <figure>
-              <a href="./bilder/Six_measurements.png">
-                   <img src="./bilder/Six_measurements_liten.png" alt="">
-                 </a>
-              
-            <figcaption>
-                   Figure 4: measurement points are marked with red dots.
-                   Note that <code>d</code> is equal to the length of the aiming plumb in Figure 3.
-                 
-            </figcaption>
-            
-         </figure>
-         <h3>Step 3: Translate to Cartesian Distances</h3>
-         <p>
-              Now that we use our six measurements to determine six unknowns.
-              Denoting the x-position of anchor point <code>B</code> like <code>B_x</code>, we can list the unknowns:
-            
-         </p>
-         <ul>
-              
-            <li><code>A_y</code></li>
-              
-            <li><code>B_y</code></li>
-              
-            <li><code>B_x</code></li>
-              
-            <li><code>C_y</code></li>
-              
-            <li><code>C_x</code></li>
-              
-            <li><code>D_z</code></li>
-            
-         </ul>
-         <p>
-              We orient our Cartesian coordinate system such that <code>A_x = 0</code>.
-              Also, we set <code>A_z = B_z = C_z = 0</code> from the restrictions in step 0 above.
-              Now the <a href="https://en.wikipedia.org/wiki/Law_of_cosines">Law of cosines</a>
-                and good old Pythagoras solves the rest for us.
-            
-         </p>
-         <ul>
-              
-            <li><code>A_y = -a</code></li>
-              
-            <li><code>B_y = (s^2 - b^2 - a^2)/(2*a)</code></li>
-              
-            <li><code>B_x =  sqrt(s^2 - (a + B_y)^2)</code></li>
-              
-            <li><code>C_y = (f^2 - c^2 - a^2)/(2*a)</code></li>
-              
-            <li><code>C_x = -sqrt(f^2 - (a + C_y)^2)</code></li>
-              
-            <li><code>D_z = d</code></li>
-            
-         </ul>
-         <h3>Step 4: Take Action Point Offsets Into Account</h3>
-         <p>
-              Since lines are not tied to the center of hangprinter we need to subtract the offsets.
-              These numbers are more or less hard-coded into the
-              <a href="https://github.com/tobbelobb/hangprinter/tree/calibration_manual_0">OpenSCAD files</a>.
-              I made a branch called <code>calibration_manual_0</code>
-              that corresponds to the renderings in this post.
-              I'm also listing the values for ya right here. Yeah, right here:
-            
-         </p>
-         <ul>
-              
-            <li><code>ANCHOR_A_X = 0</code></li>
-              
-            <li><code>ANCHOR_A_Y = -(a - 59.8)</code></li>
-              
-            <li><code>ANCHOR_A_Z = -146.4</code></li>
-              
-            <li><code>ANCHOR_B_X = B_x - 59.8*sqrt(3)/2</code></li>
-              
-            <li><code>ANCHOR_B_Y = B_y - 59.8/2</code></li>
-              
-            <li><code>ANCHOR_B_Z = -136.6</code></li>
-              
-            <li><code>ANCHOR_C_X = C_x + 59.8*sqrt(3)/2</code></li>
-              
-            <li><code>ANCHOR_C_Y = C_y - 59.8/2</code></li>
-              
-            <li><code>ANCHOR_C_Z = -126.8</code></li>
-              
-            <li><code>ANCHOR_D_X = 0</code></li>
-              
-            <li><code>ANCHOR_D_Y = 0</code></li>
-              
-            <li><code>ANCHOR_D_Z = d - 117.0</code></li>
-            
-         </ul>
-         <p>
-              These values correspond exactly to what you're supposed to feed into <code>Configuration.h</code>
-                to calibrate your Hangprinter.
-            
-         </p>
-         <h3>In Theory...</h3>
-         <p>
-              We could add three more measurements and be able to calculate <code>A_z</code>, <code>B_z</code> and <code>C_z</code>.
-              This would get rid of the requirement to mount the lower anchor points in a plane perpendicular to gravity.
-              I find these three measurements a bit difficult to carry out in practice.
-              Practical difficulty is of course subjective, but the six-measurement procedure is the one I use.
-            
-         </p>
-         <p>
-              I hope this has been useful, best of luck!
-            
-         </p>
-         <p>
-            - tobben
-            
-         </p>
-         <div style="display: none"><a class="u-url" href="https://torbjornludvigsen.com/blog/2016/index.html#hangprinter_project_21"></a><time class="dt-published">3-11-2016</time><a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
-               Torbj&oslash;rn Ludvigsen
-               <img class="u-photo" src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG" alt="Torbj&oslash;rn Ludvigsen"></a><span class="p-summary">Hangprinter Calibration Manual v0.1</span></div><br><br><br><h1 id="oslo_skaperfestival_2016">Oslo Skaperfestival 2016</h1>
-         <div class="date">25-10-2016</div>
-         <p>
-              Clerck was demonstrated in public for the first time this weekend!
-            
-         </p>
-         <figure>
-              <a href="./bilder/Clerck_og_Jon.JPG">
-                   <img src="./bilder/Clerck_og_Jon_liten.JPG" alt="">
-                 </a>
-              
-            <figcaption>
-                   Planks and clamps were used to simulate a ceiling. The lower anchor points were simply taped to the floor.
-                   Click picture to zoom.
-                 
-            </figcaption>
-            
-         </figure>
-         <p>
-              <a href="http://fellesverkstedet.no/">
-                 Fellesverkstedet Fablab</a>
-              and
-              <a href="https://bitraf.no/">
-                 Bitraf Makerspace</a>
-              kindly let me show Clerk by their stand at Oslo Skaperfestival.
-              They even helped me mount and present it!
-              Special thanks to Jens, Martina and Jon for the invitation, the warm welcome and help of various sorts.
-            
-         </p>
-         <figure>
-              
-            <div class="embed-container">
-                   <iframe src="https://player.vimeo.com/video/188791100" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true">
-                      </iframe>
-                 
-            </div>
-              
-            <figcaption>
-                   Clerck printing a twisted H at Oslo Skaperfestival.
-                 
-            </figcaption>
-            
-         </figure>
-         <p>
-              The festival atmosphere changed like in a cafe district in April.
-              Sometimes library quiet, doors closed, a few people carrying chairs around.
-              Sometimes tivoli hectic with
-              makers, teachers, hosts, children, amazing machines and zing boom wow bam all along the library hallways.
-            
-         </p>
-         <figure>
-              <a href="./bilder/zingboom.JPG">
-                   <img src="./bilder/zingboom_liten.JPG" alt="">
-                 </a>
-              
-            <figcaption>
-                   Girl playing with hovercraft, clearing a little space, bumping into shoes.
-                 
-            </figcaption>
-            
-         </figure>
-         <figure>
-              <a href="./bilder/Jon_Jens_Tdog.JPG">
-                   <img src="./bilder/Jon_Jens_Tdog_liten.JPG" alt="">
-                 </a>
-              
-            <figcaption>
-                 <a href="http://www.jonnor.com/">Jon</a>, <a href="https://www.youtube.com/user/DyvikDesign/videos">Jens</a>
-                 and <a href="http://nordvikmanifestation.blogspot.se/">Torbj&oslash;rn</a> preparing to pack up their stand at closing hour.
-                 All three are mainstays in Oslo's maker community.
-                 
-            </figcaption>
-            
-         </figure>
-         <p>
-              My work will be influenced by the conversations by the festival stand for a time to come.
-              I'm looking forward to it =)
-            
-         </p>
-         <p>
-              - tobben
-            
-         </p>
-         <h4>PS! added Oct 26</h4>
-         <p>
-              Here's a layer consistency shot of a print made at Skaperfestivalen.
-              Next time, we're going for something a lot taller!
-            
-         </p>
-         <figure>
-              <a href="./bilder/Twisted_G_close.JPG">
-                   <img src="./bilder/Twisted_G_close_liten.JPG" alt="">
-                 </a>
-              
-            <figcaption>
-                 
-            </figcaption>
-            
-         </figure>
-         <p>
-            - tobben
-            
-         </p>
-         <div style="display: none"><a class="u-url" href="https://torbjornludvigsen.com/blog/2016/index.html#oslo_skaperfestival_2016"></a><time class="dt-published">25-10-2016</time><a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
-               Torbj&oslash;rn Ludvigsen
-               <img class="u-photo" src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG" alt="Torbj&oslash;rn Ludvigsen"></a><span class="p-summary">Oslo Skaperfestival 2016</span></div><br><br><br><h1 id="hangprinter_project_20">Homing the Hangprinter Without Adding Hardware</h1>
-         <div class="date">23-9-2016</div>
-         <p>
-              I've thought some more about Hangprinter recently, since I'm going to demonstrate it on the
-              <a href="https://www.facebook.com/events/1052788231502429/">3d printer festival</a>
-              arranged by the Norwegian Museum of Science and Technology in Oslo.
-              I've only ever mounted and calibrated Hangprinter once before,
-                so getting the manual homing to work fast enough worries me a bit.
-              I don't have the time to implement the proposed
-              <a href="http://www.appropedia.org/Clerck,_a_RepRap_3D_printer_hanging_from_the_ceiling#Home_position">accelerometer dependent homing procedure</a>
-              before the festival.
-            
-         </p>
-         <p>
-              The following (almost stupidly simple but still kind of useful) solution will be the first thing I try to make homing faster
-              than the aiming plump technique I've used before (see <a href="https://torbjornludvigsen.com/blog/2016/bilder/center_lod.JPG">picture</a>).
-            
-         </p>
-         <figure>
-              <a href="./bilder/sandwich_marking2.png">
-                   <img src="./bilder/sandwich_marking2_liten.png" alt="">
-                 </a>
-              
-            <figcaption>
-                   It should be precise enough to home a Hangprinter by aligning five marks, one on each sandwich gear and one on the bottom
-               plate (all green in this illustration).
-                   An initial homing calibration using an aiming plumb, to place the green markings correctly, is still needed though.
-                 
-            </figcaption>
-            
-         </figure>
-         <p>
-              If alignment of marks as shown above proves sufficiently precise,
-                I will use a similar concept for automatic homing.
-              Replacing the green marks with and optical or magnetic sensor arrangement should be quite straightforward.
-            
-         </p>
-         <p>
-            - tobben
-            
-         </p>
-         <div style="display: none"><a class="u-url" href="https://torbjornludvigsen.com/blog/2016/index.html#hangprinter_project_20"></a><time class="dt-published">23-9-2016</time><a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
-               Torbj&oslash;rn Ludvigsen
-               <img class="u-photo" src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG" alt="Torbj&oslash;rn Ludvigsen"></a><span class="p-summary">Homing the Hangprinter Without Adding Hardware</span></div><br><br><br><h1 id="VSE_1">Yet Another Very Simple Extruder Design</h1>
-         <div class="date">21-9-2016</div>
-         <p>
-              I've thought about a second generation Hangprinter lately, including the extruder.
-              My current favourite re-design uses two motors running synchronously.
-            
-         </p>
-         <figure>
-              <a href="./bilder/very_simple_extruder_first_render.png">
-                   <img src="./bilder/very_simple_extruder_first_render_liten.png" alt="">
-                 </a>
+                 I've taken the liberty to highlight variables and functions with the colors blue and purple.
+                 See <a href="https://github.com/tobbelobb/hangprinter">master branch in the repo</a> to fetch the code.
                
-            <figcaption>
-                    Two motors pinch a filament between hobbed bolts on their shafts.
-                 
-            </figcaption>
-            
-         </figure>
-         <p>
-              The motors in the figure above are supposed to resemble Mabuchi 130 servos rather than steppers.
-              The informed discussion in
-              <a href="http://forums.reprap.org/read.php?1,661444">this forum thread</a>
-              and
-              <a href="https://www.youtube.com/watch?v=L-_5KsAOVko">this video demonstration</a>
-              have made me interested in servos again.
-            
-         </p>
-         <p>
-              The RepRap community's relationship with servos is long, complicated and rather fruitless
-                even though the promise of mechanical simplicity and low weight has always been present.
-              There seems to be something hard about servos.
-              Still, 2d-printer-engineers manages to churn out servo driven movement platforms, lots of them.
-              Are those Inkjet engineers better than us?
-              No, of course not.
-            
-         </p>
-         <p>
-              Anyways, if the servo usage doesn't pan out at all, I can always try two Nema14's instead.
-              Pinching filament between two motor shafts would still be cool and simple.
-              Not as cool as servos though.
-            
-         </p>
-         <p>
-            - tobben
-            
-         </p>
-         <div style="display: none"><a class="u-url" href="https://torbjornludvigsen.com/blog/2016/index.html#VSE_1"></a><time class="dt-published">21-9-2016</time><a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
-               Torbj&oslash;rn Ludvigsen
-               <img class="u-photo" src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG" alt="Torbj&oslash;rn Ludvigsen"></a><span class="p-summary">Yet Another Very Simple Extruder Design</span></div><br><br><br><h1 id="masters_2">Why Optimize Chaotic Production?</h1>
-         <div class="date">10-9-2016</div>
-         <p>
-              RepRappers have noticed me that basing the story line of my
-                <a href="http://opensourceecology.org/wiki/File:Thesis.pdf">my Master's thesis</a>
-              on productivity numbers doesn't resonate with them.
-              This tickled me to think about and formulate why I do what I do, hence this post.
-            
-         </p>
-         <p>
-              In the thesis, I really wanted to say that we can afford producing in humane, joyful ways, and that D3D-Porteus can help.
-              Also, in this title and previous posts, I have used the word "chaotic" loosely.
-              With <i>chaotic</i> I mean "distributed between people with their own budgets for time and money".
-            
-         </p>
-         <p>
-              In centralized production, unrelatedness, vulnerability and boredom are hidden costs
-                because they are hard to count but easy to feel.
-              In <i>chaotic production</i>, the producer carries the total production cost, both in time, money and emotion,
-                and also decides how to work and when to stop.
-              Chaotic production must be <i>optimized</i> to meet the producers interests.
-              <i>Optimizing chaotic production</i> must include preserving creative joy.
-            
-         </p>
-         <figure>
-              <a href="./bilder/backlight_humans.jpg">
-                   <img src="./bilder/backlight_humans_liten.jpg" alt="">
-                 </a>
+            </p>
+            <p>
+               - tobben
                
-            <figcaption>
-                    I think balmy moods and good times in general depends on conscious effort
-                    even though production is intrinsically satisfying.
-                    The words
-                    "optimizing chaotic production" describe one way of doing one type of such effort.
-                 
-            </figcaption>
-            
-         </figure>
-         <p>
-              The answer to the question posed in the title is then the inverse of unrelatedness, vulnerability and boredom, namely:
-            
-         </p>
-         <h3>1: Close Relations</h3>
-         <p>
-              As humans we are evolved to thrive in small groups that help each other.
-              Helpers feel pride and helped ones feel gratitude.
-              It is hard to help and get love in return from distant factories.
-              Producing everything centrally wastes opportunities to feel more pride and gratitude in our lives.
-            
-         </p>
-         <h3>2: Resilience</h3>
-         <p>
-              Centralized factories are single points of failure.
-              Shit just happens sometimes and when it happens we better know how to produce our stuff ourselves.
-            
-         </p>
-         <h3>3: Fun</h3>
-         <p>
-              We are born capable of having interests and we thrive when we get to follow them.
-              Chaotic production doesn't have bosses with the licence to bore.
-              When you're allowed to listen to your heart you will recognize its sense of humour.
-              If you live in an industrialized society you will probably not end up starving in the streets
-                even if you listen to a funny heart.
-            
-         </p>
-         <p>
-            - tobben
-            
-         </p>
-         <div style="display: none"><a class="u-url" href="https://torbjornludvigsen.com/blog/2016/index.html#masters_2"></a><time class="dt-published">10-9-2016</time><a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
-               Torbj&oslash;rn Ludvigsen
-               <img class="u-photo" src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG" alt="Torbj&oslash;rn Ludvigsen"></a><span class="p-summary">Why Optimize Chaotic Production?</span></div><br><br><br><h1 id="portable_gcode_1">Portable Gcode and Short Status</h1>
-         <div class="date">5-9-2016</div>
-         <p>
-              Today I asked a <a href="http://forums.reprap.org/read.php?1,705311">question on reprap forums</a> that has puzzled me for a long time.
-              Why don't we share gcode instead of 3d models?
-              The technical obstacles are small and it would be an obvious optimization of chaotic production.
-              See <a href="http://forums.reprap.org/read.php?1,705311">the forum post</a> for details.
-              Hoping for an interesting discussion there.
-            
-         </p>
-         <p>
-              Now that my Master's is finished I'll try to make a living out of it.
-              I'll continue to post report-like documentation here and list day-to-day activities
-              over at <a href="http://opensourceecology.org/wiki/Tobben_Log">my log on the OSE wiki</a>.
-            
-         </p>
-         <p>
-              As a start, I've co-founded a limited company that is offering RepRap Assembly Workshops and other course activity
-              to schools and youth clubs around Norway and Sweden. See home page in Norwegian <a href="http://ludvigsen3dprinting.com/">here</a>.
-              I tried to make a logo in Blender. It's my first one, and it ended up looking like something you would expect to see on
-            a tube of tooth paste,
-                but I kind of like it because I made it myself:
-            
-         </p>
-         <figure>
-              <a href="./bilder/L3dp_logo2_litt_mindre_blank_transparent.png">
-                   <img src="./bilder/L3dp_logo2_litt_mindre_blank_transparent_liten.png" alt="">
-                 </a>
+            </p>
+            <div style="display: none"><a class="u-url" href="https://torbjornludvigsen.com/blog/2016/index.html#hangprinter_project_26"></a><a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
+                  Torbj&oslash;rn Ludvigsen
+                  <img class="u-photo" src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG" alt="Torbj&oslash;rn Ludvigsen"></a><span class="p-summary">Compensating Line Buildup on Spools</span></div><br><br><br></article>
+         <article class="h-entry">
+            <h1 class="p-name" id="hangprinter_project_25"> The Worm Drive Works</h1>
+            <div class="date">8-12-2016</div>
+            <time style="display:none" class="dt-published">2016-12-08T12:00:00Z</time>
+            <p>
+                 Just tested the worm drive.
+                 I was so happy to see it work that I made a little video.
                
-            <figcaption>
-                    Figure 1: A blue RepRap teardrop with some super fancy 3d effektz.
+            </p>
+            <figure>
                  
-            </figcaption>
-            
-         </figure>
-         <p>
-              Before I dive into searching far and wide for jobs, I need to work on my RepRap family in Norway and Sweden.
-              I need people who know RepRap that I can talk with and share knowledge, experiences, hardware and services with.
-              As a start, I'll head to Oslo this week and visit Bitraf and Fellesverkstedet.
-              I hope I can get to know them by helping them with their projects.
-              If they want to cooperate on one of my projects, I plan on suggesting a new D3D-Porteus based on <a href="https://www.gnu.org/software/guix/">GuixSD</a>,
-              or to work on portable gcode as described in the forum post I posted today.
-            
-         </p>
-         <p>
-            - tobben
-            
-         </p>
-         <div style="display: none"><a class="u-url" href="https://torbjornludvigsen.com/blog/2016/index.html#portable_gcode_1"></a><time class="dt-published">5-9-2016</time><a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
-               Torbj&oslash;rn Ludvigsen
-               <img class="u-photo" src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG" alt="Torbj&oslash;rn Ludvigsen"></a><span class="p-summary">Portable Gcode and Short Status</span></div><br><br><br><h1 id="masters_1">Optimize Chaotic Production</h1>
-         <div class="date">29-6-2016</div>
-         <p>
-              I presented my Master's recently, with a story line that was very RepRap centric.
-              I'd like to re-present and develop my thoughts with some colors here.
-              Be warned that this is a post about <i>why</i> I RepRap, not <i>how</i> I RepRap.
-            
-         </p>
-         <p>
-              I live in the EU and have a lot of contact with the US.
-              I'm among the lucky ones by all metrics, but I also see a lot of frustration.
-            
-         </p>
-         <figure>
-              <a href="./bilder/Civil_unrest_web.png">
-                   <img src="./bilder/Civil_unrest_web_liten.png" alt="">
-                 </a>
+               <div class="embed-container">
+                      <iframe src="https://player.vimeo.com/video/194813962" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true">
+                         </iframe>
+                    
+               </div>
+                 
+               <figcaption>
+                    
+               </figcaption>
                
-            <figcaption>
-                    Figure 1: Number of riots and anti government demonstrations in USA and EU+UK since 1970.
-                    People started to hit the streets on both sides of the Atlantic in 2010.
-                    Data source: Banks, Arthur S., Wilson, Kenneth A. 2016. Cross-National Time-Series Data Archive. Databanks International.
-               Jerusalem, Israel; see <a href="http://www.databanksinternational.com">databanksinternational.com</a>.
-                 
-            </figcaption>
-            
-         </figure>
-         <figure>
-              <a href="./bilder/Labour_productivity_web.png">
-                   <img src="./bilder/Labour_productivity_web_liten.png" alt="">
-                 </a>
+            </figure>
+            <p>
+                 Thanks to Simon, Jens and strangers at 3D-printerfestivalen for suggesting a worm drive.
+                 The worm itself is printed in nylon by Simon.
                
-            <figcaption>
-                    Figure 2: Productivity and income since 1970. This plot shows data from USA but the trends are similar in all western
-               countries.
-                    Output per work hour increased drastically between 1995 and 2010.
-                    Only the most positive economists see rising incomes after ca 1998.
-                    The productivity increase is largely attributed to better usage of computers, robots, and the Internet within organizations.
-                    Data sources: <a href="http://dx.doi.org/10.1787/data-00686-en">OECD</a>, <a href="https://research.stlouisfed.org/fred2/series/LABSHPUSA156NRUG">University of Groningen</a>, <a href="https://research.stlouisfed.org/fred2/series/MEPAINUSA672N">US. Bureau of the Census</a> and 2015 Economic Report of the President by Council of Economic Advisors, table B-15.
+            </p>
+            <p>
+               - tobben
+               
+            </p>
+            <div style="display: none"><a class="u-url" href="https://torbjornludvigsen.com/blog/2016/index.html#hangprinter_project_25"></a><a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
+                  Torbj&oslash;rn Ludvigsen
+                  <img class="u-photo" src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG" alt="Torbj&oslash;rn Ludvigsen"></a><span class="p-summary"> The Worm Drive Works</span></div><br><br><br></article>
+         <article class="h-entry">
+            <h1 class="p-name" id="hangprinter_project_24">Adjustable D Line Lengths and New Look</h1>
+            <div class="date">26-11-2016</div>
+            <time style="display:none" class="dt-published">2016-11-26T12:00:00Z</time>
+            <p>
+                 Just made the D-line lengths easier to adjust independently.
+                 This is useful to get Hangprinter's corners in level with bed.
+                 Newest changes are at a
+                 <a href="https://github.com/tobbelobb/hangprinter/tree/adjustable_d_lines_and_new_look">new branch in the repo</a>.
+               
+            </p>
+            <p>
+                 I'll be testing out d-line-adjustment, worm drive and new extruder with a physical prototype.
+                 Decided to celebrate by creating an alternative look.
+                 It saves some plastic too.
+               
+            </p>
+            <figure>
+                 <a href="./bilder/d_length_adjustment.png">
+                      <img src="./bilder/d_length_adjustment_liten.png" alt="">
+                    </a>
                  
-            </figcaption>
-              
-            <!--
+               <figcaption>
+                    Line can be wound around screw, which can be rotated to adjust D-line lengths.
+                    The rightmost vertical line goes through a channel in the plastic.
+                    
+               </figcaption>
+               
+            </figure>
+            <figure>
+                 <a href="./bilder/Sparser_bottom_plate.png">
+                      <img src="./bilder/Sparser_bottom_plate_liten.png" alt="">
+                    </a>
+                 
+               <figcaption>
+                    To construct the star/round shapes, I used circular paths with
+                    added sine waves and <code>linear_extrude()</code>.
+                    
+               </figcaption>
+               
+            </figure>
+            <figure>
+                 <a href="./bilder/New_look.png">
+                      <img src="./bilder/New_look_liten.png" alt="">
+                    </a>
+                 
+               <figcaption>
+                    Rounding off the work night with a full render.
+                    Almost kills my laptop.
+                    
+               </figcaption>
+               
+            </figure>
+            <p>
+                 Cheers!
+               
+            </p>
+            <p>
+               - tobben
+               
+            </p>
+            <div style="display: none"><a class="u-url" href="https://torbjornludvigsen.com/blog/2016/index.html#hangprinter_project_24"></a><a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
+                  Torbj&oslash;rn Ludvigsen
+                  <img class="u-photo" src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG" alt="Torbj&oslash;rn Ludvigsen"></a><span class="p-summary">Adjustable D Line Lengths and New Look</span></div><br><br><br></article>
+         <article class="h-entry">
+            <h1 class="p-name" id="hangprinter_project_23">Worm Drive on D-axis</h1>
+            <div class="date">18-11-2016</div>
+            <time style="display:none" class="dt-published">2016-11-18T12:00:00Z</time>
+            <p>
+                 Click on gif to make it stop rotating.
+               
+            </p>
+            <figure>
+                 <a href="./index_norotate_18_nov_2016.html">
+                      <img src="./bilder/worm_rotate_liten.gif" alt="">
+                    </a>
+                 
+               <figcaption>
+                      Worm rotating indefinitely. Click on it to make it stop.
+                    
+               </figcaption>
+               
+            </figure>
+            <figure>
+                 <a href="./bilder/mounted_worm_closeup.png">
+                      <img src="./bilder/mounted_worm_closeup_liten.png" alt="">
+                    </a>
+                 
+               <figcaption>
+                      Closeup when it's mounted.
+                      The best part is that it's pure parametrized OpenSCAD and renders nicely.
+                    
+               </figcaption>
+               
+            </figure>
+            <figure>
+                 <a href="./bilder/Sstruder_v0.2_closer.png">
+                      <img src="./bilder/Sstruder_v0.2_closer_liten.png" alt="">
+                    </a>
+                 
+               <figcaption>
+                      There has also been progress on the extruder side of things.
+                      Direct drive, spring loaded, no idler bearing, easier to print.
+                    
+               </figcaption>
+               
+            </figure>
+            <p>
+                 Check out all improvements at
+                 <a href="https://github.com/tobbelobb/hangprinter/tree/worm_and_direct_drive">worm_and_direct_drive branch in repo</a>.
+               
+            </p>
+            <p>
+               - tobben
+               
+            </p>
+            <div style="display: none"><a class="u-url" href="https://torbjornludvigsen.com/blog/2016/index.html#hangprinter_project_23"></a><a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
+                  Torbj&oslash;rn Ludvigsen
+                  <img class="u-photo" src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG" alt="Torbj&oslash;rn Ludvigsen"></a><span class="p-summary">Worm Drive on D-axis</span></div><br><br><br></article>
+         <article class="h-entry">
+            <h1 class="p-name" id="hangprinter_project_22">Another Stop Motion Video</h1>
+            <div class="date">5-11-2016</div>
+            <time style="display:none" class="dt-published">2016-11-05T12:00:00Z</time>
+            <figure>
+                 
+               <div class="embed-container">
+                      <iframe src="https://player.vimeo.com/video/190390850" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true">
+                         </iframe>
+                    
+               </div>
+                 
+               <figcaption>
+                      Hangprinting 0.9 m high twisted P at Teknisk Museum's 3D-printerfestival.
+                      Note: this text was edited on 7-11-2016.
+                    
+               </figcaption>
+               
+            </figure>
+            <p>
+               - tobben
+               
+            </p>
+            <div style="display: none"><a class="u-url" href="https://torbjornludvigsen.com/blog/2016/index.html#hangprinter_project_22"></a><a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
+                  Torbj&oslash;rn Ludvigsen
+                  <img class="u-photo" src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG" alt="Torbj&oslash;rn Ludvigsen"></a><span class="p-summary">Another Stop Motion Video</span></div><br><br><br></article>
+         <article class="h-entry">
+            <h1 class="p-name" id="hangprinter_project_21">Hangprinter Calibration Manual v0.1</h1>
+            <div class="date">3-11-2016</div>
+            <time style="display:none" class="dt-published">2016-11-03T12:00:00Z</time>
+            <p>
+                 <i>
+                      NOTE from Jan 25, 2018: This manual was created for a very specific version 2 setup, and is served for historical interest
+                  only. For actual calibration in 2018 and onwards, do not use the equations in this post. See <a href="http://reprap.org/wiki/Links_Into_Hangprinter_v3_Build_Video#Now_going_into_an_hour_of_measuring_this">this page</a> to learn how to measure <code>ANCHOR_ABCD_XYZ</code> directly instead.
+                    </i>
+               
+            </p>
+            <p>
+                 This post will make it easier to calibrate Clerck by avoiding the need for measurements like this:
+               
+            </p>
+            <figure>
+                 <a href="./bilder/Hard_calibration_measurement.png">
+                      <img src="./bilder/Hard_calibration_measurement_liten.png" alt="">
+                    </a>
+                 
+               <figcaption>
+                      Figure 0: Perpendicular distances like these are hard to measure accurately in practice.
+                      When measuring <code>C_Z</code>, the dangling Hangprinter is hard to fixate, and the point where
+                      <code>ANCHOR_C_Y</code> and <code>ANCHOR_C_X</code> meet is hard to determine.
+                      (Se <a href="#step16">Step 16</a> in <a href="#Clerck_assembly_manual">Clerck Assembly manual v0.1</a> for another figure.)
+                    
+               </figcaption>
+               
+            </figure>
+            <h3>Step 0: Mount Wall Frame Parts</h3>
+            <p>
+                 Mount all the lower frame parts at roughly equal heights above your floor.
+                 While not theoretically necessary, this makes calculations and measurement procedures easier.
+                 We assume your floor is perpendicular to gravity.
+               
+            </p>
+            <figure>
+                 <a href="./bilder/In_a_plane.png">
+                      <img src="./bilder/In_a_plane_liten.png" alt="">
+                    </a>
+                 
+               <figcaption>
+                       Figure 1: All lower frame parts mounted in a plane perpendicular to gravity (on the same floor or table).
+                    
+               </figcaption>
+               
+            </figure>
+            <p>
+                 Keep the flat sides of lower frame parts as parallel to the ceiling frame part's sides as you can.
+               
+            </p>
+            <figure>
+                 <a href="./bilder/topview.png">
+                      <img src="./bilder/topview_liten.png" alt="">
+                    </a>
+                 
+               <figcaption>
+                       Figure 2: Configuration of side plates and top plate as seen from above, through a transparent ceiling...
+                       Note how the sides of the ceiling frame part are parallel to the wall frame parts.
+                    
+               </figcaption>
+               
+            </figure>
+            <h3>Step 1: Mark out Origo in XY-Plane</h3>
+            <p>
+                 Use tape or ink to mark out a point directly below your ceiling frame part.
+                 This point will be used for measurement and homing reference, so keep it fixed and visible.
+               
+            </p>
+            <figure>
+                 <a href="./bilder/Finding_origo2.png">
+                      <img src="./bilder/Finding_origo2_liten.png" alt="">
+                    </a>
+                 
+               <figcaption>
+                      Figure 3: A yellow aiming plumb points at origo, which is marked with a tiny red dot.
+                      The grey surface is your floor or print surface.
+                    
+               </figcaption>
+               
+            </figure>
+            <h3>Step 2: Measure Six distances</h3>
+            <figure>
+                 <a href="./bilder/Six_measurements.png">
+                      <img src="./bilder/Six_measurements_liten.png" alt="">
+                    </a>
+                 
+               <figcaption>
+                      Figure 4: measurement points are marked with red dots.
+                      Note that <code>d</code> is equal to the length of the aiming plumb in Figure 3.
+                    
+               </figcaption>
+               
+            </figure>
+            <h3>Step 3: Translate to Cartesian Distances</h3>
+            <p>
+                 Now that we use our six measurements to determine six unknowns.
+                 Denoting the x-position of anchor point <code>B</code> like <code>B_x</code>, we can list the unknowns:
+               
+            </p>
+            <ul>
+                 
+               <li><code>A_y</code></li>
+                 
+               <li><code>B_y</code></li>
+                 
+               <li><code>B_x</code></li>
+                 
+               <li><code>C_y</code></li>
+                 
+               <li><code>C_x</code></li>
+                 
+               <li><code>D_z</code></li>
+               
+            </ul>
+            <p>
+                 We orient our Cartesian coordinate system such that <code>A_x = 0</code>.
+                 Also, we set <code>A_z = B_z = C_z = 0</code> from the restrictions in step 0 above.
+                 Now the <a href="https://en.wikipedia.org/wiki/Law_of_cosines">Law of cosines</a>
+                   and good old Pythagoras solves the rest for us.
+               
+            </p>
+            <ul>
+                 
+               <li><code>A_y = -a</code></li>
+                 
+               <li><code>B_y = (s^2 - b^2 - a^2)/(2*a)</code></li>
+                 
+               <li><code>B_x =  sqrt(s^2 - (a + B_y)^2)</code></li>
+                 
+               <li><code>C_y = (f^2 - c^2 - a^2)/(2*a)</code></li>
+                 
+               <li><code>C_x = -sqrt(f^2 - (a + C_y)^2)</code></li>
+                 
+               <li><code>D_z = d</code></li>
+               
+            </ul>
+            <h3>Step 4: Take Action Point Offsets Into Account</h3>
+            <p>
+                 Since lines are not tied to the center of hangprinter we need to subtract the offsets.
+                 These numbers are more or less hard-coded into the
+                 <a href="https://github.com/tobbelobb/hangprinter/tree/calibration_manual_0">OpenSCAD files</a>.
+                 I made a branch called <code>calibration_manual_0</code>
+                 that corresponds to the renderings in this post.
+                 I'm also listing the values for ya right here. Yeah, right here:
+               
+            </p>
+            <ul>
+                 
+               <li><code>ANCHOR_A_X = 0</code></li>
+                 
+               <li><code>ANCHOR_A_Y = -(a - 59.8)</code></li>
+                 
+               <li><code>ANCHOR_A_Z = -146.4</code></li>
+                 
+               <li><code>ANCHOR_B_X = B_x - 59.8*sqrt(3)/2</code></li>
+                 
+               <li><code>ANCHOR_B_Y = B_y - 59.8/2</code></li>
+                 
+               <li><code>ANCHOR_B_Z = -136.6</code></li>
+                 
+               <li><code>ANCHOR_C_X = C_x + 59.8*sqrt(3)/2</code></li>
+                 
+               <li><code>ANCHOR_C_Y = C_y - 59.8/2</code></li>
+                 
+               <li><code>ANCHOR_C_Z = -126.8</code></li>
+                 
+               <li><code>ANCHOR_D_X = 0</code></li>
+                 
+               <li><code>ANCHOR_D_Y = 0</code></li>
+                 
+               <li><code>ANCHOR_D_Z = d - 117.0</code></li>
+               
+            </ul>
+            <p>
+                 These values correspond exactly to what you're supposed to feed into <code>Configuration.h</code>
+                   to calibrate your Hangprinter.
+               
+            </p>
+            <h3>In Theory...</h3>
+            <p>
+                 We could add three more measurements and be able to calculate <code>A_z</code>, <code>B_z</code> and <code>C_z</code>.
+                 This would get rid of the requirement to mount the lower anchor points in a plane perpendicular to gravity.
+                 I find these three measurements a bit difficult to carry out in practice.
+                 Practical difficulty is of course subjective, but the six-measurement procedure is the one I use.
+               
+            </p>
+            <p>
+                 I hope this has been useful, best of luck!
+               
+            </p>
+            <p>
+               - tobben
+               
+            </p>
+            <div style="display: none"><a class="u-url" href="https://torbjornludvigsen.com/blog/2016/index.html#hangprinter_project_21"></a><a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
+                  Torbj&oslash;rn Ludvigsen
+                  <img class="u-photo" src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG" alt="Torbj&oslash;rn Ludvigsen"></a><span class="p-summary">Hangprinter Calibration Manual v0.1</span></div><br><br><br></article>
+         <article class="h-entry">
+            <h1 class="p-name" id="oslo_skaperfestival_2016">Oslo Skaperfestival 2016</h1>
+            <div class="date">25-10-2016</div>
+            <time style="display:none" class="dt-published">2016-10-25T12:00:00Z</time>
+            <p>
+                 Clerck was demonstrated in public for the first time this weekend!
+               
+            </p>
+            <figure>
+                 <a href="./bilder/Clerck_og_Jon.JPG">
+                      <img src="./bilder/Clerck_og_Jon_liten.JPG" alt="">
+                    </a>
+                 
+               <figcaption>
+                      Planks and clamps were used to simulate a ceiling. The lower anchor points were simply taped to the floor.
+                      Click picture to zoom.
+                    
+               </figcaption>
+               
+            </figure>
+            <p>
+                 <a href="http://fellesverkstedet.no/">
+                    Fellesverkstedet Fablab</a>
+                 and
+                 <a href="https://bitraf.no/">
+                    Bitraf Makerspace</a>
+                 kindly let me show Clerk by their stand at Oslo Skaperfestival.
+                 They even helped me mount and present it!
+                 Special thanks to Jens, Martina and Jon for the invitation, the warm welcome and help of various sorts.
+               
+            </p>
+            <figure>
+                 
+               <div class="embed-container">
+                      <iframe src="https://player.vimeo.com/video/188791100" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true">
+                         </iframe>
+                    
+               </div>
+                 
+               <figcaption>
+                      Clerck printing a twisted H at Oslo Skaperfestival.
+                    
+               </figcaption>
+               
+            </figure>
+            <p>
+                 The festival atmosphere changed like in a cafe district in April.
+                 Sometimes library quiet, doors closed, a few people carrying chairs around.
+                 Sometimes tivoli hectic with
+                 makers, teachers, hosts, children, amazing machines and zing boom wow bam all along the library hallways.
+               
+            </p>
+            <figure>
+                 <a href="./bilder/zingboom.JPG">
+                      <img src="./bilder/zingboom_liten.JPG" alt="">
+                    </a>
+                 
+               <figcaption>
+                      Girl playing with hovercraft, clearing a little space, bumping into shoes.
+                    
+               </figcaption>
+               
+            </figure>
+            <figure>
+                 <a href="./bilder/Jon_Jens_Tdog.JPG">
+                      <img src="./bilder/Jon_Jens_Tdog_liten.JPG" alt="">
+                    </a>
+                 
+               <figcaption>
+                    <a href="http://www.jonnor.com/">Jon</a>, <a href="https://www.youtube.com/user/DyvikDesign/videos">Jens</a>
+                    and <a href="http://nordvikmanifestation.blogspot.se/">Torbj&oslash;rn</a> preparing to pack up their stand at closing hour.
+                    All three are mainstays in Oslo's maker community.
+                    
+               </figcaption>
+               
+            </figure>
+            <p>
+                 My work will be influenced by the conversations by the festival stand for a time to come.
+                 I'm looking forward to it =)
+               
+            </p>
+            <p>
+                 - tobben
+               
+            </p>
+            <h4>PS! added Oct 26</h4>
+            <p>
+                 Here's a layer consistency shot of a print made at Skaperfestivalen.
+                 Next time, we're going for something a lot taller!
+               
+            </p>
+            <figure>
+                 <a href="./bilder/Twisted_G_close.JPG">
+                      <img src="./bilder/Twisted_G_close_liten.JPG" alt="">
+                    </a>
+                 
+               <figcaption>
+                    
+               </figcaption>
+               
+            </figure>
+            <p>
+               - tobben
+               
+            </p>
+            <div style="display: none"><a class="u-url" href="https://torbjornludvigsen.com/blog/2016/index.html#oslo_skaperfestival_2016"></a><a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
+                  Torbj&oslash;rn Ludvigsen
+                  <img class="u-photo" src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG" alt="Torbj&oslash;rn Ludvigsen"></a><span class="p-summary">Oslo Skaperfestival 2016</span></div><br><br><br></article>
+         <article class="h-entry">
+            <h1 class="p-name" id="hangprinter_project_20">Homing the Hangprinter Without Adding Hardware</h1>
+            <div class="date">23-9-2016</div>
+            <time style="display:none" class="dt-published">2016-09-23T12:00:00Z</time>
+            <p>
+                 I've thought some more about Hangprinter recently, since I'm going to demonstrate it on the
+                 <a href="https://www.facebook.com/events/1052788231502429/">3d printer festival</a>
+                 arranged by the Norwegian Museum of Science and Technology in Oslo.
+                 I've only ever mounted and calibrated Hangprinter once before,
+                   so getting the manual homing to work fast enough worries me a bit.
+                 I don't have the time to implement the proposed
+                 <a href="http://www.appropedia.org/Clerck,_a_RepRap_3D_printer_hanging_from_the_ceiling#Home_position">accelerometer dependent homing procedure</a>
+                 before the festival.
+               
+            </p>
+            <p>
+                 The following (almost stupidly simple but still kind of useful) solution will be the first thing I try to make homing faster
+                 than the aiming plump technique I've used before (see <a href="https://torbjornludvigsen.com/blog/2016/bilder/center_lod.JPG">picture</a>).
+               
+            </p>
+            <figure>
+                 <a href="./bilder/sandwich_marking2.png">
+                      <img src="./bilder/sandwich_marking2_liten.png" alt="">
+                    </a>
+                 
+               <figcaption>
+                      It should be precise enough to home a Hangprinter by aligning five marks, one on each sandwich gear and one on the bottom
+                  plate (all green in this illustration).
+                      An initial homing calibration using an aiming plumb, to place the green markings correctly, is still needed though.
+                    
+               </figcaption>
+               
+            </figure>
+            <p>
+                 If alignment of marks as shown above proves sufficiently precise,
+                   I will use a similar concept for automatic homing.
+                 Replacing the green marks with and optical or magnetic sensor arrangement should be quite straightforward.
+               
+            </p>
+            <p>
+               - tobben
+               
+            </p>
+            <div style="display: none"><a class="u-url" href="https://torbjornludvigsen.com/blog/2016/index.html#hangprinter_project_20"></a><a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
+                  Torbj&oslash;rn Ludvigsen
+                  <img class="u-photo" src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG" alt="Torbj&oslash;rn Ludvigsen"></a><span class="p-summary">Homing the Hangprinter Without Adding Hardware</span></div><br><br><br></article>
+         <article class="h-entry">
+            <h1 class="p-name" id="VSE_1">Yet Another Very Simple Extruder Design</h1>
+            <div class="date">21-9-2016</div>
+            <time style="display:none" class="dt-published">2016-09-21T12:00:00Z</time>
+            <p>
+                 I've thought about a second generation Hangprinter lately, including the extruder.
+                 My current favourite re-design uses two motors running synchronously.
+               
+            </p>
+            <figure>
+                 <a href="./bilder/very_simple_extruder_first_render.png">
+                      <img src="./bilder/very_simple_extruder_first_render_liten.png" alt="">
+                    </a>
+                  
+               <figcaption>
+                       Two motors pinch a filament between hobbed bolts on their shafts.
+                    
+               </figcaption>
+               
+            </figure>
+            <p>
+                 The motors in the figure above are supposed to resemble Mabuchi 130 servos rather than steppers.
+                 The informed discussion in
+                 <a href="http://forums.reprap.org/read.php?1,661444">this forum thread</a>
+                 and
+                 <a href="https://www.youtube.com/watch?v=L-_5KsAOVko">this video demonstration</a>
+                 have made me interested in servos again.
+               
+            </p>
+            <p>
+                 The RepRap community's relationship with servos is long, complicated and rather fruitless
+                   even though the promise of mechanical simplicity and low weight has always been present.
+                 There seems to be something hard about servos.
+                 Still, 2d-printer-engineers manages to churn out servo driven movement platforms, lots of them.
+                 Are those Inkjet engineers better than us?
+                 No, of course not.
+               
+            </p>
+            <p>
+                 Anyways, if the servo usage doesn't pan out at all, I can always try two Nema14's instead.
+                 Pinching filament between two motor shafts would still be cool and simple.
+                 Not as cool as servos though.
+               
+            </p>
+            <p>
+               - tobben
+               
+            </p>
+            <div style="display: none"><a class="u-url" href="https://torbjornludvigsen.com/blog/2016/index.html#VSE_1"></a><a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
+                  Torbj&oslash;rn Ludvigsen
+                  <img class="u-photo" src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG" alt="Torbj&oslash;rn Ludvigsen"></a><span class="p-summary">Yet Another Very Simple Extruder Design</span></div><br><br><br></article>
+         <article class="h-entry">
+            <h1 class="p-name" id="masters_2">Why Optimize Chaotic Production?</h1>
+            <div class="date">10-9-2016</div>
+            <time style="display:none" class="dt-published">2016-09-10T12:00:00Z</time>
+            <p>
+                 RepRappers have noticed me that basing the story line of my
+                   <a href="http://opensourceecology.org/wiki/File:Thesis.pdf">my Master's thesis</a>
+                 on productivity numbers doesn't resonate with them.
+                 This tickled me to think about and formulate why I do what I do, hence this post.
+               
+            </p>
+            <p>
+                 In the thesis, I really wanted to say that we can afford producing in humane, joyful ways, and that D3D-Porteus can help.
+                 Also, in this title and previous posts, I have used the word "chaotic" loosely.
+                 With <i>chaotic</i> I mean "distributed between people with their own budgets for time and money".
+               
+            </p>
+            <p>
+                 In centralized production, unrelatedness, vulnerability and boredom are hidden costs
+                   because they are hard to count but easy to feel.
+                 In <i>chaotic production</i>, the producer carries the total production cost, both in time, money and emotion,
+                   and also decides how to work and when to stop.
+                 Chaotic production must be <i>optimized</i> to meet the producers interests.
+                 <i>Optimizing chaotic production</i> must include preserving creative joy.
+               
+            </p>
+            <figure>
+                 <a href="./bilder/backlight_humans.jpg">
+                      <img src="./bilder/backlight_humans_liten.jpg" alt="">
+                    </a>
+                  
+               <figcaption>
+                       I think balmy moods and good times in general depends on conscious effort
+                       even though production is intrinsically satisfying.
+                       The words
+                       "optimizing chaotic production" describe one way of doing one type of such effort.
+                    
+               </figcaption>
+               
+            </figure>
+            <p>
+                 The answer to the question posed in the title is then the inverse of unrelatedness, vulnerability and boredom, namely:
+               
+            </p>
+            <h3>1: Close Relations</h3>
+            <p>
+                 As humans we are evolved to thrive in small groups that help each other.
+                 Helpers feel pride and helped ones feel gratitude.
+                 It is hard to help and get love in return from distant factories.
+                 Producing everything centrally wastes opportunities to feel more pride and gratitude in our lives.
+               
+            </p>
+            <h3>2: Resilience</h3>
+            <p>
+                 Centralized factories are single points of failure.
+                 Shit just happens sometimes and when it happens we better know how to produce our stuff ourselves.
+               
+            </p>
+            <h3>3: Fun</h3>
+            <p>
+                 We are born capable of having interests and we thrive when we get to follow them.
+                 Chaotic production doesn't have bosses with the licence to bore.
+                 When you're allowed to listen to your heart you will recognize its sense of humour.
+                 If you live in an industrialized society you will probably not end up starving in the streets
+                   even if you listen to a funny heart.
+               
+            </p>
+            <p>
+               - tobben
+               
+            </p>
+            <div style="display: none"><a class="u-url" href="https://torbjornludvigsen.com/blog/2016/index.html#masters_2"></a><a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
+                  Torbj&oslash;rn Ludvigsen
+                  <img class="u-photo" src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG" alt="Torbj&oslash;rn Ludvigsen"></a><span class="p-summary">Why Optimize Chaotic Production?</span></div><br><br><br></article>
+         <article class="h-entry">
+            <h1 class="p-name" id="portable_gcode_1">Portable Gcode and Short Status</h1>
+            <div class="date">5-9-2016</div>
+            <time style="display:none" class="dt-published">2016-09-05T12:00:00Z</time>
+            <p>
+                 Today I asked a <a href="http://forums.reprap.org/read.php?1,705311">question on reprap forums</a> that has puzzled me for a long time.
+                 Why don't we share gcode instead of 3d models?
+                 The technical obstacles are small and it would be an obvious optimization of chaotic production.
+                 See <a href="http://forums.reprap.org/read.php?1,705311">the forum post</a> for details.
+                 Hoping for an interesting discussion there.
+               
+            </p>
+            <p>
+                 Now that my Master's is finished I'll try to make a living out of it.
+                 I'll continue to post report-like documentation here and list day-to-day activities
+                 over at <a href="http://opensourceecology.org/wiki/Tobben_Log">my log on the OSE wiki</a>.
+               
+            </p>
+            <p>
+                 As a start, I've co-founded a limited company that is offering RepRap Assembly Workshops and other course activity
+                 to schools and youth clubs around Norway and Sweden. See home page in Norwegian <a href="http://ludvigsen3dprinting.com/">here</a>.
+                 I tried to make a logo in Blender. It's my first one, and it ended up looking like something you would expect to see on
+               a tube of tooth paste,
+                   but I kind of like it because I made it myself:
+               
+            </p>
+            <figure>
+                 <a href="./bilder/L3dp_logo2_litt_mindre_blank_transparent.png">
+                      <img src="./bilder/L3dp_logo2_litt_mindre_blank_transparent_liten.png" alt="">
+                    </a>
+                  
+               <figcaption>
+                       Figure 1: A blue RepRap teardrop with some super fancy 3d effektz.
+                    
+               </figcaption>
+               
+            </figure>
+            <p>
+                 Before I dive into searching far and wide for jobs, I need to work on my RepRap family in Norway and Sweden.
+                 I need people who know RepRap that I can talk with and share knowledge, experiences, hardware and services with.
+                 As a start, I'll head to Oslo this week and visit Bitraf and Fellesverkstedet.
+                 I hope I can get to know them by helping them with their projects.
+                 If they want to cooperate on one of my projects, I plan on suggesting a new D3D-Porteus based on <a href="https://www.gnu.org/software/guix/">GuixSD</a>,
+                 or to work on portable gcode as described in the forum post I posted today.
+               
+            </p>
+            <p>
+               - tobben
+               
+            </p>
+            <div style="display: none"><a class="u-url" href="https://torbjornludvigsen.com/blog/2016/index.html#portable_gcode_1"></a><a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
+                  Torbj&oslash;rn Ludvigsen
+                  <img class="u-photo" src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG" alt="Torbj&oslash;rn Ludvigsen"></a><span class="p-summary">Portable Gcode and Short Status</span></div><br><br><br></article>
+         <article class="h-entry">
+            <h1 class="p-name" id="masters_1">Optimize Chaotic Production</h1>
+            <div class="date">29-6-2016</div>
+            <time style="display:none" class="dt-published">2016-06-29T12:00:00Z</time>
+            <p>
+                 I presented my Master's recently, with a story line that was very RepRap centric.
+                 I'd like to re-present and develop my thoughts with some colors here.
+                 Be warned that this is a post about <i>why</i> I RepRap, not <i>how</i> I RepRap.
+               
+            </p>
+            <p>
+                 I live in the EU and have a lot of contact with the US.
+                 I'm among the lucky ones by all metrics, but I also see a lot of frustration.
+               
+            </p>
+            <figure>
+                 <a href="./bilder/Civil_unrest_web.png">
+                      <img src="./bilder/Civil_unrest_web_liten.png" alt="">
+                    </a>
+                  
+               <figcaption>
+                       Figure 1: Number of riots and anti government demonstrations in USA and EU+UK since 1970.
+                       People started to hit the streets on both sides of the Atlantic in 2010.
+                       Data source: Banks, Arthur S., Wilson, Kenneth A. 2016. Cross-National Time-Series Data Archive. Databanks International.
+                  Jerusalem, Israel; see <a href="http://www.databanksinternational.com">databanksinternational.com</a>.
+                    
+               </figcaption>
+               
+            </figure>
+            <figure>
+                 <a href="./bilder/Labour_productivity_web.png">
+                      <img src="./bilder/Labour_productivity_web_liten.png" alt="">
+                    </a>
+                  
+               <figcaption>
+                       Figure 2: Productivity and income since 1970. This plot shows data from USA but the trends are similar in all western
+                  countries.
+                       Output per work hour increased drastically between 1995 and 2010.
+                       Only the most positive economists see rising incomes after ca 1998.
+                       The productivity increase is largely attributed to better usage of computers, robots, and the Internet within organizations.
+                       Data sources: <a href="http://dx.doi.org/10.1787/data-00686-en">OECD</a>, <a href="https://research.stlouisfed.org/fred2/series/LABSHPUSA156NRUG">University of Groningen</a>, <a href="https://research.stlouisfed.org/fred2/series/MEPAINUSA672N">US. Bureau of the Census</a> and 2015 Economic Report of the President by Council of Economic Advisors, table B-15.
+                    
+               </figcaption>
+                 
+               <!--
   cat Labour_productivity_plot_web.gp | gnuplot
   mv Labour_productivity_web.png ~/blogg/bilder/
   -->
-            
-         </figure>
-         <p>
-              The plots above tell so many stories I, could stare at them for hours.
-              I see how the computer age takes off, and robots starts to produce stuff crazy fast while people go furious.
-              It's like a very odd movie plot, it makes me scratch my head.
-              I've experienced the frustrations of modern western life
-                but I'm surprised by the glaring and obvious stagnation and frustration in the above stats.
-            
-         </p>
-         <p>
-              EDIT 30 June: There's a really nice presentation of what frustrates western middle classes in
-              <a href="./bilder/inequality_world.pdf">
-                   this report</a>'s Figure 4.
-              The accompanying text explains western middle class stagnation with globalization.
-              It may be right, I don't know what caused what.
-              I just think that our computers and robots should have prevented stagnation regardless.
-              They are so powerful and even supposed to be personal. END EDIT
-            
-         </p>
-         <p>
-              Computers are machines for thought work, they should lift our burden of thought and give us peace of mind.
-              Well, at least in theory (my dreams)...
-              It would be so nice to just reboot the computer revolution and make it better.
-              Computers could make people independent, resilient, and proud if used right.
-              Like cars do.
-            
-         </p>
-         <figure>
-              <a href="./bilder/1919_Ford_Model_T_Highboy_Coupe.jpg">
-                   <img src="./bilder/1919_Ford_Model_T_Highboy_Coupe_liten.jpg" alt="">
-                 </a>
-              
-            <figcaption>
-                   Figure 3: The Ford Model T, released in 1908, made people love cars.
-                   Its central production was efficient and it used standard interchangeable parts.
-                   It was known for being easy to repair and modify.
-                   Kits that let people rebuild it into a
-                     <a href="https://en.wikipedia.org/wiki/Ford_Model_T#/media/File:Pullford_auto-to-tractor_conversion_advert_1918.png">tractors</a>,
-                     <a href="http://www.mtfca.com/discus/messages/331880/396676.html?1382724168">motor boats</a>, and other things were available.
-                   Almost 15 million copies were produced.
-                   <a href="https://en.wikipedia.org/wiki/Ford_Model_T#/media/File:1919_Ford_Model_T_Highboy_Coupe.jpg">Image</a>
-                     by Sfoskett is CC BY-SA licenced.
+               
+            </figure>
+            <p>
+                 The plots above tell so many stories I, could stare at them for hours.
+                 I see how the computer age takes off, and robots starts to produce stuff crazy fast while people go furious.
+                 It's like a very odd movie plot, it makes me scratch my head.
+                 I've experienced the frustrations of modern western life
+                   but I'm surprised by the glaring and obvious stagnation and frustration in the above stats.
+               
+            </p>
+            <p>
+                 EDIT 30 June: There's a really nice presentation of what frustrates western middle classes in
+                 <a href="./bilder/inequality_world.pdf">
+                      this report</a>'s Figure 4.
+                 The accompanying text explains western middle class stagnation with globalization.
+                 It may be right, I don't know what caused what.
+                 I just think that our computers and robots should have prevented stagnation regardless.
+                 They are so powerful and even supposed to be personal. END EDIT
+               
+            </p>
+            <p>
+                 Computers are machines for thought work, they should lift our burden of thought and give us peace of mind.
+                 Well, at least in theory (my dreams)...
+                 It would be so nice to just reboot the computer revolution and make it better.
+                 Computers could make people independent, resilient, and proud if used right.
+                 Like cars do.
+               
+            </p>
+            <figure>
+                 <a href="./bilder/1919_Ford_Model_T_Highboy_Coupe.jpg">
+                      <img src="./bilder/1919_Ford_Model_T_Highboy_Coupe_liten.jpg" alt="">
+                    </a>
                  
-            </figcaption>
-            
-         </figure>
-         <p>
-              Many are still inspired by T-Ford's successful production style.
-              Bringing a machine to the masses has meant setting up a central production line for at least 100 years,
-                including the years of the recent computer revolution.
-              Only around 2007 was central production first rivaled, by copyability through self-manufacture.
-              The RepRap 3D printers then got so easy to copy, partly thanks to self-manufacturing,
-                that the number of producers grew exponentially.
-            
-         </p>
-         <figure>
-              <a href="./bilder/RepRap_v2_Mendel_middlecropped.jpg">
-                   <img src="./bilder/RepRap_v2_Mendel_middlecropped_liten.jpg" alt="">
-                 </a>
-              
-            <figcaption>
-                   Figure 4: RepRap Mendel, released in 2009, made people love 3D printers.
-                   Its production was inefficient but easy to copy, and it used standard and self-manufactured parts.
-                   The self-manufacturing made it very easy to repair and modify, even without kits or other external help.
-                   Less than 1 million copies are produced so far.
-                   <a href="http://reprap.org/wiki/File:Mendel.jpg">Image</a>
-                     by adrianbowyer is GFDL licenced.
+               <figcaption>
+                      Figure 3: The Ford Model T, released in 1908, made people love cars.
+                      Its central production was efficient and it used standard interchangeable parts.
+                      It was known for being easy to repair and modify.
+                      Kits that let people rebuild it into a
+                        <a href="https://en.wikipedia.org/wiki/Ford_Model_T#/media/File:Pullford_auto-to-tractor_conversion_advert_1918.png">tractors</a>,
+                        <a href="http://www.mtfca.com/discus/messages/331880/396676.html?1382724168">motor boats</a>, and other things were available.
+                      Almost 15 million copies were produced.
+                      <a href="https://en.wikipedia.org/wiki/Ford_Model_T#/media/File:1919_Ford_Model_T_Highboy_Coupe.jpg">Image</a>
+                        by Sfoskett is CC BY-SA licenced.
+                    
+               </figcaption>
+               
+            </figure>
+            <p>
+                 Many are still inspired by T-Ford's successful production style.
+                 Bringing a machine to the masses has meant setting up a central production line for at least 100 years,
+                   including the years of the recent computer revolution.
+                 Only around 2007 was central production first rivaled, by copyability through self-manufacture.
+                 The RepRap 3D printers then got so easy to copy, partly thanks to self-manufacturing,
+                   that the number of producers grew exponentially.
+               
+            </p>
+            <figure>
+                 <a href="./bilder/RepRap_v2_Mendel_middlecropped.jpg">
+                      <img src="./bilder/RepRap_v2_Mendel_middlecropped_liten.jpg" alt="">
+                    </a>
                  
-            </figcaption>
-            
-         </figure>
-         <p>
-              When rebooting the computer revolution we should try the new RepRap-style of production.
-              In the thesis I show that RepRaps are very popular and numerous.
-              I also show that they are actually produced and forwarded virally.
-              To formalize this observation, I present some data collected by Spanish RepRappers (see Figure 5)
-                and import a structural virality measure used by researchers on other viral phenomena.
-            
-         </p>
-         <p>
-              In the presentation I point out that chaotic production requires low <i>unique parts count</i>,
-                good <i>documentation</i> and low <i>price</i>, just like assembly line production.
-              I suggest that <i>software freedom</i> and <i>self-manufacture</i> are additional efficiency requirements not found
-                in assembly line production.
-            
-         </p>
-         <figure>
-              <a href="./bilder/clonewars.png">
-                   <img src="./bilder/clonewars_liten.png" alt="">
-                 </a>
-              
-            <figcaption>
-                   Figure 5: A graph displaying part of the data set from the <a href="https://web.archive.org/web/20160713090205/http://maytheclonebewithyou.com/">Clone Wars project</a>.
-                   Every node is a person and every edge represents a transfer of RepRap 3D printed parts.
-                   Similar graphs describing RepRap designs are found
-                     <a href="http://reprap.org/wiki/RepRap_Family_Tree">here</a> and
-                     <a href="http://makezine.com/2015/12/02/a-reprap-family-tree-tracking-the-printers-that-started-it-all/">here</a>,
-                     and a graph for RepRap machines is found <a href="https://web.archive.org/web/20160713090205/http://maytheclonebewithyou.com/">here</a>.
-                   As far as I know, the person-centric graph in this figure is unique.
+               <figcaption>
+                      Figure 4: RepRap Mendel, released in 2009, made people love 3D printers.
+                      Its production was inefficient but easy to copy, and it used standard and self-manufactured parts.
+                      The self-manufacturing made it very easy to repair and modify, even without kits or other external help.
+                      Less than 1 million copies are produced so far.
+                      <a href="http://reprap.org/wiki/File:Mendel.jpg">Image</a>
+                        by adrianbowyer is GFDL licenced.
+                    
+               </figcaption>
+               
+            </figure>
+            <p>
+                 When rebooting the computer revolution we should try the new RepRap-style of production.
+                 In the thesis I show that RepRaps are very popular and numerous.
+                 I also show that they are actually produced and forwarded virally.
+                 To formalize this observation, I present some data collected by Spanish RepRappers (see Figure 5)
+                   and import a structural virality measure used by researchers on other viral phenomena.
+               
+            </p>
+            <p>
+                 In the presentation I point out that chaotic production requires low <i>unique parts count</i>,
+                   good <i>documentation</i> and low <i>price</i>, just like assembly line production.
+                 I suggest that <i>software freedom</i> and <i>self-manufacture</i> are additional efficiency requirements not found
+                   in assembly line production.
+               
+            </p>
+            <figure>
+                 <a href="./bilder/clonewars.png">
+                      <img src="./bilder/clonewars_liten.png" alt="">
+                    </a>
                  
-            </figcaption>
-            
-         </figure>
-         <p>
-              I set out to optimize the chaotic and distributed RepRap production
-                and discover that I can do so by optimizing RepRap Assembly Workshops,
-                and particularly the software that they use.
-              I collect all the data I can find about RepRap Assembly Workshop arrangements on the Internet.
-              See my data <a href="./bilder/Table_c1.pdf">in good looking pdf here</a> or in
-              <a href="http://opensourceecology.org/wiki/File:Assembly_workshops_data_collection_through_web_search.ods">practical spreadsheet here</a>.
-            
-         </p>
-         <p>
-              I end up packaging Marlin, Arduino IDE, Slic3r, Printrun and OpenSCAD in a live OS.
-              Open Source Ecology tested the live OS for me, and they liked it quite well.
-              I've also used it myself in a four-day 3D printing course for kids this summer,
-                and I found it handy.
-              Technical details of the live OS is another post, but files are hosted
-              <a href="https://github.com/tobbelobb/D3D-Porteus">here</a>.
-            
-         </p>
-         <p>
-              That was my little story line, hope you liked it and look forward to some more technical stuff in the coming months.
-              Download <a href="http://opensourceecology.org/wiki/File:Thesis.pdf">thesis here</a>,
-              and <a href="http://opensourceecology.org/wiki/File:Thesis_presentation_tobben.pdf">presentation slides here</a>.
-            
-         </p>
-         <p>
-              EDIT 30 June: Sorry for messing up the RSS-feed. Restructured the blog to make it load faster. See list of links at bottom
-            of page.
-            
-         </p>
-         <p>
-              EDIT 7 July: Please use <a href="http://forums.reprap.org/read.php?1,685098">this thread</a> to comment and ask questions related to the thesis or this blog post.
-            
-         </p>
-         <p>
-            - tobben
-            
-         </p>
-         <div style="display: none"><a class="u-url" href="https://torbjornludvigsen.com/blog/2016/index.html#masters_1"></a><time class="dt-published">29-6-2016</time><a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
-               Torbj&oslash;rn Ludvigsen
-               <img class="u-photo" src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG" alt="Torbj&oslash;rn Ludvigsen"></a><span class="p-summary">Optimize Chaotic Production</span></div><br><br><br><h1 id="hangprinter_project_19">Update and Clerck Build Instructions</h1>
-         <div class="date">8-2-2016</div>
-         <p>
-              I've been working on Open Source Ecology 3D printer workshops (see my <a href="http://opensourceecology.org/wiki/Tobben_Log">work log</a> for exactly what I've been up to)
-              the past month, and will continue to work on that until mid summer.
-            
-         </p>
-         <p>
-              Clerck would love to be developed further by anyone even if I'm on another project right now.
-              The following instructions should not be considered "the ultimate way", it's simply how I did it on my first try with the
-            prototype.
-              The best absolute source of Clerck information is the OpenSCAD files in the Github repo.
-              A special branch was created for this build manual, called
-              <a href="https://github.com/tobbelobb/hangprinter/tree/build_maunal_0">build_maunal_0</a>.
-              <code>Hangprinter.scad</code> is the most high-level entry point.
-            
-         </p>
-         <p>
-              This build manual will be short and terse.
-              Ask questions
-              <a href="forums.reprap.org/read.php?178,344022">the forum thread</a>
-              to fill in knowledge and information gaps.
-            
-         </p>
-         <h2 id="Clerck_assembly_manual">
-              Clerck Assembly Manual v0.1
-            
-         </h2>
-         <figure>
-              <a href="./bilder/hangprinter_assembly.png">
-                   <img src="./bilder/hangprinter_assembly_liten.png" alt="">
-                 </a>
-              
-            <!--
+               <figcaption>
+                      Figure 5: A graph displaying part of the data set from the <a href="https://web.archive.org/web/20160713090205/http://maytheclonebewithyou.com/">Clone Wars project</a>.
+                      Every node is a person and every edge represents a transfer of RepRap 3D printed parts.
+                      Similar graphs describing RepRap designs are found
+                        <a href="http://reprap.org/wiki/RepRap_Family_Tree">here</a> and
+                        <a href="http://makezine.com/2015/12/02/a-reprap-family-tree-tracking-the-printers-that-started-it-all/">here</a>,
+                        and a graph for RepRap machines is found <a href="https://web.archive.org/web/20160713090205/http://maytheclonebewithyou.com/">here</a>.
+                      As far as I know, the person-centric graph in this figure is unique.
+                    
+               </figcaption>
+               
+            </figure>
+            <p>
+                 I set out to optimize the chaotic and distributed RepRap production
+                   and discover that I can do so by optimizing RepRap Assembly Workshops,
+                   and particularly the software that they use.
+                 I collect all the data I can find about RepRap Assembly Workshop arrangements on the Internet.
+                 See my data <a href="./bilder/Table_c1.pdf">in good looking pdf here</a> or in
+                 <a href="http://opensourceecology.org/wiki/File:Assembly_workshops_data_collection_through_web_search.ods">practical spreadsheet here</a>.
+               
+            </p>
+            <p>
+                 I end up packaging Marlin, Arduino IDE, Slic3r, Printrun and OpenSCAD in a live OS.
+                 Open Source Ecology tested the live OS for me, and they liked it quite well.
+                 I've also used it myself in a four-day 3D printing course for kids this summer,
+                   and I found it handy.
+                 Technical details of the live OS is another post, but files are hosted
+                 <a href="https://github.com/tobbelobb/D3D-Porteus">here</a>.
+               
+            </p>
+            <p>
+                 That was my little story line, hope you liked it and look forward to some more technical stuff in the coming months.
+                 Download <a href="http://opensourceecology.org/wiki/File:Thesis.pdf">thesis here</a>,
+                 and <a href="http://opensourceecology.org/wiki/File:Thesis_presentation_tobben.pdf">presentation slides here</a>.
+               
+            </p>
+            <p>
+                 EDIT 30 June: Sorry for messing up the RSS-feed. Restructured the blog to make it load faster. See list of links at bottom
+               of page.
+               
+            </p>
+            <p>
+                 EDIT 7 July: Please use <a href="http://forums.reprap.org/read.php?1,685098">this thread</a> to comment and ask questions related to the thesis or this blog post.
+               
+            </p>
+            <p>
+               - tobben
+               
+            </p>
+            <div style="display: none"><a class="u-url" href="https://torbjornludvigsen.com/blog/2016/index.html#masters_1"></a><a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
+                  Torbj&oslash;rn Ludvigsen
+                  <img class="u-photo" src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG" alt="Torbj&oslash;rn Ludvigsen"></a><span class="p-summary">Optimize Chaotic Production</span></div><br><br><br></article>
+         <article class="h-entry">
+            <h1 class="p-name" id="hangprinter_project_19">Update and Clerck Build Instructions</h1>
+            <div class="date">8-2-2016</div>
+            <time style="display:none" class="dt-published">2016-02-08T12:00:00Z</time>
+            <p>
+                 I've been working on Open Source Ecology 3D printer workshops (see my <a href="http://opensourceecology.org/wiki/Tobben_Log">work log</a> for exactly what I've been up to)
+                 the past month, and will continue to work on that until mid summer.
+               
+            </p>
+            <p>
+                 Clerck would love to be developed further by anyone even if I'm on another project right now.
+                 The following instructions should not be considered "the ultimate way", it's simply how I did it on my first try with the
+               prototype.
+                 The best absolute source of Clerck information is the OpenSCAD files in the Github repo.
+                 A special branch was created for this build manual, called
+                 <a href="https://github.com/tobbelobb/hangprinter/tree/build_maunal_0">build_maunal_0</a>.
+                 <code>Hangprinter.scad</code> is the most high-level entry point.
+               
+            </p>
+            <p>
+                 This build manual will be short and terse.
+                 Ask questions
+                 <a href="forums.reprap.org/read.php?178,344022">the forum thread</a>
+                 to fill in knowledge and information gaps.
+               
+            </p>
+            <h2 id="Clerck_assembly_manual">
+                 Clerck Assembly Manual v0.1
+               
+            </h2>
+            <figure>
+                 <a href="./bilder/hangprinter_assembly.png">
+                      <img src="./bilder/hangprinter_assembly_liten.png" alt="">
+                    </a>
+                 
+               <!--
    <figcaption>
     Figure 0: Rendering of the assembled Hangprinter.
   </figcaption>
   -->
-            
-         </figure>
-         <h3>Step 0: Sourcing</h3>
-         <p>
-              For vitamins bill of materials, see
-              <a href="http://www.appropedia.org/Clerck,_a_RepRap_3D_printer_hanging_from_the_ceiling#Costs">the Appropedia article</a>.
-              Some info on hardware specifics is found in
-              <a href="https://github.com/tobbelobb/hangprinter/tree/build_maunal_0/used_hardware">used_hardware</a> directory in repo.
-              For printed parts bill of materials, search
-              <a href="https://github.com/tobbelobb/hangprinter/tree/build_maunal_0/stl">stl directory</a> of build_maunal_0 branch
-              in Github repo for the shown STL files.
-              You'll also need the Hangprinter-Marlin firmware.
-              It's in the firmware folder of the
-              <a href="https://github.com/tobbelobb/hangprinter/tree/build_maunal_0/firmware/Marlin">repo</a>.
-            
-         </p>
-         <h3>Step 1: Cut Lines to Length and Tie to Spools</h3>
-         <p>
-              Cut all nine lines to desired lengths.
-              If you know the distances between the origin (middle of print bed) and the mounting points (walls and ceiling),
-                then you can use those to calculate good line lengths.
-              I use twice the origin/wall-distance plus ca 1.5 meters along all axes.
-              As there are 4 movement axes on this printer, there will be 4 lengths.
-              We call them the A-length, B-length, C-length and D-length.
-            
-         </p>
-         <figure>
-              <a href="./bilder/ABCD.png">
-                   <img src="./bilder/ABCD_liten.png" alt="">
-                 </a>
-              
-            <figcaption>
-                    Illustration associating each of the letters "A", "B", "C" and "D" with a corresponding anchor point.
-                    The bottom plate (largest printed part) has A, B, and C inscriptions on it,
-                      indicating which side should face which wall-mounted anchor point.
+               
+            </figure>
+            <h3>Step 0: Sourcing</h3>
+            <p>
+                 For vitamins bill of materials, see
+                 <a href="http://www.appropedia.org/Clerck,_a_RepRap_3D_printer_hanging_from_the_ceiling#Costs">the Appropedia article</a>.
+                 Some info on hardware specifics is found in
+                 <a href="https://github.com/tobbelobb/hangprinter/tree/build_maunal_0/used_hardware">used_hardware</a> directory in repo.
+                 For printed parts bill of materials, search
+                 <a href="https://github.com/tobbelobb/hangprinter/tree/build_maunal_0/stl">stl directory</a> of build_maunal_0 branch
+                 in Github repo for the shown STL files.
+                 You'll also need the Hangprinter-Marlin firmware.
+                 It's in the firmware folder of the
+                 <a href="https://github.com/tobbelobb/hangprinter/tree/build_maunal_0/firmware/Marlin">repo</a>.
+               
+            </p>
+            <h3>Step 1: Cut Lines to Length and Tie to Spools</h3>
+            <p>
+                 Cut all nine lines to desired lengths.
+                 If you know the distances between the origin (middle of print bed) and the mounting points (walls and ceiling),
+                   then you can use those to calculate good line lengths.
+                 I use twice the origin/wall-distance plus ca 1.5 meters along all axes.
+                 As there are 4 movement axes on this printer, there will be 4 lengths.
+                 We call them the A-length, B-length, C-length and D-length.
+               
+            </p>
+            <figure>
+                 <a href="./bilder/ABCD.png">
+                      <img src="./bilder/ABCD_liten.png" alt="">
+                    </a>
                  
-            </figcaption>
-            
-         </figure>
-         <p>
-              After this step you should have:
-            
-         </p>
-         <ul>
-              
-            <li>2 A-length lines</li>
-              
-            <li>2 B-length lines</li>
-              
-            <li>2 C-length lines</li>
-              
-            <li>3 D-length lines</li>
-            
-         </ul>
-         <p>
-              Tie the A-length lines onto one spool, then the B-length lines onto another spool etc.
-            
-         </p>
-         <figure>
-              <a href="./bilder/tie_in_here.png">
-                   <img src="./bilder/tie_in_here_liten.png" alt="">
-                 </a>
-              
-            <figcaption>
-                    Illustration showing one line tied into prepared holes in spool.
-                    Lines will not be shown in subsequent illustrations.
+               <figcaption>
+                       Illustration associating each of the letters "A", "B", "C" and "D" with a corresponding anchor point.
+                       The bottom plate (largest printed part) has A, B, and C inscriptions on it,
+                         indicating which side should face which wall-mounted anchor point.
+                    
+               </figcaption>
+               
+            </figure>
+            <p>
+                 After this step you should have:
+               
+            </p>
+            <ul>
                  
-            </figcaption>
-            
-         </figure>
-         <h3>Step 2: Assemble Spools and Gears</h3>
-         <figure>
-              <a href="./bilder/assemble_individual_sandwich.png">
-                   <img src="./bilder/assemble_individual_sandwich_liten.png" alt="">
-                 </a>
-              
-            <figcaption>
-                   Use short (6mm?) M3 screws and nuts to assemble all four spools and large gears.
-                   Flatness of top or bottom surfaces of geared spools is important.
-                   Be sure that no screws or nuts protrude more than ca 0.5 mm.
+               <li>2 A-length lines</li>
                  
-            </figcaption>
-            
-         </figure>
-         <h3>Step 3: Sandwich Spools, Gears, Bearings and Spacers onto Bottom Plate</h3>
-         <figure>
-              <a href="./bilder/stack_of_spools.png">
-                   <img src="./bilder/stack_of_spools_liten.png" alt="">
-                 </a>
-              
-            <figcaption>
-                   Exploded view of the stack of spools. From the bottom up:
-                   608 bearing, geared spool with D-line, spacer, 608 bearing, geared spool with C-line, spacer,
-                   608 bearing, geared spool with B-line, spacer, 608 bearing, geared spool with A-line.
+               <li>2 B-length lines</li>
                  
-            </figcaption>
-            
-         </figure>
-         <p>
-              The bearings and spacers should push-fit onto the middle cylinder of the bottom plate.
-              Ensure that geared spools rotate freely by rotating and wiggling them by hand.
-            
-         </p>
-         <h3>Step 4: Mount Fish Rod Rings and Stop Screw</h3>
-         <figure>
-              <a href="./bilder/fish_ring.png">
-                   <img src="./bilder/fish_ring_liten.png" alt="">
-                 </a>
-              
-            <figcaption>
-                    Single fish rod ring. The most protruding cylinder should be push fit into fish ring towers of bottom plate.
+               <li>2 C-length lines</li>
                  
-            </figcaption>
-            
-         </figure>
-         <figure>
-              <a href="./bilder/mounted_fish_rings.png">
-                   <img src="./bilder/mounted_fish_rings_liten.png" alt="">
-                 </a>
-              
-            <figcaption>
-                    One corner of bottom plate with fish rings mounted. Secure all 9 fish rings with screws and nuts.
+               <li>3 D-length lines</li>
+               
+            </ul>
+            <p>
+                 Tie the A-length lines onto one spool, then the B-length lines onto another spool etc.
+               
+            </p>
+            <figure>
+                 <a href="./bilder/tie_in_here.png">
+                      <img src="./bilder/tie_in_here_liten.png" alt="">
+                    </a>
                  
-            </figcaption>
-            
-         </figure>
-         <figure>
-              <a href="./bilder/mounted_stopper_screw.png">
-                   <img src="./bilder/mounted_stopper_screw_liten.png" alt="">
-                 </a>
-              
-            <figcaption>
-                    The stopper screw and nut that can be used to lock the D-spool manually.
-                    Notice the nut trapped in the box.
-                    The stop screw works by pushing against the D-spool gear, preventing it from rotating.
-                    Use a nyloc nut in the box or remove the stop screw during printing, to avoid that the stop screw
-                    vibrates into a stopping position mid-print.
+               <figcaption>
+                       Illustration showing one line tied into prepared holes in spool.
+                       Lines will not be shown in subsequent illustrations.
+                    
+               </figcaption>
+               
+            </figure>
+            <h3>Step 2: Assemble Spools and Gears</h3>
+            <figure>
+                 <a href="./bilder/assemble_individual_sandwich.png">
+                      <img src="./bilder/assemble_individual_sandwich_liten.png" alt="">
+                    </a>
                  
-            </figcaption>
-            
-         </figure>
-         <h3>Step 5: Assemble the Tble-extruder</h3>
-         <p>
-              I used the E3D Volcano as my hot end.
-              Its build instructions are found
-              <a href="http://wiki.e3d-online.com/wiki/E3D-v6_%28Volcano%29_Documentation">here</a>.
-              You could use any hot end, but big nozzle diameter and long melt area are key for high print speeds.
-              The Volcano has worked well for me
-                in that it was easy to install, doesn't clog and drools surprisingly little compared to its big nozzle diameters.
-            
-         </p>
-         <figure>
-              <a href="./bilder/tble_assembly_step_1.png">
-                   <img src="./bilder/tble_assembly_step_1_liten.png" alt="">
-                 </a>
-              
-            <figcaption>
-                    Note the white PTFE (teflon) tube guiding filament into hot end.
-                    The blue 623 bearing needs support along the direction of the screw it's mounted on.
-                    I used ca 10 washers for this.
+               <figcaption>
+                      Use short (6mm?) M3 screws and nuts to assemble all four spools and large gears.
+                      Flatness of top or bottom surfaces of geared spools is important.
+                      Be sure that no screws or nuts protrude more than ca 0.5 mm.
+                    
+               </figcaption>
+               
+            </figure>
+            <h3>Step 3: Sandwich Spools, Gears, Bearings and Spacers onto Bottom Plate</h3>
+            <figure>
+                 <a href="./bilder/stack_of_spools.png">
+                      <img src="./bilder/stack_of_spools_liten.png" alt="">
+                    </a>
                  
-            </figcaption>
-            
-         </figure>
-         <p>
-              Be warned that the forthcoming alignment task fiddly.
-              If I had any time to work on the Hangprinter project's modules,
-                this extruder would be drastically changed to reduce fiddlyness.
-            
-         </p>
-         <figure>
-              <a href="./bilder/large_extruder_gear.png">
-                   <img src="./bilder/large_extruder_gear_liten.png" alt="">
-                 </a>
-              
-            <figcaption>
-                    The hex head screw is pushed through a sandwich of
-                      large extruder gear, printed part, 623 bearing, hobbed insert, 623 bearing, printed part and finally M3 nut.
-                    Some washers and lots of fiddling will be needed to assure feeding hobbs, support bearing and PTFE tube align with each
-               other.
+               <figcaption>
+                      Exploded view of the stack of spools. From the bottom up:
+                      608 bearing, geared spool with D-line, spacer, 608 bearing, geared spool with C-line, spacer,
+                      608 bearing, geared spool with B-line, spacer, 608 bearing, geared spool with A-line.
+                    
+               </figcaption>
+               
+            </figure>
+            <p>
+                 The bearings and spacers should push-fit onto the middle cylinder of the bottom plate.
+                 Ensure that geared spools rotate freely by rotating and wiggling them by hand.
+               
+            </p>
+            <h3>Step 4: Mount Fish Rod Rings and Stop Screw</h3>
+            <figure>
+                 <a href="./bilder/fish_ring.png">
+                      <img src="./bilder/fish_ring_liten.png" alt="">
+                    </a>
                  
-            </figcaption>
-            
-         </figure>
-         <h3>Step 6: Mount Extruder Motor</h3>
-         <p>
-              The small extruder gear is push-fit onto the extruder motor shaft, which should have one flat side.
-              Remove two neighbouring bottom screws from the bottom of the motor before mounting.
-            
-         </p>
-         <figure>
-              <a href="./bilder/mounted_extruder_motor.png">
-                   <img src="./bilder/mounted_extruder_motor_liten.png" alt="">
-                 </a>
-              
-            <figcaption>
-                    Align the two empty screw holes with the horizontal holes in the bottom plate.
-                    Most stepper motors are only threaded in their top piece,
-                      so the two leftmost screws in this figure need to be rather long.
+               <figcaption>
+                       Single fish rod ring. The most protruding cylinder should be push fit into fish ring towers of bottom plate.
+                    
+               </figcaption>
+               
+            </figure>
+            <figure>
+                 <a href="./bilder/mounted_fish_rings.png">
+                      <img src="./bilder/mounted_fish_rings_liten.png" alt="">
+                    </a>
                  
-            </figcaption>
-            
-         </figure>
-         <p>
-              Note that this step is very dependent on motor size (maybe unnecessarily so).
-              If you have another motor than 17HS4401N,
-                then double check that your motor fits (see lines 2, 3 and 4 in <code>measured_numbers.scad</code>).
-              The extruder motor hole is created on
-              <a href="https://github.com/tobbelobb/hangprinter/blob/build_maunal_0/parts.scad#L262">line 262 in <code>parts.scad</code></a>,
-              if you rather want to change the CAD file than change the motor.
-            
-         </p>
-         <h3>Step 7: Mount Tble-extruder</h3>
-         <figure>
-              <a href="./bilder/extruder_mount.png">
-                   <img src="./bilder/extruder_mount_liten.png" alt="">
-                 </a>
-              
-            <figcaption>
-                    Place extruder carefully so that gears roll easily, filament hole aligns with hobbed insert
-                    and edge is flush with extruder motor screw hole edge.
-                    Note that screws here are self-tapping.
-                    The distance between the bottom plate and the hobbed insert is a problem when changing filament, so
-                      some kind of guiding tube is recommended, but not yet designed...
+               <figcaption>
+                       One corner of bottom plate with fish rings mounted. Secure all 9 fish rings with screws and nuts.
+                    
+               </figcaption>
+               
+            </figure>
+            <figure>
+                 <a href="./bilder/mounted_stopper_screw.png">
+                      <img src="./bilder/mounted_stopper_screw_liten.png" alt="">
+                    </a>
                  
-            </figcaption>
-            
-         </figure>
-         <h3>Step 8: Mount the A, B, C and D-motors</h3>
-         <figure>
-              <a href="./bilder/motorerna.png">
-                   <img src="./bilder/motorerna_liten.png" alt="">
-                 </a>
-              
-            <figcaption>
-                   Motor gears are push-fit onto motor shafts. The motor shafts must have one flat side.
+               <figcaption>
+                       The stopper screw and nut that can be used to lock the D-spool manually.
+                       Notice the nut trapped in the box.
+                       The stop screw works by pushing against the D-spool gear, preventing it from rotating.
+                       Use a nyloc nut in the box or remove the stop screw during printing, to avoid that the stop screw
+                       vibrates into a stopping position mid-print.
+                    
+               </figcaption>
+               
+            </figure>
+            <h3>Step 5: Assemble the Tble-extruder</h3>
+            <p>
+                 I used the E3D Volcano as my hot end.
+                 Its build instructions are found
+                 <a href="http://wiki.e3d-online.com/wiki/E3D-v6_%28Volcano%29_Documentation">here</a>.
+                 You could use any hot end, but big nozzle diameter and long melt area are key for high print speeds.
+                 The Volcano has worked well for me
+                   in that it was easy to install, doesn't clog and drools surprisingly little compared to its big nozzle diameters.
+               
+            </p>
+            <figure>
+                 <a href="./bilder/tble_assembly_step_1.png">
+                      <img src="./bilder/tble_assembly_step_1_liten.png" alt="">
+                    </a>
                  
-            </figcaption>
-            
-         </figure>
-         <p>
-              Match motor gear height and placement with corresponding spool.
-            
-         </p>
-         <figure>
-              <a href="./bilder/mounted_motors_from_above.png">
-                   <img src="./bilder/mounted_motors_from_above_liten.png" alt="">
-                 </a>
-              
-            <figcaption>
-                    Bottom plate from above with correctly mounted motors and highlighted letters viewed from above.
+               <figcaption>
+                       Note the white PTFE (teflon) tube guiding filament into hot end.
+                       The blue 623 bearing needs support along the direction of the screw it's mounted on.
+                       I used ca 10 washers for this.
+                    
+               </figcaption>
+               
+            </figure>
+            <p>
+                 Be warned that the forthcoming alignment task fiddly.
+                 If I had any time to work on the Hangprinter project's modules,
+                   this extruder would be drastically changed to reduce fiddlyness.
+               
+            </p>
+            <figure>
+                 <a href="./bilder/large_extruder_gear.png">
+                      <img src="./bilder/large_extruder_gear_liten.png" alt="">
+                    </a>
                  
-            </figcaption>
-            
-         </figure>
-         <p>
-              Look at your printer from above to confirm you can read "CBCADAB" from left to right before preceding.
-            
-         </p>
-         <figure>
-              <a href="./bilder/mounted_motors_from_side.png">
-                   <img src="./bilder/mounted_motors_from_side_liten.png" alt="">
-                 </a>
-              
-            <figcaption>
-                    The A, B, C and D motors are mounted with three screws each.
-                    Note that you can rotate motors out of place easily by loosening two screws.
+               <figcaption>
+                       The hex head screw is pushed through a sandwich of
+                         large extruder gear, printed part, 623 bearing, hobbed insert, 623 bearing, printed part and finally M3 nut.
+                       Some washers and lots of fiddling will be needed to assure feeding hobbs, support bearing and PTFE tube align with each
+                  other.
+                    
+               </figcaption>
+               
+            </figure>
+            <h3>Step 6: Mount Extruder Motor</h3>
+            <p>
+                 The small extruder gear is push-fit onto the extruder motor shaft, which should have one flat side.
+                 Remove two neighbouring bottom screws from the bottom of the motor before mounting.
+               
+            </p>
+            <figure>
+                 <a href="./bilder/mounted_extruder_motor.png">
+                      <img src="./bilder/mounted_extruder_motor_liten.png" alt="">
+                    </a>
                  
-            </figcaption>
-            
-         </figure>
-         <h3>Step 9: Assemble Wall and Ceiling Parts</h3>
-         <figure>
-              <a href="./bilder/ceiling_plate_with_bearings.png">
-                   <img src="./bilder/ceiling_plate_with_bearings_liten.png" alt="">
-                 </a>
-              
-            <figcaption>
-                    Let three vgroove 623 bearings hang from the ceiling plate.
+               <figcaption>
+                       Align the two empty screw holes with the horizontal holes in the bottom plate.
+                       Most stepper motors are only threaded in their top piece,
+                         so the two leftmost screws in this figure need to be rather long.
+                    
+               </figcaption>
+               
+            </figure>
+            <p>
+                 Note that this step is very dependent on motor size (maybe unnecessarily so).
+                 If you have another motor than 17HS4401N,
+                   then double check that your motor fits (see lines 2, 3 and 4 in <code>measured_numbers.scad</code>).
+                 The extruder motor hole is created on
+                 <a href="https://github.com/tobbelobb/hangprinter/blob/build_maunal_0/parts.scad#L262">line 262 in <code>parts.scad</code></a>,
+                 if you rather want to change the CAD file than change the motor.
+               
+            </p>
+            <h3>Step 7: Mount Tble-extruder</h3>
+            <figure>
+                 <a href="./bilder/extruder_mount.png">
+                      <img src="./bilder/extruder_mount_liten.png" alt="">
+                    </a>
                  
-            </figcaption>
-            
-         </figure>
-         <p>
-              I hung a wooden platform in a lamp hook avoid having to drill screw holes in the ceiling (see
-              <a href="./bilder/takfeste.JPG">picture</a>).
-            
-         </p>
-         <figure>
-              <a href="./bilder/wrapping_line.png">
-                   <img src="./bilder/wrapping_line_liten.png" alt="">
-                 </a>
-              
-            <figcaption>
-                    The wall plates have roller bearings attached to adjustment screws.
-                    Tread lines through loop holding roller bearing.
+               <figcaption>
+                       Place extruder carefully so that gears roll easily, filament hole aligns with hobbed insert
+                       and edge is flush with extruder motor screw hole edge.
+                       Note that screws here are self-tapping.
+                       The distance between the bottom plate and the hobbed insert is a problem when changing filament, so
+                         some kind of guiding tube is recommended, but not yet designed...
+                    
+               </figcaption>
+               
+            </figure>
+            <h3>Step 8: Mount the A, B, C and D-motors</h3>
+            <figure>
+                 <a href="./bilder/motorerna.png">
+                      <img src="./bilder/motorerna_liten.png" alt="">
+                    </a>
                  
-            </figcaption>
-            
-         </figure>
-         <p>
-              The end of the A, B and C lines are attached to the M3 screw holding the corresponding fish line ring.
-              More details on that in <a href="#ABC_frame_adjustment">a previous post</a>.
-            
-         </p>
-         <h3>Step 10: Mount Wall and Ceiling Parts</h3>
-         <p>
-              This is the step where you potentially do screw holes in your walls and ceiling.
-              I use strong double-sided tape for all wall-mounted parts.
-              Placement is really insensitive as long as all plates are, fixed and horizontal.
-              Each side plate should be parallel with one side of the ceiling plate.
-            
-         </p>
-         <figure>
-              <a href="./bilder/topview.png">
-                   <img src="./bilder/topview_liten.png" alt="">
-                 </a>
-              
-            <figcaption>
-                    Configuration of side plates and top plate as seen from above, through a transparent ceiling...
+               <figcaption>
+                      Motor gears are push-fit onto motor shafts. The motor shafts must have one flat side.
+                    
+               </figcaption>
+               
+            </figure>
+            <p>
+                 Match motor gear height and placement with corresponding spool.
+               
+            </p>
+            <figure>
+                 <a href="./bilder/mounted_motors_from_above.png">
+                      <img src="./bilder/mounted_motors_from_above_liten.png" alt="">
+                    </a>
                  
-            </figcaption>
-            
-         </figure>
-         <h3>Step 11: Thread D-lines</h3>
-         <p>
-              I rested motors on two towers of books while doing this.
-            
-         </p>
-         <figure>
-              <a href="./bilder/thread_lines.png">
-                   <img src="./bilder/thread_lines_liten.png" alt="">
-                 </a>
-              
-            <figcaption>
-                    Let D-lines run clockwise around spool, thread through fish eyes, vgroove bearings near ceiling and tie to the screw
-               head that holds
-                    the fish eye.
+               <figcaption>
+                       Bottom plate from above with correctly mounted motors and highlighted letters viewed from above.
+                    
+               </figcaption>
+               
+            </figure>
+            <p>
+                 Look at your printer from above to confirm you can read "CBCADAB" from left to right before preceding.
+               
+            </p>
+            <figure>
+                 <a href="./bilder/mounted_motors_from_side.png">
+                      <img src="./bilder/mounted_motors_from_side_liten.png" alt="">
+                    </a>
                  
-            </figcaption>
-            
-         </figure>
-         <h3>Step 12: Mount electronics</h3>
-         <p>
-              Secure locking screw on D-spool-gear and flip the printer upside down.
-              Mount Arduino Mega+RAMPS on an isolating plastic sheet, and mount that sheet using bottom-screws of stepper motors.
-              I used a piece of ice cream packaging as isolation sheet.
-            
-         </p>
-         <figure>
-              <a href="./bilder/flipped_render.png">
-                   <img src="./bilder/flipped_render_liten.png" alt="">
-                 </a>
-              
-            <figcaption>
-                    Sorry for non-detailed render here.
+               <figcaption>
+                       The A, B, C and D motors are mounted with three screws each.
+                       Note that you can rotate motors out of place easily by loosening two screws.
+                    
+               </figcaption>
+               
+            </figure>
+            <h3>Step 9: Assemble Wall and Ceiling Parts</h3>
+            <figure>
+                 <a href="./bilder/ceiling_plate_with_bearings.png">
+                      <img src="./bilder/ceiling_plate_with_bearings_liten.png" alt="">
+                    </a>
                  
-            </figcaption>
-            
-         </figure>
-         <h3>Step 13: Upload Firmware</h3>
-         <p>
-              Plug in the USB cable and upload the Marlin firmware found in <code>firmware/Marlin/Marlin</code>.
-              If you haven't uploaded firmware through the Arduino IDE before, it looks like shown in
-              <a href="https://youtu.be/YM3z9IdLzAk?t=1m">this video</a>.
-              Try to communicate with your RAMPS board through USB cable and
-              <a href="https://github.com/kliment/Printrun#using-pronterface">Pronterface</a> (no power supply is needed for this).
-              Hangprinter-Marlin uses baud rate 115200.
-              Unplug USB cable when done.
-            
-         </p>
-         <h3>Step 14: Wire up electronics</h3>
-         <p>
-              For those who are new to electronics, take some time to read about general electronics safety. For examle
-              <a href="http://www.dummies.com/how-to/content/electronics-safety-rules.html">Electronics Safety Rules for Dummies</a> and
-              <a href="http://www.howtogeek.com/169994/how-to-protect-your-pcs-hardware-from-static-electricity-when-working-on-it/">howtogeek article on static electricity protection</a>.
-              Insulate the hot end. The Clerck design has a high risk of melting its own cables, which will
-              cause fire (see <a href="http://forums.reprap.org/read.php?392,294850">forum thread</a>).
-            
-         </p>
-         <p>
-              Mount stepper driver chips and adjust Stepstick trimpots to get the right reference voltage
-              (see <a href="https://www.youtube.com/watch?v=bItYRMLGoVc">Tom's video on this</a> and
-              <a href="https://www.pololu.com/product/2133">Pololu's product home page</a>).
-              I use Stepsticks with drv8825 drivers, extra long legs and cooling ribs both above and below chip
-              (see <a href="https://torbjornludvigsen.com/blog/2015#stutter">previous stuff</a>).
-            
-         </p>
-         <p>
-              If you connected power to RAMPS during reference voltage adjustment, pull the wall-plug and also unplug power connectors
-            on RAMPS now.
-              Also unplug your USB cable.
-              Wire A-motor to RAMPS's X-contacts, B-motor to Y-contacts, C-motor to Z-contacts and D-motor to E1-contacts.
-              Wire E-motor and hot end as shown <a href="http://reprap.org/wiki/RAMPS1.4#Wiring">here</a>.
-            
-         </p>
-         <p>
-              If you want wirelessness, wire in the JY-MCY bluetooth antennae as described on <a href="http://reprap.org/wiki/Jy-mcu">the RepRapWiki</a>.
-              Note that the antennae connection will prevent communication through USB cable as long as it is plugged in.
-              I use Blueman Device Manager 1.23 and a Ubuntu 14.04 system for connecting to the JY-MCU.
-            
-         </p>
-         <p>
-              After doing safety-checks on the electronics and power supply with your multimeter,
-              flip the printer back into upright position and couple the power chords to the RAMPS board.
-              When you're confident that your wiring is right, plug your power supply into the wall and feed your Clerck its first taste
-            of 12V.
-            
-         </p>
-         <h3>Step 15: First Movement</h3>
-         <p>
-              Connect to your Clerck through Pronterface and check that D-motor has a nice constant holding torque.
-              Unscrew the D-stop screw and watch Clerck hang by itself.
-              While holding a hand below it, try sending the gcode line <code>G3 D-1</code>.
-              This tells Clerck to move 1 mm closer to the D anchor point in the ceiling,
-                without recording or counting the movement anywhere.
-              Also, ensure hot end temperature readings are sane and try to heat it to say 40 degrees Celsius.
-            
-         </p>
-         <p>
-              Did it move? Did temp level out at 40? Is it still alive? Sweet Victory!
-            
-         </p>
-         <p>
-              Now, don't disconnect and reconnect. RAMPS will reset upon reconnection and the D-motor will lose
-              its static torque for a moment. This risks letting Clerck smash into the floor.
-            
-         </p>
-         <p>
-              The G3-command is very handy for manually homing the printer on startup.
-              Clerck doesn't have automatic homing yet.
-            
-         </p>
-         <h3 id="step16">Step 16: Measure Lengths to Origin</h3>
-         <figure>
-              <a href="./bilder/ANCHOR_A_Y.png">
-                   <img src="./bilder/ANCHOR_A_Y_liten.png" alt="">
-                 </a>
-              
-            <figcaption>
-                    Where to measure to find the calibration value <code>ANCHOR_A_Y</code> of your Clerck setup.
-                    I find careful calibration measurements out in thin air to be the hardest part of a Clerck build.
+               <figcaption>
+                       Let three vgroove 623 bearings hang from the ceiling plate.
+                    
+               </figcaption>
+               
+            </figure>
+            <p>
+                 I hung a wooden platform in a lamp hook avoid having to drill screw holes in the ceiling (see
+                 <a href="./bilder/takfeste.JPG">picture</a>).
+               
+            </p>
+            <figure>
+                 <a href="./bilder/wrapping_line.png">
+                      <img src="./bilder/wrapping_line_liten.png" alt="">
+                    </a>
                  
-            </figcaption>
-            
-         </figure>
-         <p>
-              See lines 96 (<code>#define ANCHOR_A_X</code>) and onwards in <code>firmware/Marlin/Marlin/Configuration.h</code>.
-              Measure lengths from fish eye to line opening in frame parts.
-              Arduino IDE can be used to compile and upload Marlin.
-              For experimentation with line length configurations, use gcode
-              <code>M665 Q&lt;Ax&gt; W&lt;Ay&gt; E&lt;Az&gt; R&lt;Bx&gt; T&lt;By&gt; Y&lt;Bz&gt; U&lt;Cx&gt; I&lt;Cy&gt; O&lt;Cz&gt; P&lt;Dz&gt;</code>.
-            
-         </p>
-         <h3 id="step17">Step 17: Thread A, B and C Lines</h3>
-         <figure>
-              <a href="./bilder/sweet_victory2.png">
-                   <img src="./bilder/sweet_victory2_liten.png" alt="">
-                 </a>
-              
-            <figcaption>
-                    Your Clerck should now look roughly like this.
+               <figcaption>
+                       The wall plates have roller bearings attached to adjustment screws.
+                       Tread lines through loop holding roller bearing.
+                    
+               </figcaption>
+               
+            </figure>
+            <p>
+                 The end of the A, B and C lines are attached to the M3 screw holding the corresponding fish line ring.
+                 More details on that in <a href="#ABC_frame_adjustment">a previous post</a>.
+               
+            </p>
+            <h3>Step 10: Mount Wall and Ceiling Parts</h3>
+            <p>
+                 This is the step where you potentially do screw holes in your walls and ceiling.
+                 I use strong double-sided tape for all wall-mounted parts.
+                 Placement is really insensitive as long as all plates are, fixed and horizontal.
+                 Each side plate should be parallel with one side of the ceiling plate.
+               
+            </p>
+            <figure>
+                 <a href="./bilder/topview.png">
+                      <img src="./bilder/topview_liten.png" alt="">
+                    </a>
                  
-            </figcaption>
-            
-         </figure>
-         <h3>Step 18: Additions to Ceiling Plate</h3>
-         <h4>Counterweights</h4>
-         <p>
-              I use ca 250 grams of counterweight attached in each corner, with lines running along the outermost D-lines and running
-            through
-              the same vgroove bearings in the ceiling part.
-            
-         </p>
-         <h4>Manual Homing with Aiming Plumb</h4>
-         <p>
-              I'm simply homing the printer using gcodes <code>G3</code> (move without recording it) after powering on.
-              The gcodes <a href="http://reprap.org/wiki/Gcode#G92:_Set_Position">G92</a> and
-              <a href="http://reprap.org/wiki/Gcode#M114:_Get_Current_Position">M114</a>.
-              To help the manual homing process, I've attached an aiming plumb to the center of the ceiling part, see
-              <a href="./bilder/center_lod.JPG">picture</a> and <a href="#hangprinter_project_18">previous post</a>.
-            
-         </p>
-         <p>
-              End of assembly manual.
-              Ask questions in the
-              <a href="http://forums.reprap.org/read.php?178,344022">forum thread</a>
-              about the stuff that is unclear.
-              If you're building version 2 (worm drive, more rounded bottom plate), the forum thread for that one is <a href="http://forums.reprap.org/read.php?1,738858">here</a>.
-              For the files used to create renderings, see branch "build_maunal_0" in the repo
-              (<a href="https://github.com/tobbelobb/hangprinter/tree/build_maunal_0">link</a>).
-              Hope you've enjoyed and wish you all happy hacking!
-            
-         </p>
-         <p>
-            - tobben
-            
-         </p>
-         <div style="display: none"><a class="u-url" href="https://torbjornludvigsen.com/blog/2016/index.html#hangprinter_project_19"></a><time class="dt-published">8-2-2016</time><a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
-               Torbj&oslash;rn Ludvigsen
-               <img class="u-photo" src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG" alt="Torbj&oslash;rn Ludvigsen"></a><span class="p-summary">Update and Clerck Build Instructions</span></div><br><br><br><br><br><br><br><br><br><br><br><h1 id="Links">
+               <figcaption>
+                       Configuration of side plates and top plate as seen from above, through a transparent ceiling...
+                    
+               </figcaption>
+               
+            </figure>
+            <h3>Step 11: Thread D-lines</h3>
+            <p>
+                 I rested motors on two towers of books while doing this.
+               
+            </p>
+            <figure>
+                 <a href="./bilder/thread_lines.png">
+                      <img src="./bilder/thread_lines_liten.png" alt="">
+                    </a>
+                 
+               <figcaption>
+                       Let D-lines run clockwise around spool, thread through fish eyes, vgroove bearings near ceiling and tie to the screw
+                  head that holds
+                       the fish eye.
+                    
+               </figcaption>
+               
+            </figure>
+            <h3>Step 12: Mount electronics</h3>
+            <p>
+                 Secure locking screw on D-spool-gear and flip the printer upside down.
+                 Mount Arduino Mega+RAMPS on an isolating plastic sheet, and mount that sheet using bottom-screws of stepper motors.
+                 I used a piece of ice cream packaging as isolation sheet.
+               
+            </p>
+            <figure>
+                 <a href="./bilder/flipped_render.png">
+                      <img src="./bilder/flipped_render_liten.png" alt="">
+                    </a>
+                 
+               <figcaption>
+                       Sorry for non-detailed render here.
+                    
+               </figcaption>
+               
+            </figure>
+            <h3>Step 13: Upload Firmware</h3>
+            <p>
+                 Plug in the USB cable and upload the Marlin firmware found in <code>firmware/Marlin/Marlin</code>.
+                 If you haven't uploaded firmware through the Arduino IDE before, it looks like shown in
+                 <a href="https://youtu.be/YM3z9IdLzAk?t=1m">this video</a>.
+                 Try to communicate with your RAMPS board through USB cable and
+                 <a href="https://github.com/kliment/Printrun#using-pronterface">Pronterface</a> (no power supply is needed for this).
+                 Hangprinter-Marlin uses baud rate 115200.
+                 Unplug USB cable when done.
+               
+            </p>
+            <h3>Step 14: Wire up electronics</h3>
+            <p>
+                 For those who are new to electronics, take some time to read about general electronics safety. For examle
+                 <a href="http://www.dummies.com/how-to/content/electronics-safety-rules.html">Electronics Safety Rules for Dummies</a> and
+                 <a href="http://www.howtogeek.com/169994/how-to-protect-your-pcs-hardware-from-static-electricity-when-working-on-it/">howtogeek article on static electricity protection</a>.
+                 Insulate the hot end. The Clerck design has a high risk of melting its own cables, which will
+                 cause fire (see <a href="http://forums.reprap.org/read.php?392,294850">forum thread</a>).
+               
+            </p>
+            <p>
+                 Mount stepper driver chips and adjust Stepstick trimpots to get the right reference voltage
+                 (see <a href="https://www.youtube.com/watch?v=bItYRMLGoVc">Tom's video on this</a> and
+                 <a href="https://www.pololu.com/product/2133">Pololu's product home page</a>).
+                 I use Stepsticks with drv8825 drivers, extra long legs and cooling ribs both above and below chip
+                 (see <a href="https://torbjornludvigsen.com/blog/2015#stutter">previous stuff</a>).
+               
+            </p>
+            <p>
+                 If you connected power to RAMPS during reference voltage adjustment, pull the wall-plug and also unplug power connectors
+               on RAMPS now.
+                 Also unplug your USB cable.
+                 Wire A-motor to RAMPS's X-contacts, B-motor to Y-contacts, C-motor to Z-contacts and D-motor to E1-contacts.
+                 Wire E-motor and hot end as shown <a href="http://reprap.org/wiki/RAMPS1.4#Wiring">here</a>.
+               
+            </p>
+            <p>
+                 If you want wirelessness, wire in the JY-MCY bluetooth antennae as described on <a href="http://reprap.org/wiki/Jy-mcu">the RepRapWiki</a>.
+                 Note that the antennae connection will prevent communication through USB cable as long as it is plugged in.
+                 I use Blueman Device Manager 1.23 and a Ubuntu 14.04 system for connecting to the JY-MCU.
+               
+            </p>
+            <p>
+                 After doing safety-checks on the electronics and power supply with your multimeter,
+                 flip the printer back into upright position and couple the power chords to the RAMPS board.
+                 When you're confident that your wiring is right, plug your power supply into the wall and feed your Clerck its first taste
+               of 12V.
+               
+            </p>
+            <h3>Step 15: First Movement</h3>
+            <p>
+                 Connect to your Clerck through Pronterface and check that D-motor has a nice constant holding torque.
+                 Unscrew the D-stop screw and watch Clerck hang by itself.
+                 While holding a hand below it, try sending the gcode line <code>G3 D-1</code>.
+                 This tells Clerck to move 1 mm closer to the D anchor point in the ceiling,
+                   without recording or counting the movement anywhere.
+                 Also, ensure hot end temperature readings are sane and try to heat it to say 40 degrees Celsius.
+               
+            </p>
+            <p>
+                 Did it move? Did temp level out at 40? Is it still alive? Sweet Victory!
+               
+            </p>
+            <p>
+                 Now, don't disconnect and reconnect. RAMPS will reset upon reconnection and the D-motor will lose
+                 its static torque for a moment. This risks letting Clerck smash into the floor.
+               
+            </p>
+            <p>
+                 The G3-command is very handy for manually homing the printer on startup.
+                 Clerck doesn't have automatic homing yet.
+               
+            </p>
+            <h3 id="step16">Step 16: Measure Lengths to Origin</h3>
+            <figure>
+                 <a href="./bilder/ANCHOR_A_Y.png">
+                      <img src="./bilder/ANCHOR_A_Y_liten.png" alt="">
+                    </a>
+                 
+               <figcaption>
+                       Where to measure to find the calibration value <code>ANCHOR_A_Y</code> of your Clerck setup.
+                       I find careful calibration measurements out in thin air to be the hardest part of a Clerck build.
+                    
+               </figcaption>
+               
+            </figure>
+            <p>
+                 See lines 96 (<code>#define ANCHOR_A_X</code>) and onwards in <code>firmware/Marlin/Marlin/Configuration.h</code>.
+                 Measure lengths from fish eye to line opening in frame parts.
+                 Arduino IDE can be used to compile and upload Marlin.
+                 For experimentation with line length configurations, use gcode
+                 <code>M665 Q&lt;Ax&gt; W&lt;Ay&gt; E&lt;Az&gt; R&lt;Bx&gt; T&lt;By&gt; Y&lt;Bz&gt; U&lt;Cx&gt; I&lt;Cy&gt; O&lt;Cz&gt; P&lt;Dz&gt;</code>.
+               
+            </p>
+            <h3 id="step17">Step 17: Thread A, B and C Lines</h3>
+            <figure>
+                 <a href="./bilder/sweet_victory2.png">
+                      <img src="./bilder/sweet_victory2_liten.png" alt="">
+                    </a>
+                 
+               <figcaption>
+                       Your Clerck should now look roughly like this.
+                    
+               </figcaption>
+               
+            </figure>
+            <h3>Step 18: Additions to Ceiling Plate</h3>
+            <h4>Counterweights</h4>
+            <p>
+                 I use ca 250 grams of counterweight attached in each corner, with lines running along the outermost D-lines and running
+               through
+                 the same vgroove bearings in the ceiling part.
+               
+            </p>
+            <h4>Manual Homing with Aiming Plumb</h4>
+            <p>
+                 I'm simply homing the printer using gcodes <code>G3</code> (move without recording it) after powering on.
+                 The gcodes <a href="http://reprap.org/wiki/Gcode#G92:_Set_Position">G92</a> and
+                 <a href="http://reprap.org/wiki/Gcode#M114:_Get_Current_Position">M114</a>.
+                 To help the manual homing process, I've attached an aiming plumb to the center of the ceiling part, see
+                 <a href="./bilder/center_lod.JPG">picture</a> and <a href="#hangprinter_project_18">previous post</a>.
+               
+            </p>
+            <p>
+                 End of assembly manual.
+                 Ask questions in the
+                 <a href="http://forums.reprap.org/read.php?178,344022">forum thread</a>
+                 about the stuff that is unclear.
+                 If you're building version 2 (worm drive, more rounded bottom plate), the forum thread for that one is <a href="http://forums.reprap.org/read.php?1,738858">here</a>.
+                 For the files used to create renderings, see branch "build_maunal_0" in the repo
+                 (<a href="https://github.com/tobbelobb/hangprinter/tree/build_maunal_0">link</a>).
+                 Hope you've enjoyed and wish you all happy hacking!
+               
+            </p>
+            <p>
+               - tobben
+               
+            </p>
+            <div style="display: none"><a class="u-url" href="https://torbjornludvigsen.com/blog/2016/index.html#hangprinter_project_19"></a><a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
+                  Torbj&oslash;rn Ludvigsen
+                  <img class="u-photo" src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG" alt="Torbj&oslash;rn Ludvigsen"></a><span class="p-summary">Update and Clerck Build Instructions</span></div><br><br><br></article><br><br><br><br><br><br><br><br><h1 id="Links">
             Links
             
          </h1>

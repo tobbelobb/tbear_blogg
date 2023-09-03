@@ -131,10 +131,12 @@ module tbear(){
   To find reasonable letter-widths (the T+o+...-part) I used what I found in the
   font.scad file created by the font2openscad script.
   Using the letters one by one gave me two advantages
+</p>
   <ul>
     <li>The opportunity to make the sign more beautiful by translating each letter manually. (Extremely time consuming of course.)</li>
     <li>Avoiding OpenScad messing up Scandinavian letters.</li>
   </ul>
+<p>
   I only exploited the first point only a couple of times as it was too fiddly to be fun.
   The second point, however was a huge win. Every letter in the ttf-file imported gracefully
   without OpenScad ever getting the chance to mess up while encoding/decoding them.
@@ -169,12 +171,14 @@ module tbear(){
   was exactly 1.5 mm thick, so to find the critical moment in the gcode was just a matter of
   searching for <code>G1 Z1.8000</code>. I then inserted directly into the gcode
   commands to
+</p>
   <ul>
     <li>Retract 1 cm filament (G1 F3420.000 E...)</li>
     <li>Make a 2 cm z-lift (G1 Z... F10200.00)</li>
     <li>Pause SD-print (M25)</li>
     <li>Set extruder coordinate to whatever it should be when the manual filament-switch is done and print is resumed (G92 E...).</li>
   </ul>
+<p>
   (Replace ... with values relative to context in gcode.)
   Throwing in an SD-pause directly into the gcode like this was rather naïve, as
   Marlin does some buffer magic so that the pause aren't guaranteed to happen

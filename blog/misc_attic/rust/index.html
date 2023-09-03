@@ -65,407 +65,409 @@
          Reprap Blog 2022
       </div>
       <div id="MainContent">
-         <h1 id="rust_1">Brackets in Rust</h1>
-         <div class="date">21-8-2022</div>
-         <p>
-            New Rust programmers notice that
-            Rust uses angle brackets (or chevrons) like this &lt; and this&gt; a lot.
-            When should they be used and when can they be omitted?
-                
-         </p>
-         <h3>Let's Start With Rounded Brackets First</h3>
-         <p>
-                  The round brackets (or parentheses) are more familiar to any old programmer.
-                  I'll compare Rust to C and Common Lisp, just to have something very old to reference back to.
-                
-         </p>
-         <p>
-                  Parenthesis mean "compute this now" in almost all programming languages.
-                  Zero or more bound variables and/or literal values should compute into zero or more return values.
-                
-         </p>
-         <p>
-                  In Common Lisp, a <code>(</code> always means "thing starts" and <code>)</code> means "thing ends".
-                  In other languages, things may start before the <code>(</code>.
-                  C does some of both, with for example function calls and grouping of expressions:
-                
-         </p>
-         <p>
-                  
-            <ul>
-                       
-               <li><code>f(x)</code></li>
-                       
-               <li><code>(1 + 2 + 3)</code></li>
+         <article class="h-entry">
+            <h1 class="p-name" id="rust_1">Brackets in Rust</h1>
+            <div class="date">21-8-2022</div>
+            <time style="display:none" class="dt-published">2022-08-21T12:00:00Z</time>
+            <p>
+               New Rust programmers notice that
+               Rust uses angle brackets (or chevrons) like this &lt; and this&gt; a lot.
+               When should they be used and when can they be omitted?
+                   
+            </p>
+            <h3>Let's Start With Rounded Brackets First</h3>
+            <p>
+                     The round brackets (or parentheses) are more familiar to any old programmer.
+                     I'll compare Rust to C and Common Lisp, just to have something very old to reference back to.
+                   
+            </p>
+            <p>
+                     Parenthesis mean "compute this now" in almost all programming languages.
+                     Zero or more bound variables and/or literal values should compute into zero or more return values.
+                   
+            </p>
+            <p>
+                     In Common Lisp, a <code>(</code> always means "thing starts" and <code>)</code> means "thing ends".
+                     In other languages, things may start before the <code>(</code>.
+                     C does some of both, with for example function calls and grouping of expressions:
+                   
+            </p>
+            <p>
                      
-            </ul>
-                
-         </p>
-         <p>
-                  The second example works the same in Rust as in C.
-                  Functions are more complicated.
-                  Let's look at C's function declaration first:
-                
-         </p>
-         <p>
-                  <code>out_type f(in_type);</code>
-                
-         </p>
-         <p>
-                  The pre-defined types <code>in_type</code> and <code>out_type</code> describe inputs and outputs of the function <code>f</code>.
-                  Here, the parentheses don't mean "compute this now".
-                  Instead it means "prepare for computation request like this one later".
-                
-         </p>
-         <p>
-                
-         </p>
-         <p>
-                  The closest equivalent in ideomatic compileable Rust code would be:
-                
-         </p>
-         <p>
-                  <code>trait A { fn f(_: in_type) -&gt; out_type; }</code>
-                
-         </p>
-         <p>
-                  In Rust, you can't declare a free function without a body.
-                  The simplest possible free function would have an empty body and an unspecified return type:
-                
-         </p>
-         <p>
-                  <code>fn f(_: in_type) {}</code>
-                
-         </p>
-         <p>
-                  The <code>_</code> means "unused variable", like in Erlang and many pattern matching languages.
-                  The Common Lisp, you could declare without implementation like in C:
-                
-         </p>
-         <p>
-                  <code>(declaim (ftype (function (in_type)) f))</code>
-                
-         </p>
-         <p>
-                  Or you can do both declaration and implementation at once like in Rust:
-                
-         </p>
-         <p>
-                  <code>(defun f (_) (declare (ignore _) (in_type _)))</code>
-                
-         </p>
-         <p>
-                  In a real Lisp project who wanted types, one would probably use a library like <a href="https://github.com/lisp-maintainers/defstar">defstar</a> to be able to write:
-                
-         </p>
-         <p>
-                  <code>(defun* f ((_ in_type)))</code>
-                
-         </p>
-         <p>
-                  An unspecified return type in Rust defaults to <code>()</code>, which is a primitive type that has only one value that is also called <code>()</code>.
-                  Both the type and the value are often referred to as the unit.
-                  It's empty and means "compute nothing" or "this is nothing", similar to <code>void</code> in C, or indeed equivalent to <code>()</code> in Common Lisp.
-                  The empty body also behaves like in Common Lisp, it defaults to returning <code>()</code>.
-                
-         </p>
-         <p>
-                  An additional meaning of parentheses in Rust. Great. Let's write Rust's defaults out explicitly so we have seen them
-            at least once:
-                
-         </p>
-         <p>
-                  <code>fn f(_: in_type) -&gt; () { () }</code>
-                
-         </p>
-         <p>
-                  Read it like
-            
-                  
-            <table style="text-align: right; border-spacing: 0px; margin-left: 10px;; margin-right: 10px;">
-                       
-               <tbody>
-                            
-                  <tr>
-                     <td style="width: 10%"><code>fn f( </code></td>
-                     <td>"This is a function called f, it has the following parameters..."</td>
-                  </tr>
-                            
-                  <tr>
-                     <td style="width: 10%"><code>_ </code></td>
-                     <td> "... an unnamed one..."</td>
-                  </tr>
-                            
-                  <tr>
-                     <td style="width: 10%"><code>:  </code></td>
-                     <td> "... here follows a description of the parameter..."</td>
-                  </tr>
-                            
-                  <tr>
-                     <td style="width: 10%"><code>in_type </code></td>
-                     <td> "... the name of the parameter's type..."</td>
-                  </tr>
-                            
-                  <tr>
-                     <td style="width: 10%"><code>) </code></td>
-                     <td> "... end of parameter list..."</td>
-                  </tr>
-                            
-                  <tr>
-                     <td style="width: 10%"><code> -&gt;  </code></td>
-                     <td> "... here follows a description of the function's output"</td>
-                  </tr>
-                            
-                  <tr>
-                     <td style="width: 10%"><code>in_type </code></td>
-                     <td> "... the name of the function's return type."</td>
-                  </tr>
+               <ul>
                           
-               </tbody>
-                     
-            </table>
-                
-         </p>
-         <h3>Rust's Angle Brackets are for Generic Data Types</h3>
-         <p>
-                  Let's look at a slightly more complicated Rust function:
-                
-         </p>
-         <p>
-                  <code>fn f&lt;InType&gt;(_: InType) {}</code>
-                
-         </p>
-         <p>
-                  This looks like what we have seen before, except <code>InType</code> is now mentioned inside angle brackets (chevrons),
-                  right before the parenthesis that starts the parameter list.
-                  In this case the angle brackets modifies the meaning of <code>InType</code> to mean, not the name of a particular type,
-                  but a variable (generic type) that will resolve to zero or more concrete types, and a function will be generated for
-            each type,
-                  when the function is compiled.
-                  So <code>f</code> is here not one function, but a family of functions who only differ in what type they use as their <code>InType</code>.
-                
-         </p>
-         <p>
-                  C doesn't generate families of functions. C could use typecasting to achieve something vaguely similar with a single
-            function,
-                  but it wouldn't be the same.
-                
-         </p>
-         <p>
-                  The Common Lisp equivalent comes more naturally:
-                
-         </p>
-         <p>
-                  <code>(defun f (_) (declare (ignore _)))</code>
-                
-         </p>
-         <p>
-                  Common Lisp will always detect automatically which one among the family of functions called <code>f</code> that should be applied.
-                  You call it like: <code>(f 1)</code>
-                  Rust can also auto detect in this trivial case, so you can call <code>f</code> as if it was a single function: <code>f(1)</code>
-                
-         </p>
-         <p>
-                  However, Rust has some more advanced features that forces you to specify which <code>f</code> you want. Take a look at this:
-                
-         </p>
-         <p>
-                  <code>fn f&lt;T: Default&gt;() -&gt; T { T::default() }</code>
-                
-         </p>
-         <p>
-                  Read it like
-            
-                  
-            <table style="text-align: right; border-spacing: 0px; margin-left: 10px; margin-right: 10px;">
-                       
-               <tbody>
-                            
-                  <tr>
-                     <td style="width: 21%"><code>fn f&lt;</code></td>
-                     <td>"A family of functions <code>f</code>, who differ by ..."
-                     </td>
-                  </tr>
-                            
-                  <tr>
-                     <td style="width: 21%"><code>T</code></td>
-                     <td> "... a type variable, <code>T</code>, which represents any type..."
-                     </td>
-                  </tr>
-                            
-                  <tr>
-                     <td style="width: 21%"><code>: </code></td>
-                     <td> "... that fulfills..."</td>
-                  </tr>
-                            
-                  <tr>
-                     <td style="width: 21%"><code>Default</code></td>
-                     <td> "... a trait called <code>Default</code>."
-                     </td>
-                  </tr>
-                            
-                  <tr>
-                     <td style="width: 21%"><code>&gt;</code></td>
-                     <td> "Start defining functions <code>f</code>, with type variable(s) in scope."
-                     </td>
-                  </tr>
-                            
-                  <tr>
-                     <td style="width: 21%"><code>() -&gt; T { </code></td>
-                     <td> "Empty parameter list. <code>T</code> used as return type."
-                     </td>
-                  </tr>
-                            
-                  <tr>
-                     <td style="width: 21%"><code>T::default()</code></td>
-                     <td> "Call into <code>T</code>'s associated <code>default()</code> function."
-                     </td>
-                  </tr>
-                            
-                  <tr>
-                     <td style="width: 21%"><code>}</code></td>
-                     <td> "End of body."</td>
-                  </tr>
+                  <li><code>f(x)</code></li>
                           
-               </tbody>
+                  <li><code>(1 + 2 + 3)</code></li>
+                        
+               </ul>
+                   
+            </p>
+            <p>
+                     The second example works the same in Rust as in C.
+                     Functions are more complicated.
+                     Let's look at C's function declaration first:
+                   
+            </p>
+            <p>
+                     <code>out_type f(in_type);</code>
+                   
+            </p>
+            <p>
+                     The pre-defined types <code>in_type</code> and <code>out_type</code> describe inputs and outputs of the function <code>f</code>.
+                     Here, the parentheses don't mean "compute this now".
+                     Instead it means "prepare for computation request like this one later".
+                   
+            </p>
+            <p>
+                   
+            </p>
+            <p>
+                     The closest equivalent in ideomatic compileable Rust code would be:
+                   
+            </p>
+            <p>
+                     <code>trait A { fn f(_: in_type) -&gt; out_type; }</code>
+                   
+            </p>
+            <p>
+                     In Rust, you can't declare a free function without a body.
+                     The simplest possible free function would have an empty body and an unspecified return type:
+                   
+            </p>
+            <p>
+                     <code>fn f(_: in_type) {}</code>
+                   
+            </p>
+            <p>
+                     The <code>_</code> means "unused variable", like in Erlang and many pattern matching languages.
+                     The Common Lisp, you could declare without implementation like in C:
+                   
+            </p>
+            <p>
+                     <code>(declaim (ftype (function (in_type)) f))</code>
+                   
+            </p>
+            <p>
+                     Or you can do both declaration and implementation at once like in Rust:
+                   
+            </p>
+            <p>
+                     <code>(defun f (_) (declare (ignore _) (in_type _)))</code>
+                   
+            </p>
+            <p>
+                     In a real Lisp project who wanted types, one would probably use a library like <a href="https://github.com/lisp-maintainers/defstar">defstar</a> to be able to write:
+                   
+            </p>
+            <p>
+                     <code>(defun* f ((_ in_type)))</code>
+                   
+            </p>
+            <p>
+                     An unspecified return type in Rust defaults to <code>()</code>, which is a primitive type that has only one value that is also called <code>()</code>.
+                     Both the type and the value are often referred to as the unit.
+                     It's empty and means "compute nothing" or "this is nothing", similar to <code>void</code> in C, or indeed equivalent to <code>()</code> in Common Lisp.
+                     The empty body also behaves like in Common Lisp, it defaults to returning <code>()</code>.
+                   
+            </p>
+            <p>
+                     An additional meaning of parentheses in Rust. Great. Let's write Rust's defaults out explicitly so we have seen them
+               at least once:
+                   
+            </p>
+            <p>
+                     <code>fn f(_: in_type) -&gt; () { () }</code>
+                   
+            </p>
+            <p>
+                     Read it like
+               
                      
-            </table>
-                
-         </p>
-         <p>
-                  When we call into one of these functions, Rust can't always infer which <code>f</code> we meant.
-                  Placing a function call <code>f()</code> on a line of code without further type information won't be valid Rust and won't compile.
-                  Rust will not take a guess on your behalf.
-                
-         </p>
-         <p>
-                  One way to provide the compiler with the type info it needs, is with Rust's second-ugliest syntax in my opinion, the
-            <a href="https://www.reddit.com/r/rust/comments/3fimgp/comment/ctozkd0/">turbofish</a>:
-                
-         </p>
-         <p>
-                  <code>f::&lt;some_concrete_type&gt;();</code>
-                
-         </p>
-         <p>
-                  The turbofish, <code>::&lt;&gt;</code>, lets you treat <code>f</code> like one function who just needs its type parameters and other parameters to be provided separately.
-                
-         </p>
-         <p>
-                  Both grouping types by who implements a particular function, the <code>default</code> in the above example, and passing types to functions (families) are way beyond C's type system.
-                
-         </p>
-         <p>
-                  But can Common Lisp still keep up?
-                  Like, can we somehow say:
-                
-         </p>
-         <p>
-                  <code>(f 'fixnum)</code>
-                
-         </p>
-         <p>
-                  ... and get back the default value of the concrete type called <code>fixnum</code>?
-                
-         </p>
-         <p>
-                  The <code>'fixnum</code> above is really a symbol
-                  We can hack together something, like
-                
-         </p>
-         <p>
-                  <code>(defgeneric default (x))<br>
-                       (defmethod default ((s (eql 'fixnum))) 42)<br>
-                       (defun f (s) (declare (symbol s)) (default s))<br>
-                       (f 'fixnum)<br>
-                         =&gt; 42
-                     </code>
-                
-         </p>
-         <p>
-                  The <code>defgeneric</code> creates a dispatch table, and we're able to give <code>fixnum</code>
-                  it's own implementation.
-                  But, the <code>default</code> implementation is attached to a symbol, not to a type,
-                  and I can't get this to err at compile time without doing much more funky stuff.
-                
-         </p>
-         <p>
-                  I guess we shaked off both C and Common Lisp already here.
-                  Rust's traits, and handling of types, over powers Common Lisp's built in
-                  type system in this comparison.
-                  Common Lisp is a programmable programming language, so we could simulate most of Rust's
-                  features in there.
-                  With common lisp macros, absolutely, we can do anything.
-                  But it would be hard, it would not be pretty, and I wouldn't want to do it.
-                
-         </p>
-         <p>
-                  With that said, everything's not pretty in Rust either, even if it's
-                  directly available.
-                  But we'll take that another day.
-                
-         </p>
-         <h3>Reading List</h3>
-         <p>
-                  To really understand where to put colons and angle brackets in Rust code, I had to read these texts:
-                
-         </p>
-         <p>
-                  
-            <ul>
-                       
-               <li><a href="https://techblog.tonsser.com/posts/what-is-rusts-turbofish">What is Rust's turbofish?</a></li>
-                       
-               <li><a href="https://matematikaadit.github.io/posts/rust-turbofish.html">Where to put the turbofish</a></li>
-                       
-               <li><a href="https://stackoverflow.com/questions/55113556/how-to-use-turbofish-operator-for-generic-trait-implementation">Fully Qualified Syntax Needed for Resolving Generic Traits</a></li>
-                       
-               <li><a href="https://doc.rust-lang.org/book/ch19-03-advanced-traits.html#fully-qualified-syntax-for-disambiguation-calling-methods-with-the-same-name">Fully Qualified Syntax Docs</a></li>
+               <table style="text-align: right; border-spacing: 0px; margin-left: 10px;; margin-right: 10px;">
+                          
+                  <tbody>
+                               
+                     <tr>
+                        <td style="width: 10%"><code>fn f( </code></td>
+                        <td>"This is a function called f, it has the following parameters..."</td>
+                     </tr>
+                               
+                     <tr>
+                        <td style="width: 10%"><code>_ </code></td>
+                        <td> "... an unnamed one..."</td>
+                     </tr>
+                               
+                     <tr>
+                        <td style="width: 10%"><code>:  </code></td>
+                        <td> "... here follows a description of the parameter..."</td>
+                     </tr>
+                               
+                     <tr>
+                        <td style="width: 10%"><code>in_type </code></td>
+                        <td> "... the name of the parameter's type..."</td>
+                     </tr>
+                               
+                     <tr>
+                        <td style="width: 10%"><code>) </code></td>
+                        <td> "... end of parameter list..."</td>
+                     </tr>
+                               
+                     <tr>
+                        <td style="width: 10%"><code> -&gt;  </code></td>
+                        <td> "... here follows a description of the function's output"</td>
+                     </tr>
+                               
+                     <tr>
+                        <td style="width: 10%"><code>in_type </code></td>
+                        <td> "... the name of the function's return type."</td>
+                     </tr>
+                             
+                  </tbody>
+                        
+               </table>
+                   
+            </p>
+            <h3>Rust's Angle Brackets are for Generic Data Types</h3>
+            <p>
+                     Let's look at a slightly more complicated Rust function:
+                   
+            </p>
+            <p>
+                     <code>fn f&lt;InType&gt;(_: InType) {}</code>
+                   
+            </p>
+            <p>
+                     This looks like what we have seen before, except <code>InType</code> is now mentioned inside angle brackets (chevrons),
+                     right before the parenthesis that starts the parameter list.
+                     In this case the angle brackets modifies the meaning of <code>InType</code> to mean, not the name of a particular type,
+                     but a variable (generic type) that will resolve to zero or more concrete types, and a function will be generated for
+               each type,
+                     when the function is compiled.
+                     So <code>f</code> is here not one function, but a family of functions who only differ in what type they use as their <code>InType</code>.
+                   
+            </p>
+            <p>
+                     C doesn't generate families of functions. C could use typecasting to achieve something vaguely similar with a single
+               function,
+                     but it wouldn't be the same.
+                   
+            </p>
+            <p>
+                     The Common Lisp equivalent comes more naturally:
+                   
+            </p>
+            <p>
+                     <code>(defun f (_) (declare (ignore _)))</code>
+                   
+            </p>
+            <p>
+                     Common Lisp will always detect automatically which one among the family of functions called <code>f</code> that should be applied.
+                     You call it like: <code>(f 1)</code>
+                     Rust can also auto detect in this trivial case, so you can call <code>f</code> as if it was a single function: <code>f(1)</code>
+                   
+            </p>
+            <p>
+                     However, Rust has some more advanced features that forces you to specify which <code>f</code> you want. Take a look at this:
+                   
+            </p>
+            <p>
+                     <code>fn f&lt;T: Default&gt;() -&gt; T { T::default() }</code>
+                   
+            </p>
+            <p>
+                     Read it like
+               
                      
-            </ul>
-                
-         </p>
-         <h3>Lifetimes</h3>
-         <p>
-                  All this, the old languages are left in the dust, and we still have more Rust-uses of angle brackets to explain.
-                
-         </p>
-         <p>
-                  Seems like wherever one can put a generic type, one can also put a lifetime annotation.
-                  When attached to a "child thing", Rust knows that the "parent thing" can never outlive this "child thing".
-                
-         </p>
-         <p>
-                  <code>struct S&lt;'a&gt; {s: &amp;'a str} </code>
-                
-         </p>
-         <p>
-                  The <code>'a</code> there is the lifetime. No object of type <code>S</code> can ever outlive their referenced member called <code>s</code>.
-                
-         </p>
-         <p>
-                  For lifetimes, can we think of the angle brackets as creating a family of struct types?
-                  Is a struct with a different lifetime another type of struct?
-                  I think Rust wants us to think this way.
-                
-         </p>
-         <p>
-                  But similar to struct-families, when you want to implement a trait on the struct, you need to specify the lifetime as
-            if this is a family of implementations,
-                  covering all possible lifetimes.
-                
-         </p>
-         <p>
-                  <code>impl&lt;'a&gt; A for S&lt;'a&gt; {} </code>
-                
-         </p>
-         <p>
-            - tobben
-            
-         </p>
-         <div style="display: none"><a class="u-url" href="https://torbjornludvigsen.com/blog/2022/index.html#rust_1"></a><time class="dt-published">21-8-2022</time><a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
-               Torbj&oslash;rn Ludvigsen
-               <img class="u-photo" src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG" alt="Torbj&oslash;rn Ludvigsen"></a><span class="p-summary">Brackets in Rust</span></div><br><br><br><br><br><br><br><br><br><br><br><h1 id="Links">
+               <table style="text-align: right; border-spacing: 0px; margin-left: 10px; margin-right: 10px;">
+                          
+                  <tbody>
+                               
+                     <tr>
+                        <td style="width: 21%"><code>fn f&lt;</code></td>
+                        <td>"A family of functions <code>f</code>, who differ by ..."
+                        </td>
+                     </tr>
+                               
+                     <tr>
+                        <td style="width: 21%"><code>T</code></td>
+                        <td> "... a type variable, <code>T</code>, which represents any type..."
+                        </td>
+                     </tr>
+                               
+                     <tr>
+                        <td style="width: 21%"><code>: </code></td>
+                        <td> "... that fulfills..."</td>
+                     </tr>
+                               
+                     <tr>
+                        <td style="width: 21%"><code>Default</code></td>
+                        <td> "... a trait called <code>Default</code>."
+                        </td>
+                     </tr>
+                               
+                     <tr>
+                        <td style="width: 21%"><code>&gt;</code></td>
+                        <td> "Start defining functions <code>f</code>, with type variable(s) in scope."
+                        </td>
+                     </tr>
+                               
+                     <tr>
+                        <td style="width: 21%"><code>() -&gt; T { </code></td>
+                        <td> "Empty parameter list. <code>T</code> used as return type."
+                        </td>
+                     </tr>
+                               
+                     <tr>
+                        <td style="width: 21%"><code>T::default()</code></td>
+                        <td> "Call into <code>T</code>'s associated <code>default()</code> function."
+                        </td>
+                     </tr>
+                               
+                     <tr>
+                        <td style="width: 21%"><code>}</code></td>
+                        <td> "End of body."</td>
+                     </tr>
+                             
+                  </tbody>
+                        
+               </table>
+                   
+            </p>
+            <p>
+                     When we call into one of these functions, Rust can't always infer which <code>f</code> we meant.
+                     Placing a function call <code>f()</code> on a line of code without further type information won't be valid Rust and won't compile.
+                     Rust will not take a guess on your behalf.
+                   
+            </p>
+            <p>
+                     One way to provide the compiler with the type info it needs, is with Rust's second-ugliest syntax in my opinion, the
+               <a href="https://www.reddit.com/r/rust/comments/3fimgp/comment/ctozkd0/">turbofish</a>:
+                   
+            </p>
+            <p>
+                     <code>f::&lt;some_concrete_type&gt;();</code>
+                   
+            </p>
+            <p>
+                     The turbofish, <code>::&lt;&gt;</code>, lets you treat <code>f</code> like one function who just needs its type parameters and other parameters to be provided separately.
+                   
+            </p>
+            <p>
+                     Both grouping types by who implements a particular function, the <code>default</code> in the above example, and passing types to functions (families) are way beyond C's type system.
+                   
+            </p>
+            <p>
+                     But can Common Lisp still keep up?
+                     Like, can we somehow say:
+                   
+            </p>
+            <p>
+                     <code>(f 'fixnum)</code>
+                   
+            </p>
+            <p>
+                     ... and get back the default value of the concrete type called <code>fixnum</code>?
+                   
+            </p>
+            <p>
+                     The <code>'fixnum</code> above is really a symbol
+                     We can hack together something, like
+                   
+            </p>
+            <p>
+                     <code>(defgeneric default (x))<br>
+                          (defmethod default ((s (eql 'fixnum))) 42)<br>
+                          (defun f (s) (declare (symbol s)) (default s))<br>
+                          (f 'fixnum)<br>
+                            =&gt; 42
+                        </code>
+                   
+            </p>
+            <p>
+                     The <code>defgeneric</code> creates a dispatch table, and we're able to give <code>fixnum</code>
+                     it's own implementation.
+                     But, the <code>default</code> implementation is attached to a symbol, not to a type,
+                     and I can't get this to err at compile time without doing much more funky stuff.
+                   
+            </p>
+            <p>
+                     I guess we shaked off both C and Common Lisp already here.
+                     Rust's traits, and handling of types, over powers Common Lisp's built in
+                     type system in this comparison.
+                     Common Lisp is a programmable programming language, so we could simulate most of Rust's
+                     features in there.
+                     With common lisp macros, absolutely, we can do anything.
+                     But it would be hard, it would not be pretty, and I wouldn't want to do it.
+                   
+            </p>
+            <p>
+                     With that said, everything's not pretty in Rust either, even if it's
+                     directly available.
+                     But we'll take that another day.
+                   
+            </p>
+            <h3>Reading List</h3>
+            <p>
+                     To really understand where to put colons and angle brackets in Rust code, I had to read these texts:
+                   
+            </p>
+            <p>
+                     
+               <ul>
+                          
+                  <li><a href="https://techblog.tonsser.com/posts/what-is-rusts-turbofish">What is Rust's turbofish?</a></li>
+                          
+                  <li><a href="https://matematikaadit.github.io/posts/rust-turbofish.html">Where to put the turbofish</a></li>
+                          
+                  <li><a href="https://stackoverflow.com/questions/55113556/how-to-use-turbofish-operator-for-generic-trait-implementation">Fully Qualified Syntax Needed for Resolving Generic Traits</a></li>
+                          
+                  <li><a href="https://doc.rust-lang.org/book/ch19-03-advanced-traits.html#fully-qualified-syntax-for-disambiguation-calling-methods-with-the-same-name">Fully Qualified Syntax Docs</a></li>
+                        
+               </ul>
+                   
+            </p>
+            <h3>Lifetimes</h3>
+            <p>
+                     All this, the old languages are left in the dust, and we still have more Rust-uses of angle brackets to explain.
+                   
+            </p>
+            <p>
+                     Seems like wherever one can put a generic type, one can also put a lifetime annotation.
+                     When attached to a "child thing", Rust knows that the "parent thing" can never outlive this "child thing".
+                   
+            </p>
+            <p>
+                     <code>struct S&lt;'a&gt; {s: &amp;'a str} </code>
+                   
+            </p>
+            <p>
+                     The <code>'a</code> there is the lifetime. No object of type <code>S</code> can ever outlive their referenced member called <code>s</code>.
+                   
+            </p>
+            <p>
+                     For lifetimes, can we think of the angle brackets as creating a family of struct types?
+                     Is a struct with a different lifetime another type of struct?
+                     I think Rust wants us to think this way.
+                   
+            </p>
+            <p>
+                     But similar to struct-families, when you want to implement a trait on the struct, you need to specify the lifetime as
+               if this is a family of implementations,
+                     covering all possible lifetimes.
+                   
+            </p>
+            <p>
+                     <code>impl&lt;'a&gt; A for S&lt;'a&gt; {} </code>
+                   
+            </p>
+            <p>
+               - tobben
+               
+            </p>
+            <div style="display: none"><a class="u-url" href="https://torbjornludvigsen.com/blog/2022/index.html#rust_1"></a><a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
+                  Torbj&oslash;rn Ludvigsen
+                  <img class="u-photo" src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG" alt="Torbj&oslash;rn Ludvigsen"></a><span class="p-summary">Brackets in Rust</span></div><br><br><br></article><br><br><br><br><br><br><br><br><h1 id="Links">
             Links
             
          </h1>

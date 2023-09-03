@@ -65,1823 +65,1834 @@
          Reprap Blog 2022
       </div>
       <div id="MainContent">
-         <h1 id="polkadot_1">Polkadot for Reprap - Potential Worries</h1>
-         <div class="date">17-8-2022</div>
-         <p>
-            I've previously written about how Repraps are different.
-            They let users make and spread copied machines without permission or royalties.
-            I've written about how lots of people, including myself, did this.
-                
-         </p>
-         <p>
-            Going against economics of scale and specialization, it was inefficient.
-                  A few companies caught up and outrun us in the past ~5 years.
-                  I marvel at how good the designs became, and how robust the community got, even before these star companies finally
-            did capture the market.
-                
-         </p>
-         <p>
-                  Running like crazy in the innovation track of 3d printing was a lot of fun.
-                  Doing it with awesome strangers, without asking permission or paying royalties was a privilege.
-                
-         </p>
-         <p>
-                  I've though about ways to spur a new open period, concluding that more
-                  automation and rewards are required to re-distribute Reprap.
-                  I've suggested implementing network protocols for decentralized manufacturing,
-                  and pointed to the success blockchain projects have had in building decentralized permissionless databases.
-                
-         </p>
-         <figure>
-                  <a href="/blog/2022/bilder/polkadot-new-dot-logo.png">
-                       <img src="/blog/2022/bilder/polkadot-new-dot-logo_small.png" alt="" width="500" height="500">
-                     </a>
-                  
-            <figcaption>
-                       The Polkadot Project's logo.
+         <article class="h-entry">
+            <h1 class="p-name" id="polkadot_1">Polkadot for Reprap - Potential Worries</h1>
+            <div class="date">17-08-2022</div>
+            <time style="display:none" class="dt-published">2022-08-17T12:00:00Z</time>
+            <p>
+               I've previously written about how Repraps are different.
+               They let users make and spread copied machines without permission or royalties.
+               I've written about how lots of people, including myself, did this.
+                   
+            </p>
+            <p>
+               Going against economics of scale and specialization, it was inefficient.
+                     A few companies caught up and outrun us in the past ~5 years.
+                     I marvel at how good the designs became, and how robust the community got, even before these star companies finally
+               did capture the market.
+                   
+            </p>
+            <p>
+                     Running like crazy in the innovation track of 3d printing was a lot of fun.
+                     Doing it with awesome strangers, without asking permission or paying royalties was a privilege.
+                   
+            </p>
+            <p>
+                     I've though about ways to spur a new open period, concluding that more
+                     automation and rewards are required to re-distribute Reprap.
+                     I've suggested implementing network protocols for decentralized manufacturing,
+                     and pointed to the success blockchain projects have had in building decentralized permissionless databases.
+                   
+            </p>
+            <figure>
+                     <a href="/blog/2022/bilder/polkadot-new-dot-logo.png">
+                          <img src="/blog/2022/bilder/polkadot-new-dot-logo_small.png" alt="" width="500" height="500">
+                        </a>
                      
-            </figcaption>
-                
-         </figure>
-         <p>
-                  I've been a blockchain dilettante for many years, lacking the real skill to innovate in the blockchain/protocol direction.
-                  So I went to Polkadot Academy to see if I could fix that.
-                  It was a four-week in-person course about cryptography, blockchain, Polkadot, Substrate, Frame, and implicitly about
-            Parity and the parachains.
-                
-         </p>
-         <p>
-                  This is not an introductory text about Polkadot, so I'll just briefly define those words:
-                  
-            <ul>
-                       
-               <li><b>Cryptography</b>: Garbling data in ways that add or preserve value or meaning.
-               </li>
-                       
-               <li><b>Blockchain</b>: Chunked sequence(s) of data where each new chunk contain garbled representation(s) of previous chunk(s).
-               </li>
-                       
-               <li><b>Polkadot</b>:  Most blockchains are used in contexts where old data must never be overwritten. Polkadot is a service preventing adversarial
-                  overwrites of blockchains.
-               </li>
-                       
-               <li><b>Substrate</b>: A software development kit for building blockchains. Used for building Polkadot and its parachains.
-               </li>
-                       
-               <li><b>Frame</b>: Helper code for building and using plug-ins within Substrate.
-               </li>
-                       
-               <li><b>Parity</b>: The company who develops Substrate, Frame, Polkadot, and some of the parachains.
-               </li>
-                       
-               <li><b>Parachains</b>: Blockchains who use Polkadot to safeguard their old blocks.
-               </li>
-                     
-            </ul>
-                
-         </p>
-         <h3>My Polkadot Background</h3>
-         <p>
-                  Before going to the Academy, I had a fantastic impression of Polkadot, almost too good to be true.
-                  Suspecting that I might be overly positive, I Googled around for good criticism,
-                  but the articles I found were either dated or not relevant to my goals.
-                
-         </p>
-         <p>
-                  Now, after the Academy I want to try writing the post I was searching for.
-                
-         </p>
-         <figure>
-                  <a href="/blog/2022/bilder/dining_hall_wide_CCC.JPG">
-                       <img src="/blog/2022/bilder/dining_hall_wide_CCC_small.JPG" alt="" width="500" height="281">
-                     </a>
-                  
-            <figcaption>
-                       Our dining hall during the Academy.
-                     
-            </figcaption>
-                
-         </figure>
-         <h3>"Reliability Is Our Goal, Decentralization Is Just a Tool"</h3>
-         <p>
-                  Gavin Wood is the founder of Polkadot and CEO of Parity.
-                  He gave a welcome speech from the high table shown above.
-                
-         </p>
-         <p>
-                  The speech's main point was that decentralization is a tool, not an end goal.
-                  The real goal of Polkadot is reliability.
-                  Some decentralization improves reliability, and that's why Polkadot is somewhat decentralized.
-                  This is how I understood the speech.
-                
-         </p>
-         <p>
-                  I love reliability.
-                  But it's a slippery goal since it's only measurable in retrospect.
-                
-         </p>
-         <p>
-                  We don't have access to future hindsight.
-                  So we can't use it to guide current decentralization efforts.
-                
-         </p>
-         <p>
-                  Why dampen our decentralization expectations?
-                
-         </p>
-         <p>
-                  Maybe Parity is planning to let down nerds like myself, who find decentralization valuable on its own.
-                
-         </p>
-         <p>
-                  Gavin didn't dismiss decentralization entirely, he just downgraded it to a necessary evil.
-                  Which might be true for him. Still a red flag for me.
-                
-         </p>
-         <p>
-                  Even decentralization isn't perfect either.
-                  It is only interesting if it comes from permissionlessness and low thresholds.
-                  Emphasis on those terms would better match my goals.
-                
-         </p>
-         <p>
-                  As mentioned, Reprap temporarily suspended economic gravity through self-replication.
-                  More successful companies emerged from Reprap than the whole 3d printing industry had before Reprap.
-                  It was fun.
-                
-         </p>
-         <p>
-                  Polkadot's ability to hot-swap it's own WASM internals (self-upgrade in Reprap lingo),
-                  as well as the advanced on-chain governance, sounds like it's awfully close to the self-replication
-                  threshold that Reprap crossed.
-                  Successful software projects who crossed the threshold are gcc and Linux,
-                  who compile and copy new versions of themself, within themself.
-                
-         </p>
-         <p>
-                  I'm just dying to see Polkadot walk the last mile to enable cheap exponential growth
-                  through self-replication.
-                  They're halfway there.
-                  My worry is that they could start walking backwards in the name of pragmatism.
-                  Become a <a href="https://en.wikipedia.org/wiki/MakerBot#Controversies">Makerbot</a>, in Reprap lingo.
-                
-         </p>
-         <figure>
-                  <a href="/blog/2022/bilder/gav.JPG">
-                       <img src="/blog/2022/bilder/gav_small.JPG" alt="" width="500" height="281">
-                     </a>
-                  
-            <figcaption>
-                       Gavin Wood lecturing at Polkadot Academy.
-                       His hat says "TOP GUN" and the slide says "Introduction to Cryptography for Engineers".
-                       I loved the lecture, both the delivery and the contents. He's a great speaker.
-                     
-            </figcaption>
-                
-         </figure>
-         <h3>Lots of Power Concentrated in One Person</h3>
-         <p>
-                  Before his speech, and at many other occasions during the Academy, Gavin was introduced as Doctor Gavin Wood.
-                
-         </p>
-         <p>
-                  He holds a degree but not in a related field.
-                  Phds are ubiquitous in hi-tech workplaces, which makes it a bad habit to repeatedly mention unrelated ones.
-                
-         </p>
-         <p>
-                  Doing so anyways is common in the UK, so it doesn't say much about Polkadot on its own, although other peoples' phds
-            went unmentioned throughout the Academy.
-                
-         </p>
-         <p>
-                  I felt the title mentioning around Gavin was part of a broader tendency, that
-                  people changed behavior when Gavin was around.
-                
-         </p>
-         <p>
-                  The special treatment of Gavin is understandable.
-                  He is the locus of power in Parity: Founder, CEO, designer, public figurehead, and incredibly wealthy.
-                  He coded large critical parts of Polkadot on his own, including governance.
-                  The Academy I went to was his idea.
-                
-         </p>
-         <p>
-                  His ideas get implemented and he's not treated as expendable.
-                  He's on the one hand a servant of a higher goal, but he's also the one who formulates the goals.
-                
-         </p>
-         <p>
-                  If you want to trust Polkadot's future, you must first trust Gavin.
-                  Many at the Academy didn't have a problem with this trust, they even displayed the opposite problem of idolizing him.
-                  This is as understandable as it is problematic.
-                
-         </p>
-         <p>
-                  There's risk that ideas and concerns won't flow freely if the system designer is idolized and/or could fire you.
-                  I would prefer if the project's followers leaned more on core principles and less on a singular person.
-                
-         </p>
-         <p>
-                  Bowyer removed himself from formal power within Reprap. Satoshi did the same within Bitcoin.
-                  Gavin is different.
-                  The concentration of power over the project is a red flag to me.
-                
-         </p>
-         <h3>Parity is Building a Star-Shaped Network</h3>
-         <p>
-                  Polkadot's own documentation (<a href="https://wiki.polkadot.network/docs/getting-started">link</a>)
-                  shows the Polkadot network's topology like this:
-                
-         </p>
-         <figure>
-                  <a href="/blog/2022/bilder/Polkadot_star3.png">
-                       <img src="/blog/2022/bilder/Polkadot_star3_small.png" alt="" width="500" height="306">
-                     </a>
-                  
-            <figcaption>
-                       Clipped from Defi Teller's Youtube video which is embedded in Polkadot's Getting started page. (<a href="https://youtu.be/BQ60bTU1bPg?t=36">link</a>)
-                     
-            </figcaption>
-                
-         </figure>
-         <p>
-                  Network topology determine power relations in a network and differentiates fragile networks from reliable ones.
-                  The image shows a very special network topology called star shape.
-                  It is the most centralized and most fragile of all network topologies.
-                
-         </p>
-         <p>
-                  I have written about star shaped networks before, in a blog post called <a href="/blog/2021/#hangprinter_project_75">Hopes, Dreams, and Agendas</a>.
-                  Here's the most relevant part from that post:
-                
-         </p>
-         <figure>
-                  <a href="/blog/2021/bilder/NetworkTopologies.png">
-                       <img src="/blog/2021/bilder/NetworkTopologies.png" alt="" width="503" height="249">
-                     </a>
-                  
-            <figcaption>
-                       Network topologies.
-                       Only star leaves everyone disconnected when one single node goes down: The Center Node.
-                       The star's center has leverage on everyone else.
-                     
-            </figcaption>
-                
-         </figure>
-         <p>
-                  Polkadot's designers could have opted for any other topology but chose star shape,
-                  and they chose to put themselves at the center, contrary to eg Cosmos and to some degree Avalanche.
-                  There's a reason for the star of course.
-                  Those other blockchains don't deliver the shared security that Polkadot does.
-                
-         </p>
-         <p>
-                  Still, trading away all decentralization at the blockchain architecture level is a strong statement.
-                  Delivering shared security today is the most important goal to Polkadot's designers,
-                  more important than decentralizing the chains' network architecture.
-                
-         </p>
-         <p>
-                  This can be compared to the Internet, who replaced or swallowed its centralized predecessors.
-                  It was given a maximally distributed topology at first, in the name of robustness,
-                  and over time gravitated back towards clusters of more performant stars.
-                
-         </p>
-         <p>
-                  Polkadot's blockchain started out with star shape and gravity might pull it,
-                  as well as it's creators, hard into the center of their own star, locking them in place,
-                  for a few reasons:
-                
-         </p>
-         <p>
-                  <b>The star shape is replicated in the social and economical systems within the network.</b>
-                  All or almost all parachain devs is or has been economically dependent on grants paid by the Web3 Foundation (W3F),
-                  which is Parity's non-profit arm.
-                  Parity also arranges and control access to almost every social event in the network.
-                  If you want to meet Polkadot people, you go via Parity.
-                
-         </p>
-         <p>
-                  <b>Polkadot must stay connected to all nodes and must find ways to collect taxes indefinitely.</b>
-                  This is because it provides security to all the parachains from a single pooled source.
-                  Distributing the responsibility for such pooled security among parachains would lead to a tragedy of the commons.
-                  Every parachain would be incentivized to use the pooled security as much as possible
-                  while contributing as little as possible.
-                
-         </p>
-         <p>
-                  Taxes are currently collected through transaction fees, inflation, and parachain slot auctions.
-                  For fees, 80% are sent to the Polkadot treasury, which is controlled by Gavin Wood and <a href="https://polkadot.js.org/apps/#/council">12 other people</a>, 9 of whom are Parity/W3F employees, 2 represent specific parachains, and 1 is unknown to me.
-                  Some DOT inflation also goes straight to the treasury.
-                
-         </p>
-         <p>
-                  The slot auctions temporary lock up DOT tokens, increasing price and relative voting power of all other DOT holders.
-                  The Polkadot network itself is a sizeable DOT holder through its treasury.
-                
-         </p>
-         <p>
-                  <b>Only Parity can maintain Substrate. Everyone else depend on Substrate.</b>
-                  Parity has made Substrate into a large and very complex code repo.
-                  They keep it operational while chasing the cutting edge of cryptography research.
-                  To achieve both at the same time, they pay high salaries to hundreds of researchers and programmers.
-                  The cash flow and technical know-how required to maintain this quite experimental
-                  code base is very high.
-                  In fact impossible for any other company, and this will not change easily.
-                
-         </p>
-         <figure>
-                  <a href="/blog/2022/bilder/Ceremony_small.JPG">
-                       <img src="/blog/2022/bilder/Ceremony_small.JPG" alt="" width="500" height="281">
-                     </a>
-                  
-            <figcaption>
-                       Examination ceremony as seen from my dorm during the Academy.
-                       People in the image are not related to Parity or Polkadot.
-                     
-            </figcaption>
-                
-         </figure>
-         <p>
-                  <b>Parity has leverage to place arbitrary burdens on smaller parachains. Larger parachains have incentives to let them do that.</b>
-                  The larger or majority of parachains will benefit from letting Parity push smaller competitors down.
-                
-         </p>
-         <p>
-                  Everything will be done in the name of improving the network as a whole.
-                  We see this already with the rollout of XCM and XCMP.
-                  Every parachain is expected to put a post-office-like virtual machine at the gate of their chain, where
-                  code from foreign blockchains are to be executed and acted upon.
-                
-         </p>
-         <p>
-                  I might be overly pessimistic here. The XCM and XCMP rollout still has time to play out and might still become a net
-            positive for smaller chains.
-                  But changes will keep rolling out and the incentives for established players to tax newcomers will only grow over time.
-                
-         </p>
-         <p>
-                  Existing examples of maintenance taxes that limit smaller parachain teams are the frequent and unreliable release schedules
-            from Parity,
-                  and the slow, expensive, recurring and unavoidable parachain slot auctions.
-                
-         </p>
-         <figure>
-                  <a href="/blog/2022/bilder/New_court.JPG">
-                       <img src="/blog/2022/bilder/New_court_small.JPG" alt="" width="500" height="281">
-                     </a>
-                  
-            <figcaption>
-                       The whole Academy was hosted at Corpus Christi College in Cambridge.
-                       It was built very early on. Parts of it is from 1352.
-                       The college today holds assets valued at &pound;227.4M.
-                     
-            </figcaption>
-                
-         </figure>
-         <h3>Reliability is Not for the Guest Chains</h3>
-         <p>
-                  As mentioned before, parachains need protection against overwrites of their old blocks,
-                  and Polkadot is a service for providing such security.
-                
-         </p>
-         <p>
-                  However, Polkadot is a subscription service.
-                  Parachains subscribe to, or lease, their slot in the Polkadot network.
-                  A lease is very hard to obtain and lasts for a maximum of two years.
-                
-         </p>
-         <p>
-                  Leases are distributed through an intricate game called candle auctions.
-                  If parachains can't win a candle auction or obtain a lease on the second hand market,
-                  they loose their security and stop working.
-                
-         </p>
-         <p>
-                  This unreliability is designed right into the user-facing part of Polkadot's ecosystem.
-                  The power imbalance of it has made me think of Polkadot as the Daddy Chain, and parachains as Guest Chains.
-                
-         </p>
-         <p>
-                  If Parity wanted to deliver user-facing reliability then they would provide longer term leases or outright sell ownership
-            of slots.
-                  Or they could build all parachains themselves.
-                
-         </p>
-         <p>
-                  Placing fundamental limitations on the security of the user-facing layer is a red flag for me.
-                
-         </p>
-         <p>
-                  Current parachains are planning to mitigate this threat by amassing funds enough to dominate future slot auctions.
-                  Some also plan to build out independent security mechanisms.
-                  They're very wise and plan ahead.
-                  I'd say most likely they'll make it.
-                
-         </p>
-         <p>
-                  But even if it plays out perfectly for them, the issue of looming insecurity still dampens my enthusiasm as a builder.
-                  Imagine in 2009, if Bitcoin could plausibly loose all mining power at discrete planned events in 2011, 2013, 2015, ...
-                  Or imagine if Ethereum's difficulty bomb was bound by a two year old contract, back in 2019.
-                  Or if Repraps were designed for planned obsolescence within two years.
-                
-         </p>
-         <p>
-                  Parathreads is a simpler service where blockchain projects can buy security on-demand, block-by-block, without any auction.
-                  It could help small blockchains gradually scale up.
-                
-         </p>
-         <p>
-                  Parathreads are less likely to save dislodged parachains from going down, since the chains would experience technical
-            and reputational downgrade, both at once.
-                  Users can quickly evacuate dying guest chains through eg XCM.
-                
-         </p>
-         <h3>Is Rust Reliable?</h3>
-         <p>
-                  Parity use the Rust programming language exclusively for everything, including for all of Substrate.
-                
-         </p>
-         <p>
-                  Rust is good for reliability because it has a borrow-checker, pedantic default compiler flags,
-                  and a strong type system.
-                
-         </p>
-         <p>
-                  But Rust is also bad for reliability because it is immature.
-                  It is only 12 years old, which is young compared to eg C++, which is 37 years old.
-                  The Rust toolchain, best practices, and indeed the Rust programmers themselves have not had time to mature and accumulate
-            long-term learnings.
-                  During these 12 years
-                  Rust has had only one real compiler, which has been changing <a href="https://steveklabnik.com/writing/how-often-does-rust-change">frequently</a>, and it quite frankly has bugs.
-                
-         </p>
-         <figure>
-                  <a href="/blog/2022/bilder/why-rust-for-blockchain.png">
-                       <img src="/blog/2022/bilder/why-rust-for-blockchain_small.png" alt="" width="500" height="281">
-                     </a>
-                  
-            <figcaption>
-                       Parity publish Rust praise from time to time.
-                       This image was taken from one such blog post. <a href="https://www.parity.io/blog/why-rust">link</a>.
-                     
-            </figcaption>
-                
-         </figure>
-         <p>
-                  Anecdotally, I stumbled across a compiler bug during my first week of the Academy.
-                  Compiler bugs are highly unusual in other languages.
-                
-         </p>
-         <p>
-                  I had to use the nightly build of the Rust toolchain, otherwise I couldn't compile Substrate.
-                
-         </p>
-         <p>
-                  Polkadot inherits reliability and unreliability from Rust.
-                  Facing a bug at the compiler level, and being pushed over on nightly, was a red flag for me.
-                
-         </p>
-         <h4>Can Static Analysis Make Up For Lack of Compiler Alternatives?</h4>
-         <p>
-                  It could, I wish it did. The first thing I tried in the Substrate repo was:
-                
-         </p>
-         <p>
-                  <code>$ rust-analyzer analysis-stats .</code>
-                
-         </p>
-         <p>
-                  This is the most basic command to collect static analysis output, with the most common tool.
-                  It crashed.
-                
-         </p>
-         <p>
-                  The problem was <a href="https://fasterthanli.me/articles/proc-macro-support-in-rust-analyzer-for-nightly-rustc-versions">fixed</a> on Aug 1,
-                  so I gave it another try.
-                  It finished in 33 minutes and produced an analysis that <a href="https://substrate.stackexchange.com/questions/3887/cyclic-deps-in-substrate">wasn't right</a>.
-                
-         </p>
-         <p>
-                  A singular compiler accompanied by a disappointing static analysis tool is a red flag for me.
-                
-         </p>
-         <figure>
-                  <a href="/blog/2022/bilder/Typewriter.JPG">
-                       <img src="/blog/2022/bilder/Typewriter_small.JPG" alt="" width="500" height="281">
-                     </a>
-                  
-            <figcaption>
-                       Without multiple fast and correct static analysis tools I feel a bit like this.
-                       Early 1900s typewriter found at Museum of Cambridge.
-                     
-            </figcaption>
-                
-         </figure>
-         <h3>The Way Parity Uses Rust Might Not Be the Most Reliable</h3>
-         <p>
-                  As mentioned above, only the nightly version of the Rust toolchain would compile Substrate.
-                  Nightly is kind of the opposite of reliable and I saw it used across Parity (naturally, because they need to compile
-            Substrate too).
-                  Seeing this made me wonder what reliability really means in the Polkadot context.
-                
-         </p>
-         <p>
-                  Similarly, Parity programmers are guaranteed to meet the same problems with rust-analyzer as I did.
-                  If they use rust-analyzer at all, which I think many don't.
-                  The frequent bugs and long time to finish means it's unpractical for large code bases.
-                
-         </p>
-         <p>
-                  But it's not just the tools and the language. I also worry about how Parity uses them.
-                  Rust is full of cool features and Parity has many new programmers.
-                  To borrow a phrase from a more experienced programmer:
-                  "History tells us that programmers feel compelled to try every feature of their new language during the first project,
-            [...]"
-                    (<a href="https://www.codeofhonor.com/blog/tough-times-on-the-road-to-starcraft">link</a>)
-                
-         </p>
-         <p>
-                  I think Parity might be over-using three language features:
-                  
-            <ul>
-                       
-               <li>Proc macros</li>
-                       
-               <li>Traits </li>
-                       
-               <li>Comments</li>
-                     
-            </ul>
-                
-         </p>
-         <h3>Substrate Relies Heavily on Esoteric and Over Powered Macros</h3>
-         <p>
-                  A proc macro is almost a compiler in itself.
-                  It is made executable early in the compilation process.
-                  Later in the compilation process, it receives character streams from the compiler,
-                  and returns potentially very different characters back to the compiler,
-                  which then gets compiled as valid Rust code.
-                
-         </p>
-         <p>
-                  Proc macros were the language feature that made rust-analyzer crash on me.
-                  The internal proc macro interfaces are not stable, and rust-analyzer tripped.
-                    It's very hard for rust-analyzer to properly support proc macros for many reasons. (<a href="https://rust-analyzer.github.io/blog/2021/11/21/ides-and-macros.html">source</a>)
-                
-         </p>
-         <p>
-                  It's similarly hard for programmers to use proc macros.
-                  They change the syntax of the language, generally away from beauty and towards brevity and often obfuscation.
-                  This creates steep learning curves and circuitous debugging sessions.
-                  Fixing a proc macro bug, and teaching a proc macro interface are both arduous tasks.
-                
-         </p>
-         <p>
-                  We know this because many Lisp projects made heavy use of similar mega powerful macros back in
-                  the 70s, 80s, and 90s.
-                  Domain experts created opaque mini-languages within Lisp, that died rather quickly
-                  because language design is hard.
-                  The over-use of macros contributed to Lisp loosing mindshare to simpler languages like C and Java.
-                
-         </p>
-         <p>
-                  The history of macros was unknown to the Parity programmers I met.
-                  This was a red flag for me.
-                
-         </p>
-         <figure>
-                  <a href="/blog/2022/bilder/Proc_macro_beast.JPG">
-                       <img src="/blog/2022/bilder/Proc_macro_beast_small.JPG" alt="" width="500" height="380">
-                     </a>
-                  
-            <figcaption>
-                       Proc macros risk stealing time and scaring away new programmers.
-                       This is the Chronophage on top of <a href="https://en.wikipedia.org/wiki/Corpus_Clock">the Corpus Clock</a> which is on display at the corner of our college.
-                     
-            </figcaption>
-                
-         </figure>
-         <h3>Lots of Traits and Types, Little Logic</h3>
-         <p>
-                  Traits are a language feature that lets you abstract over types easily.
-                  To specify logic in a Frame pallet, you plug type names into pre-defined traits.
-                  All types that could be abstracted over in Frame, are abstracted over, including integer types.
-                
-         </p>
-         <p>
-                  Most of the code talks about resolving abstracted types to concrete types,
-                  not about resolving variables or function calls into values.
-                
-         </p>
-         <p>
-                  The desirable outcome is that types and their behavior are very specific and extendable.
-                  You provide a type into an interface and the compiler tells you which functions are missing.
-                  Libraries can ship different plug-and-play types to choose from, and users can put them together like Legos.
-                
-         </p>
-         <p>
-                  The problem is that different types fulfilling lots of traits can be much harder than Legos to fit together.
-                
-         </p>
-         <p>
-                  For example in
-                  <a href="https://github.com/tobbelobb/quadratic-voting-exercise-substrate/blob/446acc52965eeeec03561bdc437c5a5f2762bcb4/pallets/qv/src/lib.rs#L163">my own code</a>,
-                  I was asked by the compiler to implement translations between the same type with two different names:
-                
-         </p>
-         <p>
-                  <code>&lt;&lt;T as pallet::Config&gt;::Currency as Currency&lt;&lt;T as frame_system::Config&gt;::AccountId&gt;&gt;::Balance</code><br>
-                  and
-                  <br>
-                  <code>&lt;&lt;T as pallet_referenda::Config&gt;::Currency as Currency&lt;&lt;T as frame_system::Config&gt;::AccountId&gt;&gt;::Balance</code>
-                
-         </p>
-         <p>
-                  These two names resolve to the same concrete type, but the compiler can't detect that.
-                  I ended up using the one type who easily translates to the two different Balance-types: unsigned 32-bit integers.
-                  That is a less specific type than I would have used in a simpler language.
-                
-         </p>
-         <p>
-                  Most Academy student friends ended up side-stepping the complex type machinery like this in the interest of time.
-                  Maybe we just weren't enlightened enough, or maybe some type ceremonies were needlessly convoluted.
-                
-         </p>
-         <p>
-                  Either way, the time spent in the trait weeds was a red flag for me.
-                
-         </p>
-         <h3>Substrate Makes Heavy Use of Comments</h3>
-         <p>
-                  The comments inside the Substrate codebase are often 100 lines or more.
-                  There is an unusual amount of comments across the Substrate codebase.
-                
-         </p>
-         <p>
-                  Comments age badly because they require manual expert maintenance.
-                  They get outdated very quickly and lead new devs awry.
-                
-         </p>
-         <p>
-                  Parity programmers are conscientious and meticulous people, but they are also humans with deadlines, so comment maintenance
-            will slip sometimes, even for them.
-                  Rust lets you put runnable tests within comments, but Substrate's comments consist mainly of natural language.
-                  I predict that Parity will have to delete most comments within a few years.
-                
-         </p>
-         <p>
-                  Their manually written online documentation have similar maintenance downsides.
-                  I tripped in outdated online tutorials many times during my time at the Academy.
-                
-         </p>
-         <p>
-                  The lesser evil alternative is to make the code itself human readable.
-                  Self-documenting code is a common ideal and best practice that limits the need for comments and hand written documentation.
-                
-         </p>
-         <p>
-                  I found Substrate's code hard to read, mainly because of macros usage, double-naming, and numerous verbose trait bounds.
-                  Large comments paired with low code readability was a red flag to me.
-                
-         </p>
-         <figure>
-                  <a href="/blog/2022/bilder/River_Cam2.JPG">
-                       <img src="/blog/2022/bilder/River_Cam2_small.JPG" alt="" width="500" height="267">
-                     </a>
-                  
-            <figcaption>
-                       A beautiful day for punting on the river Cam.
-                     
-            </figcaption>
-                
-         </figure>
-         <h3>Practical End-to-end Testing Doesn't Exist in the Substrate Ecosystem</h3>
-         <p>
-                  One method to try to predict reliability of a software system is to look at its testing regime.
-                  Coming from telecom, I expected to be presented with a tool that works like this:
-                  
-            <ul>
-                       
-               <li>One set of files describe different toy test networks in terms of hardware and connections.</li>
-                       
-               <li>Another kind of file lets devs specify external stimuli, sequential or in parallel, alongside expected network reactions,
-                  both within and flowing out of each node.
-               </li>
-                       
-               <li>A tool spins up or connects nodes according to the network specification, creates the specified stimuli and compares the network's
-                  reaction to the pre-defined expectations.
-               </li>
-                       
-               <li>The tool should also let the developer jump into the network to query nodes and read logs while still running.</li>
-                     
-            </ul>
-                
-         </p>
-         <p>
-                  I was told that no such tool exists.
-                  However there's something <a href="https://github.com/paritytech/zombienet">Zombienet</a> that might grow up to address my concerns one day.
-                  I don't understand how developers build trust in their networks without enforcing such tests on every commit.
-                
-         </p>
-         <p>
-                  There should be warehouses full of machines simulating attacks for developers.
-                  Polkadot and parachain devs need this service.
-                  Lack of practical higher level testing options is a red flag to me.
-                
-         </p>
-         <h3>Regression</h3>
-         <p>
-                  I talked to parachain devs about how they handle the combination of frequent releases of Rust and Substrate
-                  with limited tools for testing and static analysis.
-                  The answer went something like this:
-                
-         </p>
-         <p>
-                  "We face bugs in other dependencies but also in Substrate itself.
-                  We search through old versions until we find combinations that work bug-free enough for our use case."
-                
-         </p>
-         <p>
-                  This pattern of having to search for compatible old versions is called regression; a return to a former or less developed
-            state.
-                  It is what you get when the solution to an old bug creates a new bug, and the new bug gets shipped, breaking things
-            that worked before.
-                  It's what makes my wife weary of updating her operating system, and what keeps banks running COBOL for decades.
-                
-         </p>
-         <p>
-                  As a systems programmer, fighting regression is the main boss.
-                  It's like facing a T-Rex and herding cats at the same time.
-                
-         </p>
-         <figure>
-                  <a href="/blog/2022/bilder/Regress.png">
-                       <img src="/blog/2022/bilder/Regress_small.png" alt="" width="500" height="377">
-                     </a>
-                  
-            <figcaption>
-                       Playing card from Magic the Gathering.
-                       Regression is a system dev's nightmare.
-                     
-            </figcaption>
-                
-         </figure>
-         <p>
-                  Clamping down on a regression spiral is hard.
-                  You must develop a new and more rigorous testing regime.
-                  You must probably drop some features and speak to each downstream programmer who used them, if you even know who they
-            are.
-                
-         </p>
-         <p>
-                  Hopefully Substrate isn't that bad off.
-                  Maybe the devs I talked to were just using it wrongly.
-                  Anyways, what qualifies as regression should be defined by the user.
-                  Hearing how often they faced it was a red flag for me.
-                
-         </p>
-         <h3>Last Words</h3>
-         <p>
-                  Polkadot as a software solution to adversarial blockchain overwrites, is big and hairy.
-                  But solutions to specific problems in computer science are often quite hairy,
-                  especially if heavy usage is expected.
-                  Eg Fibonacci heaps come to mind. (<a href="https://youtu.be/6JxvKfSV9Ns">link</a>).
-                
-         </p>
-         <p>
-                  Software being hairy is not a deal breaker for my Reprap goals.
-                  Neither are my complaints about proc macros, traits, and comments.
-                
-         </p>
-         <p>
-                  Polkadot is young and will look very different in a few years.
-                  All computer programs are notoriously unfinished, that's the nature of programming.
-                  The only problem-free repo is an empty one.
-                  Projects don't show strength by not having problems,
-                  but by which type of problems they have,
-                  and over time how they solve them.
-                
-         </p>
-         <p>
-                  I will keep a look-out for the following:
-                  
-            <ul>
-                       
-               <li>Is Gavin Wood detaching himself from the Project? A yes would inspire confidence.</li>
-                       
-               <li>Is the star shaped topology broken up over time? Again, a yes would inspire confidence.</li>
-                       
-               <li>Are guest chains offered something better than candle auctions and 2-year leases? Offerings should span any time range continuously
-                  and be straight-forward to get.
-               </li>
-                       
-               <li>Are we moving away from Rusts compiler being a single point of failure? The current emphasis on the generality of WASM and
-                  at the same time the superiority of Rust, and implicitly of the one Rust compiler, is somewhat contradictory.
-               </li>
-                       
-               <li>Do we see organic adoption of Frame? I've only seen paid devs wade through the macro-and-trait weeds so far. Seeing students
-                  fiddle with this voluntarily on their own time would inspire far more confidence.
-               </li>
-                       
-               <li>Is Substrate's broad generality utilized by anyone? If no, does Parity narrow its scope fast enough? Every multifaceted project
-                  must prove their flexibility by killing their darlings to prioritize project goals.
-               </li>
-                       
-               <li>Are Polkadot's parachains reliable? If yes, did a small team ship that? Small teams shipping stable services would inspire
-                  confidence. Large parachain projects facing downtime would inspire the opposite.
-               </li>
-                       
-               <li>Does regression in Substrate decrease over time? A publicly posted, low or decreasing measure of regression would inspire
-                  confidence. Such a measure could be constructed either through heavy testing or by counting how quickly and successfully users
-                  upgrade to the latest version.
-               </li>
-                     
-            </ul>
-                
-         </p>
-         <p>
-                  This post focused on potential worries.
-                  To decide if Polkadot is a fit with my specific Reprap goals I must
-                  also consider the potential value of Polkadot's features.
-                
-         </p>
-         <p>
-                  That's a whole other text, but I should mention that valuable features exist that fit my Reprap goals.
-                  These are all features that might allow Polkadot to break out of its star shape in the future, like open source licenses
-            and broad mind-share.
-                
-         </p>
-         <p>
-                  Compared to some of their competitors, Polkadot and Parity still look very good in my opinion.
-                  It's fun to see them run fast in the blockchain innovation track.
-                
-         </p>
-         <p>
-                  I own some DOT tokens and nothing I write is financial advice.
-                  If you spot mistakes or have comments to this blog post, please reach out.
-                  As my friend Ankan says; I'm not young enough to know everything.<br>&#128517;
-                
-         </p>
-         <p>
-                  Thanks to Ankan, Saurabh, and Maja for helpful feedback on this long post.
-                
-         </p>
-         <p>
-            - tobben
-            
-         </p>
-         <div style="display: none"><a class="u-url" href="https://torbjornludvigsen.com/blog/2022/index.html#polkadot_1"></a><time class="dt-published">17-8-2022</time><a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
-               Torbj&oslash;rn Ludvigsen
-               <img class="u-photo" src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG" alt="Torbj&oslash;rn Ludvigsen"></a><span class="p-summary">Polkadot for Reprap - Potential Worries</span></div><br><br><br><h1 id="hangprinter_project_79">Solving Hangprinter's Biggest Problem</h1>
-         <div class="date">21-4-2022</div>
-         <p>
-                  So you've mounted your Hangprinter hardware.
-                  You've threaded all the lines and attached all the anchors.
-                  Motors are spinning.
-                
-         </p>
-         <p>
-                  Now there's just the configuration left and you're good to go! Weeee! =)=)=)
-                
-         </p>
-         <p>
-                  Ehem. Not so fast. Hangprinters kinematics is non-linear. Configuration is fiendishly hard.
-                
-         </p>
-         <figure>
-                  <a href="/blog/2022/bilder/Reuben-Margolin.jpg">
-                       <img src="/blog/2022/bilder/Reuben-Margolin_small.jpg" alt="" width="500" height="277">
-                     </a>
-                  
-            <figcaption>
-                       <a style="font-size:7px;" href="http://www.aesdes.org/2019/03/09/top-5-constraints-kinetic-art/">Image source</a>
-                     
-            </figcaption>
-                
-         </figure>
-         <h3>Kinematics? Non-linear? What?</h3>
-         <p>
-                  With non-linear here, we mean there's no flatness or straightness to be found in Hangprinter's physical parts.
-                  We use maths and physics to give it precision capabilities despite these weirdly shaped parts.
-                  Let me explain the problem more closely.
-                
-         </p>
-         <p>
-                  Hangprinter's movement commands are given in terms of x-, y-, and z-coordinates.
-                  Gcode files and user commands will tell the Hangprinter to
-                  "move to the position that has this x-coordinate, this y-coordinate, and this z-coordinate".
-                  Xyz-coordinates, sometimes called Cartesian coordinates, are flat and straight, with straight angles between them.
-                
-         </p>
-         <figure>
-                  <a href="/blog/2022/bilder/straight_movements_angled_lines.JPG">
-                       <img src="/blog/2022/bilder/straight_movements_angled_lines_small.JPG" alt="" width="500" height="474">
-                     </a>
-                  
-            <figcaption>
-                       In a simple pattern like this, you can count the corners to know how many movement commands the Hangprinter got.
-                       Each movement command told the Hangprinter to move from one corner to another corner.
-                       Hangprinter needs to figure out for itself how to make the movement in between the corners smooth, flat, and straight.
-                     
-            </figcaption>
-                
-         </figure>
-         <p>
-                  Hangprinter's physical parts are neither flat nor straight, as we mentioned.
-                  Therefore, it can't control xyz-positions directly by moving three independent motors at constant speeds, like traditional
-            gantry-style machines typically do.
-                
-         </p>
-         <p>
-                  Instead, its controls four motors, called A, B, C, and D.
-                  The motors are in turn connected to the moving unit (and each other) via belts, spools and strings.
-                
-         </p>
-         <p>
-                  None of the strings lie perfectly along the x-, y-, or z-axis.
-                  They point in all kinds of different directions at different times.
-                
-         </p>
-         <p>
-                  So to execute xyz-movement commands, the Hangprinter needs to convert xyz-positions into motor-positions (ABCD-positions).
-                  The conversion from xyz to ABCD is expressed in Hangprinter's firmware as an equation called
-                  the <b>inverse kinematics equation</b>.
-                  Let's abbreviate it as f(xyz) -&gt; (ABCD).
-                
-         </p>
-         <p>
-                  Take a deep breath.
-                
-         </p>
-         <figure>
-                  <a href="/blog/2022/bilder/Irish_Wave_at_Park_West_in_Dublin.jpg">
-                       <img src="/blog/2022/bilder/Irish_Wave_at_Park_West_in_Dublin_small.jpg" alt="" width="500" height="667">
-                     </a>
-                  
-            <figcaption>
-                     
-            </figcaption>
-                
-         </figure>
-         <p>
-                  Sorry I lied to you.
-                  If it was as easy as f(xyz) -&gt; (ABCD), then that wouldn't have been fiendishly hard at all.
-                  The inverse kinematics equation depends on many more values than just xyz.
-                  There are at least 25 other values.
-                  So f is better described like this:
-                
-         </p>
-         <p>
-                  f(xyzqwertuiopasdfghjklcvbnm...) -&gt; (ABCD)
-                
-         </p>
-         <p>
-                  Each letter in the qwert...-part corresponds to a configuration value.
-                  All these values describe physically measurable things,
-                  like the moving unit's weight, the lines' stiffness, the anchors' xyz-locations, the lines' thickness, the spools' radii
-            (including buildup from idle unused line), and the various types of gearing in the system.
-                
-         </p>
-         <p>
-                  The inverse kinematics function f is actually a fairly involved physics-model of your Hangprinter machine.
-                  If the model is configured wrong, so that it doesn't match reality, then the movements go wrong in reality.
-                  Typically manifestations of an f vs reality mismatch, are non-flat first layers, over-tight or slack lines, and generally
-            horrible printing quality.
-                
-         </p>
-         <h3>Ok Non-linear Bla-bla. But Still: What?</h3>
-         <p>
-                  Yeah, we don't want to have you learn all that.
-                  The complexity will also continue to increase in the future, just because reality is complicated and we want to develop
-            the inverse kinematics equation further.
-                
-         </p>
-         <p>
-                  How are you supposed to keep up with that?
-                  How are we supposed to give efficient support when 50% of users come and say "Hey, all my lines go slack"?
-                  Actually, it's probably 75%.
-                
-         </p>
-         <p>
-                  To be honest, configuring the qwert...-values from scratch drives everyone crazy.
-                  This is one reason why cable driven robots aren't very frequent out in industry already.
-                  Physics is too hard. We need to automate.
-                
-         </p>
-         <h3>&#10024;Solution: Verify&#10024;</h3>
-         <p>
-                  It's not enough to just hope configuration is good enough.
-                  With my fingers crossed all the time, I get less work done.
-                
-         </p>
-         <p>
-                  The machine must measure its own configuration values, as many as possible at once, and give us some proof that they
-            are indeed correct.
-                
-         </p>
-         <p>
-                  This is now possible, and it works (ok, it has been possible for a while, but it works much better now).
-                  It builds upon collecting some simple data, mostly with the machine itself.
-                
-         </p>
-         <p>
-                  Check out
-                  <a href="https://gitlab.com/tobben/auto-calibration-simulation-for-hangprinter">auto-calibration-simulation-for-hangprinter</a>, and its simulation.py program.
-                
-         </p>
-         <p>
-                  It works like this:
-                  You start with your mounted, but completely unconfigured Hangprinter v4.
-                  Put it into torque mode and push it to your desired origin point by hand.
-                  You send it a command who teaches the Hangprinter that this is the xyz=0 point from now on.
-                
-         </p>
-         <p>
-                  Next, you measure the line lengths (endpoint to endpoint along the lines) in all the four directions.
-                  This teaches your Hangprinter roughly how large it is, and helps you verify config values later on.
-                
-         </p>
-         <p>
-                  Then you locate some known points on your print bed, and one known point that is higher up.
-                  This teaches your Hangprinter what "flatness" is and where "upward" is.
-                
-         </p>
-         <p>
-                  Here's a video showing how I pushed my mover around, collecting data at each of the green, known positions.
-                
-         </p>
-         <figure>
-                  
-            <video width="500" height="367" controls="controls">
-                       
-               <source src="/blog/2022/bilder/collect_first_eight.webm" type="video/webm"></source>
+               <figcaption>
+                          The Polkadot Project's logo.
                         
-               <!--source src="movie.ogg" type="video/ogg"-->
-                        Your browser does not support the video tag.
+               </figcaption>
+                   
+            </figure>
+            <p>
+                     I've been a blockchain dilettante for many years, lacking the real skill to innovate in the blockchain/protocol direction.
+                     So I went to Polkadot Academy to see if I could fix that.
+                     It was a four-week in-person course about cryptography, blockchain, Polkadot, Substrate, Frame, and implicitly about
+               Parity and the parachains.
+                   
+            </p>
+            <p>
+                     This is not an introductory text about Polkadot, so I'll just briefly define those words:
                      
-            </video>
-                  
-            <figcaption>
-                       Animation showing where I collected my first nine data points.
-                       Shows best in fullscreen.
-                     
-            </figcaption>
-                
-         </figure>
-         <p>
-                  Since I use <a href="https://gitlab.com/tobben/hp-mark">hp-mark</a>, I have known positions all around, but you can create
-                  known positions by for example using objects of known sizes, aiming plumbs and similar tools.
-                
-         </p>
-         <p>
-                  Lastly, you collect motor encoder data in lots (~40) of unknown xyz-positions, but with lines still straight but not
-            super tight, thanks to torque mode.
-                  This teaches the Hangprinter how a valid, safe position looks like, where no slackness but also no over-tightening happens.
-                
-         </p>
-         <figure>
-                  
-            <video width="500" height="367" controls="controls">
-                       
-               <source src="/blog/2022/bilder/collect_all.webm" type="video/webm"></source>
+               <ul>
+                          
+                  <li><b>Cryptography</b>: Garbling data in ways that add or preserve value or meaning.
+                  </li>
+                          
+                  <li><b>Blockchain</b>: Chunked sequence(s) of data where each new chunk contain garbled representation(s) of previous chunk(s).
+                  </li>
+                          
+                  <li><b>Polkadot</b>:  Most blockchains are used in contexts where old data must never be overwritten. Polkadot is a service preventing adversarial
+                     overwrites of blockchains.
+                  </li>
+                          
+                  <li><b>Substrate</b>: A software development kit for building blockchains. Used for building Polkadot and its parachains.
+                  </li>
+                          
+                  <li><b>Frame</b>: Helper code for building and using plug-ins within Substrate.
+                  </li>
+                          
+                  <li><b>Parity</b>: The company who develops Substrate, Frame, Polkadot, and some of the parachains.
+                  </li>
+                          
+                  <li><b>Parachains</b>: Blockchains who use Polkadot to safeguard their old blocks.
+                  </li>
                         
-               <!--source src="movie.ogg" type="video/ogg"-->
-                        Your browser does not support the video tag.
+               </ul>
+                   
+            </p>
+            <h3>My Polkadot Background</h3>
+            <p>
+                     Before going to the Academy, I had a fantastic impression of Polkadot, almost too good to be true.
+                     Suspecting that I might be overly positive, I Googled around for good criticism,
+                     but the articles I found were either dated or not relevant to my goals.
+                   
+            </p>
+            <p>
+                     Now, after the Academy I want to try writing the post I was searching for.
+                   
+            </p>
+            <figure>
+                     <a href="/blog/2022/bilder/dining_hall_wide_CCC.JPG">
+                          <img src="/blog/2022/bilder/dining_hall_wide_CCC_small.JPG" alt="" width="500" height="281">
+                        </a>
                      
-            </video>
-                  
-            <figcaption>
-                       Animation showing where I collected all my data points.
-                       Shows best in fullscreen.
+               <figcaption>
+                          Our dining hall during the Academy.
+                        
+               </figcaption>
+                   
+            </figure>
+            <h3>"Reliability Is Our Goal, Decentralization Is Just a Tool"</h3>
+            <p>
+                     Gavin Wood is the founder of Polkadot and CEO of Parity.
+                     He gave a welcome speech from the high table shown above.
+                   
+            </p>
+            <p>
+                     The speech's main point was that decentralization is a tool, not an end goal.
+                     The real goal of Polkadot is reliability.
+                     Some decentralization improves reliability, and that's why Polkadot is somewhat decentralized.
+                     This is how I understood the speech.
+                   
+            </p>
+            <p>
+                     I love reliability.
+                     But it's a slippery goal since it's only measurable in retrospect.
+                   
+            </p>
+            <p>
+                     We don't have access to future hindsight.
+                     So we can't use it to guide current decentralization efforts.
+                   
+            </p>
+            <p>
+                     Why dampen our decentralization expectations?
+                   
+            </p>
+            <p>
+                     Maybe Parity is planning to let down nerds like myself, who find decentralization valuable on its own.
+                   
+            </p>
+            <p>
+                     Gavin didn't dismiss decentralization entirely, he just downgraded it to a necessary evil.
+                     Which might be true for him. Still a red flag for me.
+                   
+            </p>
+            <p>
+                     Even decentralization isn't perfect either.
+                     It is only interesting if it comes from permissionlessness and low thresholds.
+                     Emphasis on those terms would better match my goals.
+                   
+            </p>
+            <p>
+                     As mentioned, Reprap temporarily suspended economic gravity through self-replication.
+                     More successful companies emerged from Reprap than the whole 3d printing industry had before Reprap.
+                     It was fun.
+                   
+            </p>
+            <p>
+                     Polkadot's ability to hot-swap it's own WASM internals (self-upgrade in Reprap lingo),
+                     as well as the advanced on-chain governance, sounds like it's awfully close to the self-replication
+                     threshold that Reprap crossed.
+                     Successful software projects who crossed the threshold are gcc and Linux,
+                     who compile and copy new versions of themself, within themself.
+                   
+            </p>
+            <p>
+                     I'm just dying to see Polkadot walk the last mile to enable cheap exponential growth
+                     through self-replication.
+                     They're halfway there.
+                     My worry is that they could start walking backwards in the name of pragmatism.
+                     Become a <a href="https://en.wikipedia.org/wiki/MakerBot#Controversies">Makerbot</a>, in Reprap lingo.
+                   
+            </p>
+            <figure>
+                     <a href="/blog/2022/bilder/gav.JPG">
+                          <img src="/blog/2022/bilder/gav_small.JPG" alt="" width="500" height="281">
+                        </a>
                      
-            </figcaption>
-                
-         </figure>
-         <p>
-                  If your data was high quality, then the simulation.py program will find good configuration values for you,
-                  and tell you exactly how good they are:
-                
-         </p>
-         <figure>
-                  <a href="/blog/2022/bilder/simulation_output.png">
-                       <img src="/blog/2022/bilder/simulation_output_small.png" alt="" width="500" height="117">
-                     </a>
-                  
-            <figcaption>
-                       In the 44 positions show in the animation above, positional error will be maximum ~2mm,
-                       and the line lengths found were ~23 mm different from the hand-measured values, summed over all four directions,
-                       so a ca 6mm error in each direction on average.
-                       The configuration itself is the three lines of copy/paste-able M669 and M666-commands at the bottom.
+               <figcaption>
+                          Gavin Wood lecturing at Polkadot Academy.
+                          His hat says "TOP GUN" and the slide says "Introduction to Cryptography for Engineers".
+                          I loved the lecture, both the delivery and the contents. He's a great speaker.
+                        
+               </figcaption>
+                   
+            </figure>
+            <h3>Lots of Power Concentrated in One Person</h3>
+            <p>
+                     Before his speech, and at many other occasions during the Academy, Gavin was introduced as Doctor Gavin Wood.
+                   
+            </p>
+            <p>
+                     He holds a degree but not in a related field.
+                     Phds are ubiquitous in hi-tech workplaces, which makes it a bad habit to repeatedly mention unrelated ones.
+                   
+            </p>
+            <p>
+                     Doing so anyways is common in the UK, so it doesn't say much about Polkadot on its own, although other peoples' phds
+               went unmentioned throughout the Academy.
+                   
+            </p>
+            <p>
+                     I felt the title mentioning around Gavin was part of a broader tendency, that
+                     people changed behavior when Gavin was around.
+                   
+            </p>
+            <p>
+                     The special treatment of Gavin is understandable.
+                     He is the locus of power in Parity: Founder, CEO, designer, public figurehead, and incredibly wealthy.
+                     He coded large critical parts of Polkadot on his own, including governance.
+                     The Academy I went to was his idea.
+                   
+            </p>
+            <p>
+                     His ideas get implemented and he's not treated as expendable.
+                     He's on the one hand a servant of a higher goal, but he's also the one who formulates the goals.
+                   
+            </p>
+            <p>
+                     If you want to trust Polkadot's future, you must first trust Gavin.
+                     Many at the Academy didn't have a problem with this trust, they even displayed the opposite problem of idolizing him.
+                     This is as understandable as it is problematic.
+                   
+            </p>
+            <p>
+                     There's risk that ideas and concerns won't flow freely if the system designer is idolized and/or could fire you.
+                     I would prefer if the project's followers leaned more on core principles and less on a singular person.
+                   
+            </p>
+            <p>
+                     Bowyer removed himself from formal power within Reprap. Satoshi did the same within Bitcoin.
+                     Gavin is different.
+                     The concentration of power over the project is a red flag to me.
+                   
+            </p>
+            <h3>Parity is Building a Star-Shaped Network</h3>
+            <p>
+                     Polkadot's own documentation (<a href="https://wiki.polkadot.network/docs/getting-started">link</a>)
+                     shows the Polkadot network's topology like this:
+                   
+            </p>
+            <figure>
+                     <a href="/blog/2022/bilder/Polkadot_star3.png">
+                          <img src="/blog/2022/bilder/Polkadot_star3_small.png" alt="" width="500" height="306">
+                        </a>
                      
-            </figcaption>
-                
-         </figure>
-         <p>
-                  Now, why is this a proof and a verification that the inverse kinematic function can work with these configuration values?
-                  Because the same inverse kinematics function that run on Hangprinter's controller board also runs inside simulation.py.
-                  If it works in simulation.py, together with the reality-check that collected data provides, then it works in the physical
-            Hangprinter as well.
-                
-         </p>
-         <p>
-                  For the time being, collecting all the data and running simulation.py is a bit cumbersome but <a href="https://gitlab.com/tobben/auto-calibration-simulation-for-hangprinter/-/blob/hp_mark_adjusted/README.md">well documented</a>.
-                
-         </p>
-         <p>
-                  Having a program that tells the user exactly what to do while double and triple checking the data, and running simulation.py
-            in the background, is the next big step in making Hangprinter easier to use.
-                  However, all the underlying maths and algorithms are established and working already.
-                
-         </p>
-         <h3>Why Collect All This Data? Why Not Just Use Measurement Tape, Like In the Good Old HP3-Days?</h3>
-         <p>
-                  Finding good configuration values based on collected data has three large advantages over hand-measuring everything
-            and hoping for the best:
-                  
-            <ul>
-                       
-               <li>It can be fully automated.</li>
-                       
-               <li>Less doubt. I always wonder if I made a typo or mistake with my measurement tape. The simulation.py method gives a proven
-                  and typo-free config.
-               </li>
-                       
-               <li>Easier support. The data gives a complete picture of your motion system. If I get your data, I can for example discover that
-                  your spools have the wrong radii, or that your gears miss a tooth.
-                            Or I can discover that you're collecting your data points in a too small volume, or with too tight lines. Such things
-                  are extremely hard to reliably clear up via chat, email or even voice chat.
-                            In the data, it's more or less obvious, and finding all these kinds of errors can even be automated, removing the
-                  need for support completely in the future.
-               </li>
+               <figcaption>
+                          Clipped from Defi Teller's Youtube video which is embedded in Polkadot's Getting started page. (<a href="https://youtu.be/BQ60bTU1bPg?t=36">link</a>)
+                        
+               </figcaption>
+                   
+            </figure>
+            <p>
+                     Network topology determine power relations in a network and differentiates fragile networks from reliable ones.
+                     The image shows a very special network topology called star shape.
+                     It is the most centralized and most fragile of all network topologies.
+                   
+            </p>
+            <p>
+                     I have written about star shaped networks before, in a blog post called <a href="/blog/2021/#hangprinter_project_75">Hopes, Dreams, and Agendas</a>.
+                     Here's the most relevant part from that post:
+                   
+            </p>
+            <figure>
+                     <a href="/blog/2021/bilder/NetworkTopologies.png">
+                          <img src="/blog/2021/bilder/NetworkTopologies.png" alt="" width="503" height="249">
+                        </a>
                      
-            </ul>
-                
-         </p>
-         <p>
-                  In addition to this, the approach of simulating Hangprinter gives me many advantages as a developer,
-                  allowing me to push Hangprinter technically forwards faster than I would have otherwise.
-                
-         </p>
-         <h3>I Use The Simulation To Double-Check hp-mark's Measurements</h3>
-         <p>
-                  Actually, simulation.py gives us an opportunity to check how accurate hp-mark is, and the general direction of its errors.
-                
-         </p>
-         <figure>
-                  <a href="/blog/2022/bilder/from_camera_view.png">
-                       <img src="/blog/2022/bilder/from_camera_view_small.png" alt="" width="500" height="257">
-                     </a>
-                  
-            <figcaption>
-                       Click the image for a closer view.
-                       This rendering is taken from roughly the hp-mark camera's point of view.
-                       The cyan colored points is where hp-mark thought the nozzle was.
-                       The red points is where simulation.py thought the nozzle was.
-                       We see that cyan and red points generally line up along the camera's depth direction.
+               <figcaption>
+                          Network topologies.
+                          Only star leaves everyone disconnected when one single node goes down: The Center Node.
+                          The star's center has leverage on everyone else.
+                        
+               </figcaption>
+                   
+            </figure>
+            <p>
+                     Polkadot's designers could have opted for any other topology but chose star shape,
+                     and they chose to put themselves at the center, contrary to eg Cosmos and to some degree Avalanche.
+                     There's a reason for the star of course.
+                     Those other blockchains don't deliver the shared security that Polkadot does.
+                   
+            </p>
+            <p>
+                     Still, trading away all decentralization at the blockchain architecture level is a strong statement.
+                     Delivering shared security today is the most important goal to Polkadot's designers,
+                     more important than decentralizing the chains' network architecture.
+                   
+            </p>
+            <p>
+                     This can be compared to the Internet, who replaced or swallowed its centralized predecessors.
+                     It was given a maximally distributed topology at first, in the name of robustness,
+                     and over time gravitated back towards clusters of more performant stars.
+                   
+            </p>
+            <p>
+                     Polkadot's blockchain started out with star shape and gravity might pull it,
+                     as well as it's creators, hard into the center of their own star, locking them in place,
+                     for a few reasons:
+                   
+            </p>
+            <p>
+                     <b>The star shape is replicated in the social and economical systems within the network.</b>
+                     All or almost all parachain devs is or has been economically dependent on grants paid by the Web3 Foundation (W3F),
+                     which is Parity's non-profit arm.
+                     Parity also arranges and control access to almost every social event in the network.
+                     If you want to meet Polkadot people, you go via Parity.
+                   
+            </p>
+            <p>
+                     <b>Polkadot must stay connected to all nodes and must find ways to collect taxes indefinitely.</b>
+                     This is because it provides security to all the parachains from a single pooled source.
+                     Distributing the responsibility for such pooled security among parachains would lead to a tragedy of the commons.
+                     Every parachain would be incentivized to use the pooled security as much as possible
+                     while contributing as little as possible.
+                   
+            </p>
+            <p>
+                     Taxes are currently collected through transaction fees, inflation, and parachain slot auctions.
+                     For fees, 80% are sent to the Polkadot treasury, which is controlled by Gavin Wood and <a href="https://polkadot.js.org/apps/#/council">12 other people</a>, 9 of whom are Parity/W3F employees, 2 represent specific parachains, and 1 is unknown to me.
+                     Some DOT inflation also goes straight to the treasury.
+                   
+            </p>
+            <p>
+                     The slot auctions temporary lock up DOT tokens, increasing price and relative voting power of all other DOT holders.
+                     The Polkadot network itself is a sizeable DOT holder through its treasury.
+                   
+            </p>
+            <p>
+                     <b>Only Parity can maintain Substrate. Everyone else depend on Substrate.</b>
+                     Parity has made Substrate into a large and very complex code repo.
+                     They keep it operational while chasing the cutting edge of cryptography research.
+                     To achieve both at the same time, they pay high salaries to hundreds of researchers and programmers.
+                     The cash flow and technical know-how required to maintain this quite experimental
+                     code base is very high.
+                     In fact impossible for any other company, and this will not change easily.
+                   
+            </p>
+            <figure>
+                     <a href="/blog/2022/bilder/Ceremony_small.JPG">
+                          <img src="/blog/2022/bilder/Ceremony_small.JPG" alt="" width="500" height="281">
+                        </a>
                      
-            </figcaption>
-                
-         </figure>
-         <figure>
-                  <a href="/blog/2022/bilder/orth_to_camera_view.png">
-                       <img src="/blog/2022/bilder/orth_to_camera_view_small.png" alt="" width="500" height="311">
-                     </a>
-                  
-            <figcaption>
-                       Click the image for a closer view.
-                       This is the same scene, but rendered from another point of view.
-                       The hp-mark camera would be located in the top right corner of this rendering.
-                       We see once again that errors are mostly along the depth-direction of the camera.
-                       Most often, but not always, the hp-mark position (cyan one) is closer to the camera than the simulation.py measured
-               position (red one).
+               <figcaption>
+                          Examination ceremony as seen from my dorm during the Academy.
+                          People in the image are not related to Parity or Polkadot.
+                        
+               </figcaption>
+                   
+            </figure>
+            <p>
+                     <b>Parity has leverage to place arbitrary burdens on smaller parachains. Larger parachains have incentives to let them do that.</b>
+                     The larger or majority of parachains will benefit from letting Parity push smaller competitors down.
+                   
+            </p>
+            <p>
+                     Everything will be done in the name of improving the network as a whole.
+                     We see this already with the rollout of XCM and XCMP.
+                     Every parachain is expected to put a post-office-like virtual machine at the gate of their chain, where
+                     code from foreign blockchains are to be executed and acted upon.
+                   
+            </p>
+            <p>
+                     I might be overly pessimistic here. The XCM and XCMP rollout still has time to play out and might still become a net
+               positive for smaller chains.
+                     But changes will keep rolling out and the incentives for established players to tax newcomers will only grow over time.
+                   
+            </p>
+            <p>
+                     Existing examples of maintenance taxes that limit smaller parachain teams are the frequent and unreliable release schedules
+               from Parity,
+                     and the slow, expensive, recurring and unavoidable parachain slot auctions.
+                   
+            </p>
+            <figure>
+                     <a href="/blog/2022/bilder/New_court.JPG">
+                          <img src="/blog/2022/bilder/New_court_small.JPG" alt="" width="500" height="281">
+                        </a>
                      
-            </figcaption>
-                
-         </figure>
-         <p>
-                  The idea that hp-mark has measurement errors that are larger along its depth direction makes sense,
-                  and suggests that hp-mark must add a second camera before it can create data for the simulation.py configuration automation.
-                
-         </p>
-         <p>
-                  Configuration based on accurate positional data would be significantly faster to acquire, and also more precise than
-            the current procedure.
-                  This was the motivation for developing hp-mark in the first place, but as the images above show clearly, we're not there
-            yet.
-                
-         </p>
-         <h3>I Use The Simulation To Double-Check Hangprinter's Forward Kinematics</h3>
-         <p>
-                  I've described the function f(xyz) -&gt; (ABCD) and called it the inverse kinematics equation.
-                  There's also an inverse of this equation in the Hangprinter's firmware, doing the opposite of f.
-                  It's called the <b>forward kinematics equation</b>. Let's call it F and describe it like this:
-                
-         </p>
-         <p>
-                  F(ABCD) -&gt; (xyz)
-                
-         </p>
-         <p>
-                  Developing the function F is as hard as developing f, and I frequently use simulation.py to double-check that changes
-            to F work
-                  before putting them into the real Hangprinter firmware.
-                
-         </p>
-         <h3>I Use The Simulation To Check The Quality Of Force-Data</h3>
-         <p>
-                  The ODrives are capable of emitting some force data.
-                  My investigations have shown that the data is still too crude to be useful for any purpose.
-                
-         </p>
-         <p>
-                  However, once we get accurate force-data, the simulation.py script is prepared to take advantage of it,
-                  to give us even faster and more accurate configuration values.
-                
-         </p>
-         <h3>Having All The Equations Coded Up In simulation.py Makes Hangprinter More General</h3>
-         <p>
-                  The equations are really a large part of the value that the Hangprinter Project provides to the world.
-                  Having them coded up in Python is useful whenever one wants to make a plot or do a quick experiment.
-                
-         </p>
-         <p>
-                  Having them coded up in Python also opens up for easily implementing good Hangprinter support
-                  in Klipper or other Python based firmwares in the future.
-                
-         </p>
-         <p>
-                  That was all for today. I hope you will use and enjoy <a href="https://gitlab.com/tobben/auto-calibration-simulation-for-hangprinter">auto-calibration-simulation-for-hangprinter</a> for years to come.
-                
-         </p>
-         <p>
-            - tobben
-            
-         </p>
-         <div style="display: none"><a class="u-url" href="https://torbjornludvigsen.com/blog/2022/index.html#hangprinter_project_79"></a><time class="dt-published">21-4-2022</time><a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
-               Torbj&oslash;rn Ludvigsen
-               <img class="u-photo" src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG" alt="Torbj&oslash;rn Ludvigsen"></a><span class="p-summary">Solving Hangprinter's Biggest Problem</span></div><br><br><br><h1 id="hangprinter_project_78">Hangprinter v4 and Hangprinter v5</h1>
-         <div class="date">27-3-2022</div>
-         <p>
-                  Hangprinter is a cable-driven robot.
-                  HP4 is the latest version.
-                
-         </p>
-         <p>
-                  Goal for HP4 development was to create a reliable workhorse, that people enjoy using, for profit.
-                  That sounds a bit like magic.
-                  HP4, like any kind of magic, is complex and slow to develop.
-                  
-            <!--It's the kind of project that boards of directors love to shut down.-->
-                
-         </p>
-         <p>
-                  I've made a list of HP4's features, as well as some plans for the v5.
-                
-         </p>
-         <h3>&#127904; HP4's Unique Features &#127904;</h3>
-         <p>
-                  
-            <ul>
-                       
-               <li>Space Below Is Completely Cleared When Parked</li>
-                       
+               <figcaption>
+                          The whole Academy was hosted at Corpus Christi College in Cambridge.
+                          It was built very early on. Parts of it is from 1352.
+                          The college today holds assets valued at &pound;227.4M.
+                        
+               </figcaption>
+                   
+            </figure>
+            <h3>Reliability is Not for the Guest Chains</h3>
+            <p>
+                     As mentioned before, parachains need protection against overwrites of their old blocks,
+                     and Polkadot is a service for providing such security.
+                   
+            </p>
+            <p>
+                     However, Polkadot is a subscription service.
+                     Parachains subscribe to, or lease, their slot in the Polkadot network.
+                     A lease is very hard to obtain and lasts for a maximum of two years.
+                   
+            </p>
+            <p>
+                     Leases are distributed through an intricate game called candle auctions.
+                     If parachains can't win a candle auction or obtain a lease on the second hand market,
+                     they loose their security and stop working.
+                   
+            </p>
+            <p>
+                     This unreliability is designed right into the user-facing part of Polkadot's ecosystem.
+                     The power imbalance of it has made me think of Polkadot as the Daddy Chain, and parachains as Guest Chains.
+                   
+            </p>
+            <p>
+                     If Parity wanted to deliver user-facing reliability then they would provide longer term leases or outright sell ownership
+               of slots.
+                     Or they could build all parachains themselves.
+                   
+            </p>
+            <p>
+                     Placing fundamental limitations on the security of the user-facing layer is a red flag for me.
+                   
+            </p>
+            <p>
+                     Current parachains are planning to mitigate this threat by amassing funds enough to dominate future slot auctions.
+                     Some also plan to build out independent security mechanisms.
+                     They're very wise and plan ahead.
+                     I'd say most likely they'll make it.
+                   
+            </p>
+            <p>
+                     But even if it plays out perfectly for them, the issue of looming insecurity still dampens my enthusiasm as a builder.
+                     Imagine in 2009, if Bitcoin could plausibly loose all mining power at discrete planned events in 2011, 2013, 2015, ...
+                     Or imagine if Ethereum's difficulty bomb was bound by a two year old contract, back in 2019.
+                     Or if Repraps were designed for planned obsolescence within two years.
+                   
+            </p>
+            <p>
+                     Parathreads is a simpler service where blockchain projects can buy security on-demand, block-by-block, without any auction.
+                     It could help small blockchains gradually scale up.
+                   
+            </p>
+            <p>
+                     Parathreads are less likely to save dislodged parachains from going down, since the chains would experience technical
+               and reputational downgrade, both at once.
+                     Users can quickly evacuate dying guest chains through eg XCM.
+                   
+            </p>
+            <h3>Is Rust Reliable?</h3>
+            <p>
+                     Parity use the Rust programming language exclusively for everything, including for all of Substrate.
+                   
+            </p>
+            <p>
+                     Rust is good for reliability because it has a borrow-checker, pedantic default compiler flags,
+                     and a strong type system.
+                   
+            </p>
+            <p>
+                     But Rust is also bad for reliability because it is immature.
+                     It is only 12 years old, which is young compared to eg C++, which is 37 years old.
+                     The Rust toolchain, best practices, and indeed the Rust programmers themselves have not had time to mature and accumulate
+               long-term learnings.
+                     During these 12 years
+                     Rust has had only one real compiler, which has been changing <a href="https://steveklabnik.com/writing/how-often-does-rust-change">frequently</a>, and it quite frankly has bugs.
+                   
+            </p>
+            <figure>
+                     <a href="/blog/2022/bilder/why-rust-for-blockchain.png">
+                          <img src="/blog/2022/bilder/why-rust-for-blockchain_small.png" alt="" width="500" height="281">
+                        </a>
+                     
+               <figcaption>
+                          Parity publish Rust praise from time to time.
+                          This image was taken from one such blog post. <a href="https://www.parity.io/blog/why-rust">link</a>.
+                        
+               </figcaption>
+                   
+            </figure>
+            <p>
+                     Anecdotally, I stumbled across a compiler bug during my first week of the Academy.
+                     Compiler bugs are highly unusual in other languages.
+                   
+            </p>
+            <p>
+                     I had to use the nightly build of the Rust toolchain, otherwise I couldn't compile Substrate.
+                   
+            </p>
+            <p>
+                     Polkadot inherits reliability and unreliability from Rust.
+                     Facing a bug at the compiler level, and being pushed over on nightly, was a red flag for me.
+                   
+            </p>
+            <h4>Can Static Analysis Make Up For Lack of Compiler Alternatives?</h4>
+            <p>
+                     It could, I wish it did. The first thing I tried in the Substrate repo was:
+                   
+            </p>
+            <p>
+                     <code>$ rust-analyzer analysis-stats .</code>
+                   
+            </p>
+            <p>
+                     This is the most basic command to collect static analysis output, with the most common tool.
+                     It crashed.
+                   
+            </p>
+            <p>
+                     The problem was <a href="https://fasterthanli.me/articles/proc-macro-support-in-rust-analyzer-for-nightly-rustc-versions">fixed</a> on Aug 1,
+                     so I gave it another try.
+                     It finished in 33 minutes and produced an analysis that <a href="https://substrate.stackexchange.com/questions/3887/cyclic-deps-in-substrate">wasn't right</a>.
+                   
+            </p>
+            <p>
+                     A singular compiler accompanied by a disappointing static analysis tool is a red flag for me.
+                   
+            </p>
+            <figure>
+                     <a href="/blog/2022/bilder/Typewriter.JPG">
+                          <img src="/blog/2022/bilder/Typewriter_small.JPG" alt="" width="500" height="281">
+                        </a>
+                     
+               <figcaption>
+                          Without multiple fast and correct static analysis tools I feel a bit like this.
+                          Early 1900s typewriter found at Museum of Cambridge.
+                        
+               </figcaption>
+                   
+            </figure>
+            <h3>The Way Parity Uses Rust Might Not Be the Most Reliable</h3>
+            <p>
+                     As mentioned above, only the nightly version of the Rust toolchain would compile Substrate.
+                     Nightly is kind of the opposite of reliable and I saw it used across Parity (naturally, because they need to compile
+               Substrate too).
+                     Seeing this made me wonder what reliability really means in the Polkadot context.
+                   
+            </p>
+            <p>
+                     Similarly, Parity programmers are guaranteed to meet the same problems with rust-analyzer as I did.
+                     If they use rust-analyzer at all, which I think many don't.
+                     The frequent bugs and long time to finish means it's unpractical for large code bases.
+                   
+            </p>
+            <p>
+                     But it's not just the tools and the language. I also worry about how Parity uses them.
+                     Rust is full of cool features and Parity has many new programmers.
+                     To borrow a phrase from a more experienced programmer:
+                     "History tells us that programmers feel compelled to try every feature of their new language during the first project,
+               [...]"
+                       (<a href="https://www.codeofhonor.com/blog/tough-times-on-the-road-to-starcraft">link</a>)
+                   
+            </p>
+            <p>
+                     I think Parity might be over-using three language features:
+                     
                <ul>
-                            
-                  <li>Takes 5 Min to Park. (<a href="https://twitter.com/tobbelobb/status/1507390473706643456">1</a>, <a href="https://twitter.com/tobbelobb/status/1507394479501811717">2</a>)
+                          
+                  <li>Proc macros</li>
+                          
+                  <li>Traits </li>
+                          
+                  <li>Comments</li>
+                        
+               </ul>
+                   
+            </p>
+            <h3>Substrate Relies Heavily on Esoteric and Over Powered Macros</h3>
+            <p>
+                     A proc macro is almost a compiler in itself.
+                     It is made executable early in the compilation process.
+                     Later in the compilation process, it receives character streams from the compiler,
+                     and returns potentially very different characters back to the compiler,
+                     which then gets compiled as valid Rust code.
+                   
+            </p>
+            <p>
+                     Proc macros were the language feature that made rust-analyzer crash on me.
+                     The internal proc macro interfaces are not stable, and rust-analyzer tripped.
+                       It's very hard for rust-analyzer to properly support proc macros for many reasons. (<a href="https://rust-analyzer.github.io/blog/2021/11/21/ides-and-macros.html">source</a>)
+                   
+            </p>
+            <p>
+                     It's similarly hard for programmers to use proc macros.
+                     They change the syntax of the language, generally away from beauty and towards brevity and often obfuscation.
+                     This creates steep learning curves and circuitous debugging sessions.
+                     Fixing a proc macro bug, and teaching a proc macro interface are both arduous tasks.
+                   
+            </p>
+            <p>
+                     We know this because many Lisp projects made heavy use of similar mega powerful macros back in
+                     the 70s, 80s, and 90s.
+                     Domain experts created opaque mini-languages within Lisp, that died rather quickly
+                     because language design is hard.
+                     The over-use of macros contributed to Lisp loosing mindshare to simpler languages like C and Java.
+                   
+            </p>
+            <p>
+                     The history of macros was unknown to the Parity programmers I met.
+                     This was a red flag for me.
+                   
+            </p>
+            <figure>
+                     <a href="/blog/2022/bilder/Proc_macro_beast.JPG">
+                          <img src="/blog/2022/bilder/Proc_macro_beast_small.JPG" alt="" width="500" height="380">
+                        </a>
+                     
+               <figcaption>
+                          Proc macros risk stealing time and scaring away new programmers.
+                          This is the Chronophage on top of <a href="https://en.wikipedia.org/wiki/Corpus_Clock">the Corpus Clock</a> which is on display at the corner of our college.
+                        
+               </figcaption>
+                   
+            </figure>
+            <h3>Lots of Traits and Types, Little Logic</h3>
+            <p>
+                     Traits are a language feature that lets you abstract over types easily.
+                     To specify logic in a Frame pallet, you plug type names into pre-defined traits.
+                     All types that could be abstracted over in Frame, are abstracted over, including integer types.
+                   
+            </p>
+            <p>
+                     Most of the code talks about resolving abstracted types to concrete types,
+                     not about resolving variables or function calls into values.
+                   
+            </p>
+            <p>
+                     The desirable outcome is that types and their behavior are very specific and extendable.
+                     You provide a type into an interface and the compiler tells you which functions are missing.
+                     Libraries can ship different plug-and-play types to choose from, and users can put them together like Legos.
+                   
+            </p>
+            <p>
+                     The problem is that different types fulfilling lots of traits can be much harder than Legos to fit together.
+                   
+            </p>
+            <p>
+                     For example in
+                     <a href="https://github.com/tobbelobb/quadratic-voting-exercise-substrate/blob/446acc52965eeeec03561bdc437c5a5f2762bcb4/pallets/qv/src/lib.rs#L163">my own code</a>,
+                     I was asked by the compiler to implement translations between the same type with two different names:
+                   
+            </p>
+            <p>
+                     <code>&lt;&lt;T as pallet::Config&gt;::Currency as Currency&lt;&lt;T as frame_system::Config&gt;::AccountId&gt;&gt;::Balance</code><br>
+                     and
+                     <br>
+                     <code>&lt;&lt;T as pallet_referenda::Config&gt;::Currency as Currency&lt;&lt;T as frame_system::Config&gt;::AccountId&gt;&gt;::Balance</code>
+                   
+            </p>
+            <p>
+                     These two names resolve to the same concrete type, but the compiler can't detect that.
+                     I ended up using the one type who easily translates to the two different Balance-types: unsigned 32-bit integers.
+                     That is a less specific type than I would have used in a simpler language.
+                   
+            </p>
+            <p>
+                     Most Academy student friends ended up side-stepping the complex type machinery like this in the interest of time.
+                     Maybe we just weren't enlightened enough, or maybe some type ceremonies were needlessly convoluted.
+                   
+            </p>
+            <p>
+                     Either way, the time spent in the trait weeds was a red flag for me.
+                   
+            </p>
+            <h3>Substrate Makes Heavy Use of Comments</h3>
+            <p>
+                     The comments inside the Substrate codebase are often 100 lines or more.
+                     There is an unusual amount of comments across the Substrate codebase.
+                   
+            </p>
+            <p>
+                     Comments age badly because they require manual expert maintenance.
+                     They get outdated very quickly and lead new devs awry.
+                   
+            </p>
+            <p>
+                     Parity programmers are conscientious and meticulous people, but they are also humans with deadlines, so comment maintenance
+               will slip sometimes, even for them.
+                     Rust lets you put runnable tests within comments, but Substrate's comments consist mainly of natural language.
+                     I predict that Parity will have to delete most comments within a few years.
+                   
+            </p>
+            <p>
+                     Their manually written online documentation have similar maintenance downsides.
+                     I tripped in outdated online tutorials many times during my time at the Academy.
+                   
+            </p>
+            <p>
+                     The lesser evil alternative is to make the code itself human readable.
+                     Self-documenting code is a common ideal and best practice that limits the need for comments and hand written documentation.
+                   
+            </p>
+            <p>
+                     I found Substrate's code hard to read, mainly because of macros usage, double-naming, and numerous verbose trait bounds.
+                     Large comments paired with low code readability was a red flag to me.
+                   
+            </p>
+            <figure>
+                     <a href="/blog/2022/bilder/River_Cam2.JPG">
+                          <img src="/blog/2022/bilder/River_Cam2_small.JPG" alt="" width="500" height="267">
+                        </a>
+                     
+               <figcaption>
+                          A beautiful day for punting on the river Cam.
+                        
+               </figcaption>
+                   
+            </figure>
+            <h3>Practical End-to-end Testing Doesn't Exist in the Substrate Ecosystem</h3>
+            <p>
+                     One method to try to predict reliability of a software system is to look at its testing regime.
+                     Coming from telecom, I expected to be presented with a tool that works like this:
+                     
+               <ul>
+                          
+                  <li>One set of files describe different toy test networks in terms of hardware and connections.</li>
+                          
+                  <li>Another kind of file lets devs specify external stimuli, sequential or in parallel, alongside expected network reactions,
+                     both within and flowing out of each node.
                   </li>
                           
-               </ul>
-                       
-               <li>Supports Any Placement of Motor and Electronics, enabled by</li>
-                       
-               <ul>
-                            
-                  <li>CAN Driven Communication</li>
-                            
-                  <li>All Axes Are Conceptually Identical (<a href="https://github.com/Duet3D/RepRapFirmware/pull/554">1</a>)
-                  </li>
-                            
-                  <li>Pre-Defined Placement is Also Avaliable as DXF/PDF (<a href="https://twitter.com/tobbelobb/status/1403282393784541191">1</a>)
+                  <li>A tool spins up or connects nodes according to the network specification, creates the specified stimuli and compares the network's
+                     reaction to the pre-defined expectations.
                   </li>
                           
+                  <li>The tool should also let the developer jump into the network to query nodes and read logs while still running.</li>
+                        
                </ul>
-                       
-               <li>Slack Tolerance and Servicability, enabled by</li>
-                       
+                   
+            </p>
+            <p>
+                     I was told that no such tool exists.
+                     However there's something <a href="https://github.com/paritytech/zombienet">Zombienet</a> that might grow up to address my concerns one day.
+                     I don't understand how developers build trust in their networks without enforcing such tests on every commit.
+                   
+            </p>
+            <p>
+                     There should be warehouses full of machines simulating attacks for developers.
+                     Polkadot and parachain devs need this service.
+                     Lack of practical higher level testing options is a red flag to me.
+                   
+            </p>
+            <h3>Regression</h3>
+            <p>
+                     I talked to parachain devs about how they handle the combination of frequent releases of Rust and Substrate
+                     with limited tools for testing and static analysis.
+                     The answer went something like this:
+                   
+            </p>
+            <p>
+                     "We face bugs in other dependencies but also in Substrate itself.
+                     We search through old versions until we find combinations that work bug-free enough for our use case."
+                   
+            </p>
+            <p>
+                     This pattern of having to search for compatible old versions is called regression; a return to a former or less developed
+               state.
+                     It is what you get when the solution to an old bug creates a new bug, and the new bug gets shipped, breaking things
+               that worked before.
+                     It's what makes my wife weary of updating her operating system, and what keeps banks running COBOL for decades.
+                   
+            </p>
+            <p>
+                     As a systems programmer, fighting regression is the main boss.
+                     It's like facing a T-Rex and herding cats at the same time.
+                   
+            </p>
+            <figure>
+                     <a href="/blog/2022/bilder/Regress.png">
+                          <img src="/blog/2022/bilder/Regress_small.png" alt="" width="500" height="377">
+                        </a>
+                     
+               <figcaption>
+                          Playing card from Magic the Gathering.
+                          Regression is a system dev's nightmare.
+                        
+               </figcaption>
+                   
+            </figure>
+            <p>
+                     Clamping down on a regression spiral is hard.
+                     You must develop a new and more rigorous testing regime.
+                     You must probably drop some features and speak to each downstream programmer who used them, if you even know who they
+               are.
+                   
+            </p>
+            <p>
+                     Hopefully Substrate isn't that bad off.
+                     Maybe the devs I talked to were just using it wrongly.
+                     Anyways, what qualifies as regression should be defined by the user.
+                     Hearing how often they faced it was a red flag for me.
+                   
+            </p>
+            <h3>Last Words</h3>
+            <p>
+                     Polkadot as a software solution to adversarial blockchain overwrites, is big and hairy.
+                     But solutions to specific problems in computer science are often quite hairy,
+                     especially if heavy usage is expected.
+                     Eg Fibonacci heaps come to mind. (<a href="https://youtu.be/6JxvKfSV9Ns">link</a>).
+                   
+            </p>
+            <p>
+                     Software being hairy is not a deal breaker for my Reprap goals.
+                     Neither are my complaints about proc macros, traits, and comments.
+                   
+            </p>
+            <p>
+                     Polkadot is young and will look very different in a few years.
+                     All computer programs are notoriously unfinished, that's the nature of programming.
+                     The only problem-free repo is an empty one.
+                     Projects don't show strength by not having problems,
+                     but by which type of problems they have,
+                     and over time how they solve them.
+                   
+            </p>
+            <p>
+                     I will keep a look-out for the following:
+                     
                <ul>
-                            
-                  <li>Thick Stiff Wear Resistant Lines (<a href="https://youtu.be/K_fQpvZ3oeA">1</a>)
-                  </li>
-                            
-                  <li>Completely Closed Line Paths</li>
-                            
-                  <li>Ceramic Eyelets &amp; U-shaped Bearings Everywhere</li>
-                            
-                  <li>Little Risk of Lines Falling Off, Tangling, or Getting Stuck</li>
-                            
-                  <li>Parts Along Line Path Can Be Mounted/Serviced Whithout Unthreading (<a href="https://youtu.be/CsXr_lqhI90">1</a>)
+                          
+                  <li>Is Gavin Wood detaching himself from the Project? A yes would inspire confidence.</li>
+                          
+                  <li>Is the star shaped topology broken up over time? Again, a yes would inspire confidence.</li>
+                          
+                  <li>Are guest chains offered something better than candle auctions and 2-year leases? Offerings should span any time range continuously
+                     and be straight-forward to get.
                   </li>
                           
-               </ul>
-                       
-               <li>High Speeds (~900 mm/s) (<a href="https://twitter.com/tobbelobb/status/1484209682420019206">1</a>), enabled by
-               </li>
-                       
-               <ul>
-                            
-                  <li>High Quality BLDC Motors</li>
-                            
-                  <li>Lots of Processing Power</li>
+                  <li>Are we moving away from Rusts compiler being a single point of failure? The current emphasis on the generality of WASM and
+                     at the same time the superiority of Rust, and implicitly of the one Rust compiler, is somewhat contradictory.
+                  </li>
                           
-               </ul>
-                       
-               <li>Self-Calibration (<a href="https://youtu.be/As3Y5J2NTGA">1</a>), enabled by
-               </li>
-                       
-               <ul>
-                            
-                  <li>Built-in Motion Tracking (<a href="https://twitter.com/tobbelobb/status/1466773203938852870">1</a>)
+                  <li>Do we see organic adoption of Frame? I've only seen paid devs wade through the macro-and-trait weeds so far. Seeing students
+                     fiddle with this voluntarily on their own time would inspire far more confidence.
                   </li>
-                            
-                  <li>Built-in Force Sensing (<a href="https://github.com/Duet3D/RepRapFirmware/pull/564">1</a>)
-                  </li>
-                            
-                  <li>Few Hand-Measurements are Needed</li>
                           
-               </ul>
-                       
-               <li>High Precision and Accuracy (<a href="https://twitter.com/tobbelobb/status/1473344630842445832">1</a>, <a href="https://twitter.com/tobbelobb/status/1472947513191768065">2</a>, <a href="https://twitter.com/tobbelobb/status/1433384365023715328">3</a>, <a href="https://twitter.com/tobbelobb/status/1430218354971848713">4</a>, <a href="https://www.youtube.com/watch?v=qdRI0cvxagU">5</a>, <a href="https://twitter.com/tobbelobb/status/1383821508238143491">6</a>, <a href="https://twitter.com/tobbelobb/status/1130065984881070080">7</a>, <a href="https://twitter.com/tobbelobb/status/1128704338162016262">8</a>), enabled by:
-               </li>
-                       
-               <ul>
-                            
-                  <li>Motion Tracking (<a href="https://twitter.com/tobbelobb/status/1466773203938852870">1</a>)
+                  <li>Is Substrate's broad generality utilized by anyone? If no, does Parity narrow its scope fast enough? Every multifaceted project
+                     must prove their flexibility by killing their darlings to prioritize project goals.
                   </li>
-                            
-                  <li>Force Sensing (<a href="https://github.com/Duet3D/RepRapFirmware/pull/564">1</a>)
-                  </li>
-                            
-                  <li>Flex Compensation. (<a href="https://twitter.com/tobbelobb/status/1503840578236264455">1</a>, <a href="https://github.com/Duet3D/RepRapFirmware/pull/562">2</a>)
-                  </li>
-                            
-                  <li>Spool Buildup Compensation (<a href="https://twitter.com/tobbelobb/status/1084185594497064961">1</a>)
-                  </li>
-                            
-                  <li>Mechanical Bed Probe (<a href="https://twitter.com/tobbelobb/status/1458823899827871754">1</a>)
-                  </li>
-                            
-                  <li>Direct Connection Between Motors and Tip of Tool Head. (<a href="https://twitter.com/tobbelobb/status/1508519679970664459/video/1">1</a>, <a href="https://twitter.com/tobbelobb/status/1123626333958021122">2</a>)
-                  </li>
-                            
-                  <li>High Number &amp; Wide Apart Line Force Points Stabilizing Effector</li>
                           
+                  <li>Are Polkadot's parachains reliable? If yes, did a small team ship that? Small teams shipping stable services would inspire
+                     confidence. Large parachain projects facing downtime would inspire the opposite.
+                  </li>
+                          
+                  <li>Does regression in Substrate decrease over time? A publicly posted, low or decreasing measure of regression would inspire
+                     confidence. Such a measure could be constructed either through heavy testing or by counting how quickly and successfully users
+                     upgrade to the latest version.
+                  </li>
+                        
                </ul>
-                       
-               <li>User Friendliness, enabled by</li>
-                       
+                   
+            </p>
+            <p>
+                     This post focused on potential worries.
+                     To decide if Polkadot is a fit with my specific Reprap goals I must
+                     also consider the potential value of Polkadot's features.
+                   
+            </p>
+            <p>
+                     That's a whole other text, but I should mention that valuable features exist that fit my Reprap goals.
+                     These are all features that might allow Polkadot to break out of its star shape in the future, like open source licenses
+               and broad mind-share.
+                   
+            </p>
+            <p>
+                     Compared to some of their competitors, Polkadot and Parity still look very good in my opinion.
+                     It's fun to see them run fast in the blockchain innovation track.
+                   
+            </p>
+            <p>
+                     I own some DOT tokens and nothing I write is financial advice.
+                     If you spot mistakes or have comments to this blog post, please reach out.
+                     As my friend Ankan says; I'm not young enough to know everything.<br>&#128517;
+                   
+            </p>
+            <p>
+                     Thanks to Ankan, Saurabh, and Maja for helpful feedback on this long post.
+                   
+            </p>
+            <p>
+               - tobben
+               
+            </p>
+            <div style="display: none"><a class="u-url" href="https://torbjornludvigsen.com/blog/2022/index.html#polkadot_1"></a><a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
+                  Torbj&oslash;rn Ludvigsen
+                  <img class="u-photo" src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG" alt="Torbj&oslash;rn Ludvigsen"></a><span class="p-summary">Polkadot for Reprap - Potential Worries</span></div><br><br><br></article>
+         <article class="h-entry">
+            <h1 class="p-name" id="hangprinter_project_79">Solving Hangprinter's Biggest Problem</h1>
+            <div class="date">21-04-2022</div>
+            <time style="display:none" class="dt-published">2022-04-21T12:00:00Z</time>
+            <p>
+                     So you've mounted your Hangprinter hardware.
+                     You've threaded all the lines and attached all the anchors.
+                     Motors are spinning.
+                   
+            </p>
+            <p>
+                     Now there's just the configuration left and you're good to go! Weeee! =)=)=)
+                   
+            </p>
+            <p>
+                     Ehem. Not so fast. Hangprinters kinematics is non-linear. Configuration is fiendishly hard.
+                   
+            </p>
+            <figure>
+                     <a href="/blog/2022/bilder/Reuben-Margolin.jpg">
+                          <img src="/blog/2022/bilder/Reuben-Margolin_small.jpg" alt="" width="500" height="277">
+                        </a>
+                     
+               <figcaption>
+                          <a style="font-size:7px;" href="http://www.aesdes.org/2019/03/09/top-5-constraints-kinetic-art/">Image source</a>
+                        
+               </figcaption>
+                   
+            </figure>
+            <h3>Kinematics? Non-linear? What?</h3>
+            <p>
+                     With non-linear here, we mean there's no flatness or straightness to be found in Hangprinter's physical parts.
+                     We use maths and physics to give it precision capabilities despite these weirdly shaped parts.
+                     Let me explain the problem more closely.
+                   
+            </p>
+            <p>
+                     Hangprinter's movement commands are given in terms of x-, y-, and z-coordinates.
+                     Gcode files and user commands will tell the Hangprinter to
+                     "move to the position that has this x-coordinate, this y-coordinate, and this z-coordinate".
+                     Xyz-coordinates, sometimes called Cartesian coordinates, are flat and straight, with straight angles between them.
+                   
+            </p>
+            <figure>
+                     <a href="/blog/2022/bilder/straight_movements_angled_lines.JPG">
+                          <img src="/blog/2022/bilder/straight_movements_angled_lines_small.JPG" alt="" width="500" height="474">
+                        </a>
+                     
+               <figcaption>
+                          In a simple pattern like this, you can count the corners to know how many movement commands the Hangprinter got.
+                          Each movement command told the Hangprinter to move from one corner to another corner.
+                          Hangprinter needs to figure out for itself how to make the movement in between the corners smooth, flat, and straight.
+                        
+               </figcaption>
+                   
+            </figure>
+            <p>
+                     Hangprinter's physical parts are neither flat nor straight, as we mentioned.
+                     Therefore, it can't control xyz-positions directly by moving three independent motors at constant speeds, like traditional
+               gantry-style machines typically do.
+                   
+            </p>
+            <p>
+                     Instead, its controls four motors, called A, B, C, and D.
+                     The motors are in turn connected to the moving unit (and each other) via belts, spools and strings.
+                   
+            </p>
+            <p>
+                     None of the strings lie perfectly along the x-, y-, or z-axis.
+                     They point in all kinds of different directions at different times.
+                   
+            </p>
+            <p>
+                     So to execute xyz-movement commands, the Hangprinter needs to convert xyz-positions into motor-positions (ABCD-positions).
+                     The conversion from xyz to ABCD is expressed in Hangprinter's firmware as an equation called
+                     the <b>inverse kinematics equation</b>.
+                     Let's abbreviate it as f(xyz) -&gt; (ABCD).
+                   
+            </p>
+            <p>
+                     Take a deep breath.
+                   
+            </p>
+            <figure>
+                     <a href="/blog/2022/bilder/Irish_Wave_at_Park_West_in_Dublin.jpg">
+                          <img src="/blog/2022/bilder/Irish_Wave_at_Park_West_in_Dublin_small.jpg" alt="" width="500" height="667">
+                        </a>
+                     
+               <figcaption>
+                        
+               </figcaption>
+                   
+            </figure>
+            <p>
+                     Sorry I lied to you.
+                     If it was as easy as f(xyz) -&gt; (ABCD), then that wouldn't have been fiendishly hard at all.
+                     The inverse kinematics equation depends on many more values than just xyz.
+                     There are at least 25 other values.
+                     So f is better described like this:
+                   
+            </p>
+            <p>
+                     f(xyzqwertuiopasdfghjklcvbnm...) -&gt; (ABCD)
+                   
+            </p>
+            <p>
+                     Each letter in the qwert...-part corresponds to a configuration value.
+                     All these values describe physically measurable things,
+                     like the moving unit's weight, the lines' stiffness, the anchors' xyz-locations, the lines' thickness, the spools' radii
+               (including buildup from idle unused line), and the various types of gearing in the system.
+                   
+            </p>
+            <p>
+                     The inverse kinematics function f is actually a fairly involved physics-model of your Hangprinter machine.
+                     If the model is configured wrong, so that it doesn't match reality, then the movements go wrong in reality.
+                     Typically manifestations of an f vs reality mismatch, are non-flat first layers, over-tight or slack lines, and generally
+               horrible printing quality.
+                   
+            </p>
+            <h3>Ok Non-linear Bla-bla. But Still: What?</h3>
+            <p>
+                     Yeah, we don't want to have you learn all that.
+                     The complexity will also continue to increase in the future, just because reality is complicated and we want to develop
+               the inverse kinematics equation further.
+                   
+            </p>
+            <p>
+                     How are you supposed to keep up with that?
+                     How are we supposed to give efficient support when 50% of users come and say "Hey, all my lines go slack"?
+                     Actually, it's probably 75%.
+                   
+            </p>
+            <p>
+                     To be honest, configuring the qwert...-values from scratch drives everyone crazy.
+                     This is one reason why cable driven robots aren't very frequent out in industry already.
+                     Physics is too hard. We need to automate.
+                   
+            </p>
+            <h3>&#10024;Solution: Verify&#10024;</h3>
+            <p>
+                     It's not enough to just hope configuration is good enough.
+                     With my fingers crossed all the time, I get less work done.
+                   
+            </p>
+            <p>
+                     The machine must measure its own configuration values, as many as possible at once, and give us some proof that they
+               are indeed correct.
+                   
+            </p>
+            <p>
+                     This is now possible, and it works (ok, it has been possible for a while, but it works much better now).
+                     It builds upon collecting some simple data, mostly with the machine itself.
+                   
+            </p>
+            <p>
+                     Check out
+                     <a href="https://gitlab.com/tobben/auto-calibration-simulation-for-hangprinter">auto-calibration-simulation-for-hangprinter</a>, and its simulation.py program.
+                   
+            </p>
+            <p>
+                     It works like this:
+                     You start with your mounted, but completely unconfigured Hangprinter v4.
+                     Put it into torque mode and push it to your desired origin point by hand.
+                     You send it a command who teaches the Hangprinter that this is the xyz=0 point from now on.
+                   
+            </p>
+            <p>
+                     Next, you measure the line lengths (endpoint to endpoint along the lines) in all the four directions.
+                     This teaches your Hangprinter roughly how large it is, and helps you verify config values later on.
+                   
+            </p>
+            <p>
+                     Then you locate some known points on your print bed, and one known point that is higher up.
+                     This teaches your Hangprinter what "flatness" is and where "upward" is.
+                   
+            </p>
+            <p>
+                     Here's a video showing how I pushed my mover around, collecting data at each of the green, known positions.
+                   
+            </p>
+            <figure>
+                     
+               <video width="500" height="367" controls="controls">
+                          
+                  <source src="/blog/2022/bilder/collect_first_eight.webm" type="video/webm"></source>
+                           
+                  <!--source src="movie.ogg" type="video/ogg"-->
+                           Your browser does not support the video tag.
+                        
+               </video>
+                     
+               <figcaption>
+                          Animation showing where I collected my first nine data points.
+                          Shows best in fullscreen.
+                        
+               </figcaption>
+                   
+            </figure>
+            <p>
+                     Since I use <a href="https://gitlab.com/tobben/hp-mark">hp-mark</a>, I have known positions all around, but you can create
+                     known positions by for example using objects of known sizes, aiming plumbs and similar tools.
+                   
+            </p>
+            <p>
+                     Lastly, you collect motor encoder data in lots (~40) of unknown xyz-positions, but with lines still straight but not
+               super tight, thanks to torque mode.
+                     This teaches the Hangprinter how a valid, safe position looks like, where no slackness but also no over-tightening happens.
+                   
+            </p>
+            <figure>
+                     
+               <video width="500" height="367" controls="controls">
+                          
+                  <source src="/blog/2022/bilder/collect_all.webm" type="video/webm"></source>
+                           
+                  <!--source src="movie.ogg" type="video/ogg"-->
+                           Your browser does not support the video tag.
+                        
+               </video>
+                     
+               <figcaption>
+                          Animation showing where I collected all my data points.
+                          Shows best in fullscreen.
+                        
+               </figcaption>
+                   
+            </figure>
+            <p>
+                     If your data was high quality, then the simulation.py program will find good configuration values for you,
+                     and tell you exactly how good they are:
+                   
+            </p>
+            <figure>
+                     <a href="/blog/2022/bilder/simulation_output.png">
+                          <img src="/blog/2022/bilder/simulation_output_small.png" alt="" width="500" height="117">
+                        </a>
+                     
+               <figcaption>
+                          In the 44 positions show in the animation above, positional error will be maximum ~2mm,
+                          and the line lengths found were ~23 mm different from the hand-measured values, summed over all four directions,
+                          so a ca 6mm error in each direction on average.
+                          The configuration itself is the three lines of copy/paste-able M669 and M666-commands at the bottom.
+                        
+               </figcaption>
+                   
+            </figure>
+            <p>
+                     Now, why is this a proof and a verification that the inverse kinematic function can work with these configuration values?
+                     Because the same inverse kinematics function that run on Hangprinter's controller board also runs inside simulation.py.
+                     If it works in simulation.py, together with the reality-check that collected data provides, then it works in the physical
+               Hangprinter as well.
+                   
+            </p>
+            <p>
+                     For the time being, collecting all the data and running simulation.py is a bit cumbersome but <a href="https://gitlab.com/tobben/auto-calibration-simulation-for-hangprinter/-/blob/hp_mark_adjusted/README.md">well documented</a>.
+                   
+            </p>
+            <p>
+                     Having a program that tells the user exactly what to do while double and triple checking the data, and running simulation.py
+               in the background, is the next big step in making Hangprinter easier to use.
+                     However, all the underlying maths and algorithms are established and working already.
+                   
+            </p>
+            <h3>Why Collect All This Data? Why Not Just Use Measurement Tape, Like In the Good Old HP3-Days?</h3>
+            <p>
+                     Finding good configuration values based on collected data has three large advantages over hand-measuring everything
+               and hoping for the best:
+                     
                <ul>
-                            
-                  <li>Plug-and-Play Compatible With Wide Range of Tool Heads and Materials</li>
-                            
+                          
+                  <li>It can be fully automated.</li>
+                          
+                  <li>Less doubt. I always wonder if I made a typo or mistake with my measurement tape. The simulation.py method gives a proven
+                     and typo-free config.
+                  </li>
+                          
+                  <li>Easier support. The data gives a complete picture of your motion system. If I get your data, I can for example discover that
+                     your spools have the wrong radii, or that your gears miss a tooth.
+                               Or I can discover that you're collecting your data points in a too small volume, or with too tight lines. Such things
+                     are extremely hard to reliably clear up via chat, email or even voice chat.
+                               In the data, it's more or less obvious, and finding all these kinds of errors can even be automated, removing the
+                     need for support completely in the future.
+                  </li>
+                        
+               </ul>
+                   
+            </p>
+            <p>
+                     In addition to this, the approach of simulating Hangprinter gives me many advantages as a developer,
+                     allowing me to push Hangprinter technically forwards faster than I would have otherwise.
+                   
+            </p>
+            <h3>I Use The Simulation To Double-Check hp-mark's Measurements</h3>
+            <p>
+                     Actually, simulation.py gives us an opportunity to check how accurate hp-mark is, and the general direction of its errors.
+                   
+            </p>
+            <figure>
+                     <a href="/blog/2022/bilder/from_camera_view.png">
+                          <img src="/blog/2022/bilder/from_camera_view_small.png" alt="" width="500" height="257">
+                        </a>
+                     
+               <figcaption>
+                          Click the image for a closer view.
+                          This rendering is taken from roughly the hp-mark camera's point of view.
+                          The cyan colored points is where hp-mark thought the nozzle was.
+                          The red points is where simulation.py thought the nozzle was.
+                          We see that cyan and red points generally line up along the camera's depth direction.
+                        
+               </figcaption>
+                   
+            </figure>
+            <figure>
+                     <a href="/blog/2022/bilder/orth_to_camera_view.png">
+                          <img src="/blog/2022/bilder/orth_to_camera_view_small.png" alt="" width="500" height="311">
+                        </a>
+                     
+               <figcaption>
+                          Click the image for a closer view.
+                          This is the same scene, but rendered from another point of view.
+                          The hp-mark camera would be located in the top right corner of this rendering.
+                          We see once again that errors are mostly along the depth-direction of the camera.
+                          Most often, but not always, the hp-mark position (cyan one) is closer to the camera than the simulation.py measured
+                  position (red one).
+                        
+               </figcaption>
+                   
+            </figure>
+            <p>
+                     The idea that hp-mark has measurement errors that are larger along its depth direction makes sense,
+                     and suggests that hp-mark must add a second camera before it can create data for the simulation.py configuration automation.
+                   
+            </p>
+            <p>
+                     Configuration based on accurate positional data would be significantly faster to acquire, and also more precise than
+               the current procedure.
+                     This was the motivation for developing hp-mark in the first place, but as the images above show clearly, we're not there
+               yet.
+                   
+            </p>
+            <h3>I Use The Simulation To Double-Check Hangprinter's Forward Kinematics</h3>
+            <p>
+                     I've described the function f(xyz) -&gt; (ABCD) and called it the inverse kinematics equation.
+                     There's also an inverse of this equation in the Hangprinter's firmware, doing the opposite of f.
+                     It's called the <b>forward kinematics equation</b>. Let's call it F and describe it like this:
+                   
+            </p>
+            <p>
+                     F(ABCD) -&gt; (xyz)
+                   
+            </p>
+            <p>
+                     Developing the function F is as hard as developing f, and I frequently use simulation.py to double-check that changes
+               to F work
+                     before putting them into the real Hangprinter firmware.
+                   
+            </p>
+            <h3>I Use The Simulation To Check The Quality Of Force-Data</h3>
+            <p>
+                     The ODrives are capable of emitting some force data.
+                     My investigations have shown that the data is still too crude to be useful for any purpose.
+                   
+            </p>
+            <p>
+                     However, once we get accurate force-data, the simulation.py script is prepared to take advantage of it,
+                     to give us even faster and more accurate configuration values.
+                   
+            </p>
+            <h3>Having All The Equations Coded Up In simulation.py Makes Hangprinter More General</h3>
+            <p>
+                     The equations are really a large part of the value that the Hangprinter Project provides to the world.
+                     Having them coded up in Python is useful whenever one wants to make a plot or do a quick experiment.
+                   
+            </p>
+            <p>
+                     Having them coded up in Python also opens up for easily implementing good Hangprinter support
+                     in Klipper or other Python based firmwares in the future.
+                   
+            </p>
+            <p>
+                     That was all for today. I hope you will use and enjoy <a href="https://gitlab.com/tobben/auto-calibration-simulation-for-hangprinter">auto-calibration-simulation-for-hangprinter</a> for years to come.
+                   
+            </p>
+            <p>
+               - tobben
+               
+            </p>
+            <div style="display: none"><a class="u-url" href="https://torbjornludvigsen.com/blog/2022/index.html#hangprinter_project_79"></a><a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
+                  Torbj&oslash;rn Ludvigsen
+                  <img class="u-photo" src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG" alt="Torbj&oslash;rn Ludvigsen"></a><span class="p-summary">Solving Hangprinter's Biggest Problem</span></div><br><br><br></article>
+         <article class="h-entry">
+            <h1 class="p-name" id="hangprinter_project_78">Hangprinter v4 and Hangprinter v5</h1>
+            <div class="date">27-03-2022</div>
+            <time style="display:none" class="dt-published">2022-03-27T12:00:00Z</time>
+            <p>
+                     Hangprinter is a cable-driven robot.
+                     HP4 is the latest version.
+                   
+            </p>
+            <p>
+                     Goal for HP4 development was to create a reliable workhorse, that people enjoy using, for profit.
+                     That sounds a bit like magic.
+                     HP4, like any kind of magic, is complex and slow to develop.
+                     
+               <!--It's the kind of project that boards of directors love to shut down.-->
+                   
+            </p>
+            <p>
+                     I've made a list of HP4's features, as well as some plans for the v5.
+                   
+            </p>
+            <h3>&#127904; HP4's Unique Features &#127904;</h3>
+            <p>
+                     
+               <ul>
+                          
+                  <li>Space Below Is Completely Cleared When Parked</li>
+                          
                   <ul>
-                                 
-                     <li>Plastic Filament</li>
-                                 
-                     <li>Plastic Pellets</li>
-                                 
-                     <li>Clay</li>
-                                 
-                     <li>Pen-plotting (standard HP4 plotting tool available). (<a href="https://twitter.com/tobbelobb/status/1460974351931654144">1</a>)
+                               
+                     <li>Takes 5 Min to Park. (<a href="https://twitter.com/tobbelobb/status/1507390473706643456">1</a>, <a href="https://twitter.com/tobbelobb/status/1507394479501811717">2</a>)
+                     </li>
+                             
+                  </ul>
+                          
+                  <li>Supports Any Placement of Motor and Electronics, enabled by</li>
+                          
+                  <ul>
+                               
+                     <li>CAN Driven Communication</li>
+                               
+                     <li>All Axes Are Conceptually Identical (<a href="https://github.com/Duet3D/RepRapFirmware/pull/554">1</a>)
                      </li>
                                
+                     <li>Pre-Defined Placement is Also Avaliable as DXF/PDF (<a href="https://twitter.com/tobbelobb/status/1403282393784541191">1</a>)
+                     </li>
+                             
                   </ul>
-                            
-                  <li>Web GUI via Wifi</li>
-                            
-                  <li>Gcode Macros, User-Defined and Pre-Defined</li>
-                            
-                  <li>Mesh Bed Compensation With Mechanical Probe (<a href="https://twitter.com/tobbelobb/status/1458823899827871754">1</a>)
-                  </li>
-                            
-                  <li>Risk of Line Collision Detected Before Print (<a href="https://twitter.com/tobbelobb/status/1282801692757696513">1</a>, <a href="https://twitter.com/tobbelobb/status/1280787224519417856">2</a>)
-                  </li>
-                            
-                  <li>Stock Firmwares Means Updates Come For Free</li>
-                            
-                  <li>Torque Mode (<a href="https://vimeo.com/227891846">1</a>)
+                          
+                  <li>Slack Tolerance and Servicability, enabled by</li>
+                          
+                  <ul>
+                               
+                     <li>Thick Stiff Wear Resistant Lines (<a href="https://youtu.be/K_fQpvZ3oeA">1</a>)
+                     </li>
+                               
+                     <li>Completely Closed Line Paths</li>
+                               
+                     <li>Ceramic Eyelets &amp; U-shaped Bearings Everywhere</li>
+                               
+                     <li>Little Risk of Lines Falling Off, Tangling, or Getting Stuck</li>
+                               
+                     <li>Parts Along Line Path Can Be Mounted/Serviced Whithout Unthreading (<a href="https://youtu.be/CsXr_lqhI90">1</a>)
+                     </li>
+                             
+                  </ul>
+                          
+                  <li>High Speeds (~900 mm/s) (<a href="https://twitter.com/tobbelobb/status/1484209682420019206">1</a>), enabled by
                   </li>
                           
-               </ul>
-                       
-               <li>Safety, enabled by</li>
-                       
-               <ul>
-                            
-                  <li>Mechanical Line Release Mechanism (<a href="https://twitter.com/tobbelobb/status/1410903567473459202">1</a>)
-                  </li>
-                            
-                  <li>Low Max Current Through Motors</li>
-                            
-                  <li>Various Fault Detection Mechanisms in Driver Software</li>
-                            
-                  <li>Heat-resistant hose to protect electric wires from hot parts (<a href="https://twitter.com/tobbelobb/status/1444007666255384584">1</a>)
-                  </li>
-                            
-                  <li>Hoist &amp; Lower the Ceiling Unit Easily. No ladders required for maintenance. (<a href="https://twitter.com/tobbelobb/status/1428025129406238723">1</a>).
+                  <ul>
+                               
+                     <li>High Quality BLDC Motors</li>
+                               
+                     <li>Lots of Processing Power</li>
+                             
+                  </ul>
+                          
+                  <li>Self-Calibration (<a href="https://youtu.be/As3Y5J2NTGA">1</a>), enabled by
                   </li>
                           
-               </ul>
-                       
-               <li>Heavy Duty Effector</li>
-                       
-               <ul>
-                            
-                  <li>Gear Up/Down With Block &amp; Talley System. (<a href="https://twitter.com/tobbelobb/status/1428702006844305413">1</a>)
-                  </li>
-                            
-                  <li>Direct Connection Between Motors and Tip of Tool Head. (<a href="https://twitter.com/tobbelobb/status/1508519679970664459/video/1">1</a>, <a href="https://twitter.com/tobbelobb/status/1123626333958021122">2</a>)
+                  <ul>
+                               
+                     <li>Built-in Motion Tracking (<a href="https://twitter.com/tobbelobb/status/1466773203938852870">1</a>)
+                     </li>
+                               
+                     <li>Built-in Force Sensing (<a href="https://github.com/Duet3D/RepRapFirmware/pull/564">1</a>)
+                     </li>
+                               
+                     <li>Few Hand-Measurements are Needed</li>
+                             
+                  </ul>
+                          
+                  <li>High Precision and Accuracy (<a href="https://twitter.com/tobbelobb/status/1473344630842445832">1</a>, <a href="https://twitter.com/tobbelobb/status/1472947513191768065">2</a>, <a href="https://twitter.com/tobbelobb/status/1433384365023715328">3</a>, <a href="https://twitter.com/tobbelobb/status/1430218354971848713">4</a>, <a href="https://www.youtube.com/watch?v=qdRI0cvxagU">5</a>, <a href="https://twitter.com/tobbelobb/status/1383821508238143491">6</a>, <a href="https://twitter.com/tobbelobb/status/1130065984881070080">7</a>, <a href="https://twitter.com/tobbelobb/status/1128704338162016262">8</a>), enabled by:
                   </li>
                           
-               </ul>
-                       
-               <li>Smooth As Butter Motion System, enabled by</li>
-                       
-               <ul>
-                            
-                  <li>Belt Transmission Between Motor And Spool</li>
-                            
-                  <li>Anti-Cogging. Motor Drivers Cancel Out Unevenness Inside Motors. (<a href="https://twitter.com/tobbelobb/status/1405475942286376965">1</a>)
-                  </li>
+                  <ul>
+                               
+                     <li>Motion Tracking (<a href="https://twitter.com/tobbelobb/status/1466773203938852870">1</a>)
+                     </li>
+                               
+                     <li>Force Sensing (<a href="https://github.com/Duet3D/RepRapFirmware/pull/564">1</a>)
+                     </li>
+                               
+                     <li>Flex Compensation. (<a href="https://twitter.com/tobbelobb/status/1503840578236264455">1</a>, <a href="https://github.com/Duet3D/RepRapFirmware/pull/562">2</a>)
+                     </li>
+                               
+                     <li>Spool Buildup Compensation (<a href="https://twitter.com/tobbelobb/status/1084185594497064961">1</a>)
+                     </li>
+                               
+                     <li>Mechanical Bed Probe (<a href="https://twitter.com/tobbelobb/status/1458823899827871754">1</a>)
+                     </li>
+                               
+                     <li>Direct Connection Between Motors and Tip of Tool Head. (<a href="https://twitter.com/tobbelobb/status/1508519679970664459/video/1">1</a>, <a href="https://twitter.com/tobbelobb/status/1123626333958021122">2</a>)
+                     </li>
+                               
+                     <li>High Number &amp; Wide Apart Line Force Points Stabilizing Effector</li>
+                             
+                  </ul>
                           
-               </ul>
-                       
-               <li>Scales Up To Several Cubic Meters, enabled by</li>
-                       
-               <ul>
-                            
-                  <li>Automatic Length Control of Hanging Electrical Wires (<a href="https://twitter.com/tobbelobb/status/1451208751692894210">1</a>)
-                  </li>
-                            
-                  <li>Support for Extra Backing-Line</li>
-                            
-                  <li>Support for Changing Anchor Placements Manually During Print</li>
+                  <li>User Friendliness, enabled by</li>
                           
-               </ul>
-                       
-               <li>The Cheapest to Transport Big 3d Printer, enabled by</li>
-                       
-               <ul>
-                            
-                  <li>Being a cable driven robot. (<a href="https://twitter.com/tobbelobb/status/1497141161961664529">1</a>)
-                  </li>
+                  <ul>
+                               
+                     <li>Plug-and-Play Compatible With Wide Range of Tool Heads and Materials</li>
+                               
+                     <ul>
+                                    
+                        <li>Plastic Filament</li>
+                                    
+                        <li>Plastic Pellets</li>
+                                    
+                        <li>Clay</li>
+                                    
+                        <li>Pen-plotting (standard HP4 plotting tool available). (<a href="https://twitter.com/tobbelobb/status/1460974351931654144">1</a>)
+                        </li>
+                                  
+                     </ul>
+                               
+                     <li>Web GUI via Wifi</li>
+                               
+                     <li>Gcode Macros, User-Defined and Pre-Defined</li>
+                               
+                     <li>Mesh Bed Compensation With Mechanical Probe (<a href="https://twitter.com/tobbelobb/status/1458823899827871754">1</a>)
+                     </li>
+                               
+                     <li>Risk of Line Collision Detected Before Print (<a href="https://twitter.com/tobbelobb/status/1282801692757696513">1</a>, <a href="https://twitter.com/tobbelobb/status/1280787224519417856">2</a>)
+                     </li>
+                               
+                     <li>Stock Firmwares Means Updates Come For Free</li>
+                               
+                     <li>Torque Mode (<a href="https://vimeo.com/227891846">1</a>)
+                     </li>
+                             
+                  </ul>
                           
+                  <li>Safety, enabled by</li>
+                          
+                  <ul>
+                               
+                     <li>Mechanical Line Release Mechanism (<a href="https://twitter.com/tobbelobb/status/1410903567473459202">1</a>)
+                     </li>
+                               
+                     <li>Low Max Current Through Motors</li>
+                               
+                     <li>Various Fault Detection Mechanisms in Driver Software</li>
+                               
+                     <li>Heat-resistant hose to protect electric wires from hot parts (<a href="https://twitter.com/tobbelobb/status/1444007666255384584">1</a>)
+                     </li>
+                               
+                     <li>Hoist &amp; Lower the Ceiling Unit Easily. No ladders required for maintenance. (<a href="https://twitter.com/tobbelobb/status/1428025129406238723">1</a>).
+                     </li>
+                             
+                  </ul>
+                          
+                  <li>Heavy Duty Effector</li>
+                          
+                  <ul>
+                               
+                     <li>Gear Up/Down With Block &amp; Talley System. (<a href="https://twitter.com/tobbelobb/status/1428702006844305413">1</a>)
+                     </li>
+                               
+                     <li>Direct Connection Between Motors and Tip of Tool Head. (<a href="https://twitter.com/tobbelobb/status/1508519679970664459/video/1">1</a>, <a href="https://twitter.com/tobbelobb/status/1123626333958021122">2</a>)
+                     </li>
+                             
+                  </ul>
+                          
+                  <li>Smooth As Butter Motion System, enabled by</li>
+                          
+                  <ul>
+                               
+                     <li>Belt Transmission Between Motor And Spool</li>
+                               
+                     <li>Anti-Cogging. Motor Drivers Cancel Out Unevenness Inside Motors. (<a href="https://twitter.com/tobbelobb/status/1405475942286376965">1</a>)
+                     </li>
+                             
+                  </ul>
+                          
+                  <li>Scales Up To Several Cubic Meters, enabled by</li>
+                          
+                  <ul>
+                               
+                     <li>Automatic Length Control of Hanging Electrical Wires (<a href="https://twitter.com/tobbelobb/status/1451208751692894210">1</a>)
+                     </li>
+                               
+                     <li>Support for Extra Backing-Line</li>
+                               
+                     <li>Support for Changing Anchor Placements Manually During Print</li>
+                             
+                  </ul>
+                          
+                  <li>The Cheapest to Transport Big 3d Printer, enabled by</li>
+                          
+                  <ul>
+                               
+                     <li>Being a cable driven robot. (<a href="https://twitter.com/tobbelobb/status/1497141161961664529">1</a>)
+                     </li>
+                             
+                  </ul>
+                        
                </ul>
+                   
+            </p>
+            <p>
+                     That was 12 selling points for HP4.
+                     Nine of them are new since HP3.
+                     So HP4 is a cosmic upgrade.
+                   
+            </p>
+            <h3>&#128640; HP5's Planned Upgrades &#128640;</h3>
+            <p>
                      
-            </ul>
-                
-         </p>
-         <p>
-                  That was 12 selling points for HP4.
-                  Nine of them are new since HP3.
-                  So HP4 is a cosmic upgrade.
-                
-         </p>
-         <h3>&#128640; HP5's Planned Upgrades &#128640;</h3>
-         <p>
+               <ul>
+                          
+                  <li>More Compact While Printing, enabled by</li>
+                          
+                  <ul>
+                               
+                     <li>A Fifth Motion Axis, similar to the four we already have. Adding one more low anchor would allow better working angles, and
+                        hence less wasted space.
+                     </li>
+                               
+                     <li>A Narrower, Taller Effector</li>
+                             
+                  </ul>
+                          
+                  <li>Lower Price, enabled by</li>
+                          
+                  <ul>
+                               
+                     <li>New circuit boards that are not yet available.</li>
+                             
+                  </ul>
+                          
+                  <li>Support for House-Size Printing, enabled by</li>
+                          
+                  <ul>
+                               
+                     <li>New motor controller and driver boards that are not yet available. They can handle the larger currents that are needed.</li>
+                               
+                     <li>Scaled up parts in general.</li>
+                             
+                  </ul>
+                          
+                  <li>Simpler Setup, enabled by</li>
+                          
+                  <ul>
+                               
+                     <li>New motor controller and driver boards that are not yet available. Will remove need for step/dir wires and external encoders,
+                        and give better force data.
+                     </li>
+                               
+                     <li>The computer vision system finding initial marker positions automatically.</li>
+                               
+                     <li>Pre-calibrated low distortion cameras. Manual camera calibration is too much hassle.</li>
+                               
+                     <li>A Ready-to-buy Bed Surface, Possibly a Thin Film With LEDs or Retro-reflective circles built in</li>
+                             
+                  </ul>
+                          
+                  <li>Better Computer Vision, enabled by</li>
+                          
+                  <ul>
+                               
+                     <li>Using multiple cameras. Their data can be combined to more than halve the error by weighting, so each camera mostly measure
+                        position parallel to its own image plane, not along the depth-direction.
+                     </li>
+                               
+                     <li>Active LEDs used as markers</li>
+                               
+                     <li>Faster maker detection &amp; identification through not searching whole image, using threads, ID via Aruco tags, etc.</li>
+                             
+                  </ul>
+                          
+                  <li>Automatic Homing, enabled by</li>
+                          
+                  <ul>
+                               
+                     <li>Computer Vision, Force Sensing, Mechanical Probing, and Torque Mode used together.</li>
+                             
+                  </ul>
+                          
+                  <li>Press Power-Press Print Experience, enabled by</li>
+                          
+                  <ul>
+                               
+                     <li>Automatic Homing</li>
+                               
+                     <li>Tighter Integration of Computer Vision</li>
+                             
+                  </ul>
                   
-            <ul>
-                       
-               <li>More Compact While Printing, enabled by</li>
-                       
-               <ul>
-                            
-                  <li>A Fifth Motion Axis, similar to the four we already have. Adding one more low anchor would allow better working angles, and
-                     hence less wasted space.
+                          
+                  <li>Perfect Quality Control, enabled by</li>
+                          
+                  <ul>
+                               
+                     <li>Dynamic measurement and compensation for position and line tightness errors during print.</li>
+                             
+                  </ul>
+                          
+                  <li>Absolute Encoders. They can start up completely still and give stiffer motor axles, without adding cost (due to better circuit
+                     boards that are not yet available).
                   </li>
-                            
-                  <li>A Narrower, Taller Effector</li>
-                          
+                        
                </ul>
-                       
-               <li>Lower Price, enabled by</li>
-                       
-               <ul>
-                            
-                  <li>New circuit boards that are not yet available.</li>
-                          
-               </ul>
-                       
-               <li>Support for House-Size Printing, enabled by</li>
-                       
-               <ul>
-                            
-                  <li>New motor controller and driver boards that are not yet available. They can handle the larger currents that are needed.</li>
-                            
-                  <li>Scaled up parts in general.</li>
-                          
-               </ul>
-                       
-               <li>Simpler Setup, enabled by</li>
-                       
-               <ul>
-                            
-                  <li>New motor controller and driver boards that are not yet available. Will remove need for step/dir wires and external encoders,
-                     and give better force data.
-                  </li>
-                            
-                  <li>The computer vision system finding initial marker positions automatically.</li>
-                            
-                  <li>Pre-calibrated low distortion cameras. Manual camera calibration is too much hassle.</li>
-                            
-                  <li>A Ready-to-buy Bed Surface, Possibly a Thin Film With LEDs or Retro-reflective circles built in</li>
-                          
-               </ul>
-                       
-               <li>Better Computer Vision, enabled by</li>
-                       
-               <ul>
-                            
-                  <li>Using multiple cameras. Their data can be combined to more than halve the error by weighting, so each camera mostly measure
-                     position parallel to its own image plane, not along the depth-direction.
-                  </li>
-                            
-                  <li>Active LEDs used as markers</li>
-                            
-                  <li>Faster maker detection &amp; identification through not searching whole image, using threads, ID via Aruco tags, etc.</li>
-                          
-               </ul>
-                       
-               <li>Automatic Homing, enabled by</li>
-                       
-               <ul>
-                            
-                  <li>Computer Vision, Force Sensing, Mechanical Probing, and Torque Mode used together.</li>
-                          
-               </ul>
-                       
-               <li>Press Power-Press Print Experience, enabled by</li>
-                       
-               <ul>
-                            
-                  <li>Automatic Homing</li>
-                            
-                  <li>Tighter Integration of Computer Vision</li>
-                          
-               </ul>
+                   
+            </p>
+            <p>
+                     So the HP5 will be a big upgrade, although smaller than the HP4 was.
+                     Hopefully, HP5 will be designed and tested faster than HP4 was (which took four years).
+                   
+            </p>
+            <p>
+                     The HP4 has impressed me and shown very much promise so far.
+                     Compared to HP3 it's a dream to use.
+                     It has encouraged me to continue along this design path.
+                   
+            </p>
+            <p>
+                     I think it's successor, the Hangprinter v5, could become a real winner, a design that's very hard to optimize further,
+                     and a good candidate for mass manufacturing.
+                     I've written about local design optimums before.
+                     I think HP5 could be one.
+                   
+            </p>
+            <p>
+               - tobben
                
-                       
-               <li>Perfect Quality Control, enabled by</li>
-                       
-               <ul>
-                            
-                  <li>Dynamic measurement and compensation for position and line tightness errors during print.</li>
-                          
-               </ul>
-                       
-               <li>Absolute Encoders. They can start up completely still and give stiffer motor axles, without adding cost (due to better circuit
-                  boards that are not yet available).
-               </li>
+            </p>
+            <div style="display: none"><a class="u-url" href="https://torbjornludvigsen.com/blog/2022/index.html#hangprinter_project_78"></a><a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
+                  Torbj&oslash;rn Ludvigsen
+                  <img class="u-photo" src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG" alt="Torbj&oslash;rn Ludvigsen"></a><span class="p-summary">Hangprinter v4 and Hangprinter v5</span></div><br><br><br></article>
+         <article class="h-entry">
+            <h1 class="p-name" id="hangprinter_project_77">Projects as Subtractive Processes</h1>
+            <div class="date">25-01-2022</div>
+            <time style="display:none" class="dt-published">2022-01-25T12:00:00Z</time>
+            <p>
+                     Technical projects are often thought of as additive processes.
+                     Engineers will often say that they're makers or builders of new products or technologies,
+                     adding value to something, or that they're designing a new solution.
+                   
+            </p>
+            <p>
+                     Those are all useful ways to describe technology development,
+                     but it can also be good to describe projects with subtractive terms,
+                     as in "we're removing obstacles".
+                     I think I need some of that.
+                   
+            </p>
+            <figure>
+                     <a href="/blog/2022/bilder/wall_p1_shiny_1.JPG">
+                          <img src="/blog/2022/bilder/wall_p1_shiny_1_small.JPG" alt="" width="500" height="298">
+                        </a>
                      
-            </ul>
-                
-         </p>
-         <p>
-                  So the HP5 will be a big upgrade, although smaller than the HP4 was.
-                  Hopefully, HP5 will be designed and tested faster than HP4 was (which took four years).
-                
-         </p>
-         <p>
-                  The HP4 has impressed me and shown very much promise so far.
-                  Compared to HP3 it's a dream to use.
-                  It has encouraged me to continue along this design path.
-                
-         </p>
-         <p>
-                  I think it's successor, the Hangprinter v5, could become a real winner, a design that's very hard to optimize further,
-                  and a good candidate for mass manufacturing.
-                  I've written about local design optimums before.
-                  I think HP5 could be one.
-                
-         </p>
-         <p>
-            - tobben
-            
-         </p>
-         <div style="display: none"><a class="u-url" href="https://torbjornludvigsen.com/blog/2022/index.html#hangprinter_project_78"></a><time class="dt-published">27-3-2022</time><a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
-               Torbj&oslash;rn Ludvigsen
-               <img class="u-photo" src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG" alt="Torbj&oslash;rn Ludvigsen"></a><span class="p-summary">Hangprinter v4 and Hangprinter v5</span></div><br><br><br><h1 id="hangprinter_project_77">Projects as Subtractive Processes</h1>
-         <div class="date">25-1-2022</div>
-         <p>
-                  Technical projects are often thought of as additive processes.
-                  Engineers will often say that they're makers or builders of new products or technologies,
-                  adding value to something, or that they're designing a new solution.
-                
-         </p>
-         <p>
-                  Those are all useful ways to describe technology development,
-                  but it can also be good to describe projects with subtractive terms,
-                  as in "we're removing obstacles".
-                  I think I need some of that.
-                
-         </p>
-         <figure>
-                  <a href="/blog/2022/bilder/wall_p1_shiny_1.JPG">
-                       <img src="/blog/2022/bilder/wall_p1_shiny_1_small.JPG" alt="" width="500" height="298">
-                     </a>
-                  
-            <figcaption>
+               <figcaption>
+                        
+               </figcaption>
+                   
+            </figure>
+            <p>
+                     Let's make a little model of (or remove confusion about) projects in general, to explain the image above.
+                   
+            </p>
+            <p>
+                     Imagine that every technical project is carving out a hole in a wall that separates a user or consumer from something
+               desirable. <br>
+                   
+            </p>
+            <figure>
+                     <a href="/blog/2022/bilder/wall_p1_shiny_2.JPG">
+                          <img src="/blog/2022/bilder/wall_p1_shiny_2_small.JPG" alt="" width="500" height="322">
+                        </a>
                      
-            </figcaption>
-                
-         </figure>
-         <p>
-                  Let's make a little model of (or remove confusion about) projects in general, to explain the image above.
-                
-         </p>
-         <p>
-                  Imagine that every technical project is carving out a hole in a wall that separates a user or consumer from something
-            desirable. <br>
-                
-         </p>
-         <figure>
-                  <a href="/blog/2022/bilder/wall_p1_shiny_2.JPG">
-                       <img src="/blog/2022/bilder/wall_p1_shiny_2_small.JPG" alt="" width="500" height="322">
-                     </a>
-                  
-            <figcaption>
+               <figcaption>
+                        
+               </figcaption>
+                   
+            </figure>
+            <p>
+                     Obstacles can be categorized and layered. Different projects have different kinds and amounts of layers.
+                   
+            </p>
+            <figure>
+                     <a href="/blog/2022/bilder/wall_p2_shiny_1.JPG">
+                          <img src="/blog/2022/bilder/wall_p2_shiny_1_small.JPG" alt="" width="500" height="243">
+                        </a>
                      
-            </figcaption>
-                
-         </figure>
-         <p>
-                  Obstacles can be categorized and layered. Different projects have different kinds and amounts of layers.
-                
-         </p>
-         <figure>
-                  <a href="/blog/2022/bilder/wall_p2_shiny_1.JPG">
-                       <img src="/blog/2022/bilder/wall_p2_shiny_1_small.JPG" alt="" width="500" height="243">
-                     </a>
-                  
-            <figcaption>
+               <figcaption>
+                        
+               </figcaption>
+                   
+            </figure>
+            <p>
+                     Let's look at the lowest layer. Before one starts a project, it's important to learn if the desired outcome conflicts
+               with the laws of physics. Don't start a project where laws of physics stand between your user and success.
+                   
+            </p>
+            <p>
+                     So product creation is a subtractive process, removing obstacles between the user and some desirable outcome.
+                   
+            </p>
+            <p>
+                     To maximize the field of view for the consumer through the hole, we should shape it like this, ideally:
+                   
+            </p>
+            <figure>
+                     <a href="/blog/2022/bilder/wall_p3_shiny_1.JPG">
+                          <img src="/blog/2022/bilder/wall_p3_shiny_1_small.JPG" alt="" width="500" height="323">
+                        </a>
                      
-            </figcaption>
-                
-         </figure>
-         <p>
-                  Let's look at the lowest layer. Before one starts a project, it's important to learn if the desired outcome conflicts
-            with the laws of physics. Don't start a project where laws of physics stand between your user and success.
-                
-         </p>
-         <p>
-                  So product creation is a subtractive process, removing obstacles between the user and some desirable outcome.
-                
-         </p>
-         <p>
-                  To maximize the field of view for the consumer through the hole, we should shape it like this, ideally:
-                
-         </p>
-         <figure>
-                  <a href="/blog/2022/bilder/wall_p3_shiny_1.JPG">
-                       <img src="/blog/2022/bilder/wall_p3_shiny_1_small.JPG" alt="" width="500" height="323">
-                     </a>
-                  
-            <figcaption>
+               <figcaption>
+                        
+               </figcaption>
+                   
+            </figure>
+            <p>
+                     The field of view metaphor says that the more unknown or fundamental problems should be removed more thoroughly, or
+               require more work per user happiness.
+                   
+            </p>
+            <p>
+                     But product creation is a process. We need to plan some steps between start and finish.
+                   
+            </p>
+            <p>
+                     The process is often designed to secure sustainable funding throughout the development process, like this:
+                   
+            </p>
+            <figure>
+                     <a href="/blog/2022/bilder/wall_p4_shiny_1.JPG">
+                          <img src="/blog/2022/bilder/wall_p4_shiny_1_small.JPG" alt="" width="500" height="519">
+                        </a>
                      
-            </figcaption>
-                
-         </figure>
-         <p>
-                  The field of view metaphor says that the more unknown or fundamental problems should be removed more thoroughly, or
-            require more work per user happiness.
-                
-         </p>
-         <p>
-                  But product creation is a process. We need to plan some steps between start and finish.
-                
-         </p>
-         <p>
-                  The process is often designed to secure sustainable funding throughout the development process, like this:
-                
-         </p>
-         <figure>
-                  <a href="/blog/2022/bilder/wall_p4_shiny_1.JPG">
-                       <img src="/blog/2022/bilder/wall_p4_shiny_1_small.JPG" alt="" width="500" height="519">
-                     </a>
-                  
-            <figcaption>
+               <figcaption>
+                        
+               </figcaption>
+                   
+            </figure>
+            <p>
+                     A well known but ambitious project, like quantum computing or a space mission, will look like a pit dug down from above,
+                     at least for the first few years.
+                     This shape makes people expect breakthroughs.
+                   
+            </p>
+            <p>
+                     An in-house product development or research project, will look more like a cone shape drilling up from below.
+                     The shape of invisible ground work.
+                     This shape makes people confused and surprised.
+                   
+            </p>
+            <p>
+                     The ideal final shape of a hole can also be discussed.
+                     A heavily marketed product looks good from afar, like this:
+                   
+            </p>
+            <figure>
+                     <a href="/blog/2022/bilder/wall_p5_shiny_1.JPG">
+                          <img src="/blog/2022/bilder/wall_p5_shiny_1_small.JPG" alt="" width="500" height="514">
+                        </a>
                      
-            </figcaption>
-                
-         </figure>
-         <p>
-                  A well known but ambitious project, like quantum computing or a space mission, will look like a pit dug down from above,
-                  at least for the first few years.
-                  This shape makes people expect breakthroughs.
-                
-         </p>
-         <p>
-                  An in-house product development or research project, will look more like a cone shape drilling up from below.
-                  The shape of invisible ground work.
-                  This shape makes people confused and surprised.
-                
-         </p>
-         <p>
-                  The ideal final shape of a hole can also be discussed.
-                  A heavily marketed product looks good from afar, like this:
-                
-         </p>
-         <figure>
-                  <a href="/blog/2022/bilder/wall_p5_shiny_1.JPG">
-                       <img src="/blog/2022/bilder/wall_p5_shiny_1_small.JPG" alt="" width="500" height="514">
-                     </a>
-                  
-            <figcaption>
+               <figcaption>
+                        
+               </figcaption>
+                   
+            </figure>
+            <p>
+                     A more niched or indy-style product is invisible from afar, but looks good if you come up close, like this:
+                   
+            </p>
+            <figure>
+                     <a href="/blog/2022/bilder/wall_p5_shiny_2.JPG">
+                          <img src="/blog/2022/bilder/wall_p5_shiny_2_small.JPG" alt="" width="500" height="508">
+                        </a>
                      
-            </figcaption>
-                
-         </figure>
-         <p>
-                  A more niched or indy-style product is invisible from afar, but looks good if you come up close, like this:
-                
-         </p>
-         <figure>
-                  <a href="/blog/2022/bilder/wall_p5_shiny_2.JPG">
-                       <img src="/blog/2022/bilder/wall_p5_shiny_2_small.JPG" alt="" width="500" height="508">
-                     </a>
-                  
-            <figcaption>
+               <figcaption>
+                        
+               </figcaption>
+                   
+            </figure>
+            <p>
+                     I think Hangprinter has become a product with goodness that is almost completely unapproachable, like this:
+                   
+            </p>
+            <figure>
+                     <a href="/blog/2022/bilder/wall_p6_shiny_1.JPG">
+                          <img src="/blog/2022/bilder/wall_p6_shiny_1_small.JPG" alt="" width="500" height="201">
+                        </a>
                      
-            </figcaption>
-                
-         </figure>
-         <p>
-                  I think Hangprinter has become a product with goodness that is almost completely unapproachable, like this:
-                
-         </p>
-         <figure>
-                  <a href="/blog/2022/bilder/wall_p6_shiny_1.JPG">
-                       <img src="/blog/2022/bilder/wall_p6_shiny_1_small.JPG" alt="" width="500" height="201">
-                     </a>
-                  
-            <figcaption>
+               <figcaption>
+                        
+               </figcaption>
+                   
+            </figure>
+            <p>
+                     ... Or even this:
+                   
+            </p>
+            <figure>
+                     <a href="/blog/2022/bilder/wall_p6_shiny_2.JPG">
+                          <img src="/blog/2022/bilder/wall_p6_shiny_2_small.JPG" alt="" width="500" height="316">
+                        </a>
                      
-            </figcaption>
-                
-         </figure>
-         <p>
-                  ... Or even this:
-                
-         </p>
-         <figure>
-                  <a href="/blog/2022/bilder/wall_p6_shiny_2.JPG">
-                       <img src="/blog/2022/bilder/wall_p6_shiny_2_small.JPG" alt="" width="500" height="316">
-                     </a>
-                  
-            <figcaption>
-                     
-            </figcaption>
-                
-         </figure>
-         <p>
-                  Or actually, most of the people that I want to reach haven't even heard about Hangprinter.
-                  Like the shape in the first image of this post, with no opening at the top.
-                
-         </p>
-         <p>
-                  Among the hard-to-see and hard-to-use stars in the Hangprinter Project are the
-                  <a href="https://gitlab.com/hangprinter/line-collision-detector">line-collision-detector</a>,
-                  <a href="https://gitlab.com/tobben/hp-mark">hp-mark</a>, and
-                  <a href="https://gitlab.com/tobben/auto-calibration-simulation-for-hangprinter">auto-calibration-simulation-for-hangprinter</a>.
-                
-         </p>
-         <p>
-                  I'm eager to add other low level features like line force measurements and various kinds of online adaptive algorithms
-            to
-                  improve accuracy, precision, speed etc.
-                  Really eager.
-                
-         </p>
-         <p>
-                  The subtractive way to look at Hangprinter makes it easier for me to wait, and instead focus more
-                  on getting the existing features to fit together.
-                  Sticking to what I wrote in the previous <a href="https://hangprinter.org/newsletter/#post_33">Hangprinter newsletter</a>.
-                
-         </p>
-         <p>
-                  Anyways, I hope this home-made toy-model of a project can be useful or entertaining to you.
-                  Try it when you need to communicate project status or during project planning.
-                  Bye!
-                
-         </p>
-         <p>
-            - tobben
-            
-         </p>
-         <div style="display: none"><a class="u-url" href="https://torbjornludvigsen.com/blog/2022/index.html#hangprinter_project_77"></a><time class="dt-published">25-1-2022</time><a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
-               Torbj&oslash;rn Ludvigsen
-               <img class="u-photo" src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG" alt="Torbj&oslash;rn Ludvigsen"></a><span class="p-summary">Projects as Subtractive Processes</span></div><br><br><br><br><br><br><br><br><br><br><br><h1 id="Links">
+               <figcaption>
+                        
+               </figcaption>
+                   
+            </figure>
+            <p>
+                     Or actually, most of the people that I want to reach haven't even heard about Hangprinter.
+                     Like the shape in the first image of this post, with no opening at the top.
+                   
+            </p>
+            <p>
+                     Among the hard-to-see and hard-to-use stars in the Hangprinter Project are the
+                     <a href="https://gitlab.com/hangprinter/line-collision-detector">line-collision-detector</a>,
+                     <a href="https://gitlab.com/tobben/hp-mark">hp-mark</a>, and
+                     <a href="https://gitlab.com/tobben/auto-calibration-simulation-for-hangprinter">auto-calibration-simulation-for-hangprinter</a>.
+                   
+            </p>
+            <p>
+                     I'm eager to add other low level features like line force measurements and various kinds of online adaptive algorithms
+               to
+                     improve accuracy, precision, speed etc.
+                     Really eager.
+                   
+            </p>
+            <p>
+                     The subtractive way to look at Hangprinter makes it easier for me to wait, and instead focus more
+                     on getting the existing features to fit together.
+                     Sticking to what I wrote in the previous <a href="https://hangprinter.org/newsletter/#post_33">Hangprinter newsletter</a>.
+                   
+            </p>
+            <p>
+                     Anyways, I hope this home-made toy-model of a project can be useful or entertaining to you.
+                     Try it when you need to communicate project status or during project planning.
+                     Bye!
+                   
+            </p>
+            <p>
+               - tobben
+               
+            </p>
+            <div style="display: none"><a class="u-url" href="https://torbjornludvigsen.com/blog/2022/index.html#hangprinter_project_77"></a><a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
+                  Torbj&oslash;rn Ludvigsen
+                  <img class="u-photo" src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG" alt="Torbj&oslash;rn Ludvigsen"></a><span class="p-summary">Projects as Subtractive Processes</span></div><br><br><br></article><br><br><br><br><br><br><br><br><h1 id="Links">
             Links
             
          </h1>
