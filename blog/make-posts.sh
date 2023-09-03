@@ -9,8 +9,8 @@ saxon-xslt 2017/2017.xml blogtemplate.xsl > 2017/index.html
 saxon-xslt 2016/2016.xml blogtemplate.xsl > 2016/index.html
 saxon-xslt 2015/2015.xml blogtemplate.xsl > 2015/index.html
 saxon-xslt 2014/2014.xml blogtemplate.xsl > 2014/index.html
-saxon-xslt super-secret/super-secret.xml blogtemplate.xsl > super-secret/index.html
-saxon-xslt rust/rust.xml blogtemplate.xsl > rust/index.html
+saxon-xslt misc_attic/project-overhanger/project-overhanger.xml blogtemplate.xsl > misc_attic/project-overhanger/index.html
+saxon-xslt misc_attic/rust/rust.xml blogtemplate.xsl > misc_attic/rust/index.html
 
 # Let the main page be a copy of the 2023 page for now
 cp 2023/index.html index.html
