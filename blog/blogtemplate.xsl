@@ -105,25 +105,47 @@
 </div>
 <div id="MainContent">
   <xsl:for-each select="posts/post">
-    <h1>
-      <xsl:attribute name="id" >
-        <xsl:value-of select="./@id" />
-      </xsl:attribute>
-      <xsl:value-of select="./@heading" />
-    </h1>
-    <div class="date"><xsl:value-of select="./@date" /></div>
-    <xsl:copy-of select="./*" />
-    <p>
-      <xsl:choose>
-         <xsl:when test="./@signature">
-           <xsl:value-of select="./@signature" />
-         </xsl:when>
-         <xsl:otherwise>
-           - tobben
-         </xsl:otherwise>
-      </xsl:choose>
-    </p>
-    <br /><br /><br />
+    <article class="h-entry">
+      <h1 class="p-name">
+        <xsl:attribute name="id" >
+          <xsl:value-of select="./@id" />
+        </xsl:attribute>
+        <xsl:value-of select="./@heading" />
+      </h1>
+      <div class="date"><xsl:value-of select="./@date" /></div>
+      <time style="display:none" class="dt-published"><xsl:value-of select="concat(
+      substring(./@date, 7, 4), '-',
+      substring(./@date, 4, 2), '-',
+      substring(./@date, 1, 2),
+      'T12:00:00Z'
+      )" /></time>
+      <xsl:copy-of select="./*" />
+      <p>
+        <xsl:choose>
+           <xsl:when test="./@signature">
+             <xsl:value-of select="./@signature" />
+           </xsl:when>
+           <xsl:otherwise>
+             - tobben
+           </xsl:otherwise>
+        </xsl:choose>
+      </p>
+      <div style="display: none">
+        <a class="u-url">
+          <xsl:attribute name="href" >
+            <xsl:value-of select="concat('https://torbjornludvigsen.com/blog/', ../@year, '/index.html#', @id)" />
+          </xsl:attribute>
+        </a>
+        <a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
+          Torbjørn Ludvigsen
+          <img class="u-photo"
+               src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG"
+               alt="Torbjørn Ludvigsen" />
+        </a>
+        <span class="p-summary"><xsl:value-of select="./@heading" /></span>
+      </div>
+      <br /><br /><br />
+    </article>
   </xsl:for-each>
   <xsl:for-each select="posts/oldpost">
     <h1>
