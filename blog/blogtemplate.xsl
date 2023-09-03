@@ -113,30 +113,6 @@
         <xsl:value-of select="./@heading" />
       </h1>
       <div class="date"><xsl:value-of select="./@date" /></div>
-      <time style="display:none" class="dt-published">
-        <xsl:variable name="year" select="substring-after(substring-after(@date, '-'), '-')" />
-        <xsl:variable name="day">
-          <xsl:choose>
-            <xsl:when test="string-length(substring-before(@date, '-')) = 2">
-              <xsl:value-of select="substring-before(@date, '-')" />
-            </xsl:when>
-            <xsl:otherwise>
-              <xsl:value-of select="concat('0', substring-before(@date, '-'))" />
-            </xsl:otherwise>
-          </xsl:choose>
-        </xsl:variable>
-        <xsl:variable name="month">
-          <xsl:choose>
-            <xsl:when test="string-length(substring-before(substring-after(@date, '-'), '-')) = 2">
-              <xsl:value-of select="substring-before(substring-after(@date, '-'), '-')" />
-            </xsl:when>
-            <xsl:otherwise>
-              <xsl:value-of select="concat('0', substring-before(substring-after(@date, '-'), '-'))" />
-            </xsl:otherwise>
-          </xsl:choose>
-        </xsl:variable>
-        <xsl:value-of select="concat($year, '-', $month, '-', $day, 'T12:00:00Z')" />
-      </time>
       <xsl:copy-of select="./*" />
       <p>
         <xsl:choose>
@@ -149,6 +125,30 @@
         </xsl:choose>
       </p>
       <div style="display: none">
+        <time class="dt-published">
+          <xsl:variable name="year" select="substring-after(substring-after(@date, '-'), '-')" />
+          <xsl:variable name="day">
+            <xsl:choose>
+              <xsl:when test="string-length(substring-before(@date, '-')) = 2">
+                <xsl:value-of select="substring-before(@date, '-')" />
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:value-of select="concat('0', substring-before(@date, '-'))" />
+              </xsl:otherwise>
+            </xsl:choose>
+          </xsl:variable>
+          <xsl:variable name="month">
+            <xsl:choose>
+              <xsl:when test="string-length(substring-before(substring-after(@date, '-'), '-')) = 2">
+                <xsl:value-of select="substring-before(substring-after(@date, '-'), '-')" />
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:value-of select="concat('0', substring-before(substring-after(@date, '-'), '-'))" />
+              </xsl:otherwise>
+            </xsl:choose>
+          </xsl:variable>
+          <xsl:value-of select="concat($year, '-', $month, '-', $day, 'T12:00:00Z')" />
+        </time>
         <a class="u-url">
           <xsl:attribute name="href" >
             <xsl:value-of select="concat('https://torbjornludvigsen.com/blog/', ../@year, '/index.html#', @id)" />
