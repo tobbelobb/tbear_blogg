@@ -160,7 +160,7 @@
                src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG"
                alt="Torbjørn Ludvigsen" />
         </a>
-        <span class="p-summary"><xsl:value-of select="./@heading" /></span>
+        <span class="p-summary"><xsl:value-of select="./*[name()='p'][1]" /></span>
       </div>
       <br /><br /><br />
     </article>
