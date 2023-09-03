@@ -103,7 +103,7 @@
 <div id="SiteName">
   Reprap Blog <xsl:value-of select="posts/@year" />
 </div>
-<div id="MainContent">
+<div class="h-feed" id="MainContent">
   <xsl:for-each select="posts/post">
     <article class="h-entry">
       <h1 class="p-name">
