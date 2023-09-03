@@ -126,6 +126,13 @@
   </div>
   <script src="/js/darkmode.js"></script>
   <xsl:copy-of select="/subpage/*" />
+  <div class="h-card" style="display: none">
+    <a class="u-url" rel="me" href="https://www.torbjornludvigsen.com">torbjornludvigsen.com</a>
+    <span class="p-name" rel="me">Torbjørn Ludvigsen</span>
+    <span class="p-nickname">tobben</span>
+    <img class="u-photo" src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG" alt="Torbjørn Ludvigsen" />
+    <span class="p-locality">Gothenburg</span>
+  </div>
   <script src="/js/cart.js"></script>
   <script src="/js/lib.js"></script>
   <script src="/js/pages_script.js"></script>
