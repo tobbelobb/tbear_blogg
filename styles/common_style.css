@@ -164,7 +164,7 @@ nav {
 nav {
 	padding: 0 calc(calc(min(65ch, 100%) - 464px)/2);
 	margin: auto;
-	z-index: 3;
+	z-index: 10;
 }
 main {
 	padding: 0 calc(calc(min(65ch, 100%) - 464px)/2);
@@ -342,7 +342,7 @@ nav .navbar-right .my-dropdown > .link {
 .sticky {
 	position: sticky;
 	top: -57px;
-	z-index: 3;
+	z-index: 10;
 	transition: top 400ms ease-in-out;
 }
 
