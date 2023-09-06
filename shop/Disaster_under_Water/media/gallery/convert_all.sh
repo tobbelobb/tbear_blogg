@@ -1,0 +1,14 @@
+convert -resize 3008 Disaster_under_Water_front.JPG Disaster_under_Water_front_medium.JPG
+convert -resize 3008 Disaster_under_Water_left.JPG  Disaster_under_Water_left_medium.JPG
+convert -resize 3008 Disaster_under_Water_right.JPG Disaster_under_Water_right_medium.JPG
+convert -resize 3008 Disaster_under_Water_back.JPG  Disaster_under_Water_back_medium.JPG
+
+convert -resize 500 Disaster_under_Water_front.JPG Disaster_under_Water_front_small.JPG
+convert -resize 500 Disaster_under_Water_left.JPG  Disaster_under_Water_left_small.JPG
+convert -resize 500 Disaster_under_Water_right.JPG Disaster_under_Water_right_small.JPG
+convert -resize 500 Disaster_under_Water_back.JPG  Disaster_under_Water_back_small.JPG
+
+avifenc Disaster_under_Water_back_small.JPG  -o Disaster_under_Water_back_small.avif
+avifenc Disaster_under_Water_left_small.JPG  -o Disaster_under_Water_left_small.avif
+avifenc Disaster_under_Water_right_small.JPG -o Disaster_under_Water_right_small.avif
+avifenc Disaster_under_Water_front_small.JPG -o Disaster_under_Water_front_small.avif

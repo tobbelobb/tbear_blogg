@@ -1,0 +1,4 @@
+convert -brightness-contrast 10x0 Disaster_under_Water_front.JPG Disaster_under_Water_front.JPG
+convert -brightness-contrast 10x0 Disaster_under_Water_left.JPG Disaster_under_Water_left.JPG
+convert -brightness-contrast 10x0 Disaster_under_Water_right.JPG Disaster_under_Water_right.JPG
+convert -brightness-contrast 10x0 Disaster_under_Water_back.JPG Disaster_under_Water_back.JPG
