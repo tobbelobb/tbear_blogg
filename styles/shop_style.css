@@ -118,14 +118,14 @@ nav {
 */
 
 #background-2 {
-	background-image: url('/shop/media/Disaster_under_Water_back_medium.JPG');
+	background-image: url('/shop/media/Disaster_under_Water_back_shotwell_bit_brighter3_colder.JPG');
 	background-image: -webkit-image-set(
-		url("/shop/media/Disaster_under_Water_back_medium.avif"),
-		url("/shop/media/Disaster_under_Water_back_medium.JPG")
+		url("/shop/media/Disaster_under_Water_back_shotwell_bit_brighter3_colder.avif"),
+		url("/shop/media/Disaster_under_Water_back_shotwell_bit_brighter3_colder.JPG")
 	);
 	background-image: image-set(
-		url("/shop/media/Disaster_under_Water_back_medium.avif") type("image/avif"),
-		url("/shop/media/Disaster_under_Water_back_medium.JPG") type("image/png")
+		url("/shop/media/Disaster_under_Water_back_shotwell_bit_brighter3_colder.avif") type("image/avif"),
+		url("/shop/media/Disaster_under_Water_back_shotwell_bit_brighter3_colder.JPG") type("image/png")
 	);
 	background-position: 74% 7%;
 	--image-width: 1000;
