@@ -137,22 +137,22 @@ nav {
 }
 
 #background-3 {
-	background-image: url('/shop/media/Corals_2_and_1_medium.JPG');
+	background-image: url('/shop/media/Corals_1_and_2_orig_shotwell_zout_br.JPG');
 	background-image: -webkit-image-set(
-		url("/shop/media/Corals_2_and_1_medium.avif"),
-		url("/shop/media/Corals_2_and_1_medium.JPG")
+		url("/shop/media/Corals_1_and_2_orig_shotwell_zout_br.avif"),
+		url("/shop/media/Corals_1_and_2_orig_shotwell_zout_br.JPG")
 	);
 	background-image: image-set(
-		url("/shop/media/Corals_2_and_1_medium.avif") type("image/avif"),
-		url("/shop/media/Corals_2_and_1_medium.JPG") type("image/png")
+		url("/shop/media/Corals_1_and_2_orig_shotwell_zout_br.avif") type("image/avif"),
+		url("/shop/media/Corals_1_and_2_orig_shotwell_zout_br.JPG") type("image/png")
 	);
-	background-position: 74% 7%;
-	--image-width: 1000;
-	--image-height: 1000;
+	background-position: 50% 7%;
+	--image-width: 6348;
+	--image-height: 4000;
 	--highlight-width-ratio: 1.26;
 	--highlight-height-ratio: 0.31;
-	--highlight-left-position-ratio: 0.05;
-	--highlight-top-position-ratio: 0.05;
+	--highlight-left-position-ratio: -0.13;
+	--highlight-top-position-ratio: 0.155;
 }
 
 #background-4 {
