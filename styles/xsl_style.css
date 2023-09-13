@@ -119,3 +119,6 @@ td a{
 		text-align:right;
 	}
 }
+.story-link {
+	text-decoration: none;
+}

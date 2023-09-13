@@ -6,37 +6,48 @@
   <div id="MainContent">
     <p>
       Torbjørn Ludvigsen is an engineer, inventor and artist residing in Gothenburg, Sweden.
-      He is known as the inventor of Hangprinter, which he started developing during his Master studies in physics 2014.
-      He belives the society benefits from
-      <a href="https://reprap.org">RepRap</a>
+      He is known as the inventor of the Hangprinter, which he started developing during his Master's studies in physics in 2014.
+      He believes society benefits from
+      <a class="story-link" href="https://reprap.org">RepRap</a>
       and
-      <a href="https://en.wikipedia.org/wiki/Open_source">open source</a>
-      technology as a way to speed up technical development and make it more available for common people.
-      He has therefore published all his work under open source licences since the begining and built a community around it, see
-      <a href="https://hangprinter.org">hangprinter.org</a>.
-      On his
-      <a href="/blog">blog</a>
-      you can read about technical development issues and his thoughts in general around his work.
-      Recently Hangprinter was covered in several
-      <a href="https://3dprintingindustry.com/news/hangprinter-inventor-successfully-challenges-ornl-skybaam-patent-attempt-223803/">newspapers</a>
-      for winning a patent case, with crowdfunded support.
+      <a class="story-link" href="https://en.wikipedia.org/wiki/Open_source">open source</a>
+      technology since they speed up technical development and are readily available for common people.
     </p>
     <p>
-      He has also invented some lesser known features, like
-      <a href="https://torbjornludvigsen.com/blog/2020/#hangprinter_project_64">hp-mark</a>,
-      a visual position mesurement system originally ment to facilitate the calibration process of Hangprinter and
-      <a href="https://torbjornludvigsen.com/blog/2020/#hangprinter_project_63">line collision detector</a>.
+      He has published all his work under open-source licences and built a community around the Hangprinter.
+      See
+      <a class="story-link" href="https://hangprinter.org">hangprinter.org</a>
+      for further info about the Hangprinter Community.
+      You can read about technical development, plans, and reflections on his <a class="story-link" href="/blog">blog</a>.
+      Hangprinter was recently covered in several
+      <a class="story-link" href="https://3dprintingindustry.com/news/hangprinter-inventor-successfully-challenges-ornl-skybaam-patent-attempt-223803/">newspapers</a>
+      for winning a patent case with crowdfunded support.
     </p>
     <p>
-      In recent years he has started using his own modern technology to create artwork that he loves.
-      As a sailor growing up at the coast, he takes inspiration from the sea.
-      "I want to make things that I want in my own home, and things that I want to give as a gift to my loved ones", he says.
+      During his work on the Hangprinter he has also invented some related technology that has turned out generally useful, like
+      <ul>
+        <li>
+          <a class="story-link" href="https://torbjornludvigsen.com/blog/2020/#hangprinter_project_64">hp-mark</a>,
+          a visual position measurement system originally built to facilitate
+          the calibration process of the Hangprinter, and
+        </li>
+        <li>
+          <a class="story-link" href="https://torbjornludvigsen.com/blog/2020/#hangprinter_project_63">line collision detector</a>,
+          a computer program that can quickly determine if the cables of a
+          cable-driven robot will collide with the object during layer-by-layer manufacturing.
+        </li>
+      </ul>
     </p>
     <p>
-      Check out more of his artwork
-      <a href="/shop">here</a>.
+      He has recently started using his modern technology to create artwork he loves.
+      As a sailor growing up on the coast, he takes inspiration from the sea.
+      "I want to make things that I want in my own home and things that I want to give as a gift to my loved ones", he says.
     </p>
-    <a href="lighthouse_cropped.jpg"><img src="lighthouse_cropped_small.jpg" class="about-image" /></a>
+    <p>
+      Check out some of his artwork
+      <a class="story-link" href="/shop">here</a>.
+    </p>
+    <a class="story-link" href="lighthouse_cropped.jpg"><img src="lighthouse_cropped_small.jpg" class="about-image" /></a>
     <br /><br /><br /><br /><br /><br /><br /><br />
   </div>
 </subpage>
