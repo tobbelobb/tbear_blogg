@@ -63,20 +63,27 @@ body.light {
 .link {
 	color: var(--clr-text);
 }
+.snipcart-cart-summary-side .snipcart-item-custom-fields {
+	display: none;
+}
 body.dark {
 	color-scheme: dark;
 	background-color: var(--clr-dark);
 	color: var(--clr-text-darkmode);
-  /* Snipcart */
-  --bgColor-modal: var(--clr-dark);
-  /*--color-default: var(--clr-light);*/
-  --bgColor-input: rgb(240, 240, 240);
+	/* Snipcart */
+	--bgColor-modal: var(--clr-dark);
+	/*--color-default: var(--clr-light);*/
+	--bgColor-input: rgb(240, 240, 240);
 }
 body.dark .buttontext {
-  color: var(--clr-text-darkmode);
+	color: var(--clr-text-darkmode);
 }
-body.dark .snipcart-cart__footer .snipcart-summary-fees {
-  color: var(--clr-text-darkmode);
+body.dark .snipcart-cart-summary-side .snipcart-cart__footer .snipcart-summary-fees {
+	color: var(--eerie-black);
+	display: none;
+}
+body.dark  .snipcart-cart__footer .snipcart-summary-fees {
+	color: var(--clr-text-darkmode);
 }
 body.dark #snipcart .snipcart-item-line {
 	color: var(--eerie-black);

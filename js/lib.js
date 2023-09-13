@@ -84,6 +84,9 @@ function handleCartUpdates() {
     Snipcart.events.on("item.added", (item) => {
       updateCartDisplay();
     });
+    Snipcart.events.on("item.updated", (item) => {
+      updateCartDisplay();
+    });
     Snipcart.events.on("cart.reset", (cartState) => {
       updateCartDisplay();
     });
