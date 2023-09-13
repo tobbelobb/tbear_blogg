@@ -71,37 +71,21 @@ body .img_wrapper > h2 {
 
 body.dark .img_wrapper > h2, body.dark .img_wrapper > h1 {
 	mix-blend-mode: difference;
-	color: #ff0000;
+	color: rgb(255, 38, 38);
 }
 
 body.dark .img_wrapper > h2.complement_clr, body.dark .img_wrapper > h1.complement_clr {
 	mix-blend-mode: difference;
-	color: #07bb92;
+	color: rgb(80, 248, 210);
 }
 
 body.light .img_wrapper > h2, body.light .img_wrapper > h1 {
 	color: var(--clr-light);
-	/*color: #ffffff;*/
-	/*color: #ffdcc4;*/
 }
 
 body.light .img_wrapper > h2.complement_clr, body.light .img_wrapper > h1.complement_clr {
 	color: var(--clr-light);
-	/*color: #707070;*/
-	/*color: #e7e7e7*/
 }
-
-/*
-body.light .img_wrapper > h2.complement_clr, body.light .img_wrapper > h1.complement_clr {
-	  color: #ffffff;
-	  -webkit-text-stroke-width: unset;
-	  -webkit-text-stroke-color: rgba(0,0,0,1.0);
-}
-body.light .img_wrapper > h2, body.light .img_wrapper > h1 {
-	  mix-blend-mode: overlay;
-	  -webkit-text-stroke-width: thin;
-}
-*/
 
 .image-link-overlay {
 	position: absolute;
