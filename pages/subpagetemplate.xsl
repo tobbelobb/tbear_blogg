@@ -77,11 +77,6 @@
         <li class="navbar-left">
           <a href="/">Torbjørn</a>
         </li>
-        <li>
-          <a href="/shop">
-            Shop
-          </a>
-        </li>
         <li class="navbar-right">
           <div class="my-dropdown" data-dropdown="">
             <button class="link" data-dropdown-toggle="">Menu</button>
