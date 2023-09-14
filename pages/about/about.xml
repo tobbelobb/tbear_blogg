@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="subpagetemplate.xsl"?>
-<subpage name="story" cname="Story" description="Story About Torbjørn and Hangprinter">
+<subpage name="about" cname="About" description="About Torbjørn Ludvigsen and Hangprinter">
   <div id="SiteName" style="text-align:center;">
   </div>
   <div id="MainContent">
@@ -8,29 +8,30 @@
       Torbjørn Ludvigsen is an engineer, inventor and artist residing in Gothenburg, Sweden.
       He is known as the inventor of the Hangprinter, which he started developing during his Master's studies in physics in 2014.
       He believes society benefits from
-      <a class="story-link" href="https://reprap.org">RepRap</a>
+      <a class="about-link" href="https://reprap.org">RepRap</a>
       and
-      <a class="story-link" href="https://en.wikipedia.org/wiki/Open_source">open source</a>
+      <a class="about-link" href="https://en.wikipedia.org/wiki/Open_source">open source</a>
       technology since they speed up technical development and are readily available for common people.
     </p>
     <p>
       Because of this, he has published all his work under open-source licences and built a
-      <a class="story-link" href="https://hangprinter.org">community</a>
+      <a class="about-link" href="https://hangprinter.org">community</a>
       around the Hangprinter.
-      You can read about technical development, plans, and reflections on his <a class="story-link" href="/blog">blog</a>.
+      You can read about technical development, plans, and reflections on his
+      <a class="about-link" href="/blog">blog</a>.
       Hangprinter was recently covered in several
-      <a class="story-link" href="https://3dprintingindustry.com/news/hangprinter-inventor-successfully-challenges-ornl-skybaam-patent-attempt-223803/">newspapers</a>
+      <a class="about-link" href="https://3dprintingindustry.com/news/hangprinter-inventor-successfully-challenges-ornl-skybaam-patent-attempt-223803/">newspapers</a>
       for winning a patent case with crowdfunded support.
     </p>
     <p>
       During his work on the Hangprinter he has also invented some related technology that has turned out generally useful, like
       <ul>
         <li>
-          <a class="story-link" href="https://torbjornludvigsen.com/blog/2020/#hangprinter_project_64">hp-mark</a>,
+          <a class="about-link" href="https://torbjornludvigsen.com/blog/2020/#hangprinter_project_64">hp-mark</a>,
           a visual positioning system initially for Hangprinter calibration, and
         </li>
         <li>
-          <a class="story-link" href="https://torbjornludvigsen.com/blog/2020/#hangprinter_project_63">line collision detector</a>,
+          <a class="about-link" href="https://torbjornludvigsen.com/blog/2020/#hangprinter_project_63">line collision detector</a>,
           software that anticipates cable interference during layer-by-layer manufacturing with any cable-driven robot.
         </li>
       </ul>
@@ -42,8 +43,8 @@
     </p>
     <p>
       Check out some of his artwork
-      <a class="story-link" href="/shop">here</a>.
+      <a class="about-link" href="/shop">here</a>.
     </p>
-    <a class="story-link" href="lighthouse_cropped.jpg"><img src="lighthouse_cropped_small.jpg" class="about-image" /></a>
+    <a class="about-link" href="lighthouse_cropped.jpg"><img src="lighthouse_cropped_small.jpg" class="about-image" /></a>
   </div>
 </subpage>

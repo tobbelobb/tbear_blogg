@@ -6,10 +6,10 @@
             indent="yes" />
 <var:allNavPages>
   <page cname="Home" url="/" />
+  <page cname="Shop" url="/pages/shop" />
   <page cname="Blog" url="/blog" />
+  <page cname="About" url="/pages/about" />
   <page cname="Donate" url="/pages/donate" />
-  <page cname="About" url="/pages/story" />
-  <page cname="Links" url="/pages/links" />
 </var:allNavPages>
 
 <xsl:template match="/">
@@ -106,8 +106,8 @@
               <a href="/blog" data-dropdown-toggle="">
                 Blog
               </a>
-              <a href="/pages/story" data-dropdown-toggle="">
-                Story
+              <a href="/pages/about" data-dropdown-toggle="">
+                About
               </a>
               <a href="/pages/donate" data-dropdown-toggle="">
                 Donate
