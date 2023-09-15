@@ -151,12 +151,12 @@ nav {
 	width: 100%;
 }
 nav {
-	padding: 0 calc(calc(min(65ch, 100%) - 464px)/2);
+	padding: 0 calc((min(65ch, 100%) - 464px)/2);
 	margin: auto;
 	z-index: 10;
 }
 main {
-	padding: 0 calc(calc(min(65ch, 100%) - 464px)/2);
+	padding: 0 calc((min(65ch, 100%) - 464px)/2);
 	width: min(65ch, 100%);
 	margin: auto;
 }
@@ -164,11 +164,6 @@ main {
 *::before,
 *::after {
 	box-sizing: border-box;
-}
-
-h2, h3, p, form, .buy-button {
-	padding-left: 10px;
-	padding-right: 10px;
 }
 
 button,

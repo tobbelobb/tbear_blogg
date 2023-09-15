@@ -163,3 +163,9 @@ label {
 textarea.form-control {
 	min-height: calc(1.5em + .75rem + 2px);
 }
+
+h2, h3, p, form {
+	max-width: 93%;
+	margin-left: auto;
+	margin-right: auto;
+}
