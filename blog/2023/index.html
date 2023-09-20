@@ -70,11 +70,206 @@
       </div>
       <div class="h-feed" id="MainContent">
          <article class="h-entry">
+            <h1 class="p-name" id="hangprinter_project_82">Fifth Motion Axis: Flex Compensation</h1>
+            <div class="date">20-9-2023</div>
+            <p>
+               The fifth motion axis is a big feature I've planned for the Hangprinter v5.
+               I'm adding another low anchor.
+                   
+            </p>
+            <figure>
+                     <a href="/blog/2023/bilder/HP5_first_sketch.png">
+                          <img src="/blog/2023/bilder/HP5_first_sketch_small.png" alt="" width="500" height="501">
+                        </a>
+                     
+               <figcaption>
+                          A first sketch of Hangprinter version 5.
+                        
+               </figcaption>
+                   
+            </figure>
+            <p>
+                     CAD work happens on the <a href="https://gitlab.com/tobben/hangprinter/-/tree/version_5">version_5</a> branch.
+                     Full firmware support was implemented in collaboration with jtimon on Github,
+                     and has already been merged into ReprapFirmware.
+                     See the merged pull request
+                     <a href="https://github.com/Duet3D/RepRapFirmware/pull/606">here</a>.
+                   
+            </p>
+            <p>
+                     One of the tricky parts was finding a good flex compensation.
+                   
+            </p>
+            <h3>Flex Compensation</h3>
+            <p>
+                     To understand how Hangprinter's flex compensation works, imagine all lines to be (stiff, linear) springs.
+                     In the image above, imagine the mover is not moving, and the lines are almost slack, just barely not sagging.
+                   
+            </p>
+            <p>
+                     Now imagine that, the compensation algorithm wants to tighten the lines.
+                     It wants to wind in some millimeters of line onto each spool to set the whole system under tension.
+                     However, the compensation algorithm is not allowed to pull the mover out of position.
+                     The mover must remain still.
+                   
+            </p>
+            <p>
+                     Finding a set of five lengths that achieve this is a basic problem of
+                     <a href="https://en.wikipedia.org/wiki/Statics">statics</a>.
+                     We solve a system to balance out six forces, five from lines, and one from gravity pulling the mover.
+                   
+            </p>
+            <p>
+                     Since we include gravity there, the algorithm really does two things:
+                     
+               <ol>
+                          
+                  <li>Set correct pre-tension in all positions, giving better accuracy.</li>
+                          
+                  <li>Compensating gravity, which also improves accuracy.</li>
+                        
+               </ol>
+                   
+            </p>
+            <p>
+                     Finding solutions to the statics problem means solving an over-determined linear system.
+                     We get rid of the over-determination by splitting the system into two: pre-tension and gravity,
+                     and then each of those into four, setting each of the lower anchor's forces to zero in turn.
+                     The eight solutions can then be combined in any linear way to form a valid solution.
+                   
+            </p>
+            <p>
+                     However, "in any linear way" means there are infinitely many valid solutions, in each point in the build volume! &#128562;
+                     I found it tricky to decide which solutions to use, how to weigh the linear combination.
+                   
+            </p>
+            <p>
+                     I decided to determine pre-tension with two (user-configurable) constants: max-force and target-force.
+                     But I also needed to distribute the forces between the four lower anchors in "a good way".
+                     Key to getting it good was to scale the pre-tension solutions so all have equal max force.
+                     I don't understand exactly why that works so well,
+                     but I'll use a plot to explain why the force distribution it creates is so good.
+                   
+            </p>
+            <p>
+                     The four low anchors all have similar plots to each other, so I show only the A-anchor one.
+                     The top anchor has its own compensation pattern, but I'll focus only on the low anchors in this post.
+                     Full details are <a href="https://gitlab.com/tobben/hangprinter-flex-compensation/-/blob/21af6cba194c24cb8a9c5d5588664adba10adf90/flex.cpp#L56">here</a>.
+                   
+            </p>
+            <figure>
+                     <a href="/blog/2023/bilder/Compensation_forces.png">
+                          <img src="/blog/2023/bilder/Compensation_forces_small.png" alt="" width="500" height="389">
+                        </a>
+                     
+               <figcaption>
+                          The xy-axis is the HP5's build surface [mm].
+                          The z-axis is the amount of pull in the A-lines, measured in Newtons.
+                          The A-anchor is situated at (0, -1500, 0), right where the force reaches a max of 120 N.
+                          At the origin, the A-force is at target-force, which is 20 N in this plot.
+                        
+               </figcaption>
+                   
+            </figure>
+            <p>
+                     Here are the good features that I looked for in my solution were, that can be also seen in the plot:
+                     
+               <ul>
+                          
+                  <li>Forces are generally small near the middle of the reachable plane (the area spanned by the four low anchors).</li>
+                          
+                  <li>Forces are generally bigger towards the edges of the reachable plane. We want to spend our main effort on counteracting the
+                     pull of gravity that drags the effector towards the middle,
+                                 and otherwise keep forces as small as possible.
+                  </li>
+                          
+                  <li>Forces are generally smaller the further away from the anchor one gets. The anchors closest to the mover will generally be
+                     best able to control it,
+                                 so the furthest anchor should gently "give up", without going completely slack, and the closer anchors should
+                     gradually "take over" by applying more force.
+                  </li>
+                          
+                  <li>The surface is smooth, there are no sudden changes of force.</li>
+                          
+                  <li>Trying to leave the reachable plane should never happen, other code takes care of that.
+                                 If it happens anyway, the user is in a very bad situation.
+                                 We therefore want compensation target forces to fall off smoothly but rapidly outside the reachable plane.
+                  </li>
+                        
+               </ul>
+                   
+            </p>
+            <p>
+                     But forces doesn't tell the whole story, since the lines are modelled to be springs and these lines/springs
+                     change length and therefore stiffness across the build volume.
+                     The following two plots show the effect of enabling flex compensation, counting line length, not force.
+                   
+            </p>
+            <figure>
+                     <a href="/blog/2023/bilder/Compensation_distances_from_above.png">
+                          <img src="/blog/2023/bilder/Compensation_distances_from_above_small.png" alt="" width="500" height="456">
+                        </a>
+                     
+               <figcaption>
+                          The xy-axis is the HP5's build surface [mm].
+                          The z-axis is the amount of pull in the A-lines measured in line length [mm].
+                          The A-anchor is situated at (0, -1500, 0), right where the two blue areas meet.
+                          Blue means that the algorithm will compensate by pulling more line in on the spool.
+                          Red means releasing more line. The dark red area is flat because the algorithm ha no more pre-tensioned
+                          line to release, and it will refuse to let the line go slack.
+                        
+               </figcaption>
+                   
+            </figure>
+            <figure>
+                     <a href="/blog/2023/bilder/Compensation_distances_from_side.png">
+                          <img src="/blog/2023/bilder/Compensation_distances_from_side_small.png" alt="" width="500" height="436">
+                        </a>
+                     
+               <figcaption>
+                          The x-axis is the HP5's y-axis (sorry) [mm].
+                          The z-axis is the amount of pull in the A-lines measured in line length [mm].
+                          The A-anchor is situated at (0, -1500, 0), to the very left in the plot.
+                          We see that the deepest red area is really flat, and we can only release ca 4 mm of line.
+                          This means the machine is assumed to start with 4 mm of pre-tension in the A-lines when homed.
+                          We also see that the maximum amount of compensation is an additional ca 14 mm of line compared
+                          to having no compensation.
+                        
+               </figcaption>
+                   
+            </figure>
+            <p>
+                     I had really planned to write a little about the five-anchor
+                     <a href="https://gitlab.com/tobben/hangprinter-forward-transform">forward transform</a>, and how all of this was
+                     fed into the
+                     <a href="https://gitlab.com/tobben/auto-calibration-simulation-for-hangprinter/-/tree/five_anchors?ref_type=heads">auto-calibration-simulation-for-hangprinter</a> to get auto calibration with a five-anchor Hangprinter.
+                     Maybe even talk a little about how
+                     <a href="https://gitlab.com/tobben/auto-calibration-simulation-for-hangprinter/-/merge_requests/2">adding a Kalman filter</a>
+                     to the auto-calibration could make it way more automatic and easy to use.
+                   
+            </p>
+            <p>
+                     However, I'm out of writing time and this post is a bit heavy.
+                     So let's talk about that some other time.
+                   
+            </p>
+            <p>
+               - tobben
+               
+            </p>
+            <div style="display: none">
+               <time class="dt-published">2023-09-20T12:00:00Z</time><a class="u-url" href="https://torbjornludvigsen.com/blog/2023/index.html#hangprinter_project_82"></a><a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
+                  Torbj&oslash;rn Ludvigsen
+                  <img class="u-photo" src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG" alt="Torbj&oslash;rn Ludvigsen"></a><span class="p-summary">
+                  The fifth motion axis is a big feature I've planned for the Hangprinter v5.
+                  I'm adding another low anchor.
+                      </span></div><br><br><br></article>
+         <article class="h-entry">
             <h1 class="p-name" id="hangprinter_project_81">Where I'm Going With This</h1>
             <div class="date">25-8-2023</div>
             <p>
-               I've started working on version 5 of Hangprinter, the HP5.
-               I plan to sell it as a kit once it's ready.
+                     I've started working on version 5 of Hangprinter, the HP5.
+                     I plan to sell it as a kit once it's ready.
                    
             </p>
             <p>
@@ -213,8 +408,8 @@
                <time class="dt-published">2023-08-25T12:00:00Z</time><a class="u-url" href="https://torbjornludvigsen.com/blog/2023/index.html#hangprinter_project_81"></a><a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
                   Torbj&oslash;rn Ludvigsen
                   <img class="u-photo" src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG" alt="Torbj&oslash;rn Ludvigsen"></a><span class="p-summary">
-                  I've started working on version 5 of Hangprinter, the HP5.
-                  I plan to sell it as a kit once it's ready.
+                        I've started working on version 5 of Hangprinter, the HP5.
+                        I plan to sell it as a kit once it's ready.
                       </span></div><br><br><br></article>
          <article class="h-entry">
             <h1 class="p-name" id="hangprinter_project_80">Patent Got Narrowed</h1>
