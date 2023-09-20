@@ -1,6 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
 <posts year="2023">
+  <post id="hangprinter_project_82" heading="Adding a Fifth Motion Axis" date="20-9-2023">
+    <p>
+      The fifth motion axis is a big feature I've planned for the Hangprinter v5.
+      I'm adding another low anchor.
+    </p>
+    <figure>
+      <a href="/blog/2023/bilder/HP5_first_sketch.png">
+        <img src="/blog/2023/bilder/HP5_first_sketch_small.png" alt="" width="500" height="501"/>
+      </a>
+      <figcaption>
+        A first sketch of Hangprinter version 5.
+      </figcaption>
+    </figure>
+    <p>
+      Full support was implemented in collaboration with jtimon on Github,
+      and has already been merged into ReprapFirmware.
+      See the merged pull request
+      <a href="https://github.com/Duet3D/RepRapFirmware/pull/606">here</a>.
+    </p>
+    <p>
+      Some tricky parts were
+      <ul>
+        <li>Good flex compensation.</li>
+        <li>Forward transform.</li>
+      </ul>
+    </p>
+    <h3>Flex Compensation</h3>
+    <p>
+      To understand how Hangprinter's flex compensation works, imagine all lines to be (stiff, linear) springs.
+      In the image above, imagine the moves is still, and the lines are almost slack, just barely not sagging.
+    </p>
+    <p>
+      Now imagine that, the compensation algorithm wants to tighten the lines.
+      It wants to wind in some millimeters of line onto each spool, so the line elongates, and the mover is pulled towards each anchor.
+      However, the compensation algorithm is not allowed to pull the mover out of position.
+      The mover must remain still.
+    </p>
+    <p>
+      Finding a set of five lengths that achieve this is a basic problem of
+      <a href="https://en.wikipedia.org/wiki/Statics">statics</a>.
+      We solve a system to balance out six forces, five from lines, and one from gravity pulling the mover.
+    </p>
+    <p>
+      Finding a solution is rather easy, there are lots of valid solutions.
+      The tricky thing is to decide which solution to use.
+      There are infinitely many valid solutions, in each point in the build volume! 😲
+    </p>
+    <p>
+      I had an elegant solution for the four-anchor case (Hangprinter v4), but the extra anchor of HP5 adds another infinity of solutions,
+      so this was a bit tricky.
+      The details of how my algorithm decides is in the code,
+      <a href="https://gitlab.com/tobben/hangprinter-flex-compensation/-/blob/21af6cba194c24cb8a9c5d5588664adba10adf90/flex.cpp#L56">here</a>.
+      (The link is to a separate repo where Hangprinter's flex compensation is developed before being merged into ReprapFirmware.)
+    </p>
+    <p>
+      The solutions I chose in my algorithm gives forces like shown below.
+    </p>
+    <figure>
+      <a href="/blog/2023/bilder/Compensation_forces.png">
+        <img src="/blog/2023/bilder/Compensation_forces_small.png" alt="" width="500" height="389"/>
+      </a>
+      <figcaption>
+        The xy-axis is the HP5's build surface [mm].
+        The z-axis is the force exerted on the mover by the A-lines [N].
+        The A-anchor is situated at (0, -1500, 0), right where the force gets the highest, which is capped at 120 N.
+        At the origin, the A-force is 20 N.
+      </figcaption>
+    </figure>
+    <p>
+      Here are the features that I looked for in my solutoin, that can be also seen in the plot:
+      <ul>
+        <li>Forces are generally low near the middle of the reachable plane (the area spanned by the four low anchors).</li>
+        <li>Forces are generally higher towards the edges of the reachable plane. We want to spend our main effort on counteracting the pull of gravity that drags the effector towards the middle,
+            and otherwise keep forces as small as possible.</li>
+        <li>Forces are genrally lower the further away from the anchor one gets. The anchors closest to the mover will generally be best able to control it.
+            So the furthest anchor should gently "give up", and the closer anchors should gradually "take over" by applying more force.</li>
+        <li>The surface is smooth, there are no sudden changes of force.</li>
+        <li>Trying to leave the reachable plane should never happen, other code takes care of that.
+            If it happens anyway, the user is in a very bad situation.
+            We therefore want all compensation target forces to fall off rapidly outside the reachable plane.</li>
+      </ul>
+    </p>
+  </post>
   <post id="hangprinter_project_81" heading="Where I'm Going With This" date="25-8-2023">
     <p>
       I've started working on version 5 of Hangprinter, the HP5.
