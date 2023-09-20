@@ -320,6 +320,9 @@ Youtube User: <a href="https://www.youtube.com/channel/UCw1Nz0VCw4z-dfq4WjSkFzQ"
 Twitter User: <a href="https://twitter.com/tobbelobb">link</a><br />
 </p>
 <p>
+Instagram User: <a href="https://www.instagram.com/torbjorn.ludvigsen/">link</a><br />
+</p>
+<p>
 Master's Thesis: <a href="http://opensourceecology.org/wiki/File:Thesis.pdf">link</a><br />
 </p>
 <p>
