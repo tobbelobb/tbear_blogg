@@ -2,9 +2,17 @@
 <?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
 <posts year="2023">
   <post id="hangprinter_project_83" heading="Dealing with User Experience Blockers" date="30-10-2023">
+    <p>
+      Hangprinter's user experience in 2023 is like day and night compared to 2018 and before.
+      It's gone from "complete horror" to "ok-ish".
+      Let's reach for "superb".
+    </p>
+    <p>
+      Here's a list of issues I think stands between an ok-ish and a superb Hangprinter user experience.
+    </p>
     <ul>
       <li>Machine Spans a too large floor surface when in use.</li>
-      <li>Guy Wires make my office feel a bit like the laser scene in the Entrapment movie.
+      <li>Guy Wires make my office feel like the laser scene in the Entrapment movie.
     <figure>
       <a href="/blog/2023/bilder/entrapment.png">
         <img src="/blog/2023/bilder/entrapment.png" alt="" width="500" height="500"/>
@@ -28,12 +36,13 @@
       <li>There's no remote surveillance.</li>
       <li>There's no auto-stop upon failure.</li>
       <li>Actually parking in the ceiling is not straight forward.</li>
-      <li>Loose line in the spool casette can cause all kinds of probems.</li>
+      <li>Loose line in the spool casette can still cause all kinds of problems. The casettes are not water tight and even if they were, there might be problems. We can't prevent all spaghetti situations with hardware, we need sensor detection and an emergency stop feature. </li>
       <li>Having electronics in the ceiling means climbing which is a safety hazard.</li>
       <li>XY rotation of mover is sometimes a problem when carrying heavy side-weight like a clay hose.</li>
       <li>Mounting/unmounting the WASP XL 3.0 is a hassle because line look hooks are not well designed. Require allan key, easily slips loose, nut can get half stuck.</li>
-      <li></li>
-      <li></li>
+      <li>Belt loops might wander sideways is gear is not perfectly flat/round/straightly mounted</li>
+      <li>Users need fingerspitzgefühl to adjust belt tension/looseness correctly. Make it easier to succeed and harder to fail.</li>
+      <li>All electronics should be enclosed in boxes to protect them.</li>
       <li></li>
     </ul>
 
