@@ -1,6 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
 <posts year="2023">
+  <post id="hangprinter_project_83" heading="Dealing with User Experience Blockers" date="30-10-2023">
+    <ul>
+      <li>Machine Spans a too large floor surface when in use.</li>
+      <li>Guy Wires make my office feel a bit like the laser scene in the Entrapment movie.
+    <figure>
+      <a href="/blog/2023/bilder/entrapment.png">
+        <img src="/blog/2023/bilder/entrapment.png" alt="" width="500" height="500"/>
+      </a>
+      <figcaption>
+      </figcaption>
+    </figure>
+    The entrapment will only get worse once we add the fifth motion axis.
+    </li>
+      <li>Motors look for encoder index upon startup.</li>
+      <li>Motor cogging may produce visible surface patterns if printing at low speeds.</li>
+      <li>Uneven spooling reduces surface quality.</li>
+      <li>Motors are mounted on a printed part, should be a metal heat spreader.</li>
+      <li>Computer vision system (hp-mark) is not tightly integrated. In particular, it's used via bash scripts rather than the expected home button in web GUI.</li>
+      <li>hp-mark requires calibrating the lens.</li>
+      <li>hp-mark requires measuring relative position of 12 markers.</li>
+      <li>hp-mark depth accuracy (Z) is not precise enough for mindless usage.</li>
+      <li>Torque mode is not speed capped.</li>
+      <li>Line Collision Detector requires a separate step. Not yet integrated into slicer/CAM software.</li>
+      <li>Auto Calibration requires a fair bit of human intervention.</li>
+      <li>There's no remote surveillance.</li>
+      <li>There's no auto-stop upon failure.</li>
+      <li>Actually parking in the ceiling is not straight forward.</li>
+      <li>Loose line in the spool casette can cause all kinds of probems.</li>
+      <li>Having electronics in the ceiling means climbing which is a safety hazard.</li>
+      <li>XY rotation of mover is sometimes a problem when carrying heavy side-weight like a clay hose.</li>
+      <li>Mounting/unmounting the WASP XL 3.0 is a hassle because line look hooks are not well designed. Require allan key, easily slips loose, nut can get half stuck.</li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+
+  </post>
   <post id="hangprinter_project_82" heading="Fifth Motion Axis: Flex Compensation" date="20-9-2023">
     <p>
       The fifth motion axis is a big feature I've planned for the Hangprinter v5.
