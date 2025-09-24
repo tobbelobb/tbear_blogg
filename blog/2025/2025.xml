@@ -71,7 +71,7 @@
         layout: "fitDataFill",
         placeholder: "Loading...",
 
-        ajaxURL: "./blog/2025/hangprinter_v5_boms_baseline_v5.json",
+        ajaxURL: "/blog/2025/hangprinter_v5_boms_baseline_v5.json",
 
         columns: [
           {title: "Item", field: "Item", headerFilter: "input", resizable: false},
