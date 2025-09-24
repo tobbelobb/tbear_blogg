@@ -107,7 +107,7 @@
     </script>
     <p>
       The smallest change to get away from BLDC and ODrive, dodging protocol implementation work and cost, sacreficing performance.
-      The 5 x ODrive S1s are swapped with Duet's closed loop stepper drivers (https://www.duet3d.com/duet-3-expansion-1hcl), and the 5 x BLDC motors are swapped for a standard set of Nema17 motors.
+      The 5 x ODrive S1s are swapped with Duet's closed loop stepper drivers (<a href="https://www.duet3d.com/duet-3-expansion-1hcl">Duet3 Expansion 1HCL</a>), and the 5 x BLDC motors are swapped for a standard set of Nema17 motors.
       <b>Cost:</b> 1750 USD
       If we skip the encoders for this option, cost is down to ca 1600 USD.
     </p>
@@ -146,7 +146,7 @@
       The Duet3, the 5 x ODrive S1s, and the 5 x BLDC motors are swapped with 5 microcontroller units and 5 Nema17 motors.
       The 5 microcontroller units will be driven by Klipper running on the Raspberry Pi 5 via CAN and a USB to CAN bridge. Also, include one load sensor per anchor is included in this Klipper driven version.
       <b>Cost:</b> 1050 USD
-      Adding closed loop to the Klipper Driven HP5 could come as cheap as 5x20 = 100 USD (https://www.ebay.com/itm/126266631121) bringing total cost up to 1150 USD.
+      Adding closed loop to the Klipper Driven HP5 could come as cheap as 5x20 = 100 USD (<a href="https://www.ebay.com/itm/126266631121">source</a>) bringing total cost up to 1150 USD.
     </p>
     <p>
       <b>Software work required:</b> A lot. Klipper's Hangprinter support is very basic. But although its a lot of work, none of the work is very hard, since it's mainly re-implementation into Python,
