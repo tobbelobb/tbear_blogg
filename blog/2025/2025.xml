@@ -40,7 +40,7 @@
       I computed some BOM cost estimates for various alternatives for the HP5 today. It includes three versions I've been thinking about.
       All cost estimates assume Swedish taxes and shipping, plus a 10% inflation in all prices since 2021.
     </p>
-
+    <div id="spreadsheet-container"></div>
     <style>
       #spreadsheet-container {
         overflow-anchor: none;
