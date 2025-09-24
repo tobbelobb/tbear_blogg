@@ -1,0 +1,354 @@
+[
+    {
+        "Item": "DC Pro 161 rope",
+        "Quantity": "150 m",
+        "Price_SEK": 1270.5,
+        "Price_USD": 135.5923159018,
+        "Unnamed: 4": null,
+        "1 USD in  SEK": 9.37
+    },
+    {
+        "Item": "MDF or plywood sheet",
+        "Quantity": "50x60 cm",
+        "Price_SEK": 0.0,
+        "Price_USD": 0.0,
+        "Unnamed: 4": null,
+        "1 USD in  SEK": null
+    },
+    {
+        "Item": "MDF or plywood sheet",
+        "Quantity": "50x10 cm",
+        "Price_SEK": 0.0,
+        "Price_USD": 0.0,
+        "Unnamed: 4": null,
+        "1 USD in  SEK": null
+    },
+    {
+        "Item": "Power supply",
+        "Quantity": "1",
+        "Price_SEK": 539.0,
+        "Price_USD": 57.5240128068,
+        "Unnamed: 4": null,
+        "1 USD in  SEK": null
+    },
+    {
+        "Item": "Raspberry Pi official power supply",
+        "Quantity": "1",
+        "Price_SEK": 220.0,
+        "Price_USD": 23.4791889007,
+        "Unnamed: 4": null,
+        "1 USD in  SEK": null
+    },
+    {
+        "Item": "Raspberry Pi 5",
+        "Quantity": 1,
+        "Price_SEK": 1452.0,
+        "Price_USD": 154.9626467449,
+        "Unnamed: 4": null,
+        "1 USD in  SEK": null
+    },
+    {
+        "Item": "Bltouch",
+        "Quantity": "1",
+        "Price_SEK": 462.0,
+        "Price_USD": 49.3062966916,
+        "Unnamed: 4": null,
+        "1 USD in  SEK": null
+    },
+    {
+        "Item": "40 cm rectangular/square beams",
+        "Quantity": "3",
+        "Price_SEK": 220.0,
+        "Price_USD": 23.4791889007,
+        "Unnamed: 4": null,
+        "1 USD in  SEK": null
+    },
+    {
+        "Item": "GT2 Belt loops",
+        "Quantity": "4",
+        "Price_SEK": 420.2,
+        "Price_USD": 44.8452508004,
+        "Unnamed: 4": null,
+        "1 USD in  SEK": null
+    },
+    {
+        "Item": "GT2 Motor gear",
+        "Quantity": "4",
+        "Price_SEK": 44.0,
+        "Price_USD": 4.6958377801,
+        "Unnamed: 4": null,
+        "1 USD in  SEK": null
+    },
+    {
+        "Item": "Smooth rod, 8 mm diameter",
+        "Quantity": "ca 30 cm",
+        "Price_SEK": 110.0,
+        "Price_USD": 11.7395944504,
+        "Unnamed: 4": null,
+        "1 USD in  SEK": null
+    },
+    {
+        "Item": "Retro reflective tape",
+        "Quantity": "1 roll, ca 2 m",
+        "Price_SEK": 66.0,
+        "Price_USD": 7.0437566702,
+        "Unnamed: 4": null,
+        "1 USD in  SEK": null
+    },
+    {
+        "Item": "Long flat 15-pin cable for hp-mark cam",
+        "Quantity": "ca 3 m?",
+        "Price_SEK": 75.9,
+        "Price_USD": 8.1003201708,
+        "Unnamed: 4": null,
+        "1 USD in  SEK": null
+    },
+    {
+        "Item": "LED ring 12 LEDS",
+        "Quantity": "1",
+        "Price_SEK": 55.0,
+        "Price_USD": 5.8697972252,
+        "Unnamed: 4": null,
+        "1 USD in  SEK": null
+    },
+    {
+        "Item": "LED ring 8 LEDS",
+        "Quantity": "1",
+        "Price_SEK": 18.7,
+        "Price_USD": 1.9957310566,
+        "Unnamed: 4": null,
+        "1 USD in  SEK": null
+    },
+    {
+        "Item": "40 mm fan",
+        "Quantity": "1",
+        "Price_SEK": 22.0,
+        "Price_USD": 2.3479188901,
+        "Unnamed: 4": null,
+        "1 USD in  SEK": null
+    },
+    {
+        "Item": "Arducam IXM 219",
+        "Quantity": "1",
+        "Price_SEK": 539.0,
+        "Price_USD": 57.5240128068,
+        "Unnamed: 4": null,
+        "1 USD in  SEK": null
+    },
+    {
+        "Item": "Arducam low distortion lens kit",
+        "Quantity": "1",
+        "Price_SEK": 440.0,
+        "Price_USD": 46.9583778015,
+        "Unnamed: 4": null,
+        "1 USD in  SEK": null
+    },
+    {
+        "Item": "Hex head M3 screws. A few mm long. (5mm?)",
+        "Quantity": "6",
+        "Price_SEK": 11.0,
+        "Price_USD": 1.173959445,
+        "Unnamed: 4": null,
+        "1 USD in  SEK": null
+    },
+    {
+        "Item": "M8 screws countersunk, 22-30 mm long",
+        "Quantity": "12",
+        "Price_SEK": 66.0,
+        "Price_USD": 7.0437566702,
+        "Unnamed: 4": null,
+        "1 USD in  SEK": null
+    },
+    {
+        "Item": "M8 nuts",
+        "Quantity": "12",
+        "Price_SEK": 11.0,
+        "Price_USD": 1.173959445,
+        "Unnamed: 4": null,
+        "1 USD in  SEK": null
+    },
+    {
+        "Item": "M3 screws & nuts",
+        "Quantity": "999999999",
+        "Price_SEK": 22.0,
+        "Price_USD": 2.3479188901,
+        "Unnamed: 4": null,
+        "1 USD in  SEK": null
+    },
+    {
+        "Item": "M3 nyloc nuts",
+        "Quantity": "at least 8",
+        "Price_SEK": 33.0,
+        "Price_USD": 3.5218783351,
+        "Unnamed: 4": null,
+        "1 USD in  SEK": null
+    },
+    {
+        "Item": "Embroidery machine eyelets",
+        "Quantity": "ca 60",
+        "Price_SEK": 55.0,
+        "Price_USD": 5.8697972252,
+        "Unnamed: 4": null,
+        "1 USD in  SEK": null
+    },
+    {
+        "Item": "Double sided tape",
+        "Quantity": "1 roll",
+        "Price_SEK": 11.0,
+        "Price_USD": 1.173959445,
+        "Unnamed: 4": null,
+        "1 USD in  SEK": null
+    },
+    {
+        "Item": "Zipties",
+        "Quantity": "18",
+        "Price_SEK": 22.0,
+        "Price_USD": 2.3479188901,
+        "Unnamed: 4": null,
+        "1 USD in  SEK": null
+    },
+    {
+        "Item": "608 bearings",
+        "Quantity": "21",
+        "Price_SEK": 132.0,
+        "Price_USD": 14.0875133404,
+        "Unnamed: 4": null,
+        "1 USD in  SEK": null
+    },
+    {
+        "Item": "Flanged 623 bearings",
+        "Quantity": "8",
+        "Price_SEK": 69.3,
+        "Price_USD": 7.3959445037,
+        "Unnamed: 4": null,
+        "1 USD in  SEK": null
+    },
+    {
+        "Item": "623 bearings",
+        "Quantity": "22",
+        "Price_SEK": 137.5,
+        "Price_USD": 14.674493063,
+        "Unnamed: 4": null,
+        "1 USD in  SEK": null
+    },
+    {
+        "Item": "Red and black power cable",
+        "Quantity": "ca 3 m",
+        "Price_SEK": 22.0,
+        "Price_USD": 2.3479188901,
+        "Unnamed: 4": null,
+        "1 USD in  SEK": null
+    },
+    {
+        "Item": "15-lead ribbon wire",
+        "Quantity": "5 m",
+        "Price_SEK": 110.0,
+        "Price_USD": 11.7395944504,
+        "Unnamed: 4": null,
+        "1 USD in  SEK": null
+    },
+    {
+        "Item": "M3 self tapping wood screws, length 12 mm",
+        "Quantity": "ca 100",
+        "Price_SEK": 110.0,
+        "Price_USD": 11.7395944504,
+        "Unnamed: 4": null,
+        "1 USD in  SEK": null
+    },
+    {
+        "Item": "Plank, ca 4 x ca 11 x ca 50 cm",
+        "Quantity": "2",
+        "Price_SEK": 0.0,
+        "Price_USD": 0.0,
+        "Unnamed: 4": null,
+        "1 USD in  SEK": null
+    },
+    {
+        "Item": "Bolts/screws/etc for bolting plank to ceiling",
+        "Quantity": "4",
+        "Price_SEK": 0.0,
+        "Price_USD": 0.0,
+        "Unnamed: 4": null,
+        "1 USD in  SEK": null
+    },
+    {
+        "Item": "Long wood screws for bolting ceiling unit to plank",
+        "Quantity": "6",
+        "Price_SEK": 0.0,
+        "Price_USD": 0.0,
+        "Unnamed: 4": null,
+        "1 USD in  SEK": null
+    },
+    {
+        "Item": "Plastic",
+        "Quantity": null,
+        "Price_SEK": 350.0,
+        "Price_USD": 37.3532550694,
+        "Unnamed: 4": null,
+        "1 USD in  SEK": null
+    },
+    {
+        "Item": "Microcontroller EBB42",
+        "Quantity": 5,
+        "Price_SEK": 1572.39,
+        "Price_USD": 167.8110992529,
+        "Unnamed: 4": null,
+        "1 USD in  SEK": null
+    },
+    {
+        "Item": "Nema17 stepper motor",
+        "Quantity": 5,
+        "Price_SEK": 490.65,
+        "Price_USD": 52.363927428,
+        "Unnamed: 4": null,
+        "1 USD in  SEK": null
+    },
+    {
+        "Item": "USB to CAN adapter UTOC-3",
+        "Quantity": 1,
+        "Price_SEK": 241.88,
+        "Price_USD": 25.8143009605,
+        "Unnamed: 4": null,
+        "1 USD in  SEK": null
+    },
+    {
+        "Item": "Load sensors",
+        "Quantity": 5,
+        "Price_SEK": 302.5,
+        "Price_USD": 32.2838847385,
+        "Unnamed: 4": null,
+        "1 USD in  SEK": null
+    },
+    {
+        "Item": "Sum excl closed loop",
+        "Quantity": null,
+        "Price_SEK": 9723.52,
+        "Price_USD": 1037.7289220918,
+        "Unnamed: 4": null,
+        "1 USD in  SEK": null
+    },
+    {
+        "Item": null,
+        "Quantity": null,
+        "Price_SEK": null,
+        "Price_USD": null,
+        "Unnamed: 4": null,
+        "1 USD in  SEK": null
+    },
+    {
+        "Item": "MKS SERVO42C 42 Closed-loop",
+        "Quantity": 5,
+        "Price_SEK": 937.0,
+        "Price_USD": 100.0,
+        "Unnamed: 4": null,
+        "1 USD in  SEK": "https://www.ebay.com/itm/126266631121"
+    },
+    {
+        "Item": "Sum incl closed loop",
+        "Quantity": null,
+        "Price_SEK": 10660.52,
+        "Price_USD": 1137.7289220918,
+        "Unnamed: 4": null,
+        "1 USD in  SEK": null
+    }
+]

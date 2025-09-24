@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
+<posts year="2023">
+  <post id="hangprinter_project_83" heading="Simulation and HP5 Work" date="24-9-2025">
+    <p>
+        So I made a Slideprinter simulation, check it out at <a href="https://hangprinter.org/">hangprinter.org</a>.
+    </p>
+    <video width="500" controls="true">
+      <source src="./bilder/fast_print_simulator.webm" type="video/webm"></source>
+    </video>
+    <p>
+      It's really cool because it really simulates many aspects of a real machine:
+      <ul>
+        <li>I wrote a whole library to simulate the lines. Check out <a href="https://github.com/tobbelobb/hp-sim5/">hp-sim5</a>. This has been a grueling multi month effort.</li>
+        <li>The simulation is a state of the art XPBD time loop, so close to physical reality.</li>
+        <li>The move commands comes from real Klipper, with a real Hangprinter config</li>
+        <li>Klipper can stream commands to the simulaton too (if a real mcu is attached).</li>
+        <li>The simulated steppers can loose steps, their torque varies with speed etc.</li>
+        <li>Spools can be clicked, grabbed and pulled with your mouse of touch screen.</li>
+        <li>Simulation can be speed up considerably compared to realtime.</li>
+        <li>The logo print simulation simulates millions of individual step-signals and micrograms of disposed material.</li>
+        <li>It's imlpemented both in Javascript and in Python.</li>
+        <li>The whole machine and its simulation scene and config is described in a file format called USD, see <a href="https://github.com/tobbelobb/hp-sim5/blob/main/examples/usd_scenes/slideprinter.usda">slideprinter.usda</a>, which enables us to be data-driven, but also compatibility with various 3d modelling, reinforcement learning, and simulation softwares such as Blender and Isaac Sim.</li>
+      </ul>
+    </p>
+    <p>
+      I think simulations are most important part of the Hangprinter Project.
+      I'd like to automate the hardware design and fw configuration.
+      We just now became able to quantify comparisons between Hangprinter hardware+config setups.
+      Just measure how close the tool head is to an optimal route at all times, compared to the exact positions in the gcode file.
+      Optimize over CAD parameters and config values, and write a simple cost function.
+    </p>
+    <p>
+      So I'll keep focusing on simulation, not hardware.
+      But it's good to have ideas of cost regardless, especially since we have to integrate tightly with a firmware in order to simulate.
+      The firmware implies ceirtain hardware which implies cost.
+    </p>
+    <h2>Cost Estimates</h2>
+    <p>
+      I computed some BOM cost estimates for various alternatives for the HP5 today. It includes three versions I've been thinking about.
+      All cost estimates assume Swedish taxes and shipping, plus a 10% inflation in all prices since 2021.
+    </p>
+
+    <style>
+      #spreadsheet-container {
+        overflow-anchor: none;
+        overscroll-behavior: contain;
+      }
+      #spreadsheet-container2 {
+        overflow-anchor: none;
+        overscroll-behavior: contain;
+      }
+      #spreadsheet-container3 {
+        overflow-anchor: none;
+        overscroll-behavior: contain;
+      }
+    </style>
+    <link href="https://unpkg.com/tabulator-tables@5.6.1/dist/css/tabulator.min.css" rel="stylesheet"></link>
+    <script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.6.1/dist/js/tabulator.min.js"></script>
+
+
+    <h3>Baseline v5 (Roughly HP Performance)</h3>
+    <script>
+      const rowFormatter2 = function(row) {
+        const data = row.getData();
+      };
+
+      const table2 = new Tabulator("#spreadsheet-container", {
+        nestedFieldSeparator: "|",
+        height: "778px",
+        layout: "fitDataFill",
+        placeholder: "Loading...",
+
+        ajaxURL: "./blog/2025/hangprinter_v5_boms_baseline_v5.json",
+
+        columns: [
+          {title: "Item", field: "Item", headerFilter: "input", resizable: false},
+          {title: "Quantity", field: "Quantity", headerFilter: "input", resizable: false},
+          {title: "Price_SEK", field: "Price_SEK", headerFilter: "input", resizable: false},
+          {title: "Price_USD", field: "Price_USD", headerFilter: "input", resizable: false},
+        ],
+
+        rowFormatter: rowFormatter2,
+      });
+    </script>
+    <p>
+      This is the machine that the HP4 prototype was always meant to be. ODrive S1 boards, Motion tracking with Arducam, Duet3 6XD board etc.
+      <b>Cost:</b> 2500 USD
+    </p>
+    <p>
+      <b>Software work required:</b> We'd need to implement the Duet CAN Protocol in the ODrive firmware, which is hard, and the machine will be useless until it's done.
+      We could dodge this hard sw work with 5 x 1XD boards, but that brings total cost up by 384 USD, to 2840 USD and defeats some of the purpose with the HP5/HP Performance.
+    </p>
+    <h3>Duet HCL Nema v5 (Roughly HP Convenience)</h3>
+    <p>
+      The smallest change to get away from BLDC and ODrive, dodging protocol implementation work and cost, sacreficing performance.
+      The 5 x ODrive S1s are swapped with Duet's closed loop stepper drivers (https://www.duet3d.com/duet-3-expansion-1hcl), and the 5 x BLDC motors are swapped for a standard set of Nema17 motors.
+      <b>Cost:</b> 1750 USD
+      If we skip the encoders for this option, cost is down to ca 1600 USD.
+    </p>
+    <p>
+      <b>Software work required:</b> We would need to do implement torque mode in the expansion board and Duet CAN Protocol. That shouldn't be too hard, and the machine can be useful without it as well.
+    </p>
+    <h3>Klipper Driven HP5 (Roughly HP Core)</h3>
+    <p>
+      No closed loop control, no torque mode.
+      The Duet3, the 5 x ODrive S1s, and the 5 x BLDC motors are swapped with 5 microcontroller units and 5 Nema17 motors.
+      The 5 microcontroller units will be driven by Klipper running on the Raspberry Pi 5 via CAN and a USB to CAN bridge. Also, include one load sensor per anchor is included in this Klipper driven version.
+      <b>Cost:</b> 1050 USD
+      Adding closed loop to the Klipper Driven HP5 could come as cheap as 5x20 = 100 USD (https://www.ebay.com/itm/126266631121) bringing total cost up to 1150 USD.
+    </p>
+    <p>
+      <b>Software work required:</b> A lot. Klipper's Hangprinter support is very basic. But although its a lot of work, none of the work is very hard, since it's mainly re-implementation into Python,
+      and we have the simulator to quickly test everything. The machine is potentially useful even without software upgrades, since the basic Hangprinter support in Klipper already does work.
+    </p>
+    <h3>Thoughts</h3>
+    <p>
+      The Duet options might still make sense for those who need performance and with the minimal changes compared to something that has been built proven to work (the HP4 prototype).
+      The Klipper option makes most sense to work on for people who want to go cheap and develop, and still maintain the possibility of adding performance later.
+    </p>
+  </post>
+</posts>

@@ -1,0 +1,382 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, minimum-scale=1">
+      <meta name="theme-color" content="#FBE8A6">
+      <meta name="author" content="Torbjorn Ludvigsen">
+      <meta name="keywords" content="Reprap, blog, development">
+      <meta name="description" content="Reprap blog">
+      <meta property="og:type" content="website">
+      <meta property="og:title" content="Torbjorn Ludvigsen">
+      <meta property="og:url" content="https://torbjornludvigsen.com/blog/2023">
+      <link rel="canonical" href="https://torbjornludvigsen.com/blog/2023">
+      <meta property="og:description" content="Reprap blog">
+      <meta property="og:image" content="https://torbjornludvigsen.com/media/torbjornludvigsen.JPG">
+      <meta name="twitter:card" content="summary">
+      <meta name="twitter:site" content="@tobbelobb">
+      <meta name="twitter:creator" content="@tobbelobb">
+      <link rel="preload" href="/fonts/OpenSansRegular.woff" as="font" type="font/woff" crossorigin="anonymous">
+      <link rel="stylesheet" href="/styles/common_style.css" type="text/css">
+      <link rel="stylesheet" href="/styles/xsl_style.css" type="text/css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="apple-touch-icon" sizes="180x180" href="/media/apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="/media/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="/media/favicon-16x16.png">
+      <link rel="manifest" href="/site.webmanifest">
+      <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fffff">
+      <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#212121">
+      <link rel="mask-icon" href="/media/safari-pinned-tab.svg" color="#ffffff">
+      <meta name="msapplication-TileColor" content="#fffff"><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script><title>Torbjorn Ludvigsen|Blog</title>
+   </head>
+   <body>
+      <div class="sticky">
+         <nav>
+            <ul>
+               <li class="navbar-left"><a href="/">Torbj&oslash;rn</a></li>
+               <li class="navbar-right">
+                  <div class="my-dropdown" data-dropdown=""><button class="link" data-dropdown-toggle="">Menu</button><div class="my-dropdown-menu" data-dropdown-menu="">
+                        <div class="dropdown-inside-slideout"><a href="/shop" data-dropdown-toggle="">
+                              Shop
+                              </a><button class="link mini-shop-toggle" data-mini-shop-toggle="">
+                              &gt;
+                              </button><div class="mini-shop" data-mini-shop=""><a href="/shop/Cups" data-dropdown-toggle="">
+                                 Cups
+                                 </a><a href="/shop/Disaster_under_Water" data-dropdown-toggle="">
+                                 Disaster under Water
+                                 </a><a href="/shop/Corals" data-dropdown-toggle="">
+                                 Corals
+                                 </a><a href="/shop/Heart_of_the_Ocean" data-dropdown-toggle="">
+                                 Heart of the Ocean
+                                 </a></div>
+                        </div><a href="/blog" data-dropdown-toggle="">
+                           Blog
+                           </a><a href="/pages/about" data-dropdown-toggle="">
+                           About
+                           </a><a href="/pages/donate" data-dropdown-toggle="">
+                           Donate
+                           </a><button class="link dark-mode-toggle" id="dark-mode-toggle" aria-label="toggle dark mode" value="Toggle dark mode">
+                           Light/Dark
+                           </button></div>
+                  </div>
+               </li>
+            </ul>
+         </nav>
+      </div><script src="/js/darkmode.js"></script><div id="SiteName">
+         Reprap Blog 2023
+      </div>
+      <div class="h-feed" id="MainContent">
+         <article class="h-entry">
+            <h1 class="p-name" id="hangprinter_project_83">Simulation and HP5 Work</h1>
+            <div class="date">24-9-2025</div>
+            <p>
+               So I made a Slideprinter simulation, check it out at <a href="https://hangprinter.org/">hangprinter.org</a>.
+                   
+            </p>
+            <video width="500" controls="true">
+                     
+               <source src="./bilder/fast_print_simulator.webm" type="video/webm"></source>
+                   
+            </video>
+            <p>
+                     It's really cool because it really simulates many aspects of a real machine:
+                     
+               <ul>
+                          
+                  <li>I wrote a whole library to simulate the lines. Check out <a href="https://github.com/tobbelobb/hp-sim5/">hp-sim5</a>. This has been a grueling multi month effort.
+                  </li>
+                          
+                  <li>The simulation is a state of the art XPBD time loop, so close to physical reality.</li>
+                          
+                  <li>The move commands comes from real Klipper, with a real Hangprinter config</li>
+                          
+                  <li>Klipper can stream commands to the simulaton too (if a real mcu is attached).</li>
+                          
+                  <li>The simulated steppers can loose steps, their torque varies with speed etc.</li>
+                          
+                  <li>Spools can be clicked, grabbed and pulled with your mouse of touch screen.</li>
+                          
+                  <li>Simulation can be speed up considerably compared to realtime.</li>
+                          
+                  <li>The logo print simulation simulates millions of individual step-signals and micrograms of disposed material.</li>
+                          
+                  <li>It's imlpemented both in Javascript and in Python.</li>
+                          
+                  <li>The whole machine and its simulation scene and config is described in a file format called USD, see <a href="https://github.com/tobbelobb/hp-sim5/blob/main/examples/usd_scenes/slideprinter.usda">slideprinter.usda</a>, which enables us to be data-driven, but also compatibility with various 3d modelling, reinforcement learning, and simulation
+                     softwares such as Blender and Isaac Sim.
+                  </li>
+                        
+               </ul>
+                   
+            </p>
+            <p>
+                     I think simulations are most important part of the Hangprinter Project.
+                     I'd like to automate the hardware design and fw configuration.
+                     We just now became able to quantify comparisons between Hangprinter hardware+config setups.
+                     Just measure how close the tool head is to an optimal route at all times, compared to the exact positions in the gcode
+               file.
+                     Optimize over CAD parameters and config values, and write a simple cost function.
+                   
+            </p>
+            <p>
+                     So I'll keep focusing on simulation, not hardware.
+                     But it's good to have ideas of cost regardless, especially since we have to integrate tightly with a firmware in order
+               to simulate.
+                     The firmware implies ceirtain hardware which implies cost.
+                   
+            </p>
+            <h2>Cost Estimates</h2>
+            <p>
+                     I computed some BOM cost estimates for various alternatives for the HP5 today. It includes three versions I've been
+               thinking about.
+                     All cost estimates assume Swedish taxes and shipping, plus a 10% inflation in all prices since 2021.
+                   
+            </p><style>
+      #spreadsheet-container {
+        overflow-anchor: none;
+        overscroll-behavior: contain;
+      }
+      #spreadsheet-container2 {
+        overflow-anchor: none;
+        overscroll-behavior: contain;
+      }
+      #spreadsheet-container3 {
+        overflow-anchor: none;
+        overscroll-behavior: contain;
+      }
+    </style><link href="https://unpkg.com/tabulator-tables@5.6.1/dist/css/tabulator.min.css" rel="stylesheet"><script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.6.1/dist/js/tabulator.min.js"></script><h3>Baseline v5 (Roughly HP Performance)</h3><script>
+      const rowFormatter2 = function(row) {
+        const data = row.getData();
+      };
+
+      const table2 = new Tabulator("#spreadsheet-container", {
+        nestedFieldSeparator: "|",
+        height: "778px",
+        layout: "fitDataFill",
+        placeholder: "Loading...",
+
+        ajaxURL: "./blog/2025/hangprinter_v5_boms_baseline_v5.json",
+
+        columns: [
+          {title: "Item", field: "Item", headerFilter: "input", resizable: false},
+          {title: "Quantity", field: "Quantity", headerFilter: "input", resizable: false},
+          {title: "Price_SEK", field: "Price_SEK", headerFilter: "input", resizable: false},
+          {title: "Price_USD", field: "Price_USD", headerFilter: "input", resizable: false},
+        ],
+
+        rowFormatter: rowFormatter2,
+      });
+    </script><p>
+                     This is the machine that the HP4 prototype was always meant to be. ODrive S1 boards, Motion tracking with Arducam, Duet3
+               6XD board etc.
+                     <b>Cost:</b> 2500 USD
+                   
+            </p>
+            <p>
+                     <b>Software work required:</b> We'd need to implement the Duet CAN Protocol in the ODrive firmware, which is hard, and the machine will be useless until
+               it's done.
+                     We could dodge this hard sw work with 5 x 1XD boards, but that brings total cost up by 384 USD, to 2840 USD and defeats
+               some of the purpose with the HP5/HP Performance.
+                   
+            </p>
+            <h3>Duet HCL Nema v5 (Roughly HP Convenience)</h3>
+            <p>
+                     The smallest change to get away from BLDC and ODrive, dodging protocol implementation work and cost, sacreficing performance.
+                     The 5 x ODrive S1s are swapped with Duet's closed loop stepper drivers (https://www.duet3d.com/duet-3-expansion-1hcl),
+               and the 5 x BLDC motors are swapped for a standard set of Nema17 motors.
+                     <b>Cost:</b> 1750 USD
+                     If we skip the encoders for this option, cost is down to ca 1600 USD.
+                   
+            </p>
+            <p>
+                     <b>Software work required:</b> We would need to do implement torque mode in the expansion board and Duet CAN Protocol. That shouldn't be too hard, and the
+               machine can be useful without it as well.
+                   
+            </p>
+            <h3>Klipper Driven HP5 (Roughly HP Core)</h3>
+            <p>
+                     No closed loop control, no torque mode.
+                     The Duet3, the 5 x ODrive S1s, and the 5 x BLDC motors are swapped with 5 microcontroller units and 5 Nema17 motors.
+                     The 5 microcontroller units will be driven by Klipper running on the Raspberry Pi 5 via CAN and a USB to CAN bridge.
+               Also, include one load sensor per anchor is included in this Klipper driven version.
+                     <b>Cost:</b> 1050 USD
+                     Adding closed loop to the Klipper Driven HP5 could come as cheap as 5x20 = 100 USD (https://www.ebay.com/itm/126266631121)
+               bringing total cost up to 1150 USD.
+                   
+            </p>
+            <p>
+                     <b>Software work required:</b> A lot. Klipper's Hangprinter support is very basic. But although its a lot of work, none of the work is very hard, since
+               it's mainly re-implementation into Python,
+                     and we have the simulator to quickly test everything. The machine is potentially useful even without software upgrades,
+               since the basic Hangprinter support in Klipper already does work.
+                   
+            </p>
+            <h3>Thoughts</h3>
+            <p>
+                     The Duet options might still make sense for those who need performance and with the minimal changes compared to something
+               that has been built proven to work (the HP4 prototype).
+                     The Klipper option makes most sense to work on for people who want to go cheap and develop, and still maintain the possibility
+               of adding performance later.
+                   
+            </p>
+            <p>
+               - tobben
+               
+            </p>
+            <div style="display: none">
+               <time class="dt-published">2025-09-24T12:00:00Z</time><a class="u-url" href="https://torbjornludvigsen.com/blog/2023/index.html#hangprinter_project_83"></a><a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
+                  Torbj&oslash;rn Ludvigsen
+                  <img class="u-photo" src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG" alt="Torbj&oslash;rn Ludvigsen"></a><span class="p-summary">
+                  So I made a Slideprinter simulation, check it out at hangprinter.org.
+                      </span></div><br><br><br></article><br><br><br><br><br><br><br><br><h1 id="Links">
+            Links
+            
+         </h1>
+         <p>
+            Yearly archive: <a href="/blog/2014">2014</a>, <a href="/blog/2015">2015</a>, <a href="/blog/2016">2016</a>, <a href="/blog/2017">2017</a>, <a href="/blog/2018">2018</a>, <a href="/blog/2020">2020</a>, <a href="/blog/2021">2021</a>, <a href="/blog/2022">2022</a>, <a href="/blog/2023">2023</a></p>
+         <p>
+            Hangprinter Project: <a href="/blog/2014#Hangprinter">[1]</a>,
+            <a href="/blog/2015#Slideprinter_Update">[2]</a>,
+            <a href="/blog/2015#hangprinter_project_2">[3]</a>,
+            <a href="/blog/2015#hangprinter_project_3">[4]</a>,
+            <a href="/blog/2015#hangprinter_project_4">[5]</a>,
+            <a href="/blog/2015#hangprinter_project_5">[6]</a>,
+            <a href="/blog/2015#hangprinter_project_6">[7]</a>,
+            <a href="/blog/2015#hangprinter_project_7">[8]</a>,
+            <a href="/blog/2015#hangprinter_project_8">[9]</a>,
+            <a href="/blog/2015#hangprinter_project_9">[10]</a>,
+            <a href="/blog/2015#hangprinter_project_10">[11]</a>,
+            <a href="/blog/2015#hangprinter_project_11">[12]</a>,
+            <a href="/blog/2015#hangprinter_project_12">[13]</a>,
+            <a href="/blog/2015#hangprinter_project_13">[14]</a>,
+            <a href="/blog/2015#hangprinter_project_14">[15]</a>,
+            <a href="/blog/2015#hangprinter_project_15">[16]</a>,
+            <a href="/blog/2015#hangprinter_project_16">[17]</a>,
+            <a href="/blog/2015#hangprinter_project_17">[18]</a>,
+            <a href="/blog/2015#hangprinter_project_18">[19]</a>,
+            <a href="/blog/2016#hangprinter_project_19">[20]</a>,
+            <a href="/blog/2016#hangprinter_project_20">[21]</a>,
+            <a href="/blog/2016#hangprinter_project_21">[22]</a>,
+            <a href="/blog/2016#hangprinter_project_22">[23]</a>,
+            <a href="/blog/2016#hangprinter_project_23">[24]</a>,
+            <a href="/blog/2016#hangprinter_project_24">[25]</a>,
+            <a href="/blog/2016#hangprinter_project_25">[26]</a>,
+            <a href="/blog/2016#hangprinter_project_26">[27]</a>,
+            <a href="/blog/2016#hangprinter_project_27">[28]</a>,
+            <a href="/blog/2017#hangprinter_project_28">[29]</a>,
+            <a href="/blog/2017#hangprinter_project_29">[30]</a>,
+            <a href="/blog/2017#hangprinter_project_30">[31]</a>,
+            <a href="/blog/2017#hangprinter_project_31">[32]</a>,
+            <a href="/blog/2017#hangprinter_project_32">[33]</a>,
+            <a href="/blog/2017#hangprinter_project_33">[34]</a>,
+            <a href="/blog/2017#hangprinter_project_34">[35]</a>,
+            <a href="/blog/2017#hangprinter_project_35">[36]</a>,
+            <a href="/blog/2017#hangprinter_project_36">[37]</a>,
+            <a href="/blog/2017#hangprinter_project_37">[38]</a>,
+            <a href="/blog/2017#hangprinter_project_38">[39]</a>,
+            <a href="/blog/2017#hangprinter_project_39">[40]</a>,
+            <a href="/blog/2017#hangprinter_project_40">[41]</a>,
+            <a href="/blog/2017#hangprinter_project_41">[42]</a>,
+            <a href="/blog/2017#hangprinter_project_42">[43]</a>,
+            <a href="/blog/2017#hangprinter_project_43">[44]</a>,
+            <a href="/blog/2017#hangprinter_project_44">[45]</a>,
+            <a href="/blog/2017#hangprinter_project_45">[46]</a>,
+            <a href="/blog/2017#hangprinter_project_46">[47]</a>,
+            <a href="/blog/2017#hangprinter_project_47">[48]</a>,
+            <a href="/blog/2017#hangprinter_project_48">[49]</a>,
+            <a href="/blog/2017#hangprinter_project_49">[50]</a>,
+            <a href="/blog/2017#hangprinter_project_50">[51]</a>,
+            <a href="/blog/2018#hangprinter_project_51">[52]</a>,
+            <a href="/blog/2018#hangprinter_project_52">[53]</a>,
+            <a href="/blog/2018#hangprinter_project_53">[54]</a>,
+            <a href="/blog/2018#hangprinter_project_54">[55]</a>,
+            <a href="/blog/2018#hangprinter_project_55">[56]</a>,
+            <a href="/blog/2018#hangprinter_project_56">[57]</a>,
+            <a href="/blog/2018#hangprinter_project_57">[58]</a>,
+            <a href="/blog/2018#hangprinter_project_58">[59]</a>,
+            <a href="/blog/2018#hangprinter_project_59">[60]</a>,
+            <a href="/blog/2018#hangprinter_project_60">[61]</a>,
+            <a href="/blog/2018#hangprinter_project_61">[62]</a>,
+            <a href="/blog/2018#hangprinter_project_62">[63]</a>,
+            <a href="/blog/2020#hangprinter_project_63">[64]</a>,
+            <a href="/blog/2020#hangprinter_project_64">[65]</a>,
+            <a href="/blog/2020#hangprinter_project_65">[66]</a>,
+            <a href="/blog/2020#hangprinter_project_66">[67]</a>,
+            <a href="/blog/2020#hangprinter_project_67">[68]</a>,
+            <a href="/blog/2020#hangprinter_project_68">[69]</a>,
+            <a href="/blog/2021#hangprinter_project_69">[70]</a>,
+            <a href="/blog/2021#hangprinter_project_70">[71]</a>,
+            <a href="/blog/2021#hangprinter_project_71">[72]</a>,
+            <a href="/blog/2021#hangprinter_project_72">[73]</a>,
+            <a href="/blog/2021#hangprinter_project_73">[74]</a>,
+            <a href="/blog/2021#hangprinter_project_74">[75]</a>,
+            <a href="/blog/2021#hangprinter_project_75">[76]</a>,
+            <a href="/blog/2021#hangprinter_project_76">[77]</a>,
+            <a href="/blog/2022#hangprinter_project_77">[78]</a>,
+            <a href="/blog/2022#hangprinter_project_78">[79]</a>,
+            <a href="/blog/2022#hangprinter_project_79">[80]</a>,
+            <a href="/blog/2023#hangprinter_project_80">[81]</a>,
+            <a href="/blog/2023#hangprinter_project_81">[82]</a></p>
+         <p>
+            Hangprinter Campaign: <a href="https://github.com/sponsors/tobbelobb/">Github Sponsors</a></p>
+         <p>
+            Hangprinter Merchandise USA: <a href="https://shop.spreadshirt.com/hangprinter-merchandise/">Spreadshirt.com</a></p>
+         <p>
+            Hangprinter Merchandise Sweden: <a href="https://shop.spreadshirt.se/hangprinter-merchandise/">Spreadshirt.se</a></p>
+         <p>
+            Hangprinter Project Homepage: <a href="https://hangprinter.org">hangprinter.org</a></p>
+         <p>
+            Print Issue Solution Filter Project: <a href="/blog/2014#Introducing_PISF">[1]</a>,
+            <a href="/blog/2014#Presenting_PISF_Again">[2]</a>,
+            <a href="/blog/2014#PISF_Online_Sort_Of">[3]</a>,
+            <a href="/blog/2014#PISF">[4]</a></p>
+         <p>
+            Sourcing RepRappro Mendel in Larvik: <a href="/blog/2014#Sourcing_Mendel_1">[1]</a>,
+            <a href="/blog/2014#Sourcing_Mendel_2">[2]</a>,
+            <a href="/blog/2014#Sourcing_Mendel_3">[3]</a>,
+            <a href="/blog/2014#Sourcing_Mendel_4">[4]</a>,
+            <a href="/blog/2014#Sourcing_Mendel_5">[5]</a>,
+            <a href="/blog/2014#Sourcing_Mendel_6">[6]</a>,
+            <a href="/blog/2014#Sourcing_Mendel_7">[7]</a></p>
+         <p>
+            Github Profile: <a href="https://github.com/tobbelobb/">link</a><br></p>
+         <p>
+            Gitlab Profile: <a href="https://gitlab.com/tobben">link</a><br></p>
+         <p>
+            Hangprinter project on Gitlab: <a href="https://gitlab.com/hangprinter">link</a><br></p>
+         <p>
+            Vimeo User: <a href="https://vimeo.com/user23166500">link</a><br></p>
+         <p>
+            Youtube User: <a href="https://www.youtube.com/channel/UCw1Nz0VCw4z-dfq4WjSkFzQ">link</a><br></p>
+         <p>
+            Twitter User: <a href="https://twitter.com/tobbelobb">link</a><br></p>
+         <p>
+            Instagram User: <a href="https://www.instagram.com/torbjorn.ludvigsen/">link</a><br></p>
+         <p>
+            Master's Thesis: <a href="http://opensourceecology.org/wiki/File:Thesis.pdf">link</a><br></p>
+         <p>
+            Linkedin Profile: <a href="https://se.linkedin.com/in/torbjorn-ludvigsen">link</a><br></p>
+         <p>
+            Appropedia User: <a href="http://www.appropedia.org/User:Tobben">link</a><br></p>
+         <p>
+            RepRap Forums User: <a href="http://forums.reprap.org/profile.php?1,22385">link</a></p>
+         <p>
+            Forums threads: <a href="http://forums.reprap.org/read.php?178,344022">Hangprinter version 1</a>,
+            <a href="http://forums.reprap.org/read.php?1,738858">Hangprinter version 2</a>,
+            <a href="http://forums.reprap.org/read.php?1,792937">Hangprinter version 3</a>,
+            <a href="https://reprap.org/forum/list.php?423">List of Hangprinter threads</a></p>
+         <p>
+            Source for this blog: <a href="https://gitlab.com/tobben/tbear_blogg">Gitlab repo</a></p>
+         <p>
+            Everything on this homepage, except those videos who are published via Vimeo or Youtube, is licensed under the <a href="https://www.gnu.org/licenses/fdl">Gnu Free Documentation License</a>.
+            The videos published via Vimeo or Youtube are also licensed via Vimeo or Youtube.
+            
+         </p>
+      </div>
+      <div class="h-card" style="display: none"><a class="u-url" rel="me" href="https://www.torbjornludvigsen.com">torbjornludvigsen.com</a><span class="p-name" rel="me">Torbj&oslash;rn Ludvigsen</span><span class="p-nickname">tobben</span><img class="u-photo" src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG" alt="Torbj&oslash;rn Ludvigsen"><span class="p-locality">Gothenburg</span></div><script src="/js/cart.js"></script><script src="/js/lib.js"></script><script type="text/javascript">
+  MathJax.Hub.Configured()
+</script><script src="/js/pages_script.js"></script><script src="/js/swipe_menu.js"></script><script data-goatcounter="https://torbjornludvigsen.goatcounter.com/count" async="true" src="//gc.zgo.at/count.js"></script></body>
+</html>
