@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
-<posts year="2023">
+<posts year="2025">
   <post id="hangprinter_project_83" heading="Simulation and HP5 Work" date="24-9-2025">
     <p>
         So I made a Slideprinter simulation, check it out at <a href="https://hangprinter.org/">hangprinter.org</a>.
@@ -8,21 +8,21 @@
     <video width="500" controls="true">
       <source src="./bilder/fast_print_simulator.webm" type="video/webm"></source>
     </video>
-    <p>
-      It's really cool because it really simulates many aspects of a real machine:
+  <p>It's really cool because it simulates many aspects of a real machine:</p>
       <ul>
-        <li>I wrote a whole library to simulate the lines. Check out <a href="https://github.com/tobbelobb/hp-sim5/">hp-sim5</a>. This has been a grueling multi month effort.</li>
-        <li>The simulation is a state of the art XPBD time loop, so close to physical reality.</li>
-        <li>The move commands comes from real Klipper, with a real Hangprinter config</li>
-        <li>Klipper can stream commands to the simulaton too (if a real mcu is attached).</li>
-        <li>The simulated steppers can loose steps, their torque varies with speed etc.</li>
-        <li>Spools can be clicked, grabbed and pulled with your mouse of touch screen.</li>
-        <li>Simulation can be speed up considerably compared to realtime.</li>
-        <li>The logo print simulation simulates millions of individual step-signals and micrograms of disposed material.</li>
-        <li>It's imlpemented both in Javascript and in Python.</li>
+        <li>I wrote a whole library to simulate the lines. Check out <a href="https://github.com/tobbelobb/hp-sim5/">hp-sim5</a>. This has been a grueling multi-month effort. Good cable/line simulation is not widely available from anywhere else.</li>
+        <li>The simulation runs on a state-of-the-art XPBD time loop that stays close to physical reality.</li>
+        <li>The move commands comes from real Klipper, with a real Hangprinter config.</li>
+        <li>Klipper can stream commands to the simulaton too (only recommended if a real mcu is attached, or you run klipper_mcu on a realtime linux kernel).</li>
+        <li>The simulated steppers can lose steps; their torque varies with speed and load.</li>
+        <li>Spools can be clicked, grabbed, and pulled with your mouse or touch screen.</li>
+        <li>Simulation speed can be cranked up 100s of times beyond realtime for faster experiments.</li>
+        <li>The logo print simulation tracks millions of individual step pulses and micrograms of deposited material.</li>
+        <li>It's implemented both in Javascript and in Python.</li>
         <li>The whole machine and its simulation scene and config is described in a file format called USD, see <a href="https://github.com/tobbelobb/hp-sim5/blob/main/examples/usd_scenes/slideprinter.usda">slideprinter.usda</a>, which enables us to be data-driven, but also compatibility with various 3d modelling, reinforcement learning, and simulation softwares such as Blender and Isaac Sim.</li>
+        <li>The cable solver models slack, stretch, wrap, and friction straight from that USD geometry, keeping the kinematics honest.</li>
+        <li>The Python build can hand off the same solver to NVIDIA Warp, so long jobs can use the GPU.</li>
       </ul>
-    </p>
     <p>
       I think simulations are most important part of the Hangprinter Project.
       I'd like to automate the hardware design and fw configuration.
@@ -63,7 +63,7 @@
         columns: [
           {title: "Item", field: "Item", headerFilter: "input", resizable: true},
           {title: "Quantity", field: "Quantity", headerFilter: "input", resizable: true},
-          {title: "Price_USD", field: "Price_USD", headerFilter: "input", resizable: true, formatterParams:{
+          {title: "Price_USD", field: "Price_USD", headerFilter: "input", resizable: true, formatter: "money", formatterParams:{
             symbol:"$",
             precision:0,
         }},
@@ -98,7 +98,7 @@
         columns: [
           {title: "Item", field: "Item", headerFilter: "input", resizable: true},
           {title: "Quantity", field: "Quantity", headerFilter: "input", resizable: true},
-          {title: "Price_USD", field: "Price_USD", headerFilter: "input", resizable: true, formatterParams:{
+          {title: "Price_USD", field: "Price_USD", headerFilter: "input", resizable: true, formatter: "money", formatterParams:{
             symbol:"$",
             precision:0,
         }},
@@ -134,7 +134,7 @@
         columns: [
           {title: "Item", field: "Item", headerFilter: "input", resizable: true},
           {title: "Quantity", field: "Quantity", headerFilter: "input", resizable: true},
-          {title: "Price_USD", field: "Price_USD", headerFilter: "input", resizable: true, formatterParams:{
+          {title: "Price_USD", field: "Price_USD", headerFilter: "input", resizable: true, formatter: "money", formatterParams:{
             symbol:"$",
             precision:0,
         }},

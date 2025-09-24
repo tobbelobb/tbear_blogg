@@ -13,7 +13,7 @@
       <meta property="og:type" content="website">
       <meta property="og:title" content="Torbjorn Ludvigsen">
       <meta property="og:url" content="https://torbjornludvigsen.com/blog">
-      <link rel="canonical" href="https://torbjornludvigsen.com/blog/2023">
+      <link rel="canonical" href="https://torbjornludvigsen.com/blog/2025">
       <meta property="og:description" content="Reprap blog">
       <meta property="og:image" content="https://torbjornludvigsen.com/media/torbjornludvigsen.JPG">
       <meta name="twitter:card" content="summary">
@@ -70,751 +70,195 @@
       </div>
       <div class="h-feed" id="MainContent">
          <article class="h-entry">
-            <h1 class="p-name" id="hangprinter_project_82">Fifth Motion Axis: Flex Compensation</h1>
-            <div class="date">20-9-2023</div>
+            <h1 class="p-name" id="hangprinter_project_83">Simulation and HP5 Work</h1>
+            <div class="date">24-9-2025</div>
             <p>
-               The fifth motion axis is a big feature I've planned for the Hangprinter v5.
-               I'm adding another low anchor.
+               So I made a Slideprinter simulation, check it out at <a href="https://hangprinter.org/">hangprinter.org</a>.
                    
             </p>
-            <figure>
-                     <a href="/blog/2023/bilder/HP5_first_sketch.png">
-                          <img src="/blog/2023/bilder/HP5_first_sketch_small.png" alt="" width="500" height="501">
-                        </a>
+            <video width="500" controls="true">
                      
-               <figcaption>
-                          A first sketch of Hangprinter version 5.
-                        
-               </figcaption>
+               <source src="./bilder/fast_print_simulator.webm" type="video/webm"></source>
                    
-            </figure>
-            <p>
-                     CAD work happens on the <a href="https://gitlab.com/tobben/hangprinter/-/tree/version_5">version_5</a> branch.
-                     Full firmware support was implemented in collaboration with jtimon on Github,
-                     and has already been merged into ReprapFirmware.
-                     See the merged pull request
-                     <a href="https://github.com/Duet3D/RepRapFirmware/pull/606">here</a>.
-                   
-            </p>
-            <p>
-                     One of the tricky parts was finding a good flex compensation.
-                   
-            </p>
-            <h3>Flex Compensation</h3>
-            <p>
-                     To understand how Hangprinter's flex compensation works, imagine all lines to be (stiff, linear) springs.
-                     In the image above, imagine the mover is not moving, and the lines are almost slack, just barely not sagging.
-                   
-            </p>
-            <p>
-                     Now imagine that, the compensation algorithm wants to tighten the lines.
-                     It wants to wind in some millimeters of line onto each spool to set the whole system under tension.
-                     However, the compensation algorithm is not allowed to pull the mover out of position.
-                     The mover must remain still.
-                   
-            </p>
-            <p>
-                     Finding a set of five lengths that achieve this is a basic problem of
-                     <a href="https://en.wikipedia.org/wiki/Statics">statics</a>.
-                     We solve a system to balance out six forces, five from lines, and one from gravity pulling the mover.
-                   
-            </p>
-            <p>
-                     Since we include gravity there, the algorithm really does two things:
-                     
-               <ol>
-                          
-                  <li>Set correct pre-tension in all positions, giving better accuracy.</li>
-                          
-                  <li>Compensating gravity, which also improves accuracy.</li>
-                        
-               </ol>
-                   
-            </p>
-            <p>
-                     Finding solutions to the statics problem means solving an over-determined linear system.
-                     We get rid of the over-determination by splitting the system into two: pre-tension and gravity,
-                     and then each of those into four, setting each of the lower anchor's forces to zero in turn.
-                     The eight solutions can then be combined in any linear way to form a valid solution.
-                   
-            </p>
-            <p>
-                     However, "in any linear way" means there are infinitely many valid solutions, in each point in the build volume! &#128562;
-                     I found it tricky to decide which solutions to use, how to weigh the linear combination.
-                   
-            </p>
-            <p>
-                     I decided to determine pre-tension with two (user-configurable) constants: max-force and target-force.
-                     But I also needed to distribute the forces between the four lower anchors in "a good way".
-                     Key to getting it good was to scale the pre-tension solutions so all have equal max force.
-                     I don't understand exactly why that works so well,
-                     but I'll use a plot to explain why the force distribution it creates is so good.
-                   
-            </p>
-            <p>
-                     The four low anchors all have similar plots to each other, so I show only the A-anchor one.
-                     The top anchor has its own compensation pattern, but I'll focus only on the low anchors in this post.
-                     Full details are <a href="https://gitlab.com/tobben/hangprinter-flex-compensation/-/blob/21af6cba194c24cb8a9c5d5588664adba10adf90/flex.cpp#L56">here</a>.
-                   
-            </p>
-            <figure>
-                     <a href="/blog/2023/bilder/Compensation_forces.png">
-                          <img src="/blog/2023/bilder/Compensation_forces_small.png" alt="" width="500" height="389">
-                        </a>
-                     
-               <figcaption>
-                          The xy-axis is the HP5's build surface [mm].
-                          The z-axis is the amount of pull in the A-lines, measured in Newtons.
-                          The A-anchor is situated at (0, -1500, 0), right where the force reaches a max of 120 N.
-                          At the origin, the A-force is at target-force, which is 20 N in this plot.
-                        
-               </figcaption>
-                   
-            </figure>
-            <p>
-                     Here are the good features that I looked for in my solution were, that can be also seen in the plot:
-                     
-               <ul>
-                          
-                  <li>Forces are generally small near the middle of the reachable plane (the area spanned by the four low anchors).</li>
-                          
-                  <li>Forces are generally bigger towards the edges of the reachable plane. We want to spend our main effort on counteracting the
-                     pull of gravity that drags the effector towards the middle,
-                                 and otherwise keep forces as small as possible.
-                  </li>
-                          
-                  <li>Forces are generally smaller the further away from the anchor one gets. The anchors closest to the mover will generally be
-                     best able to control it,
-                                 so the furthest anchor should gently "give up", without going completely slack, and the closer anchors should
-                     gradually "take over" by applying more force.
-                  </li>
-                          
-                  <li>The surface is smooth, there are no sudden changes of force.</li>
-                          
-                  <li>Trying to leave the reachable plane should never happen, other code takes care of that.
-                                 If it happens anyway, the user is in a very bad situation.
-                                 We therefore want compensation target forces to fall off smoothly but rapidly outside the reachable plane.
-                  </li>
-                        
-               </ul>
-                   
-            </p>
-            <p>
-                     But forces doesn't tell the whole story, since the lines are modelled to be springs and these lines/springs
-                     change length and therefore stiffness across the build volume.
-                     The following two plots show the effect of enabling flex compensation, counting line length, not force.
-                   
-            </p>
-            <figure>
-                     <a href="/blog/2023/bilder/Compensation_distances_from_above.png">
-                          <img src="/blog/2023/bilder/Compensation_distances_from_above_small.png" alt="" width="500" height="456">
-                        </a>
-                     
-               <figcaption>
-                          The xy-axis is the HP5's build surface [mm].
-                          The z-axis is the amount of pull in the A-lines measured in line length [mm].
-                          The A-anchor is situated at (0, -1500, 0), right where the two blue areas meet.
-                          Blue means that the algorithm will compensate by pulling more line in on the spool.
-                          Red means releasing more line. The dark red area is flat because the algorithm ha no more pre-tensioned
-                          line to release, and it will refuse to let the line go slack.
-                        
-               </figcaption>
-                   
-            </figure>
-            <figure>
-                     <a href="/blog/2023/bilder/Compensation_distances_from_side.png">
-                          <img src="/blog/2023/bilder/Compensation_distances_from_side_small.png" alt="" width="500" height="436">
-                        </a>
-                     
-               <figcaption>
-                          The x-axis is the HP5's y-axis (sorry) [mm].
-                          The z-axis is the amount of pull in the A-lines measured in line length [mm].
-                          The A-anchor is situated at (0, -1500, 0), to the very left in the plot.
-                          We see that the deepest red area is really flat, and we can only release ca 4 mm of line.
-                          This means the machine is assumed to start with 4 mm of pre-tension in the A-lines when homed.
-                          We also see that the maximum amount of compensation is an additional ca 14 mm of line compared
-                          to having no compensation.
-                        
-               </figcaption>
-                   
-            </figure>
-            <p>
-                     I had really planned to write a little about the five-anchor
-                     <a href="https://gitlab.com/tobben/hangprinter-forward-transform">forward transform</a>, and how all of this was
-                     fed into the
-                     <a href="https://gitlab.com/tobben/auto-calibration-simulation-for-hangprinter/-/tree/five_anchors?ref_type=heads">auto-calibration-simulation-for-hangprinter</a> to get auto calibration with a five-anchor Hangprinter.
-                     Maybe even talk a little about how
-                     <a href="https://gitlab.com/tobben/auto-calibration-simulation-for-hangprinter/-/merge_requests/2">adding a Kalman filter</a>
-                     to the auto-calibration could make it way more automatic and easy to use.
-                   
-            </p>
-            <p>
-                     However, I'm out of writing time and this post is a bit heavy.
-                     So let's talk about that some other time.
-                   
-            </p>
-            <p>
-               - tobben
-               
-            </p>
-            <div style="display: none">
-               <time class="dt-published">2023-09-20T12:00:00Z</time><a class="u-url" href="https://torbjornludvigsen.com/blog/2023/index.html#hangprinter_project_82"></a><a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
-                  Torbj&oslash;rn Ludvigsen
-                  <img class="u-photo" src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG" alt="Torbj&oslash;rn Ludvigsen"></a><span class="p-summary">
-                  The fifth motion axis is a big feature I've planned for the Hangprinter v5.
-                  I'm adding another low anchor.
-                      </span></div><br><br><br></article>
-         <article class="h-entry">
-            <h1 class="p-name" id="hangprinter_project_81">Where I'm Going With This</h1>
-            <div class="date">25-8-2023</div>
-            <p>
-                     I've started working on version 5 of Hangprinter, the HP5.
-                     I plan to sell it as a kit once it's ready.
-                   
-            </p>
-            <p>
-                     I've also started a proto-business where I sell ceramics printed with HP4.
-                     You can check out the products at <a href="https://torbjornludvigsen.com/shop">torbjornludvigsen.com/shop</a>,
-                     and soon <a href="hangprinter.com/shop">hangprinter.com/shop</a>.
-                   
-            </p>
-            <p>
-                     The long-term vision is to build out an ecosystem of profitable Hangprinter enterprises.
-                   
-            </p>
-            <figure>
-                     <a href="/blog/2023/bilder/Default_fruitlike_triangles_hanging_from_trees_in_a_lush_light_0.jpg">
-                          <img src="/blog/2023/bilder/Default_fruitlike_triangles_hanging_from_trees_in_a_lush_light_0_small.jpg" alt="" width="500" height="281">
-                        </a>
-                     
-               <figcaption>
-                        
-               </figcaption>
-                   
-            </figure>
-            <h3>A Collective Rise</h3>
-            <p>
-                     So I decided to rise and use my own machine.
-                     But what I really want is an ecosystem that rises with me, one that can grow in two ways:
-                     
-               <ol>
-                          
-                  <li>Shared technical progress.</li>
-                          
-                  <li>Companies making money.</li>
-                        
-               </ol>
-                   
-            </p>
-            <p>
-                     I want as much as possible of both ways at once.
-                     Can it be done? Will my plan work?
-                     Any sign it might work makes me very excited.
-                     Having two such growth mechanisms work in tandem makes new industries take off.
-                   
-            </p>
-            <figure>
-                     <a href="/blog/2023/bilder/Default_Super_fantastic_shiny_cogwheels_given_to_a_hand_perfec_0.jpg">
-                          <img src="/blog/2023/bilder/Default_Super_fantastic_shiny_cogwheels_given_to_a_hand_perfec_0_small.jpg" alt="" width="500" height="333">
-                        </a>
-                     
-               <figcaption>
-                        
-               </figcaption>
-                   
-            </figure>
-            <h3>Tempering Expectations</h3>
-            <p>
-                     Getting there will depend on the interplay between the companies that
-                     end up using and supplying Hangprinters.
-                     I can take both roles initially and give us a good start.
-                   
-            </p>
-            <p>
-                     I want to do that despite knowing that
-                     in the very long run, there's always consolidation, as
-                     maturing industries tend to stop sharing technical progress.
-                     If we get to the point where I'm out-competed by other profitable Hangprinter firms, I'll celebrate.
-                     It would signal the realization of my long-term goal.
-                   
-            </p>
-            <figure>
-                     <a href="/blog/2023/bilder/single_cup.jpg">
-                          <img src="/blog/2023/bilder/single_cup_small.jpg" alt="" width="500" height="281">
-                        </a>
-                     
-               <figcaption>
-                          A cup I made.
-                        
-               </figcaption>
-                   
-            </figure>
-            <h3>Right Now</h3>
-            <p>
-                     My current focus is two-fold:
-                     
-               <ul>
-                        
-                  <li>Validate that HP4 can generate an income, while</li>
-                        
-                  <li>making the HP5 design market ready.</li>
-                        
-               </ul>
-                   
-            </p>
-            <p>
-                     I have some finished products, but I haven't sold them yet.
-                     So I have some selling to do.
-                   
-            </p>
-            <p>
-                     Planning and programming the HP5 is mostly done.
-                     The remaining work includes CAN integration, CAD work, and tests on hardware.
-                   
-            </p>
-            <figure>
-                     <a href="/blog/2023/bilder/mega_coral_glazed.jpg">
-                          <img src="/blog/2023/bilder/mega_coral_glazed_small.jpg" alt="" width="500" height="376">
-                        </a>
-                     
-               <figcaption>
-                          Giant porcelain sculpture in production.
-                        
-               </figcaption>
-                   
-            </figure>
-            <h3>Much Publishing to Do</h3>
-            <p>
-                     There will also be a push for documentation.
-                     I'll use the remaining budget from the patent case crowdfunding to
-                     upgrade <a href="https://hangprinter.org/doc">hangprinter.org/doc</a> with
-                     documentation good enough to serve as patent protection.
-                     I'll also release a series of blog posts detailing the progress made during
-                     the year-long patent case blackout.
-                   
-            </p>
-            <p>
-                     Big thanks to everyone who stayed active and supportive during the blackout.
-                     The patent holders had a seven-digit USD budget and planned a Hangprinted shield over a nuclear reactor.
-                     I hope their plan is still on and wish for more big Hangprinter projects to pop up.
-                     I hope they'll say hi in the Discord chat.
-                   
-            </p>
-            <p>
-               - tobben
-               
-            </p>
-            <div style="display: none">
-               <time class="dt-published">2023-08-25T12:00:00Z</time><a class="u-url" href="https://torbjornludvigsen.com/blog/2023/index.html#hangprinter_project_81"></a><a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
-                  Torbj&oslash;rn Ludvigsen
-                  <img class="u-photo" src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG" alt="Torbj&oslash;rn Ludvigsen"></a><span class="p-summary">
-                        I've started working on version 5 of Hangprinter, the HP5.
-                        I plan to sell it as a kit once it's ready.
-                      </span></div><br><br><br></article>
-         <article class="h-entry">
-            <h1 class="p-name" id="hangprinter_project_80">Patent Got Narrowed</h1>
-            <div class="date">5-8-2023</div>
-            <div id="patent_1" style="visibility:hidden"></div>
-            <h2>TLDR Version</h2>
-            <p>
-                     A copycat Hangprinter patent popped up in 2022.
-                     The patent made the community nervous, so we wanted to take it down.
-                   
-            </p>
-            <p>
-                     We got lots of help.
-                     I found an awesome lawyer.
-                     We presented our prior art analysis to the USPTO (United States Patent and Trademark Office).
-                     They largely agreed with our analysis.
-                     They rejected all the patent's original claims.
-                     They accepted a narrower version of them.
-                   
-            </p>
-            <p>
-                     We are fine with the narrow version of the patent.
-                     It doesn't make us nervous.
-                   
-            </p>
-            <h2>Quite Long Version</h2>
-            <p>
-                       In January 2022, news of a very broad Hangprinter patent appeared on Twitter (<a href="https://twitter.com/tobbelobb/status/1487143759687176193">here</a>).
-                       Two news articles were published on 3dprintingindustry.com, <a href="https://3dprintingindustry.com/news/ornl-gains-patent-for-skybaam-cable-hoisted-construction-3d-printing-technology-203113/">here</a> and <a href="https://3dprintingindustry.com/news/open-source-advocates-ornls-skybaam-3d-printer-copying-earlier-hangprinter-technology-203278/">here</a>.
-                       I collected my prior art in an extensive blog post (<a href="https://torbjornludvigsen.com/blog/hangprinter-is-prior-art/">here</a>).
-                   
-            </p>
-            <h3>Collecting Advice</h3>
-            <p>
-                     I talked to the Hangprinter community.
-                     Some engineers who are way more experienced with patents than me said the patent
-                   
-            </p>
-            <p>
+            </video>
+            <p>It's really cool because it simulates many aspects of a real machine:</p>
+            <ul>
                        
-               <ol>
-                            
-                  <li>claimed ownership of the basic Hangprinter idea,</li>
-                            
-                  <li>already affected Hangprinter startup funding negatively, worldwide.</li>
-                            
-                  <li>It might be invalidated or severely narrowed by presenting Hangprinter prior art to the USPTO.</li>
-                            
-                  <li>It might also be withdrawn voluntarily by the patent holders, at least in theory.</li>
-                          
-               </ol>
-                   
-            </p>
-            <p>
-                     In hindsight, this was all great insight.
-                   
-            </p>
-            <p>
-                     But the case also caught the interest of a community I hadn't met before,
-                     the community of patent lawyers who care about or have opinions about open source.
-                     I had around 20 calls or video meetings with different helpers from this community,
-                     and around 14 email threads, some of extensive depth and length, during this period.
-                   
-            </p>
-            <p>
-                     The sum of the info I got was a contradictory mess,
-                     and it was very hard to grasp what I should expect from the US patent system.
-                     Many urged me to don't do anything because a poorly executed patent fight
-                     would strengthen the patent instead of weakening it.
-                     Many even suggested that the patent holders would win, not because they're right,
-                     but simply because they're rich and powerful.
-                     Some were helpful and well-meaning, some were academic and had very fancy titles,
-                     and a few shouted at me in all-caps for thinking I could challenge a US patent.
-                   
-            </p>
-            <p>
-                     I was told by the more serious-sounding ones
-                     that my prior art from up to one year <i>prior</i> to the patent application date was unusable
-                     due to a special loophole in US patent law.
-                     (This legal loophole has been plugged a long time ago.)
-                     I got cost estimations ranging from 30k to 500k USD.
-                   
-            </p>
-            <p>
-                     In parallel with learning about the supposed horrors of the US patent system,
-                     I tried to talk to the patent's inventors via email.
-                     They seemed like good-hearted people but maybe a bit naive.
-                     As soon as their company's legal dept was involved the email thread went silent.
-                     They might have done that to protect me from saying stupid things unknowingly.
-                   
-            </p>
-            <p>
-                     It also left the door open for the interpretation that the US patent system
-                     might just be compactly cynical.
-                     Apart from the real legal experts,
-                     half of the internet was telling me that the US patent system was God's punishment to humanity.
-                     The other half talked endlessly about how well-intentioned the patent system is, how good it is
-                     compared to China etc etc.
-                     I wanted out.
-                   
-            </p>
-            <h3>A Sigh</h3>
-            <p>
-                     This whole patent case could easily have been solved with a simple conversation.
-                     I would probably have given the patent holders a way better deal than the USPTO ultimately gave them,
-                     considering how eager I was to escape this patent case.
-                   
-            </p>
-            <p>
-                     Days and nights of writing claim mappings, trying to get the format, the date-stamped sources,
-                     the linked proof of every date stamp,
-                     the exact wordings,
-                     the technical details into a state that the various lawyers approved of.
-                   
-            </p>
-            <p>
-                     The patent text didn't even describe a sound physical geometry, but the
-                     lawyers seemed utterly unimpressed by physics, maths, and geometry-based arguments,
-                     which scared me a little.
-                     I had to "assume common misinterpretations"
-                     to even understand what the lawyers thought the text that I was supposed to argue with said.
-                     For a physicist and a coder, knowing that their misinterpretations might overrule reality was
-                     confusing and uncomfortable.
-                     I gave up for a while, and let all conversations die out, I needed silence.
-                   
-            </p>
-            <h3>Doing It</h3>
-            <p>
-                     After getting some rest, I felt like I should at least try to challenge the patent anyway.
-                     I'd been working on the Hangprinter Project for eight years after all,
-                     and the patent stood in the way of the most basic project goals.
-                     The do-nothing strategy was so boring and self-defeating.
-                     Even failure would feel better.
-                   
-            </p>
-            <p>
-                     Besides, sometime in the past, it was a little dream of mine to clear up a large design space for others,
-                     similar to what the expiration of Stratasys' US patent 5121329 had done back in 2009.
-                     That expiration supercharged the Reprap Project's potential by removing lots of patent risk.
-                     I'd dreamt of supercharging the Hangprinter Project as well,
-                     but not passively by waiting for an old patent to expire.
-                     I wanted to actively remove a broad patent within the field of cable-driven Hangprinter-like machines,
-                     saving us the 20 years it takes for US patents to expire.
-                   
-            </p>
-            <p>
-                     I read the patent text again and found that I might have a chance.
-                     So I decided to put in a non-zero effort toward the old dream.
-                   
-            </p>
-            <p>
-                     I put together a fundraising campaign to pay for legal expenses (<a href="https://www.gofundme.com/f/keep-hangprinter-free">here</a>).
-                     I didn't spread it much.
-                     I published it a single tweet saying "Hangprinter has been stolen by patent trolls.
-                     Here's a kind of hopeless fundraiser for those who can afford to help us fight back legally."
-                   
-            </p>
-            <p>
-                     It got way more attention and funding than I had expected.
-                     But also way less than the 60k USD I thought I needed.
-                   
-            </p>
-            <p>
-                     All communication channels heated up again, helpers appearing everywhere.
-                     3D Printing Industry published a third article (<a href="https://3dprintingindustry.com/news/crowdfunding-campaign-launched-to-challenge-ornls-skybaam-patent-and-keep-the-hangprinter-free-210324/">here</a>), and techdirt wrote one (<a href="https://www.techdirt.com/2022/06/24/ridiculous-govt-contractor-copies-open-source-3d-printing-concept-and-patents-it/">here</a>).
-                     Moderators of the 3Dprinting community on Reddit offered me a pinned AMA (ask me anything) session on their page (<a href="https://www.reddit.com/r/3Dprinting/comments/vs3imb/i_am_torbj%C3%B8rn_ludvigsen_creator_of_hangprinter/">here</a>).
-                     I spoke to anyone who would speak to me, and to anyone they asked me to contact.
-                     Most often that meant their lawyer, or to people at the company who held the patent.
-                     One time it meant the "Patent Ombudsman" at the USPTO other times it was law professors.
-                     I applied for pro bono legal help through a bunch of different programs.
-                     Writing those applications took lots of time but I didn't get any meaningful answers.
-                   
-            </p>
-            <h3>Path to Clarity</h3>
-            <p>
-                     Someone asked if I'd contacted EFF (Electronic Frontier Foundation).
-                     Out of the hundreds of emails and forum posts, this one made the biggest difference.
-                     I had been meaning to contact EFF for months, but that plan had drowned in all the fuzz.
-                     So I sent an email to info@eff.org.
-                     I was amused to get an answer from a person with the title "Mark Cuban Chair to Eliminate Stupid Patents".
-                   
-            </p>
-            <p>
-                     After some back and forth I was introduced to the Public Interest Patent Law Institute (PIPLIUS, <a href="https://www.piplius.org/">here</a>).
-                     We had another go at claim mapping, and we tried finding someone who could represent Hangprinter in the US.
-                   
-            </p>
-            <p>
-                     It was Alex at PIPLIUS who told me about the famous Gnome patent case
-                     (<a href="https://blog.opensource.org/gnome-patent-troll-stripped-of-patent-rights/">here</a>),
-                     and introduced me to the IP lawyer who won that case for the open source side.
-                   
-            </p>
-            <p>
-                     He already knew about the Hangprinter patent and had even tried talking to me on Twitter.
-                     He agreed to take the case and offered a very low rate.
-                     It wasn't pro bono (free) but I'll explain why I found the rate to be very low.
-                   
-            </p>
-            <p>
-                     He knew my budget since the crowdfunding campaign was public.
-                     Lawyers charge in advance so my basic understanding of game theory told me that I'd
-                     probably have to send the whole crowdfunded sum to whatever lawyer I hired, all at once.
-                     I had gotten 196k SEK from the campaign (190k SEK after adding Paypal donations and subtracting fees).
-                   
-            </p>
-            <p>
-                     I paid 4000 USD (43072 SEK at the time) for the initial unpatentability analysis, and later a 1500 USD (16834 SEK)
-                     flat fee for the full ex partes reexamination process with the USPTO.
-                     He also helped reduce my fee paid to the USPTO by arguing that I should be categorized as a small entity.
-                     The USPTO fee was 3150 USD (35351 SEK) and was forwarded by the lawyer.
-                     This left ca 95k SEK (currently equal to 9k USD) of donated money in my bank account.
-                     More on that later.
-                   
-            </p>
-            <p>
-                     For 20% of the price (or at an 80% discount) of the lowest rate any other lawyer had proposed (which was 26850 USD),
-                     this lawyer did everything possible to invalidate or severely narrow the patent through an ex partes reexamination process.
-                     Including clearing up the misunderstanding that prior art needed to be more than a year older than the patent application.
-                     This improved the claims mapping considerably.
-                     He wrote the final analysis and handled the endless back-and-forth with the USPTO while
-                     patiently answering my questions along the way.
-                   
-            </p>
-            <h3>Ex Partes Reexamination</h3>
-            <p>
-                     From this point on in the story, there's a paper trace at the USPTO's website, <a href="https://patentcenter.uspto.gov/applications/90015140/ifw/docs">here</a>.
-                     It shows our ex partes reexam request from October 2022.
-                     To see the analysis we put forth, see "Receipt Original Ex Parte Reexamination by 3rd party fewer than 40 Pages Rule
-               1.20(C)(1)".
-                     Warning: It's 39 pages of legalese.
-                   
-            </p>
-            <p>
-                     The trace shows that the re-exam was ordered in January 2023,
-                     meaning the USPTO agreed that our prior art and analysis raised a new question of patentability.
-                     Our application for reexamination was granted.
-                   
-            </p>
-            <p>
-                     In April we got the USPTO examiner's analysis in the form of a "Non-Final Action".
-                     I think their analysis was largely in line with ours.
-                     All claims were rejected.
-                   
-            </p>
-            <p>
-                     The ex partes reexamination procedure was chosen partly because it's cheap.
-                     However, it has the downside that the patent holder gets the last word.
-                     In June, the patent holders used this opportunity to ask if a
-                     narrowed-down version of their claims could be accepted.
-                   
-            </p>
-            <p>
-                     I didn't analyze the new claims closely yet, since I still hoped the USPTO examiner would reject them.
-                     However, in July we got the Notice of Intent to Issue a Reexam Certificate.
-                     The revised claims had been accepted.
-                   
-            </p>
-            <p>
-                     Looking closely, I could confirm that none of the existing Hangprinters are covered by the revised claims.
-                     They now covered only one specific design path, building upon Hangprinter.
-                     This design path gets legally closed off by the patent,
-                     so the question became if the closed path was an interesting one.
-                   
-            </p>
-            <h3>Result</h3>
-            <p>
-                     I was pleasantly surprised by just how narrow the claims had become.
-                     The geometrical mistakes from the original patent remained,
-                     claiming for example that D-anchors always pull the effector along the Z-axis.
-                     Better yet, the all-important claim 1 had been made twice as long,
-                     now specifying a combination of the following features:
-                   
-            </p>
-            <p>
+               <li>I wrote a whole library to simulate the lines. Check out <a href="https://github.com/tobbelobb/hp-sim5/">hp-sim5</a>. This has been a grueling multi-month effort. Good cable/line simulation is not widely available from anywhere else.
+               </li>
+                       
+               <li>The simulation runs on a state-of-the-art XPBD time loop that stays close to physical reality.</li>
+                       
+               <li>The move commands comes from real Klipper, with a real Hangprinter config.</li>
+                       
+               <li>Klipper can stream commands to the simulaton too (only recommended if a real mcu is attached, or you run klipper_mcu on a
+                  realtime linux kernel).
+               </li>
+                       
+               <li>The simulated steppers can lose steps; their torque varies with speed and load.</li>
+                       
+               <li>Spools can be clicked, grabbed, and pulled with your mouse or touch screen.</li>
+                       
+               <li>Simulation speed can be cranked up 100s of times beyond realtime for faster experiments.</li>
+                       
+               <li>The logo print simulation tracks millions of individual step pulses and micrograms of deposited material.</li>
+                       
+               <li>It's implemented both in Javascript and in Python.</li>
+                       
+               <li>The whole machine and its simulation scene and config is described in a file format called USD, see <a href="https://github.com/tobbelobb/hp-sim5/blob/main/examples/usd_scenes/slideprinter.usda">slideprinter.usda</a>, which enables us to be data-driven, but also compatibility with various 3d modelling, reinforcement learning, and simulation
+                  softwares such as Blender and Isaac Sim.
+               </li>
+                       
+               <li>The cable solver models slack, stretch, wrap, and friction straight from that USD geometry, keeping the kinematics honest.</li>
+                       
+               <li>The Python build can hand off the same solver to NVIDIA Warp, so long jobs can use the GPU.</li>
                      
-               <ol>
-                          
-                  <li>(Separate?) guy wires stabilizing a suspended top anchor.</li>
-                          
-                  <li>One lower anchor's cables form a horizontal parallelogram,
-                                 and another lower anchor's cables form a vertical parallelogram.
-                  </li>
-                          
-                  <li>At least one anchor lacks positional control and provides only tension control.</li>
-                          
-                  <li>Anchors move up/down to always be in the horizontal plane that goes through the effector.</li>
-                        
-               </ol>
+            </ul>
+            <p>
+                     I think simulations are most important part of the Hangprinter Project.
+                     I'd like to automate the hardware design and fw configuration.
+                     We just now became able to quantify comparisons between Hangprinter hardware+config setups.
+                     Just measure how close the tool head is to an optimal route at all times, compared to the exact positions in the gcode
+               file.
+                     Optimize over CAD parameters and config values, and write a simple cost function.
                    
             </p>
             <p>
-                     New independent claims 21 and 24 were added, but they share the same features, except maybe
-                     claim 24 avoids the "horizontal plane" part of feature 4, I'm not sure.
+                     So I'll keep focusing on simulation, not hardware.
+                     But it's good to have ideas of cost regardless, especially since we have to integrate tightly with a firmware in order
+               to simulate.
+                     The firmware implies ceirtain hardware which implies cost.
+                   
+            </p>
+            <h2>Cost Estimates</h2>
+            <p>
+                     I computed some BOM cost estimates for various alternatives for the HP5 today. It includes three versions I've been
+               thinking about.
+                     All cost estimates assume Swedish taxes and shipping, plus a 10% inflation in all prices since 2021.
+                     The full spreadsheet is available <a href="/blog/2025/hangprinter_v5_boms.ods">here</a>.
+                   
+            </p>
+            <h3>Baseline v5 (Roughly HP Performance)</h3>
+            <div id="spreadsheet-container"></div><style>
+      #spreadsheet-container {
+        overflow-anchor: none;
+        overscroll-behavior: contain;
+      }
+    </style><link href="https://unpkg.com/tabulator-tables@5.6.1/dist/css/tabulator.min.css" rel="stylesheet"><script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.6.1/dist/js/tabulator.min.js"></script><script>
+      const table = new Tabulator("#spreadsheet-container", {
+        nestedFieldSeparator: "|",
+        height: "200px",
+        layout: "fitDataFill",
+        placeholder: "Loading...",
+
+        ajaxURL: "/blog/2025/hangprinter_v5_boms_baseline_v5.json",
+
+        columns: [
+          {title: "Item", field: "Item", headerFilter: "input", resizable: true},
+          {title: "Quantity", field: "Quantity", headerFilter: "input", resizable: true},
+          {title: "Price_USD", field: "Price_USD", headerFilter: "input", resizable: true, formatter: "money", formatterParams:{
+            symbol:"$",
+            precision:0,
+        }},
+        ],
+      });
+    </script><p>
+                     This is the machine that the HP4 prototype was always meant to be. ODrive S1 boards, Motion tracking with Arducam, Duet3
+               6XD board etc.
+                     <b>Cost:</b> 2500 USD
                    
             </p>
             <p>
-                     Apart from being easy to work around, none of these features are desirable,
-                     and their combination is particularly awful.
-                     So the revised patent closes off an entirely uninteresting design path.
-                     Let me explain.
+                     <b>Software work required:</b> We'd need to implement the Duet CAN Protocol in the ODrive firmware, which is hard, and the machine will be useless until
+               it's done.
+                     We could dodge this hard sw work with 5 x 1XD boards, but that brings total cost up by 384 USD, to 2840 USD and defeats
+               some of the purpose with the HP5/HP Performance.
                    
             </p>
-            <h4>1</h4>
-            <p>
-                     Using guy wires to stabilize the top anchor as described in the patent makes the top anchor into
-                     a Hangprinter effector in itself.
-                     Nesting one Hangprinter inside another is needlessly complex and adds many
-                     points of failure to the design.
-                     Besides, it was already suggested in the public Hangprinter Facebook group
-                     in March 2018, so it shouldn't be patentable (<a href="https://www.facebook.com/groups/hangprinter/posts/342461566264009/">here</a>) but who cares.
-                   
-            </p>
-            <p>
-                     See the appendix of my Hangprinter-is-Prior-Art post for more details and more sound alternatives, <a href="https://torbjornludvigsen.com/blog/hangprinter-is-prior-art/">here</a>.
-                   
-            </p>
-            <h4>2</h4>
-            <p>
-                     There's nothing special about vertical or horizontal parallelograms.
-                     Any parallelogram fixates rotational degrees of freedom equally well.
-                     Making all anchors equal to each other is more desirable since it
-                     reduces special cases and the number of unique parts.
-                   
-            </p>
-            <h4>3</h4>
-            <p>
-                     Constantly pulling the effector towards one point (an anchor) reduces accuracy and greatly increases the wear and
-                     energy usage of the machine. It also limits max speed and max acceleration.
-                     Having two types of lower anchors that work differently from each other makes new and
-                     exotic failure modes possible, in hardware as well as in software.
-                     We've had toggleable torque mode (allowing users to set a tension rather than a position)
-                     in all Hangprinter anchors since 2017.
-                     There are good reasons why we've never left it on during print.
-                   
-            </p>
-            <h4>4</h4>
-            <p>
-                     It is desirable to be able to pull the effector in all directions, including downwards.
-                     There are lots of forces from the print that push the effector upwards.
-                     If no anchor can pull the effector downwards,
-                     then you get wobbling and artifacts in your print, or your effector needs to be very heavy which will slow
-                     you down.
-                   
-            </p>
-            <h3>Why This is a Good Result</h3>
-            <p>
-                     The narrowed patent only covers machines that have all the features described above, all at once.
-                     If you find yourself wanting to implement 1 or 2 or 3 of those features,
-                     then you don't have to worry about the patent.
-                     Make a slight deviation, a tiny angle, or something, and you can probably have all 4.
+            <h3>Duet HCL Nema v5 (Roughly HP Convenience)</h3>
+            <div id="spreadsheet-container2"></div><style>
+      #spreadsheet-container2 {
+        overflow-anchor: none;
+        overscroll-behavior: contain;
+      }
+    </style><script>
+      const table2 = new Tabulator("#spreadsheet-container2", {
+        nestedFieldSeparator: "|",
+        height: "200px",
+        layout: "fitDataFill",
+        placeholder: "Loading...",
+
+        ajaxURL: "/blog/2025/hangprinter_v5_boms_duet_hcl_nema17.json",
+
+        columns: [
+          {title: "Item", field: "Item", headerFilter: "input", resizable: true},
+          {title: "Quantity", field: "Quantity", headerFilter: "input", resizable: true},
+          {title: "Price_USD", field: "Price_USD", headerFilter: "input", resizable: true, formatter: "money", formatterParams:{
+            symbol:"$",
+            precision:0,
+        }},
+        ],
+      });
+    </script><p>
+                     The smallest change to get away from BLDC and ODrive, dodging protocol implementation work and cost, sacreficing performance.
+                     The 5 x ODrive S1s are swapped with Duet's closed loop stepper drivers (https://www.duet3d.com/duet-3-expansion-1hcl),
+               and the 5 x BLDC motors are swapped for a standard set of Nema17 motors.
+                     <b>Cost:</b> 1750 USD
+                     If we skip the encoders for this option, cost is down to ca 1600 USD.
                    
             </p>
             <p>
-                     This is in contrast to before when you couldn't have even 1 of those features.
-                     If an anchor was considered to do "tension control", then even
-                     existing Hangprinters, and almost any related machine design, was covered by the old patent.
-                     With the new patent, we don't have to worry and can simply forget about it.
+                     <b>Software work required:</b> We would need to do implement torque mode in the expansion board and Duet CAN Protocol. That shouldn't be too hard, and the
+               machine can be useful without it as well.
                    
             </p>
-            <h3>Looking Forwards</h3>
-            <p>
-                     I published much less than usual during the past year, out of fear that whatever I publish
-                     might hurt my case, or be interpreted as legal advice, or tempt the patent holders to
-                     copy more of my stuff into patent applications.
-                   
-            </p>
-            <p>
-                     Despite not publishing, I have been developing and innovating at full speed this entire time,
-                     except for the four weeks I did blockchain stuff (see my <a href="/blog/2022/#polkadot_1">previous post</a>).
-                     I now have lots of Hangprinter-related inventions lying around that need to be published properly.
-                     I feel like the Hangprinter Community needs
-                     to secure the real interesting design paths and make sure they stay open.
-                     The way forward is to find promising design paths and then publish high-quality prior art
-                     into the public domain.
-                   
-            </p>
-            <p>
-                     That's what I will use the remaining 95k SEK from the crowdfunding campaign for.
-                     The title of the campaign was "Help Keep Hangprinter Free" so I'll put all the money into that purpose.
-                     I'll make sure we're better prepared next time around.
-                     This time we were simply lucky that the path that closed was such an uninteresting one.
-                   
-            </p>
-            <h3>The Positive Take That I See Too Seldom</h3>
-            <p>
-                     A patent case shouldn't make us sad or angry.
-                     If we see no patent vultures then the invention in our hands is probably not very valuable.
-                     If we find large entities spending money and taking risks to try and patent our things,
-                     then it's a sign we're on a valuable path.
-                   
-            </p>
-            <p>
-                     Any valuable design space will fill up with selfish for-profit players over time,
-                     even the Hangprinter space, and we should be fine with that.
-                     This patent case was not meant to expel for-profit companies from the community.
-                     It was fought to make room for more of them by
-                     making sure there's plenty of low-hanging fruit left that everybody and nobody owns.
+            <h3>Klipper Driven HP5 (Roughly HP Core)</h3>
+            <div id="spreadsheet-container3"></div><style>
+      #spreadsheet-container3 {
+        overflow-anchor: none;
+        overscroll-behavior: contain;
+      }
+    </style><script>
+      const table3 = new Tabulator("#spreadsheet-container3", {
+        nestedFieldSeparator: "|",
+        height: "200px",
+        layout: "fitDataFill",
+        placeholder: "Loading...",
+
+        ajaxURL: "/blog/2025/hangprinter_v5_boms_klipper_nema17_ebb42.json",
+
+        columns: [
+          {title: "Item", field: "Item", headerFilter: "input", resizable: true},
+          {title: "Quantity", field: "Quantity", headerFilter: "input", resizable: true},
+          {title: "Price_USD", field: "Price_USD", headerFilter: "input", resizable: true, formatter: "money", formatterParams:{
+            symbol:"$",
+            precision:0,
+        }},
+        ],
+      });
+    </script><p>
+                     No closed loop control, no torque mode.
+                     The Duet3, the 5 x ODrive S1s, and the 5 x BLDC motors are swapped with 5 microcontroller units and 5 Nema17 motors.
+                     The 5 microcontroller units will be driven by Klipper running on the Raspberry Pi 5 via CAN and a USB to CAN bridge.
+               Also, include one load sensor per anchor is included in this Klipper driven version.
+                     <b>Cost:</b> 1050 USD
+                     Adding closed loop to the Klipper Driven HP5 could come as cheap as 5x20 = 100 USD (https://www.ebay.com/itm/126266631121)
+               bringing total cost up to 1150 USD.
                    
             </p>
             <p>
-                     I'm looking forward to expanding the world of open source by continuing to give my
-                     Hangprinter developments as gifts to everyone, and by keeping the community open.
-                     Come make a profitable Hangprinter business with us.
-                     Just don't patent other people's inventions.
+                     <b>Software work required:</b> A lot. Klipper's Hangprinter support is very basic. But although its a lot of work, none of the work is very hard, since
+               it's mainly re-implementation into Python,
+                     and we have the simulator to quickly test everything. The machine is potentially useful even without software upgrades,
+               since the basic Hangprinter support in Klipper already does work.
+                   
+            </p>
+            <h3>Thoughts</h3>
+            <p>
+                     The Duet options might still make sense for those who need performance and with the minimal changes compared to something
+               that has been built proven to work (the HP4 prototype).
+                     The Klipper option makes most sense to work on for people who want to go cheap and develop, and still maintain the possibility
+               of adding performance later.
                    
             </p>
             <p>
@@ -822,11 +266,10 @@
                
             </p>
             <div style="display: none">
-               <time class="dt-published">2023-08-05T12:00:00Z</time><a class="u-url" href="https://torbjornludvigsen.com/blog/2023/index.html#hangprinter_project_80"></a><a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
+               <time class="dt-published">2025-09-24T12:00:00Z</time><a class="u-url" href="https://torbjornludvigsen.com/blog/2025/index.html#hangprinter_project_83"></a><a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
                   Torbj&oslash;rn Ludvigsen
                   <img class="u-photo" src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG" alt="Torbj&oslash;rn Ludvigsen"></a><span class="p-summary">
-                        A copycat Hangprinter patent popped up in 2022.
-                        The patent made the community nervous, so we wanted to take it down.
+                  So I made a Slideprinter simulation, check it out at hangprinter.org.
                       </span></div><br><br><br></article><br><br><br><br><br><br><br><br><h1 id="Links">
             Links
             
