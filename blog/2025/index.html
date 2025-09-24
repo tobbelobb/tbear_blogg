@@ -133,42 +133,32 @@
                      I computed some BOM cost estimates for various alternatives for the HP5 today. It includes three versions I've been
                thinking about.
                      All cost estimates assume Swedish taxes and shipping, plus a 10% inflation in all prices since 2021.
+                     The full spreadsheet is available <a href="/blog/2025/hangprinter_v5_boms.ods">here</a>.
                    
             </p>
+            <h3>Baseline v5 (Roughly HP Performance)</h3>
             <div id="spreadsheet-container"></div><style>
       #spreadsheet-container {
         overflow-anchor: none;
         overscroll-behavior: contain;
       }
-      #spreadsheet-container2 {
-        overflow-anchor: none;
-        overscroll-behavior: contain;
-      }
-      #spreadsheet-container3 {
-        overflow-anchor: none;
-        overscroll-behavior: contain;
-      }
-    </style><link href="https://unpkg.com/tabulator-tables@5.6.1/dist/css/tabulator.min.css" rel="stylesheet"><script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.6.1/dist/js/tabulator.min.js"></script><h3>Baseline v5 (Roughly HP Performance)</h3><script>
-      const rowFormatter2 = function(row) {
-        const data = row.getData();
-      };
-
-      const table2 = new Tabulator("#spreadsheet-container", {
+    </style><link href="https://unpkg.com/tabulator-tables@5.6.1/dist/css/tabulator.min.css" rel="stylesheet"><script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.6.1/dist/js/tabulator.min.js"></script><script>
+      const table = new Tabulator("#spreadsheet-container", {
         nestedFieldSeparator: "|",
-        height: "778px",
+        height: "200px",
         layout: "fitDataFill",
         placeholder: "Loading...",
 
         ajaxURL: "/blog/2025/hangprinter_v5_boms_baseline_v5.json",
 
         columns: [
-          {title: "Item", field: "Item", headerFilter: "input", resizable: false},
-          {title: "Quantity", field: "Quantity", headerFilter: "input", resizable: false},
-          {title: "Price_SEK", field: "Price_SEK", headerFilter: "input", resizable: false},
-          {title: "Price_USD", field: "Price_USD", headerFilter: "input", resizable: false},
+          {title: "Item", field: "Item", headerFilter: "input", resizable: true},
+          {title: "Quantity", field: "Quantity", headerFilter: "input", resizable: true},
+          {title: "Price_USD", field: "Price_USD", headerFilter: "input", resizable: true, formatterParams:{
+            symbol:"$",
+            precision:0,
+        }},
         ],
-
-        rowFormatter: rowFormatter2,
       });
     </script><p>
                      This is the machine that the HP4 prototype was always meant to be. ODrive S1 boards, Motion tracking with Arducam, Duet3
@@ -184,7 +174,30 @@
                    
             </p>
             <h3>Duet HCL Nema v5 (Roughly HP Convenience)</h3>
-            <p>
+            <div id="spreadsheet-container2"></div><style>
+      #spreadsheet-container2 {
+        overflow-anchor: none;
+        overscroll-behavior: contain;
+      }
+    </style><script>
+      const table2 = new Tabulator("#spreadsheet-container2", {
+        nestedFieldSeparator: "|",
+        height: "200px",
+        layout: "fitDataFill",
+        placeholder: "Loading...",
+
+        ajaxURL: "/blog/2025/hangprinter_v5_boms_duet_hcl_nema17.json",
+
+        columns: [
+          {title: "Item", field: "Item", headerFilter: "input", resizable: true},
+          {title: "Quantity", field: "Quantity", headerFilter: "input", resizable: true},
+          {title: "Price_USD", field: "Price_USD", headerFilter: "input", resizable: true, formatterParams:{
+            symbol:"$",
+            precision:0,
+        }},
+        ],
+      });
+    </script><p>
                      The smallest change to get away from BLDC and ODrive, dodging protocol implementation work and cost, sacreficing performance.
                      The 5 x ODrive S1s are swapped with Duet's closed loop stepper drivers (https://www.duet3d.com/duet-3-expansion-1hcl),
                and the 5 x BLDC motors are swapped for a standard set of Nema17 motors.
@@ -198,7 +211,30 @@
                    
             </p>
             <h3>Klipper Driven HP5 (Roughly HP Core)</h3>
-            <p>
+            <div id="spreadsheet-container3"></div><style>
+      #spreadsheet-container3 {
+        overflow-anchor: none;
+        overscroll-behavior: contain;
+      }
+    </style><script>
+      const table3 = new Tabulator("#spreadsheet-container3", {
+        nestedFieldSeparator: "|",
+        height: "200px",
+        layout: "fitDataFill",
+        placeholder: "Loading...",
+
+        ajaxURL: "/blog/2025/hangprinter_v5_boms_klipper_nema17_ebb42.json",
+
+        columns: [
+          {title: "Item", field: "Item", headerFilter: "input", resizable: true},
+          {title: "Quantity", field: "Quantity", headerFilter: "input", resizable: true},
+          {title: "Price_USD", field: "Price_USD", headerFilter: "input", resizable: true, formatterParams:{
+            symbol:"$",
+            precision:0,
+        }},
+        ],
+      });
+    </script><p>
                      No closed loop control, no torque mode.
                      The Duet3, the 5 x ODrive S1s, and the 5 x BLDC motors are swapped with 5 microcontroller units and 5 Nema17 motors.
                      The 5 microcontroller units will be driven by Klipper running on the Raspberry Pi 5 via CAN and a USB to CAN bridge.
