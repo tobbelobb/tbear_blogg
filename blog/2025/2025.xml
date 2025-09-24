@@ -6,7 +6,7 @@
         So I made a Slideprinter simulation, check it out at <a href="https://hangprinter.org/">hangprinter.org</a>.
     </p>
     <video width="500" controls="true">
-      <source src="./bilder/fast_print_simulator.webm" type="video/webm"></source>
+      <source src="/blog/2025/bilder/fast_print_simulator.webm" type="video/webm"></source>
     </video>
   <p>It's really cool because it simulates many aspects of a real machine:</p>
       <ul>
