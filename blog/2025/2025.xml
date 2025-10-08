@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
 <posts year="2025">
+  <post id="ai_stuff_1" heading="Promps and Code" date="8-10-2025">
+    <p>
+      I've attempted AI coding for 2-3 years now, and my mind is increasingly blown.
+      Two or three LLMs later I think we'll start swapping out coding (in formal language) with prompting (in natural language) even more than we already do.
+      I have some insights about how this might look.
+    </p>
+    <p>
+    The model doesn't think in English. Run the same prompt in Norwegian and English and you get similar behavior. The internal state isn't words but a shared feature space: text maps into it and back out again. If that space drives behavior, reproducibility depends on the inputs that shape it. Prompts and context are part of the build recipe.
+    </p>
+    <p>
+In open codebases, compiler flags and build scripts are public, versioned, and replayable. Treat prompts the same way so anyone can rebuild the state that produced a change—GCC-style self-hosting for model-assisted code.
+    </p>
+    <p>
+Formal languages map cleanly. They are precise, testable, and often mutually translatable, so they fit the internal representation. Hence model -> code -> compiler -> machine code starts to look like a bootstrap loop: models generate code that generates more code. Like RepRap and compilers, it self replicates and will obviously grow geometrically (or exponentially, or just "explode"). We must, as usual with these tech developments, join the ustoppable wave, prepare for the explision, and try to maybe steer the explosion towards ethical and humane outcomes.
+    </p>
+    <p>
+To keep that loop trustworthy, record prompt, context, model version, and decoding settings alongside the emitted code, just like pinning toolchains and build flags. If the code is open, the prompt recipe should be open too, for the same reasons we publish Makefiles and CI specs.
+    </p>
+    <p>
+What the loop actually looks like. Day to day: human or model -> prompt -> model -> code or text -> compiler/interpreter -> machine code -> processor -> result. I judge the result, adjust prompt or context, and try again.
+    </p>
+    <p>
+Models don't retain a whole program across calls, so source code remains the durable representation we share. To make that code self-reproducible, store the prompt/context bundle next to each commit, along with the exact model and decoding settings. Do it via a git hook or a hook in your LLM framework.
+    </p>
+    <p>
+This doesn't replace code; it records how this version came to be and makes the repo rebuildable end-to-end, not just at the compiler boundary. We should bake an AI into every repo via the knowledge and intent we keep with it
+    </p>
+  </post>
   <post id="hangprinter_project_83" heading="Simulation and HP5 Work" date="24-9-2025">
     <p>
         So I made a Slideprinter simulation, check it out at <a href="https://hangprinter.org/">hangprinter.org</a>.
