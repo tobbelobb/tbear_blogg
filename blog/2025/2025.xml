@@ -11,7 +11,7 @@
     The model doesn't think in English. Run the same prompt in Norwegian and English and you get similar behavior. The internal state isn't words but a shared feature space: text maps into it and back out again. If that space drives behavior, reproducibility depends on the inputs that shape it. Prompts and context are part of the build recipe.
     </p>
     <p>
-In open codebases, compiler flags and build scripts are public, versioned, and replayable. Treat prompts the same way so anyone can rebuild the state that produced a change—GCC-style self-hosting for model-assisted code.
+In open codebases, compiler flags and build scripts are public, versioned, and replayable. Treat prompts the same way so anyone can rebuild the state that produced a change - GCC-style self-hosting for model-assisted code.
     </p>
     <p>
 Formal languages map cleanly. They are precise, testable, and often mutually translatable, so they fit the internal representation. Hence model -> code -> compiler -> machine code starts to look like a bootstrap loop: models generate code that generates more code. Like RepRap and compilers, it self replicates and will obviously grow geometrically (or exponentially, or just "explode"). We must, as usual with these tech developments, join the ustoppable wave, prepare for the explision, and try to maybe steer the explosion towards ethical and humane outcomes.
