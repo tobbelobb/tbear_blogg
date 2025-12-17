@@ -1,6 +1,260 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
 <posts year="2025">
+  <post id="hangprinter_project_84" heading="Introducing hp-sim5" date="17-12-2025">
+    <!--h3>What Have I Been Doing?</h3-->
+    <p>
+      I spent 2025 simulating Hangprinter.
+    </p>
+    <!--h3>Why?</h3-->
+    <p>
+      Before 2025 I envisioned
+      giving normal people economically useful machines via the Hangprinter Project and its community, kind of like this:
+    </p>
+    <p>
+      Me -> Hangprinter -> Community -> People get useful machines
+    </p>
+    <!--p>
+      Direct distribution of automation.
+      Not redistribution of the generated income.
+      Distribution of the actual tools and machinery.
+    </p-->
+    <p>
+      The improvement loops were weak, this didn't work well enough.
+      My updated understanding is that AIs will get robots first, before normal people gets them:
+    </p>
+    <p>
+      Me -> AI -> Hangprinter -> AI -> Community -> People get useful machines
+    </p>
+    <p>
+      This is the way for every product or project.
+      AI is powerful and it is not going away.
+      <!--Our job is to steer this scenario towards humane outcomes.-->
+    </p>
+    <!-- h3>Ok, AI, but What Have You Been Doing?<h3-->
+    <!--p>
+      So from my perspective I've replaced the open source community with AI in many but not all ways:
+    </p>
+    <ul>
+      <li>Who will explore Hangprinters design space through thousands of iterations? AI, not the community.</li>
+      <li>Who will use the Hangprinter the most? AI, not the community.</li>
+      <li>So who's needs am I gearing HP5 towards first? AIs needs.</li>
+      <li>What kind of Hangprinter does an AI need? A simulated one.</li>
+      <li>Who am I chatting with day-to-day while working on this? AI.</li>
+      <li>Who do I still care about in the end? Normal people.</li>
+    </ul-->
+    <p>
+      So I'm adapting the Hangprinter Project to the AI future.
+      In 2024 I wanted to automate the whole Hangprinter Project, starting with support agents
+      (see <a href="https://gitlab.com/tobben/hp-orchestra">hp-support</a> and <a href="https://chatgpt.com/g/g-675950c5f6e8819182c77f88867191dd-hangprinter-knowledge-hub">Hangprinter Knowledge Hub</a>).
+      In 2025 my focus has shifted from "automate the Hangprinter Project" to "insert Hangprinter into the new age".
+      AIs are not independently self-improving yet, so neither is Hangprinter.
+    </p>
+    <p>
+      But the intelligence explosion is still expanding, and whatever the AIs can't see, control, or optimize will soon be left in a category that has no name yet but will be described as
+      unoptimized, hobbyist, micro-scale, handi-craft, uneconomical, manual, niche, old-fashioned, antique, part of History, slow, weak, hard, dumb, irrelevant, you get the idea.
+    </p>
+    <!--ul>
+      <li>Unoptimized</li>
+      <li>Hobbyist</li>
+      <li>Micro-Scale</li>
+      <li>Handi-craft</li>
+      <li>Uneconomical</li>
+      <li>Manual</li>
+      <li>Niche</li>
+      <li>Old Fashioned</li>
+      <li>Antique</li>
+      <li>Part of History</li>
+      <li>Slow</li>
+      <li>Weak</li>
+      <li>Hard</li>
+      <li>Dumb</li>
+      <li>Irrelevant</li>
+    </ul-->
+    <h3>What Does it Mean for Hangprinter to "Fit Into the AI Age"?</h3>
+    <p>
+      What we call AI can be often be described as "simulating an interesting process", most often based on process output examples,
+      and then harvesting some artifacts, side-effects or breadcrumbs dropped from the simulation.
+    </p>
+    <p>
+      The most relevant AIs of 2024 simulated text generation, the process previously known as "writing".
+      They can also simulate "thinking", "painting", "speaking", "trading", "driving", "walking" and so on.
+      Even evolution and the weather are simulated all the time. We just call it "hw design" and "weather forecasts".
+      Sometimes, if the simulations are very static, simple, or bare-bones we sometimes call them "optimization" or "statistical regressions".
+    </p>
+    <p>
+      So for Hangprinter to merge with the singularity we need to fully embrace the simulation paradigm.
+      Complex simulations of complex processes.
+      Making Hangprinter available to AI in 2025 simply meant building a simulation environment, and ignoring the physical parts of the project altogether.
+    </p>
+    <p>
+      Everything will be done in this simulation environment: The hardware, the software, the physics, the gcode execution.
+      We can even imagine debugging market dynamics down to individual businesses and so on.
+      Our physical machines and their outputs will simply be side effects from this perspective.
+    </p>
+    <!--p>
+      Simulating Hangprinter is very hard.
+      I would have zero chance of completing hp-sim on my own with the tools that existed in 2024.
+      New coding tools are currently opening the gates to another dimension.
+      hp-sim, as well as HP5, are starting to look feasible.
+      In 2027 they will look trivial I guess.
+    </p-->
+    <p>
+      <!--From the community's perspective, my work has been invisible.-->
+      So I named the simulation environment "hp-sim" and went into the rabbit hole of creating it.
+      My community engagement stats that were already declining since 2021 went to zero in 2025.
+      No Twitter, no Youtube, no email, (almost) no blog posts.
+    </p>
+    <p>
+      The focus has paid off.
+    </p>
+    <figure>
+      <a href="/blog/2025/bilder/github_contributions_per_year_2.png">
+        <img src="/blog/2025/bilder/Compensation_distances_from_side_2_small.png" alt="" width="500" height="247"/>
+      </a>
+      <figcaption>
+        2025 has been my most productive year in terms of Github Contributions, beating the second place by a factor of 2.67.
+        This graph shows all my work, not just Hangprinter work.
+        Ca 50% of the total technical Hangprinter work ever done was work within 2025 alone.
+      </figcaption>
+    </figure>
+    <h3>What Have I Delivered?</h3>
+    <p>
+      Simulating Hangprinter in 2025 is very hard. (In 2024 is was impossible, in 2027 it will probably be trivial.)
+      The resulting <a href="https://github.com/tobbelobb/hp-sim5">hp-sim5 repo</a> is called hp-sim5 because four attempts before it failed:
+    </p>
+    <ul>
+      <li>hp-simulator-chrono (22 Jan, 2025 - 27 Jan, 2025). I invented ANCF rope simulation in here. Interesting, maybe even novel and realistic to model a line as one or a few thin weak beams in parallel, with separately tunable bending stiffness and axial (pull) stiffness. Friction between strands add bending resistance. However, way too slow for realtime. RIP.</li>
+      <li>hp-sim2 (Feb 11, 2025 - Feb 12, 2025). An attempt to extract a core of Chrono simulator into modern C++ to speed things up. RIP.</li>
+      <li>hp-sim3 (Feb 23, 2025). An attempt to use a template for Isaac Lab projects, and shoe-horn Hangprinter in there to get reinforcement learning (RL) control going. Failed because the environment didn't have any primitives for ropes/lines/cables. RIP</li>
+      <li>hp-sim4 (Mar 3, 2025 - Apr 2, 2025). An attempt to build ropes in Isaac Sim (the physics environment that Isaac Lab uses). Failed because the physics engine was too heavily geared towards rigid bodies, and good lines could not be contructed as chains of rigid bodies. RIP</li>
+    </ul>
+    <p>
+      Luckily, hp-sim4 led me to Mattias Müller's work on rope simulations. First his long distance joints and later his XPBD and CableJoints, which was performant and physically accurate cable simulations.
+      Finally, exactly what hp-sim needed.
+    </p>
+    <p>
+      No open source implementations of CableJoints existed, so for ca two and a half months (Apr 3, 2025 - Jun 24, 2025), I implemented a 2d version of a CableJoints and an XPBD physics engine.
+      Inputs, outputs, rendering, double implementations in Python and Javascript, CI testing, user interaction, constraints, friction, etc.
+      End-to-end, specialized to our needs.
+    </p>
+    <p>
+      Then, with the Slideprinter modelled, lines and all, it needed control software. We needed a 3d printer firmware inside the simulator.
+      I spent 10 days implementing a custom firmware that work both with the Python and the Javascript CableJoint libraries.
+    </p>
+    <p>
+      I knew I needed real firmware though, so after Summer (September 9 and one week onwards) I tried to simulate a realtime AVR processor on my desktop machine and run Klipper on it.
+      I could not reliably simulate a realtime chip on my non-realtime linux kernel. No matter how much buffering and other synchronization I added, I could never make that combo deterministic.
+      I even installed a realtime version of the linux kernel on my desktop before finally backing off from the idea of simulating the whole AVR processor.
+    </p>
+    <p>
+      Klipper already had rudimentary Hangprinter support and good tools for running or debugging on host.
+      So adding basic Klipper firmware control via "batch dump files", basically just long lists of motor commands and time stamps, was very easy.
+      I spent ca 1 month improving the user interface, adding different Slideprinter designs, implementing quality control, support for parallel simulations etc.
+    </p>
+    <p>
+      The quality control made it possible to track if a firmware change improved print quality or not, so it was time to improve firmware.
+      I spent one weeks developing two brand new flex compensation algorithms and implementing them into Klipper (Oct 10, 2025 - Oct 17, 2025).
+      It's way better than the legacy flex compensation in every way. Details here: <a href="https://github.com/Klipper3d/klipper/pull/7093">a Klipper PR</a>.
+    </p>
+    <p>
+      Now, Klipper is great but I didn't want it to be the only firmware in hp-sim.
+      I wanted hp-sim to support ReprapFirmware as well.
+      However, ReprapFirmware had no support for running on host (desktop machines) or dumping lists of time stamped motor commands.
+      I wrote a <a href="https://github.com/tobbelobb/hp-sim5/blob/34872dabe10725f537f26bf2cdec89355ff9139e/human_docs/roadmap_18_oct_2025.md">roadmap</a> and went on to
+      spend a full month on adding ReprapFirmware batch mode support (Oct 19, 2025 - Nov 20, 2025).
+    </p>
+    <p>
+      With the new flex compensation algorithms, both Klipper and ReprapFirmware almost supported 8 anchors.
+      They just lacked a proper forward transform.
+      So I spend one week (Nov 25, 2025 - Dec 1, 2025) implementing a forward transform thats way way superior in every way, compared to what was available before.
+    </p>
+    <p>
+      On Dec 1 2025 Klipper got the remaining parts of Hangprinter support that only ReprapFirmware had before (buildup compensation, block-and-tally style gearing, etc).
+    </p>
+    <p>
+      At this point I charged ahead with improving auto calibration.
+      Hangprinter has had a kind of working auto calibration since 2017, but it had many problems.
+      Ironically, it was labor intensive and kind of unreliable.
+    </p>
+    <p>
+      Auto calibration is a dynamic process where one gcode is sent, then some time passes, physics happens (is simulated), a measurement is done and handled, then some more lines of gcode etc.
+      Clearly, the "batch mode" dumps of motor commands I had been using did not suffice for developing auto calibration.
+    </p>
+    <p>
+      I spent four days (Dec 2, 2025 - Dec 5, 2025) implementing a "server mode" that let's the host version of ReprapFirmware run idle and wait for gcodes sent to its http endpoint (I also built the whole http server).
+    </p>
+    <p>
+      One of the problems of the old autocal was that it could not collect good data automatically.
+      So I spent three days (Dec 7, 2025 - Dec 9, 2025) scripting the interactions (sending gcode, wait, read reply etc) for collecting structured encoder data from a large area of a non-calibrated Slideprinter (or later also Hangprinter++).
+    </p>
+    <p>
+      Another one of the problems of the old autocal was that it was too slow so I developed a new idea for autocalibration on Dec 9 and spent seven days (Dec 10, 2025 - Dec 16, 2025) implementing it and comparing it to the previous autocal method.
+      The results so far are promising, the new feature based method runs 10x faster and has the same accuracy as the (new improved version of the) old method.
+      Which one will perform best in 3d and with more diverse setups remains to be seen.
+    </p>
+    <h3>Stop and Breathe</h3>
+    <p>
+      All of this work, from Jan 22 to today (17 Dec) was greatly sped up by various AI tools.
+    </p>
+    <p>
+    </p>
+    <p>
+    </p>
+    <p>
+      Still, hp-sim is only one part of an even more ambitious project: to automate the whole Hangprinter Project.
+      I started this in 2024 by building the hp-support chat agent (part of <a href="https://gitlab.com/tobben/hp-orchestra">hp-orchestra</a>) and <a href="https://chatgpt.com/g/g-675950c5f6e8819182c77f88867191dd-hangprinter-knowledge-hub">Hangprinter Knowledge Hub</a>.
+      The broader goal is to automate the whole Hangprinter Project.
+    </p>
+    <p>
+    </p>
+    <p>
+    </p>
+    <p>
+    </p>
+    <p>
+    </p>
+    <p>
+    </p>
+    <p>
+    </p>
+    <p>
+    </p>
+    <p>
+    </p>
+    <p>
+    </p>
+    <p>
+    </p>
+    <p>
+    </p>
+    <p>
+    </p>
+    <p>
+    </p>
+    <p>
+    </p>
+
+    <p>
+      I'm including prompts and responses from the hp-sim5 repo here. (TODO: Link it.)
+    </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </post>
   <post id="ai_stuff_1" heading="Promps and Code" date="8-10-2025">
     <p>
       I've attempted AI coding for 2-3 years now, and my mind is increasingly blown.
@@ -14,7 +268,7 @@
 In open codebases, compiler flags and build scripts are public, versioned, and replayable. Treat prompts the same way so anyone can rebuild the state that produced a change - GCC-style self-hosting for model-assisted code.
     </p>
     <p>
-Formal languages map cleanly. They are precise, testable, and often mutually translatable, so they fit the internal representation. Hence model -> code -> compiler -> machine code starts to look like a bootstrap loop: models generate code that generates more code. Like RepRap and compilers, it self replicates and will obviously grow geometrically (or exponentially, or just "explode"). We must, as usual with these tech developments, join the ustoppable wave, prepare for the explision, and try to maybe steer the explosion towards ethical and humane outcomes.
+Formal languages map cleanly. They are precise, testable, and often mutually translatable, so they fit the internal representation. Hence model -> code -> compiler -> machine code starts to look like a bootstrap loop: models generate code that generates more code. Like RepRap and compilers, it self replicates and will obviously grow geometrically (or exponentially, or just "explode"). We must, as usual with these tech developments, join the ustoppable wave, prepare for the explosion, and try to maybe steer the explosion towards ethical and humane outcomes.
     </p>
     <p>
 To keep that loop trustworthy, record prompt, context, model version, and decoding settings alongside the emitted code, just like pinning toolchains and build flags. If the code is open, the prompt recipe should be open too, for the same reasons we publish Makefiles and CI specs.
