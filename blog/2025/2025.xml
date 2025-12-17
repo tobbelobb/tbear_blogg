@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
 <posts year="2025">
-  <post id="hangprinter_project_84" heading="Introducing hp-sim5" date="17-12-2025">
+  <post id="hangprinter_project_84" heading="2025, the year I made hp-sim5" date="17-12-2025">
     <!--h3>What Have I Been Doing?</h3-->
     <p>
       I spent 2025 simulating Hangprinter.
@@ -11,9 +11,16 @@
       Before 2025 I envisioned
       giving normal people economically useful machines via the Hangprinter Project and its community, kind of like this:
     </p>
-    <p>
+    <figure>
+      <a href="/blog/2025/bilder/Me_to_people_1.png">
+        <img src="/blog/2025/bilder/Me_to_people_1_small.png" alt="" width="500" height="333"/>
+      </a>
+      <figcaption>
+      </figcaption>
+    </figure>
+    <!--p>
       Me -> Hangprinter -> Community -> People get useful machines
-    </p>
+    </p-->
     <!--p>
       Direct distribution of automation.
       Not redistribution of the generated income.
@@ -23,9 +30,16 @@
       The improvement loops were weak, this didn't work well enough.
       My updated understanding is that AIs will get robots first, before normal people gets them:
     </p>
-    <p>
+    <figure>
+      <a href="/blog/2025/bilder/Me_to_people_2.png">
+        <img src="/blog/2025/bilder/Me_to_people_2_small.png" alt="" width="500" height="333"/>
+      </a>
+      <figcaption>
+      </figcaption>
+    </figure>
+    <!--p>
       Me -> AI -> Hangprinter -> AI -> Community -> People get useful machines
-    </p>
+    </p-->
     <p>
       This is the way for every product or project.
       AI is powerful and it is not going away.
@@ -71,6 +85,13 @@
       <li>Dumb</li>
       <li>Irrelevant</li>
     </ul-->
+    <figure>
+      <a href="/blog/2025/bilder/What_does_it_mean.png">
+        <img src="/blog/2025/bilder/What_does_it_mean_small.png" alt="" width="500" height="333"/>
+      </a>
+      <figcaption>
+      </figcaption>
+    </figure>
     <h3>What Does it Mean for Hangprinter to "Fit Into the AI Age"?</h3>
     <p>
       What we call AI can be often be described as "simulating an interesting process", most often based on process output examples,
@@ -110,7 +131,7 @@
     </p>
     <figure>
       <a href="/blog/2025/bilder/github_contributions_per_year_2.png">
-        <img src="/blog/2025/bilder/Compensation_distances_from_side_2_small.png" alt="" width="500" height="247"/>
+        <img src="/blog/2025/bilder/github_contributions_per_year_2_small.png" alt="" width="500" height="248"/>
       </a>
       <figcaption>
         2025 has been my most productive year in terms of Github Contributions, beating the second place by a factor of 2.67.
@@ -138,6 +159,15 @@
       Inputs, outputs, rendering, double implementations in Python and Javascript, CI testing, user interaction, constraints, friction, etc.
       End-to-end, specialized to our needs.
     </p>
+    <figure>
+      <a href="/blog/2025/bilder/flipper.png">
+        <img src="/blog/2025/bilder/flipper_small.png" alt="" width="500" height="675"/>
+      </a>
+      <figcaption>
+        I created this flipper game to stress test the physics engines and the CableJoint implementations.
+        You can play (the js version of) it <a href="https://tobbelobb.github.io/hp-sim5/examples/js/flipper/index.html">here</a>.
+      </figcaption>
+    </figure>
     <p>
       Then, with the Slideprinter modelled, lines and all, it needed control software. We needed a 3d printer firmware inside the simulator.
       I spent 10 days implementing a custom firmware that work both with the Python and the Javascript CableJoint libraries.
@@ -152,6 +182,14 @@
       So adding basic Klipper firmware control via "batch dump files", basically just long lists of motor commands and time stamps, was very easy.
       I spent ca 1 month improving the user interface, adding different Slideprinter designs, implementing quality control, support for parallel simulations etc.
     </p>
+    <figure>
+      <a href="/blog/2025/bilder/hp_sim5_timeline_2025_callouts_v5.png">
+        <img src="/blog/2025/bilder/hp_sim5_timeline_2025_callouts_v5_small.png" alt="" width="500" height="274"/>
+      </a>
+      <figcaption>
+        The different work periods plotted on a timeline. It's too small to read but click it to get a larger version.
+      </figcaption>
+    </figure>
     <p>
       The quality control made it possible to track if a firmware change improved print quality or not, so it was time to improve firmware.
       I spent one weeks developing two brand new flex compensation algorithms and implementing them into Klipper (Oct 10, 2025 - Oct 17, 2025).
@@ -172,6 +210,14 @@
     <p>
       On Dec 1 2025 Klipper got the remaining parts of Hangprinter support that only ReprapFirmware had before (buildup compensation, block-and-tally style gearing, etc).
     </p>
+    <figure>
+      <a href="/blog/2025/bilder/AI_nonsense.png">
+        <img src="/blog/2025/bilder/AI_nonsense_small.png" alt="" width="500" height="333"/>
+      </a>
+      <figcaption>
+        The surrounding paragraphs captured in this beautiful AI slop.
+      </figcaption>
+    </figure>
     <p>
       At this point I charged ahead with improving auto calibration.
       Hangprinter has had a kind of working auto calibration since 2017, but it had many problems.
@@ -191,69 +237,42 @@
     <p>
       Another one of the problems of the old autocal was that it was too slow so I developed a new idea for autocalibration on Dec 9 and spent seven days (Dec 10, 2025 - Dec 16, 2025) implementing it and comparing it to the previous autocal method.
       The results so far are promising, the new feature based method runs 10x faster and has the same accuracy as the (new improved version of the) old method.
+      The new method also succeeds every time, while the old one often needs a couple of tries.
       Which one will perform best in 3d and with more diverse setups remains to be seen.
     </p>
+    <figure>
+      <a href="/blog/2025/bilder/Stop_and_Breathe.png">
+        <img src="/blog/2025/bilder/Stop_and_Breathe_small.png" alt="" width="500" height="333"/>
+      </a>
+      <figcaption>
+      </figcaption>
+    </figure>
     <h3>Stop and Breathe</h3>
     <p>
-      All of this work, from Jan 22 to today (17 Dec) was greatly sped up by various AI tools.
+      All of this work, from Jan 22 to today (Dec 17) was greatly sped up by various AI tools but also by the simulation itself.
+      Being able to test things right in the simulation has made experiments 10x cheaper, faster, and more pleasant.
+      I've literally run hundreds of experiments that helped my understanding of Hangprinter's software and mechanics,
+      each of which would have either been impossible or taken at least one day to do physically.
+    </p>
+    <h3>Where is HP5?</h3>
+    <p>
+      Still left to do is:
+    </p>
+    <ul>
+      <li>Upgrading all of hp-sim from 2d to 3d.</li>
+      <li>Implementing spool simulation that includes realistic line buildup.</li>
+      <li>An actual physical HP5 design, with BOM, suggested layouts and verification of various design decisions in simulation.</li>
+      <li>A hp-sim mode to conduct batches of parallel experiments.</li>
+      <li>Support for rotational degrees of freedom. (6dof)</li>
+    </ul>
+    <p>
+      If you want you can go and play with the simulation <a href="https://tobbelobb.github.io/hp-sim5/hp-sim/?gcode_ws=ws://localhost:8790">here</a>
+      Try clicking around. Many UI details are undocumented. I'm especially not proud of "Trace enabled, then triple right-click".
+      Some instructions on how to use the simulation is scattered around the <a href="https://github.com/tobbelobb/hp-sim5/">repo</a>.
     </p>
     <p>
+      I'm including prompts and responses from the hp-sim5 repo <a href="/blog/2025/hp-sim5-prompts_dec_17_2025_2.md">here</a>.
     </p>
-    <p>
-    </p>
-    <p>
-      Still, hp-sim is only one part of an even more ambitious project: to automate the whole Hangprinter Project.
-      I started this in 2024 by building the hp-support chat agent (part of <a href="https://gitlab.com/tobben/hp-orchestra">hp-orchestra</a>) and <a href="https://chatgpt.com/g/g-675950c5f6e8819182c77f88867191dd-hangprinter-knowledge-hub">Hangprinter Knowledge Hub</a>.
-      The broader goal is to automate the whole Hangprinter Project.
-    </p>
-    <p>
-    </p>
-    <p>
-    </p>
-    <p>
-    </p>
-    <p>
-    </p>
-    <p>
-    </p>
-    <p>
-    </p>
-    <p>
-    </p>
-    <p>
-    </p>
-    <p>
-    </p>
-    <p>
-    </p>
-    <p>
-    </p>
-    <p>
-    </p>
-    <p>
-    </p>
-    <p>
-    </p>
-
-    <p>
-      I'm including prompts and responses from the hp-sim5 repo here. (TODO: Link it.)
-    </p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   </post>
   <post id="ai_stuff_1" heading="Promps and Code" date="8-10-2025">
     <p>
