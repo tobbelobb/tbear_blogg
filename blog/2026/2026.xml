@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
 <posts year="2026">
-  <post id="hangprinter_project_85" heading="The Computer Revolution is Inhumane. Hangprinter is not the Default. Hangprinter is Humane." date="13-04-2026">
+  <!--post id="hangprinter_project_86" heading="Hangprinter is a Tool." date="8-5-2026">
+  </post-->
+  <post id="hangprinter_project_85" heading="I Want to Create a Good Tool" date="8-5-2026">
   <!--post id="hangprinter_project_85" heading="Hangprinter Might be the Best Way to Achieve Freedom via Ownership of Physical Manufacturing" date="13-04-2026"-->
     <p>
       The Hangprinter Project does not have well a defined scope or budget.
@@ -13,56 +15,12 @@
       Why do you want to do this project?
     </h3>
     <p>
-      The computer revolution is frustrating.
-      It's 2026 and we have lots of new tools.
-      New tools change how we live our lives; our culture.
-      We have not yet built a healthy culture around computers.
-      With no widespread and good way to live life with our new tools, we get society-wide frustration.
-      Lack of ownership, control, income, and time frustrates most of us.
-
-      Hangprinter is a tool.
-      Tools can be used in any context of course, so without the right culture around them, the tools are worthless.
-      They will not improve your life unless your culture allows you to use them in a positive way.
-      It is a tool but it also enables a culture, a way to live life, that I believe is healthy.
-      , that will be built with the tools we forge today.
-
-      people in many ways, depriving them of time, attention, and income.
-      People are a bit un-free, a bit powerless in this age of computers.
-      They don't own any part of it.
-      <!-- It's frankly disconnecting kids from their physical environments and even from the sense of their own bodies.-->
-      <!-- I think the best way towards freedom and power today goes via owning and controlling a part of the computer revolution.-->
-      For the past decades computers have been mostly digital, a realm where ownership is hard.
-      It's all controlled from far away.
-      Robotics is the bridge, and can give people the freedom to own and control their own
-      <ul>
-        <li>computation,</li>
-        <li>capital,</li>
-        <li>independence,</li>
-      </ul>
-      their value in the broader economy, beyond their purely digital activities like manipulation and bank transactions.
+      I want to create a good tool.
     </p>
     <p>
-      Or even shorter:
-    </p>
-    <h3>
-      Why Hangprinter?
-    </h3>
-    <p>
-      Freedom and power to the people. Freedom to control their own computation, their own capital, their own independence, and their self-value in the broader economy.
-    </p>
-    <h3>
-      How?
-    </h3>
-    <p>
-      Robotics. Increasing the number of people who own and truly control their own computers and robots.
-      Mostly by optimizing specific parameters of robot design: Price, reliability, ease of use, ease of replication.
-      Hangprinters, or other robots can develop and spread like cars and robot arms have spread.
-    </p>
-    <h3>
-      But How Will You Make Money?
-    </h3>
-    <p>
-      I will sell courses and knowledge based consultancy. As part of that I might sell robot parts.
+      I want people to arrive at the Hangprinter Project and realize they can use it to solve problems, big and small.
+      And then I want it to actually work for them, of course.
+      Solving problems makes people happy.
     </p>
   </post>
 </posts>
