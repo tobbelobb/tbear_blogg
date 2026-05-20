@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
 <posts year="2026">
-  <post id="hangprinter_project_85" heading="RefRig Design Document" date="20-5-2026">
-    <p>
-      The hp-sim5 coding is over for now.
-      It's time to start work on RefRig.
-      Where do we begin?
-      I wrote this RefRig design document.
-    </p>
-    <h2>Hangprinter Reference Rig Design Document</h2>
+  <post id="hangprinter_project_85" heading="Hangprinter Reference Rig Design Document" date="20-5-2026">
     <h3>Goal and Purpose (why do we make refrig?)</h3>
     <p>
       RefRig is a Reference Rig for the Hangprinter Project.
@@ -16,13 +9,13 @@
     <p>
       It's step 2 in the Hangprinter Bootstrapping Hierarchy:
     </p>
-    <ol>
-      <li>Simulator</li>
-      <li>Standardized winch module</li>
-      <li>Verified reference build (HP RefRig)</li>
-      <li>Motion system</li>
-      <li>Tool</li>
-    </ol>
+    <figure>
+      <a href="/blog/2026/bilder/Bootstrapping_hierarchy.png">
+        <img src="/blog/2026/bilder/Bootstrapping_hierarchy_small.png" alt="" width="500" height="625"/>
+      </a>
+      <figcaption>
+      </figcaption>
+    </figure>
     <p>
       RefRig is everybody's first physical build and the place where new features get added first.
       It's therefore also the most documented build and the place where all features are expected to work.
