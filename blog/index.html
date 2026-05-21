@@ -70,14 +70,352 @@
       </div>
       <div class="h-feed" id="MainContent">
          <article class="h-entry">
-            <h1 class="p-name" id="hangprinter_project_85">Hangprinter Reference Rig Design Document</h1>
-            <div class="date">20-5-2026</div>
-            <h3>Goal and Purpose (why do we make refrig?)</h3>
+            <h1 class="p-name" id="hangprinter_project_86">Hangprinter Reference Winch Design Document</h1>
+            <div class="date">21-5-2026</div>
+            <h3>Goal and Purpose (why do we make refwinch?)</h3>
             <p>
-               RefRig is a Reference Rig for the Hangprinter Project.
+               We need good winches.
+               They're step 1 in the Hangprinter Bootstrapping Hierarchy, the lowest hardware level of common ground.
+                   
+            </p>
+            <figure>
+                     <a href="/blog/2026/bilder/Bootstrapping_hierarchy.png">
+                          <img src="/blog/2026/bilder/Bootstrapping_hierarchy_small.png" alt="" width="500" height="625">
+                        </a>
+                     
+               <figcaption>
+                        
+               </figcaption>
+                   
+            </figure>
+            <p>
+               Winches dictate the price, performance, and complexity of the full machine.
+                     We generally want low price, high performance, low complexity.
+                     We'll always push for all three, and in the end make some tradeoffs to prioritize one of two of them.
                    
             </p>
             <p>
+                     Previous Hangprinter spools weren't fantastic.
+                     They also forced users to accept line buildup, which is a very opinionated choice, trading away performance for low
+               price and low complexity.
+                   
+            </p>
+            <p>
+                     The new RefWinch Project should present two good default choices for Hangprinter builders and designers:
+                     One with line buildup and one without line buildup.
+                     It should also present an upgrade path from no-buildup to buildup.
+                   
+            </p><script type="application/javascript">
+(() => {
+  if (window.renderWinchDesignTriangle) return;
+
+  const NS = "http://www.w3.org/2000/svg";
+
+  function clamp01(v) {
+    v = Number(v);
+    if (!Number.isFinite(v)) return 0.5;
+    return Math.max(0, Math.min(1, v));
+  }
+
+  function renderWinchDesignTriangle(el, options) {
+    if (el.getAttribute("data-rendered") === "true") return;
+    el.setAttribute("data-rendered", "true");
+
+    const scores = {
+      price: clamp01(options.price),
+      performance: clamp01(options.performance),
+      complexity: clamp01(options.complexity)
+    };
+
+    const svg = document.createElementNS(NS, "svg");
+    svg.setAttribute("viewBox", "0 0 600 480");
+    svg.setAttribute("role", "img");
+    svg.setAttribute(
+      "aria-label",
+      "Winch design triangle. Larger filled area means a better design across low price, high performance, and low complexity."
+    );
+    svg.style.width = "100%";
+    svg.style.height = "auto";
+    svg.style.display = "block";
+    svg.style.borderRadius = "4px";
+
+    el.textContent = "";
+    el.appendChild(svg);
+
+    function add(tag, attrs) {
+      const node = document.createElementNS(NS, tag);
+      Object.keys(attrs || {}).forEach(key => node.setAttribute(key, attrs[key]));
+      svg.appendChild(node);
+      return node;
+    }
+
+    function label(x, y, value, attrs) {
+      const t = add("text", Object.assign({
+        x,
+        y,
+        "font-family": "system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif",
+        "font-size": "18",
+        "font-weight": "500"
+      }, attrs || {}));
+      t.textContent = value;
+      return t;
+    }
+
+    const A = { x: 300, y: 53.33,  key: "price",       color: "#2f7d32" };
+    const B = { x: 96.67, y: 396.67, key: "performance", color: "#1e67b1" };
+    const C = { x: 503.33, y: 396.67, key: "complexity",  color: "#d88400" };
+
+    const O = {
+      x: (A.x + B.x + C.x) / 3,
+      y: (A.y + B.y + C.y) / 3
+    };
+
+    function pointOnAxis(vertex, value) {
+      return {
+        x: O.x + (vertex.x - O.x) * value,
+        y: O.y + (vertex.y - O.y) * value
+      };
+    }
+
+    function towardCenter(point, amount) {
+      return {
+        x: O.x + (point.x - O.x) * amount,
+        y: O.y + (point.y - O.y) * amount
+      };
+    }
+
+    function points(points) {
+      return points.map(p => p.x.toFixed(1) + "," + p.y.toFixed(1)).join(" ");
+    }
+
+    add("rect", {
+      x: 0,
+      y: 0,
+      width: 600,
+      height: 480,
+      fill: "#fbfaf7"
+    });
+
+    [0.25, 0.5, 0.75].forEach(level => {
+      add("polygon", {
+        points: points([
+          pointOnAxis(A, level),
+          pointOnAxis(B, level),
+          pointOnAxis(C, level)
+        ]),
+        fill: "none",
+        stroke: "#9aa0a6",
+        "stroke-width": "1.4",
+        "stroke-dasharray": "5 8",
+        opacity: "0.45"
+      });
+    });
+
+    [A, B, C].forEach(v => {
+      add("line", {
+        x1: O.x,
+        y1: O.y,
+        x2: v.x,
+        y2: v.y,
+        stroke: "#9aa0a6",
+        "stroke-width": "1.2",
+        "stroke-dasharray": "5 8",
+        opacity: "0.55"
+      });
+    });
+
+    add("line", { x1: B.x, y1: B.y, x2: A.x, y2: A.y, stroke: B.color, "stroke-width": 5, "stroke-linecap": "round" });
+    add("line", { x1: A.x, y1: A.y, x2: C.x, y2: C.y, stroke: C.color, "stroke-width": 5, "stroke-linecap": "round" });
+    add("line", { x1: B.x, y1: B.y, x2: C.x, y2: C.y, stroke: "#557b62", "stroke-width": 5, "stroke-linecap": "round" });
+
+    const pA = pointOnAxis(A, scores.price);
+    const pB = pointOnAxis(B, scores.performance);
+    const pC = pointOnAxis(C, scores.complexity);
+
+    add("polygon", {
+      points: points([pA, pB, pC]),
+      fill: "#8fbf9f",
+      "fill-opacity": "0.34",
+      stroke: "#174f59",
+      "stroke-width": "5",
+      "stroke-linejoin": "round"
+    });
+
+    add("polygon", {
+      points: points([O, pA, pB]),
+      fill: A.color,
+      "fill-opacity": "0.12",
+      stroke: "none"
+    });
+
+    add("polygon", {
+      points: points([O, pB, pC]),
+      fill: B.color,
+      "fill-opacity": "0.10",
+      stroke: "none"
+    });
+
+    add("polygon", {
+      points: points([O, pC, pA]),
+      fill: C.color,
+      "fill-opacity": "0.12",
+      stroke: "none"
+    });
+
+    [0.33, 0.66].forEach(level => {
+      add("polygon", {
+        points: points([
+          towardCenter(pA, level),
+          towardCenter(pB, level),
+          towardCenter(pC, level)
+        ]),
+        fill: "none",
+        stroke: "#174f59",
+        "stroke-width": "1.5",
+        "stroke-dasharray": "4 6",
+        opacity: "0.5"
+      });
+    });
+
+    [A, B, C].forEach(v => {
+      add("circle", {
+        cx: v.x,
+        cy: v.y,
+        r: 12,
+        fill: v.color,
+        stroke: "#fbfaf7",
+        "stroke-width": 4
+      });
+    });
+
+    [
+      { p: pA, color: A.color },
+      { p: pB, color: B.color },
+      { p: pC, color: C.color }
+    ].forEach(({ p, color }) => {
+      add("circle", {
+        cx: p.x,
+        cy: p.y,
+        r: 8,
+        fill: color,
+        stroke: "#fbfaf7",
+        "stroke-width": 4
+      });
+    });
+
+    label(A.x, A.y - 36, "Low Price", {
+      fill: A.color,
+      "text-anchor": "middle"
+    });
+
+    label(B.x - 8, B.y + 54, "High Performance", {
+      fill: B.color,
+      "text-anchor": "start"
+    });
+
+    label(C.x + 8, C.y + 54, "Low Complexity", {
+      fill: C.color,
+      "text-anchor": "end"
+    });
+  }
+
+  window.renderWinchDesignTriangle = renderWinchDesignTriangle;
+
+  function renderAll() {
+    document.querySelectorAll(".winch-design-triangle").forEach(el => {
+      renderWinchDesignTriangle(el, {
+        price: el.getAttribute("data-price"),
+        performance: el.getAttribute("data-performance"),
+        complexity: el.getAttribute("data-complexity")
+      });
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", renderAll);
+  } else {
+    renderAll();
+  }
+})();
+</script><figure>
+                     
+               <div class="winch-design-triangle" data-price="0.7" data-performance="0.3" data-complexity="0.7"></div>
+                     
+               <figcaption>Roughly where previous Hangprinter winch designs landed.</figcaption>
+                   
+            </figure>
+            <figure>
+                     
+               <div class="winch-design-triangle" data-price="0.85" data-performance="0.38" data-complexity="0.82"></div>
+                     
+               <figcaption>Where we should aim with the buildup version of RefWinch, just improving old winches along every direction.</figcaption>
+                   
+            </figure>
+            <figure>
+                     
+               <div class="winch-design-triangle" data-price="0.6" data-performance="0.9" data-complexity="0.6"></div>
+                     
+               <figcaption>Where we should aim with the no-buildup version of RefWinch, adding a no buildup feature that pushes characteristics in an
+                  entirely new direction.
+               </figcaption>
+                   
+            </figure>
+            <h3>Stakeholders and User Stories (who do we design for and what do they want?)</h3>
+            <ul>
+                     
+               <li>Me (Torbj&oslash;rn) as a developer want<br>
+                        
+               </li>
+                     
+               <li>Me (Torbj&oslash;rn) as a maintainer want<br>
+                        
+               </li>
+                     
+               <li>Newcomers to Cable Driven Robotics want<br>
+                        
+               </li>
+                     
+               <li>Builders / testers / field techs want<br>
+                        
+               </li>
+                     
+               <li>Doc writers / teachers / workshop organizers want<br>
+                        
+               </li>
+                     
+               <li>Kit makers / suppliers want<br>
+                        
+               </li>
+                     
+               <li>Salespeople/funding hunters want<br>
+                        
+               </li>
+                   
+            </ul>
+            <h3>Requirements (what exactly must the refwinch be able to do?)</h3>
+            <h3>Functional requirements/solutions (how do we want it to achieve that?)</h3>
+            <h3>Expected Developments but Not Part of RefWinch v1</h3>
+            <h3>Validation (how to know if we got what we wanted?)</h3>
+            <p>
+                   
+            </p>
+            <p>
+               - tobben
+               
+            </p>
+            <div style="display: none">
+               <time class="dt-published">2026-05-21T12:00:00Z</time><a class="u-url" href="https://torbjornludvigsen.com/blog/2026/index.html#hangprinter_project_86"></a><a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
+                  Torbj&oslash;rn Ludvigsen
+                  <img class="u-photo" src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG" alt="Torbj&oslash;rn Ludvigsen"></a><span class="p-summary">
+                  We need good winches.
+                  They're step 1 in the Hangprinter Bootstrapping Hierarchy, the lowest hardware level of common ground.
+                      </span></div><br><br><br></article>
+         <article class="h-entry">
+            <h1 class="p-name" id="hangprinter_project_85">Hangprinter Reference Rig Design Document</h1>
+            <div class="date">21-5-2026</div>
+            <h3>Goal and Purpose (why do we make refrig?)</h3>
+            <p>
+                     RefRig is a Reference Rig for the Hangprinter Project.
                      It's step 2 in the Hangprinter Bootstrapping Hierarchy:
                    
             </p>
@@ -131,18 +469,18 @@
                <li>Me (Torbj&oslash;rn) as a developer want<br>
                           
                   <ul>
-                              
-                     <li> Somewhere to mount and test RefWinches, who are designed in a separate project, but almost always used together with RefRig.</li>
-                              
-                     <li> A malleable, configurable, small and cheap frame for a cable driven robot, that captures the physical phenomena we see in
+                               
+                     <li>Somewhere to mount and test RefWinches, who are designed in a separate project, but almost always used together with RefRig.</li>
+                               
+                     <li>A malleable, configurable, small and cheap frame for a cable driven robot, that captures the physical phenomena we see in
                         full scale Hangprinters and other CDPRs.
                      </li>
-                              
-                     <li> A minimal but realistic end-to-end physical test rig for debug, diagnostics, experiments, etc.</li>
-                              
-                     <li> Support for a wide range of firmwares, motor types, electronics boards etc</li>
-                              
-                     <li> Support a wide range of sensors that are easily attached, cable routed, removed.</li>
+                               
+                     <li>A minimal but realistic end-to-end physical test rig for debug, diagnostics, experiments, etc.</li>
+                               
+                     <li>Support for a wide range of firmwares, motor types, electronics boards etc</li>
+                               
+                     <li>Support a wide range of sensors that are easily attached, cable routed, removed.</li>
                              
                   </ul>
                         
@@ -151,10 +489,10 @@
                <li>Me (Torbj&oslash;rn) as a maintainer want<br>
                           
                   <ul>
-                              
-                     <li> Clear bounds for what's supported and what's not, and</li>
-                              
-                     <li> Easy to understand questions with easily interpretable data attached.</li>
+                               
+                     <li>Clear bounds for what's supported and what's not, and</li>
+                               
+                     <li>Easy to understand questions with easily interpretable data attached.</li>
                              
                   </ul>
                         
@@ -163,16 +501,16 @@
                <li>Newcomers to Cable Driven Robotics want<br>
                           
                   <ul>
-                              
-                     <li> Something cheap, structured, and well thought out.</li>
-                              
-                     <li> An experience with emphasis on basic principles.</li>
-                              
-                     <li> A path from "I don't understand" to "I can build, test, calibrate, and reason about this machine."</li>
-                              
-                     <li> Early wins and clear failure modes.</li>
-                              
-                     <li> Not to have to buy private consulting hours just to get something moving.</li>
+                               
+                     <li>Something cheap, structured, and well thought out.</li>
+                               
+                     <li>An experience with emphasis on basic principles.</li>
+                               
+                     <li>A path from "I don't understand" to "I can build, test, calibrate, and reason about this machine."</li>
+                               
+                     <li>Early wins and clear failure modes.</li>
+                               
+                     <li>Not to have to buy private consulting hours just to get something moving.</li>
                              
                   </ul>
                         
@@ -181,14 +519,14 @@
                <li>Builders / testers / field techs want<br>
                           
                   <ul>
-                              
-                     <li> Repeatable assembly steps.</li>
-                              
-                     <li> Clear pass/fail tests.</li>
-                              
-                     <li> Known-good configs and diagnostics.</li>
-                              
-                     <li> Problem categorization (mechanical, electrical, firmware, calibration, documentation, etc).</li>
+                               
+                     <li>Repeatable assembly steps.</li>
+                               
+                     <li>Clear pass/fail tests.</li>
+                               
+                     <li>Known-good configs and diagnostics.</li>
+                               
+                     <li>Problem categorization (mechanical, electrical, firmware, calibration, documentation, etc).</li>
                              
                   </ul>
                         
@@ -197,28 +535,30 @@
                <li>Doc writers / teachers / workshop organizers want<br>
                           
                   <ul>
-                              
-                     <li> A stable reference object to teach from.</li>
-                              
-                     <li> Exercises, tests, diagrams, and failure examples that do not change every week.</li>
-                              
-                     <li> A machine that can be used in makerspaces and schools as demonstration.</li>
+                               
+                     <li>A stable reference object to teach from.</li>
+                               
+                     <li>Exercises, tests, diagrams, and failure examples that do not change every week.</li>
+                               
+                     <li>A machine that can be used in makerspaces and schools as demonstration.</li>
                              
                   </ul>
                         
                </li>
                      
-               <li>Kit makers / suppliers<br>
+               <li>Kit makers / suppliers want<br>
                           
                   <ul>
-                              
-                     <li> Want a versioned BOM and standard interfaces.</li>
-                              
-                     <li> Want to know which parts matter and which parts can vary.</li>
-                              
-                     <li> Want a way to say "this kit/build/module passes the RefRig tests", including for individual parts (within tolerance and so
-                        on).
+                               
+                     <li>A versioned BOM and standard interfaces.</li>
+                               
+                     <li>To know which parts matter and which parts can vary.</li>
+                               
+                     <li>Well defined tolerances, other requirements and tests for each individual part. Preferrably test rigs for everything that
+                        matters.
                      </li>
+                               
+                     <li>A way to say "this kit/build/module passes the RefRig tests".</li>
                              
                   </ul>
                         
@@ -227,12 +567,12 @@
                <li>Salespeople/funding hunters want<br>
                           
                   <ul>
-                              
-                     <li> Something that looks clean, is easy to travel with, easy to understand, easy to show quickly.</li>
-                              
-                     <li> Physical proof that Hangprinter is not just an idea.</li>
-                              
-                     <li> A machine that supports the basic pitch: open, cheap, reliable precision motion over large volumes.</li>
+                               
+                     <li>Something that looks clean, is easy to travel with, easy to understand, easy to show quickly.</li>
+                               
+                     <li>Physical proof that Hangprinter is not just an idea.</li>
+                               
+                     <li>A machine that supports the basic pitch: open, cheap, reliable precision motion over large volumes.</li>
                              
                   </ul>
                         
@@ -257,176 +597,159 @@
                <li>Be rigid enough to not deform in event of being knocked over, or if all motors pull with all their power for a few seconds.</li>
                      
                <li>Give us debugging data enough for verification and coparison with hp-sim5 digital twin.</li>
-                  
+                   
             </ul>
             <h3>Functional requirements/solutions (how do we want it to achieve that?)</h3>
             <ul>
-                    
+                     
                <li>Square aluminum beams such as OpenBeams. Preferrably a ready-made skeleton of another 3d printer such as RatRig, Voron, Bambulabs
                   or similar. This lets us piggy-back on accessories such as<br>
-                         
+                          
                   <ul>
-                              
-                     <li> spool hoders,</li>
-                              
-                     <li> LED lights,</li>
-                              
-                     <li> enclosures,</li>
-                              
-                     <li> electronics mounting racks</li>
-                              
-                     <li> etc.</li>
-                            
+                               
+                     <li>spool hoders,</li>
+                               
+                     <li>LED lights,</li>
+                               
+                     <li>enclosures,</li>
+                               
+                     <li>electronics mounting racks</li>
+                               
+                     <li>etc.</li>
+                             
                   </ul>
                         
                </li>
                      
-               <li>Use RefWinch, the standardized winch module<br>
-                         
-                  <ul>
-                              
-                     <li> Define mechanical mounting.</li>
-                              
-                     <li> Define line/spool interface.</li>
-                              
-                     <li> Define electrical interface.</li>
-                              
-                     <li> Define firmware/control interface.</li>
-                              
-                     <li> Define standalone winch tests before full-machine tests.</li>
-                              
-                     <li> Make the winch module reusable in larger HP5-compatible machines.</li>
-                            
-                  </ul>
-                        
-               </li>
+               <li>Use RefWinch, the standardized winch module</li>
                      
                <li>Documentation as part of the machine<br>
-                         
+                          
                   <ul>
-                              
-                     <li> RefRig is not finished unless its instructions, tests, and troubleshooting docs are finished.</li>
-                              
-                     <li> Docs should explain not only how to build it, but how to know which subsystem failed.</li>
-                              
-                     <li> Support questions should be routed through the test ladder where possible.</li>
-                            
+                               
+                     <li>RefRig is not finished unless its instructions, tests, and troubleshooting docs are finished.</li>
+                               
+                     <li>Docs should explain not only how to build it, but how to know which subsystem failed.</li>
+                               
+                     <li>Support questions should be routed through the test ladder where possible.</li>
+                             
                   </ul>
                         
                </li>
                      
-               <li>Stepwise build and test ladder<br>
-                         
+               <li>RefWinch must continue the Stepwise Build and Test Ladder from the RefWinch Project. The Ladder should be defined seperately
+                  somewhere else but it will be similar to:<br>
+                          
                   <ul>
-                              
-                     <li> Test electronics alone.</li>
-                              
-                     <li> Test one winch alone.</li>
-                              
-                     <li> Test all winches without full machine load.</li>
-                              
-                     <li> Test geometry/anchor measurements.</li>
-                              
-                     <li> Test basic motion.</li>
-                              
-                     <li> Test calibration.</li>
-                              
-                     <li> Test repeatability.</li>
-                              
-                     <li> Test edge cases and failure modes.</li>
-                            
+                               
+                     <li>Test electronics alone.</li>
+                               
+                     <li>Test one winch alone.</li>
+                               
+                     <li>Test all winches without full machine load.</li>
+                               
+                     <li>Test geometry/anchor measurements.</li>
+                               
+                     <li>Test basic motion.</li>
+                               
+                     <li>Test calibration.</li>
+                               
+                     <li>Test repeatability.</li>
+                               
+                     <li>Test edge cases and failure modes.</li>
+                             
                   </ul>
                         
                </li>
                      
-               <li>RefRig does not specify what electronics of firmware to use, but data collection (log interfaces and structure) are defined
+               <li>RefRig does not specify what electronics or firmware to use, but data collection (log interfaces and structure) are defined
                   as part of the RefRig.
                </li>
                    
             </ul>
             <h3>Expected Developments but Not Part of RefRig v1</h3>
             <ul>
-                      
+                     
                <li>Run both ReprapFirmware and Klipper, including all features, such as<br>
-                           
+                          
                   <ul>
                                
-                     <li> Extruder</li>
+                     <li>Extruder</li>
                                
-                     <li> Bed probe</li>
+                     <li>Bed probe</li>
                                
-                     <li> Accelerometer/input shaping</li>
-                              
+                     <li>Accelerometer/input shaping</li>
+                             
                   </ul>
-                         
+                        
                </li>
-                      
+                     
                <li>Support all the physical configurations that firmware supports:<br>
-                           
+                          
                   <ul>
-                               
-                     <li> HP3 (three low anchors, one central high anchor, no gearing)</li>
-                               
-                     <li> HP4 (same anchor placements, lots of gearing)</li>
-                               
-                     <li> Skycam (four high anchors)</li>
-                               
-                     <li> Cubecorners (eight anchors)</li>
-                               
-                     <li> Slideprinter (three or four low anchors, no high anchors).</li>
                               
+                     <li>HP3 (three low anchors, one central high anchor, no gearing)</li>
+                              
+                     <li>HP4 (same anchor placements, lots of gearing)</li>
+                              
+                     <li>Skycam (four high anchors)</li>
+                              
+                     <li>Cubecorners (eight anchors)</li>
+                              
+                     <li>Slideprinter (three or four low anchors, no high anchors).</li>
+                             
                   </ul>
-                         
+                        
                </li>
-                      
+                     
                <li>Run hp-sim5's autocal succesfully</li>
-                      
+                     
                <li>Simulator-to-physical workflow<br>
-                           
+                          
                   <ul>
                                
-                     <li> Define the RefRig in hp-sim5.</li>
+                     <li>Define the RefRig in hp-sim5.</li>
                                
-                     <li> Run simulated conformance tests.</li>
+                     <li>Run simulated conformance tests.</li>
                                
-                     <li> Run the same or equivalent firmware/motion commands on physical RefRig.</li>
+                     <li>Run the same or equivalent firmware/motion commands on physical RefRig.</li>
                                
-                     <li> Compare logs and measured behavior.</li>
+                     <li>Compare logs and measured behavior.</li>
                                
-                     <li> Use differences to improve simulator, firmware, calibration, and hardware.</li>
+                     <li>Use differences to improve simulator, firmware, calibration, and hardware.</li>
                                
-                     <li> ROS2 is a stretch goal.</li>
+                     <li>ROS2 is a stretch goal.</li>
                                
-                     <li> Data collection could be rosbags and we could piggyback on the ROS2 ecosystem, but that's not a requirement.</li>
+                     <li>Data collection could be rosbags and we could piggyback on the ROS2 ecosystem, but that's not a requirement.</li>
                                
-                     <li> sim-real connection/orchestration could also be handled by ROS2.</li>
-                              
+                     <li>Sim-real connection/orchestration could also be handled by ROS2.</li>
+                             
                   </ul>
-                         
+                        
                </li>
-                      
+                     
                <li>Logging and diagnostics<br>
-                           
+                          
                   <ul>
                                
-                     <li> Make it easy to collect calibration data.</li>
+                     <li>Make it easy to collect calibration data.</li>
                                
-                     <li> Make it easy to run active calibration experiments.</li>
+                     <li>Make it easy to run active calibration experiments.</li>
                                
-                     <li> Store diagnostic logs in a predictable format.</li>
+                     <li>Store diagnostic logs in a predictable format.</li>
                                
-                     <li> Prefer tests that produce numbers, plots, logs, or pass/fail results.</li>
+                     <li>Prefer tests that produce numbers, plots, logs, or pass/fail results.</li>
                                
-                     <li> ROS2 is a stretch goal here as well. The whole autocal procedure might go via some ROS2 interface?</li>
+                     <li>ROS2 is a stretch goal here as well. The whole autocal procedure might go via some ROS2 interface?</li>
                                
-                     <li> RefRig should suggest a standard camera and standard camera placements for video debugging, so we have the opportunity to
+                     <li>RefRig should suggest a standard camera and standard camera placements for video debugging, so we have the opportunity to
                         easily create videos where we can know what we're looking at, from what angle, in all support requests.
                      </li>
-                              
+                             
                   </ul>
-                         
+                        
                </li>
-                    
+                   
             </ul>
             <h3>Validation (how to know if we got what we wanted?)</h3>
             <p>
@@ -434,9 +757,9 @@
                    
             </p>
             <ul>
-                      
+                     
                <li>It works. Prints Benchys and stuff.</li>
-                      
+                     
                <li>It is considered the reference.</li>
                    
             </ul>
@@ -445,21 +768,21 @@
                    
             </p>
             <ul>
-                      
+                     
                <li>It works measurably similar to its simulated twin.</li>
-                      
+                     
                <li>It's not avoided or postponed by builders or learners.</li>
-                      
+                     
                <li>Builders build RefRig faster and cheaper than they would have built a full machine.</li>
-                      
+                     
                <li>Builders get knowledge, learning, understanding that affects their full build.</li>
-                      
+                     
                <li>Its pass/fail tests are used and actually catches hw/assembly bugs.</li>
-                      
+                     
                <li>Builders go ahead with the full build afterwards (if that was their plan/goal).</li>
-                      
+                     
                <li>It's fun.</li>
-                      
+                     
                <li>It's not annoying.</li>
                    
             </ul>
@@ -468,15 +791,15 @@
                    
             </p>
             <ul>
-                      
+                     
                <li>It gets new people in the door.</li>
-                      
+                     
                <li>Does RefRig enable builders that would otherwise not build? ie, quantitatively:</li>
-                      
+                     
                <li>Do we see an increase in the number of Hangprinter builds (counting just full builds)? and qualitatively:</li>
-                      
+                     
                <li>Are the full builds we see better in terms of print quality, and uptime? and even more qualitatively:</li>
-                      
+                     
                <li>Are the builders happier than before? Are they prouder? Do we see them post more on Discord and other places?</li>
                    
             </ul>
@@ -485,16 +808,17 @@
                
             </p>
             <div style="display: none">
-               <time class="dt-published">2026-05-20T12:00:00Z</time><a class="u-url" href="https://torbjornludvigsen.com/blog/2026/index.html#hangprinter_project_85"></a><a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
+               <time class="dt-published">2026-05-21T12:00:00Z</time><a class="u-url" href="https://torbjornludvigsen.com/blog/2026/index.html#hangprinter_project_85"></a><a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
                   Torbj&oslash;rn Ludvigsen
                   <img class="u-photo" src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG" alt="Torbj&oslash;rn Ludvigsen"></a><span class="p-summary">
-                  RefRig is a Reference Rig for the Hangprinter Project.
+                        RefRig is a Reference Rig for the Hangprinter Project.
+                        It's step 2 in the Hangprinter Bootstrapping Hierarchy:
                       </span></div><br><br><br></article><br><br><br><br><br><br><br><br><h1 id="Links">
             Links
             
          </h1>
          <p>
-            Yearly archive: <a href="/blog/2014">2014</a>, <a href="/blog/2015">2015</a>, <a href="/blog/2016">2016</a>, <a href="/blog/2017">2017</a>, <a href="/blog/2018">2018</a>, <a href="/blog/2020">2020</a>, <a href="/blog/2021">2021</a>, <a href="/blog/2022">2022</a>, <a href="/blog/2023">2023</a></p>
+            Yearly archive: <a href="/blog/2014">2014</a>, <a href="/blog/2015">2015</a>, <a href="/blog/2016">2016</a>, <a href="/blog/2017">2017</a>, <a href="/blog/2018">2018</a>, <a href="/blog/2020">2020</a>, <a href="/blog/2021">2021</a>, <a href="/blog/2022">2022</a>, <a href="/blog/2023">2023</a>, <a href="/blog/2025">2025</a>, <a href="/blog/2026">2026</a></p>
          <p>
             Hangprinter Project: <a href="/blog/2014#Hangprinter">[1]</a>,
             <a href="/blog/2015#Slideprinter_Update">[2]</a>,
@@ -577,7 +901,11 @@
             <a href="/blog/2022#hangprinter_project_78">[79]</a>,
             <a href="/blog/2022#hangprinter_project_79">[80]</a>,
             <a href="/blog/2023#hangprinter_project_80">[81]</a>,
-            <a href="/blog/2023#hangprinter_project_81">[82]</a></p>
+            <a href="/blog/2023#hangprinter_project_81">[82]</a>,
+            <a href="/blog/2023#hangprinter_project_82">[83]</a>,
+            <a href="/blog/2025#hangprinter_project_83">[84]</a>,
+            <a href="/blog/2025#hangprinter_project_84">[85]</a>,
+            <a href="/blog/2026#hangprinter_project_85">[86]</a></p>
          <p>
             Hangprinter Campaign: <a href="https://github.com/sponsors/tobbelobb/">Github Sponsors</a></p>
          <p>
