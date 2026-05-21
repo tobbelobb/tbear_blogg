@@ -70,42 +70,8 @@
       </div>
       <div class="h-feed" id="MainContent">
          <article class="h-entry">
-            <h1 class="p-name" id="hangprinter_project_86">Hangprinter Reference Winch Design Document</h1>
-            <div class="date">21-5-2026</div>
-            <h3>Goal and Purpose (why do we make refwinch?)</h3>
-            <p>
-               We need good winches.
-               They're step 1 in the Hangprinter Bootstrapping Hierarchy, the lowest hardware level of common ground.
-                   
-            </p>
-            <figure>
-                     <a href="/blog/2026/bilder/Bootstrapping_hierarchy.png">
-                          <img src="/blog/2026/bilder/Bootstrapping_hierarchy_small.png" alt="" width="500" height="625">
-                        </a>
-                     
-               <figcaption>
-                        
-               </figcaption>
-                   
-            </figure>
-            <p>
-               Winches dictate the price, performance, and complexity of the full machine.
-                     We generally want low price, high performance, low complexity.
-                     We'll always push for all three, and in the end make some tradeoffs to prioritize one of two of them.
-                   
-            </p>
-            <p>
-                     Previous Hangprinter spools weren't fantastic.
-                     They also forced users to accept line buildup, which is a very opinionated choice, trading away performance for low
-               price and low complexity.
-                   
-            </p>
-            <p>
-                     The new RefWinch Project should present two good default choices for Hangprinter builders and designers:
-                     One with line buildup and one without line buildup.
-                     It should also present an upgrade path from no-buildup to buildup.
-                   
-            </p><script type="application/javascript">
+            <h1 class="p-name" id="hangprinter_project_86">Hangprinter RefWinch Design Document</h1>
+            <div class="date">21-5-2026</div><script type="application/javascript">
 (() => {
   if (window.renderWinchDesignTriangle) return;
 
@@ -337,66 +303,144 @@
     renderAll();
   }
 })();
-</script><figure>
-                     
-               <div class="winch-design-triangle" data-price="0.7" data-performance="0.3" data-complexity="0.7"></div>
-                     
-               <figcaption>Roughly where previous Hangprinter winch designs landed.</figcaption>
+</script><h3>Goal and Purpose (why do we do the RefWinch Project?)</h3>
+            <p>
+                     We need good winches.
+                     We also need a known baseline.
+                     In this project the baseline winch is a wide, belt driven tube.
                    
-            </figure>
+            </p>
+            <p>
+                     Winches dictate the price, performance, and complexity of the full machine.
+                     Previous Hangprinter winches were low on performance.
+                     They forced users to accept line buildup, which is a very opinionated choice, trading away performance for low price
+               and low complexity.
+                   
+            </p>
+            <p>
+                     The RefWinch Project should
+                   
+            </p>
+            <ul>
+                     
+               <li>Find out what baseline performance we're competing against.</li>
+                     
+               <li>Measure how much better than that we get with our design decisions.</li>
+                   
+            </ul>
             <figure>
                      
-               <div class="winch-design-triangle" data-price="0.85" data-performance="0.38" data-complexity="0.82"></div>
+               <div class="winch-design-triangle" data-price="0.75" data-performance="0.20" data-complexity="0.90"></div>
                      
-               <figcaption>Where we should aim with the buildup version of RefWinch, just improving old winches along every direction.</figcaption>
+               <figcaption>This is roughly where I expect the "belt driven rotating tube" baseline to end up. It's hard to get cheaper or less complex.</figcaption>
                    
             </figure>
             <figure>
                      
                <div class="winch-design-triangle" data-price="0.6" data-performance="0.9" data-complexity="0.6"></div>
                      
-               <figcaption>Where we should aim with the no-buildup version of RefWinch, adding a no buildup feature that pushes characteristics in an
-                  entirely new direction.
+               <figcaption>Where we should aim with RefWinch, adding a fixed entry/exit point and preventing buildup pushes characteristics in a new
+                  direction.
                </figcaption>
                    
             </figure>
-            <h3>Stakeholders and User Stories (who do we design for and what do they want?)</h3>
+            <h3>Requirements (what exactly must the refwinch be able to do?)</h3>
             <ul>
                      
-               <li>Me (Torbj&oslash;rn) as a developer want<br>
-                        
+               <li>Constant transmission ratio (no buildup).</li>
+                     
+               <li>Known/fixed cable entry/exit point.</li>
+                     
+               <li>Cheap. Motor+driver+line should make up at least 80% of the total price per winch. Motor+driver+line will cost ~40 USD so
+                  the rest should not cost more than ~10 USD.
                </li>
                      
-               <li>Me (Torbj&oslash;rn) as a maintainer want<br>
-                        
-               </li>
+               <li>Back-driveable, smooth transmission. It must be usable in torque mode both winding in and winding out.</li>
                      
-               <li>Newcomers to Cable Driven Robotics want<br>
-                        
-               </li>
+               <li>Fairly rigid.</li>
                      
-               <li>Builders / testers / field techs want<br>
-                        
-               </li>
+               <li>Support for at least 1.5 mm thick lines</li>
                      
-               <li>Doc writers / teachers / workshop organizers want<br>
-                        
-               </li>
+               <li>Capacity of 12 m of line.</li>
                      
-               <li>Kit makers / suppliers want<br>
-                        
-               </li>
+               <li>Compatibility with a wide range of stepper and BLDC motors around the Nema17 size.</li>
                      
-               <li>Salespeople/funding hunters want<br>
-                        
+               <li>Small enough to run on a desktop machine, big enough to run a room-size machine.</li>
+                     
+               <li>Robust against vibrations, resonances, highly dynamic motor movements, shaking motors, fast accelerations/decelerations. We
+                  want to print tiny infill fast.
                </li>
                    
             </ul>
-            <h3>Requirements (what exactly must the refwinch be able to do?)</h3>
+            <h3>Nice-to-Haves</h3>
+            <ul>
+                     
+               <li>Somewhere to connect a load sensor.</li>
+                     
+               <li>Emergency release mechanism/behavior to save people and hardware in extreme load situations.</li>
+                     
+               <li>Silent operation.</li>
+                     
+               <li>Work equally well if mounted vertically or horizontally.</li>
+                     
+               <li>Fully enclosed line path, so line can't ever jump loose and wrap around motor shaft.</li>
+                     
+               <li>Easily and rigidly mountable on a standard OpenBeam.</li>
+                     
+               <li>Fit deep into a corner of a room while line/exit point still pointing right towards middle of room.</li>
+                     
+               <li>Somewhere to route connectors/cables so it looks nice and tidy.</li>
+                   
+            </ul>
+            <h3>Non-Requirements (what is often optimized for in similar projects that we don't care about here?)</h3>
+            <ul>
+                     
+               <li>Backlash. We will only ever load the spool from one direction.</li>
+                     
+               <li>Back-and-forth layering.</li>
+                     
+               <li>Support for belt instead of line around the drum.</li>
+                     
+               <li>Low weight.</li>
+                   
+            </ul>
             <h3>Functional requirements/solutions (how do we want it to achieve that?)</h3>
-            <h3>Expected Developments but Not Part of RefWinch v1</h3>
-            <h3>Validation (how to know if we got what we wanted?)</h3>
             <p>
+                     Probably by utilizing one of the following principles:
+                   
+            </p>
+            <ol>
+                     
+               <li>Translating-Motor Design</li>
+                     
+               <li>Rototranslating-Drum Design</li>
+                     
+               <li>Spline Winch</li>
+                     
+               <li>Spooling-Helper Design</li>
+                   
+            </ol>
+            <p>
+                     See <a href="https://www.mdpi.com/2076-0825/11/10/290">this paper</a> for definitions of the four principles.
+                   
+            </p>
+            <h3>Validation (how to know if we got what we wanted?)</h3>
+            <ul>
+                     
+               <li>Does line fall off the spool during setup or operation?</li>
+                     
+               <li>Is it cheap enough?</li>
+                     
+               <li>Does it fail often? (cable spagetthi, friction locking, parts breaking or similar)</li>
+                     
+               <li>Can we service the spool, eyelet and other parts without unthreading the line?</li>
+                     
+               <li>Does it take up our time?</li>
+                   
+            </ul>
+            <p>
+                     The winch should just disappear from our minds after testing and installation. We should not have to worry about it
+               much.
                    
             </p>
             <p>
@@ -407,8 +451,9 @@
                <time class="dt-published">2026-05-21T12:00:00Z</time><a class="u-url" href="https://torbjornludvigsen.com/blog/2026/index.html#hangprinter_project_86"></a><a rel="author" class="p-author h-card" href="https://torbjornludvigsen.com">
                   Torbj&oslash;rn Ludvigsen
                   <img class="u-photo" src="https://torbjornludvigsen.com/media/torbjornludvigsen_small.JPG" alt="Torbj&oslash;rn Ludvigsen"></a><span class="p-summary">
-                  We need good winches.
-                  They're step 1 in the Hangprinter Bootstrapping Hierarchy, the lowest hardware level of common ground.
+                        We need good winches.
+                        We also need a known baseline.
+                        In this project the baseline winch is a wide, belt driven tube.
                       </span></div><br><br><br></article>
          <article class="h-entry">
             <h1 class="p-name" id="hangprinter_project_85">Hangprinter Reference Rig Design Document</h1>
