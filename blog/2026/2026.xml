@@ -1,6 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
 <posts year="2026">
+  <post id="hangprinter_project_87" heading="Winch Precision, Design Findings" date="11-6-2026">
+    <p>
+      Winches can be imprecise for many reasons.
+      Spools typically store irregularities as well as part of the line iteself.
+    </p>
+    <p>
+      Buildup is a basic type of irregularity. It can change spool radius in unpredictable ways via crossing layers, buried turns, and pile-ups (most often at the flanges).
+      There's always trapped slackness/tightness along the stored line, since there's friction between the spool and the line. These are small irregularities, but they're real and almost unavoidable during normal use.
+      Sometimes there are also larger irregularities, like "bubbles", trapped loose loops, or other variations of tangling.
+    </p>
+    <p>
+      There are many strategies for trying to enforce precision by reduce or eliminate irregularities, or to measure and compensate for them.
+    </p>
+    <h4>1: Reduce</h4>
+    <ol>
+      <li>Make windings stay in place by always enforcing a minimum tension. This can be achieved with spring, weight or other stored energy driven mechanics, or with clever sensing+motor control.</li>
+      <li>Avoid crossing layers and pile-ups by carefully controlling where line is laid down on the spool. This can be achieved with (Lebus) grooves that guide the line and/or a translating spool and/or a translating line guide.</li>
+      <li>Make tightness and tangles on the spool sort it self out by making the line and the spool itself stiff and smooth. If line is as easy to pull out as it is to push into the winch, then tangles have fewer places to hide.</li>
+      <li>Keep slackness off the spool by carefully enclosing the spool and/or push the line onto the spool with rollers. Make it so that the slack has nowhere to go inside the winch and is forced to accumulate outside the winch.</li>
+    </ol>
+    <h4>2: Eliminate</h4>
+    <ol>
+      <li>Make buildup impossible by using large radius spool and thin and/or short line.</li>
+    </ol>
+    <h4>3: Compensate</h4>
+    <ol>
+      <li>Allow buildup to happen but try to predict by building a physics model, and use it to calculate compensation amount it in firmware.</li>
+      <li>Make buildup more predictable by using belts, which is basically a flat line with teeth. It builds in a single layer. There's pile-up but there's no crossing layers of buried turns left to model.</li>
+    </ol>
+    <h4>4: Measure and Compensate</h4>
+    <ol>
+      <li>Place an encoder in front of the spool or measure line length in some other way. This lets you live tune compensation parameters or act directly on how much line is measured to have gone on/off the spool.</li>
+      <li>Measure or predict tension in each segment of each line that enters a spool. Can be used to compensate for trapped slackness/tightness.</li>
+    </ol>
+    <p>
+      Hangprinter has been doing 1.3, 2.1, 3.1. The HP4 tried to also to a bit of 1.4.
+      Our beloved strategy 2.1 was lost when the thin line snapped and had to be replaced by something more robust and reliable.
+      We can get some of it back through careful parameter choice, but we need other strategies as well.
+    </p>
+    <p>
+      The Maslow 4 does 1.1, 3.2, and 4.1.
+      Typical industrial winches do 1.1, 1.2 and 3.1 or 4.1 depending on the precision requirement.
+    </p>
+    <p>
+      I'm very impressed with the Maslow 4's combination of strategies.
+      It looks very elegant for its use case; 2D movement with weight, friction and low speeds.
+      Belts are less practical for a 3D robot like Hangprinter with lots of lines in lots of directions.
+      Probably still doable but not as perfect of a fit as it is for the Maslow 4.
+    </p>
+    <p>
+      My RefWinch experiments so far have tried to add 1.2 to HP4's old 1.3, 3.1, 1.4 combo.
+      What if we borrow 1.1 and 4.1 as well? Why not just go for all of them all at once?
+    </p>
+  </post>
   <post id="hangprinter_project_86" heading="Hangprinter RefWinch Design Document" date="21-5-2026">
 <script type="application/javascript"><![CDATA[
 (() => {
