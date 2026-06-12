@@ -37,6 +37,12 @@
     </ol>
 
 <style>
+  .strategy-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
   .strategy-table {
     border-collapse: collapse;
     width: 100%;
@@ -57,6 +63,7 @@
     font-weight: 700;
   }
 
+  .strategy-table th:first-child,
   .strategy-table .machine {
     text-align: left;
     font-weight: 700;
@@ -79,6 +86,36 @@
   .strategy-table .no {
     background: #eeeeee;
     color: #999;
+  }
+
+  @media screen and (max-width: 26.875em) {
+    .strategy-table-wrap {
+      margin: 1.5em 0 2em 0;
+      scrollbar-width: thin;
+    }
+
+    .strategy-table {
+      table-layout: fixed;
+      min-width: 0;
+      margin: 0;
+      font-size: 0.72rem;
+    }
+
+    .strategy-table th,
+    .strategy-table td {
+      display: table-cell;
+      min-width: 0;
+      padding: 0.32rem 0.12rem;
+    }
+
+    .strategy-table th:first-child,
+    .strategy-table .machine {
+      position: sticky;
+      left: 0;
+      z-index: 1;
+      width: 5.2rem;
+      box-shadow: 2px 0 0 #d8d8d8;
+    }
   }
 </style>
 
