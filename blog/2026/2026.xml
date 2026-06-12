@@ -181,54 +181,54 @@
     <tbody>
       <tr>
         <td class="machine">HP4</td>
-        <td class="no">—</td>
+        <td class="no"></td>
         <td class="yes">✓</td>
         <td class="yes">✓</td>
         <td class="partial">~</td>
-        <td class="no">—</td>
+        <td class="no"></td>
         <td class="yes">✓</td>
-        <td class="no">—</td>
-        <td class="no">—</td>
-        <td class="no">—</td>
+        <td class="no"></td>
+        <td class="no"></td>
+        <td class="no"></td>
       </tr>
 
       <tr>
         <td class="machine">Maslow</td>
         <td class="yes">✓</td>
-        <td class="no">—</td>
-        <td class="no">—</td>
-        <td class="no">—</td>
-        <td class="no">—</td>
-        <td class="no">—</td>
+        <td class="no"></td>
+        <td class="no"></td>
+        <td class="no"></td>
+        <td class="no"></td>
+        <td class="no"></td>
         <td class="yes">✓</td>
         <td class="yes">✓</td>
-        <td class="no">—</td>
+        <td class="no"></td>
       </tr>
 
       <tr>
         <td class="machine">Industrial</td>
         <td class="yes">✓</td>
-        <td class="no">—</td>
-        <td class="no">—</td>
-        <td class="no">—</td>
+        <td class="no"></td>
+        <td class="no"></td>
+        <td class="no"></td>
         <td class="yes">✓</td>
         <td class="yes">✓</td>
-        <td class="no">—</td>
+        <td class="no"></td>
         <td class="yes">✓</td>
-        <td class="no">—</td>
+        <td class="no"></td>
       </tr>
 
       <tr>
         <td class="machine">Experiments</td>
-        <td class="no">—</td>
-        <td class="no">—</td>
-        <td class="no">—</td>
-        <td class="no">—</td>
+        <td class="no"></td>
+        <td class="no"></td>
+        <td class="no"></td>
+        <td class="no"></td>
         <td class="yes">✓</td>
-        <td class="no">—</td>
-        <td class="no">—</td>
-        <td class="no">—</td>
-        <td class="no">—</td>
+        <td class="no"></td>
+        <td class="no"></td>
+        <td class="no"></td>
+        <td class="no"></td>
       </tr>
 
       <tr>
@@ -239,7 +239,7 @@
         <td class="partial">~</td>
         <td class="yes">✓</td>
         <td class="yes">✓</td>
-        <td class="no">—</td>
+        <td class="no"></td>
         <td class="yes">✓</td>
         <td class="yes">✓</td>
       </tr>
