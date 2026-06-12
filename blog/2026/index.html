@@ -97,10 +97,6 @@
                   energy driven mechanics, or with clever sensing+motor control.
                </li>
                      
-               <li>Avoid crossing layers and pile-ups by carefully controlling where line is laid down on the spool. This can be achieved with
-                  (Lebus) grooves that guide the line and/or a translating spool and/or a translating line guide.
-               </li>
-                     
                <li>Make tightness and tangles on the spool sort it self out by making the line and the spool itself stiff and smooth. If line
                   is as easy to pull out as it is to push into the winch, then tangles have fewer places to hide.
                </li>
@@ -114,6 +110,10 @@
             <ol>
                      
                <li>Make buildup impossible by using large radius spool and thin and/or short line.</li>
+                     
+               <li>Avoid crossing layers and pile-ups by carefully controlling where line is laid down on the spool. This can be achieved with
+                  (Lebus) grooves that guide the line and/or a translating spool and/or a translating line guide.
+               </li>
                    
             </ol>
             <h4>3: Compensate</h4>
@@ -124,7 +124,7 @@
                </li>
                      
                <li>Make buildup more predictable by using belts, which is basically a flat line with teeth. It builds in a single layer. There's
-                  pile-up but there's no crossing layers of buried turns left to model.
+                  pile-up but there's no crossing layers of buried turns.
                </li>
                    
             </ol>
@@ -137,16 +137,224 @@
                      
                <li>Measure or predict tension in each segment of each line that enters a spool. Can be used to compensate for trapped slackness/tightness.</li>
                    
-            </ol>
+            </ol><style>
+  .strategy-table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 0.95rem;
+    margin: 2em 0 2em 0;
+  }
+
+  .strategy-table th,
+  .strategy-table td {
+    border: 1px solid #d8d8d8;
+    padding: 0.45rem 0.55rem;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .strategy-table th {
+    background: #f2f2f2;
+    font-weight: 700;
+  }
+
+  .strategy-table .machine {
+    text-align: left;
+    font-weight: 700;
+    white-space: nowrap;
+    background: #f8f8f8;
+  }
+
+  .strategy-table .yes {
+    background: #dff3df;
+  }
+
+  .strategy-table .partial {
+    background: #fff2bf;
+  }
+
+  .strategy-table .maybe {
+    background: #dcecff;
+  }
+
+  .strategy-table .no {
+    background: #eeeeee;
+    color: #999;
+  }
+</style><h3>Strategy Combinations</h3>
+            <div class="strategy-table-wrap">
+                 
+               <table class="strategy-table">
+                      
+                  <thead>
+                           
+                     <tr>
+                                
+                        <th></th>
+                                
+                        <th>1.1</th>
+                                
+                        <th>1.2</th>
+                                
+                        <th>1.3</th>
+                                
+                        <th>2.1</th>
+                                
+                        <th>2.2</th>
+                                
+                        <th>3.1</th>
+                                
+                        <th>3.2</th>
+                                
+                        <th>4.1</th>
+                                
+                        <th>4.2</th>
+                              
+                     </tr>
+                         
+                  </thead>
+                      
+                  <tbody>
+                           
+                     <tr>
+                                
+                        <td class="machine">HP4</td>
+                                
+                        <td class="no">&#8212;</td>
+                                
+                        <td class="yes">&#10003;</td>
+                                
+                        <td class="yes">&#10003;</td>
+                                
+                        <td class="partial">~</td>
+                                
+                        <td class="no">&#8212;</td>
+                                
+                        <td class="yes">&#10003;</td>
+                                
+                        <td class="no">&#8212;</td>
+                                
+                        <td class="no">&#8212;</td>
+                                
+                        <td class="no">&#8212;</td>
+                              
+                     </tr>
+                     
+                           
+                     <tr>
+                                
+                        <td class="machine">Maslow</td>
+                                
+                        <td class="yes">&#10003;</td>
+                                
+                        <td class="no">&#8212;</td>
+                                
+                        <td class="no">&#8212;</td>
+                                
+                        <td class="no">&#8212;</td>
+                                
+                        <td class="no">&#8212;</td>
+                                
+                        <td class="no">&#8212;</td>
+                                
+                        <td class="yes">&#10003;</td>
+                                
+                        <td class="yes">&#10003;</td>
+                                
+                        <td class="no">&#8212;</td>
+                              
+                     </tr>
+                     
+                           
+                     <tr>
+                                
+                        <td class="machine">Industrial</td>
+                                
+                        <td class="yes">&#10003;</td>
+                                
+                        <td class="no">&#8212;</td>
+                                
+                        <td class="no">&#8212;</td>
+                                
+                        <td class="no">&#8212;</td>
+                                
+                        <td class="yes">&#10003;</td>
+                                
+                        <td class="yes">&#10003;</td>
+                                
+                        <td class="no">&#8212;</td>
+                                
+                        <td class="yes">&#10003;</td>
+                                
+                        <td class="no">&#8212;</td>
+                              
+                     </tr>
+                     
+                           
+                     <tr>
+                                
+                        <td class="machine">Experiments</td>
+                                
+                        <td class="no">&#8212;</td>
+                                
+                        <td class="no">&#8212;</td>
+                                
+                        <td class="no">&#8212;</td>
+                                
+                        <td class="no">&#8212;</td>
+                                
+                        <td class="yes">&#10003;</td>
+                                
+                        <td class="no">&#8212;</td>
+                                
+                        <td class="no">&#8212;</td>
+                                
+                        <td class="no">&#8212;</td>
+                                
+                        <td class="no">&#8212;</td>
+                              
+                     </tr>
+                     
+                           
+                     <tr>
+                                
+                        <td class="machine">Target</td>
+                                
+                        <td class="yes">&#10003;</td>
+                                
+                        <td class="yes">&#10003;</td>
+                                
+                        <td class="yes">&#10003;</td>
+                                
+                        <td class="partial">~</td>
+                                
+                        <td class="yes">&#10003;</td>
+                                
+                        <td class="yes">&#10003;</td>
+                                
+                        <td class="no">&#8212;</td>
+                                
+                        <td class="yes">&#10003;</td>
+                                
+                        <td class="yes">&#10003;</td>
+                              
+                     </tr>
+                         
+                  </tbody>
+                    
+               </table>
+               
+            </div>
             <p>
-                     Hangprinter has been doing 1.3, 2.1, 3.1. The HP4 tried to also to a bit of 1.4.
-                     Our beloved strategy 2.1 was lost when the thin line snapped and had to be replaced by something more robust and reliable.
+                     Hangprinter has been doing 1.2, 2.1, 3.1. The HP4 also did a bit of 1.3.
+                     Our beloved strategy 2.1 was lost when the thin line snapped and had to be replaced by more robust and reliable, and
+               therefore thicker, lines.
                      We can get some of it back through careful parameter choice, but we need other strategies as well.
                    
             </p>
             <p>
                      The Maslow 4 does 1.1, 3.2, and 4.1.
-                     Typical industrial winches do 1.1, 1.2 and 3.1 or 4.1 depending on the precision requirement.
+                     Typical industrial winches do 1.1, 2.2 and 3.1 or 4.1 depending on the precision requirement.
                    
             </p>
             <p>
@@ -157,10 +365,37 @@
                    
             </p>
             <p>
-                     My RefWinch experiments so far have tried to add 1.2 to HP4's old 1.3, 3.1, 1.4 combo.
-                     What if we borrow 1.1 and 4.1 as well? Why not just go for all of them all at once?
+                     My RefWinch experiments so far have tried to add 2.2 to HP4's old 1.2, 1.3, 3.1 combo.
+                     What if we borrow 1.1 and 4.1 as well? We abviously also want a bit of 2.1 back.
+                     Belts are outside the scope of the RefWinch project, but nothing's preventing us from doing a bit of 4.2.
                    
             </p>
+            <p>
+                     I think 1.1, 1.2, 1.3, 2.1, 2.2, 3.1, 4.1, and 4.2 should all be combined into the reference. That is, every strategy
+               that allow round lines.
+                     Individual users can remove the strategies they don't need or can't afford,
+                     similar to how HP4 was designed as closed-loop but many users couldn't afford that, and built it as open-loop instead.
+                   
+            </p>
+            <p>Here are my experiments so far:</p>
+            <figure>
+                     
+               <div class="embed-container">
+                          <iframe src="https://www.youtube.com/embed/fsukPs_iC6o" frameborder="0" allowfullscreen="true">
+                             </iframe>
+                        
+               </div>
+                   
+            </figure>
+            <figure>
+                     
+               <div class="embed-container">
+                          <iframe src="https://www.youtube.com/embed/UJZt1TUCpEw" frameborder="0" allowfullscreen="true">
+                             </iframe>
+                        
+               </div>
+                   
+            </figure>
             <p>
                - tobben
                
@@ -473,6 +708,10 @@
                <li>Robust against vibrations, resonances, highly dynamic motor movements, shaking motors, fast accelerations/decelerations. We
                   want to print tiny infill fast.
                </li>
+                     
+               <li>Main deployed lines (the line deployed and retrieved by the winch): Compatible with round UHMWPE lines. Note: internal drivetrain
+                  mechanism may use any transmission method.
+               </li>
                    
             </ul>
             <h3>Nice-to-Haves</h3>
@@ -493,6 +732,8 @@
                <li>Fit deep into a corner of a room while line/exit point still pointing right towards middle of room.</li>
                      
                <li>Somewhere to route connectors/cables so it looks nice and tidy.</li>
+                     
+               <li>Main deployed line: Compatibility with non-UHMWPE lines, flat lines, syncromesh cable, as well as belts.</li>
                    
             </ul>
             <h3>Non-Requirements (what is often optimized for in similar projects that we don't care about here?)</h3>
