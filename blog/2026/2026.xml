@@ -12,12 +12,12 @@
       Sometimes there are also larger irregularities, like "bubbles", trapped loose loops, or other variations of tangling.
     </p>
     <p>
-      There are many strategies for trying to enforce precision by reduce or eliminate irregularities, or to measure and compensate for them.
+      There are many strategies for trying to enforce precision by reducing or eliminating irregularities, or to measure and compensate for them.
     </p>
     <h4>1: Reduce</h4>
     <ol>
       <li>Make windings stay in place by always enforcing a minimum tension. This can be achieved with spring, weight or other stored energy driven mechanics, or with clever sensing+motor control.</li>
-      <li>Make tightness and tangles on the spool sort it self out by making the line and the spool itself stiff and smooth. If line is as easy to pull out as it is to push into the winch, then tangles have fewer places to hide.</li>
+      <li>Make tightness and tangles on the spool sort it self out by making the line and the spool itself stiff and smooth. If line would be possible to pull of a winch spool completely frictionless, then tangles would have fewer places to hide on that spool.</li>
       <li>Keep slackness off the spool by carefully enclosing the spool and/or push the line onto the spool with rollers. Make it so that the slack has nowhere to go inside the winch and is forced to accumulate outside the winch.</li>
     </ol>
     <h4>2: Eliminate</h4>
@@ -28,7 +28,7 @@
     <h4>3: Compensate</h4>
     <ol>
       <li>Allow buildup to happen but try to predict by building a physics model, and use it to calculate compensation amount it in firmware.</li>
-      <li>Make buildup more predictable by using belts, which is basically a flat line with teeth. It builds in a single layer. There's pile-up but there's no crossing layers of buried turns.</li>
+      <li>Make buildup more predictable by using belts, which is basically a flat line with teeth. It can stack windings neatly on top of itself, like having buildup, but in a perfect spiral shape. There's pile-up but there's no crossing layers of buried turns.</li>
     </ol>
     <h4>4: Measure and Compensate</h4>
     <ol>
