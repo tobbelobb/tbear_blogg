@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
 <posts year="2026">
+  <post id="hangprinter_project_88" heading="RefWinch Has Gotten an Explainer Homepage" date="21-8-2026">
+    <p>
+      Find it at <a href="https://refwinch.hangprinter.org">refwinch.hangprinter.org</a>.
+    </p>
+  </post>
   <post id="hangprinter_project_87" heading="Winch Precision, Design Findings" date="11-6-2026">
     <p>
       Winches can be imprecise for many reasons.
@@ -28,7 +33,7 @@
     <h4>3: Compensate</h4>
     <ol>
       <li>Allow buildup to happen but try to predict by building a physics model, and use it to calculate compensation amount it in firmware.</li>
-      <li>Make buildup more predictable by using belts, which is basically a flat line with teeth. It can stack windings neatly on top of itself, like having buildup, but in a perfect spiral shape. There's pile-up but there's no crossing layers of buried turns.</li>
+      <li>Make buildup more predictable by using belts, which is basically a flat line with teeth. It can stack windings neatly on top of itself, like having buildup, but in a perfect spiral shape. There's pile-up but there's no crossing layers or buried turns.</li>
     </ol>
     <h4>4: Measure and Compensate</h4>
     <ol>
