@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
 <posts year="2026">
-  <post id="hangprinter_project_88" heading="RefWinch Has Gotten an Explainer Homepage" date="21-8-2026">
+  <post id="hangprinter_project_88" heading="RefWinch, RefRig, and hp-sim Have Gotten Explainer Homepages" date="27-8-2026">
     <p>
-      Find it at <a href="https://refwinch.hangprinter.org">refwinch.hangprinter.org</a>.
+        Find them at
     </p>
+    <ul>
+      <li><a href="https://refwinch.hangprinter.org">refwinch.hangprinter.org</a></li>
+      <li><a href="https://refrig.hangprinter.org">refrig.hangprinter.org</a></li>
+      <li><a href="https://hp-sim-project.hangprinter.org">hp-sim-project.hangprinter.org</a></li>
+    </ul>
+    <p>
+      I've also made the simulators easier to find by redirecting to them from hangprinter.org subdomains like this:
+    </p>
+    <ul>
+      <li><a href="https://hp-sim.hangprinter.org">hp-sim.hangprinter.org</a></li>
+      <li><a href="https://hp-sim-3d.hangprinter.org">hp-sim-3d.hangprinter.org</a></li>
+    </ul>
   </post>
   <post id="hangprinter_project_87" heading="Winch Precision, Design Findings" date="11-6-2026">
     <p>
