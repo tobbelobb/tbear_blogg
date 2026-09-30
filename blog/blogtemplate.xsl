@@ -327,7 +327,7 @@ Twitter User: <a href="https://twitter.com/tobbelobb">link</a><br />
 Instagram User: <a href="https://www.instagram.com/torbjorn.ludvigsen/">link</a><br />
 </p>
 <p>
-Master's Thesis: <a href="http://opensourceecology.org/wiki/File:Thesis.pdf">link</a><br />
+  Master's Thesis: <a href="/MastersThesis.pdf">link</a><br />
 </p>
 <p>
 Linkedin Profile: <a href="https://se.linkedin.com/in/torbjorn-ludvigsen">link</a><br />
