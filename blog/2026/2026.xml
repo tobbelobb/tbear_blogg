@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
 <posts year="2026">
+  <post id="hangprinter_project_89" heading="Development Engine" date="27-8-2026">
+    <p>
+      I've been working on many things lately, but I keep getting dragged into further simulator development, as in hp-sim5.
+      I hope many of you have tested its web frontend for humans, here <a href="hp-sim-3d.hangprinter.org">hp-sim-3d.hangprinter.org</a>.
+    </p>
+    <p>
+      The more interesting part of it is the repo, which is bringing a very old Hangprinter idea alive: Very, very advanced and very very cheap software, through automated development.
+    </p>
+    <p>
+      This runs back to the days when Hangprinter was started in 2014. I thought software would just get better and cheaper over time, and average people would probably not get any richer.
+      Robots at the time solved engineering problems with expensive hardware. If we could cut out that hardware, and replace it with software, we could get good robots to normal people.
+    </p>
+    <p>
+      Then came AI in 2023 and showed us it will probably do all the coding in the future.
+      So it was time for me to stop coding and starting to harvest generated code instead.
+    </p>
+    <p>
+      All the research on actual improvements developed by unsupervised or lightly supervised AI points to the need for a feedback mechanism.
+      The term "improvement" already implies an objective, and anyone wanting to improve anything needs a way to know if they're getting better or worse.
+    </p>
+    <p>
+      For Hangprinter, the simulator lets us create various feedback mechanisms.
+      All Hangprinter-related and simulator related code is available to the AI agent.
+      It can do numerical experiments, ie change something and see if it improves outcomes or not.
+      It can accumulate experiences, results, tools, reports and other research artifacts over time.
+      Every "research agent" can end their turn with improving the tooling or writing a wish list that another agent gets to implement.
+    </p>
+    <p>
+      The Engine is the most central tool since it gives the agent a good idea about "ground truth".
+      It's not "real ground truth", as in "what the user will actually experience" but it's close enough to develop many things. Very very fast.
+    </p>
+  </post>
   <post id="hangprinter_project_88" heading="RefWinch, RefRig, and hp-sim Have Gotten Explainer Homepages" date="27-8-2026">
     <p>
         Find them at
