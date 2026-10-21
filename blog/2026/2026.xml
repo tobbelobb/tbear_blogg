@@ -139,6 +139,14 @@
       They cover physics bugs, calibration algorithms, performance, failed approaches and improvements to the research tools.
       There are short abstracts and a <a href="https://github.com/tobbelobb/hp-sim5/blob/2c0b86ff189d27859b83543ed3fa837cfa658a3b/research/catalog.md">research catalog</a> to help the next researcher find its way into the pile.
     </p>
+    <figure id="research-corpus-snapshot-figure">
+      <a href="/blog/2026/bilder/research-corpus-snapshot.svg">
+        <img src="/blog/2026/bilder/research-corpus-snapshot.svg" alt="Local catalog snapshot, 21 October 2026: 59 saved reports, 71 research notebooks, 81 catalog entries and about 105,000 words in the reports." width="1000" height="680"/>
+      </a>
+      <figcaption>
+        A snapshot of the catalog in my local checkout, including unfinished sessions and tooling checks. <a href="/blog/2026/bilder/research-corpus-snapshot.json">Counts and method</a>.
+      </figcaption>
+    </figure>
     <p>
       A new agent can search that corpus, read the relevant papers, follow their citations and inspect the original numerical evidence.
       If it's investigating calibration, for example, it can find earlier cases where a lower fitting score produced worse anchor positions, examine those cases, and use them to test its own idea.
@@ -210,6 +218,11 @@
       Other investigations corrected repeated counting of motor loads and the coupling between mounted rotors and their carriers.
       These are changes to the mechanics being computed, with consequences throughout the simulated machine.
     </p>
+    <figure id="physics-detectives-figure">
+      <a href="/blog/2026/bilder/physics-detectives.png">
+        <img src="/blog/2026/bilder/physics-detectives_small.png" alt="Two tiny graduate-cap researchers inspect a recorded oscillation with a magnifying glass and pencil beside a simulated cable robot." width="500" height="333"/>
+      </a>
+    </figure>
     <p>
       The calibration procedures have improved too.
       A <a href="https://github.com/tobbelobb/hp-sim5/commit/ee8f2716">consensus approach</a> uses agreement between distinct fitted anchor sets when choosing the geometry to apply.

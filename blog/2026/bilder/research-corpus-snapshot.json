@@ -1,0 +1,19 @@
+{
+  "snapshot_date": "2026-10-21",
+  "repository": "tobbelobb/hp-sim5",
+  "repository_revision": "c7713d8233884602823c258759249e11578e7034",
+  "scope": "Local output/research catalog in this checkout, including Git-ignored session records. Separate worktrees and tracked research documents outside this catalog are not included.",
+  "counts": {
+    "catalog_entries": 81,
+    "report_files": 59,
+    "notebook_files": 71,
+    "report_word_tokens": 104768
+  },
+  "method": {
+    "entries": "Use hp_sim5_research.archive.catalog_entries, resolving aliases so each directory is counted once.",
+    "documents": "Count only report.md and research.md directly within catalog entries. Do not recursively count retained source snapshots or copies in subdirectories.",
+    "words": "Count Unicode word tokens with regex \\b\\w+\\b in the report.md files, including Markdown tables and code. The figure rounds this count to thousands.",
+    "interpretation": "Document counts overlap. Entries include unfinished sessions and tooling checks; these are not counts of completed scientific studies or successful experiments."
+  },
+  "figure_generation": "Matplotlib, with all numbers taken from the saved count snapshot"
+}
