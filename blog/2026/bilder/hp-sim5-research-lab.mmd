@@ -1,3 +1,18 @@
+---
+config:
+  look: handDrawn
+  handDrawnSeed: 41
+  theme: base
+  fontFamily: 'Chilanka, Comic Sans MS, cursive'
+  themeVariables:
+    primaryColor: '#ffffff'
+    primaryTextColor: '#191919'
+    primaryBorderColor: '#191919'
+    lineColor: '#191919'
+    clusterBkg: '#ffffff'
+    clusterBorder: '#191919'
+    edgeLabelBackground: '#ffffff'
+---
 flowchart TB
     accTitle: The hp-sim5 researcher and its laboratory
     accDescr: A human steers the researcher, which reads and extends a cited research corpus, edits source and robot descriptions, runs experiments and tests, and analyses numerical evidence and Rerun recordings. Contributions go to external review and integration.
@@ -20,13 +35,3 @@ flowchart TB
     end
 
     evidence -->|code, report, evidence| review["External review and integration<br/>reproduce, combine, test"]
-
-    classDef person fill:#e9eefb,stroke:#52659a,color:#18264a
-    classDef memory fill:#fff2d6,stroke:#9e792b,color:#493710
-    classDef software fill:#edf6f3,stroke:#477d6c,color:#193f34
-    classDef observation fill:#f3edf9,stroke:#82639c,color:#3e2851
-    class human,agent,review person
-    class literature,corpus memory
-    class code,lab software
-    class evidence observation
-    style worktree fill:#fafbfc,stroke:#aeb7c4,stroke-width:1px

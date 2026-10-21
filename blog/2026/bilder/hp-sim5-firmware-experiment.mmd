@@ -1,3 +1,18 @@
+---
+config:
+  look: handDrawn
+  handDrawnSeed: 41
+  theme: base
+  fontFamily: 'Chilanka, Comic Sans MS, cursive'
+  themeVariables:
+    primaryColor: '#ffffff'
+    primaryTextColor: '#191919'
+    primaryBorderColor: '#191919'
+    lineColor: '#191919'
+    clusterBkg: '#ffffff'
+    clusterBorder: '#191919'
+    edgeLabelBackground: '#ffffff'
+---
 flowchart TB
     accTitle: The firmware, physics and calibration loop inside hp-sim5
     accDescr: The autocal program requests sweeps from a measurement collector. Real host-built RepRapFirmware and its bridge turn G-code into motor input for Rust physics, then return observed encoder angles to the collector. Accepted calibration updates the firmware model. The separate USD scene defines the physical machine used in the experiment.
@@ -15,10 +30,3 @@ flowchart TB
     model -->|parameters| firmware
     machine -->|geometry and dynamics| physics
     auto -. apply accepted calibration .-> model
-
-    classDef software fill:#edf6f3,stroke:#477d6c,color:#193f34
-    classDef model fill:#fff2d6,stroke:#9e792b,color:#493710
-    classDef physical fill:#e5f3fa,stroke:#42809b,color:#193f50
-    class auto,collector,firmware software
-    class model model
-    class machine,physics physical

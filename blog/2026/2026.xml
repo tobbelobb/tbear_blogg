@@ -80,7 +80,7 @@
 
     <figure id="hp-sim5-firmware-figure" style="margin-left: 0; margin-right: 0;">
       <a href="/blog/2026/bilder/hp-sim5-firmware-experiment.svg">
-        <img src="/blog/2026/bilder/hp-sim5-firmware-experiment.svg" alt="Autocal, the collector, real firmware and Rust physics exchange commands and encoder observations. Calibration updates the firmware model; a separate USD scene defines the physical machine." width="838" height="714"/>
+        <img src="/blog/2026/bilder/hp-sim5-firmware-experiment.svg" alt="Autocal, the collector, real firmware and Rust physics exchange commands and encoder observations. Calibration updates the firmware model; a separate USD scene defines the physical machine." width="1000" height="780"/>
       </a>
       <figcaption>
         An automatic calibration experiment connects these pieces in a loop. Autocal requests a sweep, firmware plans the movement, physics simulates what happens, and the collector reads the resulting encoders. The USD scene defines the physical machine in the experiment; the firmware has its own estimate of that machine. The researcher can run this loop or change and test its parts.
@@ -163,7 +163,7 @@
     </p>
     <figure id="hp-sim5-research-lab-figure" style="margin-left: 0; margin-right: 0;">
       <a href="/blog/2026/bilder/hp-sim5-research-lab.svg">
-        <img src="/blog/2026/bilder/hp-sim5-research-lab.svg" alt="A research agent reads and extends the cited research corpus, edits repo files, runs experiments, and inspects saved evidence before external review and integration." width="1061" height="883"/>
+        <img src="/blog/2026/bilder/hp-sim5-research-lab.svg" alt="A research agent reads and extends the cited research corpus, edits repo files, runs experiments, and inspects saved evidence before external review and integration." width="1000" height="905"/>
       </a>
       <figcaption>
         The repo is both the laboratory and its memory. The researcher reads and extends the corpus, edits code and machine descriptions, and runs experiments. The evidence feeds back into its next investigation. Code, reports and supporting evidence go to external review before integration.
