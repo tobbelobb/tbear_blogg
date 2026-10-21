@@ -344,6 +344,11 @@
       Research is fast and fun now.
       Unfruitful directions are killed faster, since I can ask for exactly the experiment that will approve/disprove.
     </p>
+    <figure id="my-part-of-research-figure">
+      <a href="/blog/2026/bilder/my-part-of-research.png">
+        <img src="/blog/2026/bilder/my-part-of-research_small.png" alt="A researcher thinks at an open notebook while three tiny graduate-cap assistants bring a plot, run a cable-robot simulation and write research reports." width="500" height="333"/>
+      </a>
+    </figure>
     <p>
       Sadly, this means I'm not fully automated yet, so hp-sim5-research-agent is only a partial success so far in that regard.
     </p>
