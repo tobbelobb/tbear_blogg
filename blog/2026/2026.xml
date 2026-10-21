@@ -78,6 +78,15 @@
       It's able to very precisely record every little detail of the simulation, like forces, angles, positions, etc, and inspect those datasets efficiently through tools like Rerun.
     </p>
 
+    <figure id="hp-sim5-firmware-figure" style="margin-left: 0; margin-right: 0;">
+      <a href="/blog/2026/bilder/hp-sim5-firmware-experiment.svg">
+        <img src="/blog/2026/bilder/hp-sim5-firmware-experiment.svg" alt="Autocal, the collector, real firmware and Rust physics exchange commands and encoder observations. Calibration updates the firmware model; a separate USD scene defines the physical machine." width="838" height="714"/>
+      </a>
+      <figcaption>
+        An automatic calibration experiment connects these pieces in a loop. Autocal requests a sweep, firmware plans the movement, physics simulates what happens, and the collector reads the resulting encoders. The USD scene defines the physical machine in the experiment; the firmware has its own estimate of that machine. The researcher can run this loop or change and test its parts.
+      </figcaption>
+    </figure>
+
     <h3>A Researcher in the Repo</h3>
     <p>
       The entry point is a script called <a href="https://github.com/tobbelobb/hp-sim5/blob/2c0b86ff189d27859b83543ed3fa837cfa658a3b/hp-sim5-research-agent">hp-sim5-research-agent</a>.
@@ -152,6 +161,15 @@
     <p>
       Only a small part of my local research corpus is included in the repo and published online, simply because it's so big that it's hard to handle. I'm looking for solutions to that problem.
     </p>
+    <figure id="hp-sim5-research-lab-figure" style="margin-left: 0; margin-right: 0;">
+      <a href="/blog/2026/bilder/hp-sim5-research-lab.svg">
+        <img src="/blog/2026/bilder/hp-sim5-research-lab.svg" alt="A research agent reads and extends the cited research corpus, edits repo files, runs experiments, and inspects saved evidence before external review and integration." width="1061" height="883"/>
+      </a>
+      <figcaption>
+        The repo is both the laboratory and its memory. The researcher reads and extends the corpus, edits code and machine descriptions, and runs experiments. The evidence feeds back into its next investigation. Code, reports and supporting evidence go to external review before integration.
+      </figcaption>
+    </figure>
+
     <h3>Several Researchers at Once</h3>
     <p>
       The launcher's <code>--worktree</code> option lets us start multiple instances on the same machine with separate code checkouts.

@@ -1,0 +1,32 @@
+flowchart TB
+    accTitle: The hp-sim5 researcher and its laboratory
+    accDescr: A human steers the researcher, which reads and extends a cited research corpus, edits source and robot descriptions, runs experiments and tests, and analyses numerical evidence and Rerun recordings. Contributions go to external review and integration.
+
+    human["Me: goals and steering"] --> agent
+    literature["Outside literature"] --> agent
+
+    subgraph worktree["One research worktree"]
+        agent["Research agent<br/>hypotheses and experiments"]
+        corpus[("Research corpus<br/>papers, citations, index")]
+        code["Repo files<br/>code and .usda machines"]
+        lab["Experiment tools<br/>MCP, scripts, tests"]
+        evidence[("Saved evidence<br/>numbers, datasets, recordings")]
+
+        agent <-->|read, cite, write| corpus
+        agent <-->|inspect, edit| code
+        agent <-->|run, control| lab
+        lab -->|save results| evidence
+        evidence -->|inspect with scripts and Rerun| agent
+    end
+
+    evidence -->|code, report, evidence| review["External review and integration<br/>reproduce, combine, test"]
+
+    classDef person fill:#e9eefb,stroke:#52659a,color:#18264a
+    classDef memory fill:#fff2d6,stroke:#9e792b,color:#493710
+    classDef software fill:#edf6f3,stroke:#477d6c,color:#193f34
+    classDef observation fill:#f3edf9,stroke:#82639c,color:#3e2851
+    class human,agent,review person
+    class literature,corpus memory
+    class code,lab software
+    class evidence observation
+    style worktree fill:#fafbfc,stroke:#aeb7c4,stroke-width:1px
