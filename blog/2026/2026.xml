@@ -1,36 +1,376 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
 <posts year="2026">
-  <post id="hangprinter_project_89" heading="Development Engine" date="27-8-2026">
+  <post id="hangprinter_project_89" heading="Building the Development Engine" date="21-10-2026">
     <p>
-      I've been working on many things lately, but I keep getting dragged into further simulator development, as in hp-sim5.
-      I hope many of you have tested its web frontend for humans, here <a href="hp-sim-3d.hangprinter.org">hp-sim-3d.hangprinter.org</a>.
+        I've been working on many things lately, but I keep getting dragged into further simulator development, as in <a href="https://github.com/tobbelobb/hp-sim5">hp-sim5</a>.
+      You can try its web frontend for humans at <a href="hp-sim-3d.hangprinter.org">hp-sim-3d.hangprinter.org</a>.
+      The more interesting part, to me, is what happens inside the repo.
     </p>
     <p>
-      The more interesting part of it is the repo, which is bringing a very old Hangprinter idea alive: Very, very advanced and very very cheap software, through automated development.
+      It's bringing a very old Hangprinter idea alive: very advanced and very cheap software, through automated development.
+  Alongside the code, a body of numerical research is growing inside the repo, ready for each new researcher to read, cite and build on.
     </p>
     <p>
-      This runs back to the days when Hangprinter was started in 2014. I thought software would just get better and cheaper over time, and average people would probably not get any richer.
-      Robots at the time solved engineering problems with expensive hardware. If we could cut out that hardware, and replace it with software, we could get good robots to normal people.
+      The idea, in a vauge form, runs back to the days when Hangprinter was started in 2014, when
+      I thought better, cheaper software could eventually make cable driven robotitcs practical.
+    </p>
+    <h3>Digression, Because I Love Historical Context</h3>
+    <p>
+      I arrived at cable driven robotics (CDPR) via another design principle, namely Reprap.
+      It drove down cost, and I simply wanted to drive cost down further by combining Reprap with CDPR.
     </p>
     <p>
-      Then came AI in 2023 and showed us it will probably do all the coding in the future.
-      So it was time for me to stop coding and starting to harvest generated code instead.
+      The separete idea of better, cheaper software did not come from a genius guess.
+      The software hype was at least 30 years old in 2014.
+      People would probably describe "inevitable software growth" as an insistent, annoying, almost intrusive idea already then.
+      I even asked friends and family if there would be less or more software in the future.
+      They all said "more". Nobody said "less".
     </p>
     <p>
-      All the research on actual improvements developed by unsupervised or lightly supervised AI points to the need for a feedback mechanism.
-      The term "improvement" already implies an objective, and anyone wanting to improve anything needs a way to know if they're getting better or worse.
+      So naturally, I wanted to stay as far to the right as I possibly could, in this imagined continuum of approaches to robotics:
+    </p>
+    <figure>
+      <a href="/blog/2026/bilder/robotics-approaches-continuum-v2.png">
+        <img src="/blog/2026/bilder/robotics-approaches-continuum-v2_small.png" alt="" width="500" height="250"/>
+      </a>
+      <figcaption>
+        Note that sensors count as hardware. Anything that requires electrical wires, software protocols, upfront investment, assembly instructions, and maintenance counts as hardware.
+      </figcaption>
+    </figure>
+    <p>
+      We had a minor hype around Hangprinter 2016-2019, I think because it fit with the guesses about the future that people already had in their heads.
+      It felt like a small step conceptually, in the direction which they were used to see things going.
+      It was obvious at the same time as a few people still said "it will never work", which was entertaining.
+    </p>
+    <h3>2023: Chatbots</h3>
+    <p>
+      Then came chatbots in 2023 and showed us they will probably do all the coding pretty soon.
+      I wanted them to do hw design as well. I wanted them to automate everything as fast as possible.
+      I don't want the Hangprinter Project to die, but I don't make any money off it, so having it automated for cheap is the perfect outcome for Hangprinter.
+      Replacing unpaid work with AI work is a pure upgrade.
     </p>
     <p>
-      For Hangprinter, the simulator lets us create various feedback mechanisms.
-      All Hangprinter-related and simulator related code is available to the AI agent.
-      It can do numerical experiments, ie change something and see if it improves outcomes or not.
-      It can accumulate experiences, results, tools, reports and other research artifacts over time.
-      Every "research agent" can end their turn with improving the tooling or writing a wish list that another agent gets to implement.
+      It was time for me to learn to harvest generated code.
+      Using simulators to test software is just how robot developers work, so I was kind of desperate to get a simulator up and running so AI Hangprinter devs could replace me as soon as possible.
+      In <a href="https://torbjornludvigsen.com/blog/2025/#hangprinter_project_84">last year's post</a> I described building a simulated Hangprinter for AIs to work on.
     </p>
     <p>
-      The Engine is the most central tool since it gives the agent a good idea about "ground truth".
-      It's not "real ground truth", as in "what the user will actually experience" but it's close enough to develop many things. Very very fast.
+      You might notice here, at this point in the text, that the idea is still pretty vague.
+      I'm excited about hp-sim5 work right now because it's just become much more concrete.
+    </p>
+    <p>
+      Right now, AI "researchers" or "developers" are already working inside the repo, and it all works thanks to the simulation which works like a development engine.
+    </p>
+    <h3>A world the researcher can work in</h3>
+    <p>
+      I don't want to repeat last years blog, but just briefly mention that a repo with everything is what enables the chatbot "researcher" to behave like a researcher. Sources, code for execution, results for inspection, machine definitions, requirements, development history, etc etc. Everything a researcher would carry in their heads of in their computer file systems. Notes, goals, ideas for further experiments, you name it.
+    </p>
+    <p>
+      The physics engine is good but it's not really special.
+      As long as it's fast enough and close enough to reality, it enables the researchers to do many experiments.
+      The researcher also needs the firmware that will actually control the machine, with its planning, coordinate transforms, motor commands and encoder observations.
+      The hp-sim5 repo versions of Klipper and RepRapFirmware that can run on the same machine as the AI researcher itself, as well as many integrations with those firmwares.
+    </p>
+    <p>
+      Again, there's nothing special with those firmwares, the important thing is what they enable the researcher to do.
+      The "researcher" is able to run the RepRapFirmware planner against simulated physics, and exposes a live command interface where the agent can send G-code one line at a time and examine the replies.
+      It's able to very precisely record every little detail of the simulation, like forces, angles, positions, etc, and inspect those datasets efficiently through tools like Rerun.
+    </p>
+
+    <h3>A Researcher in the Repo</h3>
+    <p>
+      The entry point is a script called <a href="https://github.com/tobbelobb/hp-sim5/blob/2c0b86ff189d27859b83543ed3fa837cfa658a3b/hp-sim5-research-agent">hp-sim5-research-agent</a>.
+      The script is also sometimes called "the launcher".
+      It is a collection of some custom skills, prompts, mcp servers, and settings basically.
+      It starts a Codex conversation with access to the simulator and its research tools.
+      The agent can read previous research, search for papers, edit code, run experiments and inspect recordings.
+      Most experiments run headlessly, using native Rust physics.
+      The even cheaper runs are those who can operate on output from previous runs of course.
+      That happens all the time too.
+    </p>
+    <p>
+      During numerical research, there are many branches and holes to fall into, even in experiments that sound super easy in principle.
+      There are so many buttons to push, versions of everything and trivial details to remember that humans often choose simpler and fewer experiments.
+      The AI is great at the overwhelming stuff.
+      Keeping the AI assistant with you, close to the buttons, through the experiment, through the practicalities and the surprises, is a large part of the point.
+      I've spent years doing this manually, at university and while developing line-collision-detector, hp-mark and other numerical software, and I'm glad I'll be doing less of it.
+    </p>
+    <figure>
+      <a href="/blog/2026/bilder/research-loop-v2.png">
+        <img src="/blog/2026/bilder/research-loop-v2_small.png" alt="A graduate stick figure uses the hp-sim5 research archive, experiments, recordings, autocalibration and firmware in a repeated research loop." width="500" height="333"/>
+      </a>
+      <figcaption>
+        My sketch, redrawn with AI help. Research produces code, evidence and tools that the next researcher can use.
+      </figcaption>
+    </figure>
+
+    <p>
+      Given a research goal, hp-sim5-research-agent works roughly like this:
+    </p>
+    <ol>
+      <li>Explore the relevant code, earlier research reports and outside literature. Develop ideas about what could be improved.</li>
+      <li>Reproduce and measure the current behaviour. Write down hypotheses, constraints and experiment budgets in a research notebook.</li>
+      <li>Design and run experiments to test the hypotheses, preferably many small, cheap ones. Compare the results with the baseline, then decide what to investigate next. Revise the hypothesis or change approach when the evidence calls for it.</li>
+      <li>Implement the best-supported changes and test whether they improve what matters, including checking for regressions.</li>
+      <li>Add a research report and searchable abstract to the repo’s growing research corpus. Cite earlier work, link the supporting code, data and recordings, and update the research index. Document rejected hypotheses and inconclusive results too, so the next researcher can build on what was learned.</li>
+    </ol>
+    <p>
+      These steps repeat as the investigation develops. Afterwards, an external evaluator, for now an agent loosely assisted by a human, reviews the evidence and code, decides what to keep or investigate further, and tests the combined changes.
+    </p>
+    <h3>A Research Corpus That Keeps Growing</h3>
+    <p>
+      Each completed investigation leaves a small research paper and some other resarch artifacts in the repo.
+      What was the question? What did the researcher try? Which experiments were run, and what did the numbers show?
+      The paper cites earlier research and links to the code revisions, datasets and recordings that support its conclusions.
+      Failed ideas go into the pile too, with an explanation of where they failed.
+    </p>
+    <p>
+      So alongside the software there's a fast-growing pile of papers about numerical experiments on Hangprinter and the simulator itself.
+      They cover physics bugs, calibration algorithms, performance, failed approaches and improvements to the research tools.
+      There are short abstracts and a <a href="https://github.com/tobbelobb/hp-sim5/blob/2c0b86ff189d27859b83543ed3fa837cfa658a3b/research/catalog.md">research catalog</a> to help the next researcher find its way into the pile.
+    </p>
+    <p>
+      A new agent can search that corpus, read the relevant papers, follow their citations and inspect the original numerical evidence.
+      If it's investigating calibration, for example, it can find earlier cases where a lower fitting score produced worse anchor positions, examine those cases, and use them to test its own idea.
+      Its new paper can then cite the old one and explain what it adds or changes.
+      Findings become references for further findings.
+    </p>
+    <p>
+      This is an important part of the self-improvement loop.
+      The researcher's experience persists in the corpus, and improvements to its methods and tools persist in the repo.
+      The next session starts with more knowledge and better equipment.
+      That improvement can survive a new conversation or a change of model.
+      A useful contribution can be a better algorithm, a better way to run an experiment, or a finding that changes what the next researcher should try.
+    </p>
+    <p>
+      The corpus also connects to research outside the repo.
+      I can give an agent a paper on cable robots, scientific computing or robotics and ask it to investigate whether the idea could make Hangprinter better.
+      It can read papers and libraries online too, although I still tend to point it towards the work I want investigated.
+      What it learns can become another local paper, with references back to its sources.
+    </p>
+    <p>
+      Only a small part of my local research corpus is included in the repo and published online, simply because it's so big that it's hard to handle. I'm looking for solutions to that problem.
+    </p>
+    <h3>Several Researchers at Once</h3>
+    <p>
+      The launcher's <code>--worktree</code> option lets us start multiple instances on the same machine with separate code checkouts.
+      Each can follow its own investigation, drawing on the accumulated research.
+    </p>
+    <p>
+      I ran six research agents at the same time on my machine the other day, when I first tested working with worktrees.
+      Only two came back with the same improvement idea, so I was able to merge five quite large improvements in a few hours.
+      Each agent could follow its own line of investigation while the others kept working.
+    </p>
+    <figure>
+      <a href="/blog/2026/bilder/worktree-v2.png">
+        <img src="/blog/2026/bilder/worktree-v2_small.png" alt="Independent research worktrees connect to an evaluator who reviews evidence, merges useful changes and tests them together in the main repository." width="500" height="333"/>
+      </a>
+      <figcaption>
+        Separate worktrees hold separate investigations. The evaluator looks across contributions, and the combined changes need their own test.
+      </figcaption>
+    </figure>
+    <p>
+      I use a separate reviewer agent to assess the work and help decide what deserves to be kept.
+      I haven't fully automated the orchestration and the whole review-and-merge process yet.
+      For now I use a second agent that reads the research, tests it independently, including their combined effect.
+      This helps catch misleading benchmarks and changes that interact badly.
+      Useful findings and research tools are worth keeping alongside code changes, so they remain available to later researchers.
+    </p>
+    <h3>What Has Come Out Of It So Far?</h3>
+    <p>
+      One of the most useful abilities turned out to be debugging the physics itself.
+      The agent is surprisingly good at finding an unstable state, recording it in Rerun at intervals of a few milliseconds, and tracing oscillating forces or created energy down to a function, an equation or a particular solver pass.
+      It can then change the implementation and replay the same state.
+      I've seen it do this far quicker than I've ever managed to debug these bugs myself.
+    </p>
+    <p>
+      One example was an HP4 wobble with a period of about 24 milliseconds.
+      The agent traced it to the damping calculation: on a second constraint-solver visit, it treated the position correction made by the first visit as fresh motion.
+      The attempted damping fed the oscillation.
+      <a href="https://github.com/tobbelobb/hp-sim5/commit/bf9f539968dc6fa2cbc28814bac640504c2f2629">Keeping that displacement fixed for the step</a> made the same loaded state settle in matched recordings.
+      Other investigations corrected repeated counting of motor loads and the coupling between mounted rotors and their carriers.
+      These are changes to the mechanics being computed, with consequences throughout the simulated machine.
+    </p>
+    <p>
+      The calibration procedures have improved too.
+      A <a href="https://github.com/tobbelobb/hp-sim5/commit/ee8f2716">consensus approach</a> uses agreement between distinct fitted anchor sets when choosing the geometry to apply.
+      On eleven distinct saved candidate sets from simulated HP3 runs, mean applied-anchor RMSE fell from 4.27 to 3.09 mm.
+      A separate history-seeded fitting experiment reduced applied-anchor RMSE from 2.706 to 2.440 mm in matched simulated HP3 runs, with the same collection layout and number of iterations.
+      The agent found a useful previous estimate instead of starting the fitting work from scratch each time.
+    </p>
+    <p>
+      Other work shortened encoder-settling waits, added recovery when a supposedly fixed motor slipped, and introduced stopping rules based on agreement between fits.
+      One simulated HP3 stopping trial used about 11% less collection time for 0.21 mm more anchor RMSE.
+      That is a tradeoff we can inspect and choose deliberately.
+      These results come from particular simulated cases; reliable calibration across machines and on hardware remains a larger goal.
+    </p>
+    <p>
+      The newer AI also changes what feels reasonable to attempt.
+      I was originally struggling to keep JavaScript and Python versions of the physics engine up to date, and spent lots of time on that using the GPT-4 family last year.
+      This year, with the GPT-6 family, getting a Rust version, based on a known good js version, took about two hours.
+      The core now compiles to both Wasm and native machine code, while the JavaScript, Python and Python/Warp implementations remain available and are cross-checked on shared cases.
+      They are useful when a particular investigation needs them.
+    </p>
+    <p>
+      This has made the experiments faster as well.
+      The <a href="https://github.com/tobbelobb/hp-sim5/blob/2c0b86ff189d27859b83543ed3fa837cfa658a3b/research/rust-wasm-engine.md">full Rust/Wasm engine</a> measured about 2.4–2.9 times the throughput of the earlier solver-only Wasm version across eight frozen workloads.
+      In a later <a href="https://github.com/tobbelobb/hp-sim5/blob/2c0b86ff189d27859b83543ed3fa837cfa658a3b/research/native-performance.md">recorded HP4 collection comparison</a>, wall time fell from 19.27 to 10.00 seconds, mostly through better logging.
+      These measure different parts of the pipeline, so the speedup factors shouldn't be multiplied together.
+      Faster feedback makes it practical to try more hypotheses.
+    </p>
+    <p>
+      The research tools have improved along with the algorithms.
+      Calibration was split into replayable fitting, planning, evaluation and ranking stages,
+      so a researcher can investigate a selector without collecting everything again.
+      Extended recordings retain firmware commands, replies,
+      encoder observations and calibration artifacts together with the motion.
+      This makes it much easier to return to a surprising experiment and find out what actually happened.
+    </p>
+    <p>
+      The reviews have also caught changes that looked good locally and broke real workloads.
+      A startup wheel-spin change made printing unstable; the correction now has a
+      <a href="https://github.com/tobbelobb/hp-sim5/blob/2c0b86ff189d27859b83543ed3fa837cfa658a3b/research/hp4-logo-stability.md">mandatory test using the actual HP4 Print Logo motion</a> (ie the exact manual procedure I used to do as a smoke test after every change before).
+      We get useful code out of these sessions, and better ways to catch the next mistake.
+    </p>
+    <h3>What Counts as Better?</h3>
+    <p>
+      Calling these changes "improvements" already implies an objective.
+      Anyone wanting to improve anything needs a way to know whether they're getting better or worse.
+      Research on unsupervised or lightly supervised AI development keeps returning to that need for feedback.
+    </p>
+    <p>
+      Chen, Wang, and Qu recently produced a wonderful overview of the related research field called <a href="https://arxiv.org/abs/2607.07663">Recursive Self-Improvement in AI: From Bounded Self-Refinement to Autonomous Research Loops</a>.
+      Their "verification hierarchy" sorts feedback mechanisms by their reliability and coverage. Here it is:
+    </p>
+    <figure>
+      <a href="/blog/2026/bilder/verification_hierarchy.png">
+        <img src="/blog/2026/bilder/verification_hierarchy_small.png" alt="" width="500" height="333"/>
+      </a>
+      <figcaption>
+        Figure 5 from Chen, Wang and Qu (2026), <a href="https://arxiv.org/html/2607.07663v2#S5.SS2">section 5.2</a>. Reproduced under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Original caption:
+"the verification hierarchy. Signal reliability rises toward the top while task coverage widens toward the bottom; failure modes concentrate at the bottom rungs, and human research judgment remains the rung self-improvement cannot yet climb. The hierarchy ranks signals given a target; the choice of target is prior to it rather than a rung of it (§5.4)."
+      </figcaption>
+    </figure>
+    <p>
+      Beside "Execution feedback" is says "reliable but incomplete".
+      For hp-sim5-research-agent, the simulator supplies feedback about the robot as well as the software.
+      The researcher can investigate whether a change improves motion, calibration or the forces inside the machine.
+      So hp-sim5-research-agent has access to broad execution feedback.
+      Still incomplete, of course, but quite broad, compared to other AIs and coding agents.
+    </p>
+    <p>
+      The simulator might contain bugs, lack relevant physical phenomena.
+      In general, a simulation will be too chaotic in some aspects (the simulator itself might crash), while being way too orderly in other aspects (eg springs being linear, hysteresis effects lacking, friction and noise being too simple etc).
+      This is well known.
+      In my experience, engeneers more often underestimate the usefulness of simulators than overestimate it.
+      Hearing the word "simulator" sometimes even makes engineers scared.
+      Simulators have strong, broad signals, and weak flimsy signals.
+      Everyone has heard stories about robots being trained directly on the flimsy signals of a simulator and failing spectacularly when the code is later executed on a real-life robot.
+      This is the story of the dreaded sim-to-real gap.
+    </p>
+    <p>
+      But any test or assumption about robotics code already carries a tiny model of the world inside it.
+      Making those assumptions explicit and executable gives us something we can inspect and improve.
+    </p>
+    <p>
+      The most convincing argument I've found is to show the bugs that simulation uncovers, the features we can develop, and how quickly we can do it compared with physical experiments.
+      Once you've lived through it as a developer, you don't look back.
+    </p>
+    <h3>Neighboring CDPR Research</h3>
+    <p>
+      Hangprinter is a cable-driven parallel robot, or CDPR.
+      There is already a substantial research field around these machines.
+      <a href="https://github.com/darwinlau/CASPR">CASPR</a>,
+      for example, is an older open platform for cable-robot kinematics,
+      dynamics, control and design analysis.
+    </p>
+    <p>
+      Caverly and colleagues' <a href="https://doi.org/10.1115/1.4065236">self-calibration work</a>
+      uses covariance-based measures to decide which observations help
+      calibration and when enough data has been collected.
+      Their estimator works with robot pose and measurement biases.
+      hp-sim5's autocal instead tries to recover unknown anchor positions using motor encoders.
+    </p>
+    <p>
+      Another related direction of CDPR research is to train a neural network to control the robot.
+      <a href="https://arxiv.org/abs/2504.15740">CaRoSaC</a> combines cable-sag simulation with reinforcement
+      learning of cable-length commands.
+      Their neural net replaces parts of a conventional controller, down to (but not including) the PID loops of their motors.
+      In hp-sim5 we don't throw out the conventional controller, or even parts of it.
+      Our contribution is rather to augment (and yes, partially replace today's form of) the coder, researcher, and developer.
+      The approaches are compatible.
+      A research agent could investigate a learned controller too.
+    </p>
+    <p>
+      I see hp-sim5 as a development environment joining cable mechanics, winches, firmware and calibration in experiments an agent can conduct. The useful comparison with other CDPR tools is whether it helps us answer engineering questions and produce results that survive physical testing.
+    </p>
+    <h3>Other People are Building Research Loops Too</h3>
+    <p>
+      DeepMind's <a href="https://arxiv.org/abs/2506.13131">AlphaEvolve</a> searches over code using automated evaluators.
+      Andrej Karpathy's <a href="https://github.com/karpathy/autoresearch">autoresearch</a> makes the loop small and concrete: edit a training script, train for five minutes, evaluate, keep or discard, repeat.
+      The <a href="https://sakana.ai/dgm/">Darwin Gödel Machine</a> explores changes to the coding agent itself and keeps an archive that later work can branch from.
+      Anthropic's <a href="https://alignment.anthropic.com/2026/automated-w2s-researcher/">Automated Weak-to-Strong Researcher</a> is particularly close to the way I want to work: parallel researchers, local access to previous findings, and freedom to choose experiments around a measurable objective. Its authors report strong results on their research task, but limited transfer of one method to their production setting. That makes testing ideas on new robot configurations feel especially relevant here.
+    </p>
+    <p>
+      Kirgis and colleagues' <a href="https://arxiv.org/html/2607.27191v2">Can AI agents conduct open-ended AI research?</a> gives a less optimistic result.
+      Across two case studies, agents handled the research engineering but struggled to produce substantial answers to the research questions.
+      Repeated AI review often produced more caveats instead of a better investigation.
+      I take that as a useful warning for hp-sim5: review should sometimes cause us to change the question or the experiment, rather than merely polish the report.
+    </p>
+    <h3>My Part of the Research Process</h3>
+    <p>
+      My experience so far is that my research ideas have become more useful.
+      I have more time to think about them, I get more input on them faster, and so I get new, better ideas.
+      Which is part of what pulls me back into hp-sim5 all the time.
+      Research is fast and fun now.
+      Unfruitful directions are killed faster, since I can ask for exactly the experiment that will approve/disprove.
+    </p>
+    <p>
+      Sadly, this means I'm not fully automated yet, so hp-sim5-research-agent is only a partial success so far in that regard.
+    </p>
+    <h3>Trying it yourself</h3>
+    <p>
+      Codex is the harness I'm using at the moment.
+      I expect support for other harnesses to be added in the future.
+      I chose this setup initially because the subscription plans available to me made the experiments affordable.
+    </p>
+    <p>
+      The hardest part currently is getting used to the breadth and ambition of things I can ask for.
+      "I want it to be faster. Make it faster." can be a perfectly useful starting prompt.
+      If I need to run for lunch, I can throw something simple like that to a few agents and have verified improvements to review when I get back to the keyboard.
+      Or the smartphone.
+    </p>
+    <p>
+      Cloud development environments can keep the agents running and reachable from a phone.
+      So Hangprinter research can run 24/7 if you want.
+      Warning: Actually doing this from bed is detrimental to your health.
+    </p>
+    <p>
+      Some of the <a href="https://github.com/tobbelobb/hp-sim5/tree/2c0b86ff189d27859b83543ed3fa837cfa658a3b/research/prompts">prompts are in the repo</a>, as is the <a href="https://github.com/tobbelobb/hp-sim5/commit/f16838dfc74675af914ba51cdb29b811bfbce1c8">cloud development environment setup scripts</a>.
+      I'm keeping the reviewer prompt separate and private for now, and I expect to keep changing it as the research process develops.
+    </p>
+    <p>
+      If you want to use or build on hp-sim5, ask your agent to look through the current repo.
+      The permalinks in this post show a snapshot at the time of writing.
+      The project will keep changing.
+    </p>
+    <h3>What still makes sense to build?</h3>
+    <p>
+      More software features are becoming "just ask the AI to do it",
+      without a special button or a dedicated procedure in between.
+      Want a new parameter sweep, a comparison plot or an unusual diagnostic?
+      Often the agent can make it on the spot.
+      I expect this to continue, which raises the question of what is still worth building and maintaining.
+    </p>
+    <p>
+      I think fast, inspectable verification engines will remain useful.
+      Physics calculations, firmware execution and repeatable experiments benefit from deterministic, efficient code.
+      The agent can help write and improve that code, while using it to check its next idea.
+    </p>
+    <p>
+      The physics engine helps check the next idea, and the growing research corpus helps the next researcher decide what to try.
+      It's exciting. But I'm still hand-cranking this development engine a little bit.
     </p>
   </post>
   <post id="hangprinter_project_88" heading="RefWinch, RefRig, and hp-sim Have Gotten Explainer Homepages" date="27-8-2026">
