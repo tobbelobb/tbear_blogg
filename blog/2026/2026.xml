@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
 <posts year="2026">
-  <post id="hangprinter_project_89" heading="Building the Development Engine" date="22-10-2026">
+  <post id="hangprinter_project_89" heading="Building the Development Engine" date="21-10-2026">
     <p>
         I've been working on many things lately, but I keep getting dragged into further simulator development, as in <a href="https://github.com/tobbelobb/hp-sim5">hp-sim5</a>.
-      You can try its web frontend for humans at <a href="https://hp-sim-3d.hangprinter.org/">hp-sim-3d.hangprinter.org</a>.
+      You can try its web frontend for humans at <a href="hp-sim-3d.hangprinter.org">hp-sim-3d.hangprinter.org</a>.
       The more interesting part, to me, is what happens inside the repo.
     </p>
     <p>
@@ -12,8 +12,8 @@
   Alongside the code, a body of numerical research is growing inside the repo, ready for each new researcher to read, cite and build on.
     </p>
     <p>
-      The idea, in a vague form, runs back to the days when Hangprinter was started in 2014, when
-      I thought better, cheaper software could eventually make cable driven robotics practical.
+      The idea, in a vauge form, runs back to the days when Hangprinter was started in 2014, when
+      I thought better, cheaper software could eventually make cable driven robotitcs practical.
     </p>
     <h3>Digression, Because I Love Historical Context</h3>
     <p>
@@ -21,7 +21,7 @@
       It drove down cost, and I simply wanted to drive cost down further by combining Reprap with CDPR.
     </p>
     <p>
-      The separate idea of better, cheaper software did not come from a genius guess.
+      The separete idea of better, cheaper software did not come from a genius guess.
       The software hype was at least 30 years old in 2014.
       People would probably describe "inevitable software growth" as an insistent, annoying, almost intrusive idea already then.
       I even asked friends and family if there would be less or more software in the future.
@@ -64,18 +64,18 @@
     </p>
     <h3>A world the researcher can work in</h3>
     <p>
-      I don't want to repeat last year's blog, but just briefly mention that a repo with everything is what enables the chatbot "researcher" to behave like a researcher. Sources, code for execution, results for inspection, machine definitions, requirements, development history, etc etc. Everything a researcher would carry in their heads of in their computer file systems. Notes, goals, ideas for further experiments, you name it.
+      I don't want to repeat last years blog, but just briefly mention that a repo with everything is what enables the chatbot "researcher" to behave like a researcher. Sources, code for execution, results for inspection, machine definitions, requirements, development history, etc etc. Everything a researcher would carry in their heads of in their computer file systems. Notes, goals, ideas for further experiments, you name it.
     </p>
     <p>
-      Fast physics makes repeated experiments practical.
-      The repo also contains Klipper and RepRapFirmware, running on the same computer as the researcher.
-      Their planning, coordinate transforms, motor commands and encoder observations are available for experiments.
+      The physics engine is good but it's not really special.
+      As long as it's fast enough and close enough to reality, it enables the researchers to do many experiments.
+      The researcher also needs the firmware that will actually control the machine, with its planning, coordinate transforms, motor commands and encoder observations.
+      The hp-sim5 repo versions of Klipper and RepRapFirmware that can run on the same machine as the AI researcher itself, as well as many integrations with those firmwares.
     </p>
     <p>
-      The researcher can send G-code one line at a time to the real RepRapFirmware planner,
-      inspect its replies and record the resulting simulated motion.
-      Rerun recordings retain forces, angles, positions and other signals for detailed inspection.
-      Extended recordings also preserve firmware commands and replies alongside the physics.
+      Again, there's nothing special with those firmwares, the important thing is what they enable the researcher to do.
+      The "researcher" is able to run the RepRapFirmware planner against simulated physics, and exposes a live command interface where the agent can send G-code one line at a time and examine the replies.
+      It's able to very precisely record every little detail of the simulation, like forces, angles, positions, etc, and inspect those datasets efficiently through tools like Rerun.
     </p>
 
     <figure id="hp-sim5-firmware-figure" style="margin-left: 0; margin-right: 0;">
@@ -89,11 +89,14 @@
 
     <h3>A Researcher in the Repo</h3>
     <p>
-      The launcher <a href="https://github.com/tobbelobb/hp-sim5/blob/79e53cbb562a9e139c6a23b73e91b8c69bbaca85/hp-sim5-research-agent">hp-sim5-research-agent</a>
-      starts a Codex or Claude Code conversation with the simulator and research tools attached.
+      The entry point is a script called <a href="https://github.com/tobbelobb/hp-sim5/blob/2c0b86ff189d27859b83543ed3fa837cfa658a3b/hp-sim5-research-agent">hp-sim5-research-agent</a>.
+      The script is also sometimes called "the launcher".
+      It is a collection of some custom skills, prompts, mcp servers, and settings basically.
+      It starts a Codex conversation with access to the simulator and its research tools.
       The agent can read previous research, search for papers, edit code, run experiments and inspect recordings.
       Most experiments run headlessly, using native Rust physics.
-      Reusing saved experimental data can be cheaper still.
+      The even cheaper runs are those who can operate on output from previous runs of course.
+      That happens all the time too.
     </p>
     <p>
       During numerical research, there are many branches and holes to fall into, even in experiments that sound super easy in principle.
@@ -126,7 +129,7 @@
     </p>
     <h3>A Research Corpus That Keeps Growing</h3>
     <p>
-      Each completed investigation leaves a small research paper and some other research artifacts in the repo.
+      Each completed investigation leaves a small research paper and some other resarch artifacts in the repo.
       What was the question? What did the researcher try? Which experiments were run, and what did the numbers show?
       The paper cites earlier research and links to the code revisions, datasets and recordings that support its conclusions.
       Failed ideas go into the pile too, with an explanation of where they failed.
@@ -138,7 +141,7 @@
     </p>
     <figure id="research-corpus-snapshot-figure">
       <a href="/blog/2026/bilder/research-corpus-snapshot.svg">
-        <img src="/blog/2026/bilder/research-corpus-snapshot.svg" alt="Local catalog snapshot, 22 October 2026: 70 saved reports, 84 research notebooks, 94 catalog entries and about 119,000 words in the reports." width="1000" height="680"/>
+        <img src="/blog/2026/bilder/research-corpus-snapshot.svg" alt="Local catalog snapshot, 21 October 2026: 59 saved reports, 71 research notebooks, 81 catalog entries and about 105,000 words in the reports." width="1000" height="680"/>
       </a>
       <figcaption>
         A snapshot of the catalog in my local checkout, including unfinished sessions and tooling checks. <a href="/blog/2026/bilder/research-corpus-snapshot.json">Counts and method</a>.
@@ -164,9 +167,7 @@
       What it learns can become another local paper, with references back to its sources.
     </p>
     <p>
-      Many of the <a href="https://github.com/tobbelobb/hp-sim5/tree/79e53cbb562a9e139c6a23b73e91b8c69bbaca85/output/research">reports, notebooks and reproduction scripts</a>
-      are now tracked in Git alongside the code.
-      Large recordings and some other artifacts remain local.
+      Only a small part of my local research corpus is included in the repo and published online, simply because it's so big that it's hard to handle. I'm looking for solutions to that problem.
     </p>
     <figure id="hp-sim5-research-lab-figure" style="margin-left: 0; margin-right: 0;">
       <a href="/blog/2026/bilder/hp-sim5-research-lab.svg">
@@ -179,9 +180,8 @@
 
     <h3>Several Researchers at Once</h3>
     <p>
-      The launcher's <code>--worktree</code> option starts researchers with separate code checkouts and physics processes.
-      They share the main checkout's <code>output/</code> directory, so earlier reports and new session evidence stay in one corpus.
-      Code changes remain isolated until review.
+      The launcher's <code>--worktree</code> option lets us start multiple instances on the same machine with separate code checkouts.
+      Each can follow its own investigation, drawing on the accumulated research.
     </p>
     <p>
       I ran six research agents at the same time on my machine the other day, when I first tested working with worktrees.
@@ -193,7 +193,7 @@
         <img src="/blog/2026/bilder/worktree-v2_small.png" alt="Independent research worktrees connect to an evaluator who reviews evidence, merges useful changes and tests them together in the main repository." width="500" height="333"/>
       </a>
       <figcaption>
-        Separate code checkouts and physics worlds let investigations run in parallel; their research artifacts share one output tree. The evaluator tests useful changes together.
+        Separate worktrees hold separate investigations. The evaluator looks across contributions, and the combined changes need their own test.
       </figcaption>
     </figure>
     <p>
@@ -251,29 +251,18 @@
       Faster feedback makes it practical to try more hypotheses.
     </p>
     <p>
-      On 22 October I used <a href="https://github.com/tobbelobb/hp-sim5/blob/79e53cbb562a9e139c6a23b73e91b8c69bbaca85/research/autocal-flag-audit/handoffs/README.md">six parallel research lanes</a>
-      to audit autocalibration's controls.
-      Follow-up integrations removed unused or misleading options and checked changes against frozen fits and complete replays.
-      Replayable fitting, planning, evaluation and ranking stages let the researchers test changes without collecting every dataset again.
-      One <a href="https://github.com/tobbelobb/hp-sim5/blob/79e53cbb562a9e139c6a23b73e91b8c69bbaca85/research/autocal-filtering-lane02-integration.md">threshold control</a>
-      could change from 250 to 0.01 without changing the fit's anchors, radii or either cost.
-      Routine help is now shorter, with the full interface under <code>--help-research</code>.
-      A <a href="https://github.com/tobbelobb/hp-sim5/commit/79e53cbb562a9e139c6a23b73e91b8c69bbaca85">solver fast path</a> also avoids compiling and optimizing fits
-      when too few usable sweeps make the objective uninformative.
+      The research tools have improved along with the algorithms.
+      Calibration was split into replayable fitting, planning, evaluation and ranking stages,
+      so a researcher can investigate a selector without collecting everything again.
+      Extended recordings retain firmware commands, replies,
+      encoder observations and calibration artifacts together with the motion.
+      This makes it much easier to return to a surprising experiment and find out what actually happened.
     </p>
     <p>
-      The integrations also checked the researchers' explanations.
-      One reported accuracy gap compared an individual fit with a final consensus;
-      <a href="https://github.com/tobbelobb/hp-sim5/blob/79e53cbb562a9e139c6a23b73e91b8c69bbaca85/research/autocal-filtering-lane02-integration.md#the-layered-reference-comparison">review found that the lane's final consensus matched the later reference at about 1.58 mm anchor RMSE</a>.
-      Another <a href="https://github.com/tobbelobb/hp-sim5/blob/79e53cbb562a9e139c6a23b73e91b8c69bbaca85/research/autocal-solver-lane01-integration.md">claimed mismatch with the machine geometry</a>
-      did not survive reconstruction from the original scene.
-      These checks helped separate useful findings from explanations that the evidence did not support.
-    </p>
-    <p>
-      Earlier reviews caught a startup wheel-spin change that made printing unstable.
-      A <a href="https://github.com/tobbelobb/hp-sim5/blob/79e53cbb562a9e139c6a23b73e91b8c69bbaca85/research/hp4-logo-stability.md">mandatory test using the actual HP4 Print Logo motion</a>
-      now checks for that class of regression.
-      The tests improve alongside the algorithms.
+      The reviews have also caught changes that looked good locally and broke real workloads.
+      A startup wheel-spin change made printing unstable; the correction now has a
+      <a href="https://github.com/tobbelobb/hp-sim5/blob/2c0b86ff189d27859b83543ed3fa837cfa658a3b/research/hp4-logo-stability.md">mandatory test using the actual HP4 Print Logo motion</a> (ie the exact manual procedure I used to do as a smoke test after every change before).
+      We get useful code out of these sessions, and better ways to catch the next mistake.
     </p>
     <h3>What Counts as Better?</h3>
     <p>
@@ -378,14 +367,10 @@
     </p>
     <h3>Trying it yourself</h3>
     <p>
-      The launcher now supports Codex and Claude Code.
-      Choose <code>--codex</code> or <code>--claude</code>; one is required.
-      Both support goal mode.
-      The <a href="https://github.com/tobbelobb/hp-sim5/blob/79e53cbb562a9e139c6a23b73e91b8c69bbaca85/research/README.md#setup-and-interactive-use">setup instructions</a>
-      cover dependencies and authentication. After setup, start either:
+      Codex is the harness I'm using at the moment.
+      I expect support for other harnesses to be added in the future.
+      I chose this setup initially because the subscription plans available to me made the experiments affordable.
     </p>
-    <pre><code>./hp-sim5-research-agent --codex --worktree
-./hp-sim5-research-agent --claude --worktree</code></pre>
     <p>
       The hardest part currently is getting used to the breadth and ambition of things I can ask for.
       "I want it to be faster. Make it faster." can be a perfectly useful starting prompt.
@@ -398,7 +383,7 @@
       Warning: Actually doing this from bed is detrimental to your health.
     </p>
     <p>
-      Some of the <a href="https://github.com/tobbelobb/hp-sim5/tree/79e53cbb562a9e139c6a23b73e91b8c69bbaca85/research/prompts">prompts are in the repo</a>, as are the <a href="https://github.com/tobbelobb/hp-sim5/commit/f16838dfc74675af914ba51cdb29b811bfbce1c8">cloud development environment setup scripts</a>.
+      Some of the <a href="https://github.com/tobbelobb/hp-sim5/tree/2c0b86ff189d27859b83543ed3fa837cfa658a3b/research/prompts">prompts are in the repo</a>, as is the <a href="https://github.com/tobbelobb/hp-sim5/commit/f16838dfc74675af914ba51cdb29b811bfbce1c8">cloud development environment setup scripts</a>.
       I'm keeping the reviewer prompt separate and private for now, and I expect to keep changing it as the research process develops.
     </p>
     <p>
