@@ -1,13 +1,13 @@
 {
-  "snapshot_date": "2026-10-21",
+  "snapshot_date": "2026-10-22",
   "repository": "tobbelobb/hp-sim5",
-  "repository_revision": "c7713d8233884602823c258759249e11578e7034",
-  "scope": "Local output/research catalog in this checkout, including Git-ignored session records. Separate worktrees and tracked research documents outside this catalog are not included.",
+  "repository_revision": "79e53cbb562a9e139c6a23b73e91b8c69bbaca85",
+  "scope": "Unique entries in this checkout's output/research catalog, including records shared by new worktrees. Separate archives not linked into this catalog and tracked research documents outside it are not included.",
   "counts": {
-    "catalog_entries": 81,
-    "report_files": 59,
-    "notebook_files": 71,
-    "report_word_tokens": 104768
+    "catalog_entries": 94,
+    "report_files": 70,
+    "notebook_files": 84,
+    "report_word_tokens": 118962
   },
   "method": {
     "entries": "Use hp_sim5_research.archive.catalog_entries, resolving aliases so each directory is counted once.",
