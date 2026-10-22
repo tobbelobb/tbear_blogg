@@ -4,7 +4,7 @@
   <post id="hangprinter_project_89" heading="Hand Cranking the Development Engine" date="22-10-2026">
     <p>
       I've been working on many things lately, but I keep getting dragged into further simulator development, as in <a href="https://github.com/tobbelobb/hp-sim5">hp-sim5</a>.
-      You can try its web frontend for humans at <a href="hp-sim-3d.hangprinter.org">hp-sim-3d.hangprinter.org</a>.
+        You can try its web frontend for humans at <a href="https://hp-sim-3d.hangprinter.org">hp-sim-3d.hangprinter.org</a>.
       The more interesting part, to me, is what happens inside the repo.
     </p>
     <p>
