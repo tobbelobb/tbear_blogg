@@ -183,15 +183,15 @@
                      This blog post is more about why we build it, and how.
                      The symbiotic relationship with the repo's research agents is what makes the simulator more interesting than other simulators
                I've worked with.
-                     As long as physics engine is fast enough and close enough to reality, it enables the researchers to maintain it and
-               to do many experiments with it.
+                     As long as physics engine is fast enough and close enough to reality, it enables the agentic researchers to maintain
+               it and to do many experiments with it.
                    
             </p>
             <p>
                      The research agents' world also need the firmware that will actually control the machine, with its planning, coordinate
                transforms, motor commands and encoder observations.
-                     The hp-sim5 repo versions of Klipper and RepRapFirmware that can run on the same machine as the AI researchers themself,
-               as well as many integrations with those firmwares.
+                     The hp-sim5 repo contains versions of Klipper and RepRapFirmware that can run on the same machine as the AI researchers
+               themself, as well as many integrations with those firmwares.
                    
             </p>
             <p>
@@ -302,11 +302,12 @@
             <p>
                      This self-improving mechanism is an important part of what makes hp-sim5-research-agent feel so ergonomic and empowering
                to me as a researcher.
-                     The researcher's experience persists in the corpus, and improvements to its methods and tools persist in the repo.
+                     The human as well as the agentic researchers' experiences persists in the corpus, and improvements to their methods
+               and tools persist in the repo.
                      The next session starts with more knowledge and better equipment.
                      That improvement can survive a new conversation or a change of model.
                      A useful contribution can be a better algorithm, a better way to run an experiment, or a finding that changes what the
-               next researcher should try.
+               next research agent should try.
                    
             </p>
             <p>
@@ -413,26 +414,28 @@
                    
             </p>
             <p>
-                     The general improvements AI improve mental ergonomics in many different ways.
-                     One is that it quickly increases the scope and ambition of what feels reasonable to attempt.
-                     I was originally struggling to keep JavaScript and Python versions of the physics engine up to date, and spent lots
-               of time on that using the GPT-4 family last year.
+                     The AI models that drive the agents also improve all the time, and that alone improves mental ergonomics for me in many
+               different ways.
+                     A current example is that it increases the scope and ambition of what feels reasonable to attempt.
+                     I don't have to shy away from stuff as often anymore.
+                     For example, I was originally struggling to keep JavaScript and Python versions of the physics engine up to date, and
+               spent lots of time on that using the GPT-4 family last year.
                      This year, with the GPT-6 family, getting a Rust version, based on a known good js version, took about two hours.
-                     I have five different implementations of the physics engine right now, with slightly different purposes.
+                     I now have five different implementations of the physics engine, with slightly different purposes.
                    
             </p>
             <p>
                      But I should probably prune most of them, since they're just one prompt away anyways.
                      Hand tuned, manually observed behavior, marked as desirable, frozen into tests, is valuable.
                      The code that implements them is really not valuable beyond the prompt that was needed to generate them and the time
-               it took to carry the prompt through.
+               it took to carry the prompt through (which is falling with every new LLM model release, ca every 7-10 days).
                      The prompt carries intent, which will always remain valuable, as long as humans are in control.
                    
             </p>
             <p>
                      Time, and therefore speed will also remain important.
                      The Rust Native engine has made the experiments faster.
-                     The <a href="https://github.com/tobbelobb/hp-sim5/blob/2c0b86ff189d27859b83543ed3fa837cfa658a3b/research/rust-wasm-engine.md">full Rust/Wasm engine</a> measured about 2.4&#8211;2.9 times the throughput of the earlier solver-only Wasm version across eight frozen workloads.
+                     The <a href="https://github.com/tobbelobb/hp-sim5/blob/2c0b86ff189d27859b83543ed3fa837cfa658a3b/research/rust-wasm-engine.md">full Rust/Wasm engine</a> measured about 2.5 times the throughput of the earlier solver-only Wasm version across eight frozen workloads.
                      In a later <a href="https://github.com/tobbelobb/hp-sim5/blob/2c0b86ff189d27859b83543ed3fa837cfa658a3b/research/native-performance.md">recorded HP4 collection comparison</a>, wall time fell from 19.27 to 10.00 seconds, mostly through better logging.
                      These measure different parts of the pipeline, so the speedup factors shouldn't be multiplied together.
                      Faster feedback makes it practical to try more hypotheses.
@@ -496,11 +499,18 @@
                    
             </p>
             <p>
-                     The simulator might contain bugs, lack relevant physical phenomena.
-                     In general, a simulation will be too chaotic in some aspects (the simulator itself might crash), while being way too
-               orderly in other aspects (eg springs being linear, hysteresis effects lacking, friction and noise being too simple etc).
-                     In my experience, engeneers more often underestimate the usefulness of simulators than overestimate it, but they do
-               have a point.
+                     The simulator might contain bugs or lack relevant physical phenomena.
+                     In general, a simulation can only capture a sliver of reality, so the exact sliver we want to investigate need to be
+               planned and foreseen with precision.
+                     Difficulty of implementation also adds problems, even for those who have foresight to plan the perfect sliver.
+                     The finished simulation will always be too chaotic in some aspects (the simulator itself might crash),
+                     while being way too orderly in other aspects (eg springs being linear, hysteresis effects lacking, friction and noise
+               being too simple etc).
+                   
+            </p>
+            <p>
+                     However, in my experience, engeneers more often underestimate the usefulness of simulators than overestimate it.
+                     I will steelman them and always admit they have a point, though.
                      Many have had bad experiences or heard stories about robots being trained directly in a simulator only to fail spectacularly
                when the code is later executed on a real-life robot.
                      This is the story of the dreaded sim-to-real gap.
