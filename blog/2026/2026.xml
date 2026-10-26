@@ -2,6 +2,29 @@
 <?xml-stylesheet type="text/xsl" href="blogtemplate.xsl"?>
 <posts year="2026">
   <post id="hangprinter_project_89" heading="Hand Cranking the Development Engine" date="22-10-2026">
+    <h3>Abstract</h3>
+    <p>
+      I've been building a little research environment inside the Hangprinter simulator repo, where AI agents can investigate engineering problems, run experiments, modify code, and leave behind research reports that future agents can build on. The simulator and real robot firmware give them a way to test ideas rather than just generate code.
+
+      Multiple agents can work in parallel, with a separate reviewer checking their results. So far they've helped find physics bugs, improve simulated calibration, and speed up experiments. The accumulated research is becoming as important as the code itself.
+
+      It's still far from autonomous, and simulation results don't necessarily survive contact with physical hardware. But it's changing what I can realistically investigate as a single developer.
+
+      This post is about how that research loop works, what it's achieved so far, and what might remain valuable as AI development gets increasingly automated.
+    </p>
+
+    <h3>Contents</h3>
+    <ul>
+      <li><a href="#digression-because-i-love-historical-context">Background: cheaper hardware through better software</a></li>
+      <li><a href="#a-world-in-which-research-agents-can-work">A research world inside the repo</a></li>
+      <li><a href="#agentic-researchers-in-the-repo">How the agents work and accumulate knowledge</a></li>
+      <li><a href="#several-researchers-at-once">Parallel researchers and experimental results</a></li>
+      <li><a href="#what-counts-as-better">How do we know what's better?</a></li>
+      <li><a href="#neighboring-cdpr-research">Related research and the human's role</a></li>
+      <li><a href="#trying-it-yourself">Trying it yourself</a></li>
+      <li><a href="#what-still-makes-sense-to-build">What will remain worth building?</a></li>
+    </ul>
+    <h3>Introduction</h3>
     <p>
       I've been working on many things lately, but I keep getting dragged into further simulator development, as in <a href="https://github.com/tobbelobb/hp-sim5">hp-sim5</a>.
         You can try its web frontend for humans at <a href="https://hp-sim-3d.hangprinter.org">hp-sim-3d.hangprinter.org</a>.
@@ -15,7 +38,7 @@
       The old idea, in a vauge form, runs back to the days when Hangprinter was started in 2014, when
       I thought better, cheaper software could eventually make cable driven robotitcs practical.
     </p>
-    <h3>Digression, Because I Love Historical Context</h3>
+    <h3 id="digression-because-i-love-historical-context">Digression, Because I Love Historical Context</h3>
     <p>
       I arrived at cable driven robotics (CDPR) via another design principle, namely Reprap.
       It drove down cost, and I simply wanted to drive cost down further by combining Reprap with CDPR.
@@ -75,7 +98,7 @@
       I have AI driven research agents working inside the repo now.
       The hp-sim5 repo has become a little research world with the simulator at the center.
     </p>
-    <h3>A world in which research agents can work</h3>
+    <h3 id="a-world-in-which-research-agents-can-work">A world in which research agents can work</h3>
     <p>
       I don't want to repeat last year's blog, but just briefly mention that a repo with everything is what enables the chatbot "researcher" to behave like a researcher.
       Sources, code for execution, results for inspection, machine definitions, requirements, development history, etc etc, it all improves the research agents.
@@ -109,7 +132,7 @@
       </figcaption>
     </figure>
 
-    <h3>Agentic Researchers in the Repo</h3>
+    <h3 id="agentic-researchers-in-the-repo">Agentic Researchers in the Repo</h3>
     <p>
       The entry point is a script called <a href="https://github.com/tobbelobb/hp-sim5/blob/2c0b86ff189d27859b83543ed3fa837cfa658a3b/hp-sim5-research-agent">hp-sim5-research-agent</a>.
       This script is also sometimes called "the launcher".
@@ -190,7 +213,7 @@
       </figcaption>
     </figure>
 
-    <h3>Several Researchers at Once</h3>
+    <h3 id="several-researchers-at-once">Several Researchers at Once</h3>
     <p>
       The launcher's <code>--worktree</code> option lets us start multiple instances on the same machine with separate code checkouts.
       Each can follow its own investigation, drawing on the accumulated research.
@@ -289,7 +312,7 @@
       <a href="https://github.com/tobbelobb/hp-sim5/blob/2c0b86ff189d27859b83543ed3fa837cfa658a3b/research/hp4-logo-stability.md">mandatory test using the actual HP4 Print Logo motion</a> (ie the exact manual procedure I used to do as a smoke test after every change before).
       We get useful code out of these sessions, and better ways to catch the next mistake.
     </p>
-    <h3>What Counts as Better?</h3>
+    <h3 id="what-counts-as-better">What Counts as Better?</h3>
     <p>
       Calling these changes "improvements" already implies an objective.
       Anyone wanting to improve anything needs a way to know whether they're getting better or worse.
@@ -329,11 +352,15 @@
       This is the story of the dreaded sim-to-real gap.
     </p>
     <p>
-      As long as we've not connected the research agent to a physical machine with ideal sensors, the human hp-sim5 researcher will still need to make judgements about how to read the results.
+      As long as we've not connected the research agent to a physical machine with ideal sensors, the human researcher will still need to manually:
     </p>
+    <ul>
+      <li>interpret results and make judgements about quality and usefulness of the output, and</li>
+      <li>decide if it matches with their needs, ideas, and intentions.</li>
+    </ul>
     <p>
       But I do prefer the burden of doing those judgements over having to do what I did before.
-      And for now I prefer it over having to build physical machines and tinker with loads of sensors.
+      And for now I prefer it over having to build physical machines and tinker with lots of sensors, especially when I work with questions who are not about the sensors themselves.
     </p>
     <p>
       The most convincing argument I've found for this workflow is the speed at which uncovers huge numbers of bugs that were almost impossible to find before,
@@ -341,7 +368,7 @@
       Once you've lived through it as a developer, you don't look back.
       It's just something else.
     </p>
-    <h3>Neighboring CDPR Research</h3>
+    <h3 id="neighboring-cdpr-research">Neighboring CDPR Research</h3>
     <p>
       Hangprinter is a cable-driven parallel robot, or CDPR.
       There is already a substantial research field around these machines.
@@ -412,7 +439,7 @@
       Otherwise, some other intent has changed it, and it has become an augmentation of their intent instead of mine.
       Let's hope it flies off some day regardless.
     </p>
-    <h3>Trying it yourself</h3>
+    <h3 id="trying-it-yourself">Trying it yourself</h3>
     <p>
       Codex and Claude Code are the harnesses I'm using at the moment.
       Support for any other harness is just a prompt away.
@@ -438,7 +465,7 @@
       The permalinks in this post show a snapshot at the time of writing.
       The project will keep changing.
     </p>
-    <h3>What still makes sense to build?</h3>
+    <h3 id="what-still-makes-sense-to-build">What still makes sense to build?</h3>
     <p>
       More software features are becoming "just ask the AI to do it",
       without a special button or a dedicated procedure in between.
